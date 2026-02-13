@@ -32,7 +32,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: pip install rich>=13.0 pyinstaller
@@ -74,7 +74,7 @@ jobs:
           path: ${{ steps.snap.outputs.snap }}
 
       - name: Publish to Snap Store
-        if: env.SNAP_TOKEN != ''
+        if: ${{ secrets.SNAP_TOKEN != '' }}
         uses: snapcore/action-publish@v1
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAP_TOKEN }}
