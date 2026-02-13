@@ -1,17 +1,17 @@
 class Nihongo < Formula
   desc "JLPT Japanese learning app - SRS, quiz, kanji, grammar"
   homepage "https://github.com/rapoyrazoglu/nihongo"
-  version "1.5.3"
+  version "1.5.4"
   license "MIT"
 
   on_macos do
     url "https://github.com/rapoyrazoglu/nihongo/releases/download/v#{version}/nihongo-macos"
-    sha256 "172a5e6ccc2240e9357c11904c1268e473ec738f13b397fc21a08e812dd6d213"
+    sha256 "f3c23c9002f012847932ea3928baf637bb086a102f440d2ecf3cdcdbacf5adef"
   end
 
   on_linux do
     url "https://github.com/rapoyrazoglu/nihongo/releases/download/v#{version}/nihongo-linux"
-    sha256 "ecb9632903e080885bcb18728093ee3befd219dec6cce88673c356161add1675"
+    sha256 "24c98ad23afb298f6adbd53ed84e6f1a17b0030f88cbe35e47fa1641df096815"
   end
 
   def install
