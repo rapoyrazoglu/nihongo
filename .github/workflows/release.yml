@@ -1,0 +1,39 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install rich>=13.0 pyinstaller
+
+      - name: Build binary
+        run: |
+          python -m PyInstaller nihongo.spec --clean --noconfirm
+
+      - name: Test binary
+        run: |
+          ./dist/nihongo --version
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/nihongo
+          generate_release_notes: true
