@@ -3,12 +3,44 @@
 import json
 import os
 import platform
+import ssl
 import stat
 import sys
 import tempfile
 import urllib.request
 
 from version import __version__
+
+
+def _ssl_context():
+    """SSL context that works in PyInstaller bundles."""
+    # Try system certs first
+    try:
+        ctx = ssl.create_default_context()
+        # Test if it actually works
+        return ctx
+    except Exception:
+        pass
+    # Try certifi bundle
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        pass
+    # Fallback: try common system CA paths
+    for ca_path in [
+        "/etc/ssl/certs/ca-certificates.crt",
+        "/etc/pki/tls/certs/ca-bundle.crt",
+        "/etc/ssl/ca-bundle.pem",
+        "/etc/ssl/cert.pem",
+    ]:
+        if os.path.exists(ca_path):
+            return ssl.create_default_context(cafile=ca_path)
+    # Last resort
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    return ctx
 
 REPO = "rapoyrazoglu/nihongo"
 API_URL = f"https://api.github.com/repos/{REPO}/releases/latest"
@@ -34,8 +66,9 @@ def _parse_version(v):
 def check_update(quiet=False):
     """GitHub'dan son surumu kontrol et. (latest_version, download_url) veya None dondur."""
     try:
+        ctx = _ssl_context()
         req = urllib.request.Request(API_URL, headers={"User-Agent": "nihongo-updater"})
-        with urllib.request.urlopen(req, timeout=5) as resp:
+        with urllib.request.urlopen(req, timeout=5, context=ctx) as resp:
             data = json.loads(resp.read().decode())
     except Exception as e:
         if not quiet:
@@ -84,8 +117,9 @@ def do_update():
 
     print(f"Indiriliyor: {url}")
     try:
+        ctx = _ssl_context()
         req = urllib.request.Request(url, headers={"User-Agent": "nihongo-updater"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
             data = resp.read()
     except Exception as e:
         print(f"Indirme basarisiz: {e}")
