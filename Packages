@@ -1,13 +1,13 @@
 Package: nihongo
-Version: 1.5.4
+Version: 1.5.5
 Architecture: amd64
 Maintainer: rapoyrazoglu
 Depends: espeak-ng
-Filename: ./nihongo_1.5.4_amd64.deb
-Size: 12446448
-MD5sum: a74ea7250799edb9a760719ae9dde3b7
-SHA1: 4057ce2be322aa077ff1a2f6f49b42bc44806e50
-SHA256: c57e4e804f4f7d37efe874ed15ab34963854282498a3c173336d4f3bbbf703ac
+Filename: ./nihongo_1.5.5_amd64.deb
+Size: 12446684
+MD5sum: 0d720bf67345442395e6b0f3cc3638fa
+SHA1: a15eb9650dfd1c4b8fe8e235182bac991001a084
+SHA256: 2a8986fb4b8eb27bc64e1cb12e404a8daaa2557cea0a1d12d73a4d436bfc9c68
 Section: education
 Priority: optional
 Description: JLPT Japanese learning app
