@@ -1,0 +1,16 @@
+Package: nihongo
+Version: 1.4.0
+Architecture: amd64
+Maintainer: rapoyrazoglu
+Depends: espeak-ng
+Filename: ./nihongo_1.4.0_amd64.deb
+Size: 12511930
+MD5sum: 19dbabf678e8c301f56a103653897b31
+SHA1: 4720052ba611c03c3e91ea9cec5494d053f34033
+SHA256: 9d474e915131670de53594a7261a722afa2364da7dc959615f2ad98d27e44f91
+Section: education
+Priority: optional
+Description: JLPT Japanese learning app
+ Terminal-based SRS flashcard app for JLPT N5-N3.
+ Features vocabulary, kanji, grammar study with spaced repetition.
+
