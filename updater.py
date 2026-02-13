@@ -128,8 +128,8 @@ def do_update():
         print(t("update.download_failed", error=e))
         return False
 
-    # Write to temp file, then replace
-    fd, tmp_path = tempfile.mkstemp(suffix=".tmp", prefix="nihongo_update_")
+    # Write to temp file in same directory as binary (avoids cross-device link error)
+    fd, tmp_path = tempfile.mkstemp(suffix=".tmp", prefix="nihongo_update_", dir=os.path.dirname(exe_path))
     try:
         os.write(fd, data)
         os.close(fd)
