@@ -25,3 +25,4 @@ else:
     _DB_DIR = os.path.join(os.path.expanduser("~"), ".local", "share", "nihongo")
 os.makedirs(_DB_DIR, exist_ok=True)
 DB_PATH = os.path.join(_DB_DIR, "nihongo.db")
+CONFIG_PATH = os.path.join(_DB_DIR, "config.json")

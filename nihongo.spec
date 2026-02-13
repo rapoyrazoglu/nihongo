@@ -24,6 +24,7 @@ a = Analysis(
     binaries=[],
     datas=[
         ('data/*.json', 'data'),
+        ('lang/*.json', 'lang'),
     ],
     hiddenimports=_rich_unicode,
     hookspath=[],
