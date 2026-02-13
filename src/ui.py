@@ -205,9 +205,9 @@ def card_status_label(review):
     return f"[bold green][{t('status.master')}][/bold green]"
 
 
-def show_vocab_list(level):
+def show_vocab_list(level, items=None):
     """Kelime listesini goster. Listeyi dondurur."""
-    vocabs = db.get_vocabulary(level=level)
+    vocabs = items if items is not None else db.get_vocabulary(level=level)
     if not vocabs:
         console.print(f"[yellow]{t('no_vocab_level')}[/yellow]")
         return []
@@ -232,9 +232,9 @@ def show_vocab_list(level):
     return vocabs
 
 
-def show_kanji_list(level):
+def show_kanji_list(level, items=None):
     """Kanji listesini goster. Listeyi dondurur."""
-    kanjis = db.get_kanji(level=level)
+    kanjis = items if items is not None else db.get_kanji(level=level)
     if not kanjis:
         console.print(f"[yellow]{t('no_kanji_level')}[/yellow]")
         return []

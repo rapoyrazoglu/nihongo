@@ -81,7 +81,10 @@
   "no_kanji_level": "Nenhum kanji neste nível.",
   "vocab_list_title": "Lista de Vocabulário {level}",
   "kanji_list_title": "Lista de Kanji {level}",
-  "list.detail_prompt": "Digite o número para detalhes (0 = voltar)",
+  "list.detail_prompt": "Número / 's' pesquisar / 0 voltar",
+  "list.search_prompt": "Pesquisar",
+  "list.no_match": "Nenhuma correspondência encontrada.",
+  "list.speak_hint": "Pressione 'p' para pronúncia",
 
   "stats.title": "Progresso Geral",
   "stats.category": "Categoria",

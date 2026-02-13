@@ -117,44 +117,103 @@ def handle_quiz():
         quiz.quiz_kanji_meaning(level, count)
 
 
+def _detail_loop(card, show_fn):
+    """Show card detail with TTS support. 'p' to play, Enter to go back."""
+    import tts
+    while True:
+        clear()
+        show_fn(card, show_answer=True)
+        console.print(f"\n[dim]{t('list.speak_hint')}[/dim]")
+        choice = Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        if choice.lower() == "p":
+            word = card.get("word") or card.get("kanji") or card.get("pattern") or ""
+            tts.speak(word)
+        else:
+            break
+
+
+def _list_search(items, query):
+    """Filter items by query matching word/reading/meaning fields."""
+    from i18n import meaning_field
+    q = query.lower()
+    mf = meaning_field()
+    results = []
+    for item in items:
+        fields = [
+            item.get("word", ""), item.get("reading", ""),
+            item.get("kanji", ""), item.get("on_yomi", ""), item.get("kun_yomi", ""),
+            item.get("meaning_tr", ""), item.get("meaning_en", ""),
+            item.get("pattern", ""),
+        ]
+        if any(q in (f or "").lower() for f in fields):
+            results.append(item)
+    return results
+
+
 def handle_vocab_list():
     level = show_level_select(t("vocab_list_level"))
     if not level:
         return
+    all_vocabs = db.get_vocabulary(level=level)
+    filtered = None
     while True:
         clear()
-        vocabs = show_vocab_list(level)
+        vocabs = show_vocab_list(level) if filtered is None else show_vocab_list(level, filtered)
         if not vocabs:
             Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
             return
         choice = Prompt.ask(f"\n[cyan]{t('list.detail_prompt')}[/cyan]", default="0")
-        if choice == "0" or not choice.isdigit():
+        if choice == "0":
+            if filtered is not None:
+                filtered = None
+                continue
             return
-        idx = int(choice)
-        if 1 <= idx <= len(vocabs):
-            clear()
-            show_vocab_card(vocabs[idx - 1], show_answer=True)
-            Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        if choice.lower() == "s":
+            query = Prompt.ask(f"[cyan]{t('list.search_prompt')}[/cyan]")
+            if query.strip():
+                filtered = _list_search(all_vocabs, query.strip())
+                if not filtered:
+                    console.print(f"[yellow]{t('list.no_match')}[/yellow]")
+                    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+                    filtered = None
+            continue
+        if choice.isdigit():
+            idx = int(choice)
+            if 1 <= idx <= len(vocabs):
+                _detail_loop(vocabs[idx - 1], show_vocab_card)
 
 
 def handle_kanji_list():
     level = show_level_select(t("kanji_list_level"))
     if not level:
         return
+    all_kanjis = db.get_kanji(level=level)
+    filtered = None
     while True:
         clear()
-        kanjis = show_kanji_list(level)
+        kanjis = show_kanji_list(level) if filtered is None else show_kanji_list(level, filtered)
         if not kanjis:
             Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
             return
         choice = Prompt.ask(f"\n[cyan]{t('list.detail_prompt')}[/cyan]", default="0")
-        if choice == "0" or not choice.isdigit():
+        if choice == "0":
+            if filtered is not None:
+                filtered = None
+                continue
             return
-        idx = int(choice)
-        if 1 <= idx <= len(kanjis):
-            clear()
-            show_kanji_card(kanjis[idx - 1], show_answer=True)
-            Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        if choice.lower() == "s":
+            query = Prompt.ask(f"[cyan]{t('list.search_prompt')}[/cyan]")
+            if query.strip():
+                filtered = _list_search(all_kanjis, query.strip())
+                if not filtered:
+                    console.print(f"[yellow]{t('list.no_match')}[/yellow]")
+                    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+                    filtered = None
+            continue
+        if choice.isdigit():
+            idx = int(choice)
+            if 1 <= idx <= len(kanjis):
+                _detail_loop(kanjis[idx - 1], show_kanji_card)
 
 
 def handle_search():

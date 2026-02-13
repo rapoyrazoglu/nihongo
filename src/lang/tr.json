@@ -81,7 +81,10 @@
   "no_kanji_level": "Bu seviyede kanji yok.",
   "vocab_list_title": "{level} Kelime Listesi",
   "kanji_list_title": "{level} Kanji Listesi",
-  "list.detail_prompt": "Detay icin numara girin (0 = geri)",
+  "list.detail_prompt": "Numara / 's' ara / 0 geri",
+  "list.search_prompt": "Ara",
+  "list.no_match": "Eslesme bulunamadi.",
+  "list.speak_hint": "Telaffuz icin 'p' basin",
 
   "stats.title": "Genel Ilerleme",
   "stats.category": "Kategori",

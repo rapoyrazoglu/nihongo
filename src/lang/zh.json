@@ -81,7 +81,10 @@
   "no_kanji_level": "该级别暂无 Kanji。",
   "vocab_list_title": "{level} 词汇列表",
   "kanji_list_title": "{level} Kanji 列表",
-  "list.detail_prompt": "输入编号查看详情（0 = 返回）",
+  "list.detail_prompt": "编号 / 's' 搜索 / 0 返回",
+  "list.search_prompt": "搜索",
+  "list.no_match": "未找到匹配项。",
+  "list.speak_hint": "按 'p' 播放发音",
 
   "stats.title": "总体进度",
   "stats.category": "类别",
