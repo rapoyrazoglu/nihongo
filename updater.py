@@ -14,32 +14,34 @@ from version import __version__
 
 def _ssl_context():
     """SSL context that works in PyInstaller bundles."""
-    # Try system certs first
-    try:
-        ctx = ssl.create_default_context()
-        # Test if it actually works
-        return ctx
-    except Exception:
-        pass
-    # Try certifi bundle
+    _CA_PATHS = [
+        "/etc/ssl/certs/ca-certificates.crt",
+        "/etc/ca-certificates/extracted/tls-ca-bundle.pem",
+        "/etc/pki/tls/certs/ca-bundle.crt",
+        "/etc/ssl/ca-bundle.pem",
+        "/etc/ssl/cert.pem",
+        "/usr/local/share/certs/ca-root-nss.crt",
+    ]
+    # Explicitly load known CA file (PyInstaller bundles can't find them)
+    for ca_path in _CA_PATHS:
+        if os.path.exists(ca_path):
+            try:
+                return ssl.create_default_context(cafile=ca_path)
+            except Exception:
+                continue
+    # Try certifi
     try:
         import certifi
         return ssl.create_default_context(cafile=certifi.where())
     except ImportError:
         pass
-    # Fallback: try common system CA paths
-    for ca_path in [
-        "/etc/ssl/certs/ca-certificates.crt",
-        "/etc/pki/tls/certs/ca-bundle.crt",
-        "/etc/ssl/ca-bundle.pem",
-        "/etc/ssl/cert.pem",
-    ]:
-        if os.path.exists(ca_path):
-            return ssl.create_default_context(cafile=ca_path)
-    # Last resort
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
+    # Try default (works on macOS / Windows)
+    try:
+        return ssl.create_default_context()
+    except Exception:
+        pass
+    # Last resort: unverified
+    ctx = ssl._create_unverified_context()
     return ctx
 
 REPO = "rapoyrazoglu/nihongo"
