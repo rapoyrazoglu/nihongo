@@ -6,6 +6,7 @@ Kullanim:
     python nihongo.py --init     # Veritabanini sifirdan olustur
     python nihongo.py --stats    # Istatistikleri goster
     python nihongo.py --version  # Surum bilgisi
+    python nihongo.py --update   # En son surume guncelle
 """
 
 import sys
@@ -36,6 +37,12 @@ from paths import DB_PATH
 # --- --version flag ---
 if "--version" in sys.argv:
     print(f"nihongo {__version__}")
+    sys.exit(0)
+
+# --- --update flag ---
+if "--update" in sys.argv:
+    from updater import do_update
+    do_update()
     sys.exit(0)
 
 import i18n
