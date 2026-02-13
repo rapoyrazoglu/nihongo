@@ -8,6 +8,7 @@ from rich.panel import Panel
 import db
 import srs
 import ui
+import tts
 
 
 def _quality_from_choice(choice):
@@ -52,12 +53,15 @@ def study_vocabulary(level):
 
         # Kartı göster (cevapsız)
         ui.show_vocab_card(card, show_answer=False)
+        tts.speak(card["word"])
         input()  # Enter bekle
 
         # Cevabı göster
         ui.clear()
         ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
         ui.show_vocab_card(card, show_answer=True)
+        if card["example_jp"]:
+            tts.speak(card["example_jp"])
 
         # Değerlendirme
         choice = ui.show_review_prompt()
@@ -121,6 +125,7 @@ def study_kanji(level):
         ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
 
         ui.show_kanji_card(card, show_answer=False)
+        tts.speak(card["kanji"])
         input()
 
         ui.clear()
@@ -188,11 +193,14 @@ def study_grammar(level):
         ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
 
         ui.show_grammar_card(card, show_answer=False)
+        tts.speak(card["pattern"])
         input()
 
         ui.clear()
         ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
         ui.show_grammar_card(card, show_answer=True)
+        if card["example_jp"]:
+            tts.speak(card["example_jp"])
 
         choice = ui.show_review_prompt()
         if choice == "q":

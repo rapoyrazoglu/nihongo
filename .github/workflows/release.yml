@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   build:
@@ -31,24 +32,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.13'
 
       - name: Install dependencies
-        run: |
-          pip install rich>=13.0 pyinstaller
+        run: pip install rich>=13.0 pyinstaller
 
       - name: Build binary
-        run: |
-          python -m PyInstaller nihongo.spec --clean --noconfirm
+        run: python -m PyInstaller nihongo.spec --clean --noconfirm
 
       - name: Test binary
-        run: |
-          ${{ matrix.binary }} --version
+        shell: bash
+        run: ./${{ matrix.binary }} --version
 
       - name: Rename artifact
         shell: bash
-        run: |
-          cp "${{ matrix.binary }}" "${{ matrix.artifact }}"
+        run: cp "${{ matrix.binary }}" "${{ matrix.artifact }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -56,18 +54,130 @@ jobs:
           name: ${{ matrix.artifact }}
           path: ${{ matrix.artifact }}
 
-  release:
-    needs: build
+  # --- Snap build & publish ---
+  snap:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Build snap
+        uses: snapcore/action-build@v1
+        id: snap
+
+      - name: Upload snap artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nihongo-snap
+          path: ${{ steps.snap.outputs.snap }}
+
+      - name: Publish to Snap Store
+        uses: snapcore/action-publish@v1
+        env:
+          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAP_TOKEN }}
+        with:
+          snap: ${{ steps.snap.outputs.snap }}
+          release: stable
+
+  release:
+    needs: [build, snap]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
           path: artifacts
           merge-multiple: true
 
+      - name: Compute SHA256
+        id: sha
+        run: |
+          echo "linux=$(sha256sum artifacts/nihongo-linux | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          echo "macos=$(sha256sum artifacts/nihongo-macos | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
+      # --- Homebrew Formula guncelle ---
+      - name: Update Homebrew formula
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          sed -i 's/version ".*"/version "'"$VER"'"/' Formula/nihongo.rb
+          sed -i '0,/sha256 ".*"/{s/sha256 ".*"/sha256 "${{ steps.sha.outputs.macos }}"/}' Formula/nihongo.rb
+          sed -i '0,/sha256 ".*"/! {0,/sha256 ".*"/ s/sha256 ".*"/sha256 "${{ steps.sha.outputs.linux }}"/}' Formula/nihongo.rb
+
+      # --- PKGBUILD guncelle ---
+      - name: Update PKGBUILD
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          sed -i "s/^pkgver=.*/pkgver=${VER}/" PKGBUILD
+          sed -i "s/^pkgrel=.*/pkgrel=1/" PKGBUILD
+          sed -i "s/sha256sums=(.*/sha256sums=('${{ steps.sha.outputs.linux }}')/" PKGBUILD
+
+      # --- .deb paketi ---
+      - name: Build .deb
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          PKG="nihongo_${VER}_amd64"
+          mkdir -p "${PKG}/DEBIAN" "${PKG}/usr/bin" "${PKG}/usr/share/applications" "${PKG}/usr/share/icons/hicolor/scalable/apps"
+          cat > "${PKG}/DEBIAN/control" <<EOF
+          Package: nihongo
+          Version: ${VER}
+          Section: education
+          Priority: optional
+          Architecture: amd64
+          Depends: espeak-ng
+          Maintainer: rapoyrazoglu
+          Description: JLPT Japanese learning app
+           Terminal-based SRS flashcard app for JLPT N5-N3.
+           Features vocabulary, kanji, grammar study with spaced repetition.
+          EOF
+          sed -i 's/^          //' "${PKG}/DEBIAN/control"
+          install -m755 artifacts/nihongo-linux "${PKG}/usr/bin/nihongo"
+          cp nihongo.desktop "${PKG}/usr/share/applications/"
+          cp assets/nihongo.svg "${PKG}/usr/share/icons/hicolor/scalable/apps/"
+          dpkg-deb --build "${PKG}"
+          mv "${PKG}.deb" artifacts/
+
+      # --- APT repo ---
+      - name: Build APT repo
+        run: |
+          mkdir -p apt-repo
+          cp artifacts/*.deb apt-repo/
+          cd apt-repo
+          dpkg-scanpackages -m . > Packages
+          gzip -k Packages
+
+      # --- GitHub Release ---
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/*
+          files: |
+            artifacts/nihongo-linux
+            artifacts/nihongo-macos
+            artifacts/nihongo-windows.exe
+            artifacts/*.deb
+            artifacts/*.snap
           generate_release_notes: true
+          body: |
+            ## Kurulum
+
+            **Ubuntu/Debian:** `sudo snap install nihongo`
+            **macOS:** `brew install rapoyrazoglu/nihongo/nihongo`
+            **Arch:** `yay -S nihongo`
+            **Windows:** [nihongo-windows.exe](https://github.com/rapoyrazoglu/nihongo/releases/latest) indir ve calistir
+
+      # --- Commit formula + PKGBUILD ---
+      - name: Push updated package files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Formula/nihongo.rb PKGBUILD
+          git diff --cached --quiet || git commit -m "chore: update packages for ${GITHUB_REF_NAME}"
+          git push origin HEAD:main || true
+
+      # --- APT repo -> gh-pages ---
+      - name: Deploy APT repo to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./apt-repo
+          publish_branch: gh-pages

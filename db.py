@@ -2,6 +2,7 @@
 
 import sqlite3
 import os
+import shutil
 from datetime import datetime, date
 
 from paths import DB_PATH
@@ -46,7 +47,7 @@ def init_db():
 
         CREATE TABLE IF NOT EXISTS grammar (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            pattern TEXT NOT NULL,
+            pattern TEXT NOT NULL UNIQUE,
             meaning_tr TEXT NOT NULL,
             meaning_en TEXT NOT NULL,
             level TEXT NOT NULL CHECK(level IN ('N5','N4','N3','N2','N1')),
@@ -301,3 +302,71 @@ def get_today_stats():
     row = conn.execute("SELECT * FROM stats WHERE date = ?", (today,)).fetchone()
     conn.close()
     return row
+
+
+# --- Arama ---
+
+def search_all(query):
+    """3 tabloda LIKE araması yap. Sonuçları dict olarak döndür."""
+    conn = get_connection()
+    q = f"%{query}%"
+
+    vocab = conn.execute("""
+        SELECT * FROM vocabulary
+        WHERE word LIKE ? OR reading LIKE ? OR meaning_tr LIKE ? OR meaning_en LIKE ?
+    """, (q, q, q, q)).fetchall()
+
+    kanji = conn.execute("""
+        SELECT * FROM kanji
+        WHERE kanji LIKE ? OR on_yomi LIKE ? OR kun_yomi LIKE ?
+              OR meaning_tr LIKE ? OR meaning_en LIKE ?
+    """, (q, q, q, q, q)).fetchall()
+
+    grammar = conn.execute("""
+        SELECT * FROM grammar
+        WHERE pattern LIKE ? OR meaning_tr LIKE ? OR meaning_en LIKE ?
+    """, (q, q, q)).fetchall()
+
+    conn.close()
+    return {"vocabulary": vocab, "kanji": kanji, "grammar": grammar}
+
+
+# --- Export / Import ---
+
+def export_anki_tsv(card_type, filepath):
+    """Anki uyumlu front\\tback TSV dosyası oluştur."""
+    conn = get_connection()
+
+    if card_type == "vocabulary":
+        rows = conn.execute("SELECT word, reading, meaning_tr, meaning_en FROM vocabulary").fetchall()
+        lines = [f"{r['word']} ({r['reading']})\t{r['meaning_tr']} / {r['meaning_en']}" for r in rows]
+    elif card_type == "kanji":
+        rows = conn.execute("SELECT kanji, on_yomi, kun_yomi, meaning_tr, meaning_en FROM kanji").fetchall()
+        lines = [f"{r['kanji']}\t{r['meaning_tr']} / {r['meaning_en']} (On: {r['on_yomi']}, Kun: {r['kun_yomi']})" for r in rows]
+    elif card_type == "grammar":
+        rows = conn.execute("SELECT pattern, meaning_tr, meaning_en, example_jp FROM grammar").fetchall()
+        lines = [f"{r['pattern']}\t{r['meaning_tr']} / {r['meaning_en']}" for r in rows]
+    else:
+        conn.close()
+        return 0
+
+    conn.close()
+
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+
+    return len(lines)
+
+
+def backup_db(dest_path):
+    """Veritabanını yedekle."""
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    shutil.copy2(DB_PATH, dest_path)
+
+
+def restore_db(src_path):
+    """Yedekten veritabanını geri yükle."""
+    if not os.path.exists(src_path):
+        raise FileNotFoundError(f"Yedek dosyası bulunamadı: {src_path}")
+    shutil.copy2(src_path, DB_PATH)

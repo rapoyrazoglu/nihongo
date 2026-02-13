@@ -1,0 +1,41 @@
+name: nihongo
+version: '1.4.0'
+summary: JLPT Japanese learning app with SRS
+description: |
+  Terminal-based Japanese learning application for JLPT N5-N3.
+  Features spaced repetition (SRS), vocabulary, kanji, grammar study,
+  quiz modes, search, Anki export, and text-to-speech support.
+
+base: core22
+grade: stable
+confinement: strict
+
+architectures:
+  - build-on: amd64
+
+apps:
+  nihongo:
+    command: bin/nihongo
+    environment:
+      LANG: C.UTF-8
+    plugs:
+      - home
+      - audio-playback
+
+parts:
+  nihongo:
+    plugin: nil
+    source: .
+    build-packages:
+      - python3
+      - python3-pip
+      - python3-venv
+    stage-packages:
+      - espeak-ng
+    override-build: |
+      python3 -m venv /tmp/buildenv
+      /tmp/buildenv/bin/pip install rich>=13.0 pyinstaller
+      cd $CRAFT_PART_SRC
+      /tmp/buildenv/bin/python -m PyInstaller nihongo.spec --clean --noconfirm
+      mkdir -p $CRAFT_PART_INSTALL/bin
+      install -m755 dist/nihongo $CRAFT_PART_INSTALL/bin/nihongo

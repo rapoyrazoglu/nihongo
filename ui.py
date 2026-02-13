@@ -58,12 +58,13 @@ def show_main_menu():
     menu.add_row("5", "Kelime Listesi", "Tüm kelimeleri göster")
     menu.add_row("6", "Kanji Listesi", "Tüm kanjileri göster")
     menu.add_row("7", "İstatistikler", "İlerleme ve istatistikler")
-    menu.add_row("8", "Ayarlar", "Seviye ve günlük hedef")
+    menu.add_row("8", "Ayarlar", "Dışa aktar, yedekle, geri yükle")
+    menu.add_row("9", "Ara", "Kelime, kanji, dilbilgisi ara")
     menu.add_row("0", "Çıkış", "Programdan çık")
 
     console.print(Panel(menu, title="[bold]Ana Menü[/bold]", border_style="green"))
 
-    return Prompt.ask("\n[bold cyan]Seçiminiz[/bold cyan]", choices=["0","1","2","3","4","5","6","7","8"], default="1")
+    return Prompt.ask("\n[bold cyan]Seçiminiz[/bold cyan]", choices=["0","1","2","3","4","5","6","7","8","9"], default="1")
 
 
 def show_level_select(title="Seviye Seçin"):
@@ -321,6 +322,69 @@ def show_quiz_menu():
 
     console.print(menu)
     return Prompt.ask("Seçiminiz", choices=["0","1","2","3","4"], default="1")
+
+
+def show_search_results(results):
+    """Arama sonuçlarını kategorilere göre göster."""
+    found = False
+
+    if results["vocabulary"]:
+        found = True
+        table = Table(title="Kelime Sonuçları", box=box.SIMPLE_HEAVY, border_style="magenta")
+        table.add_column("#", style="dim", width=4)
+        table.add_column("Kelime", style="bold white")
+        table.add_column("Okuma", style="green")
+        table.add_column("Türkçe", style="yellow")
+        table.add_column("Seviye", style="cyan", width=5)
+        for i, v in enumerate(results["vocabulary"], 1):
+            table.add_row(str(i), v["word"], v["reading"], v["meaning_tr"], v["level"])
+        console.print(table)
+        console.print()
+
+    if results["kanji"]:
+        found = True
+        table = Table(title="Kanji Sonuçları", box=box.SIMPLE_HEAVY, border_style="blue")
+        table.add_column("#", style="dim", width=4)
+        table.add_column("Kanji", style="bold white")
+        table.add_column("On'yomi", style="magenta")
+        table.add_column("Kun'yomi", style="green")
+        table.add_column("Türkçe", style="yellow")
+        table.add_column("Seviye", style="cyan", width=5)
+        for i, k in enumerate(results["kanji"], 1):
+            table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k["meaning_tr"], k["level"])
+        console.print(table)
+        console.print()
+
+    if results["grammar"]:
+        found = True
+        table = Table(title="Dilbilgisi Sonuçları", box=box.SIMPLE_HEAVY, border_style="yellow")
+        table.add_column("#", style="dim", width=4)
+        table.add_column("Kalıp", style="bold white")
+        table.add_column("Türkçe", style="yellow")
+        table.add_column("Seviye", style="cyan", width=5)
+        for i, g in enumerate(results["grammar"], 1):
+            table.add_row(str(i), g["pattern"], g["meaning_tr"], g["level"])
+        console.print(table)
+        console.print()
+
+    if not found:
+        console.print("[yellow]Sonuç bulunamadı.[/yellow]\n")
+
+
+def show_settings_menu():
+    """Ayarlar alt menüsünü göster."""
+    console.print("\n[bold]Ayarlar[/bold]\n")
+    menu = Table(show_header=False, box=box.SIMPLE, padding=(0, 2))
+    menu.add_column("No", style="bold cyan", width=4)
+    menu.add_column("Seçenek", style="white")
+
+    menu.add_row("1", "Anki'ye Aktar (TSV)")
+    menu.add_row("2", "Veritabanını Yedekle")
+    menu.add_row("3", "Yedekten Geri Yükle")
+    menu.add_row("0", "Geri")
+
+    console.print(menu)
+    return Prompt.ask("Seçiminiz", choices=["0", "1", "2", "3"], default="0")
 
 
 def show_quiz_result(correct, total):

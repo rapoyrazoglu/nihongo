@@ -77,31 +77,44 @@ def seed_kanji():
 
 def seed_grammar():
     conn = get_connection()
-    count = conn.execute("SELECT COUNT(*) as cnt FROM grammar").fetchone()["cnt"]
-    if count > 0:
-        print(f"  Dilbilgisi tablosu zaten dolu ({count} kayıt), atlanıyor.")
-        conn.close()
-        return
+    before = conn.execute("SELECT COUNT(*) as cnt FROM grammar").fetchone()["cnt"]
 
     data = load_json("grammar.json")
     for item in data:
         conn.execute("""
-            INSERT INTO grammar (pattern, meaning_tr, meaning_en, level, example_jp, example_tr, notes)
+            INSERT OR IGNORE INTO grammar (pattern, meaning_tr, meaning_en, level, example_jp, example_tr, notes)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         """, (
             item["pattern"], item["meaning_tr"], item["meaning_en"],
             item["level"], item.get("example_jp", ""), item.get("example_tr", ""),
             item.get("notes", "")
         ))
-    print(f"  Dilbilgisi: {len(data)} kural yüklendi.")
 
     conn.commit()
+    after = conn.execute("SELECT COUNT(*) as cnt FROM grammar").fetchone()["cnt"]
+    added = after - before
+    if added > 0:
+        print(f"  Dilbilgisi: {added} yeni kural eklendi (toplam: {after}).")
+    else:
+        print(f"  Dilbilgisi: zaten güncel ({after} kural).")
+    conn.close()
+
+
+def migrate_grammar_unique():
+    """Mevcut grammar tablosuna UNIQUE kısıtlaması ekle (yoksa)."""
+    conn = get_connection()
+    try:
+        conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_grammar_pattern ON grammar(pattern)")
+        conn.commit()
+    except Exception:
+        pass
     conn.close()
 
 
 def main():
     print("Veritabanı oluşturuluyor...")
     init_db()
+    migrate_grammar_unique()
     print("Tablolar oluşturuldu.\n")
 
     print("Veriler yükleniyor...")

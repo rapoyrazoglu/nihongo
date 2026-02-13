@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Nihongo Master
+Comment=JLPT Japonca Ogrenme Uygulamasi
+Exec=nihongo
+Icon=nihongo
+Terminal=true
+Type=Application
+Categories=Education;Languages;
+Keywords=japanese;jlpt;nihongo;japonca;

@@ -39,7 +39,7 @@ if "--version" in sys.argv:
     sys.exit(0)
 
 import db
-from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_stats, show_quiz_menu, clear, banner
+from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_stats, show_quiz_menu, show_search_results, show_settings_menu, clear, banner
 from rich.prompt import Prompt, IntPrompt
 import quiz
 
@@ -63,6 +63,10 @@ def ensure_db():
     else:
         # Tabloların var olduğundan emin ol
         db.init_db()
+        # Yeni dilbilgisi kurallarını ekle (INSERT OR IGNORE)
+        from data.init_db import migrate_grammar_unique, seed_grammar
+        migrate_grammar_unique()
+        seed_grammar()
 
 
 def handle_study_vocab():
@@ -120,14 +124,57 @@ def handle_kanji_list():
         Prompt.ask("\n[dim]Devam etmek için Enter[/dim]", default="")
 
 
-def handle_settings():
+def handle_search():
     clear()
     banner()
-    console.print("\n[bold]Ayarlar[/bold]\n")
-    console.print("[dim]Ayarlar şu anda basit tutulmuştur.[/dim]")
-    console.print("[dim]Veritabanını sıfırlamak için: python nihongo.py --init[/dim]")
+    console.print("\n[bold]Arama[/bold]\n")
+    query = Prompt.ask("[cyan]Aranacak kelime/kanji/kalıp[/cyan]")
+    if not query.strip():
+        return
+    results = db.search_all(query.strip())
     console.print()
+    show_search_results(results)
     Prompt.ask("[dim]Devam etmek için Enter[/dim]", default="")
+
+
+def handle_settings():
+    export_dir = os.path.join(os.path.expanduser("~"), "nihongo_export")
+    while True:
+        clear()
+        banner()
+        choice = show_settings_menu()
+
+        if choice == "0":
+            return
+        elif choice == "1":
+            # Anki export
+            console.print("\n[bold]Anki'ye Aktar[/bold]")
+            console.print("  [cyan]1[/cyan] Kelime")
+            console.print("  [cyan]2[/cyan] Kanji")
+            console.print("  [cyan]3[/cyan] Dilbilgisi")
+            sub = Prompt.ask("Seçiminiz", choices=["1", "2", "3"], default="1")
+            card_type = {"1": "vocabulary", "2": "kanji", "3": "grammar"}[sub]
+            filepath = os.path.join(export_dir, f"{card_type}_anki.tsv")
+            count = db.export_anki_tsv(card_type, filepath)
+            console.print(f"\n[green]{count} kart dışa aktarıldı: {filepath}[/green]")
+            Prompt.ask("[dim]Devam etmek için Enter[/dim]", default="")
+        elif choice == "2":
+            # Backup
+            from datetime import datetime
+            stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            dest = os.path.join(export_dir, f"nihongo_backup_{stamp}.db")
+            db.backup_db(dest)
+            console.print(f"\n[green]Yedek oluşturuldu: {dest}[/green]")
+            Prompt.ask("[dim]Devam etmek için Enter[/dim]", default="")
+        elif choice == "3":
+            # Restore
+            src = Prompt.ask("Yedek dosya yolu")
+            try:
+                db.restore_db(src.strip())
+                console.print("[green]Veritabanı geri yüklendi! Uygulamayı yeniden başlatın.[/green]")
+            except FileNotFoundError as e:
+                console.print(f"[red]{e}[/red]")
+            Prompt.ask("[dim]Devam etmek için Enter[/dim]", default="")
 
 
 def main():
@@ -172,6 +219,8 @@ def main():
                 show_stats()
             elif choice == "8":
                 handle_settings()
+            elif choice == "9":
+                handle_search()
 
     except KeyboardInterrupt:
         console.print("\n\n[bold red]さようなら！[/bold red] (Sayounara!)\n")
