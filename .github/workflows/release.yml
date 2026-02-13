@@ -74,9 +74,10 @@ jobs:
           path: ${{ steps.snap.outputs.snap }}
 
       - name: Publish to Snap Store
-        if: ${{ secrets.SNAP_TOKEN != '' }}
+        if: env.HAS_SNAP_TOKEN == 'true'
         uses: snapcore/action-publish@v1
         env:
+          HAS_SNAP_TOKEN: ${{ secrets.SNAP_TOKEN != '' }}
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAP_TOKEN }}
         with:
           snap: ${{ steps.snap.outputs.snap }}
