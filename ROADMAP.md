@@ -4,6 +4,10 @@
 
 ## Released
 
+### v1.5.7 - Interactive Lists
+- [x] Vocab/kanji list: enter number to see detailed card
+- [x] Shows full info (example, compounds, part of speech, etc.)
+
 ### v1.5.6 - Project Restructure
 - [x] Move all source code into `src/` directory
 - [x] Clean project root (only build/config files remain)
