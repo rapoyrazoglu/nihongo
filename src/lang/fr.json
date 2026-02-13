@@ -81,6 +81,7 @@
   "no_kanji_level": "Aucun Kanji à ce niveau.",
   "vocab_list_title": "Liste de vocabulaire {level}",
   "kanji_list_title": "Liste de Kanji {level}",
+  "list.detail_prompt": "Entrez un numéro pour les détails (0 = retour)",
 
   "stats.title": "Progrès général",
   "stats.category": "Catégorie",

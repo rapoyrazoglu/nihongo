@@ -81,6 +81,7 @@
   "no_kanji_level": "Bu seviyede kanji yok.",
   "vocab_list_title": "{level} Kelime Listesi",
   "kanji_list_title": "{level} Kanji Listesi",
+  "list.detail_prompt": "Detay icin numara girin (0 = geri)",
 
   "stats.title": "Genel Ilerleme",
   "stats.category": "Kategori",

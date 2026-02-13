@@ -81,6 +81,7 @@
   "no_kanji_level": "Keine Kanji auf dieser Stufe.",
   "vocab_list_title": "{level} Wortschatzliste",
   "kanji_list_title": "{level} Kanji-Liste",
+  "list.detail_prompt": "Nummer eingeben für Details (0 = zurück)",
 
   "stats.title": "Gesamtfortschritt",
   "stats.category": "Kategorie",

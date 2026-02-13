@@ -50,7 +50,7 @@ if "--update" in sys.argv:
     sys.exit(0)
 
 import db
-from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, clear, banner
+from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, clear, banner
 from rich.prompt import Prompt, IntPrompt
 import quiz
 
@@ -119,18 +119,42 @@ def handle_quiz():
 
 def handle_vocab_list():
     level = show_level_select(t("vocab_list_level"))
-    if level:
+    if not level:
+        return
+    while True:
         clear()
-        show_vocab_list(level)
-        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        vocabs = show_vocab_list(level)
+        if not vocabs:
+            Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+            return
+        choice = Prompt.ask(f"\n[cyan]{t('list.detail_prompt')}[/cyan]", default="0")
+        if choice == "0" or not choice.isdigit():
+            return
+        idx = int(choice)
+        if 1 <= idx <= len(vocabs):
+            clear()
+            show_vocab_card(vocabs[idx - 1], show_answer=True)
+            Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
 
 
 def handle_kanji_list():
     level = show_level_select(t("kanji_list_level"))
-    if level:
+    if not level:
+        return
+    while True:
         clear()
-        show_kanji_list(level)
-        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        kanjis = show_kanji_list(level)
+        if not kanjis:
+            Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+            return
+        choice = Prompt.ask(f"\n[cyan]{t('list.detail_prompt')}[/cyan]", default="0")
+        if choice == "0" or not choice.isdigit():
+            return
+        idx = int(choice)
+        if 1 <= idx <= len(kanjis):
+            clear()
+            show_kanji_card(kanjis[idx - 1], show_answer=True)
+            Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
 
 
 def handle_search():

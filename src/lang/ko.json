@@ -81,6 +81,7 @@
   "no_kanji_level": "이 레벨에 Kanji가 없습니다.",
   "vocab_list_title": "{level} 어휘 목록",
   "kanji_list_title": "{level} Kanji 목록",
+  "list.detail_prompt": "상세 보기 번호 입력 (0 = 뒤로)",
 
   "stats.title": "전체 진행 상황",
   "stats.category": "카테고리",

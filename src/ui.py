@@ -206,11 +206,11 @@ def card_status_label(review):
 
 
 def show_vocab_list(level):
-    """Kelime listesini goster."""
+    """Kelime listesini goster. Listeyi dondurur."""
     vocabs = db.get_vocabulary(level=level)
     if not vocabs:
         console.print(f"[yellow]{t('no_vocab_level')}[/yellow]")
-        return
+        return []
 
     mf = meaning_field()
     table = Table(title=t("vocab_list_title", level=level), box=box.SIMPLE_HEAVY, border_style="magenta")
@@ -229,14 +229,15 @@ def show_vocab_list(level):
             table.add_row(str(i), v["word"], v["reading"], v[mf], v["part_of_speech"])
 
     console.print(table)
+    return vocabs
 
 
 def show_kanji_list(level):
-    """Kanji listesini goster."""
+    """Kanji listesini goster. Listeyi dondurur."""
     kanjis = db.get_kanji(level=level)
     if not kanjis:
         console.print(f"[yellow]{t('no_kanji_level')}[/yellow]")
-        return
+        return []
 
     mf = meaning_field()
     table = Table(title=t("kanji_list_title", level=level), box=box.SIMPLE_HEAVY, border_style="blue")
@@ -251,6 +252,7 @@ def show_kanji_list(level):
         table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k[mf], str(k["stroke_count"]))
 
     console.print(table)
+    return kanjis
 
 
 def show_stats():
