@@ -2,9 +2,21 @@
 """PyInstaller spec for nihongo - JLPT öğrenme uygulaması."""
 
 import os
+import glob
 
 block_cipher = None
 ROOT = os.path.dirname(os.path.abspath(SPEC))
+
+# rich unicode data modülleri dinamik yükleniyor, PyInstaller yakalayamıyor
+_rich_unicode = []
+try:
+    import rich._unicode_data
+    _ud_dir = os.path.dirname(rich._unicode_data.__file__)
+    for f in glob.glob(os.path.join(_ud_dir, 'unicode*.py')):
+        name = os.path.basename(f).removesuffix('.py')
+        _rich_unicode.append(f'rich._unicode_data.{name}')
+except ImportError:
+    pass
 
 a = Analysis(
     ['nihongo.py'],
@@ -13,7 +25,7 @@ a = Analysis(
     datas=[
         ('data/*.json', 'data'),
     ],
-    hiddenimports=[],
+    hiddenimports=_rich_unicode,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
