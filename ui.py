@@ -169,6 +169,31 @@ def show_review_prompt():
     return Prompt.ask("Değerlendirme", choices=["1","2","3","4","s","q"], default="3")
 
 
+def show_srs_feedback(quality, interval):
+    """Rating sonrası SRS geri bildirimini göster."""
+    if quality < 3:
+        console.print(f"\n  [red]Tekrar yarın[/red]")
+    elif interval == 1:
+        console.print(f"\n  [yellow]Sonraki tekrar: yarın[/yellow]")
+    elif interval <= 7:
+        console.print(f"\n  [green]Sonraki tekrar: {interval} gün sonra[/green]")
+    else:
+        console.print(f"\n  [bold green]Sonraki tekrar: {interval} gün sonra[/bold green]")
+
+
+def card_status_label(review):
+    """Kart durum etiketi döndür."""
+    if review is None:
+        return "[bright_cyan][Yeni][/bright_cyan]"
+    if review["repetitions"] == 0:
+        return "[red][Tekrar][/red]"
+    if review["interval"] < 7:
+        return "[yellow][Öğreniyor][/yellow]"
+    if review["interval"] < 30:
+        return "[green][Biliyor][/green]"
+    return "[bold green][Usta][/bold green]"
+
+
 def show_vocab_list(level):
     """Kelime listesini göster."""
     vocabs = db.get_vocabulary(level=level)

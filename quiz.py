@@ -46,7 +46,9 @@ def study_vocabulary(level):
     new_count = 0
 
     for i, card in enumerate(cards):
-        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} ──[/dim]\n")
+        review = db.get_review("vocabulary", card["id"])
+        status = ui.card_status_label(review)
+        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
 
         # Kartı göster (cevapsız)
         ui.show_vocab_card(card, show_answer=False)
@@ -54,7 +56,7 @@ def study_vocabulary(level):
 
         # Cevabı göster
         ui.clear()
-        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} ──[/dim]\n")
+        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
         ui.show_vocab_card(card, show_answer=True)
 
         # Değerlendirme
@@ -65,8 +67,8 @@ def study_vocabulary(level):
             continue
 
         quality = _quality_from_choice(choice)
-        is_new = db.get_review("vocabulary", card["id"]) is None
-        srs.review_card("vocabulary", card["id"], quality)
+        is_new = review is None
+        interval, next_date = srs.review_card("vocabulary", card["id"], quality)
 
         reviewed += 1
         if quality >= 3:
@@ -74,6 +76,8 @@ def study_vocabulary(level):
         if is_new:
             new_count += 1
 
+        ui.show_srs_feedback(quality, interval)
+        time.sleep(0.8)
         ui.clear()
 
     elapsed = int(time.time() - start_time)
@@ -112,13 +116,15 @@ def study_kanji(level):
     new_count = 0
 
     for i, card in enumerate(cards):
-        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} ──[/dim]\n")
+        review = db.get_review("kanji", card["id"])
+        status = ui.card_status_label(review)
+        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
 
         ui.show_kanji_card(card, show_answer=False)
         input()
 
         ui.clear()
-        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} ──[/dim]\n")
+        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
         ui.show_kanji_card(card, show_answer=True)
 
         choice = ui.show_review_prompt()
@@ -128,8 +134,8 @@ def study_kanji(level):
             continue
 
         quality = _quality_from_choice(choice)
-        is_new = db.get_review("kanji", card["id"]) is None
-        srs.review_card("kanji", card["id"], quality)
+        is_new = review is None
+        interval, next_date = srs.review_card("kanji", card["id"], quality)
 
         reviewed += 1
         if quality >= 3:
@@ -137,6 +143,8 @@ def study_kanji(level):
         if is_new:
             new_count += 1
 
+        ui.show_srs_feedback(quality, interval)
+        time.sleep(0.8)
         ui.clear()
 
     elapsed = int(time.time() - start_time)
@@ -175,13 +183,15 @@ def study_grammar(level):
     new_count = 0
 
     for i, card in enumerate(cards):
-        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} ──[/dim]\n")
+        review = db.get_review("grammar", card["id"])
+        status = ui.card_status_label(review)
+        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
 
         ui.show_grammar_card(card, show_answer=False)
         input()
 
         ui.clear()
-        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} ──[/dim]\n")
+        ui.console.print(f"[dim]── Kart {i+1}/{len(cards)} {status} ──[/dim]\n")
         ui.show_grammar_card(card, show_answer=True)
 
         choice = ui.show_review_prompt()
@@ -191,8 +201,8 @@ def study_grammar(level):
             continue
 
         quality = _quality_from_choice(choice)
-        is_new = db.get_review("grammar", card["id"]) is None
-        srs.review_card("grammar", card["id"], quality)
+        is_new = review is None
+        interval, next_date = srs.review_card("grammar", card["id"], quality)
 
         reviewed += 1
         if quality >= 3:
@@ -200,6 +210,8 @@ def study_grammar(level):
         if is_new:
             new_count += 1
 
+        ui.show_srs_feedback(quality, interval)
+        time.sleep(0.8)
         ui.clear()
 
     elapsed = int(time.time() - start_time)

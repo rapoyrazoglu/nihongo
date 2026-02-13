@@ -10,7 +10,20 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact: nihongo-linux
+            binary: dist/nihongo
+          - os: macos-latest
+            artifact: nihongo-macos
+            binary: dist/nihongo
+          - os: windows-latest
+            artifact: nihongo-windows.exe
+            binary: dist/nihongo.exe
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
@@ -30,10 +43,31 @@ jobs:
 
       - name: Test binary
         run: |
-          ./dist/nihongo --version
+          ${{ matrix.binary }} --version
+
+      - name: Rename artifact
+        shell: bash
+        run: |
+          cp "${{ matrix.binary }}" "${{ matrix.artifact }}"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/nihongo
+          files: artifacts/*
           generate_release_notes: true
