@@ -19,12 +19,12 @@ except ImportError:
     pass
 
 a = Analysis(
-    ['nihongo.py'],
-    pathex=[ROOT],
+    ['src/nihongo.py'],
+    pathex=[os.path.join(ROOT, 'src')],
     binaries=[],
     datas=[
-        ('data/*.json', 'data'),
-        ('lang/*.json', 'lang'),
+        ('src/data/*.json', 'data'),
+        ('src/lang/*.json', 'lang'),
     ],
     hiddenimports=_rich_unicode,
     hookspath=[],

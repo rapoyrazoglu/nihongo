@@ -4,6 +4,11 @@
 
 ## Released
 
+### v1.6.0 - Project Restructure
+- [x] Move all source code into `src/` directory
+- [x] Clean project root (only build/config files remain)
+- [x] Update PyInstaller spec and README
+
 ### v1.5.5 - Updater Fix
 - [x] Fix cross-device link error when updating (`/tmp` vs binary directory)
 - [x] Temp file now created in same directory as binary

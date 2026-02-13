@@ -62,7 +62,7 @@ git clone https://github.com/rapoyrazoglu/nihongo.git
 cd nihongo
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-python nihongo.py
+python src/nihongo.py
 ```
 
 ### Build binary
@@ -123,32 +123,26 @@ Use `Ctrl+Space` to toggle Japanese input.
 
 ```
 nihongo/
-├── nihongo.py           Entry point & menu routing
-├── ui.py                Rich terminal UI
-├── quiz.py              Quiz & SRS study sessions
-├── db.py                SQLite database operations
-├── srs.py               SM-2 spaced repetition algorithm
-├── tts.py               Cross-platform text-to-speech
-├── i18n.py              Internationalization engine
-├── updater.py           Self-update via GitHub releases
-├── paths.py             Path resolution (frozen vs source)
-├── version.py           Version string
-├── data/
-│   ├── init_db.py       Database seeding
-│   ├── n5_vocab.json    JLPT N5 vocabulary (640)
-│   ├── n4_vocab.json    JLPT N4 vocabulary (502)
-│   ├── n3_vocab.json    JLPT N3 vocabulary (437)
-│   ├── n5_kanji.json    JLPT N5 kanji (145)
-│   ├── n4_kanji.json    JLPT N4 kanji (132)
-│   ├── n3_kanji.json    JLPT N3 kanji (308)
-│   └── grammar.json     Grammar patterns (120)
-├── lang/                8 translation files (tr/en/de/fr/es/pt/ko/zh)
-├── assets/              App icon
-├── Formula/             Homebrew formula
-├── .github/workflows/   CI/CD: build + release + packages
-├── nihongo.spec         PyInstaller build spec
-├── Makefile             Build & install targets
-└── requirements.txt     Python dependencies
+├── src/                   Application source code
+│   ├── nihongo.py         Entry point & menu routing
+│   ├── ui.py              Rich terminal UI
+│   ├── quiz.py            Quiz & SRS study sessions
+│   ├── db.py              SQLite database operations
+│   ├── srs.py             SM-2 spaced repetition algorithm
+│   ├── tts.py             Cross-platform text-to-speech
+│   ├── i18n.py            Internationalization engine
+│   ├── updater.py         Self-update via GitHub releases
+│   ├── paths.py           Path resolution (frozen vs source)
+│   ├── version.py         Version string
+│   ├── data/              JLPT content (vocab, kanji, grammar JSON)
+│   └── lang/              8 translation files (tr/en/de/fr/es/pt/ko/zh)
+├── assets/                App icon
+├── Formula/               Homebrew formula
+├── .github/workflows/     CI/CD: build + release + packages
+├── nihongo.spec           PyInstaller build spec
+├── Makefile               Build & install targets
+├── build.sh               Build script
+└── requirements.txt       Python dependencies
 ```
 
 ---
