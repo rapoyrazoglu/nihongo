@@ -57,32 +57,6 @@ jobs:
           name: ${{ matrix.artifact }}
           path: ${{ matrix.artifact }}
 
-  # --- Snap build & publish ---
-  snap:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build snap
-        uses: snapcore/action-build@v1
-        id: snap
-
-      - name: Upload snap artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: nihongo-snap
-          path: ${{ steps.snap.outputs.snap }}
-
-      - name: Publish to Snap Store
-        if: env.HAS_SNAP_TOKEN == 'true'
-        uses: snapcore/action-publish@v1
-        env:
-          HAS_SNAP_TOKEN: ${{ secrets.SNAP_TOKEN != '' }}
-          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAP_TOKEN }}
-        with:
-          snap: ${{ steps.snap.outputs.snap }}
-          release: stable
-
   release:
     needs: [build]
     if: always() && needs.build.result == 'success'
@@ -161,12 +135,11 @@ jobs:
             artifacts/nihongo-macos
             artifacts/nihongo-windows.exe
             artifacts/*.deb
-            artifacts/*.snap
           generate_release_notes: true
           body: |
             ## Kurulum
 
-            **Ubuntu/Debian:** `sudo snap install nihongo`
+            **Ubuntu/Debian:** `sudo dpkg -i nihongo_*.deb`
             **macOS:** `brew install rapoyrazoglu/nihongo/nihongo`
             **Arch:** `yay -S nihongo`
             **Windows:** [nihongo-windows.exe](https://github.com/rapoyrazoglu/nihongo/releases/latest) indir ve calistir
