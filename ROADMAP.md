@@ -4,7 +4,7 @@
 
 ## Released
 
-### v1.6.0 - Project Restructure
+### v1.5.6 - Project Restructure
 - [x] Move all source code into `src/` directory
 - [x] Clean project root (only build/config files remain)
 - [x] Update PyInstaller spec and README
