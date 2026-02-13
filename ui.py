@@ -86,7 +86,7 @@ def show_vocab_card(vocab, show_answer=False):
     card.add_column("key", style="bold cyan", width=15)
     card.add_column("value", style="white")
 
-    card.add_row("Kelime", f"[bold white on red] {vocab['word']} [/bold white on red]")
+    card.add_row("Kelime", f"[bold bright_white]{vocab['word']}[/bold bright_white]")
     card.add_row("Okuma", f"[bold green]{vocab['reading']}[/bold green]")
 
     if show_answer:
@@ -106,7 +106,7 @@ def show_vocab_card(vocab, show_answer=False):
 
 def show_kanji_card(kanji, show_answer=False):
     """Kanji kartını göster."""
-    kanji_display = Text(f" {kanji['kanji']} ", style="bold white on red")
+    kanji_display = Text(kanji['kanji'], style="bold bright_white")
 
     card = Table(show_header=False, box=box.ROUNDED, border_style="blue", width=60)
     card.add_column("key", style="bold cyan", width=15)
@@ -134,7 +134,7 @@ def show_grammar_card(grammar, show_answer=False):
     card.add_column("key", style="bold cyan", width=15)
     card.add_column("value", style="white")
 
-    card.add_row("Kalıp", f"[bold white on blue] {grammar['pattern']} [/bold white on blue]")
+    card.add_row("Kalıp", f"[bold bright_white]{grammar['pattern']}[/bold bright_white]")
     card.add_row("Seviye", grammar["level"])
 
     if show_answer:

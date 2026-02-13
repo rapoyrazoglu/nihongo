@@ -2572,5 +2572,1364 @@
     "part_of_speech": "fiil",
     "example_jp": "問題を是正します。",
     "example_tr": "Sorunu düzeltiriz."
+  },
+  {
+    "word": "活用する",
+    "reading": "かつようする",
+    "meaning_tr": "etkin kullanmak",
+    "meaning_en": "to utilize, to make use of",
+    "example_jp": "資源を活用するべきだ。",
+    "example_tr": "Kaynakları etkin kullanmalıyız.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "処理する",
+    "reading": "しょりする",
+    "meaning_tr": "işlemek, halletmek",
+    "meaning_en": "to process, to handle",
+    "example_jp": "大量のデータを処理する。",
+    "example_tr": "Büyük miktarda veriyi işlemek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "担当する",
+    "reading": "たんとうする",
+    "meaning_tr": "sorumlu olmak, üstlenmek",
+    "meaning_en": "to be in charge of",
+    "example_jp": "このプロジェクトを担当しています。",
+    "example_tr": "Bu projeden sorumluyum.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "配慮する",
+    "reading": "はいりょする",
+    "meaning_tr": "dikkate almak, özen göstermek",
+    "meaning_en": "to consider, to show consideration",
+    "example_jp": "環境に配慮した製品を選ぶ。",
+    "example_tr": "Çevreye özen gösteren ürünler seçmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "適応する",
+    "reading": "てきおうする",
+    "meaning_tr": "uyum sağlamak",
+    "meaning_en": "to adapt",
+    "example_jp": "新しい環境に適応する。",
+    "example_tr": "Yeni ortama uyum sağlamak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "挑戦する",
+    "reading": "ちょうせんする",
+    "meaning_tr": "meydan okumak, denemek",
+    "meaning_en": "to challenge, to attempt",
+    "example_jp": "新しいことに挑戦する。",
+    "example_tr": "Yeni şeylere meydan okumak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "構成する",
+    "reading": "こうせいする",
+    "meaning_tr": "oluşturmak, meydana getirmek",
+    "meaning_en": "to compose, to constitute",
+    "example_jp": "三つの部分で構成されている。",
+    "example_tr": "Üç bölümden oluşuyor.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "省略する",
+    "reading": "しょうりゃくする",
+    "meaning_tr": "kısaltmak, atlamak",
+    "meaning_en": "to omit, to abbreviate",
+    "example_jp": "説明を省略します。",
+    "example_tr": "Açıklamayı atlıyorum.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "蓄積する",
+    "reading": "ちくせきする",
+    "meaning_tr": "biriktirmek",
+    "meaning_en": "to accumulate",
+    "example_jp": "経験を蓄積する。",
+    "example_tr": "Deneyim biriktirmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "整備する",
+    "reading": "せいびする",
+    "meaning_tr": "düzenlemek, hazırlamak",
+    "meaning_en": "to maintain, to develop",
+    "example_jp": "インフラを整備する必要がある。",
+    "example_tr": "Altyapıyı düzenleme ihtiyacı var.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "統一する",
+    "reading": "とういつする",
+    "meaning_tr": "birleştirmek",
+    "meaning_en": "to unify",
+    "example_jp": "ルールを統一する。",
+    "example_tr": "Kuralları birleştirmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "想定する",
+    "reading": "そうていする",
+    "meaning_tr": "varsaymak, öngörmek",
+    "meaning_en": "to assume, to suppose",
+    "example_jp": "最悪の事態を想定する。",
+    "example_tr": "En kötü durumu varsaymak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "保障する",
+    "reading": "ほしょうする",
+    "meaning_tr": "güvence altına almak",
+    "meaning_en": "to guarantee, to secure",
+    "example_jp": "国民の権利を保障する。",
+    "example_tr": "Vatandaşların haklarını güvence altına almak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "削減する",
+    "reading": "さくげんする",
+    "meaning_tr": "azaltmak, kısmak",
+    "meaning_en": "to reduce, to cut down",
+    "example_jp": "経費を削減する方針だ。",
+    "example_tr": "Masrafları azaltma yönünde bir politika.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "伴う",
+    "reading": "ともなう",
+    "meaning_tr": "eşlik etmek, beraberinde getirmek",
+    "meaning_en": "to accompany, to involve",
+    "example_jp": "成長には痛みが伴う。",
+    "example_tr": "Büyümeye acı eşlik eder.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "覆す",
+    "reading": "くつがえす",
+    "meaning_tr": "altüst etmek, çürütmek",
+    "meaning_en": "to overturn, to reverse",
+    "example_jp": "常識を覆す発見があった。",
+    "example_tr": "Genel kanıyı altüst eden bir keşif oldu.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "補う",
+    "reading": "おぎなう",
+    "meaning_tr": "tamamlamak, telafi etmek",
+    "meaning_en": "to supplement, to compensate",
+    "example_jp": "不足を補う方法を考える。",
+    "example_tr": "Eksikliği telafi etme yöntemini düşünmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "募る",
+    "reading": "つのる",
+    "meaning_tr": "toplamak; artmak",
+    "meaning_en": "to recruit; to intensify",
+    "example_jp": "ボランティアを募る。",
+    "example_tr": "Gönüllü toplamak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "潜む",
+    "reading": "ひそむ",
+    "meaning_tr": "gizlenmek, pusuya yatmak",
+    "meaning_en": "to lurk, to hide",
+    "example_jp": "危険が潜んでいる。",
+    "example_tr": "Tehlike pusuya yatmış.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "漂う",
+    "reading": "ただよう",
+    "meaning_tr": "süzülmek, havada asılı kalmak",
+    "meaning_en": "to drift, to float",
+    "example_jp": "いい香りが漂っている。",
+    "example_tr": "Güzel bir koku süzülüyor.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "遮る",
+    "reading": "さえぎる",
+    "meaning_tr": "engellemek, kesmek",
+    "meaning_en": "to block, to interrupt",
+    "example_jp": "彼の話を遮ってはいけない。",
+    "example_tr": "Onun sözünü kesmemelisin.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "偏る",
+    "reading": "かたよる",
+    "meaning_tr": "taraf tutmak, dengesiz olmak",
+    "meaning_en": "to be biased, to lean",
+    "example_jp": "食事が偏っている。",
+    "example_tr": "Beslenme dengesiz.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "怠る",
+    "reading": "おこたる",
+    "meaning_tr": "ihmal etmek",
+    "meaning_en": "to neglect, to be lazy about",
+    "example_jp": "義務を怠ってはいけない。",
+    "example_tr": "Görevini ihmal etmemelisin.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "兼ねる",
+    "reading": "かねる",
+    "meaning_tr": "birden fazla işi üstlenmek",
+    "meaning_en": "to serve two purposes, to combine",
+    "example_jp": "彼は監督と選手を兼ねている。",
+    "example_tr": "O, hem yönetmen hem oyuncu rolünü üstleniyor.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "抑える",
+    "reading": "おさえる",
+    "meaning_tr": "bastırmak, kontrol altında tutmak",
+    "meaning_en": "to suppress, to restrain",
+    "example_jp": "感情を抑える。",
+    "example_tr": "Duyguları bastırmak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "説明",
+    "reading": "せつめい",
+    "meaning_tr": "açıklama",
+    "meaning_en": "explanation",
+    "example_jp": "詳しい説明をお願いします。",
+    "example_tr": "Ayrıntılı açıklama rica ederim.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "意見",
+    "reading": "いけん",
+    "meaning_tr": "görüş, fikir",
+    "meaning_en": "opinion",
+    "example_jp": "あなたの意見を聞かせてください。",
+    "example_tr": "Fikrini söyle lütfen.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "程度",
+    "reading": "ていど",
+    "meaning_tr": "derece, düzey",
+    "meaning_en": "degree, extent",
+    "example_jp": "ある程度は理解できる。",
+    "example_tr": "Bir dereceye kadar anlayabilirim.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "性質",
+    "reading": "せいしつ",
+    "meaning_tr": "özellik, nitelik",
+    "meaning_en": "nature, property",
+    "example_jp": "この物質の性質を調べる。",
+    "example_tr": "Bu maddenin özelliğini araştırmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "問題点",
+    "reading": "もんだいてん",
+    "meaning_tr": "sorunlu nokta",
+    "meaning_en": "problem point, issue",
+    "example_jp": "問題点を整理しましょう。",
+    "example_tr": "Sorunlu noktaları düzenleyelim.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "課題",
+    "reading": "かだい",
+    "meaning_tr": "ödev, sorun",
+    "meaning_en": "task, issue, assignment",
+    "example_jp": "今後の課題を明確にする。",
+    "example_tr": "Bundan sonraki sorunları netleştirmek.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "規模",
+    "reading": "きぼ",
+    "meaning_tr": "ölçek, büyüklük",
+    "meaning_en": "scale, size",
+    "example_jp": "大規模な調査を行う。",
+    "example_tr": "Büyük ölçekli bir araştırma yapmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "実態",
+    "reading": "じったい",
+    "meaning_tr": "gerçek durum",
+    "meaning_en": "actual condition, reality",
+    "example_jp": "実態を把握する必要がある。",
+    "example_tr": "Gerçek durumu kavrama ihtiyacı var.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "趣旨",
+    "reading": "しゅし",
+    "meaning_tr": "amaç, ana fikir",
+    "meaning_en": "purpose, gist",
+    "example_jp": "この計画の趣旨を説明します。",
+    "example_tr": "Bu planın amacını açıklıyorum.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "動機",
+    "reading": "どうき",
+    "meaning_tr": "güdü, motivasyon",
+    "meaning_en": "motive, motivation",
+    "example_jp": "犯行の動機は何ですか。",
+    "example_tr": "Suçun güdüsü nedir?",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "恩恵",
+    "reading": "おんけい",
+    "meaning_tr": "lütuf, fayda",
+    "meaning_en": "benefit, blessing",
+    "example_jp": "技術の恩恵を受ける。",
+    "example_tr": "Teknolojinin nimetlerinden faydalanmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "摩擦",
+    "reading": "まさつ",
+    "meaning_tr": "sürtüşme",
+    "meaning_en": "friction",
+    "example_jp": "国際的な摩擦が生じた。",
+    "example_tr": "Uluslararası sürtüşme ortaya çıktı.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "秩序",
+    "reading": "ちつじょ",
+    "meaning_tr": "düzen, nizam",
+    "meaning_en": "order, discipline",
+    "example_jp": "社会の秩序を守る。",
+    "example_tr": "Toplum düzenini korumak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "威厳",
+    "reading": "いげん",
+    "meaning_tr": "vakar, heybet",
+    "meaning_en": "dignity, majesty",
+    "example_jp": "彼は威厳のある態度を取った。",
+    "example_tr": "O, vakarlı bir tavır aldı.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "素材",
+    "reading": "そざい",
+    "meaning_tr": "hammadde, malzeme",
+    "meaning_en": "material, ingredient",
+    "example_jp": "新しい素材を開発する。",
+    "example_tr": "Yeni malzeme geliştirmek.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "資源",
+    "reading": "しげん",
+    "meaning_tr": "kaynak",
+    "meaning_en": "resource",
+    "example_jp": "天然資源を大切にする。",
+    "example_tr": "Doğal kaynakları korumak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "成果",
+    "reading": "せいか",
+    "meaning_tr": "sonuç, başarı",
+    "meaning_en": "result, achievement",
+    "example_jp": "研究の成果を発表する。",
+    "example_tr": "Araştırma sonuçlarını açıklamak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "措置",
+    "reading": "そち",
+    "meaning_tr": "önlem, tedbir",
+    "meaning_en": "measure, step",
+    "example_jp": "緊急の措置を取る必要がある。",
+    "example_tr": "Acil önlem alma ihtiyacı var.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "体制",
+    "reading": "たいせい",
+    "meaning_tr": "sistem, yapı, rejim",
+    "meaning_en": "system, structure, regime",
+    "example_jp": "新しい体制を築く。",
+    "example_tr": "Yeni bir yapı kurmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "負担",
+    "reading": "ふたん",
+    "meaning_tr": "yük, külfet",
+    "meaning_en": "burden, load",
+    "example_jp": "経済的な負担が大きい。",
+    "example_tr": "Ekonomik yük büyük.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "展望",
+    "reading": "てんぼう",
+    "meaning_tr": "görünüm, gelecek beklentisi",
+    "meaning_en": "outlook, prospect",
+    "example_jp": "将来の展望を語る。",
+    "example_tr": "Geleceğe dair beklentileri anlatmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "拠点",
+    "reading": "きょてん",
+    "meaning_tr": "üs, merkez",
+    "meaning_en": "base, hub",
+    "example_jp": "海外に拠点を置く企業が増えた。",
+    "example_tr": "Yurt dışında merkezi olan şirketler arttı.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "風潮",
+    "reading": "ふうちょう",
+    "meaning_tr": "akım, eğilim",
+    "meaning_en": "trend, tendency",
+    "example_jp": "最近そういう風潮がある。",
+    "example_tr": "Son zamanlarda böyle bir akım var.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "弊害",
+    "reading": "へいがい",
+    "meaning_tr": "zarar, kötü etki",
+    "meaning_en": "harmful effect, evil",
+    "example_jp": "長時間労働の弊害が指摘されている。",
+    "example_tr": "Uzun çalışma saatlerinin zararları belirtiliyor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "乏しい",
+    "reading": "とぼしい",
+    "meaning_tr": "kıt, yetersiz",
+    "meaning_en": "scarce, meager",
+    "example_jp": "経験が乏しい。",
+    "example_tr": "Deneyim yetersiz.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "儚い",
+    "reading": "はかない",
+    "meaning_tr": "geçici, boş",
+    "meaning_en": "fleeting, ephemeral",
+    "example_jp": "人生は儚い。",
+    "example_tr": "Hayat geçicidir.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "潔い",
+    "reading": "いさぎよい",
+    "meaning_tr": "onurlu, mert",
+    "meaning_en": "graceful in defeat, manly",
+    "example_jp": "潔く負けを認めた。",
+    "example_tr": "Mertçe yenilgiyi kabul etti.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "逞しい",
+    "reading": "たくましい",
+    "meaning_tr": "güçlü, dayanıklı",
+    "meaning_en": "sturdy, robust",
+    "example_jp": "逞しい体つきをしている。",
+    "example_tr": "Güçlü bir vücut yapısına sahip.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "紛らわしい",
+    "reading": "まぎらわしい",
+    "meaning_tr": "karıştırıcı, kafa karıştıran",
+    "meaning_en": "confusing, misleading",
+    "example_jp": "紛らわしい表現を避ける。",
+    "example_tr": "Kafa karıştıran ifadelerden kaçınmak.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "煩わしい",
+    "reading": "わずらわしい",
+    "meaning_tr": "sıkıcı, zahmetli",
+    "meaning_en": "troublesome, annoying",
+    "example_jp": "煩わしい手続きが多い。",
+    "example_tr": "Zahmetli prosedürler çok.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "空しい",
+    "reading": "むなしい",
+    "meaning_tr": "boş, anlamsız",
+    "meaning_en": "empty, futile",
+    "example_jp": "空しい努力だった。",
+    "example_tr": "Boşuna bir çabaydı.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "慌ただしい",
+    "reading": "あわただしい",
+    "meaning_tr": "telaşlı, koşuşturmalı",
+    "meaning_en": "busy, hectic",
+    "example_jp": "慌ただしい一日だった。",
+    "example_tr": "Telaşlı bir gündü.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "目覚ましい",
+    "reading": "めざましい",
+    "meaning_tr": "göz kamaştırıcı, dikkate değer",
+    "meaning_en": "remarkable, striking",
+    "example_jp": "目覚ましい成長を遂げた。",
+    "example_tr": "Dikkate değer bir büyüme kaydetti.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "望ましい",
+    "reading": "のぞましい",
+    "meaning_tr": "arzu edilen, tercih edilen",
+    "meaning_en": "desirable, preferable",
+    "example_jp": "望ましい結果が得られた。",
+    "example_tr": "Arzu edilen sonuç elde edildi.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "重大",
+    "reading": "じゅうだい",
+    "meaning_tr": "ciddi, önemli",
+    "meaning_en": "serious, grave",
+    "example_jp": "重大な問題が発生した。",
+    "example_tr": "Ciddi bir sorun meydana geldi.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "本格的",
+    "reading": "ほんかくてき",
+    "meaning_tr": "tam anlamıyla, gerçek",
+    "meaning_en": "full-scale, genuine",
+    "example_jp": "本格的な夏が始まった。",
+    "example_tr": "Gerçek anlamda yaz başladı.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "必然的",
+    "reading": "ひつぜんてき",
+    "meaning_tr": "kaçınılmaz",
+    "meaning_en": "inevitable, necessary",
+    "example_jp": "それは必然的な結果だった。",
+    "example_tr": "O kaçınılmaz bir sonuçtu.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "否定的",
+    "reading": "ひていてき",
+    "meaning_tr": "olumsuz",
+    "meaning_en": "negative, denying",
+    "example_jp": "否定的な意見が多い。",
+    "example_tr": "Olumsuz görüşler çok.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "肯定的",
+    "reading": "こうていてき",
+    "meaning_tr": "olumlu",
+    "meaning_en": "affirmative, positive",
+    "example_jp": "肯定的な評価を受けた。",
+    "example_tr": "Olumlu değerlendirme aldı.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "劇的",
+    "reading": "げきてき",
+    "meaning_tr": "dramatik",
+    "meaning_en": "dramatic",
+    "example_jp": "劇的な変化が起きた。",
+    "example_tr": "Dramatik bir değişim yaşandı.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "対照的",
+    "reading": "たいしょうてき",
+    "meaning_tr": "zıt, karşıt",
+    "meaning_en": "contrasting",
+    "example_jp": "二人は対照的な性格だ。",
+    "example_tr": "İkisi zıt karakterlere sahip.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "一応",
+    "reading": "いちおう",
+    "meaning_tr": "bir şekilde, her ihtimale karşı",
+    "meaning_en": "tentatively, just in case",
+    "example_jp": "一応確認しておきます。",
+    "example_tr": "Her ihtimale karşı kontrol edeyim.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "少なくとも",
+    "reading": "すくなくとも",
+    "meaning_tr": "en azından",
+    "meaning_en": "at least",
+    "example_jp": "少なくとも三日はかかる。",
+    "example_tr": "En azından üç gün sürer.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "必ずしも",
+    "reading": "かならずしも",
+    "meaning_tr": "her zaman değil, mutlaka değil",
+    "meaning_en": "not necessarily",
+    "example_jp": "高いものが必ずしも良いとは限らない。",
+    "example_tr": "Pahalı olan her zaman iyi olmayabilir.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "たちまち",
+    "reading": "たちまち",
+    "meaning_tr": "aniden, bir anda",
+    "meaning_en": "instantly, in no time",
+    "example_jp": "噂はたちまち広がった。",
+    "example_tr": "Söylenti bir anda yayıldı.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "いっそう",
+    "reading": "いっそう",
+    "meaning_tr": "daha da, bir kat daha",
+    "meaning_en": "even more, all the more",
+    "example_jp": "努力をいっそう強める。",
+    "example_tr": "Çabayı daha da artırmak.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "あくまで",
+    "reading": "あくまで",
+    "meaning_tr": "sonuna kadar, kesinlikle",
+    "meaning_en": "to the end, strictly",
+    "example_jp": "あくまで個人的な意見です。",
+    "example_tr": "Kesinlikle kişisel bir görüştür.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "いわゆる",
+    "reading": "いわゆる",
+    "meaning_tr": "sözde, tabir yerindeyse",
+    "meaning_en": "so-called",
+    "example_jp": "いわゆる専門家に聞いた。",
+    "example_tr": "Sözde uzmana sordum.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "概ね",
+    "reading": "おおむね",
+    "meaning_tr": "genel olarak, büyük ölçüde",
+    "meaning_en": "generally, mostly",
+    "example_jp": "計画は概ね順調に進んでいる。",
+    "example_tr": "Plan genel olarak sorunsuz ilerliyor.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "辛うじて",
+    "reading": "かろうじて",
+    "meaning_tr": "güçlükle, zar zor",
+    "meaning_en": "barely, narrowly",
+    "example_jp": "辛うじて試験に合格した。",
+    "example_tr": "Zar zor sınavı geçtim.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "仮に",
+    "reading": "かりに",
+    "meaning_tr": "diyelim ki, varsayalım ki",
+    "meaning_en": "supposing, even if",
+    "example_jp": "仮にそれが本当だとしても。",
+    "example_tr": "Diyelim ki bu doğru olsa bile.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "主張する",
+    "reading": "しゅちょうする",
+    "meaning_tr": "iddia etmek, savunmak",
+    "meaning_en": "to assert, to claim",
+    "example_jp": "自分の意見を主張する。",
+    "example_tr": "Kendi fikrini savunmak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "評価する",
+    "reading": "ひょうかする",
+    "meaning_tr": "değerlendirmek",
+    "meaning_en": "to evaluate, to assess",
+    "example_jp": "成果を正しく評価する。",
+    "example_tr": "Başarıyı doğru değerlendirmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "提案する",
+    "reading": "ていあんする",
+    "meaning_tr": "teklif etmek, önermek",
+    "meaning_en": "to propose, to suggest",
+    "example_jp": "新しい方法を提案する。",
+    "example_tr": "Yeni bir yöntem önermek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "管理する",
+    "reading": "かんりする",
+    "meaning_tr": "yönetmek, idare etmek",
+    "meaning_en": "to manage, to control",
+    "example_jp": "スケジュールを管理する。",
+    "example_tr": "Programı yönetmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "運営する",
+    "reading": "うんえいする",
+    "meaning_tr": "işletmek, yürütmek",
+    "meaning_en": "to operate, to run",
+    "example_jp": "会社を運営する。",
+    "example_tr": "Şirketi işletmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "解決する",
+    "reading": "かいけつする",
+    "meaning_tr": "çözmek",
+    "meaning_en": "to solve, to resolve",
+    "example_jp": "問題を解決する方法を探す。",
+    "example_tr": "Sorunu çözme yöntemini aramak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "分析する",
+    "reading": "ぶんせきする",
+    "meaning_tr": "analiz etmek",
+    "meaning_en": "to analyze",
+    "example_jp": "データを分析する。",
+    "example_tr": "Verileri analiz etmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "展開する",
+    "reading": "てんかいする",
+    "meaning_tr": "geliştirmek, yaymak",
+    "meaning_en": "to develop, to expand",
+    "example_jp": "事業を海外に展開する。",
+    "example_tr": "İşi yurt dışına yaymak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "基盤",
+    "reading": "きばん",
+    "meaning_tr": "temel, altyapı",
+    "meaning_en": "foundation, base",
+    "example_jp": "経済の基盤を強化する。",
+    "example_tr": "Ekonominin temelini güçlendirmek.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "人材",
+    "reading": "じんざい",
+    "meaning_tr": "insan kaynağı",
+    "meaning_en": "human resources, talent",
+    "example_jp": "優秀な人材を育てる。",
+    "example_tr": "Nitelikli insan kaynağı yetiştirmek.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "景気",
+    "reading": "けいき",
+    "meaning_tr": "ekonomik durum, konjonktür",
+    "meaning_en": "economy, business conditions",
+    "example_jp": "景気が回復しつつある。",
+    "example_tr": "Ekonomi toparlanma sürecinde.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "需要",
+    "reading": "じゅよう",
+    "meaning_tr": "talep",
+    "meaning_en": "demand",
+    "example_jp": "需要が増加している。",
+    "example_tr": "Talep artıyor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "供給",
+    "reading": "きょうきゅう",
+    "meaning_tr": "arz, tedarik",
+    "meaning_en": "supply",
+    "example_jp": "電力の供給が不安定だ。",
+    "example_tr": "Elektrik arzı istikrarsız.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "催す",
+    "reading": "もよおす",
+    "meaning_tr": "düzenlemek; hissetmek",
+    "meaning_en": "to hold (event); to feel (urge)",
+    "example_jp": "展覧会を催す。",
+    "example_tr": "Sergi düzenlemek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "企てる",
+    "reading": "くわだてる",
+    "meaning_tr": "planlamak, tasarlamak",
+    "meaning_en": "to plan, to scheme",
+    "example_jp": "大きなプロジェクトを企てる。",
+    "example_tr": "Büyük bir proje planlamak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "促す",
+    "reading": "うながす",
+    "meaning_tr": "teşvik etmek, acele ettirmek",
+    "meaning_en": "to urge, to prompt",
+    "example_jp": "行動を促す。",
+    "example_tr": "Harekete geçmeye teşvik etmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "妨げる",
+    "reading": "さまたげる",
+    "meaning_tr": "engellemek",
+    "meaning_en": "to hinder, to obstruct",
+    "example_jp": "成長を妨げる要因がある。",
+    "example_tr": "Büyümeyi engelleyen etkenler var.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "費やす",
+    "reading": "ついやす",
+    "meaning_tr": "harcamak",
+    "meaning_en": "to spend (time/money)",
+    "example_jp": "多くの時間を費やした。",
+    "example_tr": "Çok zaman harcadı.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "賄う",
+    "reading": "まかなう",
+    "meaning_tr": "karşılamak, temin etmek",
+    "meaning_en": "to cover (expenses), to provide",
+    "example_jp": "費用を賄う。",
+    "example_tr": "Masrafları karşılamak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "和らげる",
+    "reading": "やわらげる",
+    "meaning_tr": "yumuşatmak, hafifletmek",
+    "meaning_en": "to soften, to ease",
+    "example_jp": "痛みを和らげる薬を飲む。",
+    "example_tr": "Ağrıyı hafifletecek ilaç içmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "損なう",
+    "reading": "そこなう",
+    "meaning_tr": "zarar vermek, bozmak",
+    "meaning_en": "to harm, to damage",
+    "example_jp": "健康を損なう恐れがある。",
+    "example_tr": "Sağlığa zarar verme riski var.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "悟る",
+    "reading": "さとる",
+    "meaning_tr": "farkına varmak, idrak etmek",
+    "meaning_en": "to realize, to perceive",
+    "example_jp": "自分の過ちを悟った。",
+    "example_tr": "Kendi hatasının farkına vardı.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "携える",
+    "reading": "たずさえる",
+    "meaning_tr": "yanında taşımak",
+    "meaning_en": "to carry, to bring along",
+    "example_jp": "資料を携えて会議に向かう。",
+    "example_tr": "Belgeleri yanına alarak toplantıya gitmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "施す",
+    "reading": "ほどこす",
+    "meaning_tr": "uygulamak, yapmak; sadaka vermek",
+    "meaning_en": "to give, to apply, to perform",
+    "example_jp": "治療を施す。",
+    "example_tr": "Tedavi uygulamak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "寄与する",
+    "reading": "きよする",
+    "meaning_tr": "katkıda bulunmak",
+    "meaning_en": "to contribute to",
+    "example_jp": "社会の発展に寄与する。",
+    "example_tr": "Toplumun gelişimine katkıda bulunmak.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "浸透する",
+    "reading": "しんとうする",
+    "meaning_tr": "nüfuz etmek, yaygınlaşmak",
+    "meaning_en": "to permeate, to spread",
+    "example_jp": "新しい考え方が社会に浸透した。",
+    "example_tr": "Yeni düşünce tarzı topluma yayıldı.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "断念する",
+    "reading": "だんねんする",
+    "meaning_tr": "vazgeçmek",
+    "meaning_en": "to give up, to abandon",
+    "example_jp": "計画を断念する。",
+    "example_tr": "Plandan vazgeçmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "遂行する",
+    "reading": "すいこうする",
+    "meaning_tr": "yerine getirmek, uygulamak",
+    "meaning_en": "to carry out, to execute",
+    "example_jp": "任務を遂行する。",
+    "example_tr": "Görevi yerine getirmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "充実する",
+    "reading": "じゅうじつする",
+    "meaning_tr": "zenginleşmek, dolgunlaşmak",
+    "meaning_en": "to enrich, to fulfill",
+    "example_jp": "内容を充実させる。",
+    "example_tr": "İçeriği zenginleştirmek.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "制約する",
+    "reading": "せいやくする",
+    "meaning_tr": "kısıtlamak, sınırlamak",
+    "meaning_en": "to restrict, to constrain",
+    "example_jp": "予算が計画を制約する。",
+    "example_tr": "Bütçe planı kısıtlıyor.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "循環する",
+    "reading": "じゅんかんする",
+    "meaning_tr": "dolaşmak, dönmek",
+    "meaning_en": "to circulate, to cycle",
+    "example_jp": "血液が体内を循環する。",
+    "example_tr": "Kan vücutta dolaşır.",
+    "part_of_speech": "動詞"
+  },
+  {
+    "word": "素質",
+    "reading": "そしつ",
+    "meaning_tr": "yetenek, kabiliyat",
+    "meaning_en": "aptitude, quality",
+    "example_jp": "彼にはリーダーの素質がある。",
+    "example_tr": "Onda liderlik yeteneği var.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "本質",
+    "reading": "ほんしつ",
+    "meaning_tr": "öz, esas",
+    "meaning_en": "essence, true nature",
+    "example_jp": "問題の本質を見極める。",
+    "example_tr": "Sorunun özünü anlamak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "名残",
+    "reading": "なごり",
+    "meaning_tr": "kalıntı, hatıra",
+    "meaning_en": "remnant, trace",
+    "example_jp": "夏の名残を感じる。",
+    "example_tr": "Yazın kalıntısını hissetmek.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "葛藤",
+    "reading": "かっとう",
+    "meaning_tr": "iç çatışma",
+    "meaning_en": "conflict, struggle",
+    "example_jp": "内面の葛藤を抱えている。",
+    "example_tr": "İçsel çatışma yaşıyor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "兆候",
+    "reading": "ちょうこう",
+    "meaning_tr": "belirti, işaret",
+    "meaning_en": "sign, symptom",
+    "example_jp": "景気回復の兆候が見える。",
+    "example_tr": "Ekonomik toparlanmanın belirtileri görülüyor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "余裕",
+    "reading": "よゆう",
+    "meaning_tr": "rahatlık, boş zaman",
+    "meaning_en": "room, margin, composure",
+    "example_jp": "時間に余裕がない。",
+    "example_tr": "Zaman bakımından rahatlık yok.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "障害",
+    "reading": "しょうがい",
+    "meaning_tr": "engel, bozukluk",
+    "meaning_en": "obstacle, disability",
+    "example_jp": "通信障害が発生した。",
+    "example_tr": "İletişim bozukluğu meydana geldi.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "志向",
+    "reading": "しこう",
+    "meaning_tr": "yönelim, eğilim",
+    "meaning_en": "orientation, inclination",
+    "example_jp": "健康志向が高まっている。",
+    "example_tr": "Sağlık yönelimi artıyor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "架け橋",
+    "reading": "かけはし",
+    "meaning_tr": "köprü (mecazi)",
+    "meaning_en": "bridge (figurative)",
+    "example_jp": "両国の架け橋になりたい。",
+    "example_tr": "İki ülke arasında köprü olmak istiyorum.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "慣習",
+    "reading": "かんしゅう",
+    "meaning_tr": "gelenek, adet",
+    "meaning_en": "custom, convention",
+    "example_jp": "地域の慣習に従う。",
+    "example_tr": "Bölgenin geleneklerine uymak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "促進",
+    "reading": "そくしん",
+    "meaning_tr": "teşvik, hızlandırma",
+    "meaning_en": "promotion, acceleration",
+    "example_jp": "経済の促進を図る。",
+    "example_tr": "Ekonominin teşvikini amaçlamak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "配分",
+    "reading": "はいぶん",
+    "meaning_tr": "dağıtım, paylaştırma",
+    "meaning_en": "distribution, allocation",
+    "example_jp": "予算の配分を決める。",
+    "example_tr": "Bütçe dağıtımını belirlemek.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "貿易",
+    "reading": "ぼうえき",
+    "meaning_tr": "ticaret, dış ticaret",
+    "meaning_en": "trade, commerce",
+    "example_jp": "貿易の自由化が進んだ。",
+    "example_tr": "Ticaretin serbestleşmesi ilerledi.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "財政",
+    "reading": "ざいせい",
+    "meaning_tr": "maliye, mali durum",
+    "meaning_en": "finance, fiscal affairs",
+    "example_jp": "財政が厳しい状況だ。",
+    "example_tr": "Mali durum zor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "雇用",
+    "reading": "こよう",
+    "meaning_tr": "istihdam",
+    "meaning_en": "employment",
+    "example_jp": "雇用を増やす政策を実施する。",
+    "example_tr": "İstihdamı artıracak politikalar uygulamak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "福祉",
+    "reading": "ふくし",
+    "meaning_tr": "sosyal refah",
+    "meaning_en": "welfare",
+    "example_jp": "高齢者の福祉を充実させる。",
+    "example_tr": "Yaşlıların refahını artırmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "格差",
+    "reading": "かくさ",
+    "meaning_tr": "eşitsizlik, fark",
+    "meaning_en": "gap, disparity",
+    "example_jp": "所得格差が広がっている。",
+    "example_tr": "Gelir eşitsizliği artıyor.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "偏見",
+    "reading": "へんけん",
+    "meaning_tr": "önyargı",
+    "meaning_en": "prejudice, bias",
+    "example_jp": "偏見をなくすべきだ。",
+    "example_tr": "Önyargıları ortadan kaldırmalıyız.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "世論",
+    "reading": "せろん",
+    "meaning_tr": "kamuoyu",
+    "meaning_en": "public opinion",
+    "example_jp": "世論調査を行う。",
+    "example_tr": "Kamuoyu araştırması yapmak.",
+    "part_of_speech": "名詞"
+  },
+  {
+    "word": "甚だしい",
+    "reading": "はなはだしい",
+    "meaning_tr": "aşırı, çok fazla",
+    "meaning_en": "extreme, excessive",
+    "example_jp": "被害は甚だしかった。",
+    "example_tr": "Hasar çok fazlaydı.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "疎い",
+    "reading": "うとい",
+    "meaning_tr": "yabancı olmak, uzak olmak",
+    "meaning_en": "unfamiliar with, distant",
+    "example_jp": "政治に疎い。",
+    "example_tr": "Siyasete yabancı.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "険しい",
+    "reading": "けわしい",
+    "meaning_tr": "sarp, sert",
+    "meaning_en": "steep, severe",
+    "example_jp": "険しい山道を登る。",
+    "example_tr": "Sarp dağ yolunu tırmanmak.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "騒がしい",
+    "reading": "さわがしい",
+    "meaning_tr": "gürültülü",
+    "meaning_en": "noisy, boisterous",
+    "example_jp": "隣の部屋が騒がしい。",
+    "example_tr": "Yan oda gürültülü.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "目まぐるしい",
+    "reading": "めまぐるしい",
+    "meaning_tr": "baş döndürücü, çok hızlı",
+    "meaning_en": "dizzying, rapid",
+    "example_jp": "目まぐるしい変化が続く。",
+    "example_tr": "Baş döndürücü değişimler devam ediyor.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "心強い",
+    "reading": "こころづよい",
+    "meaning_tr": "güven verici",
+    "meaning_en": "reassuring, encouraging",
+    "example_jp": "仲間がいると心強い。",
+    "example_tr": "Arkadaşlar olunca güven verici.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "物足りない",
+    "reading": "ものたりない",
+    "meaning_tr": "yetersiz, tatmin edici olmayan",
+    "meaning_en": "unsatisfying, not enough",
+    "example_jp": "説明が物足りない。",
+    "example_tr": "Açıklama yetersiz.",
+    "part_of_speech": "い形容詞"
+  },
+  {
+    "word": "有益",
+    "reading": "ゆうえき",
+    "meaning_tr": "faydalı, yararlı",
+    "meaning_en": "beneficial, useful",
+    "example_jp": "有益な情報を得た。",
+    "example_tr": "Faydalı bilgi edindim.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "厳密",
+    "reading": "げんみつ",
+    "meaning_tr": "katı, kesin",
+    "meaning_en": "strict, rigorous",
+    "example_jp": "厳密な検査を行う。",
+    "example_tr": "Katı bir kontrol yapmak.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "著名",
+    "reading": "ちょめい",
+    "meaning_tr": "ünlü, tanınmış",
+    "meaning_en": "famous, prominent",
+    "example_jp": "著名な学者が講演した。",
+    "example_tr": "Ünlü bir bilim insanı konuşma yaptı.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "安易",
+    "reading": "あんい",
+    "meaning_tr": "kolaycı, düşüncesiz",
+    "meaning_en": "easy-going, simplistic",
+    "example_jp": "安易な考えは危険だ。",
+    "example_tr": "Kolaycı düşünce tehlikelidir.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "寛大",
+    "reading": "かんだい",
+    "meaning_tr": "hoşgörülü, cömert",
+    "meaning_en": "generous, tolerant",
+    "example_jp": "寛大な心を持つ。",
+    "example_tr": "Hoşgörülü bir kalbe sahip olmak.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "貧弱",
+    "reading": "ひんじゃく",
+    "meaning_tr": "zayıf, yetersiz",
+    "meaning_en": "poor, meager",
+    "example_jp": "設備が貧弱だ。",
+    "example_tr": "Donanım yetersiz.",
+    "part_of_speech": "な形容詞"
+  },
+  {
+    "word": "とりわけ",
+    "reading": "とりわけ",
+    "meaning_tr": "özellikle, bilhassa",
+    "meaning_en": "especially, particularly",
+    "example_jp": "とりわけ注目すべき点がある。",
+    "example_tr": "Özellikle dikkat edilmesi gereken bir nokta var.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "ことごとく",
+    "reading": "ことごとく",
+    "meaning_tr": "hepsini, tamamen",
+    "meaning_en": "all, entirely, without exception",
+    "example_jp": "計画はことごとく失敗した。",
+    "example_tr": "Planların hepsi başarısız oldu.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "到底",
+    "reading": "とうてい",
+    "meaning_tr": "asla, hiçbir şekilde",
+    "meaning_en": "utterly, (not) at all",
+    "example_jp": "到底無理な話だ。",
+    "example_tr": "Asla mümkün olmayan bir şey.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "ひたすら",
+    "reading": "ひたすら",
+    "meaning_tr": "yalnızca, bir tek",
+    "meaning_en": "earnestly, solely",
+    "example_jp": "ひたすら勉強を続けた。",
+    "example_tr": "Yalnızca çalışmaya devam etti.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "予め",
+    "reading": "あらかじめ",
+    "meaning_tr": "önceden",
+    "meaning_en": "in advance, beforehand",
+    "example_jp": "予め準備しておく。",
+    "example_tr": "Önceden hazırlık yapmak.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "速やかに",
+    "reading": "すみやかに",
+    "meaning_tr": "hızla, derhal",
+    "meaning_en": "promptly, quickly",
+    "example_jp": "速やかに対応してください。",
+    "example_tr": "Lütfen derhal müdahale edin.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "専ら",
+    "reading": "もっぱら",
+    "meaning_tr": "yalnızca, sadece",
+    "meaning_en": "exclusively, solely",
+    "example_jp": "専ら研究に専念している。",
+    "example_tr": "Yalnızca araştırmaya odaklanıyor.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "改めて",
+    "reading": "あらためて",
+    "meaning_tr": "yeniden, tekrar",
+    "meaning_en": "again, anew, formally",
+    "example_jp": "改めてお礼を申し上げます。",
+    "example_tr": "Yeniden teşekkür ederim.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "直ちに",
+    "reading": "ただちに",
+    "meaning_tr": "derhal, hemen",
+    "meaning_en": "immediately, at once",
+    "example_jp": "直ちに避難してください。",
+    "example_tr": "Derhal tahliye edin.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "極めて",
+    "reading": "きわめて",
+    "meaning_tr": "son derece",
+    "meaning_en": "extremely, exceedingly",
+    "example_jp": "極めて重要な問題だ。",
+    "example_tr": "Son derece önemli bir mesele.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "あえて",
+    "reading": "あえて",
+    "meaning_tr": "cesurca, bilerek",
+    "meaning_en": "daringly, deliberately",
+    "example_jp": "あえて危険を冒す。",
+    "example_tr": "Bilerek tehlikeyi göze almak.",
+    "part_of_speech": "副詞"
+  },
+  {
+    "word": "辛抱する",
+    "reading": "しんぼうする",
+    "meaning_tr": "sabretmek, katlanmak",
+    "meaning_en": "to endure, to be patient",
+    "example_jp": "もう少し辛抱してください。",
+    "example_tr": "Biraz daha sabredin lütfen.",
+    "part_of_speech": "動詞"
   }
 ]

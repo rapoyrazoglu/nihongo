@@ -1,79 +1,677 @@
 [
-  {"pattern": "～は～です", "meaning_tr": "~ dır/dir (kibar)", "meaning_en": "~ is ~ (polite)", "level": "N5", "example_jp": "私は学生です。", "example_tr": "Ben öğrenciyim.", "notes": "Temel cümle yapısı. は konu belirteci, です kibar son ek."},
-  {"pattern": "～は～じゃないです", "meaning_tr": "~ değildir (kibar)", "meaning_en": "~ is not ~ (polite)", "level": "N5", "example_jp": "これは本じゃないです。", "example_tr": "Bu kitap değil.", "notes": "Olumsuz form. じゃありません de kullanılabilir."},
-  {"pattern": "～を～ます", "meaning_tr": "~yı/yi ~r (nesne + fiil)", "meaning_en": "~ (object) + verb (polite)", "level": "N5", "example_jp": "本を読みます。", "example_tr": "Kitap okurum.", "notes": "を nesne belirteci. ます kibar fiil formu."},
-  {"pattern": "～に行きます", "meaning_tr": "~e/a gider", "meaning_en": "go to ~", "level": "N5", "example_jp": "学校に行きます。", "example_tr": "Okula giderim.", "notes": "に yön belirteci."},
-  {"pattern": "～で～ます", "meaning_tr": "~de/da ~r (yer + fiil)", "meaning_en": "do ~ at/in ~", "level": "N5", "example_jp": "図書館で勉強します。", "example_tr": "Kütüphanede çalışırım.", "notes": "で yer belirteci (eylem yapılan yer)."},
-  {"pattern": "～が好きです", "meaning_tr": "~yi/yı sever", "meaning_en": "like ~", "level": "N5", "example_jp": "日本料理が好きです。", "example_tr": "Japon yemeklerini severim.", "notes": "が özne belirteci. 好き na-sıfat."},
-  {"pattern": "～がありますいます", "meaning_tr": "~ var (cansız/canlı)", "meaning_en": "there is ~", "level": "N5", "example_jp": "机の上に本があります。猫がいます。", "example_tr": "Masanın üstünde kitap var. Kedi var.", "notes": "あります cansız nesneler, います canlı varlıklar için."},
-  {"pattern": "～たいです", "meaning_tr": "~mek istiyor", "meaning_en": "want to ~", "level": "N5", "example_jp": "日本に行きたいです。", "example_tr": "Japonya'ya gitmek istiyorum.", "notes": "Fiil kökü + たい. İstek ifadesi."},
-  {"pattern": "～てください", "meaning_tr": "lütfen ~in/ın", "meaning_en": "please do ~", "level": "N5", "example_jp": "ここに名前を書いてください。", "example_tr": "Lütfen buraya isminizi yazın.", "notes": "て-formu + ください. Rica ifadesi."},
-  {"pattern": "～ています", "meaning_tr": "~yor (süreklilik)", "meaning_en": "is doing ~ / has been ~", "level": "N5", "example_jp": "今、勉強しています。", "example_tr": "Şimdi çalışıyorum.", "notes": "て-formu + います. Devam eden eylem veya durum."},
-  {"pattern": "～た (過去形)", "meaning_tr": "~dı/di (geçmiş zaman)", "meaning_en": "past tense", "level": "N5", "example_jp": "昨日映画を見た。", "example_tr": "Dün film izledim.", "notes": "Geçmiş zaman formu. ました kibar versiyonu."},
-  {"pattern": "～ない (否定形)", "meaning_tr": "~maz/mez (olumsuz)", "meaning_en": "negative form", "level": "N5", "example_jp": "今日は学校に行かない。", "example_tr": "Bugün okula gitmiyorum.", "notes": "Olumsuz form. ません kibar versiyonu."},
-  {"pattern": "～から～まで", "meaning_tr": "~den ~e kadar", "meaning_en": "from ~ to ~", "level": "N5", "example_jp": "九時から五時まで働きます。", "example_tr": "9'dan 5'e kadar çalışırım.", "notes": "Zaman veya yer aralığı belirtir."},
-  {"pattern": "～ましょう", "meaning_tr": "~elim/alım", "meaning_en": "let's ~", "level": "N5", "example_jp": "一緒に食べましょう。", "example_tr": "Birlikte yiyelim.", "notes": "Teklif ve davet ifadesi."},
-  {"pattern": "～てもいいですか", "meaning_tr": "~bilir miyim?", "meaning_en": "may I ~?", "level": "N5", "example_jp": "写真を撮ってもいいですか。", "example_tr": "Fotoğraf çekebilir miyim?", "notes": "İzin isteme ifadesi."},
-  {"pattern": "～てはいけません", "meaning_tr": "~memelisin (yasak)", "meaning_en": "must not ~, may not ~", "level": "N5", "example_jp": "ここでタバコを吸ってはいけません。", "example_tr": "Burada sigara içmemelisin.", "notes": "Yasaklama ifadesi. て-formu + はいけません."},
-  {"pattern": "～より～のほうが", "meaning_tr": "~den daha ~", "meaning_en": "~ is more ~ than ~", "level": "N5", "example_jp": "夏より冬のほうが好きです。", "example_tr": "Yazdan çok kışı severim.", "notes": "Karşılaştırma ifadesi. より ile karşılaştırılan, のほうが ile tercih edilen belirtilir."},
-  {"pattern": "～が上手です", "meaning_tr": "~de iyi/becerikli", "meaning_en": "be good at ~", "level": "N5", "example_jp": "彼女は料理が上手です。", "example_tr": "O yemek yapmakta iyi.", "notes": "Beceri ifadesi. 上手 na-sıfat, karşıtı 下手 (kötü)."},
-  {"pattern": "～つもりです", "meaning_tr": "~meye niyetli", "meaning_en": "intend to ~, plan to ~", "level": "N5", "example_jp": "来年日本に行くつもりです。", "example_tr": "Gelecek yıl Japonya'ya gitmeye niyetliyim.", "notes": "Niyet/plan ifadesi. Fiil sözlük formu + つもりです."},
-  {"pattern": "～でしょう", "meaning_tr": "~dır herhalde, ~ecektir", "meaning_en": "probably ~, I suppose ~", "level": "N5", "example_jp": "明日は晴れでしょう。", "example_tr": "Yarın herhalde açık olacak.", "notes": "Tahmin ifadesi. だろう samimi formu."},
-
-  {"pattern": "～なければなりません", "meaning_tr": "~meli/malı (zorunluluk)", "meaning_en": "must ~, have to ~", "level": "N4", "example_jp": "毎日勉強しなければなりません。", "example_tr": "Her gün çalışmalıyım.", "notes": "Zorunluluk ifadesi. ～ないといけません de kullanılır."},
-  {"pattern": "～たことがあります", "meaning_tr": "~mış olmak (deneyim)", "meaning_en": "have experienced ~", "level": "N4", "example_jp": "日本に行ったことがあります。", "example_tr": "Japonya'ya gitmiş oldum.", "notes": "Deneyim ifadesi. た-formu + ことがある."},
-  {"pattern": "～と思います", "meaning_tr": "~dığını düşünüyorum", "meaning_en": "I think ~", "level": "N4", "example_jp": "明日は雨が降ると思います。", "example_tr": "Yarın yağmur yağacağını düşünüyorum.", "notes": "Görüş/düşünce ifadesi."},
-  {"pattern": "～そうです (伝聞)", "meaning_tr": "~mış (duyum)", "meaning_en": "I heard that ~", "level": "N4", "example_jp": "明日は天気がいいそうです。", "example_tr": "Yarın havanın güzel olacağını duydum.", "notes": "Başkasından duyulan bilgi."},
-  {"pattern": "～そうです (様態)", "meaning_tr": "~ gibi görünüyor", "meaning_en": "looks like ~", "level": "N4", "example_jp": "このケーキはおいしそうです。", "example_tr": "Bu pasta lezzetli görünüyor.", "notes": "Görünüşe dayalı tahmin. Sıfat kökü + そう."},
-  {"pattern": "～ようにする", "meaning_tr": "~meye çalışmak", "meaning_en": "try to ~, make sure to ~", "level": "N4", "example_jp": "毎日運動するようにしています。", "example_tr": "Her gün spor yapmaya çalışıyorum.", "notes": "Alışkanlık edinme çabası."},
-  {"pattern": "～ば～ほど", "meaning_tr": "~dikçe o kadar ~", "meaning_en": "the more ~ the more ~", "level": "N4", "example_jp": "勉強すればするほど上手になる。", "example_tr": "Çalıştıkça o kadar iyi olursun.", "notes": "Orantılı değişim ifadesi."},
-  {"pattern": "～てしまう", "meaning_tr": "~iverdi (tamamlama/pişmanlık)", "meaning_en": "end up ~ing, completely ~", "level": "N4", "example_jp": "宿題を忘れてしまいました。", "example_tr": "Ödevi unutuverdim.", "notes": "Eylemin tamamlanması veya istenmeyen durum."},
-  {"pattern": "～ている間に", "meaning_tr": "~iken, ~sırasında", "meaning_en": "while ~", "level": "N4", "example_jp": "寝ている間に電話がありました。", "example_tr": "Uyurken telefon gelmiş.", "notes": "Bir eylem sürerken başka bir şeyin olması."},
-  {"pattern": "～のに", "meaning_tr": "~e rağmen", "meaning_en": "although ~, despite ~", "level": "N4", "example_jp": "勉強したのに、テストに落ちました。", "example_tr": "Çalıştığım halde sınavı geçemedim.", "notes": "Beklentiye aykırı sonuç. Hayal kırıklığı ifadesi."},
-  {"pattern": "～させる (使役)", "meaning_tr": "~dirmek/tirmek (ettirgen)", "meaning_en": "make/let someone ~", "level": "N4", "example_jp": "子供に野菜を食べさせます。", "example_tr": "Çocuğa sebze yediririm.", "notes": "Ettirgen form. Birine bir şey yaptırma."},
-  {"pattern": "～れる/られる (受身)", "meaning_tr": "~lmak/lnmak (edilgen)", "meaning_en": "passive form", "level": "N4", "example_jp": "先生に褒められました。", "example_tr": "Öğretmen tarafından övüldüm.", "notes": "Edilgen form. Eyleme maruz kalma."},
-  {"pattern": "～たら", "meaning_tr": "~sa/se, ~dığında", "meaning_en": "if ~, when ~", "level": "N4", "example_jp": "雨が降ったら、家にいます。", "example_tr": "Yağmur yağarsa evde kalırım.", "notes": "Koşul ifadesi. た-formu + ら."},
-  {"pattern": "～ても", "meaning_tr": "~sa bile", "meaning_en": "even if ~", "level": "N4", "example_jp": "高くても買います。", "example_tr": "Pahalı olsa bile alırım.", "notes": "Koşula rağmen sonucun değişmemesi."},
-  {"pattern": "～ようになる", "meaning_tr": "~abilir hale gelmek", "meaning_en": "come to be able to ~", "level": "N4", "example_jp": "日本語が話せるようになりました。", "example_tr": "Japonca konuşabilir hale geldim.", "notes": "Yetenek veya durum değişikliği."},
-  {"pattern": "～ことがある", "meaning_tr": "bazen ~ olur", "meaning_en": "sometimes ~, there are times when ~", "level": "N4", "example_jp": "朝ごはんを食べないことがある。", "example_tr": "Bazen kahvaltı yapmadığım olur.", "notes": "Ara sıra olan durumları ifade eder. Sözlük formu + ことがある."},
-  {"pattern": "～かもしれません", "meaning_tr": "belki ~, ~abilir", "meaning_en": "might ~, perhaps ~", "level": "N4", "example_jp": "明日は雪が降るかもしれません。", "example_tr": "Yarın kar yağabilir.", "notes": "Olasılık ifadesi. Belirsiz tahmin."},
-  {"pattern": "～ながら", "meaning_tr": "~iken, ~e ~e (eş zamanlı)", "meaning_en": "while ~ing", "level": "N4", "example_jp": "音楽を聞きながら勉強します。", "example_tr": "Müzik dinlerken çalışırım.", "notes": "İki eylemin eş zamanlı yapılması. Fiil kökü + ながら."},
-  {"pattern": "～てあげる/もらう/くれる", "meaning_tr": "~ıp vermek / ~ıp almak / ~ıp bana vermek", "meaning_en": "do ~ for / receive ~ / someone does ~ for me", "level": "N4", "example_jp": "友達が宿題を手伝ってくれました。", "example_tr": "Arkadaşım ödevime yardım etti (benim için).", "notes": "İyilik alışverişi fiilleri. Yön ve bakış açısına göre değişir."},
-  {"pattern": "～はずがない", "meaning_tr": "~ olması imkansız", "meaning_en": "cannot be ~, impossible that ~", "level": "N4", "example_jp": "彼がそんなことを言うはずがない。", "example_tr": "Onun böyle bir şey söylemesi imkansız.", "notes": "Güçlü olumsuz tahmin. Bir şeyin olmayacağına kesin inanç."},
-  {"pattern": "～ように言う", "meaning_tr": "~mesini söylemek", "meaning_en": "tell someone to ~", "level": "N4", "example_jp": "医者に薬を飲むように言われました。", "example_tr": "Doktor ilaç içmemi söyledi.", "notes": "Dolaylı emir/rica aktarma. ように + 言う/頼む."},
-  {"pattern": "～ために", "meaning_tr": "~ için, ~ amacıyla", "meaning_en": "in order to ~, for the purpose of ~", "level": "N4", "example_jp": "日本語を学ぶために日本に来ました。", "example_tr": "Japonca öğrenmek için Japonya'ya geldim.", "notes": "Amaç ifadesi. Fiil sözlük formu veya isim + のために."},
-  {"pattern": "～とき", "meaning_tr": "~ zaman, ~diğinde", "meaning_en": "when ~, at the time of ~", "level": "N4", "example_jp": "日本に行ったとき、富士山を見ました。", "example_tr": "Japonya'ya gittiğimde Fuji Dağı'nı gördüm.", "notes": "Zaman ifadesi. Fiil/sıfat + とき."},
-  {"pattern": "～し～し", "meaning_tr": "hem ~ hem de ~", "meaning_en": "~ and also ~, not only ~ but also ~", "level": "N4", "example_jp": "この店は安いし、おいしいし、よく行きます。", "example_tr": "Bu dükkan hem ucuz hem lezzetli, sık giderim.", "notes": "Birden fazla sebep sıralama ifadesi."},
-  {"pattern": "～てみる", "meaning_tr": "~ip denemek, ~ip görmek", "meaning_en": "try ~ing", "level": "N4", "example_jp": "日本料理を作ってみました。", "example_tr": "Japon yemeği yapmayı denedim.", "notes": "Deneme ifadesi. て-formu + みる."},
-
-  {"pattern": "～ように (目的)", "meaning_tr": "~sın diye, ~ması için", "meaning_en": "so that ~, in order to ~", "level": "N3", "example_jp": "忘れないように、メモを書きました。", "example_tr": "Unutmayayım diye not aldım.", "notes": "Amaç/hedef ifadesi. Olumsuz fiillerle sıkça kullanılır: ～ないように."},
-  {"pattern": "～ようになる (変化)", "meaning_tr": "~r hale gelmek, artık ~", "meaning_en": "come to ~, reach the point where ~", "level": "N3", "example_jp": "毎日練習して、ピアノが弾けるようになった。", "example_tr": "Her gün pratik yaparak piyano çalabilir hale geldim.", "notes": "Durum değişikliği ifadesi. Bir şeyin zamanla değişmesini anlatır."},
-  {"pattern": "～ことにする", "meaning_tr": "~meye karar vermek", "meaning_en": "decide to ~", "level": "N3", "example_jp": "来月から毎朝走ることにしました。", "example_tr": "Gelecek aydan itibaren her sabah koşmaya karar verdim.", "notes": "Kişisel karar ifadesi. Fiil sözlük formu + ことにする."},
-  {"pattern": "～ことになる", "meaning_tr": "~mesine karar verildi", "meaning_en": "it has been decided that ~", "level": "N3", "example_jp": "来月、大阪に転勤することになりました。", "example_tr": "Gelecek ay Osaka'ya tayin olmam kararlaştırıldı.", "notes": "Dışarıdan gelen karar. Kişinin kontrolü dışında belirlenmiş durum."},
-  {"pattern": "～はずだ", "meaning_tr": "~ması gerekir, ~ması lazım", "meaning_en": "should be ~, expected to ~", "level": "N3", "example_jp": "彼はもう着いているはずです。", "example_tr": "O şimdiye kadar varmış olması gerekir.", "notes": "Mantıksal beklenti ifadesi. Bilgiye dayalı tahmin."},
-  {"pattern": "～わけだ", "meaning_tr": "demek ki ~, bu yüzden ~", "meaning_en": "that's why ~, it means that ~", "level": "N3", "example_jp": "毎日十時間勉強しているから、成績がいいわけだ。", "example_tr": "Her gün on saat çalışıyormuş, notlarının iyi olması bu yüzdenmiş.", "notes": "Mantıksal sonuç ifadesi. Bir durumun nedenini açıklama."},
-  {"pattern": "～わけがない", "meaning_tr": "~ olması imkansız, ~ması mümkün değil", "meaning_en": "there's no way that ~", "level": "N3", "example_jp": "こんな難しい問題が解けるわけがない。", "example_tr": "Bu kadar zor bir soruyu çözmem mümkün değil.", "notes": "Güçlü olumsuzluk ifadesi. Bir şeyin kesinlikle olamayacağını belirtir."},
-  {"pattern": "～わけにはいかない", "meaning_tr": "~mak olmaz, ~amam", "meaning_en": "can't afford to ~, must not ~", "level": "N3", "example_jp": "明日試験があるから、遊ぶわけにはいかない。", "example_tr": "Yarın sınav var, eğlenemem.", "notes": "Sosyal/ahlaki nedenle yapılamama. Sorumluluk duygusu ifadesi."},
-  {"pattern": "～ところだ", "meaning_tr": "tam ~ üzere / tam ~ yaptı", "meaning_en": "about to ~ / just did ~", "level": "N3", "example_jp": "今から出かけるところです。", "example_tr": "Tam şimdi çıkmak üzereyim.", "notes": "Eylemin zamanlamasını belirtir. する＋ところ (üzere), した＋ところ (az önce), している＋ところ (tam şu an)."},
-  {"pattern": "～ばかり", "meaning_tr": "yeni ~ yaptı / sadece ~", "meaning_en": "just did ~ / only ~", "level": "N3", "example_jp": "日本に来たばかりで、まだ何もわからない。", "example_tr": "Japonya'ya yeni geldim, henüz hiçbir şey bilmiyorum.", "notes": "た＋ばかり: az önce yapıldı. İsim＋ばかり: sadece, yalnızca."},
-  {"pattern": "～っぱなし", "meaning_tr": "~ halde bırakmak", "meaning_en": "left in a state of ~", "level": "N3", "example_jp": "エアコンをつけっぱなしで寝てしまった。", "example_tr": "Klimayı açık bırakarak uyuyakaldım.", "notes": "Olumsuz bir durum için kullanılır. Fiil kökü + っぱなし. Bir şeyin olması gerektiği gibi kapatılmaması/bitirilmemesi."},
-  {"pattern": "～がち", "meaning_tr": "~meye meyilli, sık sık ~", "meaning_en": "tend to ~, prone to ~", "level": "N3", "example_jp": "冬は風邪を引きがちです。", "example_tr": "Kışın sık sık soğuk algınlığına yakalanırım.", "notes": "Olumsuz eğilim ifadesi. Fiil kökü veya isim + がち. Genellikle istenmeyen durumlar için."},
-  {"pattern": "～気味", "meaning_tr": "biraz ~, hafif ~", "meaning_en": "slight tendency of ~, touch of ~", "level": "N3", "example_jp": "最近、太り気味です。", "example_tr": "Son zamanlarda biraz kilo aldım.", "notes": "Hafif bir eğilim/belirti ifadesi. Fiil kökü veya isim + 気味（ぎみ）."},
-  {"pattern": "～向き", "meaning_tr": "~e uygun, ~e elverişli", "meaning_en": "suitable for ~, appropriate for ~", "level": "N3", "example_jp": "この本は初心者向きです。", "example_tr": "Bu kitap yeni başlayanlar için uygundur.", "notes": "Doğal uygunluk ifadesi. İsim + 向き（むき）. Bir şeyin doğası gereği uygun olması."},
-  {"pattern": "～向け", "meaning_tr": "~e yönelik, ~ için tasarlanmış", "meaning_en": "intended for ~, aimed at ~", "level": "N3", "example_jp": "この番組は子供向けです。", "example_tr": "Bu program çocuklara yöneliktir.", "notes": "Hedef kitle/amaç ifadesi. İsim + 向け（むけ）. Bilinçli olarak belirli bir gruba yöneltilmiş."},
-  {"pattern": "～次第", "meaning_tr": "~r ~maz / ~e bağlı", "meaning_en": "as soon as ~ / depending on ~", "level": "N3", "example_jp": "届き次第、ご連絡します。", "example_tr": "Ulaşır ulaşmaz size haber veririm.", "notes": "Fiil kökü + 次第（しだい）: ~r ~maz. İsim + 次第: ~e bağlı. Resmi dilde kullanılır."},
-  {"pattern": "～に対して", "meaning_tr": "~e karşı, ~e yönelik", "meaning_en": "towards ~, regarding ~, in contrast to ~", "level": "N3", "example_jp": "お客様に対して丁寧に話すべきです。", "example_tr": "Müşterilere karşı nazik konuşulmalıdır.", "notes": "Yön/karşılaştırma ifadesi. İsim + に対して. Bir kişi veya şeye yönelik tutum/davranış."},
-  {"pattern": "～に比べて", "meaning_tr": "~e kıyasla, ~le karşılaştırıldığında", "meaning_en": "compared to ~", "level": "N3", "example_jp": "去年に比べて、今年は暖かい。", "example_tr": "Geçen yıla kıyasla bu yıl daha sıcak.", "notes": "Karşılaştırma ifadesi. İsim + に比べて（にくらべて）."},
-  {"pattern": "～に関して", "meaning_tr": "~ ile ilgili, ~e ilişkin", "meaning_en": "regarding ~, concerning ~", "level": "N3", "example_jp": "この件に関して、ご質問はありますか。", "example_tr": "Bu konuyla ilgili sorularınız var mı?", "notes": "Resmi konu belirtme ifadesi. İsim + に関して（にかんして）. Yazı dilinde ve resmi konuşmalarda kullanılır."},
-  {"pattern": "～について", "meaning_tr": "~ hakkında, ~ konusunda", "meaning_en": "about ~, concerning ~", "level": "N3", "example_jp": "日本の文化について調べています。", "example_tr": "Japon kültürü hakkında araştırma yapıyorum.", "notes": "Konu belirtme ifadesi. İsim + について. に関して'den daha günlük kullanıma uygun."},
-  {"pattern": "～によって", "meaning_tr": "~e göre, ~ tarafından, ~ yoluyla", "meaning_en": "by means of ~, depending on ~, by ~", "level": "N3", "example_jp": "国によって文化が違います。", "example_tr": "Ülkeye göre kültür farklıdır.", "notes": "Araç/neden/faile göre değişen anlamlar. Edilgen cümlede faili belirtir: ～によって作られた."},
-  {"pattern": "～として", "meaning_tr": "~ olarak, ~ sıfatıyla", "meaning_en": "as ~, in the role of ~", "level": "N3", "example_jp": "私は留学生として日本に来ました。", "example_tr": "Değişim öğrencisi olarak Japonya'ya geldim.", "notes": "Rol/sıfat ifadesi. İsim + として. Bir kişinin veya şeyin hangi sıfatla değerlendirildiğini belirtir."},
-  {"pattern": "～にとって", "meaning_tr": "~ için, ~in açısından", "meaning_en": "for ~, from the standpoint of ~", "level": "N3", "example_jp": "私にとって、家族が一番大切です。", "example_tr": "Benim için aile en önemlidir.", "notes": "Bakış açısı ifadesi. İsim + にとって. Kişisel değerlendirme belirtir."},
-  {"pattern": "～おかげで", "meaning_tr": "~ sayesinde", "meaning_en": "thanks to ~, owing to ~", "level": "N3", "example_jp": "先生のおかげで、試験に合格しました。", "example_tr": "Öğretmenin sayesinde sınavı geçtim.", "notes": "Olumlu neden ifadesi. İsim + の＋おかげで veya cümle + おかげで. Minnet duygusu taşır."},
-  {"pattern": "～せいで", "meaning_tr": "~ yüzünden (olumsuz)", "meaning_en": "because of ~ (negative)", "level": "N3", "example_jp": "台風のせいで、飛行機が飛ばなかった。", "example_tr": "Tayfun yüzünden uçak kalkmadı.", "notes": "Olumsuz neden ifadesi. İsim + の＋せいで veya cümle + せいで. Suçlama/şikayet tonu taşır."},
-  {"pattern": "～くせに", "meaning_tr": "~diği halde, ~mesine rağmen (eleştirel)", "meaning_en": "even though ~ (critical)", "level": "N3", "example_jp": "何も知らないくせに、偉そうに話す。", "example_tr": "Hiçbir şey bilmediği halde büyüklenip konuşuyor.", "notes": "Eleştirel/kınayıcı ifade. ～のに'ye benzer ama daha sert ve eleştirel. Genellikle kişilere yöneliktir."},
-  {"pattern": "～どころか", "meaning_tr": "~ şöyle dursun, ~den çok uzak", "meaning_en": "far from ~, let alone ~", "level": "N3", "example_jp": "漢字どころか、ひらがなも読めない。", "example_tr": "Kanji şöyle dursun, hiragana bile okuyamıyor.", "notes": "Beklentinin tam tersi ifadesi. Bir şeyin çok uzağında olunduğunu belirtir."},
-  {"pattern": "～さえ～ば", "meaning_tr": "yeter ki ~, ~ bile ~sa", "meaning_en": "if only ~, as long as ~", "level": "N3", "example_jp": "お金さえあれば、世界中を旅行したい。", "example_tr": "Yeter ki param olsun, bütün dünyayı gezmek istiyorum.", "notes": "Tek koşul ifadesi. さえ (bile) + ば koşul formu. Tek bir koşulun yeterli olduğunu vurgular."},
-  {"pattern": "～たとえ～ても", "meaning_tr": "~ olsa bile, ~ de olsa", "meaning_en": "even if ~, no matter if ~", "level": "N3", "example_jp": "たとえ失敗しても、諦めません。", "example_tr": "Başarısız olsam bile vazgeçmem.", "notes": "Güçlü kararlılık ifadesi. たとえ + cümle + ても. Varsayımsal olumsuz duruma rağmen sonucun değişmeyeceğini belirtir."},
-  {"pattern": "～つつある", "meaning_tr": "giderek ~yor, ~mekte", "meaning_en": "in the process of ~, gradually ~ing", "level": "N3", "example_jp": "地球の気温は上がりつつある。", "example_tr": "Dünya'nın sıcaklığı giderek artıyor.", "notes": "Devam eden değişim ifadesi. Fiil kökü + つつある. Resmi/yazılı dilde kullanılır. ～ている'e benzer ama daha edebi."}
+  {
+    "pattern": "～は～です",
+    "meaning_tr": "~ dır/dir (kibar)",
+    "meaning_en": "~ is ~ (polite)",
+    "level": "N5",
+    "example_jp": "私は学生です。",
+    "example_tr": "Ben öğrenciyim.",
+    "notes": "[Oluşum] İsim + は + İsim + です\n[Kullanım] Japonca'nın en temel cümle yapısı. Konu (は) ile tanımlama (です) arasında bağ kurar. Kibar konuşma için です gereklidir.\n[Ek Örnekler]\n① 田中さんは先生です。→ Tanaka-san öğretmendir.\n② 東京は日本の首都です。→ Tokyo Japonya'nın başkentidir.\n③ これは私のかばんです。→ Bu benim çantamdır.\n[Dikkat] は burada 'wa' okunur, 'ha' değil. Samimi konuşmada です yerine だ kullanılır.\n[Benzer] ～は～じゃないです (olumsuz), ～は～でした (geçmiş)"
+  },
+  {
+    "pattern": "～は～じゃないです",
+    "meaning_tr": "~ değildir (kibar)",
+    "meaning_en": "~ is not ~ (polite)",
+    "level": "N5",
+    "example_jp": "これは本じゃないです。",
+    "example_tr": "Bu kitap değil.",
+    "notes": "[Oluşum] İsim + は + İsim + じゃないです / じゃありません\n[Kullanım] Olumsuz kibar form. Bir şeyin ne olmadığını ifade eder.\n[Ek Örnekler]\n① 私は医者じゃないです。→ Ben doktor değilim.\n② これは日本語の本じゃありません。→ Bu Japonca kitap değildir.\n③ 今日は月曜日じゃないです。→ Bugün pazartesi değil.\n[Dikkat] じゃないです ve じゃありません aynı anlama gelir. ではありません daha resmi.\n[Benzer] ～は～です (olumlu), ～くない (sıfat olumsuz)"
+  },
+  {
+    "pattern": "～を～ます",
+    "meaning_tr": "~yı/yi ~r (nesne + fiil)",
+    "meaning_en": "~ (object) + verb (polite)",
+    "level": "N5",
+    "example_jp": "本を読みます。",
+    "example_tr": "Kitap okurum.",
+    "notes": "[Oluşum] İsim + を + Fiil ます-formu\n[Kullanım] Nesne belirteci を ile geçişli fiilleri bağlar. Eylemi 'neye/kime' yaptığını gösterir.\n[Ek Örnekler]\n① 水を飲みます。→ Su içerim.\n② 手紙を書きます。→ Mektup yazarım.\n③ テレビを見ます。→ Televizyon izlerim.\n[Dikkat] を her zaman 'o' okunur, 'wo' değil. Geçişsiz fiillerle kullanılmaz (×走るを).\n[Benzer] ～が～ます (özne), ～に～ます (yön/hedef)"
+  },
+  {
+    "pattern": "～に行きます",
+    "meaning_tr": "~e/a gider",
+    "meaning_en": "go to ~",
+    "level": "N5",
+    "example_jp": "学校に行きます。",
+    "example_tr": "Okula giderim.",
+    "notes": "[Oluşum] Yer + に + 行きます/来ます/帰ります\n[Kullanım] Yön/varış noktası belirteci. Gidiş hedefini gösterir.\n[Ek Örnekler]\n① スーパーに行きます。→ Markete giderim.\n② 日本に来ました。→ Japonya'ya geldim.\n③ うちに帰ります。→ Eve dönerim.\n[Dikkat] へ (e) de yön belirtir ama に daha spesifik varış noktası anlamı taşır.\n[Benzer] ～で (eylem yeri), ～へ (yön)"
+  },
+  {
+    "pattern": "～で～ます",
+    "meaning_tr": "~de/da ~r (yer + fiil)",
+    "meaning_en": "do ~ at/in ~",
+    "level": "N5",
+    "example_jp": "図書館で勉強します。",
+    "example_tr": "Kütüphanede çalışırım.",
+    "notes": "[Oluşum] Yer + で + Fiil ます-formu\n[Kullanım] Eylemin gerçekleştiği yeri belirtir. 'Nerede' sorusunun cevabı.\n[Ek Örnekler]\n① レストランで食べます。→ Restoranda yerim.\n② 公園で遊びます。→ Parkta oynarım.\n③ 家で映画を見ます。→ Evde film izlerim.\n[Dikkat] に ile karıştırmayın: に varoluş yeri (いる/ある), で eylem yeri.\n[Benzer] ～に (varoluş yeri), ～で (araç: バスで行く)"
+  },
+  {
+    "pattern": "～が好きです",
+    "meaning_tr": "~yi/yı sever",
+    "meaning_en": "like ~",
+    "level": "N5",
+    "example_jp": "日本料理が好きです。",
+    "example_tr": "Japon yemeklerini severim.",
+    "notes": "[Oluşum] İsim + が + 好きです/嫌いです/上手です\n[Kullanım] Duygu ve yetenek ifadelerinde özne が ile belirtilir. 'Neyi' sevdiğini gösterir.\n[Ek Örnekler]\n① 音楽が好きです。→ Müziği severim.\n② 猫が大好きです。→ Kedileri çok severim.\n③ 野菜が嫌いです。→ Sebzelerden hoşlanmam.\n[Dikkat] を değil が kullanılır. 好き na-sıfattır, fiil değil. 大好き = çok sevmek.\n[Benzer] ～が嫌いです (sevmemek), ～が欲しい (istemek)"
+  },
+  {
+    "pattern": "～がありますいます",
+    "meaning_tr": "~ var (cansız/canlı)",
+    "meaning_en": "there is ~",
+    "level": "N5",
+    "example_jp": "机の上に本があります。猫がいます。",
+    "example_tr": "Masanın üstünde kitap var. Kedi var.",
+    "notes": "[Oluşum] Yer + に + İsim + が + あります/います\n[Kullanım] Varlık ifadesi. あります cansız nesneler, います canlı varlıklar için.\n[Ek Örnekler]\n① 冷蔵庫にビールがあります。→ Buzdolabında bira var.\n② 庭に犬がいます。→ Bahçede köpek var.\n③ この町に映画館がありません。→ Bu kasabada sinema yok.\n[Dikkat] Bitkiler あります ile kullanılır (canlı ama hareket etmez). Robot/oyuncak → あります.\n[Benzer] ～がある (samimi), ～はありません (olumsuz)"
+  },
+  {
+    "pattern": "～たいです",
+    "meaning_tr": "~mek istiyor",
+    "meaning_en": "want to ~",
+    "level": "N5",
+    "example_jp": "日本に行きたいです。",
+    "example_tr": "Japonya'ya gitmek istiyorum.",
+    "notes": "[Oluşum] Fiil ます-kökü + たいです\n[Kullanım] Kişisel istek ifadesi. Sadece 1. kişi (ben) için kullanılır. Soru formunda 2. kişi de OK.\n[Ek Örnekler]\n① 新しい車を買いたいです。→ Yeni araba almak istiyorum.\n② コーヒーが飲みたい。→ Kahve içmek istiyorum.\n③ 何が食べたいですか。→ Ne yemek istersin?\n[Dikkat] 3. kişi için ～たがっている kullanılır. ～たい sıfat gibi çekilir: たくない, たかった.\n[Benzer] ～たがる (3. kişi), ～てほしい (başkasından istek)"
+  },
+  {
+    "pattern": "～てください",
+    "meaning_tr": "lütfen ~in/ın",
+    "meaning_en": "please do ~",
+    "level": "N5",
+    "example_jp": "ここに名前を書いてください。",
+    "example_tr": "Lütfen buraya isminizi yazın.",
+    "notes": "[Oluşum] Fiil て-formu + ください\n[Kullanım] Rica/istek ifadesi. Birinden kibar şekilde bir şey yapmasını ister.\n[Ek Örnekler]\n① ちょっと待ってください。→ Lütfen biraz bekleyin.\n② 日本語で話してください。→ Lütfen Japonca konuşun.\n③ もう一度言ってください。→ Lütfen bir daha söyleyin.\n[Dikkat] お + Fiil kökü + ください daha resmi: お待ちください. ～ないでください = yapmayın.\n[Benzer] ～てくれませんか (daha kibar), ～なさい (emir), ～て (samimi rica)"
+  },
+  {
+    "pattern": "～ています",
+    "meaning_tr": "~yor (süreklilik)",
+    "meaning_en": "is doing ~ / has been ~",
+    "level": "N5",
+    "example_jp": "今、勉強しています。",
+    "example_tr": "Şimdi çalışıyorum.",
+    "notes": "[Oluşum] Fiil て-formu + います\n[Kullanım] 1) Devam eden eylem: 今食べています (şimdi yiyorum). 2) Sonuç durumu: 結婚しています (evliyim). 3) Alışkanlık: 毎日走っています.\n[Ek Örnekler]\n① 雨が降っています。→ Yağmur yağıyor.\n② 東京に住んでいます。→ Tokyo'da yaşıyorum.\n③ メガネをかけています。→ Gözlük takıyorum.\n[Dikkat] 知っています (biliyorum) ama 知りません (bilmiyorum, ×知っていません).\n[Benzer] ～てある (bilinçli sonuç durumu), ～ているところ (tam şu an)"
+  },
+  {
+    "pattern": "～た (過去形)",
+    "meaning_tr": "~dı/di (geçmiş zaman)",
+    "meaning_en": "past tense",
+    "level": "N5",
+    "example_jp": "昨日映画を見た。",
+    "example_tr": "Dün film izledim.",
+    "notes": "[Oluşum] Fiil て-formu ile aynı kural: て→た, で→だ. 食べて→食べた, 飲んで→飲んだ\n[Kullanım] Geçmiş zaman. Tamamlanmış eylem. Samimi form.\n[Ek Örnekler]\n① 昨日、映画を見た。→ Dün film izledim.\n② 朝ごはんを食べた。→ Kahvaltı yaptım.\n③ 友達に会った。→ Arkadaşımla buluştum.\n[Dikkat] ました kibar formu. て-formu'nu biliyorsan た-formu kolay: て→た, で→だ.\n[Benzer] ～ました (kibar geçmiş), ～たことがある (deneyim)"
+  },
+  {
+    "pattern": "～ない (否定形)",
+    "meaning_tr": "~maz/mez (olumsuz)",
+    "meaning_en": "negative form",
+    "level": "N5",
+    "example_jp": "今日は学校に行かない。",
+    "example_tr": "Bugün okula gitmiyorum.",
+    "notes": "[Oluşum] Godan: う段→あ段+ない (書く→書かない). Ichidan: る→ない (食べる→食べない). İstisnalar: する→しない, くる→こない\n[Kullanım] Olumsuz form. Bir eylemi yapmamayı ifade eder.\n[Ek Örnekler]\n① 肉を食べない。→ Et yemiyorum.\n② 明日は学校に行かない。→ Yarın okula gitmiyorum.\n③ お酒を飲まない。→ Alkol içmiyorum.\n[Dikkat] ある→ない (×あらない). ます olumsuz: ません. Sıfat: 高い→高くない.\n[Benzer] ～ません (kibar), ～なかった (geçmiş olumsuz)"
+  },
+  {
+    "pattern": "～から～まで",
+    "meaning_tr": "~den ~e kadar",
+    "meaning_en": "from ~ to ~",
+    "level": "N5",
+    "example_jp": "九時から五時まで働きます。",
+    "example_tr": "9'dan 5'e kadar çalışırım.",
+    "notes": "[Oluşum] Başlangıç + から + Bitiş + まで\n[Kullanım] Zaman veya yer aralığı. から=başlangıç, まで=bitiş. Ayrı ayrı da kullanılabilir.\n[Ek Örnekler]\n① 月曜日から金曜日まで働きます。→ Pazartesiden cumaya kadar çalışırım.\n② 東京から大阪まで新幹線で3時間です。→ Tokyo'dan Osaka'ya shinkansen ile 3 saat.\n③ 朝から晩まで勉強した。→ Sabahtan akşama kadar çalıştım.\n[Dikkat] ～から ayrıca 'çünkü' anlamına da gelir: 暑いから窓を開けて (sıcak olduğu için pencereyi aç).\n[Benzer] ～まで (tek başına: ~e kadar), ～までに (~e kadar, son tarih)"
+  },
+  {
+    "pattern": "～ましょう",
+    "meaning_tr": "~elim/alım",
+    "meaning_en": "let's ~",
+    "level": "N5",
+    "example_jp": "一緒に食べましょう。",
+    "example_tr": "Birlikte yiyelim.",
+    "notes": "[Oluşum] Fiil ます-kökü + ましょう\n[Kullanım] Teklif/davet ifadesi. Birlikte bir şey yapmayı önerir. Samimi: ～よう.\n[Ek Örnekler]\n① 映画を見ましょう。→ Film izleyelim.\n② 休みましょう。→ Dinlenelim.\n③ 何を食べましょうか。→ Ne yiyelim?\n[Dikkat] ～ましょうか soru formunda yardım teklifi: 手伝いましょうか (yardım edeyim mi?).\n[Benzer] ～ませんか (daha kibar teklif), ～よう (samimi)"
+  },
+  {
+    "pattern": "～てもいいですか",
+    "meaning_tr": "~bilir miyim?",
+    "meaning_en": "may I ~?",
+    "level": "N5",
+    "example_jp": "写真を撮ってもいいですか。",
+    "example_tr": "Fotoğraf çekebilir miyim?",
+    "notes": "[Oluşum] Fiil て-formu + もいいですか\n[Kullanım] İzin isteme ifadesi. Bir şeyi yapıp yapamayacağını sorar.\n[Ek Örnekler]\n① ここに座ってもいいですか。→ Buraya oturabilir miyim?\n② 窓を開けてもいいですか。→ Pencereyi açabilir miyim?\n③ トイレに行ってもいいですか。→ Tuvalete gidebilir miyim?\n[Dikkat] Cevap: いいですよ (evet) / すみません、ちょっと… (hayır, dolaylı red).\n[Benzer] ～てはいけません (yasak), ～てもかまいません (daha resmi izin)"
+  },
+  {
+    "pattern": "～てはいけません",
+    "meaning_tr": "~memelisin (yasak)",
+    "meaning_en": "must not ~, may not ~",
+    "level": "N5",
+    "example_jp": "ここでタバコを吸ってはいけません。",
+    "example_tr": "Burada sigara içmemelisin.",
+    "notes": "[Oluşum] Fiil て-formu + はいけません\n[Kullanım] Yasaklama/kısıtlama ifadesi. Bir şeyin yapılmaması gerektiğini söyler.\n[Ek Örnekler]\n① 教室で食べてはいけません。→ Sınıfta yemek yenmez.\n② 携帯を使ってはいけません。→ Cep telefonu kullanılmaz.\n③ ここに車を止めてはいけません。→ Buraya araba park edilmez.\n[Dikkat] Samimi: ～ちゃだめ/～ちゃいけない. ～てはならない daha resmi/edebi.\n[Benzer] ～ないでください (kibar yasak), ～てもいいです (izin verme)"
+  },
+  {
+    "pattern": "～より～のほうが",
+    "meaning_tr": "~den daha ~",
+    "meaning_en": "~ is more ~ than ~",
+    "level": "N5",
+    "example_jp": "夏より冬のほうが好きです。",
+    "example_tr": "Yazdan çok kışı severim.",
+    "notes": "[Oluşum] A + より + B + のほうが + Sıfat\n[Kullanım] Karşılaştırma ifadesi. B'nin A'dan daha fazla bir özelliğe sahip olduğunu söyler.\n[Ek Örnekler]\n① 電車よりバスのほうが安いです。→ Trenden otobüs daha ucuzdur.\n② 犬より猫のほうが好きです。→ Köpekten çok kediyi severim.\n③ 日本語より英語のほうが簡単です。→ Japoncadan İngilizce daha kolaydır.\n[Dikkat] 一番/最も ile en üstünlük: 日本で一番高い山 (Japonya'nın en yüksek dağı).\n[Benzer] ～ほど～ない (o kadar değil), ～の中で一番 (en üstünlük)"
+  },
+  {
+    "pattern": "～が上手です",
+    "meaning_tr": "~de iyi/becerikli",
+    "meaning_en": "be good at ~",
+    "level": "N5",
+    "example_jp": "彼女は料理が上手です。",
+    "example_tr": "O yemek yapmakta iyi.",
+    "notes": "[Oluşum] İsim + が + 上手です/下手です/得意です/苦手です\n[Kullanım] Beceri/yetenek ifadesi. Birinin bir konuda iyi/kötü olduğunu belirtir.\n[Ek Örnekler]\n① 田中さんはピアノが上手です。→ Tanaka piyano çalmada iyidir.\n② 私は料理が下手です。→ Ben yemek yapmada kötüyüm.\n③ 数学が得意です。→ Matematikten iyiyim.\n[Dikkat] Kendi hakkında 上手 kullanmak kibirli durur. Kendisi için 得意 tercih edin.\n[Benzer] ～が得意 (kendisi için), ～が苦手 (zayıf olduğu alan)"
+  },
+  {
+    "pattern": "～つもりです",
+    "meaning_tr": "~meye niyetli",
+    "meaning_en": "intend to ~, plan to ~",
+    "level": "N5",
+    "example_jp": "来年日本に行くつもりです。",
+    "example_tr": "Gelecek yıl Japonya'ya gitmeye niyetliyim.",
+    "notes": "[Oluşum] Fiil sözlük formu + つもりです / Fiil ない-formu + つもりです\n[Kullanım] Niyet/plan ifadesi. Önceden karar verilmiş planı bildirir.\n[Ek Örnekler]\n① 週末に引っ越すつもりです。→ Hafta sonu taşınmaya niyetliyim.\n② もう甘いものは食べないつもりです。→ Artık tatlı yememek niyetindeyim.\n③ 夏休みに旅行するつもりです。→ Yaz tatilinde seyahat etmeyi planlıyorum.\n[Dikkat] ～つもりだった = niyetlendim ama yapmadım (pişmanlık). 3. kişi için ～つもりらしい.\n[Benzer] ～予定です (daha kesin plan), ～ようと思う (karar verme süreci)"
+  },
+  {
+    "pattern": "～でしょう",
+    "meaning_tr": "~dır herhalde, ~ecektir",
+    "meaning_en": "probably ~, I suppose ~",
+    "level": "N5",
+    "example_jp": "明日は晴れでしょう。",
+    "example_tr": "Yarın herhalde açık olacak.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + でしょう. İsim + でしょう\n[Kullanım] Tahmin ifadesi. Konuşmacının yüksek olasılıkla doğru olduğunu düşündüğü şey.\n[Ek Örnekler]\n① 明日は寒いでしょう。→ Yarın soğuk olacaktır herhalde.\n② 彼はもう帰ったでしょう。→ O çoktan dönmüştür herhalde.\n③ この映画は面白いでしょう？→ Bu film ilginç, değil mi?\n[Dikkat] だろう samimi form. ～でしょう？ yükselen tonla = onay isteme (değil mi?).\n[Benzer] ～かもしれない (daha düşük olasılık), ～はずだ (mantıksal beklenti)"
+  },
+  {
+    "pattern": "～なければなりません",
+    "meaning_tr": "~meli/malı (zorunluluk)",
+    "meaning_en": "must ~, have to ~",
+    "level": "N4",
+    "example_jp": "毎日勉強しなければなりません。",
+    "example_tr": "Her gün çalışmalıyım.",
+    "notes": "[Oluşum] Fiil ない-formu → ない→なければなりません. 食べない→食べなければなりません\n[Kullanım] Zorunluluk ifadesi. Bir şeyin yapılması gerektiğini belirtir.\n[Ek Örnekler]\n① 宿題をしなければなりません。→ Ödev yapmalıyım.\n② 薬を飲まなければなりません。→ İlaç içmeliyim.\n③ 明日早く起きなければなりません。→ Yarın erken kalkmalıyım.\n[Dikkat] Kısa formlar: ～なきゃ (samimi), ～ないと (günlük). ～なくてはいけません de aynı anlam.\n[Benzer] ～べきだ (ahlaki zorunluluk), ～たほうがいい (tavsiye), ～なくてもいい (gerekmez)"
+  },
+  {
+    "pattern": "～たことがあります",
+    "meaning_tr": "~mış olmak (deneyim)",
+    "meaning_en": "have experienced ~",
+    "level": "N4",
+    "example_jp": "日本に行ったことがあります。",
+    "example_tr": "Japonya'ya gitmiş oldum.",
+    "notes": "[Oluşum] Fiil た-formu + ことがあります\n[Kullanım] Geçmiş deneyim ifadesi. Hayatta en az bir kez yapılmış bir şeyi anlatır.\n[Ek Örnekler]\n① 富士山に登ったことがあります。→ Fuji Dağı'na tırmanmış oldum.\n② 馬に乗ったことがありません。→ Hiç ata binmedim.\n③ 納豆を食べたことがありますか。→ Hiç natto yediniz mi?\n[Dikkat] 'Dün yaptım' gibi yakın geçmiş için değil, genel yaşam deneyimi için. ×昨日行ったことがある\n[Benzer] ～ことがある (bazen olur, sözlük form+), ～た (basit geçmiş)"
+  },
+  {
+    "pattern": "～と思います",
+    "meaning_tr": "~dığını düşünüyorum",
+    "meaning_en": "I think ~",
+    "level": "N4",
+    "example_jp": "明日は雨が降ると思います。",
+    "example_tr": "Yarın yağmur yağacağını düşünüyorum.",
+    "notes": "[Oluşum] Cümle (normal form) + と思います\n[Kullanım] Kişisel görüş/düşünce ifadesi. Ben düşünüyorum ki... anlamı.\n[Ek Örnekler]\n① 日本語は難しいと思います。→ Japonca'nın zor olduğunu düşünüyorum.\n② 彼は来ないと思います。→ Onun gelmeyeceğini düşünüyorum.\n③ この本はいいと思います。→ Bu kitabın iyi olduğunu düşünüyorum.\n[Dikkat] ～と思っている = süregelen düşünce. 3. kişi için ～と思っている kullanılır, ×彼は～と思います.\n[Benzer] ～と考える (daha resmi), ～と感じる (hissetmek), ～んじゃないかと思う (tereddütlü)"
+  },
+  {
+    "pattern": "～そうです (伝聞)",
+    "meaning_tr": "~mış (duyum)",
+    "meaning_en": "I heard that ~",
+    "level": "N4",
+    "example_jp": "明日は天気がいいそうです。",
+    "example_tr": "Yarın havanın güzel olacağını duydum.",
+    "notes": "[Oluşum] Cümle (normal form) + そうです. 雨が降る+そうです = 雨が降るそうです\n[Kullanım] Duyum/aktarma ifadesi. Başkasından duyulan bilgiyi aktarır.\n[Ek Örnekler]\n① ニュースによると、明日は台風が来るそうです。→ Haberlere göre yarın tayfun gelecekmiş.\n② 田中さんは来月結婚するそうです。→ Tanaka gelecek ay evlenecekmiş.\n③ あの店はおいしいそうです。→ O dükkan lezzetliymiş.\n[Dikkat] ～そうです (様態) ile karıştırmayın: おいしそう (lezzetli görünüyor) ≠ おいしいそう (lezzetliymiş).\n[Benzer] ～ということだ (daha resmi aktarma), ～らしい (dolaylı kanıt), ～って (samimi aktarma)"
+  },
+  {
+    "pattern": "～そうです (様態)",
+    "meaning_tr": "~ gibi görünüyor",
+    "meaning_en": "looks like ~",
+    "level": "N4",
+    "example_jp": "このケーキはおいしそうです。",
+    "example_tr": "Bu pasta lezzetli görünüyor.",
+    "notes": "[Oluşum] い-sıfat kökü + そう: おいしい→おいしそう. な-sıfat kökü + そう: 元気→元気そう. Fiil kökü + そう: 降り→降りそう\n[Kullanım] Görünüşe dayalı tahmin. Bir şeyin nasıl göründüğünü/olacağını ifade eder.\n[Ek Örnekler]\n① 空が暗い。雨が降りそうです。→ Gökyüzü karanlık. Yağmur yağacak gibi.\n② 彼は元気そうです。→ O sağlıklı görünüyor.\n③ この荷物は重そうです。→ Bu kargo ağır görünüyor.\n[Dikkat] いい→よさそう (×いいそう). ない→なさそう. İsimlerle kullanılmaz.\n[Benzer] ～ようだ/みたいだ (benzeme), ～らしい (dışarıdan bilgi)"
+  },
+  {
+    "pattern": "～ようにする",
+    "meaning_tr": "~meye çalışmak",
+    "meaning_en": "try to ~, make sure to ~",
+    "level": "N4",
+    "example_jp": "毎日運動するようにしています。",
+    "example_tr": "Her gün spor yapmaya çalışıyorum.",
+    "notes": "[Oluşum] Fiil sözlük formu + ようにする / Fiil ない-formu + ようにする\n[Kullanım] Alışkanlık edinme çabası. Bilinçli olarak bir şeyi yapmaya/yapmamaya çalışmak.\n[Ek Örnekler]\n① 野菜を食べるようにしています。→ Sebze yemeye çalışıyorum.\n② 遅刻しないようにしています。→ Geç kalmamaya çalışıyorum.\n③ 毎日30分歩くようにしている。→ Her gün 30 dakika yürümeye çalışıyorum.\n[Dikkat] ～ようにしている (süregelen çaba) vs ～ようにした (bir kez karar verip yaptı).\n[Benzer] ～ことにする (karar vermek), ～ようになる (doğal değişim)"
+  },
+  {
+    "pattern": "～ば～ほど",
+    "meaning_tr": "~dikçe o kadar ~",
+    "meaning_en": "the more ~ the more ~",
+    "level": "N4",
+    "example_jp": "勉強すればするほど上手になる。",
+    "example_tr": "Çalıştıkça o kadar iyi olursun.",
+    "notes": "[Oluşum] Fiil ば-formu + Fiil sözlük formu + ほど. Sıfat: 安ければ安いほど\n[Kullanım] Orantılı değişim. Bir şey arttıkça diğeri de artar.\n[Ek Örnekler]\n① 練習すればするほど上手になる。→ Pratik yaptıkça daha iyi olursun.\n② 安ければ安いほどいい。→ Ucuz oldukça iyi.\n③ 考えれば考えるほどわからなくなる。→ Düşündükçe daha da anlamaz oluyorum.\n[Dikkat] ば-formu kuralı: う→えば (書く→書けば), る→れば (食べる→食べれば).\n[Benzer] ～につれて (buna bağlı olarak), ～にしたがって (buna göre)"
+  },
+  {
+    "pattern": "～てしまう",
+    "meaning_tr": "~iverdi (tamamlama/pişmanlık)",
+    "meaning_en": "end up ~ing, completely ~",
+    "level": "N4",
+    "example_jp": "宿題を忘れてしまいました。",
+    "example_tr": "Ödevi unutuverdim.",
+    "notes": "[Oluşum] Fiil て-formu + しまう. Konuşma dili: ～ちゃう/～じゃう\n[Kullanım] 1) Tamamlama: 全部食べてしまった (hepsini yedim). 2) Pişmanlık: 忘れてしまった (unutuverdim).\n[Ek Örnekler]\n① 本を全部読んでしまいました。→ Kitabı tamamen okudum.\n② 財布をなくしてしまった。→ Cüzdanımı kaybettim (üzgünüm).\n③ 寝坊してしまいました。→ Uyuyakaldım (istemeden).\n[Dikkat] ～ちゃった/～じゃった samimi kısa form. Olumlu tamamlama veya olumsuz pişmanlık - bağlamdan anlaşılır.\n[Benzer] ～てある (bilinçli sonuç), ～ところだ (zamanlama)"
+  },
+  {
+    "pattern": "～ている間に",
+    "meaning_tr": "~iken, ~sırasında",
+    "meaning_en": "while ~",
+    "level": "N4",
+    "example_jp": "寝ている間に電話がありました。",
+    "example_tr": "Uyurken telefon gelmiş.",
+    "notes": "[Oluşum] Fiil て-formu + いる間に / İsim + の間に\n[Kullanım] Bir eylem sürerken başka bir şeyin olması. 'Süresince' anlamı.\n[Ek Örnekler]\n① 留守の間に泥棒が入った。→ Evde yokken hırsız girmiş.\n② 待っている間に本を読みました。→ Beklerken kitap okudum.\n③ 子供が寝ている間に掃除します。→ Çocuk uyurken temizlik yaparım.\n[Dikkat] 間に vs 間: 間に = o süre içinde bir an. 間 = tüm süre boyunca.\n[Benzer] ～うちに (~iken, fırsat), ～ながら (eş zamanlı eylem)"
+  },
+  {
+    "pattern": "～のに",
+    "meaning_tr": "~e rağmen",
+    "meaning_en": "although ~, despite ~",
+    "level": "N4",
+    "example_jp": "勉強したのに、テストに落ちました。",
+    "example_tr": "Çalıştığım halde sınavı geçemedim.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + のに. な-sıfat + なのに. İsim + なのに\n[Kullanım] Beklentiye aykırı sonuç. Hayal kırıklığı, şaşkınlık, şikayet tonu.\n[Ek Örnekler]\n① 約束したのに、来なかった。→ Söz verdiği halde gelmedi.\n② 高いのに、おいしくない。→ Pahalı olmasına rağmen lezzetli değil.\n③ 日曜日なのに、仕事があります。→ Pazar olmasına rağmen işim var.\n[Dikkat] ～けど daha nötr, ～のに daha duygusal (hayal kırıklığı). Cümle sonunda da kullanılır: 行きたかったのに…\n[Benzer] ～けど/けれど (ama, nötr), ～にもかかわらず (resmi), ～くせに (eleştirel)"
+  },
+  {
+    "pattern": "～させる (使役)",
+    "meaning_tr": "~dirmek/tirmek (ettirgen)",
+    "meaning_en": "make/let someone ~",
+    "level": "N4",
+    "example_jp": "子供に野菜を食べさせます。",
+    "example_tr": "Çocuğa sebze yediririm.",
+    "notes": "[Oluşum] Godan: う→あ+せる (書く→書かせる). Ichidan: る→させる (食べる→食べさせる). する→させる, 来る→来させる\n[Kullanım] Ettirgen form. Birine bir şey yaptırma veya izin verme.\n[Ek Örnekler]\n① 先生は学生にレポートを書かせた。→ Öğretmen öğrenciye rapor yazdırdı.\n② 母は子供に薬を飲ませた。→ Anne çocuğa ilaç içirdi.\n③ 好きなことをさせてください。→ İstediğimi yapmama izin verin.\n[Dikkat] ～させてください = izin isteme. に = eylemi yapan kişi. を = nesne veya yaptırılan kişi (geçişsiz fiilde).\n[Benzer] ～させられる (ettirgen-edilgen: zorla yaptırılmak), ～てもらう (birinden yapmasını rica etmek)"
+  },
+  {
+    "pattern": "～れる/られる (受身)",
+    "meaning_tr": "~lmak/lnmak (edilgen)",
+    "meaning_en": "passive form",
+    "level": "N4",
+    "example_jp": "先生に褒められました。",
+    "example_tr": "Öğretmen tarafından övüldüm.",
+    "notes": "[Oluşum] Godan: う→あ+れる (書く→書かれる). Ichidan: る→られる (食べる→食べられる). する→される, 来る→来られる\n[Kullanım] Edilgen form. 1) Doğrudan: 褒められた (övüldüm). 2) Dolaylı (zarar): 雨に降られた (yağmura yakalandım).\n[Ek Örnekler]\n① この本は多くの人に読まれています。→ Bu kitap birçok kişi tarafından okunuyor.\n② 電車で足を踏まれた。→ Trende ayağıma basıldı.\n③ 彼女に泣かれて困った。→ Kız ağlayınca zor durumda kaldım.\n[Dikkat] Dolaylı edilgen (迷惑の受身): Zarar gören kişi özne olur. Ichidan fiillerde ～られる hem edilgen hem yetkinlik.\n[Benzer] ～させる (ettirgen), ～てもらう (rica ile yaptırma)"
+  },
+  {
+    "pattern": "～たら",
+    "meaning_tr": "~sa/se, ~dığında",
+    "meaning_en": "if ~, when ~",
+    "level": "N4",
+    "example_jp": "雨が降ったら、家にいます。",
+    "example_tr": "Yağmur yağarsa evde kalırım.",
+    "notes": "[Oluşum] Fiil た-formu + ら. 食べた+ら=食べたら. Sıfat: 安かったら, 静かだったら\n[Kullanım] Koşul ifadesi. 'Eğer ~sa' veya 'yaptığında'. Gerçekleşmiş/gerçekleşecek durumlar için.\n[Ek Örnekler]\n① 暇だったら、遊びに来てください。→ Boşsan gel oyna.\n② 駅に着いたら、電話してください。→ İstasyona varınca ara.\n③ 安かったら、買います。→ Ucuzsa alırım.\n[Dikkat] ～たら tek seferlik/somut durumlar için uygun. もし ile güçlendirilebilir: もし雨が降ったら.\n[Benzer] ～ば (genel koşul), ～と (doğal sonuç), ～なら (bilgi bazlı koşul)"
+  },
+  {
+    "pattern": "～ても",
+    "meaning_tr": "~sa bile",
+    "meaning_en": "even if ~",
+    "level": "N4",
+    "example_jp": "高くても買います。",
+    "example_tr": "Pahalı olsa bile alırım.",
+    "notes": "[Oluşum] Fiil て-formu + も. Sıfat: 高くても, 静かでも. İsim: 学生でも\n[Kullanım] 'Olsa bile' anlamı. Koşula rağmen sonucun değişmediğini ifade eder.\n[Ek Örnekler]\n① 雨が降っても、行きます。→ Yağmur yağsa bile gideceğim.\n② いくら食べても、太らない。→ Ne kadar yesem de kilo almıyorum.\n③ 難しくても、諦めません。→ Zor olsa bile vazgeçmem.\n[Dikkat] いくら～ても = ne kadar ~sa da. 誰が～ても = kim ~sa da. どんなに～ても = ne denli ~sa da.\n[Benzer] ～のに (beklentiye aykırı, duygusal), ～けど (ama, nötr)"
+  },
+  {
+    "pattern": "～ようになる",
+    "meaning_tr": "~abilir hale gelmek",
+    "meaning_en": "come to be able to ~",
+    "level": "N4",
+    "example_jp": "日本語が話せるようになりました。",
+    "example_tr": "Japonca konuşabilir hale geldim.",
+    "notes": "[Oluşum] Fiil sözlük formu + ようになる / Fiil ない-formu + ようになる\n[Kullanım] Doğal değişim. Zamanla bir şeyi yapabilir/yapamaz hale gelme.\n[Ek Örnekler]\n① 漢字が読めるようになりました。→ Kanji okuyabilir hale geldim.\n② 朝早く起きられるようになった。→ Sabah erken kalkabilir oldum.\n③ お酒を飲まないようになった。→ Artık içki içmez oldum.\n[Dikkat] ～ようにする (bilinçli çaba) vs ～ようになる (doğal değişim). Yetenek fiilleriyle sık kullanılır.\n[Benzer] ～ようにする (bilinçli çaba), ～てくる (kademeli değişim)"
+  },
+  {
+    "pattern": "～ことがある",
+    "meaning_tr": "bazen ~ olur",
+    "meaning_en": "sometimes ~, there are times when ~",
+    "level": "N4",
+    "example_jp": "朝ごはんを食べないことがある。",
+    "example_tr": "Bazen kahvaltı yapmadığım olur.",
+    "notes": "[Oluşum] Fiil sözlük formu + ことがある (×た formu ile karıştırmayın)\n[Kullanım] Bazen olan durumlar. Ara sıra gerçekleşen eylemi ifade eder.\n[Ek Örnekler]\n① 仕事で遅くなることがある。→ İşten dolayı bazen geç kalırım.\n② 日曜日に料理することがあります。→ Bazen pazar günü yemek yaparım.\n③ 電車が遅れることがある。→ Tren bazen gecikir.\n[Dikkat] Sözlük formu + ことがある = bazen olur. た formu + ことがある = deneyim (farklı anlam!).\n[Benzer] ～たことがある (deneyim), ～時々 (bazen, zarf olarak)"
+  },
+  {
+    "pattern": "～かもしれません",
+    "meaning_tr": "belki ~, ~abilir",
+    "meaning_en": "might ~, perhaps ~",
+    "level": "N4",
+    "example_jp": "明日は雪が降るかもしれません。",
+    "example_tr": "Yarın kar yağabilir.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + かもしれません. İsim + かもしれません\n[Kullanım] Düşük-orta olasılık tahmini. 'Belki, olabilir' anlamı. Belirsizlik ifadesi.\n[Ek Örnekler]\n① 明日は雪が降るかもしれません。→ Yarın kar yağabilir.\n② 彼は忙しいかもしれない。→ O meşgul olabilir.\n③ この話は本当かもしれません。→ Bu hikaye doğru olabilir.\n[Dikkat] かもしれない samimi form. Olasılık sırası: かもしれない < でしょう/だろう < はずだ.\n[Benzer] ～でしょう (yüksek olasılık), ～はずだ (mantıksal kesinlik), ～に違いない (kesin)"
+  },
+  {
+    "pattern": "～ながら",
+    "meaning_tr": "~iken, ~e ~e (eş zamanlı)",
+    "meaning_en": "while ~ing",
+    "level": "N4",
+    "example_jp": "音楽を聞きながら勉強します。",
+    "example_tr": "Müzik dinlerken çalışırım.",
+    "notes": "[Oluşum] Fiil ます-kökü + ながら + Ana fiil\n[Kullanım] İki eylemin aynı anda yapılması. Ana eylem ikinci fiildir.\n[Ek Örnekler]\n① テレビを見ながら食事します。→ TV izlerken yemek yerim.\n② 歩きながら電話する。→ Yürürken telefon ederim.\n③ アルバイトしながら大学に通っています。→ Part-time çalışırken üniversiteye gidiyorum.\n[Dikkat] Aynı özne her iki eylemi de yapmalı. Farklı özneler için ～間に kullanın.\n[Benzer] ～間に (farklı özneler OK), ～つつ (edebi eş zamanlılık)"
+  },
+  {
+    "pattern": "～てあげる/もらう/くれる",
+    "meaning_tr": "~ıp vermek / ~ıp almak / ~ıp bana vermek",
+    "meaning_en": "do ~ for / receive ~ / someone does ~ for me",
+    "level": "N4",
+    "example_jp": "友達が宿題を手伝ってくれました。",
+    "example_tr": "Arkadaşım ödevime yardım etti (benim için).",
+    "notes": "[Oluşum] Fiil て-formu + あげる/もらう/くれる\n[Kullanım] İyilik alışverişi. あげる=birine yapmak, もらう=birinden almak, くれる=biri bana yapmak.\n[Ek Örnekler]\n① 友達に日本語を教えてあげました。→ Arkadaşıma Japonca öğrettim.\n② 母に料理を作ってもらいました。→ Annemden yemek yapmasını istedim.\n③ 先輩が手伝ってくれました。→ Abi/abla yardım etti (bana).\n[Dikkat] あげる: Ben→başkası. くれる: başkası→ben/yakınlarım. もらう: ben←başkası (rica). 差し上げる/いただく/くださる keigo versiyonları.\n[Benzer] ～てやる (samimi/aşağıya), ～ていただく (kibar rica)"
+  },
+  {
+    "pattern": "～はずがない",
+    "meaning_tr": "~ olması imkansız",
+    "meaning_en": "cannot be ~, impossible that ~",
+    "level": "N4",
+    "example_jp": "彼がそんなことを言うはずがない。",
+    "example_tr": "Onun böyle bir şey söylemesi imkansız.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + はずがない. İsim + のはずがない\n[Kullanım] Güçlü olumsuz tahmin. Bir şeyin kesinlikle olamayacağına inanç.\n[Ek Örnekler]\n① 彼が嘘をつくはずがない。→ Onun yalan söylemesi imkansız.\n② こんな高い物が売れるはずがない。→ Bu kadar pahalı şeyin satılması mümkün değil.\n③ そんなことがあるはずがない。→ Öyle bir şey olması imkansız.\n[Dikkat] はずだ (olması gerekir, olumlu beklenti) ≠ はずがない (olması imkansız).\n[Benzer] ～わけがない (aynı anlam, daha günlük), ～はずだ (olumlu beklenti)"
+  },
+  {
+    "pattern": "～ように言う",
+    "meaning_tr": "~mesini söylemek",
+    "meaning_en": "tell someone to ~",
+    "level": "N4",
+    "example_jp": "医者に薬を飲むように言われました。",
+    "example_tr": "Doktor ilaç içmemi söyledi.",
+    "notes": "[Oluşum] Fiil sözlük formu/ない formu + ように + 言う/頼む/注意する\n[Kullanım] Dolaylı emir/rica aktarma. Birine bir şey yapmasını/yapmamasını söyleme.\n[Ek Örnekler]\n① 先生は学生に静かにするように言いました。→ Öğretmen öğrencilere sessiz olmalarını söyledi.\n② 母に早く帰るように言われた。→ Annem erken dönmemi söyledi.\n③ 医者は甘いものを食べないように注意しました。→ Doktor tatlı yemememi uyardı.\n[Dikkat] ～てくださいと言った (doğrudan aktarma) vs ～ようにと言った (dolaylı aktarma).\n[Benzer] ～てくれと言う (samimi doğrudan), ～ないでくれと言う (yapma diye)"
+  },
+  {
+    "pattern": "～ために",
+    "meaning_tr": "~ için, ~ amacıyla",
+    "meaning_en": "in order to ~, for the purpose of ~",
+    "level": "N4",
+    "example_jp": "日本語を学ぶために日本に来ました。",
+    "example_tr": "Japonca öğrenmek için Japonya'ya geldim.",
+    "notes": "[Oluşum] Fiil sözlük formu + ために / İsim + のために\n[Kullanım] Amaç ifadesi. Bir şeyi neden yaptığını açıklar.\n[Ek Örnekler]\n① 健康のために毎日運動します。→ Sağlık için her gün spor yaparım.\n② 試験に合格するために勉強しています。→ Sınavı geçmek için çalışıyorum.\n③ 家族のために働いています。→ Ailem için çalışıyorum.\n[Dikkat] Amaç ために: iradeli fiil (×雨が降るために). Neden ために: ～たために (geçmiş + ために = neden: 事故があったために).\n[Benzer] ～ように (dolaylı amaç), ～のに (gereklilik: ～のに必要)"
+  },
+  {
+    "pattern": "～とき",
+    "meaning_tr": "~ zaman, ~diğinde",
+    "meaning_en": "when ~, at the time of ~",
+    "level": "N4",
+    "example_jp": "日本に行ったとき、富士山を見ました。",
+    "example_tr": "Japonya'ya gittiğimde Fuji Dağı'nı gördüm.",
+    "notes": "[Oluşum] Fiil normal form + とき. Sıfat + とき. İsim + のとき\n[Kullanım] Zaman ifadesi. Belirli bir zamanı/durumu belirtir.\n[Ek Örnekler]\n① 子供のとき、よく川で遊んだ。→ Çocukken çok nehirde oynardım.\n② 暇なとき、映画を見ます。→ Boş olduğumda film izlerim.\n③ 日本に行くとき、パスポートが必要です。→ Japonya'ya giderken pasaport gerekli.\n[Dikkat] 行くとき (giderken, henüz gitmedim) vs 行ったとき (gittiğimde, zaten gittim). Zaman ilişkisi önemli.\n[Benzer] ～たら (koşul+zaman), ～場合 (daha resmi durum)"
+  },
+  {
+    "pattern": "～し～し",
+    "meaning_tr": "hem ~ hem de ~",
+    "meaning_en": "~ and also ~, not only ~ but also ~",
+    "level": "N4",
+    "example_jp": "この店は安いし、おいしいし、よく行きます。",
+    "example_tr": "Bu dükkan hem ucuz hem lezzetli, sık giderim.",
+    "notes": "[Oluşum] Cümle1 + し、Cümle2 + し（、Sonuç）\n[Kullanım] Birden fazla sebep/özellik sıralama. 'Hem...hem de...' anlamı.\n[Ek Örnekler]\n① 値段も安いし、味もいいし、毎日行っています。→ Hem fiyat ucuz hem tat güzel, her gün gidiyorum.\n② 頭もいいし、スポーツもできるし、人気がある。→ Hem akıllı hem sportif, popüler.\n③ 天気もいいし、暇だし、散歩しましょう。→ Hava da güzel, boşuz da, yürüyüş yapalım.\n[Dikkat] Tek bir し ile de kullanılabilir: 疲れたし、帰ろう (yoruldum, eve dönelim). Sebep sıralama tonu.\n[Benzer] ～て (sıralama, nötr), ～から (tek sebep), ～上に (üstelik, resmi)"
+  },
+  {
+    "pattern": "～てみる",
+    "meaning_tr": "~ip denemek, ~ip görmek",
+    "meaning_en": "try ~ing",
+    "level": "N4",
+    "example_jp": "日本料理を作ってみました。",
+    "example_tr": "Japon yemeği yapmayı denedim.",
+    "notes": "[Oluşum] Fiil て-formu + みる\n[Kullanım] Deneme ifadesi. Bir şeyi deneyimlemek/denemek için yapmak.\n[Ek Örnekler]\n① 一度着てみてもいいですか。→ Bir kez giyip deneyebilir miyim?\n② この料理を食べてみてください。→ Bu yemeği bir deneyin.\n③ 自分でやってみます。→ Kendim deneyeceğim.\n[Dikkat] Gerçek deneyim/ilk kez yapma anlamı. ×毎日食べてみる (alışkanlık değil, deneme).\n[Benzer] ～ようとする (yapmaya çalışmak, başarısız olabilir), ～てみせる (yapıp göstermek)"
+  },
+  {
+    "pattern": "～ように (目的)",
+    "meaning_tr": "~sın diye, ~ması için",
+    "meaning_en": "so that ~, in order to ~",
+    "level": "N3",
+    "example_jp": "忘れないように、メモを書きました。",
+    "example_tr": "Unutmayayım diye not aldım.",
+    "notes": "[Oluşum] Fiil sözlük formu/ない formu + ように\n[Kullanım] Dolaylı amaç ifadesi. Özellikle irade dışı fiillerle ve olumsuz fiillerle kullanılır.\n[Ek Örnekler]\n① 聞こえるように大きな声で話した。→ Duyulsun diye yüksek sesle konuştum.\n② 遅れないように早く出ました。→ Gecikmeyeyim diye erken çıktım.\n③ 子供でもわかるように説明した。→ Çocuk bile anlasın diye açıkladım.\n[Dikkat] ために = iradeli fiil (勉強するために). ように = irade dışı/olumsuz (忘れないように). Fark önemli!\n[Benzer] ～ために (doğrudan amaç), ～ないように (yapmamak için)"
+  },
+  {
+    "pattern": "～ようになる (変化)",
+    "meaning_tr": "~r hale gelmek, artık ~",
+    "meaning_en": "come to ~, reach the point where ~",
+    "level": "N3",
+    "example_jp": "毎日練習して、ピアノが弾けるようになった。",
+    "example_tr": "Her gün pratik yaparak piyano çalabilir hale geldim.",
+    "notes": "[Oluşum] Fiil sözlük formu/ない formu + ようになる\n[Kullanım] Kademeli/doğal değişim. Bir durumun zamanla değişmesini anlatır.\n[Ek Örnekler]\n① 日本の生活に慣れるようになった。→ Japonya'daki yaşama alıştım.\n② 最近、夜早く寝るようになりました。→ Son zamanlarda akşam erken yatmaya başladım.\n③ あまりテレビを見ないようになった。→ Artık pek TV izlemez oldum.\n[Dikkat] Ani değişim değil, kademeli süreç. Potansiyel fiillerle sık: 読めるようになった (okuyabilir hale geldim).\n[Benzer] ～ようにする (bilinçli çaba), ～てくる (değişimin devamı)"
+  },
+  {
+    "pattern": "～ことにする",
+    "meaning_tr": "~meye karar vermek",
+    "meaning_en": "decide to ~",
+    "level": "N3",
+    "example_jp": "来月から毎朝走ることにしました。",
+    "example_tr": "Gelecek aydan itibaren her sabah koşmaya karar verdim.",
+    "notes": "[Oluşum] Fiil sözlük formu/ない formu + ことにする\n[Kullanım] Kişisel karar. Kendi iradesiyle bir şeyi yapmaya/yapmamaya karar verme.\n[Ek Örnekler]\n① ダイエットのために、お菓子を食べないことにした。→ Diyet için tatlı yemememeye karar verdim.\n② 毎朝ジョギングすることにしました。→ Her sabah koşu yapmaya karar verdim.\n③ 今年は海外旅行に行くことにしました。→ Bu yıl yurt dışı seyahat etmeye karar verdim.\n[Dikkat] ～ことにしている = karar verip alışkanlık haline getirmiş. ～ことにした = o anda karar verdi.\n[Benzer] ～ことになる (dışarıdan karar), ～つもりだ (niyet)"
+  },
+  {
+    "pattern": "～ことになる",
+    "meaning_tr": "~mesine karar verildi",
+    "meaning_en": "it has been decided that ~",
+    "level": "N3",
+    "example_jp": "来月、大阪に転勤することになりました。",
+    "example_tr": "Gelecek ay Osaka'ya tayin olmam kararlaştırıldı.",
+    "notes": "[Oluşum] Fiil sözlük formu/ない formu + ことになる\n[Kullanım] Dışarıdan gelen karar. Kişinin kontrolü dışında belirlenmiş durum.\n[Ek Örnekler]\n① 来年からアメリカに行くことになりました。→ Gelecek yıldan itibaren Amerika'ya gitmem kararlaştırıldı.\n② 会議は来週に延期されることになった。→ Toplantı gelecek haftaya ertelenmiş oldu.\n③ このルールは来月から変わることになります。→ Bu kural gelecek aydan itibaren değişecek.\n[Dikkat] ～ことにする (kendi kararı) ≠ ～ことになる (dışarıdan/kurum kararı). Japon kültüründe kendi kararını bile ことになる ile söylemek alçakgönüllüdür.\n[Benzer] ～ことにする (kişisel karar), ～ことになっている (mevcut kural/düzenleme)"
+  },
+  {
+    "pattern": "～はずだ",
+    "meaning_tr": "~ması gerekir, ~ması lazım",
+    "meaning_en": "should be ~, expected to ~",
+    "level": "N3",
+    "example_jp": "彼はもう着いているはずです。",
+    "example_tr": "O şimdiye kadar varmış olması gerekir.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + はずだ. İsim + のはずだ\n[Kullanım] Mantıksal beklenti. Bilgi ve kanıta dayalı güçlü tahmin.\n[Ek Örnekler]\n① メールを送ったから、届いているはずです。→ Mail gönderdim, ulaşmış olması lazım.\n② 彼女は英語が話せるはずだ。→ O İngilizce konuşabiliyor olması lazım.\n③ 予約したから、席があるはずです。→ Rezervasyon yaptım, yer olması gerekir.\n[Dikkat] はずだ = mantıksal kesinlik. はずがない = imkansız. はずだった = öyle olması gerekiyordu (ama olmadı).\n[Benzer] ～はずがない (olumsuz), ～にちがいない (daha kesin), ～べきだ (ahlaki gereklilik)"
+  },
+  {
+    "pattern": "～わけだ",
+    "meaning_tr": "demek ki ~, bu yüzden ~",
+    "meaning_en": "that's why ~, it means that ~",
+    "level": "N3",
+    "example_jp": "毎日十時間勉強しているから、成績がいいわけだ。",
+    "example_tr": "Her gün on saat çalışıyormuş, notlarının iyi olması bu yüzdenmiş.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + わけだ\n[Kullanım] Mantıksal sonuç. 'Demek ki, o yüzden' anlamı. Durumu anlama/açıklama.\n[Ek Örnekler]\n① 北海道は北にあるから、寒いわけだ。→ Hokkaido kuzeyde olduğu için soğuk olması normal.\n② 彼は日本に10年住んでいるから、日本語が上手なわけだ。→ 10 yıldır Japonya'da yaşıyormuş, Japoncası'nın iyi olması bu yüzdenmiş.\n③ 一日中働いたんだから、疲れるわけだ。→ Bütün gün çalışmış, yorulması doğal.\n[Dikkat] というわけではない = öyle demek değil (kısmi olumsuzlama). わけだ sonu kesinlik, というわけだ açıklama.\n[Benzer] ～から (basit neden), ～ので (kibar neden), ～ということだ (yani)"
+  },
+  {
+    "pattern": "～わけがない",
+    "meaning_tr": "~ olması imkansız, ~ması mümkün değil",
+    "meaning_en": "there's no way that ~",
+    "level": "N3",
+    "example_jp": "こんな難しい問題が解けるわけがない。",
+    "example_tr": "Bu kadar zor bir soruyu çözmem mümkün değil.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + わけがない\n[Kullanım] Güçlü olumsuz yargı. Bir şeyin kesinlikle olamayacağını ifade eder.\n[Ek Örnekler]\n① 彼女が犯人のわけがない。→ Onun suçlu olması imkansız.\n② 一日で日本語をマスターできるわけがない。→ Bir günde Japonca'yı öğrenmek imkansız.\n③ そんな安い値段で買えるわけがない。→ O kadar ucuza alınması mümkün değil.\n[Dikkat] わけがない = はずがない (neredeyse aynı). わけがない daha günlük/konuşma dili.\n[Benzer] ～はずがない (aynı anlam, biraz daha resmi), ～わけではない (kısmi olumsuz, farklı!)"
+  },
+  {
+    "pattern": "～わけにはいかない",
+    "meaning_tr": "~mak olmaz, ~amam",
+    "meaning_en": "can't afford to ~, must not ~",
+    "level": "N3",
+    "example_jp": "明日試験があるから、遊ぶわけにはいかない。",
+    "example_tr": "Yarın sınav var, eğlenemem.",
+    "notes": "[Oluşum] Fiil sözlük formu + わけにはいかない / Fiil ない formu + わけにはいかない\n[Kullanım] Sosyal/ahlaki nedenle yapamama. İstese de yapamaz, sorumluluk duygusu.\n[Ek Örnekler]\n① 秘密だから、話すわけにはいかない。→ Sır olduğu için söyleyemem.\n② 病気の母を一人にするわけにはいかない。→ Hasta annemi yalnız bırakamam.\n③ まだ仕事が残っているので、帰るわけにはいかない。→ Hala işim var, eve dönemem.\n[Dikkat] ～ないわけにはいかない = yapmamak olmaz (çifte olumsuz = zorunluluk): 行かないわけにはいかない (gitmemek olmaz).\n[Benzer] ～てはいけない (yasak), ～ざるを得ない (mecbur olmak)"
+  },
+  {
+    "pattern": "～ところだ",
+    "meaning_tr": "tam ~ üzere / tam ~ yaptı",
+    "meaning_en": "about to ~ / just did ~",
+    "level": "N3",
+    "example_jp": "今から出かけるところです。",
+    "example_tr": "Tam şimdi çıkmak üzereyim.",
+    "notes": "[Oluşum] する+ところ (yapmak üzere) / している+ところ (tam yapıyor) / した+ところ (az önce yaptı)\n[Kullanım] Eylemin tam zamanlamasını belirtir. Üç farklı zaman noktası.\n[Ek Örnekler]\n① 今から会議を始めるところです。→ Şimdi toplantıyı başlatmak üzereyiz.\n② ちょうど昼ごはんを食べているところです。→ Tam öğle yemeği yiyorum.\n③ さっき帰ってきたところです。→ Az önce eve döndüm.\n[Dikkat] ～たところで = ~sa bile (farklı anlam!): いくら頼んだところで無駄だ (ne kadar rica etsen de boş).\n[Benzer] ～ばかり (az önce, benzer), ～最中 (tam ortasında)"
+  },
+  {
+    "pattern": "～ばかり",
+    "meaning_tr": "yeni ~ yaptı / sadece ~",
+    "meaning_en": "just did ~ / only ~",
+    "level": "N3",
+    "example_jp": "日本に来たばかりで、まだ何もわからない。",
+    "example_tr": "Japonya'ya yeni geldim, henüz hiçbir şey bilmiyorum.",
+    "notes": "[Oluşum] Fiil た-formu + ばかり (az önce) / İsim + ばかり (sadece)\n[Kullanım] 1) た+ばかり: az önce yaptı. 2) İsim+ばかり: sadece, yalnızca, hep.\n[Ek Örnekler]\n① この車は買ったばかりです。→ Bu arabayı yeni aldım.\n② 甘いものばかり食べている。→ Hep tatlı şeyler yiyor.\n③ 文句ばかり言わないで。→ Sadece şikayet etme.\n[Dikkat] ～たばかり (az önce) vs ～るばかり (artık sadece yapmak kaldı). ～ばかりでなく = sadece değil, ayrıca.\n[Benzer] ～たところだ (az önce), ～だけ (sadece, daha nötr)"
+  },
+  {
+    "pattern": "～っぱなし",
+    "meaning_tr": "~ halde bırakmak",
+    "meaning_en": "left in a state of ~",
+    "level": "N3",
+    "example_jp": "エアコンをつけっぱなしで寝てしまった。",
+    "example_tr": "Klimayı açık bırakarak uyuyakaldım.",
+    "notes": "[Oluşum] Fiil ます-kökü + っぱなし\n[Kullanım] Bir şeyi açık/yapılmış halde bırakmak. Genellikle olumsuz, sorumsuz davranış.\n[Ek Örnekler]\n① テレビをつけっぱなしで出かけた。→ TV'yi açık bırakıp çıktım.\n② 窓を開けっぱなしにしないで。→ Pencereyi açık bırakma.\n③ 荷物を置きっぱなしにしている。→ Eşyaları koyduğu yerde bırakmış.\n[Dikkat] Olumsuz ton taşır: sorumsuzluk, ihmal. 立ちっぱなし = hep ayakta (uzun süre devam eden durum).\n[Benzer] ～たまま (o halde, daha nötr), ～ている (süregelen durum)"
+  },
+  {
+    "pattern": "～がち",
+    "meaning_tr": "~meye meyilli, sık sık ~",
+    "meaning_en": "tend to ~, prone to ~",
+    "level": "N3",
+    "example_jp": "冬は風邪を引きがちです。",
+    "example_tr": "Kışın sık sık soğuk algınlığına yakalanırım.",
+    "notes": "[Oluşum] Fiil ます-kökü + がち / İsim + がち\n[Kullanım] Olumsuz eğilim. Sık sık istenmeyen bir şeyin olması.\n[Ek Örnekler]\n① 最近忙しくて、食事を抜きがちです。→ Son zamanlarda meşgul olduğumdan öğün atlamaya meyilliyim.\n② 彼は遅刻しがちだ。→ O geç kalmaya meyilli.\n③ 曇りがちの天気が続いている。→ Bulutlu hava devam ediyor.\n[Dikkat] Genellikle olumsuz durumlar için. ×笑いがち (olumlu eğilim için kullanılmaz). 病気がち = sık sık hasta olan.\n[Benzer] ～やすい (kolay ~r, nötr eğilim), ～っぽい (~imsi, karakter özelliği)"
+  },
+  {
+    "pattern": "～気味",
+    "meaning_tr": "biraz ~, hafif ~",
+    "meaning_en": "slight tendency of ~, touch of ~",
+    "level": "N3",
+    "example_jp": "最近、太り気味です。",
+    "example_tr": "Son zamanlarda biraz kilo aldım.",
+    "notes": "[Oluşum] Fiil ます-kökü + 気味（ぎみ）/ İsim + 気味\n[Kullanım] Hafif belirti/eğilim. 'Biraz ~, hafifçe ~' anlamı.\n[Ek Örnekler]\n① 風邪気味で、少しだるいです。→ Biraz soğuk algınlığı var, hafif halsizim.\n② 最近疲れ気味です。→ Son zamanlarda biraz yorgunum.\n③ 遅れ気味の電車に乗った。→ Biraz gecikmeli trene bindim.\n[Dikkat] ～気味 hafif/başlangıç aşaması. Tam durum değil, belirti. 風邪気味 ≠ 風邪 (soğuk algınlığı belirtisi ≠ soğuk algınlığı).\n[Benzer] ～がち (sık eğilim), ～っぽい (~imsi karakter)"
+  },
+  {
+    "pattern": "～向き",
+    "meaning_tr": "~e uygun, ~e elverişli",
+    "meaning_en": "suitable for ~, appropriate for ~",
+    "level": "N3",
+    "example_jp": "この本は初心者向きです。",
+    "example_tr": "Bu kitap yeni başlayanlar için uygundur.",
+    "notes": "[Oluşum] İsim + 向き（むき）\n[Kullanım] Doğal uygunluk. Bir şeyin doğası gereği belirli bir gruba uygun olması.\n[Ek Örnekler]\n① このコースは上級者向きです。→ Bu kurs ileri seviye için uygundur.\n② この映画は大人向きです。→ Bu film yetişkinlere uygundur.\n③ 南向きの部屋は日当たりがいい。→ Güneye bakan oda güneş alır.\n[Dikkat] 向き = doğal uygunluk. 向け = bilinçli hedefleme. 子供向き (çocuklara uygun) vs 子供向け (çocuklar için tasarlanmış).\n[Benzer] ～向け (hedeflenmiş), ～にふさわしい (layık/uygun)"
+  },
+  {
+    "pattern": "～向け",
+    "meaning_tr": "~e yönelik, ~ için tasarlanmış",
+    "meaning_en": "intended for ~, aimed at ~",
+    "level": "N3",
+    "example_jp": "この番組は子供向けです。",
+    "example_tr": "Bu program çocuklara yöneliktir.",
+    "notes": "[Oluşum] İsim + 向け（むけ）\n[Kullanım] Hedef kitle. Bilinçli olarak belirli bir gruba yöneltilmiş/tasarlanmış.\n[Ek Örnekler]\n① 外国人向けの日本語教材です。→ Yabancılar için tasarlanmış Japonca materyaldir.\n② 初心者向けのコースを受けました。→ Başlangıç seviyesi için tasarlanmış kursa katıldım.\n③ 若者向けのファッション雑誌。→ Gençlere yönelik moda dergisi.\n[Dikkat] 向け = bilinçli tasarım/hedefleme. 向き = doğal uygunluk. 向け sonrası の ile isim bağlanır.\n[Benzer] ～向き (doğal uygunluk), ～用 (~için kullanılan: 子供用)"
+  },
+  {
+    "pattern": "～次第",
+    "meaning_tr": "~r ~maz / ~e bağlı",
+    "meaning_en": "as soon as ~ / depending on ~",
+    "level": "N3",
+    "example_jp": "届き次第、ご連絡します。",
+    "example_tr": "Ulaşır ulaşmaz size haber veririm.",
+    "notes": "[Oluşum] 1) Fiil ます-kökü + 次第 (~r ~maz). 2) İsim + 次第 (~e bağlı)\n[Kullanım] 1) Bir şey olur olmaz hemen başka şey yapma. 2) Bir şeye bağlı olma.\n[Ek Örnekler]\n① 届き次第、お知らせします。→ Ulaşır ulaşmaz haber veririm.\n② 分かり次第、連絡します。→ Öğrenir öğrenmez iletişime geçerim.\n③ 結果はあなたの努力次第です。→ Sonuç senin çabana bağlı.\n[Dikkat] Fiil+次第 resmi/iş dili. Günlük konuşmada ～たらすぐ tercih edilir. İsim+次第 = ~e bağlı.\n[Benzer] ～たらすぐ (günlük: ~r ~maz), ～による (bağlı olmak)"
+  },
+  {
+    "pattern": "～に対して",
+    "meaning_tr": "~e karşı, ~e yönelik",
+    "meaning_en": "towards ~, regarding ~, in contrast to ~",
+    "level": "N3",
+    "example_jp": "お客様に対して丁寧に話すべきです。",
+    "example_tr": "Müşterilere karşı nazik konuşulmalıdır.",
+    "notes": "[Oluşum] İsim + に対して / Cümle + のに対して\n[Kullanım] 1) ~e karşı/yönelik (tutum). 2) Karşılaştırma/zıtlık.\n[Ek Örnekler]\n① 上司に対して失礼な態度を取った。→ Üste karşı saygısız davrandı.\n② 男性の平均寿命が81歳なのに対して、女性は87歳です。→ Erkeklerin ortalama ömrü 81 iken kadınların 87'dir.\n③ この問題に対して、様々な意見がある。→ Bu soruna karşı çeşitli görüşler var.\n[Dikkat] に対して = birine yönelik tutum VEYA karşılaştırma. Bağlama göre anlam değişir.\n[Benzer] ～に対する + İsim (sıfat formu), ～について (hakkında), ～に比べて (kıyasla)"
+  },
+  {
+    "pattern": "～に比べて",
+    "meaning_tr": "~e kıyasla, ~le karşılaştırıldığında",
+    "meaning_en": "compared to ~",
+    "level": "N3",
+    "example_jp": "去年に比べて、今年は暖かい。",
+    "example_tr": "Geçen yıla kıyasla bu yıl daha sıcak.",
+    "notes": "[Oluşum] İsim + に比べて（にくらべて）\n[Kullanım] Karşılaştırma. İki şeyi kıyaslayarak fark belirtme.\n[Ek Örnekler]\n① 東京に比べて、大阪は物価が安い。→ Tokyo'ya kıyasla Osaka'da fiyatlar ucuz.\n② 10年前に比べて、技術が進歩した。→ 10 yıl öncesine kıyasla teknoloji ilerledi.\n③ 日本語に比べて、英語の文法は簡単だ。→ Japonca'ya kıyasla İngilizce grameri kolay.\n[Dikkat] ～に比べると da aynı anlam. Daha resmi bağlamlarda ～と比較して kullanılır.\n[Benzer] ～より (basit karşılaştırma), ～に対して (zıtlık)"
+  },
+  {
+    "pattern": "～に関して",
+    "meaning_tr": "~ ile ilgili, ~e ilişkin",
+    "meaning_en": "regarding ~, concerning ~",
+    "level": "N3",
+    "example_jp": "この件に関して、ご質問はありますか。",
+    "example_tr": "Bu konuyla ilgili sorularınız var mı?",
+    "notes": "[Oluşum] İsim + に関して（にかんして）/ İsim + に関する + İsim\n[Kullanım] Konu belirtme. Resmi/yazılı dilde kullanılır.\n[Ek Örnekler]\n① 環境問題に関して議論しました。→ Çevre sorunu hakkında tartıştık.\n② 今回の件に関して、説明いたします。→ Bu konu hakkında açıklama yapacağım.\n③ 日本文化に関する本を読んでいます。→ Japon kültürüyle ilgili kitap okuyorum.\n[Dikkat] に関して = resmi. について = günlük. に関する + İsim (sıfat formu): 環境に関する問題.\n[Benzer] ～について (daha günlük), ～をめぐって (tartışmalı konu etrafında)"
+  },
+  {
+    "pattern": "～について",
+    "meaning_tr": "~ hakkında, ~ konusunda",
+    "meaning_en": "about ~, concerning ~",
+    "level": "N3",
+    "example_jp": "日本の文化について調べています。",
+    "example_tr": "Japon kültürü hakkında araştırma yapıyorum.",
+    "notes": "[Oluşum] İsim + について / İsim + についての + İsim\n[Kullanım] Konu belirtme. Günlük ve resmi her bağlamda kullanılır.\n[Ek Örnekler]\n① 将来について考えています。→ Gelecek hakkında düşünüyorum.\n② 日本の歴史についての本を買った。→ Japon tarihi hakkında kitap aldım.\n③ この問題について、どう思いますか。→ Bu sorun hakkında ne düşünüyorsunuz?\n[Dikkat] についての + İsim (sıfat formu). に関して'den daha geniş kullanım alanı.\n[Benzer] ～に関して (daha resmi), ～のことで (günlük: ~le ilgili olarak)"
+  },
+  {
+    "pattern": "～によって",
+    "meaning_tr": "~e göre, ~ tarafından, ~ yoluyla",
+    "meaning_en": "by means of ~, depending on ~, by ~",
+    "level": "N3",
+    "example_jp": "国によって文化が違います。",
+    "example_tr": "Ülkeye göre kültür farklıdır.",
+    "notes": "[Oluşum] İsim + によって / İsim + による + İsim / İsim + により\n[Kullanım] Çok anlamlı: 1) Araç/yöntem. 2) Neden. 3) Fail (edilgen). 4) Değişkenlik.\n[Ek Örnekler]\n① 人によって意見が違います。→ Kişiye göre görüş farklıdır.\n② この小説は夏目漱石によって書かれた。→ Bu roman Natsume Soseki tarafından yazıldı.\n③ 地震によって多くの建物が壊れた。→ Deprem nedeniyle birçok bina yıkıldı.\n[Dikkat] Dört farklı kullanım: ~e göre (değişkenlik), ~tarafından (fail), ~nedeniyle (sebep), ~yoluyla (araç).\n[Benzer] ～で (araç, günlük), ～のせいで (olumsuz neden), ～のおかげで (olumlu neden)"
+  },
+  {
+    "pattern": "～として",
+    "meaning_tr": "~ olarak, ~ sıfatıyla",
+    "meaning_en": "as ~, in the role of ~",
+    "level": "N3",
+    "example_jp": "私は留学生として日本に来ました。",
+    "example_tr": "Değişim öğrencisi olarak Japonya'ya geldim.",
+    "notes": "[Oluşum] İsim + として\n[Kullanım] Rol/sıfat ifadesi. Bir kişi veya şeyin hangi kapasiteyle değerlendirildiği.\n[Ek Örnekler]\n① ボランティアとして参加しました。→ Gönüllü olarak katıldım.\n② この問題は常識として知っておくべきだ。→ Bu mesele genel kültür olarak bilinmeli.\n③ 友達としてアドバイスします。→ Arkadaş olarak tavsiye ediyorum.\n[Dikkat] ～としては = o sıfatla değerlendirildiğinde: 学生としては優秀だ (öğrenci olarak başarılı). ～としても = o sıfatla bile.\n[Benzer] ～の立場で (pozisyonuyla), ～という形で (şeklinde)"
+  },
+  {
+    "pattern": "～にとって",
+    "meaning_tr": "~ için, ~in açısından",
+    "meaning_en": "for ~, from the standpoint of ~",
+    "level": "N3",
+    "example_jp": "私にとって、家族が一番大切です。",
+    "example_tr": "Benim için aile en önemlidir.",
+    "notes": "[Oluşum] İsim + にとって\n[Kullanım] Bakış açısı. Belirli bir kişi/grup açısından değerlendirme.\n[Ek Örnekler]\n① 学生にとって、この授業は難しすぎる。→ Öğrenciler için bu ders çok zor.\n② 彼にとって、それは大きな問題だった。→ Onun için bu büyük bir sorundu.\n③ 外国人にとって、漢字は大変です。→ Yabancılar için kanji çok zor.\n[Dikkat] にとって kişisel/öznel değerlendirme. ～にとっての + İsim: 私にとっての幸せ (benim için mutluluk).\n[Benzer] ～には (daha kısa: 私には難しい), ～から見ると (~in bakış açısından)"
+  },
+  {
+    "pattern": "～おかげで",
+    "meaning_tr": "~ sayesinde",
+    "meaning_en": "thanks to ~, owing to ~",
+    "level": "N3",
+    "example_jp": "先生のおかげで、試験に合格しました。",
+    "example_tr": "Öğretmenin sayesinde sınavı geçtim.",
+    "notes": "[Oluşum] Cümle (normal form) + おかげで / İsim + のおかげで\n[Kullanım] Olumlu neden. Birinin/bir şeyin sayesinde iyi bir sonuç olması. Minnet.\n[Ek Örnekler]\n① 薬のおかげで、熱が下がりました。→ İlaç sayesinde ateşim düştü.\n② みなさんのおかげで、成功しました。→ Herkesin sayesinde başardık.\n③ 早く起きたおかげで、電車に間に合った。→ Erken kalktığım sayesinde trene yetiştim.\n[Dikkat] おかげで = olumlu. せいで = olumsuz. İroni ile olumsuz: おかげで遅刻した (sayenizde geç kaldım, sitemli).\n[Benzer] ～せいで (olumsuz neden), ～のおかげさまで (çok kibar teşekkür)"
+  },
+  {
+    "pattern": "～せいで",
+    "meaning_tr": "~ yüzünden (olumsuz)",
+    "meaning_en": "because of ~ (negative)",
+    "level": "N3",
+    "example_jp": "台風のせいで、飛行機が飛ばなかった。",
+    "example_tr": "Tayfun yüzünden uçak kalkmadı.",
+    "notes": "[Oluşum] Cümle (normal form) + せいで / İsim + のせいで\n[Kullanım] Olumsuz neden. Bir şeyin yüzünden kötü sonuç. Suçlama/şikayet.\n[Ek Örnekler]\n① 渋滞のせいで、遅刻しました。→ Trafik yüzünden geç kaldım.\n② 夜更かしのせいで、体調が悪い。→ Gece geç yattığım için keyifsizim.\n③ 彼のせいで、計画が台無しになった。→ Onun yüzünden plan mahvoldu.\n[Dikkat] ～せいか = belki ~yüzünden (belirsiz neden). ～のせいにする = suçlamak: 人のせいにするな (başkasını suçlama).\n[Benzer] ～おかげで (olumlu neden), ～ために (nötr neden), ～が原因で (resmi)"
+  },
+  {
+    "pattern": "～くせに",
+    "meaning_tr": "~diği halde, ~mesine rağmen (eleştirel)",
+    "meaning_en": "even though ~ (critical)",
+    "level": "N3",
+    "example_jp": "何も知らないくせに、偉そうに話す。",
+    "example_tr": "Hiçbir şey bilmediği halde büyüklenip konuşuyor.",
+    "notes": "[Oluşum] Fiil/Sıfat normal form + くせに / İsim + のくせに\n[Kullanım] Eleştirel kınama. ~diği halde (eleştirerek). のに'den çok daha sert.\n[Ek Örnekler]\n① 自分でできるくせに、人に頼む。→ Kendisi yapabildiği halde başkasından rica ediyor.\n② 大人のくせに、泣くなよ。→ Yetişkin olduğun halde ağlama.\n③ お金がないくせに、高いものを買う。→ Parası olmadığı halde pahalı şeyler alıyor.\n[Dikkat] Çok sert/kaba bir ifade. Genellikle kişilere yöneliktir. Resmi ortamda kullanılmaz.\n[Benzer] ～のに (hayal kırıklığı, daha yumuşak), ～にもかかわらず (resmi zıtlık)"
+  },
+  {
+    "pattern": "～どころか",
+    "meaning_tr": "~ şöyle dursun, ~den çok uzak",
+    "meaning_en": "far from ~, let alone ~",
+    "level": "N3",
+    "example_jp": "漢字どころか、ひらがなも読めない。",
+    "example_tr": "Kanji şöyle dursun, hiragana bile okuyamıyor.",
+    "notes": "[Oluşum] İsim + どころか / Fiil/Sıfat normal form + どころか\n[Kullanım] Beklentinin tam zıttı. '~şöyle dursun, hatta...' anlamı.\n[Ek Örnekler]\n① 日本語どころか、英語もできない。→ Japonca şöyle dursun, İngilizce bile yapamıyor.\n② 減るどころか、増えている。→ Azalmak şöyle dursun, artıyor.\n③ 休みどころか、毎日残業です。→ Tatil şöyle dursun, her gün fazla mesai.\n[Dikkat] Beklenen durum + どころか + gerçek durum (tam zıt veya daha aşırı). İki yönlü: olumlu→olumsuz veya olumsuz→daha olumsuz.\n[Benzer] ～ばかりか (sadece değil, ayrıca), ～はおろか (şöyle dursun, daha resmi)"
+  },
+  {
+    "pattern": "～さえ～ば",
+    "meaning_tr": "yeter ki ~, ~ bile ~sa",
+    "meaning_en": "if only ~, as long as ~",
+    "level": "N3",
+    "example_jp": "お金さえあれば、世界中を旅行したい。",
+    "example_tr": "Yeter ki param olsun, bütün dünyayı gezmek istiyorum.",
+    "notes": "[Oluşum] İsim + さえ + Fiil ば-formu / Fiil ます-kökü + さえすれば\n[Kullanım] Tek koşul yeterli. 'Yeter ki ~, sadece ~ olsa...' anlamı.\n[Ek Örnekler]\n① 健康でさえあれば、何でもできる。→ Yeter ki sağlıklı ol, her şeyi yapabilirsin.\n② 時間さえあれば、旅行したい。→ Yeter ki zamanım olsun, seyahat etmek istiyorum.\n③ 努力しさえすれば、成功できる。→ Yeter ki çaba göster, başarabilirsin.\n[Dikkat] さえ = bile/yeter ki. でさえ = bile: 子供でさえわかる (çocuk bile anlar). さえ vurgu edatı.\n[Benzer] ～だけ～ば (sadece ~sa), ～ば (genel koşul)"
+  },
+  {
+    "pattern": "～たとえ～ても",
+    "meaning_tr": "~ olsa bile, ~ de olsa",
+    "meaning_en": "even if ~, no matter if ~",
+    "level": "N3",
+    "example_jp": "たとえ失敗しても、諦めません。",
+    "example_tr": "Başarısız olsam bile vazgeçmem.",
+    "notes": "[Oluşum] たとえ + Cümle + ても/でも\n[Kullanım] Varsayımsal duruma rağmen. 'Olsa bile, ne olursa olsun' anlamı. Güçlü kararlılık.\n[Ek Örnekler]\n① たとえ雨が降っても、試合は行います。→ Yağmur yağsa bile maç yapılacak.\n② たとえ反対されても、自分の道を行く。→ Karşı çıkılsa bile kendi yolumdan gideceğim.\n③ たとえ時間がなくても、朝ごはんは食べる。→ Zamanım olmasa bile kahvaltı yaparım.\n[Dikkat] たとえ olmadan da ～ても kullanılır ama たとえ ile vurgu artar. Kararlılık, irade gücü ifadesi.\n[Benzer] ～ても (olsa bile, taとえ'siz), ～にしても (olsa bile, daha hafif)"
+  },
+  {
+    "pattern": "～つつある",
+    "meaning_tr": "giderek ~yor, ~mekte",
+    "meaning_en": "in the process of ~, gradually ~ing",
+    "level": "N3",
+    "example_jp": "地球の気温は上がりつつある。",
+    "example_tr": "Dünya'nın sıcaklığı giderek artıyor.",
+    "notes": "[Oluşum] Fiil ます-kökü + つつある\n[Kullanım] Devam eden değişim süreci. Resmi/yazılı dilde kullanılır. ～ている'in edebi versiyonu.\n[Ek Örnekler]\n① 経済は回復しつつある。→ Ekonomi toparlanmakta.\n② 環境問題は悪化しつつある。→ Çevre sorunları kötüleşmekte.\n③ 新しい技術が普及しつつある。→ Yeni teknoloji yaygınlaşmakta.\n[Dikkat] Sadece değişim fiilleriyle: ×食べつつある (anlık eylem, yanlış). Gazete, haber, rapor dilinde sık.\n[Benzer] ～ている (günlük süreklilik), ～つつ (eş zamanlılık: 知りつつ = bilmesine rağmen)"
+  }
 ]

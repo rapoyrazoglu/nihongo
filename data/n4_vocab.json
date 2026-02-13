@@ -3094,5 +3094,1427 @@
     "part_of_speech": "zarf",
     "example_jp": "たまたま会いました。",
     "example_tr": "Tesadüfen karşılaştık."
+  },
+  {
+    "word": "迷う",
+    "reading": "まよう",
+    "meaning_tr": "kaybolmak; kararsız kalmak",
+    "meaning_en": "to get lost; to hesitate",
+    "example_jp": "道に迷ってしまった。",
+    "example_tr": "Yolumu kaybettim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "滑る",
+    "reading": "すべる",
+    "meaning_tr": "kaymak",
+    "meaning_en": "to slide; to slip",
+    "example_jp": "氷の上で滑った。",
+    "example_tr": "Buzun üstünde kaydım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "転ぶ",
+    "reading": "ころぶ",
+    "meaning_tr": "düşmek; yuvarlanmak",
+    "meaning_en": "to fall down; to tumble",
+    "example_jp": "子供が転んで泣いた。",
+    "example_tr": "Çocuk düşüp ağladı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "沈む",
+    "reading": "しずむ",
+    "meaning_tr": "batmak",
+    "meaning_en": "to sink",
+    "example_jp": "太陽が海に沈む。",
+    "example_tr": "Güneş denize batıyor.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "飾る",
+    "reading": "かざる",
+    "meaning_tr": "süslemek",
+    "meaning_en": "to decorate",
+    "example_jp": "部屋に花を飾った。",
+    "example_tr": "Odayı çiçeklerle süsledim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "揺れる",
+    "reading": "ゆれる",
+    "meaning_tr": "sallanmak",
+    "meaning_en": "to shake; to sway",
+    "example_jp": "地震で建物が揺れた。",
+    "example_tr": "Depremde bina sallandı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "震える",
+    "reading": "ふるえる",
+    "meaning_tr": "titremek",
+    "meaning_en": "to tremble; to shiver",
+    "example_jp": "寒くて体が震えた。",
+    "example_tr": "Soğuktan vücudum titredi.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "響く",
+    "reading": "ひびく",
+    "meaning_tr": "yankılanmak",
+    "meaning_en": "to echo; to resound",
+    "example_jp": "声がホールに響いた。",
+    "example_tr": "Ses salonda yankılandı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "尋ねる",
+    "reading": "たずねる",
+    "meaning_tr": "sormak",
+    "meaning_en": "to ask; to inquire",
+    "example_jp": "道を尋ねた。",
+    "example_tr": "Yol sordum.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "振る",
+    "reading": "ふる",
+    "meaning_tr": "sallamak",
+    "meaning_en": "to wave; to shake",
+    "example_jp": "手を振って別れた。",
+    "example_tr": "El sallayarak vedalaştık.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "掘る",
+    "reading": "ほる",
+    "meaning_tr": "kazmak",
+    "meaning_en": "to dig",
+    "example_jp": "庭に穴を掘った。",
+    "example_tr": "Bahçeye çukur kazdım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "騒ぐ",
+    "reading": "さわぐ",
+    "meaning_tr": "gürültü yapmak",
+    "meaning_en": "to make noise; to be noisy",
+    "example_jp": "夜中に騒がないでください。",
+    "example_tr": "Gece yarısı gürültü yapmayın lütfen.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "祈る",
+    "reading": "いのる",
+    "meaning_tr": "dua etmek",
+    "meaning_en": "to pray; to wish",
+    "example_jp": "家族の健康を祈る。",
+    "example_tr": "Ailenin sağlığı için dua ediyorum.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "気づく",
+    "reading": "きづく",
+    "meaning_tr": "farkına varmak",
+    "meaning_en": "to notice; to realize",
+    "example_jp": "間違いに気づいた。",
+    "example_tr": "Hatanın farkına vardım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "手伝う",
+    "reading": "てつだう",
+    "meaning_tr": "yardım etmek",
+    "meaning_en": "to help; to assist",
+    "example_jp": "母の料理を手伝った。",
+    "example_tr": "Annemin yemek yapmasına yardım ettim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "沸く",
+    "reading": "わく",
+    "meaning_tr": "kaynamak",
+    "meaning_en": "to boil",
+    "example_jp": "お湯が沸いた。",
+    "example_tr": "Su kaynadı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "参る",
+    "reading": "まいる",
+    "meaning_tr": "gelmek; gitmek (saygı dili)",
+    "meaning_en": "to come; to go (humble)",
+    "example_jp": "明日参ります。",
+    "example_tr": "Yarın gelirim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "致す",
+    "reading": "いたす",
+    "meaning_tr": "yapmak (saygı dili)",
+    "meaning_en": "to do (humble)",
+    "example_jp": "私が致します。",
+    "example_tr": "Ben yaparım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "召し上がる",
+    "reading": "めしあがる",
+    "meaning_tr": "yemek; içmek (saygı dili)",
+    "meaning_en": "to eat; to drink (honorific)",
+    "example_jp": "どうぞ召し上がってください。",
+    "example_tr": "Buyrun, yiyin lütfen.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "いらっしゃる",
+    "reading": "いらっしゃる",
+    "meaning_tr": "olmak; gelmek (saygı dili)",
+    "meaning_en": "to be; to come (honorific)",
+    "example_jp": "先生はいらっしゃいますか。",
+    "example_tr": "Hoca burada mı?",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "おっしゃる",
+    "reading": "おっしゃる",
+    "meaning_tr": "söylemek (saygı dili)",
+    "meaning_en": "to say (honorific)",
+    "example_jp": "先生がおっしゃった通りだ。",
+    "example_tr": "Hocanın dediği gibi.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "ご覧になる",
+    "reading": "ごらんになる",
+    "meaning_tr": "bakmak; görmek (saygı dili)",
+    "meaning_en": "to look; to see (honorific)",
+    "example_jp": "こちらをご覧になってください。",
+    "example_tr": "Buraya bakın lütfen.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "存じる",
+    "reading": "ぞんじる",
+    "meaning_tr": "bilmek (saygı dili)",
+    "meaning_en": "to know (humble)",
+    "example_jp": "はい、存じております。",
+    "example_tr": "Evet, biliyorum.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "伺う",
+    "reading": "うかがう",
+    "meaning_tr": "sormak; ziyaret etmek (saygı dili)",
+    "meaning_en": "to ask; to visit (humble)",
+    "example_jp": "明日伺います。",
+    "example_tr": "Yarın ziyaret ederim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "申す",
+    "reading": "もうす",
+    "meaning_tr": "söylemek (saygı dili)",
+    "meaning_en": "to say (humble)",
+    "example_jp": "田中と申します。",
+    "example_tr": "Tanaka diye söylerim (adım Tanaka).",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "下さる",
+    "reading": "くださる",
+    "meaning_tr": "vermek (saygı dili)",
+    "meaning_en": "to give (honorific)",
+    "example_jp": "先生が本を下さった。",
+    "example_tr": "Hoca bana kitap verdi.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "噛む",
+    "reading": "かむ",
+    "meaning_tr": "ısırmak; çiğnemek",
+    "meaning_en": "to bite; to chew",
+    "example_jp": "よく噛んで食べてください。",
+    "example_tr": "İyice çiğneyerek yiyin lütfen.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "刺す",
+    "reading": "さす",
+    "meaning_tr": "batırmak; sokmak",
+    "meaning_en": "to sting; to stab",
+    "example_jp": "蚊に刺された。",
+    "example_tr": "Sivrisinek soktu.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "縛る",
+    "reading": "しばる",
+    "meaning_tr": "bağlamak",
+    "meaning_en": "to tie; to bind",
+    "example_jp": "荷物をひもで縛った。",
+    "example_tr": "Eşyayı iple bağladım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "挟む",
+    "reading": "はさむ",
+    "meaning_tr": "sıkıştırmak; arasına koymak",
+    "meaning_en": "to insert; to pinch",
+    "example_jp": "本にしおりを挟んだ。",
+    "example_tr": "Kitaba ayraç koydum.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "溶ける",
+    "reading": "とける",
+    "meaning_tr": "erimek",
+    "meaning_en": "to melt; to dissolve",
+    "example_jp": "氷が溶けた。",
+    "example_tr": "Buz eridi.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "固まる",
+    "reading": "かたまる",
+    "meaning_tr": "katılaşmak",
+    "meaning_en": "to harden; to solidify",
+    "example_jp": "セメントが固まった。",
+    "example_tr": "Çimento katılaştı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "枯れる",
+    "reading": "かれる",
+    "meaning_tr": "kurumak; solmak",
+    "meaning_en": "to wither; to die (plant)",
+    "example_jp": "花が枯れてしまった。",
+    "example_tr": "Çiçek soldu.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "腐る",
+    "reading": "くさる",
+    "meaning_tr": "çürümek; bozulmak",
+    "meaning_en": "to rot; to go bad",
+    "example_jp": "肉が腐った。",
+    "example_tr": "Et çürüdü.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "散る",
+    "reading": "ちる",
+    "meaning_tr": "dağılmak; saçılmak",
+    "meaning_en": "to scatter; to fall (petals)",
+    "example_jp": "桜の花びらが散った。",
+    "example_tr": "Kiraz çiçeği yaprakları döküldü.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "咲く",
+    "reading": "さく",
+    "meaning_tr": "açmak (çiçek)",
+    "meaning_en": "to bloom",
+    "example_jp": "春になると花が咲く。",
+    "example_tr": "Bahar gelince çiçekler açar.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "実る",
+    "reading": "みのる",
+    "meaning_tr": "meyve vermek",
+    "meaning_en": "to bear fruit; to ripen",
+    "example_jp": "りんごが実った。",
+    "example_tr": "Elmalar meyve verdi.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "染める",
+    "reading": "そめる",
+    "meaning_tr": "boyamak",
+    "meaning_en": "to dye",
+    "example_jp": "髪を茶色に染めた。",
+    "example_tr": "Saçımı kahverengiye boyadım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "制度",
+    "reading": "せいど",
+    "meaning_tr": "sistem; düzen",
+    "meaning_en": "system; institution",
+    "example_jp": "教育制度が変わった。",
+    "example_tr": "Eğitim sistemi değişti.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "参加",
+    "reading": "さんか",
+    "meaning_tr": "katılım",
+    "meaning_en": "participation",
+    "example_jp": "大会に参加した。",
+    "example_tr": "Turnuvaya katıldım.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "出発",
+    "reading": "しゅっぱつ",
+    "meaning_tr": "kalkış; hareket",
+    "meaning_en": "departure",
+    "example_jp": "出発は朝八時です。",
+    "example_tr": "Kalkış sabah saat sekizde.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "到着",
+    "reading": "とうちゃく",
+    "meaning_tr": "varış",
+    "meaning_en": "arrival",
+    "example_jp": "到着は午後三時です。",
+    "example_tr": "Varış öğleden sonra saat üçte.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "教育",
+    "reading": "きょういく",
+    "meaning_tr": "eğitim",
+    "meaning_en": "education",
+    "example_jp": "子供の教育は大切だ。",
+    "example_tr": "Çocukların eğitimi önemlidir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "医療",
+    "reading": "いりょう",
+    "meaning_tr": "tıp; sağlık hizmeti",
+    "meaning_en": "medical care",
+    "example_jp": "医療費が高い。",
+    "example_tr": "Sağlık masrafları yüksek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "福祉",
+    "reading": "ふくし",
+    "meaning_tr": "sosyal refah",
+    "meaning_en": "welfare",
+    "example_jp": "福祉制度が整っている。",
+    "example_tr": "Sosyal refah sistemi düzenli.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "環境",
+    "reading": "かんきょう",
+    "meaning_tr": "çevre",
+    "meaning_en": "environment",
+    "example_jp": "環境を守りましょう。",
+    "example_tr": "Çevreyi koruyalım.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "貿易",
+    "reading": "ぼうえき",
+    "meaning_tr": "ticaret; dış ticaret",
+    "meaning_en": "trade; foreign trade",
+    "example_jp": "貿易会社で働いている。",
+    "example_tr": "Bir ticaret şirketinde çalışıyorum.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "宗教",
+    "reading": "しゅうきょう",
+    "meaning_tr": "din",
+    "meaning_en": "religion",
+    "example_jp": "日本にはいろいろな宗教がある。",
+    "example_tr": "Japonya'da çeşitli dinler var.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "災害",
+    "reading": "さいがい",
+    "meaning_tr": "afet",
+    "meaning_en": "disaster",
+    "example_jp": "災害に備えて準備する。",
+    "example_tr": "Afete karşı hazırlık yapmak.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "事件",
+    "reading": "じけん",
+    "meaning_tr": "olay; vaka",
+    "meaning_en": "incident; case",
+    "example_jp": "大きな事件が起きた。",
+    "example_tr": "Büyük bir olay meydana geldi.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "犯罪",
+    "reading": "はんざい",
+    "meaning_tr": "suç",
+    "meaning_en": "crime",
+    "example_jp": "犯罪が増えている。",
+    "example_tr": "Suç artıyor.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "戦争",
+    "reading": "せんそう",
+    "meaning_tr": "savaş",
+    "meaning_en": "war",
+    "example_jp": "戦争は絶対にだめだ。",
+    "example_tr": "Savaş kesinlikle olmamalı.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "平等",
+    "reading": "びょうどう",
+    "meaning_tr": "eşitlik",
+    "meaning_en": "equality",
+    "example_jp": "男女平等は大切だ。",
+    "example_tr": "Kadın-erkek eşitliği önemlidir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "権利",
+    "reading": "けんり",
+    "meaning_tr": "hak",
+    "meaning_en": "right",
+    "example_jp": "国民の権利を守る。",
+    "example_tr": "Vatandaşların haklarını korumak.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "義務",
+    "reading": "ぎむ",
+    "meaning_tr": "görev; yükümlülük",
+    "meaning_en": "duty; obligation",
+    "example_jp": "教育は国民の義務だ。",
+    "example_tr": "Eğitim vatandaşlık görevidir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "法律",
+    "reading": "ほうりつ",
+    "meaning_tr": "hukuk; yasa",
+    "meaning_en": "law",
+    "example_jp": "法律を守らなければならない。",
+    "example_tr": "Yasalara uymak gerekir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "態度",
+    "reading": "たいど",
+    "meaning_tr": "tavır; tutum",
+    "meaning_en": "attitude",
+    "example_jp": "彼の態度が気になる。",
+    "example_tr": "Onun tavrı dikkatimi çekiyor.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "表情",
+    "reading": "ひょうじょう",
+    "meaning_tr": "yüz ifadesi",
+    "meaning_en": "facial expression",
+    "example_jp": "彼女の表情が暗い。",
+    "example_tr": "Onun yüz ifadesi karanlık.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "性格",
+    "reading": "せいかく",
+    "meaning_tr": "kişilik; karakter",
+    "meaning_en": "personality; character",
+    "example_jp": "彼は優しい性格だ。",
+    "example_tr": "O nazik bir kişiliğe sahip.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "能力",
+    "reading": "のうりょく",
+    "meaning_tr": "yetenek; kabiliyet",
+    "meaning_en": "ability; capability",
+    "example_jp": "彼女は能力が高い。",
+    "example_tr": "Onun yeteneği yüksek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "常識",
+    "reading": "じょうしき",
+    "meaning_tr": "sağduyu; genel kültür",
+    "meaning_en": "common sense",
+    "example_jp": "それは常識だ。",
+    "example_tr": "Bu sağduyudur.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "印象",
+    "reading": "いんしょう",
+    "meaning_tr": "izlenim",
+    "meaning_en": "impression",
+    "example_jp": "第一印象が大切だ。",
+    "example_tr": "İlk izlenim önemlidir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "想像",
+    "reading": "そうぞう",
+    "meaning_tr": "hayal; tahayyül",
+    "meaning_en": "imagination",
+    "example_jp": "想像以上に大変だった。",
+    "example_tr": "Hayal ettiğimden daha zordu.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "記憶",
+    "reading": "きおく",
+    "meaning_tr": "hafıza; anı",
+    "meaning_en": "memory",
+    "example_jp": "子供の頃の記憶がない。",
+    "example_tr": "Çocukluk anılarım yok.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "感情",
+    "reading": "かんじょう",
+    "meaning_tr": "duygu; his",
+    "meaning_en": "emotion; feeling",
+    "example_jp": "感情をコントロールする。",
+    "example_tr": "Duygularını kontrol etmek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "信頼",
+    "reading": "しんらい",
+    "meaning_tr": "güven",
+    "meaning_en": "trust; confidence",
+    "example_jp": "彼は信頼できる人だ。",
+    "example_tr": "O güvenilir bir insan.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "責任",
+    "reading": "せきにん",
+    "meaning_tr": "sorumluluk",
+    "meaning_en": "responsibility",
+    "example_jp": "自分の責任を果たす。",
+    "example_tr": "Kendi sorumluluğunu yerine getirmek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "影響",
+    "reading": "えいきょう",
+    "meaning_tr": "etki",
+    "meaning_en": "influence; effect",
+    "example_jp": "環境に影響を与える。",
+    "example_tr": "Çevreye etki vermek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "効果",
+    "reading": "こうか",
+    "meaning_tr": "etki; verim",
+    "meaning_en": "effect; effectiveness",
+    "example_jp": "この薬は効果がある。",
+    "example_tr": "Bu ilacın etkisi var.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "条件",
+    "reading": "じょうけん",
+    "meaning_tr": "koşul; şart",
+    "meaning_en": "condition; requirement",
+    "example_jp": "条件に合う仕事を探す。",
+    "example_tr": "Koşullara uygun iş aramak.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "状況",
+    "reading": "じょうきょう",
+    "meaning_tr": "durum; koşul",
+    "meaning_en": "situation; circumstances",
+    "example_jp": "今の状況を説明する。",
+    "example_tr": "Şimdiki durumu açıklamak.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "状態",
+    "reading": "じょうたい",
+    "meaning_tr": "hal; durum",
+    "meaning_en": "state; condition",
+    "example_jp": "健康状態が悪い。",
+    "example_tr": "Sağlık durumu kötü.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "対象",
+    "reading": "たいしょう",
+    "meaning_tr": "hedef; konu",
+    "meaning_en": "target; subject",
+    "example_jp": "調査の対象は学生だ。",
+    "example_tr": "Araştırmanın hedefi öğrenciler.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "基準",
+    "reading": "きじゅん",
+    "meaning_tr": "standart; ölçüt",
+    "meaning_en": "standard; criterion",
+    "example_jp": "評価の基準を決める。",
+    "example_tr": "Değerlendirme ölçütünü belirlemek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "羨ましい",
+    "reading": "うらやましい",
+    "meaning_tr": "kıskanılacak; imrenilecek",
+    "meaning_en": "envious; jealous",
+    "example_jp": "彼の才能が羨ましい。",
+    "example_tr": "Onun yeteneğini kıskanıyorum.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "痒い",
+    "reading": "かゆい",
+    "meaning_tr": "kaşınan",
+    "meaning_en": "itchy",
+    "example_jp": "蚊に刺されて痒い。",
+    "example_tr": "Sivrisinek soktuğu için kaşınıyor.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "臭い",
+    "reading": "くさい",
+    "meaning_tr": "kötü kokan",
+    "meaning_en": "smelly; stinky",
+    "example_jp": "このゴミは臭い。",
+    "example_tr": "Bu çöp kötü kokuyor.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "硬い",
+    "reading": "かたい",
+    "meaning_tr": "sert; katı",
+    "meaning_en": "hard; stiff",
+    "example_jp": "このパンは硬い。",
+    "example_tr": "Bu ekmek sert.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "優しい",
+    "reading": "やさしい",
+    "meaning_tr": "nazik; yumuşak huylu",
+    "meaning_en": "kind; gentle",
+    "example_jp": "彼女は優しい人だ。",
+    "example_tr": "O nazik bir insan.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "恐ろしい",
+    "reading": "おそろしい",
+    "meaning_tr": "korkunç; ürkütücü",
+    "meaning_en": "frightening; terrible",
+    "example_jp": "恐ろしい夢を見た。",
+    "example_tr": "Korkunç bir rüya gördüm.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "騒がしい",
+    "reading": "さわがしい",
+    "meaning_tr": "gürültülü",
+    "meaning_en": "noisy; boisterous",
+    "example_jp": "教室が騒がしい。",
+    "example_tr": "Sınıf gürültülü.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "詳しい",
+    "reading": "くわしい",
+    "meaning_tr": "ayrıntılı; bilgili",
+    "meaning_en": "detailed; knowledgeable",
+    "example_jp": "彼はこの分野に詳しい。",
+    "example_tr": "O bu alanda bilgili.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "醜い",
+    "reading": "みにくい",
+    "meaning_tr": "çirkin",
+    "meaning_en": "ugly",
+    "example_jp": "醜いアヒルの子という話がある。",
+    "example_tr": "Çirkin Ördek Yavrusu diye bir hikaye var.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "鋭い",
+    "reading": "するどい",
+    "meaning_tr": "keskin; sivri",
+    "meaning_en": "sharp; keen",
+    "example_jp": "鋭いナイフで切った。",
+    "example_tr": "Keskin bıçakla kestim.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "鈍い",
+    "reading": "にぶい",
+    "meaning_tr": "kör; küt; yavaş",
+    "meaning_en": "dull; blunt; slow",
+    "example_jp": "このナイフは鈍い。",
+    "example_tr": "Bu bıçak kör.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "痛い",
+    "reading": "いたい",
+    "meaning_tr": "ağrıyan; acıyan",
+    "meaning_en": "painful; hurting",
+    "example_jp": "頭が痛い。",
+    "example_tr": "Başım ağrıyor.",
+    "part_of_speech": "sıfat"
+  },
+  {
+    "word": "親切",
+    "reading": "しんせつ",
+    "meaning_tr": "nazik; yardımsever",
+    "meaning_en": "kind; helpful",
+    "example_jp": "彼はとても親切だ。",
+    "example_tr": "O çok nazik.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "不便",
+    "reading": "ふべん",
+    "meaning_tr": "elverişsiz",
+    "meaning_en": "inconvenient",
+    "example_jp": "駅から遠くて不便だ。",
+    "example_tr": "İstasyondan uzak ve elverişsiz.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "器用",
+    "reading": "きよう",
+    "meaning_tr": "becerikli; usta",
+    "meaning_en": "skillful; dexterous",
+    "example_jp": "彼女は手が器用だ。",
+    "example_tr": "O el becerileri çok iyi.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "贅沢",
+    "reading": "ぜいたく",
+    "meaning_tr": "lüks; savurgan",
+    "meaning_en": "luxurious; extravagant",
+    "example_jp": "贅沢な食事をした。",
+    "example_tr": "Lüks bir yemek yedik.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "立派",
+    "reading": "りっぱ",
+    "meaning_tr": "mükemmel; görkemli",
+    "meaning_en": "splendid; fine",
+    "example_jp": "立派な建物だ。",
+    "example_tr": "Görkemli bir bina.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "乱暴",
+    "reading": "らんぼう",
+    "meaning_tr": "kaba; şiddetli",
+    "meaning_en": "violent; rough",
+    "example_jp": "乱暴な運転はやめてください。",
+    "example_tr": "Kaba sürüş yapmayı bırakın.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "上品",
+    "reading": "じょうひん",
+    "meaning_tr": "zarif; kibar",
+    "meaning_en": "elegant; refined",
+    "example_jp": "上品な話し方をする人だ。",
+    "example_tr": "Zarif konuşan bir insan.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "下品",
+    "reading": "げひん",
+    "meaning_tr": "kaba; bayağı",
+    "meaning_en": "vulgar; coarse",
+    "example_jp": "下品な冗談を言わないで。",
+    "example_tr": "Kaba şakalar yapma.",
+    "part_of_speech": "na-sıfat"
+  },
+  {
+    "word": "ぜひ",
+    "reading": "ぜひ",
+    "meaning_tr": "mutlaka; kesinlikle",
+    "meaning_en": "by all means; definitely",
+    "example_jp": "ぜひ遊びに来てください。",
+    "example_tr": "Mutlaka ziyarete gelin.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "つい",
+    "reading": "つい",
+    "meaning_tr": "farkında olmadan; istemeden",
+    "meaning_en": "unintentionally; carelessly",
+    "example_jp": "つい食べ過ぎてしまった。",
+    "example_tr": "İstemeden çok fazla yedim.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "まさか",
+    "reading": "まさか",
+    "meaning_tr": "hiç beklemeden; sakın",
+    "meaning_en": "no way; surely not",
+    "example_jp": "まさかそんなことが起きるとは。",
+    "example_tr": "Böyle bir şeyin olacağını hiç beklemiyordum.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "せっかく",
+    "reading": "せっかく",
+    "meaning_tr": "zahmet edip; fırsat varken",
+    "meaning_en": "with effort; specially",
+    "example_jp": "せっかく来たのだから楽しもう。",
+    "example_tr": "Madem zahmet edip geldik, eğlenelim.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "わざわざ",
+    "reading": "わざわざ",
+    "meaning_tr": "özellikle; zahmet edip",
+    "meaning_en": "deliberately; going out of one's way",
+    "example_jp": "わざわざ来てくれてありがとう。",
+    "example_tr": "Zahmet edip geldiğin için teşekkürler.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "いよいよ",
+    "reading": "いよいよ",
+    "meaning_tr": "nihayet; sonunda",
+    "meaning_en": "finally; at last",
+    "example_jp": "いよいよ明日が試験だ。",
+    "example_tr": "Nihayet yarın sınav.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "さっぱり",
+    "reading": "さっぱり",
+    "meaning_tr": "hiç; tamamen",
+    "meaning_en": "not at all; completely",
+    "example_jp": "さっぱりわからない。",
+    "example_tr": "Hiç anlamıyorum.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "そっと",
+    "reading": "そっと",
+    "meaning_tr": "sessizce; yavaşça",
+    "meaning_en": "softly; quietly",
+    "example_jp": "赤ちゃんをそっと寝かせた。",
+    "example_tr": "Bebeği sessizce yatırdım.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "ぐっすり",
+    "reading": "ぐっすり",
+    "meaning_tr": "derin uykuyla",
+    "meaning_en": "soundly; deeply (sleep)",
+    "example_jp": "昨夜はぐっすり眠れた。",
+    "example_tr": "Dün gece derin bir uyku uyudum.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "ぼんやり",
+    "reading": "ぼんやり",
+    "meaning_tr": "dalgın; belirsiz",
+    "meaning_en": "vaguely; absent-mindedly",
+    "example_jp": "ぼんやりと窓の外を見ていた。",
+    "example_tr": "Dalgın dalgın pencereden dışarı bakıyordum.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "はっきり",
+    "reading": "はっきり",
+    "meaning_tr": "açıkça; net olarak",
+    "meaning_en": "clearly; distinctly",
+    "example_jp": "はっきり言ってください。",
+    "example_tr": "Açıkça söyleyin lütfen.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "知識",
+    "reading": "ちしき",
+    "meaning_tr": "bilgi",
+    "meaning_en": "knowledge",
+    "example_jp": "知識を深めたい。",
+    "example_tr": "Bilgimi derinleştirmek istiyorum.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "意識",
+    "reading": "いしき",
+    "meaning_tr": "bilinç; farkındalık",
+    "meaning_en": "consciousness; awareness",
+    "example_jp": "環境への意識が高まっている。",
+    "example_tr": "Çevre bilinci artıyor.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "価値",
+    "reading": "かち",
+    "meaning_tr": "değer",
+    "meaning_en": "value; worth",
+    "example_jp": "この絵には大きな価値がある。",
+    "example_tr": "Bu tablonun büyük değeri var.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "目標",
+    "reading": "もくひょう",
+    "meaning_tr": "hedef; amaç",
+    "meaning_en": "goal; target",
+    "example_jp": "今年の目標を決めた。",
+    "example_tr": "Bu yılın hedefini belirledim.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "傾向",
+    "reading": "けいこう",
+    "meaning_tr": "eğilim; yönelim",
+    "meaning_en": "tendency; trend",
+    "example_jp": "最近の若者の傾向は面白い。",
+    "example_tr": "Son zamanlarda gençlerin eğilimi ilginç.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "事実",
+    "reading": "じじつ",
+    "meaning_tr": "gerçek; olgu",
+    "meaning_en": "fact; truth",
+    "example_jp": "事実を確認する必要がある。",
+    "example_tr": "Gerçeği doğrulamak gerekiyor.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "証拠",
+    "reading": "しょうこ",
+    "meaning_tr": "kanıt; delil",
+    "meaning_en": "evidence; proof",
+    "example_jp": "証拠がないと信じられない。",
+    "example_tr": "Kanıt olmadan inanamam.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "被害",
+    "reading": "ひがい",
+    "meaning_tr": "hasar; zarar",
+    "meaning_en": "damage; harm",
+    "example_jp": "台風で大きな被害が出た。",
+    "example_tr": "Tayfundan büyük hasar oluştu.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "対策",
+    "reading": "たいさく",
+    "meaning_tr": "önlem; tedbir",
+    "meaning_en": "countermeasure; solution",
+    "example_jp": "地震対策をしている。",
+    "example_tr": "Deprem önlemi alıyoruz.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "背景",
+    "reading": "はいけい",
+    "meaning_tr": "arka plan",
+    "meaning_en": "background",
+    "example_jp": "この事件の背景を調べる。",
+    "example_tr": "Bu olayın arka planını araştırmak.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "筋肉",
+    "reading": "きんにく",
+    "meaning_tr": "kas",
+    "meaning_en": "muscle",
+    "example_jp": "筋肉を鍛えている。",
+    "example_tr": "Kaslarımı güçlendiriyorum.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "血液",
+    "reading": "けつえき",
+    "meaning_tr": "kan",
+    "meaning_en": "blood",
+    "example_jp": "血液検査を受けた。",
+    "example_tr": "Kan testi yaptırdım.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "呼吸",
+    "reading": "こきゅう",
+    "meaning_tr": "nefes; solunum",
+    "meaning_en": "breathing; respiration",
+    "example_jp": "深く呼吸してください。",
+    "example_tr": "Derin nefes alın lütfen.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "栄養",
+    "reading": "えいよう",
+    "meaning_tr": "beslenme; besin",
+    "meaning_en": "nutrition; nourishment",
+    "example_jp": "栄養のバランスが大切だ。",
+    "example_tr": "Beslenme dengesi önemlidir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "症状",
+    "reading": "しょうじょう",
+    "meaning_tr": "belirti; semptom",
+    "meaning_en": "symptom",
+    "example_jp": "どんな症状がありますか。",
+    "example_tr": "Ne gibi belirtileriniz var?",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "治療",
+    "reading": "ちりょう",
+    "meaning_tr": "tedavi",
+    "meaning_en": "treatment; cure",
+    "example_jp": "治療に時間がかかる。",
+    "example_tr": "Tedavi zaman alıyor.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "予防",
+    "reading": "よぼう",
+    "meaning_tr": "önleme; korunma",
+    "meaning_en": "prevention",
+    "example_jp": "病気の予防が大切だ。",
+    "example_tr": "Hastalıktan korunmak önemlidir.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "姿",
+    "reading": "すがた",
+    "meaning_tr": "görünüş; şekil",
+    "meaning_en": "figure; appearance",
+    "example_jp": "母の姿が見えた。",
+    "example_tr": "Annemin görüntüsünü gördüm.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "従う",
+    "reading": "したがう",
+    "meaning_tr": "uymak; itaat etmek",
+    "meaning_en": "to obey; to follow",
+    "example_jp": "規則に従ってください。",
+    "example_tr": "Kurallara uyun lütfen.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "逃げる",
+    "reading": "にげる",
+    "meaning_tr": "kaçmak",
+    "meaning_en": "to escape; to run away",
+    "example_jp": "猫が逃げてしまった。",
+    "example_tr": "Kedi kaçtı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "追う",
+    "reading": "おう",
+    "meaning_tr": "kovalamak; takip etmek",
+    "meaning_en": "to chase; to pursue",
+    "example_jp": "犬がボールを追った。",
+    "example_tr": "Köpek topu kovaladı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "叫ぶ",
+    "reading": "さけぶ",
+    "meaning_tr": "bağırmak; çığlık atmak",
+    "meaning_en": "to shout; to scream",
+    "example_jp": "大声で叫んだ。",
+    "example_tr": "Yüksek sesle bağırdım.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "囲む",
+    "reading": "かこむ",
+    "meaning_tr": "çevrelemek; kuşatmak",
+    "meaning_en": "to surround; to enclose",
+    "example_jp": "みんなでテーブルを囲んだ。",
+    "example_tr": "Herkes masanın etrafını çevreledi.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "並ぶ",
+    "reading": "ならぶ",
+    "meaning_tr": "sıralanmak; dizilmek",
+    "meaning_en": "to line up; to stand in a row",
+    "example_jp": "店の前に人が並んでいる。",
+    "example_tr": "Dükkanın önünde insanlar sırada bekliyor.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "並べる",
+    "reading": "ならべる",
+    "meaning_tr": "sıralamak; dizmek",
+    "meaning_en": "to arrange; to line up",
+    "example_jp": "本を棚に並べた。",
+    "example_tr": "Kitapları rafa dizdim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "当たる",
+    "reading": "あたる",
+    "meaning_tr": "isabet etmek; çarpmak",
+    "meaning_en": "to hit; to strike",
+    "example_jp": "ボールが頭に当たった。",
+    "example_tr": "Top başıma çarptı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "外れる",
+    "reading": "はずれる",
+    "meaning_tr": "çıkmak; sapmak",
+    "meaning_en": "to come off; to miss",
+    "example_jp": "ボタンが外れた。",
+    "example_tr": "Düğme çıktı.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "戻る",
+    "reading": "もどる",
+    "meaning_tr": "geri dönmek",
+    "meaning_en": "to return; to go back",
+    "example_jp": "家に戻った。",
+    "example_tr": "Eve geri döndüm.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "戻す",
+    "reading": "もどす",
+    "meaning_tr": "geri koymak; iade etmek",
+    "meaning_en": "to put back; to return",
+    "example_jp": "本を棚に戻した。",
+    "example_tr": "Kitabı rafa geri koydum.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "組む",
+    "reading": "くむ",
+    "meaning_tr": "birleştirmek; kurmak",
+    "meaning_en": "to assemble; to cross (arms)",
+    "example_jp": "腕を組んで考えた。",
+    "example_tr": "Kollarımı kavuşturup düşündüm.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "述べる",
+    "reading": "のべる",
+    "meaning_tr": "belirtmek; ifade etmek",
+    "meaning_en": "to state; to express",
+    "example_jp": "自分の意見を述べた。",
+    "example_tr": "Kendi fikrimi belirttim.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "示す",
+    "reading": "しめす",
+    "meaning_tr": "göstermek; belirtmek",
+    "meaning_en": "to show; to indicate",
+    "example_jp": "データが結果を示している。",
+    "example_tr": "Veriler sonucu gösteriyor.",
+    "part_of_speech": "fiil"
+  },
+  {
+    "word": "距離",
+    "reading": "きょり",
+    "meaning_tr": "mesafe; uzaklık",
+    "meaning_en": "distance",
+    "example_jp": "東京と大阪の距離は長い。",
+    "example_tr": "Tokyo ile Osaka arası mesafe uzun.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "面積",
+    "reading": "めんせき",
+    "meaning_tr": "alan; yüzölçümü",
+    "meaning_en": "area; surface area",
+    "example_jp": "部屋の面積は二十平米だ。",
+    "example_tr": "Odanın alanı yirmi metrekare.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "体積",
+    "reading": "たいせき",
+    "meaning_tr": "hacim",
+    "meaning_en": "volume",
+    "example_jp": "この箱の体積を計算する。",
+    "example_tr": "Bu kutunun hacmini hesaplamak.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "比率",
+    "reading": "ひりつ",
+    "meaning_tr": "oran; nispet",
+    "meaning_en": "ratio; rate",
+    "example_jp": "合格の比率は高い。",
+    "example_tr": "Başarı oranı yüksek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "構造",
+    "reading": "こうぞう",
+    "meaning_tr": "yapı; strüktür",
+    "meaning_en": "structure",
+    "example_jp": "建物の構造を調べる。",
+    "example_tr": "Binanın yapısını incelemek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "現象",
+    "reading": "げんしょう",
+    "meaning_tr": "fenomen; olay",
+    "meaning_en": "phenomenon",
+    "example_jp": "不思議な現象が起きた。",
+    "example_tr": "Garip bir fenomen meydana geldi.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "過程",
+    "reading": "かてい",
+    "meaning_tr": "süreç",
+    "meaning_en": "process; course",
+    "example_jp": "成長の過程を見守る。",
+    "example_tr": "Büyüme sürecini izlemek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "段階",
+    "reading": "だんかい",
+    "meaning_tr": "aşama; safha",
+    "meaning_en": "stage; phase",
+    "example_jp": "次の段階に進む。",
+    "example_tr": "Bir sonraki aşamaya geçmek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "範囲",
+    "reading": "はんい",
+    "meaning_tr": "kapsam; alan",
+    "meaning_en": "range; scope",
+    "example_jp": "試験の範囲を確認する。",
+    "example_tr": "Sınavın kapsamını kontrol etmek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "分野",
+    "reading": "ぶんや",
+    "meaning_tr": "alan; saha",
+    "meaning_en": "field; area",
+    "example_jp": "彼は医学の分野で有名だ。",
+    "example_tr": "O tıp alanında ünlü.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "項目",
+    "reading": "こうもく",
+    "meaning_tr": "madde; kalem",
+    "meaning_en": "item; entry",
+    "example_jp": "チェックリストの項目を確認する。",
+    "example_tr": "Kontrol listesinin maddelerini kontrol etmek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "手段",
+    "reading": "しゅだん",
+    "meaning_tr": "araç; yöntem",
+    "meaning_en": "means; method",
+    "example_jp": "目的を達成する手段を考える。",
+    "example_tr": "Amaca ulaşmanın yöntemini düşünmek.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "種類",
+    "reading": "しゅるい",
+    "meaning_tr": "tür; çeşit",
+    "meaning_en": "kind; type",
+    "example_jp": "果物の種類が多い。",
+    "example_tr": "Meyve çeşitleri çok.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "共通",
+    "reading": "きょうつう",
+    "meaning_tr": "ortak",
+    "meaning_en": "common; shared",
+    "example_jp": "二人には共通の趣味がある。",
+    "example_tr": "İkisinin ortak hobisi var.",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "特徴",
+    "reading": "とくちょう",
+    "meaning_tr": "özellik",
+    "meaning_en": "characteristic; feature",
+    "example_jp": "日本文化の特徴は何ですか。",
+    "example_tr": "Japon kültürünün özelliği nedir?",
+    "part_of_speech": "isim"
+  },
+  {
+    "word": "めったに",
+    "reading": "めったに",
+    "meaning_tr": "nadiren",
+    "meaning_en": "rarely; seldom",
+    "example_jp": "めったに風邪を引かない。",
+    "example_tr": "Nadiren soğuk algınlığına yakalanırım.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "いきなり",
+    "reading": "いきなり",
+    "meaning_tr": "aniden; birdenbire",
+    "meaning_en": "suddenly; all of a sudden",
+    "example_jp": "いきなり雨が降り出した。",
+    "example_tr": "Aniden yağmur yağmaya başladı.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "相変わらず",
+    "reading": "あいかわらず",
+    "meaning_tr": "her zamanki gibi",
+    "meaning_en": "as usual; as always",
+    "example_jp": "相変わらず元気そうだね。",
+    "example_tr": "Her zamanki gibi enerjik görünüyorsun.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "徐々に",
+    "reading": "じょじょに",
+    "meaning_tr": "yavaş yavaş; kademeli olarak",
+    "meaning_en": "gradually; little by little",
+    "example_jp": "気温が徐々に上がっている。",
+    "example_tr": "Sıcaklık yavaş yavaş artıyor.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "一斉に",
+    "reading": "いっせいに",
+    "meaning_tr": "hep birden; aynı anda",
+    "meaning_en": "all at once; simultaneously",
+    "example_jp": "生徒たちが一斉に立ち上がった。",
+    "example_tr": "Öğrenciler hep birden ayağa kalktı.",
+    "part_of_speech": "zarf"
+  },
+  {
+    "word": "思わず",
+    "reading": "おもわず",
+    "meaning_tr": "istemsizce; farkında olmadan",
+    "meaning_en": "involuntarily; unintentionally",
+    "example_jp": "面白くて思わず笑った。",
+    "example_tr": "Komik olduğu için istemsizce güldüm.",
+    "part_of_speech": "zarf"
   }
 ]
