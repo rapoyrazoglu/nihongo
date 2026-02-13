@@ -1,80 +1,1307 @@
 [
-  {"kanji": "一", "on_yomi": "イチ、イツ", "kun_yomi": "ひと、ひと.つ", "meaning_tr": "bir", "meaning_en": "one", "stroke_count": 1, "compounds": "一人(ひとり)、一つ(ひとつ)、一月(いちがつ)"},
-  {"kanji": "二", "on_yomi": "ニ", "kun_yomi": "ふた、ふた.つ", "meaning_tr": "iki", "meaning_en": "two", "stroke_count": 2, "compounds": "二人(ふたり)、二つ(ふたつ)、二月(にがつ)"},
-  {"kanji": "三", "on_yomi": "サン", "kun_yomi": "み、み.つ", "meaning_tr": "üç", "meaning_en": "three", "stroke_count": 3, "compounds": "三人(さんにん)、三つ(みっつ)、三月(さんがつ)"},
-  {"kanji": "四", "on_yomi": "シ", "kun_yomi": "よ、よ.つ、よん", "meaning_tr": "dört", "meaning_en": "four", "stroke_count": 5, "compounds": "四人(よにん)、四つ(よっつ)、四月(しがつ)"},
-  {"kanji": "五", "on_yomi": "ゴ", "kun_yomi": "いつ、いつ.つ", "meaning_tr": "beş", "meaning_en": "five", "stroke_count": 4, "compounds": "五人(ごにん)、五つ(いつつ)、五月(ごがつ)"},
-  {"kanji": "六", "on_yomi": "ロク", "kun_yomi": "む、む.つ", "meaning_tr": "altı", "meaning_en": "six", "stroke_count": 4, "compounds": "六人(ろくにん)、六つ(むっつ)、六月(ろくがつ)"},
-  {"kanji": "七", "on_yomi": "シチ", "kun_yomi": "なな、なな.つ", "meaning_tr": "yedi", "meaning_en": "seven", "stroke_count": 2, "compounds": "七人(しちにん)、七つ(ななつ)、七月(しちがつ)"},
-  {"kanji": "八", "on_yomi": "ハチ", "kun_yomi": "や、や.つ", "meaning_tr": "sekiz", "meaning_en": "eight", "stroke_count": 2, "compounds": "八人(はちにん)、八つ(やっつ)、八月(はちがつ)"},
-  {"kanji": "九", "on_yomi": "キュウ、ク", "kun_yomi": "ここの、ここの.つ", "meaning_tr": "dokuz", "meaning_en": "nine", "stroke_count": 2, "compounds": "九人(きゅうにん)、九つ(ここのつ)、九月(くがつ)"},
-  {"kanji": "十", "on_yomi": "ジュウ", "kun_yomi": "とお、と", "meaning_tr": "on", "meaning_en": "ten", "stroke_count": 2, "compounds": "十人(じゅうにん)、十月(じゅうがつ)"},
-  {"kanji": "日", "on_yomi": "ニチ、ジツ", "kun_yomi": "ひ、か", "meaning_tr": "gün, güneş", "meaning_en": "day, sun", "stroke_count": 4, "compounds": "日本(にほん)、毎日(まいにち)、日曜日(にちようび)"},
-  {"kanji": "月", "on_yomi": "ゲツ、ガツ", "kun_yomi": "つき", "meaning_tr": "ay", "meaning_en": "month, moon", "stroke_count": 4, "compounds": "月曜日(げつようび)、一月(いちがつ)、今月(こんげつ)"},
-  {"kanji": "火", "on_yomi": "カ", "kun_yomi": "ひ", "meaning_tr": "ateş", "meaning_en": "fire", "stroke_count": 4, "compounds": "火曜日(かようび)、火事(かじ)、花火(はなび)"},
-  {"kanji": "水", "on_yomi": "スイ", "kun_yomi": "みず", "meaning_tr": "su", "meaning_en": "water", "stroke_count": 4, "compounds": "水曜日(すいようび)、水泳(すいえい)、水道(すいどう)"},
-  {"kanji": "木", "on_yomi": "モク、ボク", "kun_yomi": "き、こ", "meaning_tr": "ağaç", "meaning_en": "tree, wood", "stroke_count": 4, "compounds": "木曜日(もくようび)、木(き)、大木(たいぼく)"},
-  {"kanji": "金", "on_yomi": "キン、コン", "kun_yomi": "かね、かな", "meaning_tr": "altın, para", "meaning_en": "gold, money", "stroke_count": 8, "compounds": "金曜日(きんようび)、お金(おかね)、金魚(きんぎょ)"},
-  {"kanji": "土", "on_yomi": "ド、ト", "kun_yomi": "つち", "meaning_tr": "toprak", "meaning_en": "earth, soil", "stroke_count": 3, "compounds": "土曜日(どようび)、土地(とち)"},
-  {"kanji": "人", "on_yomi": "ジン、ニン", "kun_yomi": "ひと", "meaning_tr": "insan", "meaning_en": "person", "stroke_count": 2, "compounds": "日本人(にほんじん)、一人(ひとり)、大人(おとな)"},
-  {"kanji": "大", "on_yomi": "ダイ、タイ", "kun_yomi": "おお、おお.きい", "meaning_tr": "büyük", "meaning_en": "big", "stroke_count": 3, "compounds": "大きい(おおきい)、大学(だいがく)、大人(おとな)"},
-  {"kanji": "小", "on_yomi": "ショウ", "kun_yomi": "ちい.さい、こ、お", "meaning_tr": "küçük", "meaning_en": "small", "stroke_count": 3, "compounds": "小さい(ちいさい)、小学校(しょうがっこう)"},
-  {"kanji": "中", "on_yomi": "チュウ", "kun_yomi": "なか", "meaning_tr": "orta, iç", "meaning_en": "middle, inside", "stroke_count": 4, "compounds": "中国(ちゅうごく)、中学校(ちゅうがっこう)"},
-  {"kanji": "山", "on_yomi": "サン", "kun_yomi": "やま", "meaning_tr": "dağ", "meaning_en": "mountain", "stroke_count": 3, "compounds": "山(やま)、富士山(ふじさん)、火山(かざん)"},
-  {"kanji": "川", "on_yomi": "セン", "kun_yomi": "かわ", "meaning_tr": "nehir", "meaning_en": "river", "stroke_count": 3, "compounds": "川(かわ)、河川(かせん)"},
-  {"kanji": "田", "on_yomi": "デン", "kun_yomi": "た", "meaning_tr": "pirinç tarlası", "meaning_en": "rice field", "stroke_count": 5, "compounds": "田中(たなか)、田んぼ(たんぼ)"},
-  {"kanji": "上", "on_yomi": "ジョウ、ショウ", "kun_yomi": "うえ、あ.がる、のぼ.る", "meaning_tr": "üst, yukarı", "meaning_en": "up, above", "stroke_count": 3, "compounds": "上(うえ)、上手(じょうず)、上がる(あがる)"},
-  {"kanji": "下", "on_yomi": "カ、ゲ", "kun_yomi": "した、さ.がる、くだ.る", "meaning_tr": "alt, aşağı", "meaning_en": "down, below", "stroke_count": 3, "compounds": "下(した)、下手(へた)、下がる(さがる)"},
-  {"kanji": "左", "on_yomi": "サ", "kun_yomi": "ひだり", "meaning_tr": "sol", "meaning_en": "left", "stroke_count": 5, "compounds": "左(ひだり)、左右(さゆう)"},
-  {"kanji": "右", "on_yomi": "ウ、ユウ", "kun_yomi": "みぎ", "meaning_tr": "sağ", "meaning_en": "right", "stroke_count": 5, "compounds": "右(みぎ)、左右(さゆう)"},
-  {"kanji": "先", "on_yomi": "セン", "kun_yomi": "さき、ま.ず", "meaning_tr": "önce, ilk", "meaning_en": "before, ahead", "stroke_count": 6, "compounds": "先生(せんせい)、先月(せんげつ)、先週(せんしゅう)"},
-  {"kanji": "生", "on_yomi": "セイ、ショウ", "kun_yomi": "い.きる、う.まれる、なま", "meaning_tr": "hayat, doğmak", "meaning_en": "life, birth", "stroke_count": 5, "compounds": "先生(せんせい)、学生(がくせい)、生まれる(うまれる)"},
-  {"kanji": "学", "on_yomi": "ガク", "kun_yomi": "まな.ぶ", "meaning_tr": "öğrenmek", "meaning_en": "study, learn", "stroke_count": 8, "compounds": "学校(がっこう)、大学(だいがく)、学生(がくせい)"},
-  {"kanji": "校", "on_yomi": "コウ", "kun_yomi": "", "meaning_tr": "okul", "meaning_en": "school", "stroke_count": 10, "compounds": "学校(がっこう)、小学校(しょうがっこう)、高校(こうこう)"},
-  {"kanji": "年", "on_yomi": "ネン", "kun_yomi": "とし", "meaning_tr": "yıl", "meaning_en": "year", "stroke_count": 6, "compounds": "今年(ことし)、去年(きょねん)、来年(らいねん)"},
-  {"kanji": "本", "on_yomi": "ホン", "kun_yomi": "もと", "meaning_tr": "kitap, köken", "meaning_en": "book, origin", "stroke_count": 5, "compounds": "日本(にほん)、本(ほん)、本当(ほんとう)"},
-  {"kanji": "名", "on_yomi": "メイ、ミョウ", "kun_yomi": "な", "meaning_tr": "isim", "meaning_en": "name", "stroke_count": 6, "compounds": "名前(なまえ)、有名(ゆうめい)、名人(めいじん)"},
-  {"kanji": "白", "on_yomi": "ハク、ビャク", "kun_yomi": "しろ、しろ.い", "meaning_tr": "beyaz", "meaning_en": "white", "stroke_count": 5, "compounds": "白い(しろい)、白人(はくじん)"},
-  {"kanji": "百", "on_yomi": "ヒャク", "kun_yomi": "", "meaning_tr": "yüz (100)", "meaning_en": "hundred", "stroke_count": 6, "compounds": "百(ひゃく)、百円(ひゃくえん)"},
-  {"kanji": "千", "on_yomi": "セン", "kun_yomi": "ち", "meaning_tr": "bin", "meaning_en": "thousand", "stroke_count": 3, "compounds": "千(せん)、千円(せんえん)、三千(さんぜん)"},
-  {"kanji": "万", "on_yomi": "マン、バン", "kun_yomi": "", "meaning_tr": "on bin", "meaning_en": "ten thousand", "stroke_count": 3, "compounds": "一万(いちまん)、万年筆(まんねんひつ)"},
-  {"kanji": "円", "on_yomi": "エン", "kun_yomi": "まる.い", "meaning_tr": "yen, yuvarlak", "meaning_en": "yen, circle", "stroke_count": 4, "compounds": "百円(ひゃくえん)、千円(せんえん)"},
-  {"kanji": "入", "on_yomi": "ニュウ", "kun_yomi": "い.る、はい.る", "meaning_tr": "girmek", "meaning_en": "enter", "stroke_count": 2, "compounds": "入る(はいる)、入口(いりぐち)、入学(にゅうがく)"},
-  {"kanji": "出", "on_yomi": "シュツ、スイ", "kun_yomi": "で.る、だ.す", "meaning_tr": "çıkmak", "meaning_en": "exit, leave", "stroke_count": 5, "compounds": "出る(でる)、出口(でぐち)、出す(だす)"},
-  {"kanji": "見", "on_yomi": "ケン", "kun_yomi": "み.る、み.せる", "meaning_tr": "görmek", "meaning_en": "see", "stroke_count": 7, "compounds": "見る(みる)、花見(はなみ)、意見(いけん)"},
-  {"kanji": "聞", "on_yomi": "ブン、モン", "kun_yomi": "き.く、き.こえる", "meaning_tr": "duymak", "meaning_en": "hear, ask", "stroke_count": 14, "compounds": "聞く(きく)、新聞(しんぶん)"},
-  {"kanji": "食", "on_yomi": "ショク、ジキ", "kun_yomi": "た.べる、く.う", "meaning_tr": "yemek", "meaning_en": "eat, food", "stroke_count": 9, "compounds": "食べる(たべる)、食事(しょくじ)、食堂(しょくどう)"},
-  {"kanji": "飲", "on_yomi": "イン", "kun_yomi": "の.む", "meaning_tr": "içmek", "meaning_en": "drink", "stroke_count": 12, "compounds": "飲む(のむ)、飲み物(のみもの)"},
-  {"kanji": "読", "on_yomi": "ドク、トク", "kun_yomi": "よ.む", "meaning_tr": "okumak", "meaning_en": "read", "stroke_count": 14, "compounds": "読む(よむ)、読書(どくしょ)"},
-  {"kanji": "書", "on_yomi": "ショ", "kun_yomi": "か.く", "meaning_tr": "yazmak", "meaning_en": "write", "stroke_count": 10, "compounds": "書く(かく)、読書(どくしょ)、図書館(としょかん)"},
-  {"kanji": "話", "on_yomi": "ワ", "kun_yomi": "はな.す、はなし", "meaning_tr": "konuşmak", "meaning_en": "speak, talk", "stroke_count": 13, "compounds": "話す(はなす)、電話(でんわ)、会話(かいわ)"},
-  {"kanji": "買", "on_yomi": "バイ", "kun_yomi": "か.う", "meaning_tr": "satın almak", "meaning_en": "buy", "stroke_count": 12, "compounds": "買う(かう)、買い物(かいもの)"},
-  {"kanji": "車", "on_yomi": "シャ", "kun_yomi": "くるま", "meaning_tr": "araba", "meaning_en": "car, vehicle", "stroke_count": 7, "compounds": "車(くるま)、電車(でんしゃ)、自動車(じどうしゃ)"},
-  {"kanji": "電", "on_yomi": "デン", "kun_yomi": "", "meaning_tr": "elektrik", "meaning_en": "electricity", "stroke_count": 13, "compounds": "電車(でんしゃ)、電話(でんわ)、電気(でんき)"},
-  {"kanji": "天", "on_yomi": "テン", "kun_yomi": "あめ、あま", "meaning_tr": "gökyüzü", "meaning_en": "heaven, sky", "stroke_count": 4, "compounds": "天気(てんき)、天国(てんごく)"},
-  {"kanji": "気", "on_yomi": "キ、ケ", "kun_yomi": "", "meaning_tr": "ruh, hava", "meaning_en": "spirit, air", "stroke_count": 6, "compounds": "天気(てんき)、元気(げんき)、気持ち(きもち)"},
-  {"kanji": "雨", "on_yomi": "ウ", "kun_yomi": "あめ、あま", "meaning_tr": "yağmur", "meaning_en": "rain", "stroke_count": 8, "compounds": "雨(あめ)、大雨(おおあめ)、梅雨(つゆ)"},
-  {"kanji": "花", "on_yomi": "カ", "kun_yomi": "はな", "meaning_tr": "çiçek", "meaning_en": "flower", "stroke_count": 7, "compounds": "花(はな)、花見(はなみ)、花火(はなび)"},
-  {"kanji": "休", "on_yomi": "キュウ", "kun_yomi": "やす.む", "meaning_tr": "dinlenmek", "meaning_en": "rest", "stroke_count": 6, "compounds": "休む(やすむ)、休み(やすみ)、休日(きゅうじつ)"},
-  {"kanji": "何", "on_yomi": "カ", "kun_yomi": "なに、なん", "meaning_tr": "ne", "meaning_en": "what", "stroke_count": 7, "compounds": "何(なに)、何人(なんにん)、何時(なんじ)"},
-  {"kanji": "時", "on_yomi": "ジ", "kun_yomi": "とき", "meaning_tr": "zaman, saat", "meaning_en": "time, hour", "stroke_count": 10, "compounds": "時間(じかん)、何時(なんじ)、時計(とけい)"},
-  {"kanji": "間", "on_yomi": "カン、ケン", "kun_yomi": "あいだ、ま", "meaning_tr": "arasında, boşluk", "meaning_en": "between, space", "stroke_count": 12, "compounds": "時間(じかん)、人間(にんげん)、間(あいだ)"},
-  {"kanji": "前", "on_yomi": "ゼン", "kun_yomi": "まえ", "meaning_tr": "önce, ön", "meaning_en": "before, front", "stroke_count": 9, "compounds": "前(まえ)、名前(なまえ)、午前(ごぜん)"},
-  {"kanji": "後", "on_yomi": "ゴ、コウ", "kun_yomi": "のち、うし.ろ、あと", "meaning_tr": "sonra, arka", "meaning_en": "after, behind", "stroke_count": 9, "compounds": "後ろ(うしろ)、午後(ごご)、後で(あとで)"},
-  {"kanji": "外", "on_yomi": "ガイ、ゲ", "kun_yomi": "そと、ほか、はず.す", "meaning_tr": "dış", "meaning_en": "outside", "stroke_count": 5, "compounds": "外(そと)、外国(がいこく)、外出(がいしゅつ)"},
-  {"kanji": "国", "on_yomi": "コク", "kun_yomi": "くに", "meaning_tr": "ülke", "meaning_en": "country", "stroke_count": 8, "compounds": "国(くに)、外国(がいこく)、中国(ちゅうごく)"},
-  {"kanji": "長", "on_yomi": "チョウ", "kun_yomi": "なが.い", "meaning_tr": "uzun", "meaning_en": "long", "stroke_count": 8, "compounds": "長い(ながい)、社長(しゃちょう)、校長(こうちょう)"},
-  {"kanji": "高", "on_yomi": "コウ", "kun_yomi": "たか.い", "meaning_tr": "yüksek, pahalı", "meaning_en": "high, expensive", "stroke_count": 10, "compounds": "高い(たかい)、高校(こうこう)、最高(さいこう)"},
-  {"kanji": "安", "on_yomi": "アン", "kun_yomi": "やす.い", "meaning_tr": "ucuz, güvenli", "meaning_en": "cheap, safe", "stroke_count": 6, "compounds": "安い(やすい)、安全(あんぜん)、不安(ふあん)"},
-  {"kanji": "友", "on_yomi": "ユウ", "kun_yomi": "とも", "meaning_tr": "arkadaş", "meaning_en": "friend", "stroke_count": 4, "compounds": "友達(ともだち)、友人(ゆうじん)、親友(しんゆう)"},
-  {"kanji": "父", "on_yomi": "フ", "kun_yomi": "ちち", "meaning_tr": "baba", "meaning_en": "father", "stroke_count": 4, "compounds": "父(ちち)、お父さん(おとうさん)、父母(ふぼ)"},
-  {"kanji": "母", "on_yomi": "ボ", "kun_yomi": "はは", "meaning_tr": "anne", "meaning_en": "mother", "stroke_count": 5, "compounds": "母(はは)、お母さん(おかあさん)、父母(ふぼ)"},
-  {"kanji": "男", "on_yomi": "ダン、ナン", "kun_yomi": "おとこ", "meaning_tr": "erkek", "meaning_en": "man, male", "stroke_count": 7, "compounds": "男(おとこ)、男の子(おとこのこ)、男性(だんせい)"},
-  {"kanji": "女", "on_yomi": "ジョ、ニョ", "kun_yomi": "おんな", "meaning_tr": "kadın", "meaning_en": "woman, female", "stroke_count": 3, "compounds": "女(おんな)、女の子(おんなのこ)、女性(じょせい)"},
-  {"kanji": "子", "on_yomi": "シ、ス", "kun_yomi": "こ", "meaning_tr": "çocuk", "meaning_en": "child", "stroke_count": 3, "compounds": "子供(こども)、男の子(おとこのこ)、女の子(おんなのこ)"},
-  {"kanji": "目", "on_yomi": "モク、ボク", "kun_yomi": "め", "meaning_tr": "göz", "meaning_en": "eye", "stroke_count": 5, "compounds": "目(め)、目的(もくてき)、一番目(いちばんめ)"},
-  {"kanji": "耳", "on_yomi": "ジ", "kun_yomi": "みみ", "meaning_tr": "kulak", "meaning_en": "ear", "stroke_count": 6, "compounds": "耳(みみ)、耳鼻科(じびか)"},
-  {"kanji": "口", "on_yomi": "コウ、ク", "kun_yomi": "くち", "meaning_tr": "ağız", "meaning_en": "mouth", "stroke_count": 3, "compounds": "口(くち)、入口(いりぐち)、出口(でぐち)"},
-  {"kanji": "手", "on_yomi": "シュ", "kun_yomi": "て", "meaning_tr": "el", "meaning_en": "hand", "stroke_count": 4, "compounds": "手(て)、手紙(てがみ)、上手(じょうず)"},
-  {"kanji": "足", "on_yomi": "ソク", "kun_yomi": "あし、た.りる", "meaning_tr": "ayak", "meaning_en": "foot, leg", "stroke_count": 7, "compounds": "足(あし)、足りる(たりる)、遠足(えんそく)"}
+  {
+    "kanji": "一",
+    "on_yomi": "イチ、イツ",
+    "kun_yomi": "ひと、ひと.つ",
+    "meaning_tr": "bir",
+    "meaning_en": "one",
+    "stroke_count": 1,
+    "compounds": "一人(ひとり)、一つ(ひとつ)、一月(いちがつ)"
+  },
+  {
+    "kanji": "二",
+    "on_yomi": "ニ",
+    "kun_yomi": "ふた、ふた.つ",
+    "meaning_tr": "iki",
+    "meaning_en": "two",
+    "stroke_count": 2,
+    "compounds": "二人(ふたり)、二つ(ふたつ)、二月(にがつ)"
+  },
+  {
+    "kanji": "三",
+    "on_yomi": "サン",
+    "kun_yomi": "み、みっ.つ",
+    "meaning_tr": "üç",
+    "meaning_en": "three",
+    "stroke_count": 3,
+    "compounds": "三人(さんにん)、三つ(みっつ)、三月(さんがつ)"
+  },
+  {
+    "kanji": "四",
+    "on_yomi": "シ",
+    "kun_yomi": "よ、よ.つ、よん",
+    "meaning_tr": "dört",
+    "meaning_en": "four",
+    "stroke_count": 5,
+    "compounds": "四人(よにん)、四つ(よっつ)、四月(しがつ)"
+  },
+  {
+    "kanji": "五",
+    "on_yomi": "ゴ",
+    "kun_yomi": "いつ、いつ.つ",
+    "meaning_tr": "beş",
+    "meaning_en": "five",
+    "stroke_count": 4,
+    "compounds": "五人(ごにん)、五つ(いつつ)、五月(ごがつ)"
+  },
+  {
+    "kanji": "六",
+    "on_yomi": "ロク",
+    "kun_yomi": "む、むっ.つ",
+    "meaning_tr": "altı",
+    "meaning_en": "six",
+    "stroke_count": 4,
+    "compounds": "六人(ろくにん)、六つ(むっつ)、六月(ろくがつ)"
+  },
+  {
+    "kanji": "七",
+    "on_yomi": "シチ",
+    "kun_yomi": "なな、なな.つ",
+    "meaning_tr": "yedi",
+    "meaning_en": "seven",
+    "stroke_count": 2,
+    "compounds": "七人(しちにん)、七つ(ななつ)、七月(しちがつ)"
+  },
+  {
+    "kanji": "八",
+    "on_yomi": "ハチ",
+    "kun_yomi": "や、やっ.つ",
+    "meaning_tr": "sekiz",
+    "meaning_en": "eight",
+    "stroke_count": 2,
+    "compounds": "八人(はちにん)、八つ(やっつ)、八月(はちがつ)"
+  },
+  {
+    "kanji": "九",
+    "on_yomi": "キュウ、ク",
+    "kun_yomi": "ここの、ここの.つ",
+    "meaning_tr": "dokuz",
+    "meaning_en": "nine",
+    "stroke_count": 2,
+    "compounds": "九人(きゅうにん)、九つ(ここのつ)、九月(くがつ)"
+  },
+  {
+    "kanji": "十",
+    "on_yomi": "ジュウ、ジッ",
+    "kun_yomi": "とお、と",
+    "meaning_tr": "on",
+    "meaning_en": "ten",
+    "stroke_count": 2,
+    "compounds": "十人(じゅうにん)、十月(じゅうがつ)、十分(じゅっぷん)"
+  },
+  {
+    "kanji": "百",
+    "on_yomi": "ヒャク",
+    "kun_yomi": "",
+    "meaning_tr": "yüz (100)",
+    "meaning_en": "hundred",
+    "stroke_count": 6,
+    "compounds": "百(ひゃく)、百円(ひゃくえん)、三百(さんびゃく)"
+  },
+  {
+    "kanji": "千",
+    "on_yomi": "セン",
+    "kun_yomi": "ち",
+    "meaning_tr": "bin",
+    "meaning_en": "thousand",
+    "stroke_count": 3,
+    "compounds": "千(せん)、千円(せんえん)、三千(さんぜん)"
+  },
+  {
+    "kanji": "万",
+    "on_yomi": "マン、バン",
+    "kun_yomi": "",
+    "meaning_tr": "on bin",
+    "meaning_en": "ten thousand",
+    "stroke_count": 3,
+    "compounds": "一万(いちまん)、万年筆(まんねんひつ)、万一(まんいち)"
+  },
+  {
+    "kanji": "円",
+    "on_yomi": "エン",
+    "kun_yomi": "まる.い",
+    "meaning_tr": "yen, yuvarlak",
+    "meaning_en": "yen, circle",
+    "stroke_count": 4,
+    "compounds": "百円(ひゃくえん)、千円(せんえん)、円い(まるい)"
+  },
+  {
+    "kanji": "時",
+    "on_yomi": "ジ",
+    "kun_yomi": "とき",
+    "meaning_tr": "zaman, saat",
+    "meaning_en": "time, hour",
+    "stroke_count": 10,
+    "compounds": "時間(じかん)、何時(なんじ)、時計(とけい)"
+  },
+  {
+    "kanji": "日",
+    "on_yomi": "ニチ、ジツ",
+    "kun_yomi": "ひ、か",
+    "meaning_tr": "gün, güneş",
+    "meaning_en": "day, sun",
+    "stroke_count": 4,
+    "compounds": "日本(にほん)、毎日(まいにち)、日曜日(にちようび)"
+  },
+  {
+    "kanji": "月",
+    "on_yomi": "ゲツ、ガツ",
+    "kun_yomi": "つき",
+    "meaning_tr": "ay",
+    "meaning_en": "month, moon",
+    "stroke_count": 4,
+    "compounds": "月曜日(げつようび)、一月(いちがつ)、今月(こんげつ)"
+  },
+  {
+    "kanji": "火",
+    "on_yomi": "カ",
+    "kun_yomi": "ひ",
+    "meaning_tr": "ateş",
+    "meaning_en": "fire",
+    "stroke_count": 4,
+    "compounds": "火曜日(かようび)、火事(かじ)、花火(はなび)"
+  },
+  {
+    "kanji": "水",
+    "on_yomi": "スイ",
+    "kun_yomi": "みず",
+    "meaning_tr": "su",
+    "meaning_en": "water",
+    "stroke_count": 4,
+    "compounds": "水曜日(すいようび)、水泳(すいえい)、水道(すいどう)"
+  },
+  {
+    "kanji": "木",
+    "on_yomi": "モク、ボク",
+    "kun_yomi": "き、こ",
+    "meaning_tr": "ağaç",
+    "meaning_en": "tree, wood",
+    "stroke_count": 4,
+    "compounds": "木曜日(もくようび)、木(き)、大木(たいぼく)"
+  },
+  {
+    "kanji": "金",
+    "on_yomi": "キン、コン",
+    "kun_yomi": "かね、かな",
+    "meaning_tr": "altın, para",
+    "meaning_en": "gold, money",
+    "stroke_count": 8,
+    "compounds": "金曜日(きんようび)、お金(おかね)、金魚(きんぎょ)"
+  },
+  {
+    "kanji": "土",
+    "on_yomi": "ド、ト",
+    "kun_yomi": "つち",
+    "meaning_tr": "toprak",
+    "meaning_en": "earth, soil",
+    "stroke_count": 3,
+    "compounds": "土曜日(どようび)、土地(とち)、土(つち)"
+  },
+  {
+    "kanji": "曜",
+    "on_yomi": "ヨウ",
+    "kun_yomi": "",
+    "meaning_tr": "haftanın günü",
+    "meaning_en": "day of the week",
+    "stroke_count": 18,
+    "compounds": "日曜日(にちようび)、月曜日(げつようび)、曜日(ようび)"
+  },
+  {
+    "kanji": "年",
+    "on_yomi": "ネン",
+    "kun_yomi": "とし",
+    "meaning_tr": "yıl",
+    "meaning_en": "year",
+    "stroke_count": 6,
+    "compounds": "今年(ことし)、去年(きょねん)、来年(らいねん)"
+  },
+  {
+    "kanji": "半",
+    "on_yomi": "ハン",
+    "kun_yomi": "なか.ば",
+    "meaning_tr": "yarım",
+    "meaning_en": "half",
+    "stroke_count": 5,
+    "compounds": "半分(はんぶん)、半年(はんとし)、半日(はんにち)"
+  },
+  {
+    "kanji": "分",
+    "on_yomi": "ブン、フン、ブ",
+    "kun_yomi": "わ.かる、わ.ける",
+    "meaning_tr": "dakika, anlamak, bölmek",
+    "meaning_en": "minute, understand, divide",
+    "stroke_count": 4,
+    "compounds": "半分(はんぶん)、十分(じゅっぷん)、自分(じぶん)"
+  },
+  {
+    "kanji": "前",
+    "on_yomi": "ゼン",
+    "kun_yomi": "まえ",
+    "meaning_tr": "önce, ön",
+    "meaning_en": "before, front",
+    "stroke_count": 9,
+    "compounds": "前(まえ)、名前(なまえ)、午前(ごぜん)"
+  },
+  {
+    "kanji": "後",
+    "on_yomi": "ゴ、コウ",
+    "kun_yomi": "のち、うし.ろ、あと",
+    "meaning_tr": "sonra, arka",
+    "meaning_en": "after, behind",
+    "stroke_count": 9,
+    "compounds": "後ろ(うしろ)、午後(ごご)、後で(あとで)"
+  },
+  {
+    "kanji": "午",
+    "on_yomi": "ゴ",
+    "kun_yomi": "",
+    "meaning_tr": "öğle",
+    "meaning_en": "noon",
+    "stroke_count": 4,
+    "compounds": "午前(ごぜん)、午後(ごご)、正午(しょうご)"
+  },
+  {
+    "kanji": "朝",
+    "on_yomi": "チョウ",
+    "kun_yomi": "あさ",
+    "meaning_tr": "sabah",
+    "meaning_en": "morning",
+    "stroke_count": 12,
+    "compounds": "朝(あさ)、今朝(けさ)、朝食(ちょうしょく)"
+  },
+  {
+    "kanji": "昼",
+    "on_yomi": "チュウ",
+    "kun_yomi": "ひる",
+    "meaning_tr": "öğle",
+    "meaning_en": "noon, daytime",
+    "stroke_count": 9,
+    "compounds": "昼(ひる)、昼食(ちゅうしょく)、昼休み(ひるやすみ)"
+  },
+  {
+    "kanji": "夜",
+    "on_yomi": "ヤ",
+    "kun_yomi": "よる、よ",
+    "meaning_tr": "gece",
+    "meaning_en": "night",
+    "stroke_count": 8,
+    "compounds": "夜(よる)、今夜(こんや)、夜中(よなか)"
+  },
+  {
+    "kanji": "毎",
+    "on_yomi": "マイ",
+    "kun_yomi": "ごと",
+    "meaning_tr": "her",
+    "meaning_en": "every",
+    "stroke_count": 6,
+    "compounds": "毎日(まいにち)、毎週(まいしゅう)、毎月(まいつき)"
+  },
+  {
+    "kanji": "週",
+    "on_yomi": "シュウ",
+    "kun_yomi": "",
+    "meaning_tr": "hafta",
+    "meaning_en": "week",
+    "stroke_count": 11,
+    "compounds": "今週(こんしゅう)、先週(せんしゅう)、来週(らいしゅう)"
+  },
+  {
+    "kanji": "間",
+    "on_yomi": "カン、ケン",
+    "kun_yomi": "あいだ、ま",
+    "meaning_tr": "arasında, boşluk",
+    "meaning_en": "between, space",
+    "stroke_count": 12,
+    "compounds": "時間(じかん)、人間(にんげん)、間(あいだ)"
+  },
+  {
+    "kanji": "今",
+    "on_yomi": "コン、キン",
+    "kun_yomi": "いま",
+    "meaning_tr": "şimdi",
+    "meaning_en": "now",
+    "stroke_count": 4,
+    "compounds": "今(いま)、今日(きょう)、今週(こんしゅう)"
+  },
+  {
+    "kanji": "先",
+    "on_yomi": "セン",
+    "kun_yomi": "さき、ま.ず",
+    "meaning_tr": "önce, ilk",
+    "meaning_en": "before, ahead",
+    "stroke_count": 6,
+    "compounds": "先生(せんせい)、先月(せんげつ)、先週(せんしゅう)"
+  },
+  {
+    "kanji": "来",
+    "on_yomi": "ライ",
+    "kun_yomi": "く.る、きた.る",
+    "meaning_tr": "gelmek",
+    "meaning_en": "come",
+    "stroke_count": 7,
+    "compounds": "来る(くる)、来年(らいねん)、来週(らいしゅう)"
+  },
+  {
+    "kanji": "何",
+    "on_yomi": "カ",
+    "kun_yomi": "なに、なん",
+    "meaning_tr": "ne",
+    "meaning_en": "what",
+    "stroke_count": 7,
+    "compounds": "何(なに)、何人(なんにん)、何時(なんじ)"
+  },
+  {
+    "kanji": "上",
+    "on_yomi": "ジョウ、ショウ",
+    "kun_yomi": "うえ、あ.がる、のぼ.る",
+    "meaning_tr": "üst, yukarı",
+    "meaning_en": "up, above",
+    "stroke_count": 3,
+    "compounds": "上(うえ)、上手(じょうず)、上がる(あがる)"
+  },
+  {
+    "kanji": "下",
+    "on_yomi": "カ、ゲ",
+    "kun_yomi": "した、さ.がる、くだ.る",
+    "meaning_tr": "alt, aşağı",
+    "meaning_en": "down, below",
+    "stroke_count": 3,
+    "compounds": "下(した)、下手(へた)、下がる(さがる)"
+  },
+  {
+    "kanji": "中",
+    "on_yomi": "チュウ",
+    "kun_yomi": "なか",
+    "meaning_tr": "orta, iç",
+    "meaning_en": "middle, inside",
+    "stroke_count": 4,
+    "compounds": "中国(ちゅうごく)、中学校(ちゅうがっこう)、中(なか)"
+  },
+  {
+    "kanji": "外",
+    "on_yomi": "ガイ、ゲ",
+    "kun_yomi": "そと、ほか、はず.す",
+    "meaning_tr": "dış",
+    "meaning_en": "outside",
+    "stroke_count": 5,
+    "compounds": "外(そと)、外国(がいこく)、外出(がいしゅつ)"
+  },
+  {
+    "kanji": "右",
+    "on_yomi": "ウ、ユウ",
+    "kun_yomi": "みぎ",
+    "meaning_tr": "sağ",
+    "meaning_en": "right",
+    "stroke_count": 5,
+    "compounds": "右(みぎ)、左右(さゆう)、右手(みぎて)"
+  },
+  {
+    "kanji": "左",
+    "on_yomi": "サ",
+    "kun_yomi": "ひだり",
+    "meaning_tr": "sol",
+    "meaning_en": "left",
+    "stroke_count": 5,
+    "compounds": "左(ひだり)、左右(さゆう)、左手(ひだりて)"
+  },
+  {
+    "kanji": "北",
+    "on_yomi": "ホク",
+    "kun_yomi": "きた",
+    "meaning_tr": "kuzey",
+    "meaning_en": "north",
+    "stroke_count": 5,
+    "compounds": "北(きた)、北海道(ほっかいどう)、東北(とうほく)"
+  },
+  {
+    "kanji": "南",
+    "on_yomi": "ナン、ナ",
+    "kun_yomi": "みなみ",
+    "meaning_tr": "güney",
+    "meaning_en": "south",
+    "stroke_count": 9,
+    "compounds": "南(みなみ)、南口(みなみぐち)、南米(なんべい)"
+  },
+  {
+    "kanji": "東",
+    "on_yomi": "トウ",
+    "kun_yomi": "ひがし",
+    "meaning_tr": "doğu",
+    "meaning_en": "east",
+    "stroke_count": 8,
+    "compounds": "東(ひがし)、東京(とうきょう)、東口(ひがしぐち)"
+  },
+  {
+    "kanji": "西",
+    "on_yomi": "セイ、サイ",
+    "kun_yomi": "にし",
+    "meaning_tr": "batı",
+    "meaning_en": "west",
+    "stroke_count": 6,
+    "compounds": "西(にし)、西口(にしぐち)、東西(とうざい)"
+  },
+  {
+    "kanji": "口",
+    "on_yomi": "コウ、ク",
+    "kun_yomi": "くち",
+    "meaning_tr": "ağız",
+    "meaning_en": "mouth",
+    "stroke_count": 3,
+    "compounds": "口(くち)、入口(いりぐち)、出口(でぐち)"
+  },
+  {
+    "kanji": "目",
+    "on_yomi": "モク、ボク",
+    "kun_yomi": "め",
+    "meaning_tr": "göz",
+    "meaning_en": "eye",
+    "stroke_count": 5,
+    "compounds": "目(め)、目的(もくてき)、一番目(いちばんめ)"
+  },
+  {
+    "kanji": "耳",
+    "on_yomi": "ジ",
+    "kun_yomi": "みみ",
+    "meaning_tr": "kulak",
+    "meaning_en": "ear",
+    "stroke_count": 6,
+    "compounds": "耳(みみ)、耳鼻科(じびか)、早耳(はやみみ)"
+  },
+  {
+    "kanji": "手",
+    "on_yomi": "シュ",
+    "kun_yomi": "て",
+    "meaning_tr": "el",
+    "meaning_en": "hand",
+    "stroke_count": 4,
+    "compounds": "手(て)、手紙(てがみ)、上手(じょうず)"
+  },
+  {
+    "kanji": "足",
+    "on_yomi": "ソク",
+    "kun_yomi": "あし、た.りる",
+    "meaning_tr": "ayak",
+    "meaning_en": "foot, leg",
+    "stroke_count": 7,
+    "compounds": "足(あし)、足りる(たりる)、遠足(えんそく)"
+  },
+  {
+    "kanji": "体",
+    "on_yomi": "タイ、テイ",
+    "kun_yomi": "からだ",
+    "meaning_tr": "vücut",
+    "meaning_en": "body",
+    "stroke_count": 7,
+    "compounds": "体(からだ)、体育(たいいく)、大体(だいたい)"
+  },
+  {
+    "kanji": "頭",
+    "on_yomi": "トウ、ズ",
+    "kun_yomi": "あたま",
+    "meaning_tr": "baş, kafa",
+    "meaning_en": "head",
+    "stroke_count": 16,
+    "compounds": "頭(あたま)、先頭(せんとう)、頭痛(ずつう)"
+  },
+  {
+    "kanji": "人",
+    "on_yomi": "ジン、ニン",
+    "kun_yomi": "ひと",
+    "meaning_tr": "insan",
+    "meaning_en": "person",
+    "stroke_count": 2,
+    "compounds": "日本人(にほんじん)、一人(ひとり)、大人(おとな)"
+  },
+  {
+    "kanji": "子",
+    "on_yomi": "シ、ス",
+    "kun_yomi": "こ",
+    "meaning_tr": "çocuk",
+    "meaning_en": "child",
+    "stroke_count": 3,
+    "compounds": "子供(こども)、男の子(おとこのこ)、女の子(おんなのこ)"
+  },
+  {
+    "kanji": "女",
+    "on_yomi": "ジョ、ニョ",
+    "kun_yomi": "おんな",
+    "meaning_tr": "kadın",
+    "meaning_en": "woman, female",
+    "stroke_count": 3,
+    "compounds": "女(おんな)、女の子(おんなのこ)、女性(じょせい)"
+  },
+  {
+    "kanji": "男",
+    "on_yomi": "ダン、ナン",
+    "kun_yomi": "おとこ",
+    "meaning_tr": "erkek",
+    "meaning_en": "man, male",
+    "stroke_count": 7,
+    "compounds": "男(おとこ)、男の子(おとこのこ)、男性(だんせい)"
+  },
+  {
+    "kanji": "友",
+    "on_yomi": "ユウ",
+    "kun_yomi": "とも",
+    "meaning_tr": "arkadaş",
+    "meaning_en": "friend",
+    "stroke_count": 4,
+    "compounds": "友達(ともだち)、友人(ゆうじん)、親友(しんゆう)"
+  },
+  {
+    "kanji": "父",
+    "on_yomi": "フ",
+    "kun_yomi": "ちち",
+    "meaning_tr": "baba",
+    "meaning_en": "father",
+    "stroke_count": 4,
+    "compounds": "父(ちち)、お父さん(おとうさん)、父母(ふぼ)"
+  },
+  {
+    "kanji": "母",
+    "on_yomi": "ボ",
+    "kun_yomi": "はは",
+    "meaning_tr": "anne",
+    "meaning_en": "mother",
+    "stroke_count": 5,
+    "compounds": "母(はは)、お母さん(おかあさん)、父母(ふぼ)"
+  },
+  {
+    "kanji": "兄",
+    "on_yomi": "ケイ、キョウ",
+    "kun_yomi": "あに",
+    "meaning_tr": "ağabey",
+    "meaning_en": "older brother",
+    "stroke_count": 5,
+    "compounds": "兄(あに)、お兄さん(おにいさん)、兄弟(きょうだい)"
+  },
+  {
+    "kanji": "姉",
+    "on_yomi": "シ",
+    "kun_yomi": "あね",
+    "meaning_tr": "abla",
+    "meaning_en": "older sister",
+    "stroke_count": 8,
+    "compounds": "姉(あね)、お姉さん(おねえさん)、姉妹(しまい)"
+  },
+  {
+    "kanji": "弟",
+    "on_yomi": "テイ、ダイ",
+    "kun_yomi": "おとうと",
+    "meaning_tr": "erkek kardeş",
+    "meaning_en": "younger brother",
+    "stroke_count": 7,
+    "compounds": "弟(おとうと)、兄弟(きょうだい)、弟子(でし)"
+  },
+  {
+    "kanji": "妹",
+    "on_yomi": "マイ",
+    "kun_yomi": "いもうと",
+    "meaning_tr": "kız kardeş",
+    "meaning_en": "younger sister",
+    "stroke_count": 8,
+    "compounds": "妹(いもうと)、姉妹(しまい)"
+  },
+  {
+    "kanji": "夫",
+    "on_yomi": "フ、フウ",
+    "kun_yomi": "おっと",
+    "meaning_tr": "koca",
+    "meaning_en": "husband",
+    "stroke_count": 4,
+    "compounds": "夫(おっと)、夫婦(ふうふ)、夫人(ふじん)"
+  },
+  {
+    "kanji": "妻",
+    "on_yomi": "サイ",
+    "kun_yomi": "つま",
+    "meaning_tr": "eş (karı)",
+    "meaning_en": "wife",
+    "stroke_count": 8,
+    "compounds": "妻(つま)、夫妻(ふさい)"
+  },
+  {
+    "kanji": "家",
+    "on_yomi": "カ、ケ",
+    "kun_yomi": "いえ、や",
+    "meaning_tr": "ev, aile",
+    "meaning_en": "house, family",
+    "stroke_count": 10,
+    "compounds": "家(いえ)、家族(かぞく)、家庭(かてい)"
+  },
+  {
+    "kanji": "族",
+    "on_yomi": "ゾク",
+    "kun_yomi": "",
+    "meaning_tr": "aile, kabile",
+    "meaning_en": "tribe, family",
+    "stroke_count": 11,
+    "compounds": "家族(かぞく)、民族(みんぞく)"
+  },
+  {
+    "kanji": "生",
+    "on_yomi": "セイ、ショウ",
+    "kun_yomi": "い.きる、う.まれる、なま",
+    "meaning_tr": "hayat, doğmak",
+    "meaning_en": "life, birth",
+    "stroke_count": 5,
+    "compounds": "先生(せんせい)、学生(がくせい)、生まれる(うまれる)"
+  },
+  {
+    "kanji": "学",
+    "on_yomi": "ガク",
+    "kun_yomi": "まな.ぶ",
+    "meaning_tr": "öğrenmek",
+    "meaning_en": "study, learn",
+    "stroke_count": 8,
+    "compounds": "学校(がっこう)、大学(だいがく)、学生(がくせい)"
+  },
+  {
+    "kanji": "校",
+    "on_yomi": "コウ",
+    "kun_yomi": "",
+    "meaning_tr": "okul",
+    "meaning_en": "school",
+    "stroke_count": 10,
+    "compounds": "学校(がっこう)、小学校(しょうがっこう)、高校(こうこう)"
+  },
+  {
+    "kanji": "大",
+    "on_yomi": "ダイ、タイ",
+    "kun_yomi": "おお、おお.きい",
+    "meaning_tr": "büyük",
+    "meaning_en": "big",
+    "stroke_count": 3,
+    "compounds": "大きい(おおきい)、大学(だいがく)、大人(おとな)"
+  },
+  {
+    "kanji": "小",
+    "on_yomi": "ショウ",
+    "kun_yomi": "ちい.さい、こ、お",
+    "meaning_tr": "küçük",
+    "meaning_en": "small",
+    "stroke_count": 3,
+    "compounds": "小さい(ちいさい)、小学校(しょうがっこう)、小説(しょうせつ)"
+  },
+  {
+    "kanji": "高",
+    "on_yomi": "コウ",
+    "kun_yomi": "たか.い",
+    "meaning_tr": "yüksek, pahalı",
+    "meaning_en": "high, expensive",
+    "stroke_count": 10,
+    "compounds": "高い(たかい)、高校(こうこう)、最高(さいこう)"
+  },
+  {
+    "kanji": "安",
+    "on_yomi": "アン",
+    "kun_yomi": "やす.い",
+    "meaning_tr": "ucuz, güvenli",
+    "meaning_en": "cheap, safe",
+    "stroke_count": 6,
+    "compounds": "安い(やすい)、安全(あんぜん)、不安(ふあん)"
+  },
+  {
+    "kanji": "新",
+    "on_yomi": "シン",
+    "kun_yomi": "あたら.しい、あら.た",
+    "meaning_tr": "yeni",
+    "meaning_en": "new",
+    "stroke_count": 13,
+    "compounds": "新しい(あたらしい)、新聞(しんぶん)、新年(しんねん)"
+  },
+  {
+    "kanji": "古",
+    "on_yomi": "コ",
+    "kun_yomi": "ふる.い",
+    "meaning_tr": "eski",
+    "meaning_en": "old (things)",
+    "stroke_count": 5,
+    "compounds": "古い(ふるい)、中古(ちゅうこ)、古典(こてん)"
+  },
+  {
+    "kanji": "長",
+    "on_yomi": "チョウ",
+    "kun_yomi": "なが.い",
+    "meaning_tr": "uzun",
+    "meaning_en": "long",
+    "stroke_count": 8,
+    "compounds": "長い(ながい)、社長(しゃちょう)、校長(こうちょう)"
+  },
+  {
+    "kanji": "短",
+    "on_yomi": "タン",
+    "kun_yomi": "みじか.い",
+    "meaning_tr": "kısa",
+    "meaning_en": "short",
+    "stroke_count": 12,
+    "compounds": "短い(みじかい)、短期(たんき)、短所(たんしょ)"
+  },
+  {
+    "kanji": "多",
+    "on_yomi": "タ",
+    "kun_yomi": "おお.い",
+    "meaning_tr": "çok",
+    "meaning_en": "many, much",
+    "stroke_count": 6,
+    "compounds": "多い(おおい)、多分(たぶん)、多数(たすう)"
+  },
+  {
+    "kanji": "少",
+    "on_yomi": "ショウ",
+    "kun_yomi": "すく.ない、すこ.し",
+    "meaning_tr": "az, biraz",
+    "meaning_en": "few, little",
+    "stroke_count": 4,
+    "compounds": "少ない(すくない)、少し(すこし)、少年(しょうねん)"
+  },
+  {
+    "kanji": "白",
+    "on_yomi": "ハク、ビャク",
+    "kun_yomi": "しろ、しろ.い",
+    "meaning_tr": "beyaz",
+    "meaning_en": "white",
+    "stroke_count": 5,
+    "compounds": "白い(しろい)、白人(はくじん)、白紙(はくし)"
+  },
+  {
+    "kanji": "黒",
+    "on_yomi": "コク",
+    "kun_yomi": "くろ、くろ.い",
+    "meaning_tr": "siyah",
+    "meaning_en": "black",
+    "stroke_count": 11,
+    "compounds": "黒い(くろい)、黒板(こくばん)、黒人(こくじん)"
+  },
+  {
+    "kanji": "赤",
+    "on_yomi": "セキ、シャク",
+    "kun_yomi": "あか、あか.い",
+    "meaning_tr": "kırmızı",
+    "meaning_en": "red",
+    "stroke_count": 7,
+    "compounds": "赤い(あかい)、赤ちゃん(あかちゃん)、赤字(あかじ)"
+  },
+  {
+    "kanji": "青",
+    "on_yomi": "セイ、ショウ",
+    "kun_yomi": "あお、あお.い",
+    "meaning_tr": "mavi, yeşil",
+    "meaning_en": "blue, green",
+    "stroke_count": 8,
+    "compounds": "青い(あおい)、青年(せいねん)、青空(あおぞら)"
+  },
+  {
+    "kanji": "好",
+    "on_yomi": "コウ",
+    "kun_yomi": "す.き、この.む",
+    "meaning_tr": "sevmek, hoşlanmak",
+    "meaning_en": "like, fond of",
+    "stroke_count": 6,
+    "compounds": "好き(すき)、大好き(だいすき)、好む(このむ)"
+  },
+  {
+    "kanji": "元",
+    "on_yomi": "ゲン、ガン",
+    "kun_yomi": "もと",
+    "meaning_tr": "köken, eski",
+    "meaning_en": "origin, former",
+    "stroke_count": 4,
+    "compounds": "元気(げんき)、元(もと)、元日(がんじつ)"
+  },
+  {
+    "kanji": "気",
+    "on_yomi": "キ、ケ",
+    "kun_yomi": "",
+    "meaning_tr": "ruh, hava",
+    "meaning_en": "spirit, air",
+    "stroke_count": 6,
+    "compounds": "天気(てんき)、元気(げんき)、気持ち(きもち)"
+  },
+  {
+    "kanji": "天",
+    "on_yomi": "テン",
+    "kun_yomi": "あめ、あま",
+    "meaning_tr": "gökyüzü",
+    "meaning_en": "heaven, sky",
+    "stroke_count": 4,
+    "compounds": "天気(てんき)、天国(てんごく)、天然(てんねん)"
+  },
+  {
+    "kanji": "雨",
+    "on_yomi": "ウ",
+    "kun_yomi": "あめ、あま",
+    "meaning_tr": "yağmur",
+    "meaning_en": "rain",
+    "stroke_count": 8,
+    "compounds": "雨(あめ)、大雨(おおあめ)、梅雨(つゆ)"
+  },
+  {
+    "kanji": "電",
+    "on_yomi": "デン",
+    "kun_yomi": "",
+    "meaning_tr": "elektrik",
+    "meaning_en": "electricity",
+    "stroke_count": 13,
+    "compounds": "電車(でんしゃ)、電話(でんわ)、電気(でんき)"
+  },
+  {
+    "kanji": "車",
+    "on_yomi": "シャ",
+    "kun_yomi": "くるま",
+    "meaning_tr": "araba",
+    "meaning_en": "car, vehicle",
+    "stroke_count": 7,
+    "compounds": "車(くるま)、電車(でんしゃ)、自動車(じどうしゃ)"
+  },
+  {
+    "kanji": "駅",
+    "on_yomi": "エキ",
+    "kun_yomi": "",
+    "meaning_tr": "istasyon",
+    "meaning_en": "station",
+    "stroke_count": 14,
+    "compounds": "駅(えき)、駅前(えきまえ)、東京駅(とうきょうえき)"
+  },
+  {
+    "kanji": "道",
+    "on_yomi": "ドウ",
+    "kun_yomi": "みち",
+    "meaning_tr": "yol",
+    "meaning_en": "road, way",
+    "stroke_count": 12,
+    "compounds": "道(みち)、水道(すいどう)、北海道(ほっかいどう)"
+  },
+  {
+    "kanji": "会",
+    "on_yomi": "カイ、エ",
+    "kun_yomi": "あ.う",
+    "meaning_tr": "buluşmak, toplantı",
+    "meaning_en": "meet, meeting",
+    "stroke_count": 6,
+    "compounds": "会う(あう)、会社(かいしゃ)、会議(かいぎ)"
+  },
+  {
+    "kanji": "社",
+    "on_yomi": "シャ",
+    "kun_yomi": "やしろ",
+    "meaning_tr": "şirket, toplum",
+    "meaning_en": "company, society",
+    "stroke_count": 7,
+    "compounds": "会社(かいしゃ)、社長(しゃちょう)、神社(じんじゃ)"
+  },
+  {
+    "kanji": "食",
+    "on_yomi": "ショク、ジキ",
+    "kun_yomi": "た.べる、く.う",
+    "meaning_tr": "yemek",
+    "meaning_en": "eat, food",
+    "stroke_count": 9,
+    "compounds": "食べる(たべる)、食事(しょくじ)、食堂(しょくどう)"
+  },
+  {
+    "kanji": "飲",
+    "on_yomi": "イン",
+    "kun_yomi": "の.む",
+    "meaning_tr": "içmek",
+    "meaning_en": "drink",
+    "stroke_count": 12,
+    "compounds": "飲む(のむ)、飲み物(のみもの)、飲料(いんりょう)"
+  },
+  {
+    "kanji": "見",
+    "on_yomi": "ケン",
+    "kun_yomi": "み.る、み.せる",
+    "meaning_tr": "görmek",
+    "meaning_en": "see",
+    "stroke_count": 7,
+    "compounds": "見る(みる)、花見(はなみ)、意見(いけん)"
+  },
+  {
+    "kanji": "聞",
+    "on_yomi": "ブン、モン",
+    "kun_yomi": "き.く、き.こえる",
+    "meaning_tr": "duymak, sormak",
+    "meaning_en": "hear, ask",
+    "stroke_count": 14,
+    "compounds": "聞く(きく)、新聞(しんぶん)、聞こえる(きこえる)"
+  },
+  {
+    "kanji": "読",
+    "on_yomi": "ドク、トク",
+    "kun_yomi": "よ.む",
+    "meaning_tr": "okumak",
+    "meaning_en": "read",
+    "stroke_count": 14,
+    "compounds": "読む(よむ)、読書(どくしょ)、読者(どくしゃ)"
+  },
+  {
+    "kanji": "書",
+    "on_yomi": "ショ",
+    "kun_yomi": "か.く",
+    "meaning_tr": "yazmak",
+    "meaning_en": "write",
+    "stroke_count": 10,
+    "compounds": "書く(かく)、読書(どくしょ)、図書館(としょかん)"
+  },
+  {
+    "kanji": "話",
+    "on_yomi": "ワ",
+    "kun_yomi": "はな.す、はなし",
+    "meaning_tr": "konuşmak",
+    "meaning_en": "speak, talk",
+    "stroke_count": 13,
+    "compounds": "話す(はなす)、電話(でんわ)、会話(かいわ)"
+  },
+  {
+    "kanji": "言",
+    "on_yomi": "ゲン、ゴン",
+    "kun_yomi": "い.う、こと",
+    "meaning_tr": "söylemek, kelime",
+    "meaning_en": "say, word",
+    "stroke_count": 7,
+    "compounds": "言う(いう)、言葉(ことば)、方言(ほうげん)"
+  },
+  {
+    "kanji": "語",
+    "on_yomi": "ゴ",
+    "kun_yomi": "かた.る",
+    "meaning_tr": "dil, kelime",
+    "meaning_en": "language, word",
+    "stroke_count": 14,
+    "compounds": "日本語(にほんご)、英語(えいご)、語学(ごがく)"
+  },
+  {
+    "kanji": "入",
+    "on_yomi": "ニュウ",
+    "kun_yomi": "い.る、はい.る",
+    "meaning_tr": "girmek",
+    "meaning_en": "enter",
+    "stroke_count": 2,
+    "compounds": "入る(はいる)、入口(いりぐち)、入学(にゅうがく)"
+  },
+  {
+    "kanji": "出",
+    "on_yomi": "シュツ、スイ",
+    "kun_yomi": "で.る、だ.す",
+    "meaning_tr": "çıkmak",
+    "meaning_en": "exit, leave",
+    "stroke_count": 5,
+    "compounds": "出る(でる)、出口(でぐち)、出す(だす)"
+  },
+  {
+    "kanji": "立",
+    "on_yomi": "リツ、リュウ",
+    "kun_yomi": "た.つ、た.てる",
+    "meaning_tr": "ayakta durmak",
+    "meaning_en": "stand",
+    "stroke_count": 5,
+    "compounds": "立つ(たつ)、立てる(たてる)、国立(こくりつ)"
+  },
+  {
+    "kanji": "休",
+    "on_yomi": "キュウ",
+    "kun_yomi": "やす.む",
+    "meaning_tr": "dinlenmek",
+    "meaning_en": "rest",
+    "stroke_count": 6,
+    "compounds": "休む(やすむ)、休み(やすみ)、休日(きゅうじつ)"
+  },
+  {
+    "kanji": "走",
+    "on_yomi": "ソウ",
+    "kun_yomi": "はし.る",
+    "meaning_tr": "koşmak",
+    "meaning_en": "run",
+    "stroke_count": 7,
+    "compounds": "走る(はしる)、走行(そうこう)、走者(そうしゃ)"
+  },
+  {
+    "kanji": "歩",
+    "on_yomi": "ホ、ブ",
+    "kun_yomi": "ある.く、あゆ.む",
+    "meaning_tr": "yürümek",
+    "meaning_en": "walk",
+    "stroke_count": 8,
+    "compounds": "歩く(あるく)、散歩(さんぽ)、歩道(ほどう)"
+  },
+  {
+    "kanji": "行",
+    "on_yomi": "コウ、ギョウ",
+    "kun_yomi": "い.く、ゆ.く、おこな.う",
+    "meaning_tr": "gitmek, yapmak",
+    "meaning_en": "go, carry out",
+    "stroke_count": 6,
+    "compounds": "行く(いく)、旅行(りょこう)、銀行(ぎんこう)"
+  },
+  {
+    "kanji": "帰",
+    "on_yomi": "キ",
+    "kun_yomi": "かえ.る",
+    "meaning_tr": "dönmek",
+    "meaning_en": "return",
+    "stroke_count": 10,
+    "compounds": "帰る(かえる)、帰国(きこく)、帰り(かえり)"
+  },
+  {
+    "kanji": "買",
+    "on_yomi": "バイ",
+    "kun_yomi": "か.う",
+    "meaning_tr": "satın almak",
+    "meaning_en": "buy",
+    "stroke_count": 12,
+    "compounds": "買う(かう)、買い物(かいもの)、売買(ばいばい)"
+  },
+  {
+    "kanji": "使",
+    "on_yomi": "シ",
+    "kun_yomi": "つか.う",
+    "meaning_tr": "kullanmak",
+    "meaning_en": "use",
+    "stroke_count": 8,
+    "compounds": "使う(つかう)、大使(たいし)、使い方(つかいかた)"
+  },
+  {
+    "kanji": "送",
+    "on_yomi": "ソウ",
+    "kun_yomi": "おく.る",
+    "meaning_tr": "göndermek",
+    "meaning_en": "send",
+    "stroke_count": 9,
+    "compounds": "送る(おくる)、送料(そうりょう)、放送(ほうそう)"
+  },
+  {
+    "kanji": "持",
+    "on_yomi": "ジ",
+    "kun_yomi": "も.つ",
+    "meaning_tr": "tutmak, sahip olmak",
+    "meaning_en": "hold, have",
+    "stroke_count": 9,
+    "compounds": "持つ(もつ)、気持ち(きもち)、持ち物(もちもの)"
+  },
+  {
+    "kanji": "待",
+    "on_yomi": "タイ",
+    "kun_yomi": "ま.つ",
+    "meaning_tr": "beklemek",
+    "meaning_en": "wait",
+    "stroke_count": 9,
+    "compounds": "待つ(まつ)、期待(きたい)、招待(しょうたい)"
+  },
+  {
+    "kanji": "死",
+    "on_yomi": "シ",
+    "kun_yomi": "し.ぬ",
+    "meaning_tr": "ölmek",
+    "meaning_en": "die",
+    "stroke_count": 6,
+    "compounds": "死ぬ(しぬ)、死亡(しぼう)、必死(ひっし)"
+  },
+  {
+    "kanji": "住",
+    "on_yomi": "ジュウ",
+    "kun_yomi": "す.む",
+    "meaning_tr": "yaşamak, ikamet",
+    "meaning_en": "live, reside",
+    "stroke_count": 7,
+    "compounds": "住む(すむ)、住所(じゅうしょ)、住民(じゅうみん)"
+  },
+  {
+    "kanji": "開",
+    "on_yomi": "カイ",
+    "kun_yomi": "あ.く、ひら.く",
+    "meaning_tr": "açmak",
+    "meaning_en": "open",
+    "stroke_count": 12,
+    "compounds": "開く(あく)、開ける(あける)、開始(かいし)"
+  },
+  {
+    "kanji": "閉",
+    "on_yomi": "ヘイ",
+    "kun_yomi": "し.める、と.じる",
+    "meaning_tr": "kapatmak",
+    "meaning_en": "close, shut",
+    "stroke_count": 11,
+    "compounds": "閉める(しめる)、閉じる(とじる)、閉店(へいてん)"
+  },
+  {
+    "kanji": "起",
+    "on_yomi": "キ",
+    "kun_yomi": "お.きる、お.こる",
+    "meaning_tr": "kalkmak, olmak",
+    "meaning_en": "wake up, occur",
+    "stroke_count": 10,
+    "compounds": "起きる(おきる)、起こる(おこる)、起立(きりつ)"
+  },
+  {
+    "kanji": "寝",
+    "on_yomi": "シン",
+    "kun_yomi": "ね.る",
+    "meaning_tr": "uyumak",
+    "meaning_en": "sleep, lie down",
+    "stroke_count": 13,
+    "compounds": "寝る(ねる)、寝室(しんしつ)、昼寝(ひるね)"
+  },
+  {
+    "kanji": "作",
+    "on_yomi": "サク、サ",
+    "kun_yomi": "つく.る",
+    "meaning_tr": "yapmak, üretmek",
+    "meaning_en": "make, create",
+    "stroke_count": 7,
+    "compounds": "作る(つくる)、作文(さくぶん)、作品(さくひん)"
+  },
+  {
+    "kanji": "始",
+    "on_yomi": "シ",
+    "kun_yomi": "はじ.める、はじ.まる",
+    "meaning_tr": "başlamak",
+    "meaning_en": "begin",
+    "stroke_count": 8,
+    "compounds": "始める(はじめる)、始まる(はじまる)、開始(かいし)"
+  },
+  {
+    "kanji": "終",
+    "on_yomi": "シュウ",
+    "kun_yomi": "お.わる、お.える",
+    "meaning_tr": "bitmek",
+    "meaning_en": "end, finish",
+    "stroke_count": 11,
+    "compounds": "終わる(おわる)、終わり(おわり)、最終(さいしゅう)"
+  },
+  {
+    "kanji": "勉",
+    "on_yomi": "ベン",
+    "kun_yomi": "",
+    "meaning_tr": "çalışmak",
+    "meaning_en": "exertion, effort",
+    "stroke_count": 10,
+    "compounds": "勉強(べんきょう)、勉強する(べんきょうする)"
+  },
+  {
+    "kanji": "強",
+    "on_yomi": "キョウ、ゴウ",
+    "kun_yomi": "つよ.い",
+    "meaning_tr": "güçlü",
+    "meaning_en": "strong",
+    "stroke_count": 11,
+    "compounds": "勉強(べんきょう)、強い(つよい)、強力(きょうりょく)"
+  },
+  {
+    "kanji": "教",
+    "on_yomi": "キョウ",
+    "kun_yomi": "おし.える、おそ.わる",
+    "meaning_tr": "öğretmek",
+    "meaning_en": "teach",
+    "stroke_count": 11,
+    "compounds": "教える(おしえる)、教室(きょうしつ)、教育(きょういく)"
+  },
+  {
+    "kanji": "習",
+    "on_yomi": "シュウ",
+    "kun_yomi": "なら.う",
+    "meaning_tr": "alışmak, öğrenmek",
+    "meaning_en": "learn, practice",
+    "stroke_count": 11,
+    "compounds": "習う(ならう)、練習(れんしゅう)、習慣(しゅうかん)"
+  },
+  {
+    "kanji": "名",
+    "on_yomi": "メイ、ミョウ",
+    "kun_yomi": "な",
+    "meaning_tr": "isim",
+    "meaning_en": "name",
+    "stroke_count": 6,
+    "compounds": "名前(なまえ)、有名(ゆうめい)、名人(めいじん)"
+  },
+  {
+    "kanji": "国",
+    "on_yomi": "コク",
+    "kun_yomi": "くに",
+    "meaning_tr": "ülke",
+    "meaning_en": "country",
+    "stroke_count": 8,
+    "compounds": "国(くに)、外国(がいこく)、中国(ちゅうごく)"
+  },
+  {
+    "kanji": "英",
+    "on_yomi": "エイ",
+    "kun_yomi": "",
+    "meaning_tr": "İngiliz",
+    "meaning_en": "English, brilliant",
+    "stroke_count": 8,
+    "compounds": "英語(えいご)、英国(えいこく)、英会話(えいかいわ)"
+  },
+  {
+    "kanji": "数",
+    "on_yomi": "スウ",
+    "kun_yomi": "かず、かぞ.える",
+    "meaning_tr": "sayı, saymak",
+    "meaning_en": "number, count",
+    "stroke_count": 13,
+    "compounds": "数学(すうがく)、数(かず)、数える(かぞえる)"
+  },
+  {
+    "kanji": "理",
+    "on_yomi": "リ",
+    "kun_yomi": "",
+    "meaning_tr": "sebep, mantık",
+    "meaning_en": "reason, logic",
+    "stroke_count": 11,
+    "compounds": "理由(りゆう)、料理(りょうり)、地理(ちり)"
+  },
+  {
+    "kanji": "科",
+    "on_yomi": "カ",
+    "kun_yomi": "",
+    "meaning_tr": "bölüm, bilim dalı",
+    "meaning_en": "department, science",
+    "stroke_count": 9,
+    "compounds": "科学(かがく)、教科書(きょうかしょ)、理科(りか)"
+  },
+  {
+    "kanji": "花",
+    "on_yomi": "カ",
+    "kun_yomi": "はな",
+    "meaning_tr": "çiçek",
+    "meaning_en": "flower",
+    "stroke_count": 7,
+    "compounds": "花(はな)、花見(はなみ)、花火(はなび)"
+  },
+  {
+    "kanji": "山",
+    "on_yomi": "サン",
+    "kun_yomi": "やま",
+    "meaning_tr": "dağ",
+    "meaning_en": "mountain",
+    "stroke_count": 3,
+    "compounds": "山(やま)、富士山(ふじさん)、火山(かざん)"
+  },
+  {
+    "kanji": "川",
+    "on_yomi": "セン",
+    "kun_yomi": "かわ",
+    "meaning_tr": "nehir",
+    "meaning_en": "river",
+    "stroke_count": 3,
+    "compounds": "川(かわ)、河川(かせん)、小川(おがわ)"
+  },
+  {
+    "kanji": "田",
+    "on_yomi": "デン",
+    "kun_yomi": "た",
+    "meaning_tr": "pirinç tarlası",
+    "meaning_en": "rice field",
+    "stroke_count": 5,
+    "compounds": "田中(たなか)、田んぼ(たんぼ)、水田(すいでん)"
+  },
+  {
+    "kanji": "本",
+    "on_yomi": "ホン",
+    "kun_yomi": "もと",
+    "meaning_tr": "kitap, köken",
+    "meaning_en": "book, origin",
+    "stroke_count": 5,
+    "compounds": "日本(にほん)、本(ほん)、本当(ほんとう)"
+  }
 ]

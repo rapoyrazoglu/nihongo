@@ -1,0 +1,2774 @@
+[
+  {
+    "kanji": "政",
+    "on_yomi": "セイ、ショウ",
+    "kun_yomi": "まつりごと",
+    "meaning_tr": "siyaset, yönetim",
+    "meaning_en": "politics, government",
+    "stroke_count": 9,
+    "compounds": "政治(せいじ)、政府(せいふ)、行政(ぎょうせい)"
+  },
+  {
+    "kanji": "府",
+    "on_yomi": "フ",
+    "kun_yomi": "",
+    "meaning_tr": "hükümet merkezi, valilik",
+    "meaning_en": "government office, urban prefecture",
+    "stroke_count": 8,
+    "compounds": "政府(せいふ)、府県(ふけん)、首府(しゅふ)"
+  },
+  {
+    "kanji": "官",
+    "on_yomi": "カン",
+    "kun_yomi": "",
+    "meaning_tr": "devlet memuru",
+    "meaning_en": "government official",
+    "stroke_count": 8,
+    "compounds": "官庁(かんちょう)、官僚(かんりょう)、警官(けいかん)"
+  },
+  {
+    "kanji": "省",
+    "on_yomi": "セイ、ショウ",
+    "kun_yomi": "かえり.みる、はぶ.く",
+    "meaning_tr": "bakanlık, tasarruf etmek",
+    "meaning_en": "ministry, save, omit",
+    "stroke_count": 9,
+    "compounds": "省略(しょうりゃく)、反省(はんせい)、省エネ(しょうエネ)"
+  },
+  {
+    "kanji": "州",
+    "on_yomi": "シュウ",
+    "kun_yomi": "す",
+    "meaning_tr": "eyalet, kıta",
+    "meaning_en": "state, province, continent",
+    "stroke_count": 6,
+    "compounds": "州立(しゅうりつ)、欧州(おうしゅう)、九州(きゅうしゅう)"
+  },
+  {
+    "kanji": "議",
+    "on_yomi": "ギ",
+    "kun_yomi": "",
+    "meaning_tr": "müzakere, tartışma",
+    "meaning_en": "deliberation, discussion",
+    "stroke_count": 20,
+    "compounds": "会議(かいぎ)、議論(ぎろん)、議員(ぎいん)"
+  },
+  {
+    "kanji": "党",
+    "on_yomi": "トウ",
+    "kun_yomi": "なかま",
+    "meaning_tr": "parti, grup",
+    "meaning_en": "political party, faction",
+    "stroke_count": 10,
+    "compounds": "政党(せいとう)、党員(とういん)、与党(よとう)"
+  },
+  {
+    "kanji": "選",
+    "on_yomi": "セン",
+    "kun_yomi": "えら.ぶ",
+    "meaning_tr": "seçmek",
+    "meaning_en": "elect, choose, select",
+    "stroke_count": 15,
+    "compounds": "選挙(せんきょ)、選手(せんしゅ)、選択(せんたく)"
+  },
+  {
+    "kanji": "挙",
+    "on_yomi": "キョ",
+    "kun_yomi": "あ.げる、あ.がる",
+    "meaning_tr": "kaldırmak, seçim",
+    "meaning_en": "raise, elect",
+    "stroke_count": 10,
+    "compounds": "選挙(せんきょ)、挙手(きょしゅ)、一挙(いっきょ)"
+  },
+  {
+    "kanji": "制",
+    "on_yomi": "セイ",
+    "kun_yomi": "",
+    "meaning_tr": "sistem, kontrol",
+    "meaning_en": "system, control, regulate",
+    "stroke_count": 8,
+    "compounds": "制度(せいど)、制限(せいげん)、制御(せいぎょ)"
+  },
+  {
+    "kanji": "規",
+    "on_yomi": "キ",
+    "kun_yomi": "",
+    "meaning_tr": "kural, düzenleme",
+    "meaning_en": "rule, regulation",
+    "stroke_count": 11,
+    "compounds": "規則(きそく)、規模(きぼ)、規制(きせい)"
+  },
+  {
+    "kanji": "則",
+    "on_yomi": "ソク",
+    "kun_yomi": "のり",
+    "meaning_tr": "kural, ilke",
+    "meaning_en": "rule, law, principle",
+    "stroke_count": 9,
+    "compounds": "規則(きそく)、法則(ほうそく)、原則(げんそく)"
+  },
+  {
+    "kanji": "権",
+    "on_yomi": "ケン、ゴン",
+    "kun_yomi": "",
+    "meaning_tr": "hak, yetki",
+    "meaning_en": "right, authority, power",
+    "stroke_count": 15,
+    "compounds": "権利(けんり)、人権(じんけん)、権力(けんりょく)"
+  },
+  {
+    "kanji": "判",
+    "on_yomi": "ハン、バン",
+    "kun_yomi": "わか.る",
+    "meaning_tr": "yargı, karar",
+    "meaning_en": "judgment, decide",
+    "stroke_count": 7,
+    "compounds": "判断(はんだん)、裁判(さいばん)、批判(ひはん)"
+  },
+  {
+    "kanji": "法",
+    "on_yomi": "ホウ、ハッ",
+    "kun_yomi": "",
+    "meaning_tr": "yasa, yöntem",
+    "meaning_en": "law, method",
+    "stroke_count": 8,
+    "compounds": "法律(ほうりつ)、方法(ほうほう)、法則(ほうそく)"
+  },
+  {
+    "kanji": "経",
+    "on_yomi": "ケイ、キョウ",
+    "kun_yomi": "へ.る、た.つ",
+    "meaning_tr": "ekonomi, geçmek",
+    "meaning_en": "economy, pass through, experience",
+    "stroke_count": 11,
+    "compounds": "経済(けいざい)、経験(けいけん)、経営(けいえい)"
+  },
+  {
+    "kanji": "済",
+    "on_yomi": "サイ、セイ",
+    "kun_yomi": "す.む、す.ます",
+    "meaning_tr": "tamamlanmak, kurtarmak",
+    "meaning_en": "settle, finish, save",
+    "stroke_count": 11,
+    "compounds": "経済(けいざい)、返済(へんさい)、済ませる(すませる)"
+  },
+  {
+    "kanji": "営",
+    "on_yomi": "エイ",
+    "kun_yomi": "いとな.む",
+    "meaning_tr": "işletmek, yönetmek",
+    "meaning_en": "manage, operate, run",
+    "stroke_count": 12,
+    "compounds": "経営(けいえい)、営業(えいぎょう)、運営(うんえい)"
+  },
+  {
+    "kanji": "産",
+    "on_yomi": "サン",
+    "kun_yomi": "う.む、う.まれる",
+    "meaning_tr": "üretim, doğum, mülk",
+    "meaning_en": "produce, give birth, property",
+    "stroke_count": 11,
+    "compounds": "生産(せいさん)、産業(さんぎょう)、不動産(ふどうさん)"
+  },
+  {
+    "kanji": "商",
+    "on_yomi": "ショウ",
+    "kun_yomi": "あきな.う",
+    "meaning_tr": "ticaret, tüccar",
+    "meaning_en": "commerce, merchant",
+    "stroke_count": 11,
+    "compounds": "商品(しょうひん)、商売(しょうばい)、商業(しょうぎょう)"
+  },
+  {
+    "kanji": "貿",
+    "on_yomi": "ボウ",
+    "kun_yomi": "",
+    "meaning_tr": "dış ticaret",
+    "meaning_en": "trade, exchange",
+    "stroke_count": 12,
+    "compounds": "貿易(ぼうえき)、貿易港(ぼうえきこう)"
+  },
+  {
+    "kanji": "易",
+    "on_yomi": "エキ、イ",
+    "kun_yomi": "やさ.しい",
+    "meaning_tr": "kolay, ticaret",
+    "meaning_en": "easy, exchange",
+    "stroke_count": 8,
+    "compounds": "貿易(ぼうえき)、容易(ようい)、安易(あんい)"
+  },
+  {
+    "kanji": "株",
+    "on_yomi": "シュ",
+    "kun_yomi": "かぶ",
+    "meaning_tr": "hisse senedi",
+    "meaning_en": "stock, share, stump",
+    "stroke_count": 10,
+    "compounds": "株式(かぶしき)、株主(かぶぬし)、株価(かぶか)"
+  },
+  {
+    "kanji": "資",
+    "on_yomi": "シ",
+    "kun_yomi": "",
+    "meaning_tr": "sermaye, kaynak",
+    "meaning_en": "capital, resources",
+    "stroke_count": 13,
+    "compounds": "資料(しりょう)、投資(とうし)、資格(しかく)"
+  },
+  {
+    "kanji": "投",
+    "on_yomi": "トウ",
+    "kun_yomi": "な.げる",
+    "meaning_tr": "atmak, yatırım yapmak",
+    "meaning_en": "throw, invest",
+    "stroke_count": 7,
+    "compounds": "投資(とうし)、投票(とうひょう)、投手(とうしゅ)"
+  },
+  {
+    "kanji": "税",
+    "on_yomi": "ゼイ",
+    "kun_yomi": "",
+    "meaning_tr": "vergi",
+    "meaning_en": "tax, duty",
+    "stroke_count": 12,
+    "compounds": "税金(ぜいきん)、消費税(しょうひぜい)、税関(ぜいかん)"
+  },
+  {
+    "kanji": "収",
+    "on_yomi": "シュウ",
+    "kun_yomi": "おさ.める、おさ.まる",
+    "meaning_tr": "gelir, toplamak",
+    "meaning_en": "income, collect, obtain",
+    "stroke_count": 4,
+    "compounds": "収入(しゅうにゅう)、収集(しゅうしゅう)、回収(かいしゅう)"
+  },
+  {
+    "kanji": "支",
+    "on_yomi": "シ",
+    "kun_yomi": "ささ.える",
+    "meaning_tr": "desteklemek, harcamak",
+    "meaning_en": "support, branch, pay",
+    "stroke_count": 4,
+    "compounds": "支出(ししゅつ)、支援(しえん)、支店(してん)"
+  },
+  {
+    "kanji": "額",
+    "on_yomi": "ガク",
+    "kun_yomi": "ひたい",
+    "meaning_tr": "miktar, alın",
+    "meaning_en": "amount, forehead, frame",
+    "stroke_count": 18,
+    "compounds": "金額(きんがく)、額縁(がくぶち)、総額(そうがく)"
+  },
+  {
+    "kanji": "際",
+    "on_yomi": "サイ",
+    "kun_yomi": "きわ",
+    "meaning_tr": "uluslararası, kenar",
+    "meaning_en": "occasion, international, edge",
+    "stroke_count": 14,
+    "compounds": "国際(こくさい)、実際(じっさい)、交際(こうさい)"
+  },
+  {
+    "kanji": "民",
+    "on_yomi": "ミン",
+    "kun_yomi": "たみ",
+    "meaning_tr": "halk, vatandaş",
+    "meaning_en": "people, citizen",
+    "stroke_count": 5,
+    "compounds": "国民(こくみん)、市民(しみん)、民族(みんぞく)"
+  },
+  {
+    "kanji": "族",
+    "on_yomi": "ゾク",
+    "kun_yomi": "",
+    "meaning_tr": "kabile, aile",
+    "meaning_en": "tribe, family, clan",
+    "stroke_count": 11,
+    "compounds": "民族(みんぞく)、家族(かぞく)、貴族(きぞく)"
+  },
+  {
+    "kanji": "宗",
+    "on_yomi": "シュウ、ソウ",
+    "kun_yomi": "むね",
+    "meaning_tr": "din, mezhep",
+    "meaning_en": "religion, sect, denomination",
+    "stroke_count": 8,
+    "compounds": "宗教(しゅうきょう)、宗派(しゅうは)、改宗(かいしゅう)"
+  },
+  {
+    "kanji": "福",
+    "on_yomi": "フク",
+    "kun_yomi": "",
+    "meaning_tr": "bereket, mutluluk",
+    "meaning_en": "blessing, fortune, happiness",
+    "stroke_count": 13,
+    "compounds": "幸福(こうふく)、福祉(ふくし)、福岡(ふくおか)"
+  },
+  {
+    "kanji": "祉",
+    "on_yomi": "シ",
+    "kun_yomi": "",
+    "meaning_tr": "refah",
+    "meaning_en": "welfare, well-being",
+    "stroke_count": 8,
+    "compounds": "福祉(ふくし)、社会福祉(しゃかいふくし)"
+  },
+  {
+    "kanji": "犯",
+    "on_yomi": "ハン",
+    "kun_yomi": "おか.す",
+    "meaning_tr": "suç işlemek, suçlu",
+    "meaning_en": "crime, commit offense",
+    "stroke_count": 5,
+    "compounds": "犯人(はんにん)、犯罪(はんざい)、犯行(はんこう)"
+  },
+  {
+    "kanji": "罪",
+    "on_yomi": "ザイ",
+    "kun_yomi": "つみ",
+    "meaning_tr": "suç, günah",
+    "meaning_en": "crime, sin, guilt",
+    "stroke_count": 13,
+    "compounds": "犯罪(はんざい)、罪悪(ざいあく)、無罪(むざい)"
+  },
+  {
+    "kanji": "罰",
+    "on_yomi": "バツ、バチ",
+    "kun_yomi": "",
+    "meaning_tr": "ceza",
+    "meaning_en": "punishment, penalty",
+    "stroke_count": 14,
+    "compounds": "罰金(ばっきん)、処罰(しょばつ)、罰則(ばっそく)"
+  },
+  {
+    "kanji": "防",
+    "on_yomi": "ボウ",
+    "kun_yomi": "ふせ.ぐ",
+    "meaning_tr": "savunma, önlemek",
+    "meaning_en": "defend, prevent, protect",
+    "stroke_count": 7,
+    "compounds": "防止(ぼうし)、予防(よぼう)、消防(しょうぼう)"
+  },
+  {
+    "kanji": "災",
+    "on_yomi": "サイ",
+    "kun_yomi": "わざわ.い",
+    "meaning_tr": "felaket, afet",
+    "meaning_en": "disaster, calamity",
+    "stroke_count": 7,
+    "compounds": "災害(さいがい)、火災(かさい)、防災(ぼうさい)"
+  },
+  {
+    "kanji": "害",
+    "on_yomi": "ガイ",
+    "kun_yomi": "",
+    "meaning_tr": "zarar, hasar",
+    "meaning_en": "harm, damage",
+    "stroke_count": 10,
+    "compounds": "災害(さいがい)、被害(ひがい)、障害(しょうがい)"
+  },
+  {
+    "kanji": "救",
+    "on_yomi": "キュウ",
+    "kun_yomi": "すく.う",
+    "meaning_tr": "kurtarmak, yardım",
+    "meaning_en": "rescue, save, help",
+    "stroke_count": 11,
+    "compounds": "救助(きゅうじょ)、救急(きゅうきゅう)、救援(きゅうえん)"
+  },
+  {
+    "kanji": "援",
+    "on_yomi": "エン",
+    "kun_yomi": "",
+    "meaning_tr": "destek, yardım",
+    "meaning_en": "aid, support, assistance",
+    "stroke_count": 12,
+    "compounds": "支援(しえん)、援助(えんじょ)、応援(おうえん)"
+  },
+  {
+    "kanji": "科",
+    "on_yomi": "カ",
+    "kun_yomi": "",
+    "meaning_tr": "bilim dalı, bölüm",
+    "meaning_en": "science, department, course",
+    "stroke_count": 9,
+    "compounds": "科学(かがく)、教科(きょうか)、外科(げか)"
+  },
+  {
+    "kanji": "化",
+    "on_yomi": "カ、ケ",
+    "kun_yomi": "ば.ける、ば.かす",
+    "meaning_tr": "değişim, dönüşüm",
+    "meaning_en": "change, transform, -ization",
+    "stroke_count": 4,
+    "compounds": "文化(ぶんか)、変化(へんか)、化学(かがく)"
+  },
+  {
+    "kanji": "験",
+    "on_yomi": "ケン、ゲン",
+    "kun_yomi": "",
+    "meaning_tr": "deneyim, sınav",
+    "meaning_en": "experiment, test, experience",
+    "stroke_count": 18,
+    "compounds": "経験(けいけん)、試験(しけん)、実験(じっけん)"
+  },
+  {
+    "kanji": "究",
+    "on_yomi": "キュウ、ク",
+    "kun_yomi": "きわ.める",
+    "meaning_tr": "araştırma, inceleme",
+    "meaning_en": "research, investigate",
+    "stroke_count": 7,
+    "compounds": "研究(けんきゅう)、究極(きゅうきょく)、追究(ついきゅう)"
+  },
+  {
+    "kanji": "論",
+    "on_yomi": "ロン",
+    "kun_yomi": "",
+    "meaning_tr": "tartışma, teori",
+    "meaning_en": "theory, argument, discuss",
+    "stroke_count": 15,
+    "compounds": "議論(ぎろん)、理論(りろん)、論文(ろんぶん)"
+  },
+  {
+    "kanji": "証",
+    "on_yomi": "ショウ",
+    "kun_yomi": "あか.し",
+    "meaning_tr": "kanıt, delil",
+    "meaning_en": "evidence, proof, certificate",
+    "stroke_count": 12,
+    "compounds": "証明(しょうめい)、証拠(しょうこ)、保証(ほしょう)"
+  },
+  {
+    "kanji": "説",
+    "on_yomi": "セツ、ゼイ",
+    "kun_yomi": "と.く",
+    "meaning_tr": "açıklamak, teori",
+    "meaning_en": "explain, theory",
+    "stroke_count": 14,
+    "compounds": "説明(せつめい)、小説(しょうせつ)、解説(かいせつ)"
+  },
+  {
+    "kanji": "析",
+    "on_yomi": "セキ",
+    "kun_yomi": "",
+    "meaning_tr": "analiz, çözümleme",
+    "meaning_en": "analysis",
+    "stroke_count": 8,
+    "compounds": "分析(ぶんせき)、解析(かいせき)"
+  },
+  {
+    "kanji": "素",
+    "on_yomi": "ソ、ス",
+    "kun_yomi": "もと",
+    "meaning_tr": "element, sade",
+    "meaning_en": "element, plain, origin",
+    "stroke_count": 10,
+    "compounds": "素材(そざい)、元素(げんそ)、素直(すなお)"
+  },
+  {
+    "kanji": "質",
+    "on_yomi": "シツ、シチ",
+    "kun_yomi": "",
+    "meaning_tr": "kalite, nitelik",
+    "meaning_en": "quality, nature, substance",
+    "stroke_count": 15,
+    "compounds": "品質(ひんしつ)、質問(しつもん)、性質(せいしつ)"
+  },
+  {
+    "kanji": "量",
+    "on_yomi": "リョウ",
+    "kun_yomi": "はか.る",
+    "meaning_tr": "miktar, ölçmek",
+    "meaning_en": "quantity, measure, amount",
+    "stroke_count": 12,
+    "compounds": "大量(たいりょう)、重量(じゅうりょう)、量(りょう)"
+  },
+  {
+    "kanji": "温",
+    "on_yomi": "オン",
+    "kun_yomi": "あたた.かい、あたた.める",
+    "meaning_tr": "ılık, sıcaklık",
+    "meaning_en": "warm, temperature",
+    "stroke_count": 12,
+    "compounds": "温度(おんど)、気温(きおん)、温泉(おんせん)"
+  },
+  {
+    "kanji": "圧",
+    "on_yomi": "アツ",
+    "kun_yomi": "お.す",
+    "meaning_tr": "basınç, baskı",
+    "meaning_en": "pressure, push down",
+    "stroke_count": 5,
+    "compounds": "圧力(あつりょく)、気圧(きあつ)、血圧(けつあつ)"
+  },
+  {
+    "kanji": "熱",
+    "on_yomi": "ネツ",
+    "kun_yomi": "あつ.い",
+    "meaning_tr": "ısı, ateş, tutku",
+    "meaning_en": "heat, fever, passion",
+    "stroke_count": 15,
+    "compounds": "熱心(ねっしん)、熱帯(ねったい)、発熱(はつねつ)"
+  },
+  {
+    "kanji": "医",
+    "on_yomi": "イ",
+    "kun_yomi": "",
+    "meaning_tr": "tıp, doktor",
+    "meaning_en": "medicine, doctor",
+    "stroke_count": 7,
+    "compounds": "医者(いしゃ)、医学(いがく)、医療(いりょう)"
+  },
+  {
+    "kanji": "療",
+    "on_yomi": "リョウ",
+    "kun_yomi": "",
+    "meaning_tr": "tedavi",
+    "meaning_en": "treatment, therapy, cure",
+    "stroke_count": 17,
+    "compounds": "医療(いりょう)、治療(ちりょう)、療法(りょうほう)"
+  },
+  {
+    "kanji": "症",
+    "on_yomi": "ショウ",
+    "kun_yomi": "",
+    "meaning_tr": "belirti, hastalık",
+    "meaning_en": "symptom, illness",
+    "stroke_count": 10,
+    "compounds": "症状(しょうじょう)、重症(じゅうしょう)、感染症(かんせんしょう)"
+  },
+  {
+    "kanji": "状",
+    "on_yomi": "ジョウ",
+    "kun_yomi": "",
+    "meaning_tr": "durum, mektup",
+    "meaning_en": "condition, state, letter",
+    "stroke_count": 7,
+    "compounds": "状態(じょうたい)、症状(しょうじょう)、状況(じょうきょう)"
+  },
+  {
+    "kanji": "患",
+    "on_yomi": "カン",
+    "kun_yomi": "わずら.う",
+    "meaning_tr": "hasta, sıkıntı",
+    "meaning_en": "afflicted, ill, patient",
+    "stroke_count": 11,
+    "compounds": "患者(かんじゃ)、患部(かんぶ)、疾患(しっかん)"
+  },
+  {
+    "kanji": "診",
+    "on_yomi": "シン",
+    "kun_yomi": "み.る",
+    "meaning_tr": "muayene, teşhis",
+    "meaning_en": "examine, diagnose",
+    "stroke_count": 12,
+    "compounds": "診察(しんさつ)、診断(しんだん)、受診(じゅしん)"
+  },
+  {
+    "kanji": "薬",
+    "on_yomi": "ヤク",
+    "kun_yomi": "くすり",
+    "meaning_tr": "ilaç",
+    "meaning_en": "medicine, drug",
+    "stroke_count": 16,
+    "compounds": "薬局(やっきょく)、薬品(やくひん)、医薬品(いやくひん)"
+  },
+  {
+    "kanji": "毒",
+    "on_yomi": "ドク",
+    "kun_yomi": "",
+    "meaning_tr": "zehir",
+    "meaning_en": "poison, toxin",
+    "stroke_count": 8,
+    "compounds": "毒薬(どくやく)、中毒(ちゅうどく)、解毒(げどく)"
+  },
+  {
+    "kanji": "痛",
+    "on_yomi": "ツウ",
+    "kun_yomi": "いた.い、いた.む",
+    "meaning_tr": "ağrı, acı",
+    "meaning_en": "pain, ache, hurt",
+    "stroke_count": 12,
+    "compounds": "痛み(いたみ)、頭痛(ずつう)、苦痛(くつう)"
+  },
+  {
+    "kanji": "傷",
+    "on_yomi": "ショウ",
+    "kun_yomi": "きず、いた.む",
+    "meaning_tr": "yara, hasar",
+    "meaning_en": "wound, injury, hurt",
+    "stroke_count": 13,
+    "compounds": "傷口(きずぐち)、負傷(ふしょう)、重傷(じゅうしょう)"
+  },
+  {
+    "kanji": "骨",
+    "on_yomi": "コツ",
+    "kun_yomi": "ほね",
+    "meaning_tr": "kemik",
+    "meaning_en": "bone, skeleton",
+    "stroke_count": 10,
+    "compounds": "骨折(こっせつ)、骨格(こっかく)、背骨(せぼね)"
+  },
+  {
+    "kanji": "筋",
+    "on_yomi": "キン",
+    "kun_yomi": "すじ",
+    "meaning_tr": "kas, damar",
+    "meaning_en": "muscle, sinew, tendon",
+    "stroke_count": 12,
+    "compounds": "筋肉(きんにく)、筋力(きんりょく)、大筋(おおすじ)"
+  },
+  {
+    "kanji": "脳",
+    "on_yomi": "ノウ",
+    "kun_yomi": "",
+    "meaning_tr": "beyin",
+    "meaning_en": "brain",
+    "stroke_count": 11,
+    "compounds": "脳裏(のうり)、頭脳(ずのう)、脳卒中(のうそっちゅう)"
+  },
+  {
+    "kanji": "肺",
+    "on_yomi": "ハイ",
+    "kun_yomi": "",
+    "meaning_tr": "akciğer",
+    "meaning_en": "lung",
+    "stroke_count": 9,
+    "compounds": "肺炎(はいえん)、肺活量(はいかつりょう)、肺臓(はいぞう)"
+  },
+  {
+    "kanji": "感",
+    "on_yomi": "カン",
+    "kun_yomi": "",
+    "meaning_tr": "duygu, his",
+    "meaning_en": "feeling, emotion, sense",
+    "stroke_count": 13,
+    "compounds": "感情(かんじょう)、感動(かんどう)、感謝(かんしゃ)"
+  },
+  {
+    "kanji": "情",
+    "on_yomi": "ジョウ、セイ",
+    "kun_yomi": "なさ.け",
+    "meaning_tr": "duygu, merhamet",
+    "meaning_en": "emotion, feeling, compassion",
+    "stroke_count": 11,
+    "compounds": "感情(かんじょう)、事情(じじょう)、情報(じょうほう)"
+  },
+  {
+    "kanji": "精",
+    "on_yomi": "セイ、ショウ",
+    "kun_yomi": "",
+    "meaning_tr": "ruh, öz, enerji",
+    "meaning_en": "spirit, essence, refined",
+    "stroke_count": 14,
+    "compounds": "精神(せいしん)、精密(せいみつ)、精力(せいりょく)"
+  },
+  {
+    "kanji": "神",
+    "on_yomi": "シン、ジン",
+    "kun_yomi": "かみ、かん",
+    "meaning_tr": "tanrı, ruh",
+    "meaning_en": "god, spirit, mind",
+    "stroke_count": 9,
+    "compounds": "精神(せいしん)、神社(じんじゃ)、神経(しんけい)"
+  },
+  {
+    "kanji": "志",
+    "on_yomi": "シ",
+    "kun_yomi": "こころざ.す、こころざし",
+    "meaning_tr": "irade, amaç",
+    "meaning_en": "will, intention, aspiration",
+    "stroke_count": 7,
+    "compounds": "志望(しぼう)、意志(いし)、志願(しがん)"
+  },
+  {
+    "kanji": "念",
+    "on_yomi": "ネン",
+    "kun_yomi": "",
+    "meaning_tr": "düşünce, arzu",
+    "meaning_en": "thought, wish, sense",
+    "stroke_count": 8,
+    "compounds": "記念(きねん)、残念(ざんねん)、念願(ねんがん)"
+  },
+  {
+    "kanji": "恐",
+    "on_yomi": "キョウ",
+    "kun_yomi": "おそ.れる、おそ.ろしい",
+    "meaning_tr": "korku, dehşet",
+    "meaning_en": "fear, dread, terror",
+    "stroke_count": 10,
+    "compounds": "恐怖(きょうふ)、恐竜(きょうりゅう)、恐縮(きょうしゅく)"
+  },
+  {
+    "kanji": "怒",
+    "on_yomi": "ド、ヌ",
+    "kun_yomi": "いか.る、おこ.る",
+    "meaning_tr": "öfke, kızgınlık",
+    "meaning_en": "anger, rage",
+    "stroke_count": 9,
+    "compounds": "怒り(いかり)、怒鳴る(どなる)、激怒(げきど)"
+  },
+  {
+    "kanji": "悲",
+    "on_yomi": "ヒ",
+    "kun_yomi": "かな.しい、かな.しむ",
+    "meaning_tr": "üzüntü, keder",
+    "meaning_en": "sadness, sorrow, grief",
+    "stroke_count": 12,
+    "compounds": "悲劇(ひげき)、悲観(ひかん)、悲惨(ひさん)"
+  },
+  {
+    "kanji": "喜",
+    "on_yomi": "キ",
+    "kun_yomi": "よろこ.ぶ",
+    "meaning_tr": "sevinç, mutluluk",
+    "meaning_en": "joy, delight, rejoice",
+    "stroke_count": 12,
+    "compounds": "喜劇(きげき)、歓喜(かんき)、喜ぶ(よろこぶ)"
+  },
+  {
+    "kanji": "驚",
+    "on_yomi": "キョウ",
+    "kun_yomi": "おどろ.く、おどろ.かす",
+    "meaning_tr": "şaşkınlık, hayret",
+    "meaning_en": "surprise, astonish",
+    "stroke_count": 22,
+    "compounds": "驚異(きょうい)、驚嘆(きょうたん)、驚愕(きょうがく)"
+  },
+  {
+    "kanji": "悩",
+    "on_yomi": "ノウ",
+    "kun_yomi": "なや.む、なや.ます",
+    "meaning_tr": "sıkıntı, dert",
+    "meaning_en": "worry, trouble, distress",
+    "stroke_count": 10,
+    "compounds": "悩み(なやみ)、苦悩(くのう)、煩悩(ぼんのう)"
+  },
+  {
+    "kanji": "憶",
+    "on_yomi": "オク",
+    "kun_yomi": "",
+    "meaning_tr": "hatırlama, bellek",
+    "meaning_en": "remember, recollect",
+    "stroke_count": 16,
+    "compounds": "記憶(きおく)、憶測(おくそく)、追憶(ついおく)"
+  },
+  {
+    "kanji": "忘",
+    "on_yomi": "ボウ",
+    "kun_yomi": "わす.れる",
+    "meaning_tr": "unutmak",
+    "meaning_en": "forget",
+    "stroke_count": 7,
+    "compounds": "忘年会(ぼうねんかい)、忘却(ぼうきゃく)、忘れ物(わすれもの)"
+  },
+  {
+    "kanji": "疑",
+    "on_yomi": "ギ",
+    "kun_yomi": "うたが.う",
+    "meaning_tr": "şüphe, kuşku",
+    "meaning_en": "doubt, suspect, question",
+    "stroke_count": 14,
+    "compounds": "疑問(ぎもん)、疑惑(ぎわく)、容疑(ようぎ)"
+  },
+  {
+    "kanji": "岩",
+    "on_yomi": "ガン",
+    "kun_yomi": "いわ",
+    "meaning_tr": "kaya",
+    "meaning_en": "rock, boulder, cliff",
+    "stroke_count": 8,
+    "compounds": "岩石(がんせき)、溶岩(ようがん)、岩山(いわやま)"
+  },
+  {
+    "kanji": "砂",
+    "on_yomi": "サ、シャ",
+    "kun_yomi": "すな",
+    "meaning_tr": "kum",
+    "meaning_en": "sand",
+    "stroke_count": 9,
+    "compounds": "砂漠(さばく)、砂糖(さとう)、砂浜(すなはま)"
+  },
+  {
+    "kanji": "泉",
+    "on_yomi": "セン",
+    "kun_yomi": "いずみ",
+    "meaning_tr": "kaynak, pınar",
+    "meaning_en": "spring, fountain",
+    "stroke_count": 9,
+    "compounds": "温泉(おんせん)、源泉(げんせん)、泉(いずみ)"
+  },
+  {
+    "kanji": "湖",
+    "on_yomi": "コ",
+    "kun_yomi": "みずうみ",
+    "meaning_tr": "göl",
+    "meaning_en": "lake",
+    "stroke_count": 12,
+    "compounds": "湖畔(こはん)、湖水(こすい)、琵琶湖(びわこ)"
+  },
+  {
+    "kanji": "沼",
+    "on_yomi": "ショウ",
+    "kun_yomi": "ぬま",
+    "meaning_tr": "bataklık",
+    "meaning_en": "marsh, swamp, bog",
+    "stroke_count": 8,
+    "compounds": "沼地(ぬまち)、沼沢(しょうたく)、泥沼(どろぬま)"
+  },
+  {
+    "kanji": "畑",
+    "on_yomi": "",
+    "kun_yomi": "はた、はたけ",
+    "meaning_tr": "tarla",
+    "meaning_en": "field, farm, dry field",
+    "stroke_count": 9,
+    "compounds": "畑(はたけ)、花畑(はなばたけ)、茶畑(ちゃばたけ)"
+  },
+  {
+    "kanji": "草",
+    "on_yomi": "ソウ",
+    "kun_yomi": "くさ",
+    "meaning_tr": "ot, çimen",
+    "meaning_en": "grass, weed, herb",
+    "stroke_count": 9,
+    "compounds": "草原(そうげん)、雑草(ざっそう)、草花(くさばな)"
+  },
+  {
+    "kanji": "芽",
+    "on_yomi": "ガ",
+    "kun_yomi": "め",
+    "meaning_tr": "filiz, tomurcuk",
+    "meaning_en": "bud, sprout, shoot",
+    "stroke_count": 8,
+    "compounds": "発芽(はつが)、新芽(しんめ)、芽生え(めばえ)"
+  },
+  {
+    "kanji": "枝",
+    "on_yomi": "シ",
+    "kun_yomi": "えだ",
+    "meaning_tr": "dal",
+    "meaning_en": "branch, bough, twig",
+    "stroke_count": 8,
+    "compounds": "枝(えだ)、小枝(こえだ)、枝葉(しよう)"
+  },
+  {
+    "kanji": "葉",
+    "on_yomi": "ヨウ",
+    "kun_yomi": "は",
+    "meaning_tr": "yaprak",
+    "meaning_en": "leaf, foliage",
+    "stroke_count": 12,
+    "compounds": "言葉(ことば)、紅葉(こうよう)、葉書(はがき)"
+  },
+  {
+    "kanji": "根",
+    "on_yomi": "コン",
+    "kun_yomi": "ね",
+    "meaning_tr": "kök",
+    "meaning_en": "root, base, origin",
+    "stroke_count": 10,
+    "compounds": "根本(こんぽん)、屋根(やね)、根拠(こんきょ)"
+  },
+  {
+    "kanji": "種",
+    "on_yomi": "シュ",
+    "kun_yomi": "たね",
+    "meaning_tr": "tür, tohum",
+    "meaning_en": "seed, kind, species",
+    "stroke_count": 14,
+    "compounds": "種類(しゅるい)、種子(しゅし)、品種(ひんしゅ)"
+  },
+  {
+    "kanji": "届",
+    "on_yomi": "",
+    "kun_yomi": "とど.ける、とど.く",
+    "meaning_tr": "teslim etmek, ulaşmak",
+    "meaning_en": "deliver, reach, notify",
+    "stroke_count": 8,
+    "compounds": "届出(とどけで)、届ける(とどける)、届く(とどく)"
+  },
+  {
+    "kanji": "設",
+    "on_yomi": "セツ",
+    "kun_yomi": "もう.ける",
+    "meaning_tr": "kurmak, tesis",
+    "meaning_en": "establish, set up, facility",
+    "stroke_count": 11,
+    "compounds": "設計(せっけい)、建設(けんせつ)、設備(せつび)"
+  },
+  {
+    "kanji": "演",
+    "on_yomi": "エン",
+    "kun_yomi": "",
+    "meaning_tr": "gösteri, performans",
+    "meaning_en": "perform, act, play",
+    "stroke_count": 14,
+    "compounds": "演奏(えんそう)、演説(えんぜつ)、出演(しゅつえん)"
+  },
+  {
+    "kanji": "容",
+    "on_yomi": "ヨウ",
+    "kun_yomi": "",
+    "meaning_tr": "içerik, görünüş",
+    "meaning_en": "contain, form, appearance",
+    "stroke_count": 10,
+    "compounds": "内容(ないよう)、容易(ようい)、美容(びよう)"
+  },
+  {
+    "kanji": "認",
+    "on_yomi": "ニン",
+    "kun_yomi": "みと.める",
+    "meaning_tr": "kabul etmek, tanımak",
+    "meaning_en": "recognize, acknowledge",
+    "stroke_count": 14,
+    "compounds": "確認(かくにん)、認識(にんしき)、承認(しょうにん)"
+  },
+  {
+    "kanji": "域",
+    "on_yomi": "イキ",
+    "kun_yomi": "",
+    "meaning_tr": "bölge, alan",
+    "meaning_en": "area, region, domain",
+    "stroke_count": 11,
+    "compounds": "地域(ちいき)、領域(りょういき)、区域(くいき)"
+  },
+  {
+    "kanji": "観",
+    "on_yomi": "カン",
+    "kun_yomi": "み.る",
+    "meaning_tr": "gözlemlemek, görüş",
+    "meaning_en": "observe, view, outlook",
+    "stroke_count": 18,
+    "compounds": "観光(かんこう)、観客(かんきゃく)、観察(かんさつ)"
+  },
+  {
+    "kanji": "環",
+    "on_yomi": "カン",
+    "kun_yomi": "わ",
+    "meaning_tr": "halka, çevre",
+    "meaning_en": "ring, circle, environment",
+    "stroke_count": 17,
+    "compounds": "環境(かんきょう)、循環(じゅんかん)、環状(かんじょう)"
+  },
+  {
+    "kanji": "構",
+    "on_yomi": "コウ",
+    "kun_yomi": "かま.える、かま.う",
+    "meaning_tr": "yapı, oluşturmak",
+    "meaning_en": "structure, construct",
+    "stroke_count": 14,
+    "compounds": "構造(こうぞう)、構成(こうせい)、機構(きこう)"
+  },
+  {
+    "kanji": "態",
+    "on_yomi": "タイ",
+    "kun_yomi": "わざ.と",
+    "meaning_tr": "durum, tavır",
+    "meaning_en": "attitude, condition, state",
+    "stroke_count": 14,
+    "compounds": "状態(じょうたい)、態度(たいど)、事態(じたい)"
+  },
+  {
+    "kanji": "断",
+    "on_yomi": "ダン",
+    "kun_yomi": "た.つ、ことわ.る",
+    "meaning_tr": "kesmek, reddetmek, karar",
+    "meaning_en": "cut, refuse, judge",
+    "stroke_count": 11,
+    "compounds": "判断(はんだん)、断る(ことわる)、中断(ちゅうだん)"
+  },
+  {
+    "kanji": "値",
+    "on_yomi": "チ",
+    "kun_yomi": "ね、あたい",
+    "meaning_tr": "değer, fiyat",
+    "meaning_en": "value, price, worth",
+    "stroke_count": 10,
+    "compounds": "価値(かち)、数値(すうち)、値段(ねだん)"
+  },
+  {
+    "kanji": "示",
+    "on_yomi": "ジ、シ",
+    "kun_yomi": "しめ.す",
+    "meaning_tr": "göstermek",
+    "meaning_en": "show, indicate, display",
+    "stroke_count": 5,
+    "compounds": "表示(ひょうじ)、指示(しじ)、示す(しめす)"
+  },
+  {
+    "kanji": "展",
+    "on_yomi": "テン",
+    "kun_yomi": "",
+    "meaning_tr": "sergi, gelişme",
+    "meaning_en": "exhibit, expand, develop",
+    "stroke_count": 10,
+    "compounds": "展開(てんかい)、展覧会(てんらんかい)、発展(はってん)"
+  },
+  {
+    "kanji": "報",
+    "on_yomi": "ホウ",
+    "kun_yomi": "むく.いる",
+    "meaning_tr": "haber, rapor",
+    "meaning_en": "report, news, inform",
+    "stroke_count": 12,
+    "compounds": "情報(じょうほう)、報告(ほうこく)、報道(ほうどう)"
+  },
+  {
+    "kanji": "供",
+    "on_yomi": "キョウ、ク",
+    "kun_yomi": "そな.える、とも",
+    "meaning_tr": "sunmak, tedarik",
+    "meaning_en": "offer, provide, attendant",
+    "stroke_count": 8,
+    "compounds": "提供(ていきょう)、供給(きょうきゅう)、子供(こども)"
+  },
+  {
+    "kanji": "述",
+    "on_yomi": "ジュツ",
+    "kun_yomi": "の.べる",
+    "meaning_tr": "ifade etmek, anlatmak",
+    "meaning_en": "state, mention, describe",
+    "stroke_count": 8,
+    "compounds": "記述(きじゅつ)、述べる(のべる)、陳述(ちんじゅつ)"
+  },
+  {
+    "kanji": "限",
+    "on_yomi": "ゲン",
+    "kun_yomi": "かぎ.る",
+    "meaning_tr": "sınır, kısıtlama",
+    "meaning_en": "limit, restrict",
+    "stroke_count": 9,
+    "compounds": "制限(せいげん)、限界(げんかい)、期限(きげん)"
+  },
+  {
+    "kanji": "現",
+    "on_yomi": "ゲン",
+    "kun_yomi": "あらわ.れる、あらわ.す",
+    "meaning_tr": "mevcut, görünmek",
+    "meaning_en": "present, appear, current",
+    "stroke_count": 11,
+    "compounds": "現在(げんざい)、現実(げんじつ)、表現(ひょうげん)"
+  },
+  {
+    "kanji": "減",
+    "on_yomi": "ゲン",
+    "kun_yomi": "へ.る、へ.らす",
+    "meaning_tr": "azalmak, azaltmak",
+    "meaning_en": "decrease, reduce",
+    "stroke_count": 12,
+    "compounds": "減少(げんしょう)、削減(さくげん)、軽減(けいげん)"
+  },
+  {
+    "kanji": "増",
+    "on_yomi": "ゾウ",
+    "kun_yomi": "ま.す、ふ.える、ふ.やす",
+    "meaning_tr": "artmak, artırmak",
+    "meaning_en": "increase, add",
+    "stroke_count": 14,
+    "compounds": "増加(ぞうか)、増大(ぞうだい)、急増(きゅうぞう)"
+  },
+  {
+    "kanji": "比",
+    "on_yomi": "ヒ",
+    "kun_yomi": "くら.べる",
+    "meaning_tr": "karşılaştırmak, oran",
+    "meaning_en": "compare, ratio",
+    "stroke_count": 4,
+    "compounds": "比較(ひかく)、比率(ひりつ)、比例(ひれい)"
+  },
+  {
+    "kanji": "較",
+    "on_yomi": "カク",
+    "kun_yomi": "",
+    "meaning_tr": "karşılaştırma",
+    "meaning_en": "compare, contrast",
+    "stroke_count": 13,
+    "compounds": "比較(ひかく)、比較的(ひかくてき)"
+  },
+  {
+    "kanji": "割",
+    "on_yomi": "カツ",
+    "kun_yomi": "わ.る、わ.れる、さ.く",
+    "meaning_tr": "bölmek, oran",
+    "meaning_en": "divide, proportion, cut",
+    "stroke_count": 12,
+    "compounds": "割合(わりあい)、分割(ぶんかつ)、割引(わりびき)"
+  },
+  {
+    "kanji": "率",
+    "on_yomi": "リツ、ソツ",
+    "kun_yomi": "ひき.いる",
+    "meaning_tr": "oran, yüzde",
+    "meaning_en": "rate, ratio, lead",
+    "stroke_count": 11,
+    "compounds": "効率(こうりつ)、確率(かくりつ)、比率(ひりつ)"
+  },
+  {
+    "kanji": "件",
+    "on_yomi": "ケン",
+    "kun_yomi": "",
+    "meaning_tr": "konu, mesele",
+    "meaning_en": "matter, case, affair",
+    "stroke_count": 6,
+    "compounds": "条件(じょうけん)、事件(じけん)、件数(けんすう)"
+  },
+  {
+    "kanji": "条",
+    "on_yomi": "ジョウ",
+    "kun_yomi": "",
+    "meaning_tr": "madde, koşul",
+    "meaning_en": "article, clause, condition",
+    "stroke_count": 7,
+    "compounds": "条件(じょうけん)、条約(じょうやく)、条例(じょうれい)"
+  },
+  {
+    "kanji": "非",
+    "on_yomi": "ヒ",
+    "kun_yomi": "あら.ず",
+    "meaning_tr": "olumsuz, hata",
+    "meaning_en": "non-, un-, injustice",
+    "stroke_count": 8,
+    "compounds": "非常(ひじょう)、非難(ひなん)、是非(ぜひ)"
+  },
+  {
+    "kanji": "否",
+    "on_yomi": "ヒ",
+    "kun_yomi": "いな",
+    "meaning_tr": "hayır, reddetmek",
+    "meaning_en": "negate, no, deny",
+    "stroke_count": 7,
+    "compounds": "否定(ひてい)、否認(ひにん)、賛否(さんぴ)"
+  },
+  {
+    "kanji": "賛",
+    "on_yomi": "サン",
+    "kun_yomi": "",
+    "meaning_tr": "onay, destek",
+    "meaning_en": "approve, praise, support",
+    "stroke_count": 15,
+    "compounds": "賛成(さんせい)、賛否(さんぴ)、協賛(きょうさん)"
+  },
+  {
+    "kanji": "反",
+    "on_yomi": "ハン、タン",
+    "kun_yomi": "そ.る、そ.らす",
+    "meaning_tr": "karşıt, ters",
+    "meaning_en": "anti-, oppose, reverse",
+    "stroke_count": 4,
+    "compounds": "反対(はんたい)、反省(はんせい)、反応(はんのう)"
+  },
+  {
+    "kanji": "応",
+    "on_yomi": "オウ",
+    "kun_yomi": "こた.える",
+    "meaning_tr": "yanıt, karşılık",
+    "meaning_en": "respond, apply",
+    "stroke_count": 7,
+    "compounds": "応援(おうえん)、反応(はんのう)、対応(たいおう)"
+  },
+  {
+    "kanji": "性",
+    "on_yomi": "セイ、ショウ",
+    "kun_yomi": "",
+    "meaning_tr": "doğa, cinsiyet, karakter",
+    "meaning_en": "nature, sex, character",
+    "stroke_count": 8,
+    "compounds": "性格(せいかく)、女性(じょせい)、可能性(かのうせい)"
+  },
+  {
+    "kanji": "格",
+    "on_yomi": "カク、コウ",
+    "kun_yomi": "",
+    "meaning_tr": "statü, standart",
+    "meaning_en": "status, standard, character",
+    "stroke_count": 10,
+    "compounds": "性格(せいかく)、資格(しかく)、格差(かくさ)"
+  },
+  {
+    "kanji": "能",
+    "on_yomi": "ノウ",
+    "kun_yomi": "",
+    "meaning_tr": "yetenek, beceri",
+    "meaning_en": "ability, talent, skill",
+    "stroke_count": 10,
+    "compounds": "可能(かのう)、能力(のうりょく)、機能(きのう)"
+  },
+  {
+    "kanji": "効",
+    "on_yomi": "コウ",
+    "kun_yomi": "き.く",
+    "meaning_tr": "etki, verimlilik",
+    "meaning_en": "effect, efficacy",
+    "stroke_count": 8,
+    "compounds": "効果(こうか)、有効(ゆうこう)、効率(こうりつ)"
+  },
+  {
+    "kanji": "果",
+    "on_yomi": "カ",
+    "kun_yomi": "は.たす、は.てる",
+    "meaning_tr": "meyve, sonuç",
+    "meaning_en": "fruit, result, achieve",
+    "stroke_count": 8,
+    "compounds": "効果(こうか)、結果(けっか)、果物(くだもの)"
+  },
+  {
+    "kanji": "因",
+    "on_yomi": "イン",
+    "kun_yomi": "よ.る",
+    "meaning_tr": "neden, sebep",
+    "meaning_en": "cause, reason, factor",
+    "stroke_count": 6,
+    "compounds": "原因(げんいん)、要因(よういん)、因果(いんが)"
+  },
+  {
+    "kanji": "原",
+    "on_yomi": "ゲン",
+    "kun_yomi": "はら",
+    "meaning_tr": "köken, ova",
+    "meaning_en": "origin, meadow, field",
+    "stroke_count": 10,
+    "compounds": "原因(げんいん)、原則(げんそく)、原料(げんりょう)"
+  },
+  {
+    "kanji": "複",
+    "on_yomi": "フク",
+    "kun_yomi": "",
+    "meaning_tr": "karmaşık, çoğul",
+    "meaning_en": "complex, duplicate, multiple",
+    "stroke_count": 14,
+    "compounds": "複雑(ふくざつ)、複数(ふくすう)、重複(じゅうふく)"
+  },
+  {
+    "kanji": "雑",
+    "on_yomi": "ザツ、ゾウ",
+    "kun_yomi": "まじ.る",
+    "meaning_tr": "karışık, çeşitli",
+    "meaning_en": "miscellaneous, mixed",
+    "stroke_count": 14,
+    "compounds": "複雑(ふくざつ)、雑誌(ざっし)、雑草(ざっそう)"
+  },
+  {
+    "kanji": "誌",
+    "on_yomi": "シ",
+    "kun_yomi": "",
+    "meaning_tr": "dergi, kayıt",
+    "meaning_en": "magazine, journal, record",
+    "stroke_count": 14,
+    "compounds": "雑誌(ざっし)、日誌(にっし)、誌面(しめん)"
+  },
+  {
+    "kanji": "刊",
+    "on_yomi": "カン",
+    "kun_yomi": "",
+    "meaning_tr": "yayın, baskı",
+    "meaning_en": "publish, print",
+    "stroke_count": 5,
+    "compounds": "週刊(しゅうかん)、月刊(げっかん)、刊行(かんこう)"
+  },
+  {
+    "kanji": "版",
+    "on_yomi": "ハン",
+    "kun_yomi": "",
+    "meaning_tr": "baskı, edisyon",
+    "meaning_en": "edition, print, publishing",
+    "stroke_count": 8,
+    "compounds": "出版(しゅっぱん)、版画(はんが)、改版(かいはん)"
+  },
+  {
+    "kanji": "編",
+    "on_yomi": "ヘン",
+    "kun_yomi": "あ.む",
+    "meaning_tr": "derlemek, örmek",
+    "meaning_en": "compile, edit, knit",
+    "stroke_count": 15,
+    "compounds": "編集(へんしゅう)、編成(へんせい)、長編(ちょうへん)"
+  },
+  {
+    "kanji": "著",
+    "on_yomi": "チョ",
+    "kun_yomi": "あらわ.す、いちじる.しい",
+    "meaning_tr": "yazar, belirgin",
+    "meaning_en": "author, remarkable, write",
+    "stroke_count": 11,
+    "compounds": "著者(ちょしゃ)、著名(ちょめい)、著書(ちょしょ)"
+  },
+  {
+    "kanji": "翻",
+    "on_yomi": "ホン",
+    "kun_yomi": "ひるがえ.る、ひるがえ.す",
+    "meaning_tr": "çevirmek, döndürmek",
+    "meaning_en": "translate, flip, turn over",
+    "stroke_count": 18,
+    "compounds": "翻訳(ほんやく)、翻す(ひるがえす)"
+  },
+  {
+    "kanji": "訳",
+    "on_yomi": "ヤク",
+    "kun_yomi": "わけ",
+    "meaning_tr": "çeviri, sebep",
+    "meaning_en": "translate, reason",
+    "stroke_count": 11,
+    "compounds": "翻訳(ほんやく)、通訳(つうやく)、言い訳(いいわけ)"
+  },
+  {
+    "kanji": "響",
+    "on_yomi": "キョウ",
+    "kun_yomi": "ひび.く",
+    "meaning_tr": "yankı, etki",
+    "meaning_en": "echo, sound, resound",
+    "stroke_count": 20,
+    "compounds": "影響(えいきょう)、響く(ひびく)、音響(おんきょう)"
+  },
+  {
+    "kanji": "影",
+    "on_yomi": "エイ",
+    "kun_yomi": "かげ",
+    "meaning_tr": "gölge, etki",
+    "meaning_en": "shadow, influence",
+    "stroke_count": 15,
+    "compounds": "影響(えいきょう)、撮影(さつえい)、影(かげ)"
+  },
+  {
+    "kanji": "況",
+    "on_yomi": "キョウ",
+    "kun_yomi": "",
+    "meaning_tr": "durum, koşul",
+    "meaning_en": "condition, situation",
+    "stroke_count": 7,
+    "compounds": "状況(じょうきょう)、近況(きんきょう)、好況(こうきょう)"
+  },
+  {
+    "kanji": "境",
+    "on_yomi": "キョウ、ケイ",
+    "kun_yomi": "さかい",
+    "meaning_tr": "sınır, çevre",
+    "meaning_en": "boundary, environment, border",
+    "stroke_count": 14,
+    "compounds": "環境(かんきょう)、境界(きょうかい)、国境(こっきょう)"
+  },
+  {
+    "kanji": "接",
+    "on_yomi": "セツ",
+    "kun_yomi": "つ.ぐ",
+    "meaning_tr": "bağlamak, temas",
+    "meaning_en": "connect, contact, join",
+    "stroke_count": 11,
+    "compounds": "接続(せつぞく)、直接(ちょくせつ)、面接(めんせつ)"
+  },
+  {
+    "kanji": "続",
+    "on_yomi": "ゾク",
+    "kun_yomi": "つづ.く、つづ.ける",
+    "meaning_tr": "devam etmek",
+    "meaning_en": "continue, follow",
+    "stroke_count": 13,
+    "compounds": "接続(せつぞく)、連続(れんぞく)、続行(ぞっこう)"
+  },
+  {
+    "kanji": "達",
+    "on_yomi": "タツ",
+    "kun_yomi": "",
+    "meaning_tr": "ulaşmak, usta",
+    "meaning_en": "reach, achieve, plural suffix",
+    "stroke_count": 12,
+    "compounds": "達成(たっせい)、友達(ともだち)、発達(はったつ)"
+  },
+  {
+    "kanji": "成",
+    "on_yomi": "セイ、ジョウ",
+    "kun_yomi": "な.る、な.す",
+    "meaning_tr": "başarmak, olmak",
+    "meaning_en": "become, achieve, form",
+    "stroke_count": 6,
+    "compounds": "成功(せいこう)、達成(たっせい)、完成(かんせい)"
+  },
+  {
+    "kanji": "功",
+    "on_yomi": "コウ、ク",
+    "kun_yomi": "",
+    "meaning_tr": "başarı, hizmet",
+    "meaning_en": "achievement, merit, success",
+    "stroke_count": 5,
+    "compounds": "成功(せいこう)、功績(こうせき)、年功(ねんこう)"
+  },
+  {
+    "kanji": "績",
+    "on_yomi": "セキ",
+    "kun_yomi": "",
+    "meaning_tr": "başarı, sonuç",
+    "meaning_en": "achievement, performance",
+    "stroke_count": 17,
+    "compounds": "成績(せいせき)、業績(ぎょうせき)、功績(こうせき)"
+  },
+  {
+    "kanji": "築",
+    "on_yomi": "チク",
+    "kun_yomi": "きず.く",
+    "meaning_tr": "inşa etmek",
+    "meaning_en": "build, construct",
+    "stroke_count": 16,
+    "compounds": "建築(けんちく)、構築(こうちく)、築く(きずく)"
+  },
+  {
+    "kanji": "造",
+    "on_yomi": "ゾウ",
+    "kun_yomi": "つく.る",
+    "meaning_tr": "yapmak, üretmek",
+    "meaning_en": "create, make, manufacture",
+    "stroke_count": 10,
+    "compounds": "構造(こうぞう)、製造(せいぞう)、創造(そうぞう)"
+  },
+  {
+    "kanji": "製",
+    "on_yomi": "セイ",
+    "kun_yomi": "",
+    "meaning_tr": "üretim, imalat",
+    "meaning_en": "manufacture, make",
+    "stroke_count": 14,
+    "compounds": "製品(せいひん)、製造(せいぞう)、日本製(にほんせい)"
+  },
+  {
+    "kanji": "品",
+    "on_yomi": "ヒン",
+    "kun_yomi": "しな",
+    "meaning_tr": "ürün, kalite",
+    "meaning_en": "goods, quality, elegance",
+    "stroke_count": 9,
+    "compounds": "商品(しょうひん)、品質(ひんしつ)、食品(しょくひん)"
+  },
+  {
+    "kanji": "完",
+    "on_yomi": "カン",
+    "kun_yomi": "",
+    "meaning_tr": "tam, bitirmek",
+    "meaning_en": "complete, perfect, finish",
+    "stroke_count": 7,
+    "compounds": "完成(かんせい)、完全(かんぜん)、完了(かんりょう)"
+  },
+  {
+    "kanji": "総",
+    "on_yomi": "ソウ",
+    "kun_yomi": "",
+    "meaning_tr": "genel, toplam",
+    "meaning_en": "general, total, overall",
+    "stroke_count": 14,
+    "compounds": "総合(そうごう)、総理(そうり)、総額(そうがく)"
+  },
+  {
+    "kanji": "極",
+    "on_yomi": "キョク、ゴク",
+    "kun_yomi": "きわ.める、きわ.まる",
+    "meaning_tr": "uç, sınır, çok",
+    "meaning_en": "extreme, pole, very",
+    "stroke_count": 12,
+    "compounds": "積極的(せっきょくてき)、極端(きょくたん)、北極(ほっきょく)"
+  },
+  {
+    "kanji": "積",
+    "on_yomi": "セキ",
+    "kun_yomi": "つ.む、つ.もる",
+    "meaning_tr": "biriktirmek, hacim",
+    "meaning_en": "accumulate, volume, product",
+    "stroke_count": 16,
+    "compounds": "積極的(せっきょくてき)、面積(めんせき)、蓄積(ちくせき)"
+  },
+  {
+    "kanji": "般",
+    "on_yomi": "ハン、バン",
+    "kun_yomi": "",
+    "meaning_tr": "genel, her türlü",
+    "meaning_en": "general, all, sort of",
+    "stroke_count": 10,
+    "compounds": "一般(いっぱん)、全般(ぜんぱん)、一般的(いっぱんてき)"
+  },
+  {
+    "kanji": "具",
+    "on_yomi": "グ",
+    "kun_yomi": "",
+    "meaning_tr": "alet, araç, somut",
+    "meaning_en": "tool, implement, concrete",
+    "stroke_count": 8,
+    "compounds": "具体(ぐたい)、道具(どうぐ)、家具(かぐ)"
+  },
+  {
+    "kanji": "抜",
+    "on_yomi": "バツ",
+    "kun_yomi": "ぬ.く、ぬ.ける",
+    "meaning_tr": "çekmek, çıkarmak",
+    "meaning_en": "pull out, extract, omit",
+    "stroke_count": 7,
+    "compounds": "抜群(ばつぐん)、見抜く(みぬく)、抜粋(ばっすい)"
+  },
+  {
+    "kanji": "替",
+    "on_yomi": "タイ",
+    "kun_yomi": "か.える、か.わる",
+    "meaning_tr": "değiştirmek",
+    "meaning_en": "exchange, replace, substitute",
+    "stroke_count": 12,
+    "compounds": "交替(こうたい)、両替(りょうがえ)、替える(かえる)"
+  },
+  {
+    "kanji": "預",
+    "on_yomi": "ヨ",
+    "kun_yomi": "あず.ける、あず.かる",
+    "meaning_tr": "emanet etmek, mevduat",
+    "meaning_en": "deposit, entrust, leave with",
+    "stroke_count": 13,
+    "compounds": "預金(よきん)、預かる(あずかる)、預ける(あずける)"
+  },
+  {
+    "kanji": "貸",
+    "on_yomi": "タイ",
+    "kun_yomi": "か.す",
+    "meaning_tr": "ödünç vermek",
+    "meaning_en": "lend, loan",
+    "stroke_count": 12,
+    "compounds": "貸し出し(かしだし)、賃貸(ちんたい)、貸す(かす)"
+  },
+  {
+    "kanji": "借",
+    "on_yomi": "シャク",
+    "kun_yomi": "か.りる",
+    "meaning_tr": "ödünç almak",
+    "meaning_en": "borrow, rent",
+    "stroke_count": 10,
+    "compounds": "借金(しゃっきん)、借りる(かりる)、貸借(たいしゃく)"
+  },
+  {
+    "kanji": "払",
+    "on_yomi": "フツ",
+    "kun_yomi": "はら.う",
+    "meaning_tr": "ödemek, silmek",
+    "meaning_en": "pay, sweep away, clear",
+    "stroke_count": 5,
+    "compounds": "支払い(しはらい)、払う(はらう)、払い戻し(はらいもどし)"
+  },
+  {
+    "kanji": "基",
+    "on_yomi": "キ",
+    "kun_yomi": "もと、もとい",
+    "meaning_tr": "temel, esas",
+    "meaning_en": "base, foundation, basis",
+    "stroke_count": 11,
+    "compounds": "基本(きほん)、基礎(きそ)、基準(きじゅん)"
+  },
+  {
+    "kanji": "礎",
+    "on_yomi": "ソ",
+    "kun_yomi": "いしずえ",
+    "meaning_tr": "temel taşı",
+    "meaning_en": "foundation, cornerstone",
+    "stroke_count": 18,
+    "compounds": "基礎(きそ)、礎石(そせき)"
+  },
+  {
+    "kanji": "準",
+    "on_yomi": "ジュン",
+    "kun_yomi": "",
+    "meaning_tr": "standart, hazırlık",
+    "meaning_en": "standard, level, quasi-",
+    "stroke_count": 13,
+    "compounds": "基準(きじゅん)、準備(じゅんび)、水準(すいじゅん)"
+  },
+  {
+    "kanji": "備",
+    "on_yomi": "ビ",
+    "kun_yomi": "そな.える、そな.わる",
+    "meaning_tr": "hazırlanmak, donatmak",
+    "meaning_en": "prepare, equip, furnish",
+    "stroke_count": 12,
+    "compounds": "準備(じゅんび)、設備(せつび)、備える(そなえる)"
+  },
+  {
+    "kanji": "整",
+    "on_yomi": "セイ",
+    "kun_yomi": "ととの.える、ととの.う",
+    "meaning_tr": "düzenlemek, ayarlamak",
+    "meaning_en": "arrange, organize, adjust",
+    "stroke_count": 16,
+    "compounds": "整理(せいり)、調整(ちょうせい)、整備(せいび)"
+  },
+  {
+    "kanji": "管",
+    "on_yomi": "カン",
+    "kun_yomi": "くだ",
+    "meaning_tr": "boru, yönetmek",
+    "meaning_en": "pipe, tube, manage",
+    "stroke_count": 14,
+    "compounds": "管理(かんり)、管轄(かんかつ)、血管(けっかん)"
+  },
+  {
+    "kanji": "統",
+    "on_yomi": "トウ",
+    "kun_yomi": "す.べる",
+    "meaning_tr": "birleştirmek, geleneksel",
+    "meaning_en": "unify, govern, tradition",
+    "stroke_count": 12,
+    "compounds": "統計(とうけい)、伝統(でんとう)、大統領(だいとうりょう)"
+  },
+  {
+    "kanji": "計",
+    "on_yomi": "ケイ",
+    "kun_yomi": "はか.る、はか.らう",
+    "meaning_tr": "hesap, ölçmek",
+    "meaning_en": "plan, measure, calculate",
+    "stroke_count": 9,
+    "compounds": "統計(とうけい)、合計(ごうけい)、計画(けいかく)"
+  },
+  {
+    "kanji": "画",
+    "on_yomi": "ガ、カク",
+    "kun_yomi": "",
+    "meaning_tr": "resim, plan",
+    "meaning_en": "picture, plan, stroke",
+    "stroke_count": 8,
+    "compounds": "計画(けいかく)、映画(えいが)、画面(がめん)"
+  },
+  {
+    "kanji": "映",
+    "on_yomi": "エイ",
+    "kun_yomi": "うつ.す、うつ.る、は.える",
+    "meaning_tr": "yansıtmak, film",
+    "meaning_en": "reflect, project, movie",
+    "stroke_count": 9,
+    "compounds": "映画(えいが)、映像(えいぞう)、反映(はんえい)"
+  },
+  {
+    "kanji": "像",
+    "on_yomi": "ゾウ",
+    "kun_yomi": "",
+    "meaning_tr": "görüntü, heykel",
+    "meaning_en": "image, statue, figure",
+    "stroke_count": 14,
+    "compounds": "映像(えいぞう)、想像(そうぞう)、現像(げんぞう)"
+  },
+  {
+    "kanji": "想",
+    "on_yomi": "ソウ、ソ",
+    "kun_yomi": "",
+    "meaning_tr": "düşünce, fikir",
+    "meaning_en": "thought, idea, concept",
+    "stroke_count": 13,
+    "compounds": "想像(そうぞう)、感想(かんそう)、理想(りそう)"
+  },
+  {
+    "kanji": "創",
+    "on_yomi": "ソウ",
+    "kun_yomi": "つく.る",
+    "meaning_tr": "yaratmak, başlatmak",
+    "meaning_en": "create, originate",
+    "stroke_count": 12,
+    "compounds": "創造(そうぞう)、創作(そうさく)、創立(そうりつ)"
+  },
+  {
+    "kanji": "確",
+    "on_yomi": "カク",
+    "kun_yomi": "たし.か、たし.かめる",
+    "meaning_tr": "kesin, doğrulamak",
+    "meaning_en": "certain, confirm, sure",
+    "stroke_count": 15,
+    "compounds": "確認(かくにん)、確実(かくじつ)、正確(せいかく)"
+  },
+  {
+    "kanji": "存",
+    "on_yomi": "ソン、ゾン",
+    "kun_yomi": "",
+    "meaning_tr": "var olmak, bilmek",
+    "meaning_en": "exist, know, suppose",
+    "stroke_count": 6,
+    "compounds": "存在(そんざい)、保存(ほぞん)、生存(せいぞん)"
+  },
+  {
+    "kanji": "保",
+    "on_yomi": "ホ",
+    "kun_yomi": "たも.つ",
+    "meaning_tr": "korumak, sürdürmek",
+    "meaning_en": "preserve, protect, maintain",
+    "stroke_count": 9,
+    "compounds": "保存(ほぞん)、保険(ほけん)、保証(ほしょう)"
+  },
+  {
+    "kanji": "険",
+    "on_yomi": "ケン",
+    "kun_yomi": "けわ.しい",
+    "meaning_tr": "tehlike, sigorta",
+    "meaning_en": "danger, steep, insurance",
+    "stroke_count": 11,
+    "compounds": "保険(ほけん)、危険(きけん)、冒険(ぼうけん)"
+  },
+  {
+    "kanji": "危",
+    "on_yomi": "キ",
+    "kun_yomi": "あぶ.ない、あや.うい",
+    "meaning_tr": "tehlike, risk",
+    "meaning_en": "danger, risk, peril",
+    "stroke_count": 6,
+    "compounds": "危険(きけん)、危機(きき)、危害(きがい)"
+  },
+  {
+    "kanji": "機",
+    "on_yomi": "キ",
+    "kun_yomi": "",
+    "meaning_tr": "makine, fırsat",
+    "meaning_en": "machine, opportunity, occasion",
+    "stroke_count": 16,
+    "compounds": "機会(きかい)、飛行機(ひこうき)、機能(きのう)"
+  },
+  {
+    "kanji": "械",
+    "on_yomi": "カイ",
+    "kun_yomi": "",
+    "meaning_tr": "alet, mekanizma",
+    "meaning_en": "machine, apparatus",
+    "stroke_count": 11,
+    "compounds": "機械(きかい)、器械(きかい)"
+  },
+  {
+    "kanji": "器",
+    "on_yomi": "キ",
+    "kun_yomi": "うつわ",
+    "meaning_tr": "kap, alet",
+    "meaning_en": "vessel, utensil, instrument",
+    "stroke_count": 15,
+    "compounds": "器具(きぐ)、食器(しょっき)、楽器(がっき)"
+  },
+  {
+    "kanji": "職",
+    "on_yomi": "ショク",
+    "kun_yomi": "",
+    "meaning_tr": "meslek, iş",
+    "meaning_en": "job, occupation, employment",
+    "stroke_count": 18,
+    "compounds": "職業(しょくぎょう)、職場(しょくば)、就職(しゅうしょく)"
+  },
+  {
+    "kanji": "業",
+    "on_yomi": "ギョウ、ゴウ",
+    "kun_yomi": "わざ",
+    "meaning_tr": "iş, sektör",
+    "meaning_en": "business, industry, work",
+    "stroke_count": 13,
+    "compounds": "職業(しょくぎょう)、産業(さんぎょう)、営業(えいぎょう)"
+  },
+  {
+    "kanji": "就",
+    "on_yomi": "シュウ、ジュ",
+    "kun_yomi": "つ.く、つ.ける",
+    "meaning_tr": "başlamak, yerleşmek",
+    "meaning_en": "take position, settle into",
+    "stroke_count": 12,
+    "compounds": "就職(しゅうしょく)、就任(しゅうにん)、就活(しゅうかつ)"
+  },
+  {
+    "kanji": "退",
+    "on_yomi": "タイ",
+    "kun_yomi": "しりぞ.く、しりぞ.ける",
+    "meaning_tr": "çekilmek, emekli olmak",
+    "meaning_en": "retreat, withdraw, retire",
+    "stroke_count": 9,
+    "compounds": "退職(たいしょく)、引退(いんたい)、退院(たいいん)"
+  },
+  {
+    "kanji": "移",
+    "on_yomi": "イ",
+    "kun_yomi": "うつ.る、うつ.す",
+    "meaning_tr": "taşınmak, değiştirmek",
+    "meaning_en": "move, transfer, shift",
+    "stroke_count": 11,
+    "compounds": "移動(いどう)、移転(いてん)、推移(すいい)"
+  },
+  {
+    "kanji": "宅",
+    "on_yomi": "タク",
+    "kun_yomi": "",
+    "meaning_tr": "ev, konut",
+    "meaning_en": "home, house, residence",
+    "stroke_count": 6,
+    "compounds": "住宅(じゅうたく)、自宅(じたく)、宅配(たくはい)"
+  },
+  {
+    "kanji": "庁",
+    "on_yomi": "チョウ",
+    "kun_yomi": "",
+    "meaning_tr": "hükümet dairesi",
+    "meaning_en": "government office, agency",
+    "stroke_count": 5,
+    "compounds": "官庁(かんちょう)、庁舎(ちょうしゃ)、都庁(とちょう)"
+  },
+  {
+    "kanji": "僚",
+    "on_yomi": "リョウ",
+    "kun_yomi": "",
+    "meaning_tr": "meslektaş, memur",
+    "meaning_en": "colleague, official",
+    "stroke_count": 14,
+    "compounds": "官僚(かんりょう)、同僚(どうりょう)、閣僚(かくりょう)"
+  },
+  {
+    "kanji": "閣",
+    "on_yomi": "カク",
+    "kun_yomi": "",
+    "meaning_tr": "kabine, köşk",
+    "meaning_en": "cabinet, tower, pavilion",
+    "stroke_count": 14,
+    "compounds": "内閣(ないかく)、閣僚(かくりょう)、閣議(かくぎ)"
+  },
+  {
+    "kanji": "納",
+    "on_yomi": "ノウ、ナッ、ナ",
+    "kun_yomi": "おさ.める、おさ.まる",
+    "meaning_tr": "ödemek, teslim etmek",
+    "meaning_en": "pay, supply, store",
+    "stroke_count": 10,
+    "compounds": "納税(のうぜい)、納得(なっとく)、納入(のうにゅう)"
+  },
+  {
+    "kanji": "均",
+    "on_yomi": "キン",
+    "kun_yomi": "",
+    "meaning_tr": "eşit, ortalama",
+    "meaning_en": "equal, average, level",
+    "stroke_count": 7,
+    "compounds": "平均(へいきん)、均等(きんとう)、均一(きんいつ)"
+  },
+  {
+    "kanji": "策",
+    "on_yomi": "サク",
+    "kun_yomi": "",
+    "meaning_tr": "plan, strateji",
+    "meaning_en": "plan, policy, scheme",
+    "stroke_count": 12,
+    "compounds": "政策(せいさく)、対策(たいさく)、方策(ほうさく)"
+  },
+  {
+    "kanji": "対",
+    "on_yomi": "タイ、ツイ",
+    "kun_yomi": "",
+    "meaning_tr": "karşı, çift",
+    "meaning_en": "versus, opposite, pair",
+    "stroke_count": 7,
+    "compounds": "対策(たいさく)、反対(はんたい)、対応(たいおう)"
+  },
+  {
+    "kanji": "処",
+    "on_yomi": "ショ",
+    "kun_yomi": "",
+    "meaning_tr": "yer, uğraşmak",
+    "meaning_en": "dispose, deal with, place",
+    "stroke_count": 5,
+    "compounds": "処理(しょり)、処分(しょぶん)、処置(しょち)"
+  },
+  {
+    "kanji": "置",
+    "on_yomi": "チ",
+    "kun_yomi": "お.く",
+    "meaning_tr": "koymak, yerleştirmek",
+    "meaning_en": "place, put, set",
+    "stroke_count": 13,
+    "compounds": "位置(いち)、処置(しょち)、置く(おく)"
+  },
+  {
+    "kanji": "位",
+    "on_yomi": "イ",
+    "kun_yomi": "くらい",
+    "meaning_tr": "konum, sıra",
+    "meaning_en": "rank, position, grade",
+    "stroke_count": 7,
+    "compounds": "位置(いち)、地位(ちい)、単位(たんい)"
+  },
+  {
+    "kanji": "単",
+    "on_yomi": "タン",
+    "kun_yomi": "",
+    "meaning_tr": "basit, tek",
+    "meaning_en": "simple, single, alone",
+    "stroke_count": 9,
+    "compounds": "単位(たんい)、簡単(かんたん)、単語(たんご)"
+  },
+  {
+    "kanji": "簡",
+    "on_yomi": "カン",
+    "kun_yomi": "",
+    "meaning_tr": "basit, kısa",
+    "meaning_en": "simple, brief",
+    "stroke_count": 18,
+    "compounds": "簡単(かんたん)、簡潔(かんけつ)、簡略(かんりゃく)"
+  },
+  {
+    "kanji": "相",
+    "on_yomi": "ソウ、ショウ",
+    "kun_yomi": "あい",
+    "meaning_tr": "karşılıklı, görünüş",
+    "meaning_en": "mutual, phase, aspect",
+    "stroke_count": 9,
+    "compounds": "相談(そうだん)、相手(あいて)、相互(そうご)"
+  },
+  {
+    "kanji": "談",
+    "on_yomi": "ダン",
+    "kun_yomi": "",
+    "meaning_tr": "konuşma, sohbet",
+    "meaning_en": "talk, conversation",
+    "stroke_count": 15,
+    "compounds": "相談(そうだん)、会談(かいだん)、面談(めんだん)"
+  },
+  {
+    "kanji": "講",
+    "on_yomi": "コウ",
+    "kun_yomi": "",
+    "meaning_tr": "ders, konferans",
+    "meaning_en": "lecture, course",
+    "stroke_count": 17,
+    "compounds": "講義(こうぎ)、講演(こうえん)、講座(こうざ)"
+  },
+  {
+    "kanji": "義",
+    "on_yomi": "ギ",
+    "kun_yomi": "",
+    "meaning_tr": "adalet, anlam",
+    "meaning_en": "righteousness, meaning, justice",
+    "stroke_count": 13,
+    "compounds": "講義(こうぎ)、主義(しゅぎ)、定義(ていぎ)"
+  },
+  {
+    "kanji": "要",
+    "on_yomi": "ヨウ",
+    "kun_yomi": "い.る、かなめ",
+    "meaning_tr": "önemli, gerekli",
+    "meaning_en": "essential, need, important",
+    "stroke_count": 9,
+    "compounds": "必要(ひつよう)、要求(ようきゅう)、主要(しゅよう)"
+  },
+  {
+    "kanji": "必",
+    "on_yomi": "ヒツ",
+    "kun_yomi": "かなら.ず",
+    "meaning_tr": "kesinlikle, mutlaka",
+    "meaning_en": "certainly, necessarily, must",
+    "stroke_count": 5,
+    "compounds": "必要(ひつよう)、必然(ひつぜん)、必死(ひっし)"
+  },
+  {
+    "kanji": "然",
+    "on_yomi": "ゼン、ネン",
+    "kun_yomi": "しか",
+    "meaning_tr": "doğal, böylece",
+    "meaning_en": "natural, so, like that",
+    "stroke_count": 12,
+    "compounds": "自然(しぜん)、必然(ひつぜん)、当然(とうぜん)"
+  },
+  {
+    "kanji": "絶",
+    "on_yomi": "ゼツ",
+    "kun_yomi": "た.える、た.つ",
+    "meaning_tr": "kesmek, son bulmak",
+    "meaning_en": "sever, cut off, discontinue",
+    "stroke_count": 12,
+    "compounds": "絶対(ぜったい)、絶望(ぜつぼう)、絶滅(ぜつめつ)"
+  },
+  {
+    "kanji": "望",
+    "on_yomi": "ボウ、モウ",
+    "kun_yomi": "のぞ.む",
+    "meaning_tr": "umut, arzu",
+    "meaning_en": "hope, desire, wish",
+    "stroke_count": 11,
+    "compounds": "希望(きぼう)、絶望(ぜつぼう)、望む(のぞむ)"
+  },
+  {
+    "kanji": "希",
+    "on_yomi": "キ",
+    "kun_yomi": "",
+    "meaning_tr": "umut, nadir",
+    "meaning_en": "hope, rare",
+    "stroke_count": 7,
+    "compounds": "希望(きぼう)、希少(きしょう)、希薄(きはく)"
+  },
+  {
+    "kanji": "欲",
+    "on_yomi": "ヨク",
+    "kun_yomi": "ほ.しい",
+    "meaning_tr": "arzu, istek",
+    "meaning_en": "desire, want, greed",
+    "stroke_count": 11,
+    "compounds": "欲望(よくぼう)、食欲(しょくよく)、意欲(いよく)"
+  },
+  {
+    "kanji": "意",
+    "on_yomi": "イ",
+    "kun_yomi": "",
+    "meaning_tr": "anlam, niyet",
+    "meaning_en": "meaning, intention, will",
+    "stroke_count": 13,
+    "compounds": "意味(いみ)、意見(いけん)、注意(ちゅうい)"
+  },
+  {
+    "kanji": "識",
+    "on_yomi": "シキ",
+    "kun_yomi": "",
+    "meaning_tr": "bilgi, bilinç, tanıma",
+    "meaning_en": "knowledge, consciousness",
+    "stroke_count": 19,
+    "compounds": "知識(ちしき)、認識(にんしき)、意識(いしき)"
+  },
+  {
+    "kanji": "解",
+    "on_yomi": "カイ、ゲ",
+    "kun_yomi": "と.く、と.ける、わか.る",
+    "meaning_tr": "çözmek, anlamak",
+    "meaning_en": "solve, understand, explain",
+    "stroke_count": 13,
+    "compounds": "解決(かいけつ)、理解(りかい)、解説(かいせつ)"
+  },
+  {
+    "kanji": "決",
+    "on_yomi": "ケツ",
+    "kun_yomi": "き.める、き.まる",
+    "meaning_tr": "karar vermek",
+    "meaning_en": "decide, determine",
+    "stroke_count": 7,
+    "compounds": "解決(かいけつ)、決定(けってい)、決心(けっしん)"
+  },
+  {
+    "kanji": "定",
+    "on_yomi": "テイ、ジョウ",
+    "kun_yomi": "さだ.める、さだ.まる",
+    "meaning_tr": "sabitlemek, belirlemek",
+    "meaning_en": "fix, determine, establish",
+    "stroke_count": 8,
+    "compounds": "決定(けってい)、予定(よてい)、安定(あんてい)"
+  },
+  {
+    "kanji": "予",
+    "on_yomi": "ヨ",
+    "kun_yomi": "",
+    "meaning_tr": "önceden, ön",
+    "meaning_en": "beforehand, in advance",
+    "stroke_count": 4,
+    "compounds": "予定(よてい)、予想(よそう)、予防(よぼう)"
+  },
+  {
+    "kanji": "算",
+    "on_yomi": "サン",
+    "kun_yomi": "",
+    "meaning_tr": "hesaplamak",
+    "meaning_en": "calculate, count",
+    "stroke_count": 14,
+    "compounds": "計算(けいさん)、予算(よさん)、算数(さんすう)"
+  },
+  {
+    "kanji": "費",
+    "on_yomi": "ヒ",
+    "kun_yomi": "つい.やす、つい.える",
+    "meaning_tr": "masraf, harcamak",
+    "meaning_en": "expense, cost, spend",
+    "stroke_count": 12,
+    "compounds": "費用(ひよう)、消費(しょうひ)、経費(けいひ)"
+  },
+  {
+    "kanji": "消",
+    "on_yomi": "ショウ",
+    "kun_yomi": "き.える、け.す",
+    "meaning_tr": "söndürmek, silmek",
+    "meaning_en": "extinguish, erase, vanish",
+    "stroke_count": 10,
+    "compounds": "消費(しょうひ)、消防(しょうぼう)、消える(きえる)"
+  },
+  {
+    "kanji": "販",
+    "on_yomi": "ハン",
+    "kun_yomi": "",
+    "meaning_tr": "satış, ticaret",
+    "meaning_en": "sell, trade, marketing",
+    "stroke_count": 11,
+    "compounds": "販売(はんばい)、自販機(じはんき)、通販(つうはん)"
+  },
+  {
+    "kanji": "購",
+    "on_yomi": "コウ",
+    "kun_yomi": "",
+    "meaning_tr": "satın almak",
+    "meaning_en": "purchase, buy",
+    "stroke_count": 17,
+    "compounds": "購入(こうにゅう)、購買(こうばい)、購読(こうどく)"
+  },
+  {
+    "kanji": "益",
+    "on_yomi": "エキ、ヤク",
+    "kun_yomi": "ま.す",
+    "meaning_tr": "yarar, kâr",
+    "meaning_en": "benefit, profit, gain",
+    "stroke_count": 10,
+    "compounds": "利益(りえき)、有益(ゆうえき)、益々(ますます)"
+  },
+  {
+    "kanji": "利",
+    "on_yomi": "リ",
+    "kun_yomi": "き.く",
+    "meaning_tr": "kâr, fayda",
+    "meaning_en": "profit, advantage, benefit",
+    "stroke_count": 7,
+    "compounds": "利益(りえき)、便利(べんり)、権利(けんり)"
+  },
+  {
+    "kanji": "損",
+    "on_yomi": "ソン",
+    "kun_yomi": "そこ.なう、そこ.ねる",
+    "meaning_tr": "zarar, kayıp",
+    "meaning_en": "loss, damage, harm",
+    "stroke_count": 13,
+    "compounds": "損害(そんがい)、損失(そんしつ)、破損(はそん)"
+  },
+  {
+    "kanji": "破",
+    "on_yomi": "ハ",
+    "kun_yomi": "やぶ.る、やぶ.れる",
+    "meaning_tr": "kırmak, yıkmak",
+    "meaning_en": "break, destroy, tear",
+    "stroke_count": 10,
+    "compounds": "破壊(はかい)、破産(はさん)、突破(とっぱ)"
+  },
+  {
+    "kanji": "壊",
+    "on_yomi": "カイ",
+    "kun_yomi": "こわ.す、こわ.れる",
+    "meaning_tr": "yıkmak, kırmak",
+    "meaning_en": "destroy, break, demolish",
+    "stroke_count": 16,
+    "compounds": "破壊(はかい)、崩壊(ほうかい)、壊滅(かいめつ)"
+  },
+  {
+    "kanji": "除",
+    "on_yomi": "ジョ、ジ",
+    "kun_yomi": "のぞ.く",
+    "meaning_tr": "çıkarmak, hariç tutmak",
+    "meaning_en": "remove, exclude, except",
+    "stroke_count": 10,
+    "compounds": "除く(のぞく)、排除(はいじょ)、削除(さくじょ)"
+  },
+  {
+    "kanji": "排",
+    "on_yomi": "ハイ",
+    "kun_yomi": "",
+    "meaning_tr": "dışlamak, tahliye etmek",
+    "meaning_en": "exclude, expel, reject",
+    "stroke_count": 11,
+    "compounds": "排除(はいじょ)、排出(はいしゅつ)、排水(はいすい)"
+  },
+  {
+    "kanji": "提",
+    "on_yomi": "テイ",
+    "kun_yomi": "さ.げる",
+    "meaning_tr": "sunmak, önermek",
+    "meaning_en": "propose, present, offer",
+    "stroke_count": 12,
+    "compounds": "提案(ていあん)、提供(ていきょう)、提出(ていしゅつ)"
+  },
+  {
+    "kanji": "案",
+    "on_yomi": "アン",
+    "kun_yomi": "",
+    "meaning_tr": "plan, teklif",
+    "meaning_en": "plan, proposal, idea",
+    "stroke_count": 10,
+    "compounds": "提案(ていあん)、案内(あんない)、案件(あんけん)"
+  },
+  {
+    "kanji": "検",
+    "on_yomi": "ケン",
+    "kun_yomi": "",
+    "meaning_tr": "inceleme, denetim",
+    "meaning_en": "inspect, examine, check",
+    "stroke_count": 12,
+    "compounds": "検査(けんさ)、検討(けんとう)、検索(けんさく)"
+  },
+  {
+    "kanji": "査",
+    "on_yomi": "サ",
+    "kun_yomi": "",
+    "meaning_tr": "araştırma, soruşturma",
+    "meaning_en": "investigate, inspect",
+    "stroke_count": 9,
+    "compounds": "検査(けんさ)、調査(ちょうさ)、捜査(そうさ)"
+  },
+  {
+    "kanji": "討",
+    "on_yomi": "トウ",
+    "kun_yomi": "う.つ",
+    "meaning_tr": "tartışmak, saldırmak",
+    "meaning_en": "discuss, attack, debate",
+    "stroke_count": 10,
+    "compounds": "検討(けんとう)、討論(とうろん)、討議(とうぎ)"
+  },
+  {
+    "kanji": "索",
+    "on_yomi": "サク",
+    "kun_yomi": "",
+    "meaning_tr": "aramak, ip",
+    "meaning_en": "search, cord, rope",
+    "stroke_count": 10,
+    "compounds": "検索(けんさく)、索引(さくいん)、模索(もさく)"
+  },
+  {
+    "kanji": "調",
+    "on_yomi": "チョウ",
+    "kun_yomi": "しら.べる、ととの.う",
+    "meaning_tr": "araştırmak, ayarlamak",
+    "meaning_en": "investigate, tune, adjust",
+    "stroke_count": 15,
+    "compounds": "調査(ちょうさ)、調整(ちょうせい)、強調(きょうちょう)"
+  },
+  {
+    "kanji": "可",
+    "on_yomi": "カ",
+    "kun_yomi": "",
+    "meaning_tr": "mümkün, olur",
+    "meaning_en": "possible, can, approve",
+    "stroke_count": 5,
+    "compounds": "可能(かのう)、許可(きょか)、不可(ふか)"
+  },
+  {
+    "kanji": "許",
+    "on_yomi": "キョ",
+    "kun_yomi": "ゆる.す",
+    "meaning_tr": "izin vermek",
+    "meaning_en": "permit, allow, forgive",
+    "stroke_count": 11,
+    "compounds": "許可(きょか)、免許(めんきょ)、許す(ゆるす)"
+  },
+  {
+    "kanji": "免",
+    "on_yomi": "メン",
+    "kun_yomi": "まぬか.れる",
+    "meaning_tr": "muaf, ehliyet",
+    "meaning_en": "exempt, excuse, license",
+    "stroke_count": 8,
+    "compounds": "免許(めんきょ)、免除(めんじょ)、免税(めんぜい)"
+  },
+  {
+    "kanji": "久",
+    "on_yomi": "キュウ、ク",
+    "kun_yomi": "ひさ.しい",
+    "meaning_tr": "uzun süre",
+    "meaning_en": "long time, old",
+    "stroke_count": 3,
+    "compounds": "久しぶり(ひさしぶり)、永久(えいきゅう)、耐久(たいきゅう)"
+  },
+  {
+    "kanji": "仮",
+    "on_yomi": "カ、ケ",
+    "kun_yomi": "かり",
+    "meaning_tr": "geçici, sahte",
+    "meaning_en": "temporary, tentative, fake",
+    "stroke_count": 6,
+    "compounds": "仮定(かてい)、仮名(かな)、仮説(かせつ)"
+  },
+  {
+    "kanji": "似",
+    "on_yomi": "ジ",
+    "kun_yomi": "に.る",
+    "meaning_tr": "benzemek",
+    "meaning_en": "resemble, similar",
+    "stroke_count": 7,
+    "compounds": "似る(にる)、類似(るいじ)、似顔絵(にがおえ)"
+  },
+  {
+    "kanji": "庫",
+    "on_yomi": "コ、ク",
+    "kun_yomi": "くら",
+    "meaning_tr": "depo, ambar",
+    "meaning_en": "warehouse, storehouse",
+    "stroke_count": 10,
+    "compounds": "在庫(ざいこ)、倉庫(そうこ)、車庫(しゃこ)"
+  },
+  {
+    "kanji": "伸",
+    "on_yomi": "シン",
+    "kun_yomi": "の.びる、の.ばす",
+    "meaning_tr": "uzamak, büyümek",
+    "meaning_en": "extend, stretch, grow",
+    "stroke_count": 7,
+    "compounds": "伸びる(のびる)、伸張(しんちょう)、伸縮(しんしゅく)"
+  },
+  {
+    "kanji": "縮",
+    "on_yomi": "シュク",
+    "kun_yomi": "ちぢ.む、ちぢ.める",
+    "meaning_tr": "küçülmek, kısalmak",
+    "meaning_en": "shrink, contract, reduce",
+    "stroke_count": 17,
+    "compounds": "縮小(しゅくしょう)、伸縮(しんしゅく)、短縮(たんしゅく)"
+  },
+  {
+    "kanji": "拡",
+    "on_yomi": "カク",
+    "kun_yomi": "ひろ.がる、ひろ.げる",
+    "meaning_tr": "genişletmek, yaymak",
+    "meaning_en": "expand, spread, enlarge",
+    "stroke_count": 8,
+    "compounds": "拡大(かくだい)、拡張(かくちょう)、拡散(かくさん)"
+  },
+  {
+    "kanji": "張",
+    "on_yomi": "チョウ",
+    "kun_yomi": "は.る",
+    "meaning_tr": "germek, yaymak",
+    "meaning_en": "stretch, spread, strain",
+    "stroke_count": 11,
+    "compounds": "緊張(きんちょう)、拡張(かくちょう)、主張(しゅちょう)"
+  },
+  {
+    "kanji": "緊",
+    "on_yomi": "キン",
+    "kun_yomi": "し.める",
+    "meaning_tr": "acil, gergin",
+    "meaning_en": "tense, urgent, tight",
+    "stroke_count": 15,
+    "compounds": "緊張(きんちょう)、緊急(きんきゅう)、緊密(きんみつ)"
+  },
+  {
+    "kanji": "急",
+    "on_yomi": "キュウ",
+    "kun_yomi": "いそ.ぐ",
+    "meaning_tr": "acele, ani",
+    "meaning_en": "hurry, urgent, sudden",
+    "stroke_count": 9,
+    "compounds": "緊急(きんきゅう)、急増(きゅうぞう)、救急(きゅうきゅう)"
+  },
+  {
+    "kanji": "従",
+    "on_yomi": "ジュウ、ショウ",
+    "kun_yomi": "したが.う",
+    "meaning_tr": "takip etmek, itaat",
+    "meaning_en": "follow, obey, comply",
+    "stroke_count": 10,
+    "compounds": "従来(じゅうらい)、従業員(じゅうぎょういん)、服従(ふくじゅう)"
+  },
+  {
+    "kanji": "属",
+    "on_yomi": "ゾク",
+    "kun_yomi": "",
+    "meaning_tr": "ait olmak, bağlı",
+    "meaning_en": "belong, genus, subordinate",
+    "stroke_count": 12,
+    "compounds": "所属(しょぞく)、金属(きんぞく)、属する(ぞくする)"
+  },
+  {
+    "kanji": "層",
+    "on_yomi": "ソウ",
+    "kun_yomi": "",
+    "meaning_tr": "katman, tabaka",
+    "meaning_en": "layer, stratum, class",
+    "stroke_count": 14,
+    "compounds": "階層(かいそう)、地層(ちそう)、高層(こうそう)"
+  },
+  {
+    "kanji": "導",
+    "on_yomi": "ドウ",
+    "kun_yomi": "みちび.く",
+    "meaning_tr": "yönlendirmek, rehberlik",
+    "meaning_en": "guide, lead, conduct",
+    "stroke_count": 15,
+    "compounds": "指導(しどう)、導入(どうにゅう)、誘導(ゆうどう)"
+  },
+  {
+    "kanji": "指",
+    "on_yomi": "シ",
+    "kun_yomi": "ゆび、さ.す",
+    "meaning_tr": "parmak, göstermek",
+    "meaning_en": "finger, point, indicate",
+    "stroke_count": 9,
+    "compounds": "指導(しどう)、指示(しじ)、指定(してい)"
+  },
+  {
+    "kanji": "捜",
+    "on_yomi": "ソウ",
+    "kun_yomi": "さが.す",
+    "meaning_tr": "aramak, soruşturmak",
+    "meaning_en": "search, seek, investigate",
+    "stroke_count": 10,
+    "compounds": "捜査(そうさ)、捜索(そうさく)、捜す(さがす)"
+  },
+  {
+    "kanji": "握",
+    "on_yomi": "アク",
+    "kun_yomi": "にぎ.る",
+    "meaning_tr": "kavramak, tutmak",
+    "meaning_en": "grasp, grip, seize",
+    "stroke_count": 12,
+    "compounds": "握手(あくしゅ)、把握(はあく)、握る(にぎる)"
+  },
+  {
+    "kanji": "担",
+    "on_yomi": "タン",
+    "kun_yomi": "かつ.ぐ、にな.う",
+    "meaning_tr": "taşımak, üstlenmek",
+    "meaning_en": "carry, bear, undertake",
+    "stroke_count": 8,
+    "compounds": "担当(たんとう)、負担(ふたん)、分担(ぶんたん)"
+  },
+  {
+    "kanji": "負",
+    "on_yomi": "フ",
+    "kun_yomi": "ま.ける、お.う",
+    "meaning_tr": "kaybetmek, yüklenmek",
+    "meaning_en": "lose, bear, owe",
+    "stroke_count": 9,
+    "compounds": "負担(ふたん)、勝負(しょうぶ)、負傷(ふしょう)"
+  },
+  {
+    "kanji": "勝",
+    "on_yomi": "ショウ",
+    "kun_yomi": "か.つ、まさ.る",
+    "meaning_tr": "kazanmak, üstün olmak",
+    "meaning_en": "win, surpass, excel",
+    "stroke_count": 12,
+    "compounds": "勝負(しょうぶ)、勝利(しょうり)、優勝(ゆうしょう)"
+  },
+  {
+    "kanji": "優",
+    "on_yomi": "ユウ",
+    "kun_yomi": "やさ.しい、すぐ.れる",
+    "meaning_tr": "nazik, üstün",
+    "meaning_en": "gentle, superior, excellent",
+    "stroke_count": 17,
+    "compounds": "優勝(ゆうしょう)、優秀(ゆうしゅう)、優先(ゆうせん)"
+  },
+  {
+    "kanji": "秀",
+    "on_yomi": "シュウ",
+    "kun_yomi": "ひい.でる",
+    "meaning_tr": "mükemmel, seçkin",
+    "meaning_en": "excel, excellent, outstanding",
+    "stroke_count": 7,
+    "compounds": "優秀(ゆうしゅう)、秀才(しゅうさい)、秀でる(ひいでる)"
+  },
+  {
+    "kanji": "劣",
+    "on_yomi": "レツ",
+    "kun_yomi": "おと.る",
+    "meaning_tr": "aşağı, zayıf",
+    "meaning_en": "inferior, be inferior to",
+    "stroke_count": 6,
+    "compounds": "劣化(れっか)、劣等(れっとう)、優劣(ゆうれつ)"
+  },
+  {
+    "kanji": "互",
+    "on_yomi": "ゴ",
+    "kun_yomi": "たが.い",
+    "meaning_tr": "karşılıklı",
+    "meaning_en": "mutual, reciprocal",
+    "stroke_count": 4,
+    "compounds": "相互(そうご)、互いに(たがいに)、交互(こうご)"
+  },
+  {
+    "kanji": "交",
+    "on_yomi": "コウ",
+    "kun_yomi": "まじ.わる、ま.ぜる、か.わす",
+    "meaning_tr": "değişim, karışmak",
+    "meaning_en": "exchange, mix, intercourse",
+    "stroke_count": 6,
+    "compounds": "交通(こうつう)、交換(こうかん)、交際(こうさい)"
+  },
+  {
+    "kanji": "換",
+    "on_yomi": "カン",
+    "kun_yomi": "か.える、か.わる",
+    "meaning_tr": "değiştirmek, takas",
+    "meaning_en": "exchange, swap, replace",
+    "stroke_count": 12,
+    "compounds": "交換(こうかん)、換気(かんき)、換算(かんさん)"
+  },
+  {
+    "kanji": "渡",
+    "on_yomi": "ト",
+    "kun_yomi": "わた.る、わた.す",
+    "meaning_tr": "geçmek, vermek",
+    "meaning_en": "cross, hand over, transit",
+    "stroke_count": 12,
+    "compounds": "渡る(わたる)、渡航(とこう)、譲渡(じょうと)"
+  },
+  {
+    "kanji": "潮",
+    "on_yomi": "チョウ",
+    "kun_yomi": "しお",
+    "meaning_tr": "gelgit, akıntı",
+    "meaning_en": "tide, current, trend",
+    "stroke_count": 15,
+    "compounds": "潮流(ちょうりゅう)、満潮(まんちょう)、潮(しお)"
+  },
+  {
+    "kanji": "逮",
+    "on_yomi": "タイ",
+    "kun_yomi": "",
+    "meaning_tr": "yakalamak, tutuklama",
+    "meaning_en": "arrest, capture, seize",
+    "stroke_count": 11,
+    "compounds": "逮捕(たいほ)、逮捕状(たいほじょう)"
+  },
+  {
+    "kanji": "捕",
+    "on_yomi": "ホ",
+    "kun_yomi": "つか.まえる、と.らえる",
+    "meaning_tr": "yakalamak, tutmak",
+    "meaning_en": "catch, capture, seize",
+    "stroke_count": 10,
+    "compounds": "逮捕(たいほ)、捕まえる(つかまえる)、捕虜(ほりょ)"
+  },
+  {
+    "kanji": "獲",
+    "on_yomi": "カク",
+    "kun_yomi": "え.る",
+    "meaning_tr": "kazanmak, elde etmek",
+    "meaning_en": "obtain, seize, catch",
+    "stroke_count": 16,
+    "compounds": "獲得(かくとく)、漁獲(ぎょかく)、捕獲(ほかく)"
+  },
+  {
+    "kanji": "得",
+    "on_yomi": "トク",
+    "kun_yomi": "え.る、う.る",
+    "meaning_tr": "elde etmek, kazanç",
+    "meaning_en": "gain, obtain, profit",
+    "stroke_count": 11,
+    "compounds": "獲得(かくとく)、納得(なっとく)、所得(しょとく)"
+  },
+  {
+    "kanji": "失",
+    "on_yomi": "シツ",
+    "kun_yomi": "うしな.う",
+    "meaning_tr": "kaybetmek",
+    "meaning_en": "lose, miss, fail",
+    "stroke_count": 5,
+    "compounds": "失敗(しっぱい)、損失(そんしつ)、失業(しつぎょう)"
+  },
+  {
+    "kanji": "敗",
+    "on_yomi": "ハイ",
+    "kun_yomi": "やぶ.れる",
+    "meaning_tr": "yenilgi, bozulmak",
+    "meaning_en": "defeat, failure",
+    "stroke_count": 11,
+    "compounds": "失敗(しっぱい)、敗北(はいぼく)、勝敗(しょうはい)"
+  },
+  {
+    "kanji": "絡",
+    "on_yomi": "ラク",
+    "kun_yomi": "から.む、から.まる",
+    "meaning_tr": "dolanmak, bağlantı",
+    "meaning_en": "entangle, connect, contact",
+    "stroke_count": 12,
+    "compounds": "連絡(れんらく)、絡む(からむ)、脈絡(みゃくらく)"
+  },
+  {
+    "kanji": "連",
+    "on_yomi": "レン",
+    "kun_yomi": "つら.なる、つ.れる",
+    "meaning_tr": "bağlantı, dizi",
+    "meaning_en": "connect, link, series",
+    "stroke_count": 10,
+    "compounds": "連絡(れんらく)、連続(れんぞく)、関連(かんれん)"
+  },
+  {
+    "kanji": "関",
+    "on_yomi": "カン",
+    "kun_yomi": "せき、かか.わる",
+    "meaning_tr": "ilgili, engel",
+    "meaning_en": "related, barrier, connection",
+    "stroke_count": 14,
+    "compounds": "関係(かんけい)、関連(かんれん)、関心(かんしん)"
+  },
+  {
+    "kanji": "係",
+    "on_yomi": "ケイ",
+    "kun_yomi": "かか.る、かかり",
+    "meaning_tr": "ilişki, bağlantı, görevli",
+    "meaning_en": "relation, connection, person in charge",
+    "stroke_count": 9,
+    "compounds": "関係(かんけい)、係員(かかりいん)、係る(かかる)"
+  },
+  {
+    "kanji": "依",
+    "on_yomi": "イ、エ",
+    "kun_yomi": "よ.る",
+    "meaning_tr": "bağımlı, dayanmak",
+    "meaning_en": "depend on, rely on",
+    "stroke_count": 8,
+    "compounds": "依頼(いらい)、依存(いぞん)、依然(いぜん)"
+  },
+  {
+    "kanji": "頼",
+    "on_yomi": "ライ",
+    "kun_yomi": "たの.む、たよ.る",
+    "meaning_tr": "güvenmek, istemek",
+    "meaning_en": "rely on, request, trust",
+    "stroke_count": 16,
+    "compounds": "依頼(いらい)、頼む(たのむ)、信頼(しんらい)"
+  },
+  {
+    "kanji": "信",
+    "on_yomi": "シン",
+    "kun_yomi": "",
+    "meaning_tr": "güven, inanç",
+    "meaning_en": "trust, believe, faith",
+    "stroke_count": 9,
+    "compounds": "信頼(しんらい)、信用(しんよう)、通信(つうしん)"
+  },
+  {
+    "kanji": "任",
+    "on_yomi": "ニン",
+    "kun_yomi": "まか.せる、まか.す",
+    "meaning_tr": "görev, sorumluluk",
+    "meaning_en": "duty, responsibility, appoint",
+    "stroke_count": 6,
+    "compounds": "責任(せきにん)、任務(にんむ)、就任(しゅうにん)"
+  },
+  {
+    "kanji": "責",
+    "on_yomi": "セキ",
+    "kun_yomi": "せ.める",
+    "meaning_tr": "sorumluluk, suçlamak",
+    "meaning_en": "blame, responsibility",
+    "stroke_count": 11,
+    "compounds": "責任(せきにん)、責める(せめる)、自責(じせき)"
+  },
+  {
+    "kanji": "務",
+    "on_yomi": "ム",
+    "kun_yomi": "つと.める",
+    "meaning_tr": "görev, hizmet",
+    "meaning_en": "duty, service, task",
+    "stroke_count": 11,
+    "compounds": "任務(にんむ)、事務(じむ)、義務(ぎむ)"
+  },
+  {
+    "kanji": "労",
+    "on_yomi": "ロウ",
+    "kun_yomi": "",
+    "meaning_tr": "emek, çalışma",
+    "meaning_en": "labor, work, toil",
+    "stroke_count": 7,
+    "compounds": "労働(ろうどう)、苦労(くろう)、労力(ろうりょく)"
+  },
+  {
+    "kanji": "働",
+    "on_yomi": "ドウ",
+    "kun_yomi": "はたら.く",
+    "meaning_tr": "çalışmak",
+    "meaning_en": "work, labor",
+    "stroke_count": 13,
+    "compounds": "労働(ろうどう)、働く(はたらく)、働き(はたらき)"
+  },
+  {
+    "kanji": "賃",
+    "on_yomi": "チン",
+    "kun_yomi": "",
+    "meaning_tr": "ücret, kira",
+    "meaning_en": "wages, rent, fee",
+    "stroke_count": 13,
+    "compounds": "賃金(ちんきん)、賃貸(ちんたい)、運賃(うんちん)"
+  },
+  {
+    "kanji": "給",
+    "on_yomi": "キュウ",
+    "kun_yomi": "",
+    "meaning_tr": "maaş, sağlamak",
+    "meaning_en": "salary, supply, provide",
+    "stroke_count": 12,
+    "compounds": "給料(きゅうりょう)、供給(きょうきゅう)、給食(きゅうしょく)"
+  },
+  {
+    "kanji": "崩",
+    "on_yomi": "ホウ",
+    "kun_yomi": "くず.れる、くず.す",
+    "meaning_tr": "çökmek, yıkılmak",
+    "meaning_en": "collapse, crumble",
+    "stroke_count": 11,
+    "compounds": "崩壊(ほうかい)、崩れる(くずれる)、崩落(ほうらく)"
+  },
+  {
+    "kanji": "陸",
+    "on_yomi": "リク",
+    "kun_yomi": "",
+    "meaning_tr": "kara, kıta",
+    "meaning_en": "land, shore, continent",
+    "stroke_count": 11,
+    "compounds": "大陸(たいりく)、陸地(りくち)、上陸(じょうりく)"
+  },
+  {
+    "kanji": "航",
+    "on_yomi": "コウ",
+    "kun_yomi": "",
+    "meaning_tr": "seyir, navigasyon",
+    "meaning_en": "navigate, voyage, sail",
+    "stroke_count": 10,
+    "compounds": "航空(こうくう)、航海(こうかい)、渡航(とこう)"
+  },
+  {
+    "kanji": "逆",
+    "on_yomi": "ギャク、ゲキ",
+    "kun_yomi": "さか、さか.らう",
+    "meaning_tr": "ters, karşıt",
+    "meaning_en": "reverse, opposite, contrary",
+    "stroke_count": 9,
+    "compounds": "逆転(ぎゃくてん)、逆に(ぎゃくに)、逆効果(ぎゃくこうか)"
+  },
+  {
+    "kanji": "適",
+    "on_yomi": "テキ",
+    "kun_yomi": "",
+    "meaning_tr": "uygun, elverişli",
+    "meaning_en": "suitable, fit, appropriate",
+    "stroke_count": 14,
+    "compounds": "適切(てきせつ)、適用(てきよう)、快適(かいてき)"
+  },
+  {
+    "kanji": "欠",
+    "on_yomi": "ケツ、ケン",
+    "kun_yomi": "か.ける、か.く",
+    "meaning_tr": "eksiklik, yokluk",
+    "meaning_en": "lack, absence, deficiency",
+    "stroke_count": 4,
+    "compounds": "欠点(けってん)、欠席(けっせき)、欠陥(けっかん)"
+  },
+  {
+    "kanji": "陥",
+    "on_yomi": "カン",
+    "kun_yomi": "おちい.る、おとしい.れる",
+    "meaning_tr": "düşmek, çökmek",
+    "meaning_en": "fall into, cave in, trap",
+    "stroke_count": 10,
+    "compounds": "欠陥(けっかん)、陥る(おちいる)、陥落(かんらく)"
+  },
+  {
+    "kanji": "混",
+    "on_yomi": "コン",
+    "kun_yomi": "ま.ぜる、こ.む",
+    "meaning_tr": "karıştırmak, kalabalık",
+    "meaning_en": "mix, blend, crowded",
+    "stroke_count": 11,
+    "compounds": "混雑(こんざつ)、混乱(こんらん)、混合(こんごう)"
+  },
+  {
+    "kanji": "裏",
+    "on_yomi": "リ",
+    "kun_yomi": "うら",
+    "meaning_tr": "arka, ters",
+    "meaning_en": "back, reverse, behind",
+    "stroke_count": 13,
+    "compounds": "裏側(うらがわ)、裏切る(うらぎる)、脳裏(のうり)"
+  },
+  {
+    "kanji": "表",
+    "on_yomi": "ヒョウ",
+    "kun_yomi": "おもて、あらわ.す、あらわ.れる",
+    "meaning_tr": "yüzey, tablo, ifade",
+    "meaning_en": "surface, table, express",
+    "stroke_count": 8,
+    "compounds": "表現(ひょうげん)、表面(ひょうめん)、発表(はっぴょう)"
+  }
+]

@@ -25,7 +25,7 @@ def seed_vocabulary():
         conn.close()
         return
 
-    for level_file, level in [("n5_vocab.json", "N5"), ("n4_vocab.json", "N4")]:
+    for level_file, level in [("n5_vocab.json", "N5"), ("n4_vocab.json", "N4"), ("n3_vocab.json", "N3")]:
         filepath = os.path.join(DATA_DIR, level_file)
         if not os.path.exists(filepath):
             print(f"  {level_file} bulunamadı, atlanıyor.")
@@ -54,7 +54,7 @@ def seed_kanji():
         conn.close()
         return
 
-    for level_file, level in [("n5_kanji.json", "N5"), ("n4_kanji.json", "N4")]:
+    for level_file, level in [("n5_kanji.json", "N5"), ("n4_kanji.json", "N4"), ("n3_kanji.json", "N3")]:
         filepath = os.path.join(DATA_DIR, level_file)
         if not os.path.exists(filepath):
             print(f"  {level_file} bulunamadı, atlanıyor.")
