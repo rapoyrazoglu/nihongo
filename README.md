@@ -30,7 +30,6 @@ Download from [Releases](https://github.com/rapoyrazoglu/nihongo/releases/latest
 | Platform | Command |
 |----------|---------|
 | **Linux (deb)** | `sudo dpkg -i nihongo_*.deb` |
-| **Linux (snap)** | `sudo snap install nihongo` |
 | **Arch Linux** | `yay -S nihongo` |
 | **macOS** | `brew install rapoyrazoglu/nihongo/nihongo` |
 | **Windows** | Download `nihongo-windows.exe` and run |
@@ -129,8 +128,6 @@ nihongo/
 │   └── nihongo.svg     # App icon
 ├── Formula/
 │   └── nihongo.rb      # Homebrew formula
-├── snap/
-│   └── snapcraft.yaml  # Snap package config
 ├── .github/
 │   └── workflows/
 │       └── release.yml # CI/CD: build + release + packages
