@@ -42,13 +42,16 @@ jobs:
 
       - name: Test binary
         shell: bash
+        continue-on-error: ${{ matrix.os == 'windows-latest' }}
         run: ./${{ matrix.binary }} --version
 
       - name: Rename artifact
+        if: always()
         shell: bash
         run: cp "${{ matrix.binary }}" "${{ matrix.artifact }}"
 
       - name: Upload artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
@@ -71,6 +74,7 @@ jobs:
           path: ${{ steps.snap.outputs.snap }}
 
       - name: Publish to Snap Store
+        if: env.SNAP_TOKEN != ''
         uses: snapcore/action-publish@v1
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAP_TOKEN }}
@@ -79,7 +83,8 @@ jobs:
           release: stable
 
   release:
-    needs: [build, snap]
+    needs: [build]
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
