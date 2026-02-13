@@ -4,6 +4,10 @@
 
 ## Released
 
+### v1.5.5 - Updater Fix
+- [x] Fix cross-device link error when updating (`/tmp` vs binary directory)
+- [x] Temp file now created in same directory as binary
+
 ### v1.5.4 - Updater i18n
 - [x] Translate all updater messages to 8 languages
 - [x] Updater now respects user's language setting
