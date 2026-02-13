@@ -173,5 +173,19 @@
   "exit.interrupt": "さようなら!",
 
   "lang.select_title": "Sprache wählen",
-  "lang.select_prompt": "Ihre Wahl"
+  "lang.select_prompt": "Ihre Wahl",
+
+  "update.check_failed": "Versionsprüfung fehlgeschlagen: {error}",
+  "update.already_latest": "Bereits auf der neuesten Version: v{version}",
+  "update.no_binary": "Keine Binärdatei für diese Plattform verfügbar: {platform}",
+  "update.asset_not_found": "{asset} nicht im Release gefunden.",
+  "update.found": "Neue Version gefunden: v{current} -> v{latest}",
+  "update.source_only": "Update wird nur für kompilierte Binärdateien unterstützt.",
+  "update.source_hint": "Bei Ausführung aus Quellcode: git pull && pip install -r requirements.txt",
+  "update.downloading": "Wird heruntergeladen: {url}",
+  "update.download_failed": "Download fehlgeschlagen: {error}",
+  "update.permission_error": "Berechtigungsfehler. Versuchen Sie: sudo nihongo --update",
+  "update.success": "Update erfolgreich! v{version}",
+  "update.restart": "Starten Sie die App neu: nihongo",
+  "update.failed": "Update fehlgeschlagen: {error}"
 }

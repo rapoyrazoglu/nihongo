@@ -39,14 +39,15 @@ if "--version" in sys.argv:
     print(f"nihongo {__version__}")
     sys.exit(0)
 
+import i18n
+from i18n import t, set_lang
+
 # --- --update flag ---
 if "--update" in sys.argv:
+    i18n.init()
     from updater import do_update
     do_update()
     sys.exit(0)
-
-import i18n
-from i18n import t, set_lang
 
 import db
 from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, clear, banner

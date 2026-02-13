@@ -173,5 +173,19 @@
   "exit.interrupt": "Sayounara!",
 
   "lang.select_title": "Dil Secin / Select Language",
-  "lang.select_prompt": "Seciminiz / Your choice"
+  "lang.select_prompt": "Seciminiz / Your choice",
+
+  "update.check_failed": "Surum kontrolu basarisiz: {error}",
+  "update.already_latest": "Zaten en guncel surum: v{version}",
+  "update.no_binary": "Bu platform icin binary bulunamadi: {platform}",
+  "update.asset_not_found": "Release'de {asset} bulunamadi.",
+  "update.found": "Yeni surum bulundu: v{current} -> v{latest}",
+  "update.source_only": "Guncelleme sadece derlenmis binary icin destekleniyor.",
+  "update.source_hint": "Kaynak koddan calisiyorsaniz: git pull && pip install -r requirements.txt",
+  "update.downloading": "Indiriliyor: {url}",
+  "update.download_failed": "Indirme basarisiz: {error}",
+  "update.permission_error": "Izin hatasi. Deneyin: sudo nihongo --update",
+  "update.success": "Guncelleme basarili! v{version}",
+  "update.restart": "Uygulamayi yeniden baslatin: nihongo",
+  "update.failed": "Guncelleme basarisiz: {error}"
 }

@@ -173,5 +173,19 @@
   "exit.interrupt": "Sayounara!",
 
   "lang.select_title": "Select Language",
-  "lang.select_prompt": "Your choice"
+  "lang.select_prompt": "Your choice",
+
+  "update.check_failed": "Version check failed: {error}",
+  "update.already_latest": "Already on the latest version: v{version}",
+  "update.no_binary": "No binary available for this platform: {platform}",
+  "update.asset_not_found": "{asset} not found in release.",
+  "update.found": "New version found: v{current} -> v{latest}",
+  "update.source_only": "Update is only supported for compiled binaries.",
+  "update.source_hint": "If running from source: git pull && pip install -r requirements.txt",
+  "update.downloading": "Downloading: {url}",
+  "update.download_failed": "Download failed: {error}",
+  "update.permission_error": "Permission error. Try: sudo nihongo --update",
+  "update.success": "Update successful! v{version}",
+  "update.restart": "Restart the app: nihongo",
+  "update.failed": "Update failed: {error}"
 }

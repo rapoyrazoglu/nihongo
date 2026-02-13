@@ -173,5 +173,19 @@
   "exit.interrupt": "さようなら!",
 
   "lang.select_title": "언어 선택",
-  "lang.select_prompt": "선택"
+  "lang.select_prompt": "선택",
+
+  "update.check_failed": "버전 확인 실패: {error}",
+  "update.already_latest": "이미 최신 버전입니다: v{version}",
+  "update.no_binary": "이 플랫폼용 바이너리가 없습니다: {platform}",
+  "update.asset_not_found": "릴리스에서 {asset}을(를) 찾을 수 없습니다.",
+  "update.found": "새 버전 발견: v{current} -> v{latest}",
+  "update.source_only": "업데이트는 컴파일된 바이너리에서만 지원됩니다.",
+  "update.source_hint": "소스에서 실행 중인 경우: git pull && pip install -r requirements.txt",
+  "update.downloading": "다운로드 중: {url}",
+  "update.download_failed": "다운로드 실패: {error}",
+  "update.permission_error": "권한 오류. 시도: sudo nihongo --update",
+  "update.success": "업데이트 성공! v{version}",
+  "update.restart": "앱을 다시 시작하세요: nihongo",
+  "update.failed": "업데이트 실패: {error}"
 }

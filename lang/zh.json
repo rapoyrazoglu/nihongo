@@ -173,5 +173,19 @@
   "exit.interrupt": "さようなら！",
 
   "lang.select_title": "选择语言",
-  "lang.select_prompt": "请选择"
+  "lang.select_prompt": "请选择",
+
+  "update.check_failed": "版本检查失败：{error}",
+  "update.already_latest": "已是最新版本：v{version}",
+  "update.no_binary": "此平台没有可用的二进制文件：{platform}",
+  "update.asset_not_found": "在发布中未找到 {asset}。",
+  "update.found": "发现新版本：v{current} -> v{latest}",
+  "update.source_only": "更新仅支持已编译的二进制文件。",
+  "update.source_hint": "如果从源代码运行：git pull && pip install -r requirements.txt",
+  "update.downloading": "正在下载：{url}",
+  "update.download_failed": "下载失败：{error}",
+  "update.permission_error": "权限错误。请尝试：sudo nihongo --update",
+  "update.success": "更新成功！v{version}",
+  "update.restart": "请重新启动应用程序：nihongo",
+  "update.failed": "更新失败：{error}"
 }

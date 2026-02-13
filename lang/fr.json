@@ -173,5 +173,19 @@
   "exit.interrupt": "さようなら !",
 
   "lang.select_title": "Sélectionner la langue",
-  "lang.select_prompt": "Votre choix"
+  "lang.select_prompt": "Votre choix",
+
+  "update.check_failed": "Vérification de version échouée : {error}",
+  "update.already_latest": "Déjà sur la dernière version : v{version}",
+  "update.no_binary": "Aucun binaire disponible pour cette plateforme : {platform}",
+  "update.asset_not_found": "{asset} introuvable dans la release.",
+  "update.found": "Nouvelle version trouvée : v{current} -> v{latest}",
+  "update.source_only": "La mise à jour n'est prise en charge que pour les binaires compilés.",
+  "update.source_hint": "Si vous exécutez depuis le code source : git pull && pip install -r requirements.txt",
+  "update.downloading": "Téléchargement : {url}",
+  "update.download_failed": "Échec du téléchargement : {error}",
+  "update.permission_error": "Erreur de permission. Essayez : sudo nihongo --update",
+  "update.success": "Mise à jour réussie ! v{version}",
+  "update.restart": "Redémarrez l'application : nihongo",
+  "update.failed": "Mise à jour échouée : {error}"
 }

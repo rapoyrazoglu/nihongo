@@ -1,4 +1,4 @@
-"""Self-update module - GitHub releases'dan en son surumu indir."""
+"""Self-update module - download latest version from GitHub releases."""
 
 import json
 import os
@@ -10,6 +10,7 @@ import tempfile
 import urllib.request
 
 from version import __version__
+from i18n import t
 
 
 def _ssl_context():
@@ -49,7 +50,7 @@ API_URL = f"https://api.github.com/repos/{REPO}/releases/latest"
 
 
 def _get_asset_name():
-    """Platform'a gore dogru binary adini dondur."""
+    """Return correct binary name for this platform."""
     s = platform.system().lower()
     if s == "linux":
         return "nihongo-linux"
@@ -66,7 +67,7 @@ def _parse_version(v):
 
 
 def check_update(quiet=False):
-    """GitHub'dan son surumu kontrol et. (latest_version, download_url) veya None dondur."""
+    """Check latest version from GitHub. Returns (latest_version, download_url) or None."""
     try:
         ctx = _ssl_context()
         req = urllib.request.Request(API_URL, headers={"User-Agent": "nihongo-updater"})
@@ -74,7 +75,7 @@ def check_update(quiet=False):
             data = json.loads(resp.read().decode())
     except Exception as e:
         if not quiet:
-            print(f"Surum kontrolu basarisiz: {e}")
+            print(t("update.check_failed", error=e))
         return None
 
     latest = data.get("tag_name", "").lstrip("v")
@@ -83,13 +84,13 @@ def check_update(quiet=False):
 
     if _parse_version(latest) <= _parse_version(__version__):
         if not quiet:
-            print(f"Zaten en guncel surum: v{__version__}")
+            print(t("update.already_latest", version=__version__))
         return None
 
     asset_name = _get_asset_name()
     if not asset_name:
         if not quiet:
-            print(f"Bu platform icin binary bulunamadi: {platform.system()}")
+            print(t("update.no_binary", platform=platform.system()))
         return None
 
     for asset in data.get("assets", []):
@@ -97,70 +98,70 @@ def check_update(quiet=False):
             return latest, asset["browser_download_url"]
 
     if not quiet:
-        print(f"Release'de {asset_name} bulunamadi.")
+        print(t("update.asset_not_found", asset=asset_name))
     return None
 
 
 def do_update():
-    """Guncellemeyi indir ve uygula."""
+    """Download and apply update."""
     result = check_update(quiet=False)
     if result is None:
         return False
 
     latest, url = result
-    print(f"\nYeni surum bulundu: v{__version__} -> v{latest}")
+    print(f"\n{t('update.found', current=__version__, latest=latest)}")
 
-    # Binary'nin yerini bul
+    # Find binary location
     exe_path = sys.executable if getattr(sys, "frozen", False) else None
     if not exe_path:
-        print("Guncelleme sadece derlenmi binary icin destekleniyor.")
-        print(f"Kaynak koddan calisiyorsaniz: git pull && pip install -r requirements.txt")
+        print(t("update.source_only"))
+        print(t("update.source_hint"))
         return False
 
-    print(f"Indiriliyor: {url}")
+    print(t("update.downloading", url=url))
     try:
         ctx = _ssl_context()
         req = urllib.request.Request(url, headers={"User-Agent": "nihongo-updater"})
         with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
             data = resp.read()
     except Exception as e:
-        print(f"Indirme basarisiz: {e}")
+        print(t("update.download_failed", error=e))
         return False
 
-    # Gecici dosyaya yaz, sonra uzerine kopyala
+    # Write to temp file, then replace
     fd, tmp_path = tempfile.mkstemp(suffix=".tmp", prefix="nihongo_update_")
     try:
         os.write(fd, data)
         os.close(fd)
 
-        # Calistirilabilir yap
+        # Make executable
         os.chmod(tmp_path, os.stat(tmp_path).st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
 
-        # Eski binary'yi yenisiyle degistir
+        # Replace old binary with new
         backup_path = exe_path + ".bak"
         try:
             os.replace(exe_path, backup_path)
         except PermissionError:
-            print(f"Izin hatasi. Deneyin: sudo nihongo --update")
+            print(t("update.permission_error"))
             os.unlink(tmp_path)
             return False
 
         os.replace(tmp_path, exe_path)
         os.chmod(exe_path, os.stat(exe_path).st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
 
-        # Backup'i sil
+        # Remove backup
         try:
             os.unlink(backup_path)
         except OSError:
             pass
 
-        print(f"\nGuncelleme basarili! v{latest}")
-        print("Uygulamayi yeniden baslatin: nihongo")
+        print(f"\n{t('update.success', version=latest)}")
+        print(t("update.restart"))
         return True
 
     except Exception as e:
-        print(f"Guncelleme basarisiz: {e}")
-        # Backup varsa geri yukle
+        print(t("update.failed", error=e))
+        # Restore backup if exists
         if os.path.exists(backup_path) and not os.path.exists(exe_path):
             os.replace(backup_path, exe_path)
         try:
