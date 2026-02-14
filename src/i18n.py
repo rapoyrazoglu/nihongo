@@ -50,9 +50,17 @@ def t(key, **kwargs):
 
 
 def meaning_field():
-    if _current_lang == "tr":
-        return "meaning_tr"
-    return "meaning_en"
+    mapping = {
+        "tr": "meaning_tr",
+        "en": "meaning_en",
+        "de": "meaning_de",
+        "fr": "meaning_fr",
+        "es": "meaning_es",
+        "pt": "meaning_pt",
+        "ko": "meaning_ko",
+        "zh": "meaning_zh",
+    }
+    return mapping.get(_current_lang, "meaning_en")
 
 
 def get_lang():

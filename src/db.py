@@ -27,10 +27,17 @@ def init_db():
             reading TEXT NOT NULL,
             meaning_tr TEXT NOT NULL,
             meaning_en TEXT NOT NULL,
+            meaning_de TEXT DEFAULT '',
+            meaning_fr TEXT DEFAULT '',
+            meaning_es TEXT DEFAULT '',
+            meaning_pt TEXT DEFAULT '',
+            meaning_ko TEXT DEFAULT '',
+            meaning_zh TEXT DEFAULT '',
             level TEXT NOT NULL CHECK(level IN ('N5','N4','N3','N2','N1')),
             example_jp TEXT DEFAULT '',
             example_tr TEXT DEFAULT '',
-            part_of_speech TEXT DEFAULT ''
+            part_of_speech TEXT DEFAULT '',
+            extra_examples TEXT DEFAULT ''
         );
 
         CREATE TABLE IF NOT EXISTS kanji (
@@ -40,6 +47,12 @@ def init_db():
             kun_yomi TEXT NOT NULL,
             meaning_tr TEXT NOT NULL,
             meaning_en TEXT NOT NULL,
+            meaning_de TEXT DEFAULT '',
+            meaning_fr TEXT DEFAULT '',
+            meaning_es TEXT DEFAULT '',
+            meaning_pt TEXT DEFAULT '',
+            meaning_ko TEXT DEFAULT '',
+            meaning_zh TEXT DEFAULT '',
             level TEXT NOT NULL CHECK(level IN ('N5','N4','N3','N2','N1')),
             stroke_count INTEGER DEFAULT 0,
             compounds TEXT DEFAULT ''
@@ -50,6 +63,12 @@ def init_db():
             pattern TEXT NOT NULL UNIQUE,
             meaning_tr TEXT NOT NULL,
             meaning_en TEXT NOT NULL,
+            meaning_de TEXT DEFAULT '',
+            meaning_fr TEXT DEFAULT '',
+            meaning_es TEXT DEFAULT '',
+            meaning_pt TEXT DEFAULT '',
+            meaning_ko TEXT DEFAULT '',
+            meaning_zh TEXT DEFAULT '',
             level TEXT NOT NULL CHECK(level IN ('N5','N4','N3','N2','N1')),
             example_jp TEXT DEFAULT '',
             example_tr TEXT DEFAULT '',

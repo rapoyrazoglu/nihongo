@@ -1,0 +1,702 @@
+[
+  {
+    "word": "国",
+    "examples": [
+      {"jp": "この国は大きいです。", "en": "This country is big.", "tr": "Bu ulke buyuktur."},
+      {"jp": "私の国は暑いです。", "en": "My country is hot.", "tr": "Benim ulkem sicaktir."}
+    ]
+  },
+  {
+    "word": "外国",
+    "examples": [
+      {"jp": "外国に行きたいです。", "en": "I want to go to a foreign country.", "tr": "Yurt disina gitmek istiyorum."},
+      {"jp": "外国の食べ物が好きです。", "en": "I like foreign food.", "tr": "Yabanci yemekleri severim."}
+    ]
+  },
+  {
+    "word": "外国人",
+    "examples": [
+      {"jp": "外国人の友達がいます。", "en": "I have a foreign friend.", "tr": "Yabanci bir arkadasim var."},
+      {"jp": "この町に外国人が多いです。", "en": "There are many foreigners in this town.", "tr": "Bu kasabada cok yabanci var."}
+    ]
+  },
+  {
+    "word": "お正月",
+    "examples": [
+      {"jp": "お正月は楽しいです。", "en": "New Year is fun.", "tr": "Yilbasi eglencelidir."},
+      {"jp": "お正月に家族に会います。", "en": "I meet my family on New Year.", "tr": "Yilbasinda ailemle bulusurum."}
+    ]
+  },
+  {
+    "word": "夏休み",
+    "examples": [
+      {"jp": "夏休みに海に行きます。", "en": "I go to the sea during summer vacation.", "tr": "Yaz tatilinde denize giderim."},
+      {"jp": "夏休みは長いです。", "en": "Summer vacation is long.", "tr": "Yaz tatili uzundur."}
+    ]
+  },
+  {
+    "word": "約束",
+    "examples": [
+      {"jp": "友達と約束があります。", "en": "I have a promise with my friend.", "tr": "Arkadasimla bir sozum var."},
+      {"jp": "約束の時間は三時です。", "en": "The appointment time is 3 o'clock.", "tr": "Randevu saati uc."}
+    ]
+  },
+  {
+    "word": "でも",
+    "examples": [
+      {"jp": "でも、私は元気です。", "en": "But I am fine.", "tr": "Ama ben iyiyim."},
+      {"jp": "高いです。でも、おいしいです。", "en": "It's expensive. But it's delicious.", "tr": "Pahali. Ama lezzetli."}
+    ]
+  },
+  {
+    "word": "そして",
+    "examples": [
+      {"jp": "食べました。そして寝ました。", "en": "I ate. And then I slept.", "tr": "Yedim. Sonra uyudum."},
+      {"jp": "買い物をしました。そして帰りました。", "en": "I did shopping. And then I went home.", "tr": "Alisveris yaptim. Sonra eve dondum."}
+    ]
+  },
+  {
+    "word": "それから",
+    "examples": [
+      {"jp": "朝ご飯を食べました。それから学校に行きました。", "en": "I ate breakfast. After that, I went to school.", "tr": "Kahvalti ettim. Ondan sonra okula gittim."},
+      {"jp": "本を読みました。それから寝ました。", "en": "I read a book. After that, I slept.", "tr": "Kitap okudum. Ondan sonra uyudum."}
+    ]
+  },
+  {
+    "word": "しかし",
+    "examples": [
+      {"jp": "勉強しました。しかし、難しかったです。", "en": "I studied. However, it was difficult.", "tr": "Calistim. Ancak zordu."},
+      {"jp": "走りました。しかし、遅かったです。", "en": "I ran. However, I was slow.", "tr": "Kostum. Ancak yavastim."}
+    ]
+  },
+  {
+    "word": "だから",
+    "examples": [
+      {"jp": "暑いです。だから水を飲みます。", "en": "It's hot. Therefore, I drink water.", "tr": "Sicak. Bu yuzden su icerim."},
+      {"jp": "疲れました。だから休みます。", "en": "I'm tired. Therefore, I'll rest.", "tr": "Yoruldum. Bu yuzden dinlenirim."}
+    ]
+  },
+  {
+    "word": "けど",
+    "examples": [
+      {"jp": "食べたいけど、時間がないです。", "en": "I want to eat, but I have no time.", "tr": "Yemek istiyorum ama vaktim yok."},
+      {"jp": "小さいけど、いい部屋です。", "en": "It's small, but it's a nice room.", "tr": "Kucuk ama iyi bir oda."}
+    ]
+  },
+  {
+    "word": "おはようございます",
+    "examples": [
+      {"jp": "先生、おはようございます。", "en": "Good morning, teacher.", "tr": "Gunaydin, hocam."},
+      {"jp": "毎朝「おはようございます」と言います。", "en": "I say 'good morning' every morning.", "tr": "Her sabah 'gunaydin' derim."}
+    ]
+  },
+  {
+    "word": "こんにちは",
+    "examples": [
+      {"jp": "こんにちは、お元気ですか。", "en": "Hello, how are you?", "tr": "Merhaba, nasilsiniz?"},
+      {"jp": "友達にこんにちはと言いました。", "en": "I said hello to my friend.", "tr": "Arkadasima merhaba dedim."}
+    ]
+  },
+  {
+    "word": "こんばんは",
+    "examples": [
+      {"jp": "こんばんは、寒いですね。", "en": "Good evening, it's cold, isn't it?", "tr": "Iyi aksamlar, soguk degil mi?"},
+      {"jp": "隣の人にこんばんはと言いました。", "en": "I said good evening to my neighbor.", "tr": "Komsuma iyi aksamlar dedim."}
+    ]
+  },
+  {
+    "word": "さようなら",
+    "examples": [
+      {"jp": "先生にさようならと言いました。", "en": "I said goodbye to the teacher.", "tr": "Ogretmene hosca kalin dedim."},
+      {"jp": "さようなら、また明日。", "en": "Goodbye, see you tomorrow.", "tr": "Hosca kalin, yarin gorusuruz."}
+    ]
+  },
+  {
+    "word": "すみません",
+    "examples": [
+      {"jp": "すみません、駅はどこですか。", "en": "Excuse me, where is the station?", "tr": "Afedersiniz, istasyon nerede?"},
+      {"jp": "すみません、遅くなりました。", "en": "Sorry, I'm late.", "tr": "Ozur dilerim, gec kaldim."}
+    ]
+  },
+  {
+    "word": "ありがとうございます",
+    "examples": [
+      {"jp": "教えてくれて、ありがとうございます。", "en": "Thank you for teaching me.", "tr": "Ogrettiginiz icin tesekkur ederim."},
+      {"jp": "ありがとうございます、とても嬉しいです。", "en": "Thank you, I'm very happy.", "tr": "Tesekkur ederim, cok mutluyum."}
+    ]
+  },
+  {
+    "word": "どういたしまして",
+    "examples": [
+      {"jp": "「ありがとう。」「どういたしまして。」", "en": "\"Thank you.\" \"You're welcome.\"", "tr": "\"Tesekkurler.\" \"Rica ederim.\""},
+      {"jp": "どういたしまして、また来てください。", "en": "You're welcome, please come again.", "tr": "Rica ederim, yine gelin."}
+    ]
+  },
+  {
+    "word": "お願いします",
+    "examples": [
+      {"jp": "水をお願いします。", "en": "Water, please.", "tr": "Su, lutfen."},
+      {"jp": "これをお願いします。", "en": "This one, please.", "tr": "Bunu lutfen."}
+    ]
+  },
+  {
+    "word": "いただきます",
+    "examples": [
+      {"jp": "ご飯の前にいただきますと言います。", "en": "I say 'itadakimasu' before a meal.", "tr": "Yemekten once 'itadakimasu' derim."},
+      {"jp": "いただきます、おいしそうですね。", "en": "Bon appetit, it looks delicious.", "tr": "Afiyet olsun, lezzetli gorunuyor."}
+    ]
+  },
+  {
+    "word": "ごちそうさまでした",
+    "examples": [
+      {"jp": "ごちそうさまでした、おいしかったです。", "en": "Thank you for the meal, it was delicious.", "tr": "Ellerinize saglik, lezzetliydi."},
+      {"jp": "食べた後にごちそうさまでしたと言います。", "en": "I say 'gochisousama' after eating.", "tr": "Yedikten sonra 'gochisousama' derim."}
+    ]
+  },
+  {
+    "word": "ただいま",
+    "examples": [
+      {"jp": "家に帰って「ただいま」と言います。", "en": "I say 'I'm home' when I return home.", "tr": "Eve donunce 'geldim' derim."},
+      {"jp": "ただいま、疲れました。", "en": "I'm home, I'm tired.", "tr": "Geldim, yoruldum."}
+    ]
+  },
+  {
+    "word": "おかえりなさい",
+    "examples": [
+      {"jp": "母は「おかえりなさい」と言いました。", "en": "My mother said 'welcome back'.", "tr": "Annem 'hos geldin' dedi."},
+      {"jp": "おかえりなさい、ご飯がありますよ。", "en": "Welcome back, there's food.", "tr": "Hos geldin, yemek var."}
+    ]
+  },
+  {
+    "word": "いってきます",
+    "examples": [
+      {"jp": "朝、いってきますと言います。", "en": "In the morning, I say 'I'm leaving'.", "tr": "Sabah 'gidiyorum' derim."},
+      {"jp": "いってきます、また夜に。", "en": "I'm leaving, see you tonight.", "tr": "Gidiyorum, aksam gorusuruz."}
+    ]
+  },
+  {
+    "word": "いってらっしゃい",
+    "examples": [
+      {"jp": "母がいってらっしゃいと言いました。", "en": "My mother said 'see you later'.", "tr": "Annem 'gule gule' dedi."},
+      {"jp": "いってらっしゃい、気をつけてね。", "en": "See you later, be careful.", "tr": "Gule gule, dikkat et."}
+    ]
+  },
+  {
+    "word": "お邪魔します",
+    "examples": [
+      {"jp": "友達の家でお邪魔しますと言いました。", "en": "I said 'excuse me' at my friend's house.", "tr": "Arkadasimin evinde 'rahatsiz ediyorum' dedim."},
+      {"jp": "お邪魔します、きれいな部屋ですね。", "en": "Excuse me for intruding, it's a nice room.", "tr": "Rahatsiz ediyorum, guzel bir oda."}
+    ]
+  },
+  {
+    "word": "隣",
+    "examples": [
+      {"jp": "隣の家は大きいです。", "en": "The house next door is big.", "tr": "Yandaki ev buyuk."},
+      {"jp": "私の隣に座ってください。", "en": "Please sit next to me.", "tr": "Yanima oturun lutfen."}
+    ]
+  },
+  {
+    "word": "近く",
+    "examples": [
+      {"jp": "学校の近くに住んでいます。", "en": "I live near the school.", "tr": "Okulun yakininda yasiyorum."},
+      {"jp": "近くにコンビニがあります。", "en": "There is a convenience store nearby.", "tr": "Yakinda bir market var."}
+    ]
+  },
+  {
+    "word": "向こう",
+    "examples": [
+      {"jp": "向こうに山が見えます。", "en": "I can see a mountain over there.", "tr": "Otede bir dag gorunuyor."},
+      {"jp": "向こうに行きましょう。", "en": "Let's go over there.", "tr": "Oraya gidelim."}
+    ]
+  },
+  {
+    "word": "側",
+    "examples": [
+      {"jp": "母の側にいます。", "en": "I am beside my mother.", "tr": "Annemin yanindayim."},
+      {"jp": "駅の側にカフェがあります。", "en": "There is a cafe beside the station.", "tr": "Istasyonun yaninda bir kafe var."}
+    ]
+  },
+  {
+    "word": "間",
+    "examples": [
+      {"jp": "机と椅子の間にあります。", "en": "It is between the desk and the chair.", "tr": "Masa ile sandalyenin arasinda."},
+      {"jp": "二人の間に猫がいます。", "en": "There is a cat between the two people.", "tr": "Iki kisinin arasinda bir kedi var."}
+    ]
+  },
+  {
+    "word": "東",
+    "examples": [
+      {"jp": "東から太陽が出ます。", "en": "The sun rises from the east.", "tr": "Gunes dogudan dogar."},
+      {"jp": "東に行ってください。", "en": "Please go east.", "tr": "Doguya gidin lutfen."}
+    ]
+  },
+  {
+    "word": "西",
+    "examples": [
+      {"jp": "西に山があります。", "en": "There is a mountain to the west.", "tr": "Batida bir dag var."},
+      {"jp": "太陽は西に沈みます。", "en": "The sun sets in the west.", "tr": "Gunes batida batar."}
+    ]
+  },
+  {
+    "word": "南",
+    "examples": [
+      {"jp": "南は暖かいです。", "en": "The south is warm.", "tr": "Guney iliktir."},
+      {"jp": "南の国に行きたいです。", "en": "I want to go to a southern country.", "tr": "Guneydeki bir ulkeye gitmek istiyorum."}
+    ]
+  },
+  {
+    "word": "北",
+    "examples": [
+      {"jp": "北は寒いです。", "en": "The north is cold.", "tr": "Kuzey soguktur."},
+      {"jp": "北に大きい町があります。", "en": "There is a big town to the north.", "tr": "Kuzeyde buyuk bir kasaba var."}
+    ]
+  },
+  {
+    "word": "今",
+    "examples": [
+      {"jp": "今、何時ですか。", "en": "What time is it now?", "tr": "Simdi saat kac?"},
+      {"jp": "今、勉強しています。", "en": "I am studying now.", "tr": "Simdi ders calisiyorum."}
+    ]
+  },
+  {
+    "word": "最初",
+    "examples": [
+      {"jp": "最初に名前を書いてください。", "en": "Please write your name first.", "tr": "Once adinizi yazin lutfen."},
+      {"jp": "最初は難しかったです。", "en": "It was difficult at first.", "tr": "Basta zordu."}
+    ]
+  },
+  {
+    "word": "最後",
+    "examples": [
+      {"jp": "最後の問題は難しいです。", "en": "The last question is difficult.", "tr": "Son soru zordur."},
+      {"jp": "最後まで読みました。", "en": "I read until the end.", "tr": "Sonuna kadar okudum."}
+    ]
+  },
+  {
+    "word": "次",
+    "examples": [
+      {"jp": "次は何をしますか。", "en": "What will you do next?", "tr": "Sirada ne yapacaksiniz?"},
+      {"jp": "次の電車に乗ります。", "en": "I will take the next train.", "tr": "Sonraki trene binerim."}
+    ]
+  },
+  {
+    "word": "声",
+    "examples": [
+      {"jp": "大きい声で話してください。", "en": "Please speak in a loud voice.", "tr": "Yuksek sesle konusun lutfen."},
+      {"jp": "母の声が聞こえます。", "en": "I can hear my mother's voice.", "tr": "Annemin sesini duyuyorum."}
+    ]
+  },
+  {
+    "word": "話",
+    "examples": [
+      {"jp": "おもしろい話を聞きました。", "en": "I heard an interesting story.", "tr": "Ilginc bir hikaye dinledim."},
+      {"jp": "話が長いです。", "en": "The story is long.", "tr": "Hikaye uzun."}
+    ]
+  },
+  {
+    "word": "物",
+    "examples": [
+      {"jp": "好きな物は何ですか。", "en": "What is the thing you like?", "tr": "Sevdiginiz sey nedir?"},
+      {"jp": "この物は高いです。", "en": "This thing is expensive.", "tr": "Bu sey pahali."}
+    ]
+  },
+  {
+    "word": "所",
+    "examples": [
+      {"jp": "静かな所が好きです。", "en": "I like quiet places.", "tr": "Sessiz yerleri severim."},
+      {"jp": "この所はきれいです。", "en": "This place is beautiful.", "tr": "Burasi guzel."}
+    ]
+  },
+  {
+    "word": "方",
+    "examples": [
+      {"jp": "どちらの方がいいですか。", "en": "Which one is better?", "tr": "Hangisi daha iyi?"},
+      {"jp": "駅の方に歩きました。", "en": "I walked toward the station.", "tr": "Istasyon yonune yururdum."}
+    ]
+  },
+  {
+    "word": "男の人",
+    "examples": [
+      {"jp": "あの男の人は背が高いです。", "en": "That man is tall.", "tr": "O adam uzun boylu."},
+      {"jp": "男の人が走っています。", "en": "A man is running.", "tr": "Bir adam kosuyor."}
+    ]
+  },
+  {
+    "word": "女の人",
+    "examples": [
+      {"jp": "あの女の人は先生です。", "en": "That woman is a teacher.", "tr": "O kadin bir ogretmen."},
+      {"jp": "女の人が歌っています。", "en": "A woman is singing.", "tr": "Bir kadin sarki soyluyor."}
+    ]
+  },
+  {
+    "word": "男の子",
+    "examples": [
+      {"jp": "男の子がサッカーをしています。", "en": "A boy is playing soccer.", "tr": "Bir erkek cocuk futbol oynuyor."},
+      {"jp": "あの男の子は元気です。", "en": "That boy is energetic.", "tr": "O erkek cocuk enerjik."}
+    ]
+  },
+  {
+    "word": "女の子",
+    "examples": [
+      {"jp": "女の子が花を持っています。", "en": "A girl is holding flowers.", "tr": "Bir kiz cicek tutuyor."},
+      {"jp": "あの女の子は可愛いです。", "en": "That girl is cute.", "tr": "O kiz sevimli."}
+    ]
+  },
+  {
+    "word": "赤ちゃん",
+    "examples": [
+      {"jp": "赤ちゃんが泣いています。", "en": "The baby is crying.", "tr": "Bebek agliyor."},
+      {"jp": "赤ちゃんは小さいです。", "en": "The baby is small.", "tr": "Bebek kucuk."}
+    ]
+  },
+  {
+    "word": "動物",
+    "examples": [
+      {"jp": "動物が好きです。", "en": "I like animals.", "tr": "Hayvanlari severim."},
+      {"jp": "動物園に行きました。", "en": "I went to the zoo.", "tr": "Hayvanat bahcesine gittim."}
+    ]
+  },
+  {
+    "word": "犬",
+    "examples": [
+      {"jp": "犬と散歩しました。", "en": "I took a walk with the dog.", "tr": "Kopekle yuruyuse ciktim."},
+      {"jp": "あの犬は大きいです。", "en": "That dog is big.", "tr": "O kopek buyuk."}
+    ]
+  },
+  {
+    "word": "猫",
+    "examples": [
+      {"jp": "猫が寝ています。", "en": "The cat is sleeping.", "tr": "Kedi uyuyor."},
+      {"jp": "黒い猫がいます。", "en": "There is a black cat.", "tr": "Siyah bir kedi var."}
+    ]
+  },
+  {
+    "word": "鳥",
+    "examples": [
+      {"jp": "鳥が歌っています。", "en": "A bird is singing.", "tr": "Bir kus otuyor."},
+      {"jp": "木の上に鳥がいます。", "en": "There is a bird on the tree.", "tr": "Agacin ustunde bir kus var."}
+    ]
+  },
+  {
+    "word": "薬",
+    "examples": [
+      {"jp": "朝、薬を飲みます。", "en": "I take medicine in the morning.", "tr": "Sabah ilac icerim."},
+      {"jp": "この薬は苦いです。", "en": "This medicine is bitter.", "tr": "Bu ilac aci."}
+    ]
+  },
+  {
+    "word": "病気",
+    "examples": [
+      {"jp": "病気で学校を休みました。", "en": "I was absent from school due to illness.", "tr": "Hastaliktan okulu kacirdim."},
+      {"jp": "母は病気ではありません。", "en": "My mother is not sick.", "tr": "Annem hasta degil."}
+    ]
+  },
+  {
+    "word": "お風呂",
+    "examples": [
+      {"jp": "お風呂に入ります。", "en": "I take a bath.", "tr": "Banyoya girerim."},
+      {"jp": "お風呂は気持ちいいです。", "en": "The bath feels nice.", "tr": "Banyo keyifli."}
+    ]
+  },
+  {
+    "word": "石鹸",
+    "examples": [
+      {"jp": "石鹸で手を洗います。", "en": "I wash my hands with soap.", "tr": "Sabunla ellerimi yikarim."},
+      {"jp": "この石鹸はいい匂いです。", "en": "This soap smells nice.", "tr": "Bu sabun guzel kokuyor."}
+    ]
+  },
+  {
+    "word": "タオル",
+    "examples": [
+      {"jp": "タオルを使ってください。", "en": "Please use a towel.", "tr": "Havlu kullanin lutfen."},
+      {"jp": "新しいタオルを買いました。", "en": "I bought a new towel.", "tr": "Yeni bir havlu aldim."}
+    ]
+  },
+  {
+    "word": "春",
+    "examples": [
+      {"jp": "春に花が咲きます。", "en": "Flowers bloom in spring.", "tr": "Ilkbaharda cicekler acar."},
+      {"jp": "春は暖かいです。", "en": "Spring is warm.", "tr": "Ilkbahar iliktir."}
+    ]
+  },
+  {
+    "word": "夏",
+    "examples": [
+      {"jp": "夏は暑いです。", "en": "Summer is hot.", "tr": "Yaz sicaktir."},
+      {"jp": "夏にプールに行きます。", "en": "I go to the pool in summer.", "tr": "Yazin havuza giderim."}
+    ]
+  },
+  {
+    "word": "秋",
+    "examples": [
+      {"jp": "秋は涼しいです。", "en": "Autumn is cool.", "tr": "Sonbahar serindir."},
+      {"jp": "秋に紅葉を見ます。", "en": "I see autumn leaves in fall.", "tr": "Sonbaharda sonbahar yapraklarini goruyorum."}
+    ]
+  },
+  {
+    "word": "冬",
+    "examples": [
+      {"jp": "冬は寒いです。", "en": "Winter is cold.", "tr": "Kis soguktur."},
+      {"jp": "冬に雪が降ります。", "en": "It snows in winter.", "tr": "Kisin kar yagar."}
+    ]
+  },
+  {
+    "word": "朝ご飯",
+    "examples": [
+      {"jp": "朝ご飯にパンを食べます。", "en": "I eat bread for breakfast.", "tr": "Kahvaltida ekmek yerim."},
+      {"jp": "朝ご飯はもう食べましたか。", "en": "Did you already eat breakfast?", "tr": "Kahvaltiyi yediniz mi?"}
+    ]
+  },
+  {
+    "word": "昼ご飯",
+    "examples": [
+      {"jp": "昼ご飯を一緒に食べましょう。", "en": "Let's eat lunch together.", "tr": "Birlikte ogle yemegi yiyelim."},
+      {"jp": "昼ご飯は何を食べますか。", "en": "What will you eat for lunch?", "tr": "Ogle yemeginde ne yiyeceksiniz?"}
+    ]
+  },
+  {
+    "word": "晩ご飯",
+    "examples": [
+      {"jp": "晩ご飯を作ります。", "en": "I will make dinner.", "tr": "Aksam yemegi yaparim."},
+      {"jp": "晩ご飯は七時です。", "en": "Dinner is at seven o'clock.", "tr": "Aksam yemegi saat yedide."}
+    ]
+  },
+  {
+    "word": "お菓子",
+    "examples": [
+      {"jp": "お菓子を買いました。", "en": "I bought sweets.", "tr": "Tatli aldim."},
+      {"jp": "日本のお菓子はおいしいです。", "en": "Japanese sweets are delicious.", "tr": "Japon tatlilari lezzetli."}
+    ]
+  },
+  {
+    "word": "ケーキ",
+    "examples": [
+      {"jp": "ケーキを作りました。", "en": "I made a cake.", "tr": "Pasta yaptim."},
+      {"jp": "このケーキは甘いです。", "en": "This cake is sweet.", "tr": "Bu pasta tatli."}
+    ]
+  },
+  {
+    "word": "アイスクリーム",
+    "examples": [
+      {"jp": "アイスクリームが食べたいです。", "en": "I want to eat ice cream.", "tr": "Dondurma yemek istiyorum."},
+      {"jp": "夏にアイスクリームを食べます。", "en": "I eat ice cream in summer.", "tr": "Yazin dondurma yerim."}
+    ]
+  },
+  {
+    "word": "ジュース",
+    "examples": [
+      {"jp": "ジュースを飲みませんか。", "en": "Won't you drink some juice?", "tr": "Meyve suyu icmez misiniz?"},
+      {"jp": "オレンジジュースをください。", "en": "Please give me orange juice.", "tr": "Portakal suyu lutfen."}
+    ]
+  },
+  {
+    "word": "お湯",
+    "examples": [
+      {"jp": "お湯を沸かします。", "en": "I will boil hot water.", "tr": "Su kaynatacagim."},
+      {"jp": "お湯は熱いです。", "en": "The hot water is hot.", "tr": "Sicak su cok sicak."}
+    ]
+  },
+  {
+    "word": "醤油",
+    "examples": [
+      {"jp": "醤油をかけてください。", "en": "Please put soy sauce on it.", "tr": "Soya sosu koyun lutfen."},
+      {"jp": "醤油は日本の調味料です。", "en": "Soy sauce is a Japanese seasoning.", "tr": "Soya sosu Japon baharatidir."}
+    ]
+  },
+  {
+    "word": "味噌",
+    "examples": [
+      {"jp": "味噌汁を飲みます。", "en": "I drink miso soup.", "tr": "Miso corbasi icerim."},
+      {"jp": "味噌は体にいいです。", "en": "Miso is good for the body.", "tr": "Miso vucut icin iyidir."}
+    ]
+  },
+  {
+    "word": "弁当",
+    "examples": [
+      {"jp": "弁当を持って行きます。", "en": "I will bring a boxed lunch.", "tr": "Kutu ogle yemegi goturecegim."},
+      {"jp": "母が弁当を作りました。", "en": "My mother made a boxed lunch.", "tr": "Annem kutu yemek yapti."}
+    ]
+  },
+  {
+    "word": "おにぎり",
+    "examples": [
+      {"jp": "おにぎりを二つ買いました。", "en": "I bought two rice balls.", "tr": "Iki pirinc topu aldim."},
+      {"jp": "おにぎりが好きです。", "en": "I like rice balls.", "tr": "Pirinc toplarini severim."}
+    ]
+  },
+  {
+    "word": "ラーメン",
+    "examples": [
+      {"jp": "ラーメンを食べに行きましょう。", "en": "Let's go eat ramen.", "tr": "Ramen yemeye gidelim."},
+      {"jp": "このラーメンは熱いです。", "en": "This ramen is hot.", "tr": "Bu ramen sicak."}
+    ]
+  },
+  {
+    "word": "うどん",
+    "examples": [
+      {"jp": "うどんは太いです。", "en": "Udon noodles are thick.", "tr": "Udon eriste kalindir."},
+      {"jp": "冬にうどんを食べます。", "en": "I eat udon in winter.", "tr": "Kisin udon yerim."}
+    ]
+  },
+  {
+    "word": "そば",
+    "examples": [
+      {"jp": "そばを食べたことがありますか。", "en": "Have you ever eaten soba?", "tr": "Hic soba yediniz mi?"},
+      {"jp": "冷たいそばが好きです。", "en": "I like cold soba.", "tr": "Soguk sobayi severim."}
+    ]
+  },
+  {
+    "word": "寿司",
+    "examples": [
+      {"jp": "寿司を食べに行きましょう。", "en": "Let's go eat sushi.", "tr": "Sushi yemeye gidelim."},
+      {"jp": "日本の寿司はおいしいです。", "en": "Japanese sushi is delicious.", "tr": "Japon sushisi lezzetli."}
+    ]
+  },
+  {
+    "word": "天ぷら",
+    "examples": [
+      {"jp": "天ぷらを作りました。", "en": "I made tempura.", "tr": "Tempura yaptim."},
+      {"jp": "海老の天ぷらが好きです。", "en": "I like shrimp tempura.", "tr": "Karides tempurayi severim."}
+    ]
+  },
+  {
+    "word": "豚肉",
+    "examples": [
+      {"jp": "豚肉を買いました。", "en": "I bought pork.", "tr": "Domuz eti aldim."},
+      {"jp": "豚肉で料理を作ります。", "en": "I will cook with pork.", "tr": "Domuz etiyle yemek yaparim."}
+    ]
+  },
+  {
+    "word": "鶏肉",
+    "examples": [
+      {"jp": "鶏肉が好きです。", "en": "I like chicken.", "tr": "Tavuk eti severim."},
+      {"jp": "鶏肉を焼きました。", "en": "I grilled chicken.", "tr": "Tavuk eti pisirim."}
+    ]
+  },
+  {
+    "word": "牛肉",
+    "examples": [
+      {"jp": "牛肉は高いです。", "en": "Beef is expensive.", "tr": "Dana eti pahali."},
+      {"jp": "牛肉を食べたいです。", "en": "I want to eat beef.", "tr": "Dana eti yemek istiyorum."}
+    ]
+  },
+  {
+    "word": "りんご",
+    "examples": [
+      {"jp": "赤いりんごを食べました。", "en": "I ate a red apple.", "tr": "Kirmizi bir elma yedim."},
+      {"jp": "りんごを三つ買いました。", "en": "I bought three apples.", "tr": "Uc elma aldim."}
+    ]
+  },
+  {
+    "word": "みかん",
+    "examples": [
+      {"jp": "みかんは甘いです。", "en": "Mandarins are sweet.", "tr": "Mandalinalar tatlidir."},
+      {"jp": "冬にみかんを食べます。", "en": "I eat mandarins in winter.", "tr": "Kisin mandalina yerim."}
+    ]
+  },
+  {
+    "word": "バナナ",
+    "examples": [
+      {"jp": "朝、バナナを食べます。", "en": "I eat a banana in the morning.", "tr": "Sabah muz yerim."},
+      {"jp": "バナナは黄色いです。", "en": "Bananas are yellow.", "tr": "Muzlar saridir."}
+    ]
+  },
+  {
+    "word": "ぶどう",
+    "examples": [
+      {"jp": "ぶどうが好きです。", "en": "I like grapes.", "tr": "Uzum severim."},
+      {"jp": "ぶどうを食べましょう。", "en": "Let's eat grapes.", "tr": "Uzum yiyelim."}
+    ]
+  },
+  {
+    "word": "いちご",
+    "examples": [
+      {"jp": "いちごは赤いです。", "en": "Strawberries are red.", "tr": "Cilekler kirmizidir."},
+      {"jp": "いちごのケーキが好きです。", "en": "I like strawberry cake.", "tr": "Cilekli pastayi severim."}
+    ]
+  },
+  {
+    "word": "スイカ",
+    "examples": [
+      {"jp": "夏にスイカを食べます。", "en": "I eat watermelon in summer.", "tr": "Yazin karpuz yerim."},
+      {"jp": "スイカは大きいです。", "en": "Watermelon is big.", "tr": "Karpuz buyuktur."}
+    ]
+  },
+  {
+    "word": "レモン",
+    "examples": [
+      {"jp": "レモンは酸っぱいです。", "en": "Lemons are sour.", "tr": "Limonlar eksidir."},
+      {"jp": "レモンを買いました。", "en": "I bought lemons.", "tr": "Limon aldim."}
+    ]
+  },
+  {
+    "word": "トマト",
+    "examples": [
+      {"jp": "トマトは赤いです。", "en": "Tomatoes are red.", "tr": "Domatesler kirmizidir."},
+      {"jp": "トマトが好きですか。", "en": "Do you like tomatoes?", "tr": "Domatesi sever misiniz?"}
+    ]
+  },
+  {
+    "word": "じゃがいも",
+    "examples": [
+      {"jp": "じゃがいもを買いました。", "en": "I bought potatoes.", "tr": "Patates aldim."},
+      {"jp": "じゃがいもで料理を作ります。", "en": "I will cook with potatoes.", "tr": "Patatesle yemek yaparim."}
+    ]
+  },
+  {
+    "word": "にんじん",
+    "examples": [
+      {"jp": "にんじんはオレンジ色です。", "en": "Carrots are orange.", "tr": "Havuclar turuncu renktir."},
+      {"jp": "にんじんを切りました。", "en": "I cut the carrots.", "tr": "Havuclari kestim."}
+    ]
+  },
+  {
+    "word": "たまねぎ",
+    "examples": [
+      {"jp": "たまねぎを切ると涙が出ます。", "en": "When I cut onions, tears come out.", "tr": "Sogan kesince gozler yasar."},
+      {"jp": "たまねぎを三つ買いました。", "en": "I bought three onions.", "tr": "Uc sogan aldim."}
+    ]
+  },
+  {
+    "word": "キャベツ",
+    "examples": [
+      {"jp": "キャベツを食べます。", "en": "I eat cabbage.", "tr": "Lahana yerim."},
+      {"jp": "キャベツは安いです。", "en": "Cabbage is cheap.", "tr": "Lahana ucuzdur."}
+    ]
+  },
+  {
+    "word": "きゅうり",
+    "examples": [
+      {"jp": "きゅうりは緑色です。", "en": "Cucumbers are green.", "tr": "Salataliklar yesildir."},
+      {"jp": "きゅうりを切りました。", "en": "I cut the cucumber.", "tr": "Salataligi kestim."}
+    ]
+  },
+  {
+    "word": "スプーン",
+    "examples": [
+      {"jp": "スプーンでスープを飲みます。", "en": "I eat soup with a spoon.", "tr": "Kasikla corba icerim."},
+      {"jp": "スプーンをください。", "en": "Please give me a spoon.", "tr": "Kasik verir misiniz?"}
+    ]
+  },
+  {
+    "word": "フォーク",
+    "examples": [
+      {"jp": "フォークで食べます。", "en": "I eat with a fork.", "tr": "Catalla yerim."},
+      {"jp": "フォークはどこですか。", "en": "Where is the fork?", "tr": "Catal nerede?"}
+    ]
+  },
+  {
+    "word": "ナイフ",
+    "examples": [
+      {"jp": "ナイフで肉を切ります。", "en": "I cut meat with a knife.", "tr": "Bicakla et keserim."},
+      {"jp": "ナイフをください。", "en": "Please give me a knife.", "tr": "Bicak verir misiniz?"}
+    ]
+  },
+  {
+    "word": "箸",
+    "examples": [
+      {"jp": "箸で食べます。", "en": "I eat with chopsticks.", "tr": "Yemek cubuguyla yerim."},
+      {"jp": "箸を使えますか。", "en": "Can you use chopsticks?", "tr": "Yemek cubugu kullanabilir misiniz?"}
+    ]
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "word": "焼く",
+    "examples": [
+      {"jp": "パンを焼きました。", "en": "I toasted the bread.", "tr": "Ekmek kizarttim."},
+      {"jp": "魚を焼いています。", "en": "I am grilling fish.", "tr": "Balik pisiriyorum."}
+    ]
+  },
+  {
+    "word": "治る",
+    "examples": [
+      {"jp": "風邪が治りました。", "en": "My cold has healed.", "tr": "Soguk alginligim gecti."},
+      {"jp": "もうすぐ治ります。", "en": "It will heal soon.", "tr": "Yakin zamanda iyilesecek."}
+    ]
+  },
+  {
+    "word": "壊れる",
+    "examples": [
+      {"jp": "時計が壊れました。", "en": "The clock broke.", "tr": "Saat bozuldu."},
+      {"jp": "テレビが壊れています。", "en": "The TV is broken.", "tr": "Televizyon bozuk."}
+    ]
+  },
+  {
+    "word": "乾く",
+    "examples": [
+      {"jp": "服が乾きました。", "en": "The clothes dried.", "tr": "Kiyafetler kurudu."},
+      {"jp": "のどが乾いています。", "en": "I am thirsty.", "tr": "Susadim."}
+    ]
+  },
+  {
+    "word": "濡れる",
+    "examples": [
+      {"jp": "雨で濡れました。", "en": "I got wet from the rain.", "tr": "Yagmurdan islandim."},
+      {"jp": "靴が濡れています。", "en": "The shoes are wet.", "tr": "Ayakkabilar islak."}
+    ]
+  },
+  {
+    "word": "光る",
+    "examples": [
+      {"jp": "星が光っています。", "en": "The stars are shining.", "tr": "Yildizlar parliyor."},
+      {"jp": "目が光りました。", "en": "The eyes shone.", "tr": "Gozler parladi."}
+    ]
+  },
+  {
+    "word": "鳴る",
+    "examples": [
+      {"jp": "電話が鳴りました。", "en": "The phone rang.", "tr": "Telefon caldi."},
+      {"jp": "ベルが鳴っています。", "en": "The bell is ringing.", "tr": "Zil caliyor."}
+    ]
+  },
+  {
+    "word": "咲く",
+    "examples": [
+      {"jp": "花が咲きました。", "en": "The flowers bloomed.", "tr": "Cicekler acti."},
+      {"jp": "春に花が咲きます。", "en": "Flowers bloom in spring.", "tr": "Ilkbaharda cicekler acar."}
+    ]
+  },
+  {
+    "word": "育てる",
+    "examples": [
+      {"jp": "花を育てています。", "en": "I am growing flowers.", "tr": "Cicek yetistiriyorum."},
+      {"jp": "子どもを育てます。", "en": "I will raise a child.", "tr": "Cocuk yetistiririm."}
+    ]
+  },
+  {
+    "word": "植える",
+    "examples": [
+      {"jp": "木を植えました。", "en": "I planted a tree.", "tr": "Agac diktim."},
+      {"jp": "花を植えています。", "en": "I am planting flowers.", "tr": "Cicek dikiyorum."}
+    ]
+  },
+  {
+    "word": "嫌",
+    "examples": [
+      {"jp": "勉強が嫌です。", "en": "I dislike studying.", "tr": "Ders calismak istemem."},
+      {"jp": "嫌な天気ですね。", "en": "It is unpleasant weather, isn't it?", "tr": "Kotu bir hava, degil mi?"}
+    ]
+  },
+  {
+    "word": "素敵",
+    "examples": [
+      {"jp": "素敵な服ですね。", "en": "That is a wonderful outfit.", "tr": "Harika bir kiyafet, degil mi?"},
+      {"jp": "あの人は素敵です。", "en": "That person is wonderful.", "tr": "O kisi harika."}
+    ]
+  },
+  {
+    "word": "立派",
+    "examples": [
+      {"jp": "立派な家ですね。", "en": "It is a splendid house.", "tr": "Muhtesem bir ev, degil mi?"},
+      {"jp": "立派な人です。", "en": "He is a fine person.", "tr": "Mukemmel bir kisi."}
+    ]
+  },
+  {
+    "word": "無事",
+    "examples": [
+      {"jp": "無事に着きました。", "en": "I arrived safely.", "tr": "Guvende ulastim."},
+      {"jp": "家族は無事です。", "en": "My family is safe.", "tr": "Ailem guvende."}
+    ]
+  },
+  {
+    "word": "邪魔",
+    "examples": [
+      {"jp": "邪魔しないでください。", "en": "Please do not disturb me.", "tr": "Lutfen rahatsiz etmeyin."},
+      {"jp": "猫が邪魔です。", "en": "The cat is in the way.", "tr": "Kedi engel oluyor."}
+    ]
+  },
+  {
+    "word": "正直",
+    "examples": [
+      {"jp": "彼は正直な人です。", "en": "He is an honest person.", "tr": "O durust bir kisi."},
+      {"jp": "正直に言ってください。", "en": "Please speak honestly.", "tr": "Lutfen durust konusun."}
+    ]
+  },
+  {
+    "word": "親切",
+    "examples": [
+      {"jp": "先生は親切です。", "en": "The teacher is kind.", "tr": "Ogretmen nazik."},
+      {"jp": "親切な人が好きです。", "en": "I like kind people.", "tr": "Nazik insanlari severim."}
+    ]
+  },
+  {
+    "word": "真面目",
+    "examples": [
+      {"jp": "彼は真面目に勉強します。", "en": "He studies diligently.", "tr": "O calisarak ders calisir."},
+      {"jp": "真面目な学生です。", "en": "He is a diligent student.", "tr": "Caliskan bir ogrenci."}
+    ]
+  },
+  {
+    "word": "可愛い",
+    "examples": [
+      {"jp": "この猫は可愛いです。", "en": "This cat is cute.", "tr": "Bu kedi sevimli."},
+      {"jp": "可愛い赤ちゃんですね。", "en": "What a cute baby!", "tr": "Sevimli bir bebek, degil mi?"}
+    ]
+  },
+  {
+    "word": "格好いい",
+    "examples": [
+      {"jp": "あの車は格好いいです。", "en": "That car is cool.", "tr": "O araba havali."},
+      {"jp": "格好いい人ですね。", "en": "He is a cool person, isn't he?", "tr": "Havali bir kisi, degil mi?"}
+    ]
+  },
+  {
+    "word": "すごい",
+    "examples": [
+      {"jp": "すごい映画でした。", "en": "It was an amazing movie.", "tr": "Muhtesem bir filmdi."},
+      {"jp": "日本語がすごいですね。", "en": "Your Japanese is amazing!", "tr": "Japoncanz harika, degil mi?"}
+    ]
+  },
+  {
+    "word": "美味しい",
+    "examples": [
+      {"jp": "このケーキは美味しいです。", "en": "This cake is delicious.", "tr": "Bu pasta lezzetli."},
+      {"jp": "お母さんの料理は美味しい。", "en": "My mother's cooking is delicious.", "tr": "Annemin yemegi lezzetli."}
+    ]
+  },
+  {
+    "word": "ちょうど",
+    "examples": [
+      {"jp": "ちょうど三時です。", "en": "It is exactly three o'clock.", "tr": "Tam saat uc."},
+      {"jp": "ちょうど千円です。", "en": "It is exactly 1000 yen.", "tr": "Tam bin yen."}
+    ]
+  },
+  {
+    "word": "やっぱり",
+    "examples": [
+      {"jp": "やっぱり雨でしたね。", "en": "It was rain after all, wasn't it?", "tr": "Beklendigi gibi yagmur yagdi, degil mi?"},
+      {"jp": "やっぱり日本が好きです。", "en": "I like Japan after all.", "tr": "Yine de Japonya'yi seviyorum."}
+    ]
+  },
+  {
+    "word": "そろそろ",
+    "examples": [
+      {"jp": "そろそろ帰ります。", "en": "I will head home soon.", "tr": "Artik eve donuyorum."},
+      {"jp": "そろそろ寝ましょう。", "en": "Let's go to sleep soon.", "tr": "Artik uyuyalim."}
+    ]
+  },
+  {
+    "word": "なるべく",
+    "examples": [
+      {"jp": "なるべく早く来てください。", "en": "Please come as early as possible.", "tr": "Mumkun oldugunca erken gelin."},
+      {"jp": "なるべく安いのがいいです。", "en": "I prefer something as cheap as possible.", "tr": "Mumkun oldugunca ucuz olsun."}
+    ]
+  },
+  {
+    "word": "さっき",
+    "examples": [
+      {"jp": "さっき食べました。", "en": "I ate a while ago.", "tr": "Az once yedim."},
+      {"jp": "さっき電話がありました。", "en": "There was a phone call a while ago.", "tr": "Az once telefon geldi."}
+    ]
+  },
+  {
+    "word": "たった今",
+    "examples": [
+      {"jp": "たった今着きました。", "en": "I just arrived right now.", "tr": "Simdi ulastim."},
+      {"jp": "たった今起きました。", "en": "I just woke up right now.", "tr": "Simdi uyandim."}
+    ]
+  },
+  {
+    "word": "相変わらず",
+    "examples": [
+      {"jp": "相変わらず元気です。", "en": "I am healthy as usual.", "tr": "Her zamanki gibi iyiyim."},
+      {"jp": "相変わらず忙しいです。", "en": "I am busy as usual.", "tr": "Her zamanki gibi mesgulum."}
+    ]
+  },
+  {
+    "word": "～個",
+    "examples": [
+      {"jp": "卵を五個買いました。", "en": "I bought five eggs.", "tr": "Bes yumurta aldim."},
+      {"jp": "みかんが二個あります。", "en": "There are two tangerines.", "tr": "Iki mandalina var."}
+    ]
+  },
+  {
+    "word": "～枚",
+    "examples": [
+      {"jp": "紙が三枚あります。", "en": "There are three sheets of paper.", "tr": "Uc kagit var."},
+      {"jp": "写真を十枚撮りました。", "en": "I took ten photos.", "tr": "On fotograf cektim."}
+    ]
+  },
+  {
+    "word": "～本",
+    "examples": [
+      {"jp": "ペンが二本あります。", "en": "There are two pens.", "tr": "Iki kalem var."},
+      {"jp": "水を三本買いました。", "en": "I bought three bottles of water.", "tr": "Uc sise su aldim."}
+    ]
+  },
+  {
+    "word": "～匹",
+    "examples": [
+      {"jp": "犬が二匹います。", "en": "There are two dogs.", "tr": "Iki kopek var."},
+      {"jp": "魚を三匹釣りました。", "en": "I caught three fish.", "tr": "Uc balik tuttum."}
+    ]
+  },
+  {
+    "word": "～台",
+    "examples": [
+      {"jp": "車が一台あります。", "en": "There is one car.", "tr": "Bir araba var."},
+      {"jp": "パソコンを二台買いました。", "en": "I bought two computers.", "tr": "Iki bilgisayar aldim."}
+    ]
+  },
+  {
+    "word": "～冊",
+    "examples": [
+      {"jp": "本を五冊読みました。", "en": "I read five books.", "tr": "Bes kitap okudum."},
+      {"jp": "ノートが三冊あります。", "en": "There are three notebooks.", "tr": "Uc defter var."}
+    ]
+  },
+  {
+    "word": "～杯",
+    "examples": [
+      {"jp": "コーヒーを二杯飲みました。", "en": "I drank two cups of coffee.", "tr": "Iki fincan kahve ictim."},
+      {"jp": "水を一杯ください。", "en": "Please give me one glass of water.", "tr": "Bir bardak su lutfen."}
+    ]
+  },
+  {
+    "word": "～階",
+    "examples": [
+      {"jp": "三階に行きます。", "en": "I will go to the third floor.", "tr": "Ucuncu kata gidecegim."},
+      {"jp": "教室は二階です。", "en": "The classroom is on the second floor.", "tr": "Sinif ikinci katta."}
+    ]
+  },
+  {
+    "word": "～回",
+    "examples": [
+      {"jp": "一日に三回食べます。", "en": "I eat three times a day.", "tr": "Gunde uc kez yerim."},
+      {"jp": "二回見ました。", "en": "I watched it twice.", "tr": "Iki kez izledim."}
+    ]
+  },
+  {
+    "word": "～人",
+    "examples": [
+      {"jp": "学生が十人います。", "en": "There are ten students.", "tr": "On ogrenci var."},
+      {"jp": "友達が三人来ました。", "en": "Three friends came.", "tr": "Uc arkadas geldi."}
+    ]
+  },
+  {
+    "word": "～歳",
+    "examples": [
+      {"jp": "私は二十歳です。", "en": "I am twenty years old.", "tr": "Ben yirmi yasindayim."},
+      {"jp": "妹は十五歳です。", "en": "My younger sister is fifteen years old.", "tr": "Kiz kardesim on bes yasinda."}
+    ]
+  }
+]

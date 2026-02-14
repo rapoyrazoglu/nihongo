@@ -73,9 +73,17 @@ def ensure_db():
         console.print(f"[green]{t('db.ready')}[/green]\n")
     else:
         db.init_db()
-        from data.init_db import migrate_grammar_unique, seed_grammar
+        from data.init_db import (migrate_grammar_unique, seed_vocabulary, seed_kanji,
+                                  seed_grammar, migrate_extra_examples, update_extra_examples,
+                                  migrate_meanings, update_meanings)
         migrate_grammar_unique()
+        seed_vocabulary()
+        seed_kanji()
         seed_grammar()
+        migrate_extra_examples()
+        update_extra_examples()
+        migrate_meanings()
+        update_meanings()
 
 
 def handle_study_vocab():

@@ -87,11 +87,12 @@ def show_level_select(title=None):
 def _meaning_rows(card, card_table, card_type="vocab"):
     """Add meaning rows to a card table based on current language."""
     mf = meaning_field()
-    if get_lang() == "tr":
-        card_table.add_row(t("native_meaning"), f"[bold yellow]{card['meaning_tr']}[/bold yellow]")
+    if get_lang() != "en":
+        native = card[mf] or card["meaning_en"]
+        card_table.add_row(t("native_meaning"), f"[bold yellow]{native}[/bold yellow]")
         card_table.add_row(t("english_meaning"), card["meaning_en"])
     else:
-        card_table.add_row(t("meaning_label"), f"[bold yellow]{card[mf]}[/bold yellow]")
+        card_table.add_row(t("meaning_label"), f"[bold yellow]{card['meaning_en']}[/bold yellow]")
 
 
 def show_vocab_card(vocab, show_answer=False):
@@ -109,6 +110,20 @@ def show_vocab_card(vocab, show_answer=False):
             card.add_row(t("example"), vocab["example_jp"])
             if get_lang() == "tr" and vocab["example_tr"]:
                 card.add_row("", f"[dim]{vocab['example_tr']}[/dim]")
+        # Extra examples
+        extras = vocab.get("extra_examples") or ""
+        if extras:
+            import json as _json
+            try:
+                ex_list = _json.loads(extras) if isinstance(extras, str) else extras
+                for i, ex in enumerate(ex_list):
+                    card.add_row(f"{t('example')} {i+2}", ex.get("jp", ""))
+                    if get_lang() == "tr" and ex.get("tr"):
+                        card.add_row("", f"[dim]{ex['tr']}[/dim]")
+                    elif ex.get("en"):
+                        card.add_row("", f"[dim]{ex['en']}[/dim]")
+            except (ValueError, TypeError):
+                pass
         if vocab["part_of_speech"]:
             card.add_row(t("part_of_speech"), vocab["part_of_speech"])
     else:
@@ -217,16 +232,17 @@ def show_vocab_list(level, items=None):
     table.add_column("#", style="dim", width=4)
     table.add_column(t("word"), style="bold white")
     table.add_column(t("reading"), style="green")
-    table.add_column(t("meaning_label"), style="yellow")
-    if get_lang() == "tr":
-        table.add_column(t("english_meaning"), style="white")
+    if get_lang() != "en":
+        table.add_column(t("native_meaning"), style="yellow")
+    table.add_column(t("english_meaning"), style="cyan")
     table.add_column(t("part_of_speech"), style="dim")
 
     for i, v in enumerate(vocabs, 1):
-        if get_lang() == "tr":
-            table.add_row(str(i), v["word"], v["reading"], v["meaning_tr"], v["meaning_en"], v["part_of_speech"])
+        native = (v[mf] or v["meaning_en"]) if get_lang() != "en" else None
+        if get_lang() != "en":
+            table.add_row(str(i), v["word"], v["reading"], native, v["meaning_en"], v["part_of_speech"])
         else:
-            table.add_row(str(i), v["word"], v["reading"], v[mf], v["part_of_speech"])
+            table.add_row(str(i), v["word"], v["reading"], v["meaning_en"], v["part_of_speech"])
 
     console.print(table)
     return vocabs
@@ -245,11 +261,17 @@ def show_kanji_list(level, items=None):
     table.add_column(t("kanji"), style="bold white")
     table.add_column(t("on_yomi"), style="magenta")
     table.add_column(t("kun_yomi"), style="green")
-    table.add_column(t("meaning_label"), style="yellow")
+    if get_lang() != "en":
+        table.add_column(t("native_meaning"), style="yellow")
+    table.add_column(t("english_meaning"), style="cyan")
     table.add_column(t("stroke_count"), style="dim", width=5)
 
     for i, k in enumerate(kanjis, 1):
-        table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k[mf], str(k["stroke_count"]))
+        native = (k[mf] or k["meaning_en"]) if get_lang() != "en" else None
+        if get_lang() != "en":
+            table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], native, k["meaning_en"], str(k["stroke_count"]))
+        else:
+            table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k["meaning_en"], str(k["stroke_count"]))
 
     console.print(table)
     return kanjis
@@ -350,10 +372,15 @@ def show_search_results(results):
         table.add_column("#", style="dim", width=4)
         table.add_column(t("word"), style="bold white")
         table.add_column(t("reading"), style="green")
-        table.add_column(t("meaning_label"), style="yellow")
+        if get_lang() != "en":
+            table.add_column(t("native_meaning"), style="yellow")
+        table.add_column(t("english_meaning"), style="cyan")
         table.add_column(t("level"), style="cyan", width=5)
         for i, v in enumerate(results["vocabulary"], 1):
-            table.add_row(str(i), v["word"], v["reading"], v[mf], v["level"])
+            if get_lang() != "en":
+                table.add_row(str(i), v["word"], v["reading"], v[mf] or v["meaning_en"], v["meaning_en"], v["level"])
+            else:
+                table.add_row(str(i), v["word"], v["reading"], v["meaning_en"], v["level"])
         console.print(table)
         console.print()
 
@@ -364,10 +391,15 @@ def show_search_results(results):
         table.add_column(t("kanji"), style="bold white")
         table.add_column(t("on_yomi"), style="magenta")
         table.add_column(t("kun_yomi"), style="green")
-        table.add_column(t("meaning_label"), style="yellow")
+        if get_lang() != "en":
+            table.add_column(t("native_meaning"), style="yellow")
+        table.add_column(t("english_meaning"), style="cyan")
         table.add_column(t("level"), style="cyan", width=5)
         for i, k in enumerate(results["kanji"], 1):
-            table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k[mf], k["level"])
+            if get_lang() != "en":
+                table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k[mf] or k["meaning_en"], k["meaning_en"], k["level"])
+            else:
+                table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k["meaning_en"], k["level"])
         console.print(table)
         console.print()
 
@@ -376,10 +408,15 @@ def show_search_results(results):
         table = Table(title=t("search.grammar_results"), box=box.SIMPLE_HEAVY, border_style="yellow")
         table.add_column("#", style="dim", width=4)
         table.add_column(t("pattern"), style="bold white")
-        table.add_column(t("meaning_label"), style="yellow")
+        if get_lang() != "en":
+            table.add_column(t("native_meaning"), style="yellow")
+        table.add_column(t("english_meaning"), style="cyan")
         table.add_column(t("level"), style="cyan", width=5)
         for i, g in enumerate(results["grammar"], 1):
-            table.add_row(str(i), g["pattern"], g[mf], g["level"])
+            if get_lang() != "en":
+                table.add_row(str(i), g["pattern"], g[mf] or g["meaning_en"], g["meaning_en"], g["level"])
+            else:
+                table.add_row(str(i), g["pattern"], g["meaning_en"], g["level"])
         console.print(table)
         console.print()
 

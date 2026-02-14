@@ -1,0 +1,702 @@
+[
+  {
+    "word": "テーブル",
+    "examples": [
+      {"jp": "テーブルの下に猫がいます。", "en": "There is a cat under the table.", "tr": "Masanin altinda kedi var."},
+      {"jp": "テーブルに花を置きました。", "en": "I put flowers on the table.", "tr": "Masaya cicek koydum."}
+    ]
+  },
+  {
+    "word": "ドア",
+    "examples": [
+      {"jp": "ドアを開けてください。", "en": "Please open the door.", "tr": "Kapiyi acin lutfen."},
+      {"jp": "ドアの前に人がいます。", "en": "There is a person in front of the door.", "tr": "Kapinin onunde biri var."}
+    ]
+  },
+  {
+    "word": "電話",
+    "examples": [
+      {"jp": "電話が来ました。", "en": "I got a phone call.", "tr": "Telefon geldi."},
+      {"jp": "電話はどこですか。", "en": "Where is the phone?", "tr": "Telefon nerede?"}
+    ]
+  },
+  {
+    "word": "テレビ",
+    "examples": [
+      {"jp": "テレビを消してください。", "en": "Please turn off the TV.", "tr": "Televizyonu kapatin lutfen."},
+      {"jp": "毎日テレビを見ます。", "en": "I watch TV every day.", "tr": "Her gun televizyon izlerim."}
+    ]
+  },
+  {
+    "word": "パソコン",
+    "examples": [
+      {"jp": "パソコンは新しいです。", "en": "The computer is new.", "tr": "Bilgisayar yeni."},
+      {"jp": "パソコンで仕事をします。", "en": "I work on the computer.", "tr": "Bilgisayarda is yaparim."}
+    ]
+  },
+  {
+    "word": "カメラ",
+    "examples": [
+      {"jp": "新しいカメラを買いました。", "en": "I bought a new camera.", "tr": "Yeni bir kamera aldim."},
+      {"jp": "カメラはかばんの中です。", "en": "The camera is in the bag.", "tr": "Kamera cantanin icinde."}
+    ]
+  },
+  {
+    "word": "冷蔵庫",
+    "examples": [
+      {"jp": "冷蔵庫に水があります。", "en": "There is water in the fridge.", "tr": "Buzdolabinda su var."},
+      {"jp": "冷蔵庫は大きいです。", "en": "The refrigerator is big.", "tr": "Buzdolabi buyuk."}
+    ]
+  },
+  {
+    "word": "洗濯機",
+    "examples": [
+      {"jp": "洗濯機は新しいです。", "en": "The washing machine is new.", "tr": "Camasir makinesi yeni."},
+      {"jp": "洗濯機を使いました。", "en": "I used the washing machine.", "tr": "Camasir makinesini kullandim."}
+    ]
+  },
+  {
+    "word": "エアコン",
+    "examples": [
+      {"jp": "エアコンを消してください。", "en": "Please turn off the air conditioner.", "tr": "Klimayi kapatin lutfen."},
+      {"jp": "部屋にエアコンがあります。", "en": "There is an air conditioner in the room.", "tr": "Odada klima var."}
+    ]
+  },
+  {
+    "word": "電気",
+    "examples": [
+      {"jp": "電気を消してください。", "en": "Please turn off the light.", "tr": "Isigi kapatin lutfen."},
+      {"jp": "電気がつきました。", "en": "The light turned on.", "tr": "Isik yandi."}
+    ]
+  },
+  {
+    "word": "服",
+    "examples": [
+      {"jp": "この服は高いです。", "en": "These clothes are expensive.", "tr": "Bu kiyafet pahali."},
+      {"jp": "服を洗いました。", "en": "I washed the clothes.", "tr": "Kiyafetleri yikadim."}
+    ]
+  },
+  {
+    "word": "靴",
+    "examples": [
+      {"jp": "新しい靴を買いました。", "en": "I bought new shoes.", "tr": "Yeni ayakkabi aldim."},
+      {"jp": "靴を脱いでください。", "en": "Please take off your shoes.", "tr": "Ayakkabilarinizi cikarin."}
+    ]
+  },
+  {
+    "word": "帽子",
+    "examples": [
+      {"jp": "赤い帽子がほしいです。", "en": "I want a red hat.", "tr": "Kirmizi sapka istiyorum."},
+      {"jp": "帽子を取ってください。", "en": "Please take off your hat.", "tr": "Sapkanizi cikarin lutfen."}
+    ]
+  },
+  {
+    "word": "シャツ",
+    "examples": [
+      {"jp": "シャツを洗いました。", "en": "I washed the shirt.", "tr": "Gomlegi yikadim."},
+      {"jp": "青いシャツが好きです。", "en": "I like blue shirts.", "tr": "Mavi gomlekleri severim."}
+    ]
+  },
+  {
+    "word": "ズボン",
+    "examples": [
+      {"jp": "新しいズボンを買いました。", "en": "I bought new pants.", "tr": "Yeni pantolon aldim."},
+      {"jp": "このズボンは長いです。", "en": "These pants are long.", "tr": "Bu pantolon uzun."}
+    ]
+  },
+  {
+    "word": "スカート",
+    "examples": [
+      {"jp": "赤いスカートが好きです。", "en": "I like red skirts.", "tr": "Kirmizi etekleri severim."},
+      {"jp": "スカートを買いました。", "en": "I bought a skirt.", "tr": "Etek aldim."}
+    ]
+  },
+  {
+    "word": "コート",
+    "examples": [
+      {"jp": "コートを着てください。", "en": "Please wear a coat.", "tr": "Palto giyin lutfen."},
+      {"jp": "黒いコートを買いました。", "en": "I bought a black coat.", "tr": "Siyah palto aldim."}
+    ]
+  },
+  {
+    "word": "メガネ",
+    "examples": [
+      {"jp": "メガネを買いました。", "en": "I bought glasses.", "tr": "Gozluk aldim."},
+      {"jp": "メガネがありません。", "en": "I don't have glasses.", "tr": "Gozlugum yok."}
+    ]
+  },
+  {
+    "word": "する",
+    "examples": [
+      {"jp": "何をしますか。", "en": "What will you do?", "tr": "Ne yapacaksiniz?"},
+      {"jp": "テニスをします。", "en": "I play tennis.", "tr": "Tenis oynarim."}
+    ]
+  },
+  {
+    "word": "なる",
+    "examples": [
+      {"jp": "夜になりました。", "en": "It became night.", "tr": "Gece oldu."},
+      {"jp": "先生になりたいです。", "en": "I want to become a teacher.", "tr": "Ogretmen olmak istiyorum."}
+    ]
+  },
+  {
+    "word": "ある",
+    "examples": [
+      {"jp": "時間がありますか。", "en": "Do you have time?", "tr": "Zamaniniz var mi?"},
+      {"jp": "かばんの中に本があります。", "en": "There is a book in the bag.", "tr": "Cantanin icinde kitap var."}
+    ]
+  },
+  {
+    "word": "いる",
+    "examples": [
+      {"jp": "庭に犬がいます。", "en": "There is a dog in the garden.", "tr": "Bahcede kopek var."},
+      {"jp": "子供が三人います。", "en": "I have three children.", "tr": "Uc cocugum var."}
+    ]
+  },
+  {
+    "word": "洗う",
+    "examples": [
+      {"jp": "車を洗います。", "en": "I wash the car.", "tr": "Arabayi yikarim."},
+      {"jp": "顔を洗いました。", "en": "I washed my face.", "tr": "Yuzumu yikadim."}
+    ]
+  },
+  {
+    "word": "泳ぐ",
+    "examples": [
+      {"jp": "海で泳ぎました。", "en": "I swam in the sea.", "tr": "Denizde yuzdum."},
+      {"jp": "泳ぐのが好きです。", "en": "I like swimming.", "tr": "Yuzmeyi severim."}
+    ]
+  },
+  {
+    "word": "終わる",
+    "examples": [
+      {"jp": "仕事が終わりました。", "en": "Work is finished.", "tr": "Is bitti."},
+      {"jp": "映画が終わりました。", "en": "The movie ended.", "tr": "Film bitti."}
+    ]
+  },
+  {
+    "word": "思う",
+    "examples": [
+      {"jp": "おいしいと思います。", "en": "I think it is delicious.", "tr": "Lezzetli oldugunu dusunuyorum."},
+      {"jp": "そう思います。", "en": "I think so.", "tr": "Oyle dusunuyorum."}
+    ]
+  },
+  {
+    "word": "返す",
+    "examples": [
+      {"jp": "お金を返します。", "en": "I will return the money.", "tr": "Parayi geri veririm."},
+      {"jp": "図書館に本を返しました。", "en": "I returned the book to the library.", "tr": "Kutuphaneye kitabi geri verdim."}
+    ]
+  },
+  {
+    "word": "かかる",
+    "examples": [
+      {"jp": "三十分かかります。", "en": "It takes thirty minutes.", "tr": "Otuz dakika surer."},
+      {"jp": "お金がたくさんかかりました。", "en": "It cost a lot of money.", "tr": "Cok para harcandi."}
+    ]
+  },
+  {
+    "word": "かける",
+    "examples": [
+      {"jp": "友達に電話をかけます。", "en": "I call my friend.", "tr": "Arkadasima telefon ederim."},
+      {"jp": "壁に絵をかけました。", "en": "I hung a picture on the wall.", "tr": "Duvara resim astim."}
+    ]
+  },
+  {
+    "word": "貸す",
+    "examples": [
+      {"jp": "ペンを貸してください。", "en": "Please lend me a pen.", "tr": "Kalem odunc verin lutfen."},
+      {"jp": "友達にお金を貸しました。", "en": "I lent money to my friend.", "tr": "Arkadasima para odunc verdim."}
+    ]
+  },
+  {
+    "word": "借りる",
+    "examples": [
+      {"jp": "図書館で本を借りました。", "en": "I borrowed a book from the library.", "tr": "Kutuphaneden kitap odunc aldim."},
+      {"jp": "友達に傘を借りました。", "en": "I borrowed an umbrella from my friend.", "tr": "Arkadasimdan semsiye odunc aldim."}
+    ]
+  },
+  {
+    "word": "消す",
+    "examples": [
+      {"jp": "テレビを消します。", "en": "I turn off the TV.", "tr": "Televizyonu kapatirim."},
+      {"jp": "字を消しました。", "en": "I erased the writing.", "tr": "Yaziyi sildim."}
+    ]
+  },
+  {
+    "word": "答える",
+    "examples": [
+      {"jp": "先生の質問に答えました。", "en": "I answered the teacher's question.", "tr": "Ogretmenin sorusunu cevapladim."},
+      {"jp": "日本語で答えてください。", "en": "Please answer in Japanese.", "tr": "Japonca cevaplayin lutfen."}
+    ]
+  },
+  {
+    "word": "困る",
+    "examples": [
+      {"jp": "道がわからなくて困りました。", "en": "I was troubled because I didn't know the way.", "tr": "Yolu bilmedigim icin zor durumda kaldim."},
+      {"jp": "雨で困りました。", "en": "I was troubled by the rain.", "tr": "Yagmur yuzunden zor durumda kaldim."}
+    ]
+  },
+  {
+    "word": "座る",
+    "examples": [
+      {"jp": "ここに座ってもいいですか。", "en": "May I sit here?", "tr": "Buraya oturabilir miyim?"},
+      {"jp": "友達の隣に座りました。", "en": "I sat next to my friend.", "tr": "Arkadasimin yanina oturdum."}
+    ]
+  },
+  {
+    "word": "立つ",
+    "examples": [
+      {"jp": "バスの中で立っています。", "en": "I am standing in the bus.", "tr": "Otobuste ayakta duruyorum."},
+      {"jp": "先生が前に立ちました。", "en": "The teacher stood in front.", "tr": "Ogretmen one durdu."}
+    ]
+  },
+  {
+    "word": "出す",
+    "examples": [
+      {"jp": "かばんから本を出しました。", "en": "I took out a book from the bag.", "tr": "Cantadan kitap cikardim."},
+      {"jp": "宿題を出してください。", "en": "Please submit your homework.", "tr": "Odevinizi verin lutfen."}
+    ]
+  },
+  {
+    "word": "着く",
+    "examples": [
+      {"jp": "空港に着きました。", "en": "I arrived at the airport.", "tr": "Havalimalina vardim."},
+      {"jp": "何時に着きますか。", "en": "What time will you arrive?", "tr": "Saat kacta varirsiniz?"}
+    ]
+  },
+  {
+    "word": "勤める",
+    "examples": [
+      {"jp": "会社に勤めています。", "en": "I work at a company.", "tr": "Bir sirkette calisiyorum."},
+      {"jp": "病院に勤めています。", "en": "I work at a hospital.", "tr": "Hastanede calisiyorum."}
+    ]
+  },
+  {
+    "word": "出かける",
+    "examples": [
+      {"jp": "朝早く出かけます。", "en": "I go out early in the morning.", "tr": "Sabah erken disari cikarim."},
+      {"jp": "友達と出かけました。", "en": "I went out with a friend.", "tr": "Arkadasimla disari ciktim."}
+    ]
+  },
+  {
+    "word": "飛ぶ",
+    "examples": [
+      {"jp": "飛行機が飛んでいます。", "en": "The airplane is flying.", "tr": "Ucak ucuyor."},
+      {"jp": "鳥は空を飛びます。", "en": "Birds fly in the sky.", "tr": "Kuslar gokyuzunde ucar."}
+    ]
+  },
+  {
+    "word": "止まる",
+    "examples": [
+      {"jp": "バスが止まりました。", "en": "The bus stopped.", "tr": "Otobus durdu."},
+      {"jp": "電車が駅で止まります。", "en": "The train stops at the station.", "tr": "Tren istasyonda durur."}
+    ]
+  },
+  {
+    "word": "取る",
+    "examples": [
+      {"jp": "塩を取ってください。", "en": "Please pass me the salt.", "tr": "Tuzu alin lutfen."},
+      {"jp": "休みを取りました。", "en": "I took a day off.", "tr": "Izin aldim."}
+    ]
+  },
+  {
+    "word": "泣く",
+    "examples": [
+      {"jp": "映画を見て泣きました。", "en": "I cried watching the movie.", "tr": "Film izleyip agladim."},
+      {"jp": "子供が泣いています。", "en": "The child is crying.", "tr": "Cocuk agliyor."}
+    ]
+  },
+  {
+    "word": "なくす",
+    "examples": [
+      {"jp": "鍵をなくしました。", "en": "I lost my key.", "tr": "Anahtarimi kaybettim."},
+      {"jp": "傘をなくしました。", "en": "I lost my umbrella.", "tr": "Semsiyemi kaybettim."}
+    ]
+  },
+  {
+    "word": "並ぶ",
+    "examples": [
+      {"jp": "店の前に並びました。", "en": "I lined up in front of the shop.", "tr": "Dukkanin onunde siraya girdim."},
+      {"jp": "人がたくさん並んでいます。", "en": "Many people are lined up.", "tr": "Cok insan siraya girmis."}
+    ]
+  },
+  {
+    "word": "習う",
+    "examples": [
+      {"jp": "ピアノを習っています。", "en": "I am learning piano.", "tr": "Piyano ogreniyorum."},
+      {"jp": "先生に日本語を習います。", "en": "I learn Japanese from the teacher.", "tr": "Ogretmenden Japonca ogrenirim."}
+    ]
+  },
+  {
+    "word": "脱ぐ",
+    "examples": [
+      {"jp": "コートを脱ぎました。", "en": "I took off my coat.", "tr": "Paltomu cikardim."},
+      {"jp": "家で靴を脱ぎます。", "en": "I take off shoes at home.", "tr": "Evde ayakkabi cikarim."}
+    ]
+  },
+  {
+    "word": "登る",
+    "examples": [
+      {"jp": "富士山に登りたいです。", "en": "I want to climb Mt. Fuji.", "tr": "Fuji Dagina tirmanmak istiyorum."},
+      {"jp": "階段を登ります。", "en": "I climb the stairs.", "tr": "Merdivenleri cikarim."}
+    ]
+  },
+  {
+    "word": "乗る",
+    "examples": [
+      {"jp": "バスに乗りました。", "en": "I got on the bus.", "tr": "Otobuse bindim."},
+      {"jp": "自転車に乗ります。", "en": "I ride a bicycle.", "tr": "Bisiklete binerim."}
+    ]
+  },
+  {
+    "word": "履く",
+    "examples": [
+      {"jp": "新しい靴を履きました。", "en": "I wore new shoes.", "tr": "Yeni ayakkabi giydim."},
+      {"jp": "ズボンを履いています。", "en": "I am wearing pants.", "tr": "Pantolon giyiyorum."}
+    ]
+  },
+  {
+    "word": "始まる",
+    "examples": [
+      {"jp": "映画が始まります。", "en": "The movie is about to start.", "tr": "Film baslayacak."},
+      {"jp": "九時に始まります。", "en": "It starts at nine o'clock.", "tr": "Saat dokuzda baslar."}
+    ]
+  },
+  {
+    "word": "働く",
+    "examples": [
+      {"jp": "デパートで働いています。", "en": "I work at a department store.", "tr": "Magazada calisiyorum."},
+      {"jp": "朝から晩まで働きます。", "en": "I work from morning to evening.", "tr": "Sabahtan aksama kadar calisirim."}
+    ]
+  },
+  {
+    "word": "弾く",
+    "examples": [
+      {"jp": "ギターを弾きます。", "en": "I play the guitar.", "tr": "Gitar calarim."},
+      {"jp": "毎日ピアノを弾きます。", "en": "I play piano every day.", "tr": "Her gun piyano calarim."}
+    ]
+  },
+  {
+    "word": "引く",
+    "examples": [
+      {"jp": "このドアは引いてください。", "en": "Please pull this door.", "tr": "Bu kapiyi cekin lutfen."},
+      {"jp": "風邪を引きました。", "en": "I caught a cold.", "tr": "Soguk alginhgina yakalandim."}
+    ]
+  },
+  {
+    "word": "吹く",
+    "examples": [
+      {"jp": "今日は風が吹いています。", "en": "The wind is blowing today.", "tr": "Bugun ruzgar esiyor."},
+      {"jp": "強い風が吹きました。", "en": "A strong wind blew.", "tr": "Sert ruzgar esti."}
+    ]
+  },
+  {
+    "word": "降る",
+    "examples": [
+      {"jp": "雪が降っています。", "en": "It is snowing.", "tr": "Kar yagiyor."},
+      {"jp": "昨日雨が降りました。", "en": "It rained yesterday.", "tr": "Dun yagmur yagdi."}
+    ]
+  },
+  {
+    "word": "曲がる",
+    "examples": [
+      {"jp": "左に曲がってください。", "en": "Please turn left.", "tr": "Sola donun lutfen."},
+      {"jp": "あの角を曲がります。", "en": "I turn at that corner.", "tr": "Su koseden donerim."}
+    ]
+  },
+  {
+    "word": "磨く",
+    "examples": [
+      {"jp": "朝、歯を磨きます。", "en": "I brush my teeth in the morning.", "tr": "Sabah dislerimi fircalarim."},
+      {"jp": "毎日歯を磨きます。", "en": "I brush my teeth every day.", "tr": "Her gun dislerimi fircalarim."}
+    ]
+  },
+  {
+    "word": "休む",
+    "examples": [
+      {"jp": "今日は学校を休みます。", "en": "I will be absent from school today.", "tr": "Bugun okula gitmeyecegim."},
+      {"jp": "ちょっと休みましょう。", "en": "Let's take a short break.", "tr": "Biraz dinlenelim."}
+    ]
+  },
+  {
+    "word": "呼ぶ",
+    "examples": [
+      {"jp": "名前を呼びました。", "en": "I called the name.", "tr": "Ismini cagirdim."},
+      {"jp": "友達を家に呼びます。", "en": "I invite my friend to my house.", "tr": "Arkadasimi eve cagirim."}
+    ]
+  },
+  {
+    "word": "渡る",
+    "examples": [
+      {"jp": "道を渡ってください。", "en": "Please cross the road.", "tr": "Yolu gecin lutfen."},
+      {"jp": "信号で道を渡ります。", "en": "I cross the road at the traffic light.", "tr": "Trafik isiginda yolu gecerim."}
+    ]
+  },
+  {
+    "word": "忘れる",
+    "examples": [
+      {"jp": "傘を忘れました。", "en": "I forgot my umbrella.", "tr": "Semsiyemi unuttum."},
+      {"jp": "宿題を忘れないでください。", "en": "Please don't forget your homework.", "tr": "Odevinizi unutmayin lutfen."}
+    ]
+  },
+  {
+    "word": "知る",
+    "examples": [
+      {"jp": "あの人を知っていますか。", "en": "Do you know that person?", "tr": "O kisiyi taniyor musunuz?"},
+      {"jp": "道を知りません。", "en": "I don't know the way.", "tr": "Yolu bilmiyorum."}
+    ]
+  },
+  {
+    "word": "住む",
+    "examples": [
+      {"jp": "大阪に住んでいます。", "en": "I live in Osaka.", "tr": "Osaka'da yasiyorum."},
+      {"jp": "日本に住みたいです。", "en": "I want to live in Japan.", "tr": "Japonya'da yasamak istiyorum."}
+    ]
+  },
+  {
+    "word": "死ぬ",
+    "examples": [
+      {"jp": "魚が死にました。", "en": "The fish died.", "tr": "Balik oldu."},
+      {"jp": "木が死にました。", "en": "The tree died.", "tr": "Agac oldu."}
+    ]
+  },
+  {
+    "word": "着る",
+    "examples": [
+      {"jp": "赤い服を着ています。", "en": "I am wearing red clothes.", "tr": "Kirmizi kiyafet giyiyorum."},
+      {"jp": "コートを着てください。", "en": "Please wear a coat.", "tr": "Palto giyin lutfen."}
+    ]
+  },
+  {
+    "word": "かぶる",
+    "examples": [
+      {"jp": "白い帽子をかぶっています。", "en": "I am wearing a white hat.", "tr": "Beyaz sapka takiyorum."},
+      {"jp": "帽子をかぶってください。", "en": "Please put on a hat.", "tr": "Sapka takin lutfen."}
+    ]
+  },
+  {
+    "word": "開ける",
+    "examples": [
+      {"jp": "ドアを開けてもいいですか。", "en": "May I open the door?", "tr": "Kapiyi acabilir miyim?"},
+      {"jp": "箱を開けました。", "en": "I opened the box.", "tr": "Kutuyu actim."}
+    ]
+  },
+  {
+    "word": "閉める",
+    "examples": [
+      {"jp": "窓を閉めてください。", "en": "Please close the window.", "tr": "Pencereyi kapatin lutfen."},
+      {"jp": "店を閉めました。", "en": "I closed the shop.", "tr": "Dukkani kapattim."}
+    ]
+  },
+  {
+    "word": "つける",
+    "examples": [
+      {"jp": "電気をつけてください。", "en": "Please turn on the light.", "tr": "Isigi yakin lutfen."},
+      {"jp": "エアコンをつけました。", "en": "I turned on the air conditioner.", "tr": "Klimayi actim."}
+    ]
+  },
+  {
+    "word": "消える",
+    "examples": [
+      {"jp": "火が消えました。", "en": "The fire went out.", "tr": "Ates sondu."},
+      {"jp": "猫が消えました。", "en": "The cat disappeared.", "tr": "Kedi kayboldu."}
+    ]
+  },
+  {
+    "word": "売る",
+    "examples": [
+      {"jp": "あの店は本を売っています。", "en": "That shop sells books.", "tr": "O dukkan kitap satiyor."},
+      {"jp": "車を売りました。", "en": "I sold the car.", "tr": "Arabayi sattim."}
+    ]
+  },
+  {
+    "word": "歌う",
+    "examples": [
+      {"jp": "日本語の歌を歌います。", "en": "I sing a Japanese song.", "tr": "Japonca sarki soylerim."},
+      {"jp": "友達と歌いました。", "en": "I sang with my friend.", "tr": "Arkadasimla sarki soyledim."}
+    ]
+  },
+  {
+    "word": "置く",
+    "examples": [
+      {"jp": "本を机の上に置きます。", "en": "I put the book on the desk.", "tr": "Kitabi masanin ustune koyarim."},
+      {"jp": "ここに置いてください。", "en": "Please put it here.", "tr": "Buraya koyun lutfen."}
+    ]
+  },
+  {
+    "word": "送る",
+    "examples": [
+      {"jp": "友達にメールを送りました。", "en": "I sent an email to my friend.", "tr": "Arkadasima e-posta gonderdim."},
+      {"jp": "荷物を送ります。", "en": "I will send the package.", "tr": "Paket gonderirim."}
+    ]
+  },
+  {
+    "word": "押す",
+    "examples": [
+      {"jp": "このボタンを押してください。", "en": "Please press this button.", "tr": "Bu dugmeye basin lutfen."},
+      {"jp": "ドアを押しました。", "en": "I pushed the door.", "tr": "Kapiyi ittim."}
+    ]
+  },
+  {
+    "word": "切る",
+    "examples": [
+      {"jp": "野菜を切ります。", "en": "I cut vegetables.", "tr": "Sebze keserim."},
+      {"jp": "髪を切りました。", "en": "I cut my hair.", "tr": "Sacimi kestim."}
+    ]
+  },
+  {
+    "word": "勉強する",
+    "examples": [
+      {"jp": "図書館で勉強します。", "en": "I study at the library.", "tr": "Kutuphanede ders calisirim."},
+      {"jp": "日本語を勉強しています。", "en": "I am studying Japanese.", "tr": "Japonca calisiyorum."}
+    ]
+  },
+  {
+    "word": "散歩する",
+    "examples": [
+      {"jp": "犬と散歩します。", "en": "I take a walk with my dog.", "tr": "Kopekle yuruyus yaparim."},
+      {"jp": "朝、散歩しました。", "en": "I took a walk in the morning.", "tr": "Sabah yuruyus yaptim."}
+    ]
+  },
+  {
+    "word": "運動する",
+    "examples": [
+      {"jp": "朝、運動します。", "en": "I exercise in the morning.", "tr": "Sabah spor yaparim."},
+      {"jp": "公園で運動しました。", "en": "I exercised in the park.", "tr": "Parkta spor yaptim."}
+    ]
+  },
+  {
+    "word": "掃除する",
+    "examples": [
+      {"jp": "毎日掃除します。", "en": "I clean every day.", "tr": "Her gun temizlik yaparim."},
+      {"jp": "台所を掃除しました。", "en": "I cleaned the kitchen.", "tr": "Mutfagi temizledim."}
+    ]
+  },
+  {
+    "word": "洗濯する",
+    "examples": [
+      {"jp": "日曜日に洗濯します。", "en": "I do laundry on Sunday.", "tr": "Pazar gunu camasir yikarim."},
+      {"jp": "朝、洗濯しました。", "en": "I did laundry in the morning.", "tr": "Sabah camasir yikadim."}
+    ]
+  },
+  {
+    "word": "買い物する",
+    "examples": [
+      {"jp": "デパートで買い物しました。", "en": "I went shopping at a department store.", "tr": "Magazada alisveris yaptim."},
+      {"jp": "母と買い物します。", "en": "I go shopping with my mother.", "tr": "Annemle alisveris yaparim."}
+    ]
+  },
+  {
+    "word": "電話する",
+    "examples": [
+      {"jp": "母に電話しました。", "en": "I called my mother.", "tr": "Anneme telefon ettim."},
+      {"jp": "明日電話します。", "en": "I will call tomorrow.", "tr": "Yarin telefon ederim."}
+    ]
+  },
+  {
+    "word": "結婚する",
+    "examples": [
+      {"jp": "友達が結婚しました。", "en": "My friend got married.", "tr": "Arkadasim evlendi."},
+      {"jp": "日本人と結婚しました。", "en": "I married a Japanese person.", "tr": "Bir Japon ile evlendim."}
+    ]
+  },
+  {
+    "word": "旅行する",
+    "examples": [
+      {"jp": "夏に旅行します。", "en": "I will travel in summer.", "tr": "Yazin seyahat ederim."},
+      {"jp": "友達と旅行しました。", "en": "I traveled with a friend.", "tr": "Arkadasimla seyahat ettim."}
+    ]
+  },
+  {
+    "word": "練習する",
+    "examples": [
+      {"jp": "毎日練習します。", "en": "I practice every day.", "tr": "Her gun pratik yaparim."},
+      {"jp": "漢字を練習しました。", "en": "I practiced kanji.", "tr": "Kanji pratik yaptim."}
+    ]
+  },
+  {
+    "word": "心配する",
+    "examples": [
+      {"jp": "母が心配しています。", "en": "My mother is worried.", "tr": "Annem endiseleniyorum."},
+      {"jp": "試験を心配しています。", "en": "I am worried about the exam.", "tr": "Sinav icin endiseliyim."}
+    ]
+  },
+  {
+    "word": "コピーする",
+    "examples": [
+      {"jp": "書類をコピーしました。", "en": "I copied the documents.", "tr": "Belgeleri kopyaladim."},
+      {"jp": "五枚コピーしてください。", "en": "Please make five copies.", "tr": "Bes tane kopyalayin lutfen."}
+    ]
+  },
+  {
+    "word": "暖かい",
+    "examples": [
+      {"jp": "この部屋は暖かいです。", "en": "This room is warm.", "tr": "Bu oda ilik."},
+      {"jp": "春は暖かいです。", "en": "Spring is warm.", "tr": "Ilkbahar iliktir."}
+    ]
+  },
+  {
+    "word": "涼しい",
+    "examples": [
+      {"jp": "今日は涼しいです。", "en": "Today is cool.", "tr": "Bugun serin."},
+      {"jp": "山は涼しいです。", "en": "The mountains are cool.", "tr": "Dag serindir."}
+    ]
+  },
+  {
+    "word": "熱い",
+    "examples": [
+      {"jp": "コーヒーが熱いです。", "en": "The coffee is hot.", "tr": "Kahve sicak."},
+      {"jp": "熱いので気をつけてください。", "en": "Please be careful, it's hot.", "tr": "Sicak, dikkat edin lutfen."}
+    ]
+  },
+  {
+    "word": "冷たい",
+    "examples": [
+      {"jp": "冷たいビールが好きです。", "en": "I like cold beer.", "tr": "Soguk birayi severim."},
+      {"jp": "この水は冷たいです。", "en": "This water is cold.", "tr": "Bu su soguk."}
+    ]
+  },
+  {
+    "word": "遠い",
+    "examples": [
+      {"jp": "学校は家から遠いです。", "en": "School is far from home.", "tr": "Okul evden uzak."},
+      {"jp": "あの山は遠いです。", "en": "That mountain is far away.", "tr": "O dag uzak."}
+    ]
+  },
+  {
+    "word": "近い",
+    "examples": [
+      {"jp": "駅は家から近いです。", "en": "The station is close to home.", "tr": "Istasyon eve yakin."},
+      {"jp": "コンビニが近いです。", "en": "The convenience store is nearby.", "tr": "Market yakin."}
+    ]
+  },
+  {
+    "word": "速い",
+    "examples": [
+      {"jp": "あの車は速いです。", "en": "That car is fast.", "tr": "O araba hizli."},
+      {"jp": "新幹線は速いです。", "en": "The bullet train is fast.", "tr": "Shinkansen hizlidir."}
+    ]
+  },
+  {
+    "word": "遅い",
+    "examples": [
+      {"jp": "今日は遅いです。", "en": "It's late today.", "tr": "Bugun gec oldu."},
+      {"jp": "このバスは遅いです。", "en": "This bus is slow.", "tr": "Bu otobus yavas."}
+    ]
+  },
+  {
+    "word": "太い",
+    "examples": [
+      {"jp": "この鉛筆は太いです。", "en": "This pencil is thick.", "tr": "Bu kalem kalin."},
+      {"jp": "太い木があります。", "en": "There is a thick tree.", "tr": "Kalin bir agac var."}
+    ]
+  },
+  {
+    "word": "細い",
+    "examples": [
+      {"jp": "細い道を歩きました。", "en": "I walked along a narrow road.", "tr": "Dar yolda yurdum."},
+      {"jp": "このペンは細いです。", "en": "This pen is thin.", "tr": "Bu kalem ince."}
+    ]
+  }
+]
