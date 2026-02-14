@@ -85,6 +85,7 @@
   "list.search_prompt": "Search",
   "list.no_match": "No match found.",
   "list.speak_hint": "Press 'p' to play pronunciation",
+  "list.detail_action": "'p' play audio / 0 back",
 
   "stats.title": "Overall Progress",
   "stats.category": "Category",
@@ -153,6 +154,7 @@
   "search.kanji_results": "Kanji Results",
   "search.grammar_results": "Grammar Results",
   "search.no_results": "No results found.",
+  "search.action_prompt": "Number / 's' new search / 0 back",
 
   "settings.title": "Settings",
   "settings.anki_export": "Export to Anki (TSV)",

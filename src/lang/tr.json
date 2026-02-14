@@ -85,6 +85,7 @@
   "list.search_prompt": "Ara",
   "list.no_match": "Eslesme bulunamadi.",
   "list.speak_hint": "Telaffuz icin 'p' basin",
+  "list.detail_action": "'p' sesli oku / 0 geri",
 
   "stats.title": "Genel Ilerleme",
   "stats.category": "Kategori",
@@ -153,6 +154,7 @@
   "search.kanji_results": "Kanji Sonuclari",
   "search.grammar_results": "Dilbilgisi Sonuclari",
   "search.no_results": "Sonuc bulunamadi.",
+  "search.action_prompt": "Numara / 's' yeni arama / 0 geri",
 
   "settings.title": "Ayarlar",
   "settings.anki_export": "Anki'ye Aktar (TSV)",

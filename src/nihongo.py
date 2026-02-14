@@ -50,7 +50,7 @@ if "--update" in sys.argv:
     sys.exit(0)
 
 import db
-from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, clear, banner
+from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_grammar_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, clear, banner
 from rich.prompt import Prompt, IntPrompt
 import quiz
 
@@ -131,12 +131,15 @@ def _detail_loop(card, show_fn):
     while True:
         clear()
         show_fn(card, show_answer=True)
-        console.print(f"\n[dim]{t('list.speak_hint')}[/dim]")
-        choice = Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        choice = Prompt.ask(f"\n[cyan]{t('list.detail_action')}[/cyan]", default="0")
         if choice.lower() == "p":
             word = card.get("word") or card.get("kanji") or card.get("pattern") or ""
+            example = card.get("example_jp", "")
             tts.speak(word)
-        else:
+            if example:
+                import time; time.sleep(1)
+                tts.speak(example)
+        elif choice == "0" or choice == "":
             break
 
 
@@ -225,16 +228,41 @@ def handle_kanji_list():
 
 
 def handle_search():
-    clear()
-    banner()
-    console.print(f"\n[bold]{t('search.title')}[/bold]\n")
-    query = Prompt.ask(f"[cyan]{t('search.prompt')}[/cyan]")
-    if not query.strip():
-        return
-    results = db.search_all(query.strip())
-    console.print()
-    show_search_results(results)
-    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+    query = ""
+    while True:
+        clear()
+        banner()
+        console.print(f"\n[bold]{t('search.title')}[/bold]\n")
+        if not query:
+            query = Prompt.ask(f"[cyan]{t('search.prompt')}[/cyan]")
+            if not query.strip():
+                return
+        results = db.search_all(query.strip())
+        console.print()
+        all_items = show_search_results(results)
+        if not all_items:
+            choice = Prompt.ask(f"\n[cyan]{t('search.action_prompt')}[/cyan]", default="0")
+        else:
+            choice = Prompt.ask(f"\n[cyan]{t('search.action_prompt')}[/cyan]", default="0")
+        if choice == "0":
+            return
+        if choice.lower() == "s":
+            query = Prompt.ask(f"[cyan]{t('search.prompt')}[/cyan]")
+            if not query.strip():
+                return
+            continue
+        if choice.isdigit() and all_items:
+            idx = int(choice)
+            if 1 <= idx <= len(all_items):
+                item, item_type = all_items[idx - 1]
+                if item_type == "vocab":
+                    _detail_loop(item, show_vocab_card)
+                elif item_type == "kanji":
+                    _detail_loop(item, show_kanji_card)
+                elif item_type == "grammar":
+                    _detail_loop(item, show_grammar_card)
+                continue
+        query = ""
 
 
 def handle_language_change():

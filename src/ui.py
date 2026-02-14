@@ -362,12 +362,12 @@ def show_quiz_menu():
 
 
 def show_search_results(results):
-    """Arama sonuclarini kategorilere gore goster."""
+    """Arama sonuclarini kategorilere gore goster. Returns list of (item, type) tuples for selection."""
     mf = meaning_field()
-    found = False
+    all_items = []
+    idx = 1
 
     if results["vocabulary"]:
-        found = True
         table = Table(title=t("search.vocab_results"), box=box.SIMPLE_HEAVY, border_style="magenta")
         table.add_column("#", style="dim", width=4)
         table.add_column(t("word"), style="bold white")
@@ -376,16 +376,17 @@ def show_search_results(results):
             table.add_column(t("native_meaning"), style="yellow")
         table.add_column(t("english_meaning"), style="cyan")
         table.add_column(t("level"), style="cyan", width=5)
-        for i, v in enumerate(results["vocabulary"], 1):
+        for v in results["vocabulary"]:
             if get_lang() != "en":
-                table.add_row(str(i), v["word"], v["reading"], v[mf] or v["meaning_en"], v["meaning_en"], v["level"])
+                table.add_row(str(idx), v["word"], v["reading"], v[mf] or v["meaning_en"], v["meaning_en"], v["level"])
             else:
-                table.add_row(str(i), v["word"], v["reading"], v["meaning_en"], v["level"])
+                table.add_row(str(idx), v["word"], v["reading"], v["meaning_en"], v["level"])
+            all_items.append((v, "vocab"))
+            idx += 1
         console.print(table)
         console.print()
 
     if results["kanji"]:
-        found = True
         table = Table(title=t("search.kanji_results"), box=box.SIMPLE_HEAVY, border_style="blue")
         table.add_column("#", style="dim", width=4)
         table.add_column(t("kanji"), style="bold white")
@@ -395,16 +396,17 @@ def show_search_results(results):
             table.add_column(t("native_meaning"), style="yellow")
         table.add_column(t("english_meaning"), style="cyan")
         table.add_column(t("level"), style="cyan", width=5)
-        for i, k in enumerate(results["kanji"], 1):
+        for k in results["kanji"]:
             if get_lang() != "en":
-                table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k[mf] or k["meaning_en"], k["meaning_en"], k["level"])
+                table.add_row(str(idx), k["kanji"], k["on_yomi"], k["kun_yomi"], k[mf] or k["meaning_en"], k["meaning_en"], k["level"])
             else:
-                table.add_row(str(i), k["kanji"], k["on_yomi"], k["kun_yomi"], k["meaning_en"], k["level"])
+                table.add_row(str(idx), k["kanji"], k["on_yomi"], k["kun_yomi"], k["meaning_en"], k["level"])
+            all_items.append((k, "kanji"))
+            idx += 1
         console.print(table)
         console.print()
 
     if results["grammar"]:
-        found = True
         table = Table(title=t("search.grammar_results"), box=box.SIMPLE_HEAVY, border_style="yellow")
         table.add_column("#", style="dim", width=4)
         table.add_column(t("pattern"), style="bold white")
@@ -412,16 +414,20 @@ def show_search_results(results):
             table.add_column(t("native_meaning"), style="yellow")
         table.add_column(t("english_meaning"), style="cyan")
         table.add_column(t("level"), style="cyan", width=5)
-        for i, g in enumerate(results["grammar"], 1):
+        for g in results["grammar"]:
             if get_lang() != "en":
-                table.add_row(str(i), g["pattern"], g[mf] or g["meaning_en"], g["meaning_en"], g["level"])
+                table.add_row(str(idx), g["pattern"], g[mf] or g["meaning_en"], g["meaning_en"], g["level"])
             else:
-                table.add_row(str(i), g["pattern"], g["meaning_en"], g["level"])
+                table.add_row(str(idx), g["pattern"], g["meaning_en"], g["level"])
+            all_items.append((g, "grammar"))
+            idx += 1
         console.print(table)
         console.print()
 
-    if not found:
+    if not all_items:
         console.print(f"[yellow]{t('search.no_results')}[/yellow]\n")
+
+    return all_items
 
 
 def show_settings_menu():

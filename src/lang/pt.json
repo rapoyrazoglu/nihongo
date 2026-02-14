@@ -85,6 +85,7 @@
   "list.search_prompt": "Pesquisar",
   "list.no_match": "Nenhuma correspondência encontrada.",
   "list.speak_hint": "Pressione 'p' para pronúncia",
+  "list.detail_action": "'p' reproduzir / 0 voltar",
 
   "stats.title": "Progresso Geral",
   "stats.category": "Categoria",
@@ -153,6 +154,7 @@
   "search.kanji_results": "Resultados de Kanji",
   "search.grammar_results": "Resultados de Gramática",
   "search.no_results": "Nenhum resultado encontrado.",
+  "search.action_prompt": "Número / 's' nova pesquisa / 0 voltar",
 
   "settings.title": "Configurações",
   "settings.anki_export": "Exportar para Anki (TSV)",

@@ -85,6 +85,7 @@
   "list.search_prompt": "搜索",
   "list.no_match": "未找到匹配项。",
   "list.speak_hint": "按 'p' 播放发音",
+  "list.detail_action": "'p' 播放 / 0 返回",
 
   "stats.title": "总体进度",
   "stats.category": "类别",
@@ -153,6 +154,7 @@
   "search.kanji_results": "Kanji 搜索结果",
   "search.grammar_results": "语法搜索结果",
   "search.no_results": "未找到结果。",
+  "search.action_prompt": "编号 / 's' 新搜索 / 0 返回",
 
   "settings.title": "设置",
   "settings.anki_export": "导出到 Anki（TSV）",

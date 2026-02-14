@@ -85,6 +85,7 @@
   "list.search_prompt": "Suchen",
   "list.no_match": "Keine Übereinstimmung gefunden.",
   "list.speak_hint": "'p' drücken für Aussprache",
+  "list.detail_action": "'p' abspielen / 0 zurück",
 
   "stats.title": "Gesamtfortschritt",
   "stats.category": "Kategorie",
@@ -153,6 +154,7 @@
   "search.kanji_results": "Kanji-Ergebnisse",
   "search.grammar_results": "Grammatik-Ergebnisse",
   "search.no_results": "Keine Ergebnisse gefunden.",
+  "search.action_prompt": "Nummer / 's' neue Suche / 0 zurück",
 
   "settings.title": "Einstellungen",
   "settings.anki_export": "Nach Anki exportieren (TSV)",
