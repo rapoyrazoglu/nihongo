@@ -82,13 +82,13 @@ def ensure_db():
         from data.init_db import (migrate_grammar_unique, seed_vocabulary, seed_kanji,
                                   seed_grammar, migrate_extra_examples, update_extra_examples,
                                   migrate_meanings, update_meanings)
+        migrate_meanings()
+        migrate_extra_examples()
         migrate_grammar_unique()
         seed_vocabulary()
         seed_kanji()
         seed_grammar()
-        migrate_extra_examples()
         update_extra_examples()
-        migrate_meanings()
         update_meanings()
 
 
