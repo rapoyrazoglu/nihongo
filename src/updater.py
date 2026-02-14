@@ -47,6 +47,7 @@ def _ssl_context():
 
 REPO = "rapoyrazoglu/nihongo"
 API_URL = f"https://api.github.com/repos/{REPO}/releases/latest"
+API_URL_ALL = f"https://api.github.com/repos/{REPO}/releases"
 
 
 def _get_asset_name():
@@ -66,13 +67,21 @@ def _parse_version(v):
     return tuple(int(x) for x in v.lstrip("v").split("."))
 
 
-def check_update(quiet=False):
+def check_update(quiet=False, include_beta=False):
     """Check latest version from GitHub. Returns (latest_version, download_url) or None."""
     try:
         ctx = _ssl_context()
-        req = urllib.request.Request(API_URL, headers={"User-Agent": "nihongo-updater"})
-        with urllib.request.urlopen(req, timeout=5, context=ctx) as resp:
-            data = json.loads(resp.read().decode())
+        if include_beta:
+            req = urllib.request.Request(API_URL_ALL, headers={"User-Agent": "nihongo-updater"})
+            with urllib.request.urlopen(req, timeout=5, context=ctx) as resp:
+                releases = json.loads(resp.read().decode())
+            if not releases:
+                return None
+            data = releases[0]  # en yeni release (beta dahil)
+        else:
+            req = urllib.request.Request(API_URL, headers={"User-Agent": "nihongo-updater"})
+            with urllib.request.urlopen(req, timeout=5, context=ctx) as resp:
+                data = json.loads(resp.read().decode())
     except Exception as e:
         if not quiet:
             print(t("update.check_failed", error=e))
@@ -82,7 +91,15 @@ def check_update(quiet=False):
     if not latest:
         return None
 
-    if _parse_version(latest) <= _parse_version(__version__):
+    current_clean = __version__.replace("-beta", "").replace("-alpha", "")
+    latest_clean = latest.replace("-beta", "").replace("-alpha", "")
+
+    if _parse_version(latest_clean) < _parse_version(current_clean):
+        if not quiet:
+            print(t("update.already_latest", version=__version__))
+        return None
+
+    if _parse_version(latest_clean) == _parse_version(current_clean) and latest == current_clean:
         if not quiet:
             print(t("update.already_latest", version=__version__))
         return None
@@ -102,9 +119,9 @@ def check_update(quiet=False):
     return None
 
 
-def do_update():
+def do_update(include_beta=False):
     """Download and apply update."""
-    result = check_update(quiet=False)
+    result = check_update(quiet=False, include_beta=include_beta)
     if result is None:
         return False
 

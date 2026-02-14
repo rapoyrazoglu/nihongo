@@ -6,7 +6,8 @@ Kullanim:
     python nihongo.py --init     # Veritabanini sifirdan olustur
     python nihongo.py --stats    # Istatistikleri goster
     python nihongo.py --version  # Surum bilgisi
-    python nihongo.py --update   # En son surume guncelle
+    python nihongo.py --update        # En son surume guncelle
+    python nihongo.py --update-beta   # Beta dahil en son surume guncelle
 """
 
 import sys
@@ -43,6 +44,11 @@ import i18n
 from i18n import t, set_lang
 
 # --- --update flag ---
+if "--update-beta" in sys.argv:
+    i18n.init()
+    from updater import do_update
+    do_update(include_beta=True)
+    sys.exit(0)
 if "--update" in sys.argv:
     i18n.init()
     from updater import do_update
