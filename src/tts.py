@@ -210,10 +210,72 @@ def speak(text):
         pass
 
 
+def _download_audio_pack(progress_callback=None):
+    """GitHub release'den ses paketini indir ve aç. Başarılıysa True."""
+    import zipfile
+    import urllib.request
+    import ssl
+    import json
+
+    REPO = "rapoyrazoglu/nihongo"
+    try:
+        # SSL context (updater ile aynı mantık)
+        from updater import _ssl_context
+        ctx = _ssl_context()
+
+        # En son release'deki tts_cache.zip asset'ini bul
+        for api_url in [
+            f"https://api.github.com/repos/{REPO}/releases/latest",
+            f"https://api.github.com/repos/{REPO}/releases",
+        ]:
+            req = urllib.request.Request(api_url, headers={"User-Agent": "nihongo-tts"})
+            with urllib.request.urlopen(req, timeout=10, context=ctx) as resp:
+                data = json.loads(resp.read().decode())
+
+            releases = data if isinstance(data, list) else [data]
+            for release in releases:
+                for asset in release.get("assets", []):
+                    if asset["name"] == "tts_cache.zip":
+                        url = asset["browser_download_url"]
+                        size = asset.get("size", 0)
+
+                        if progress_callback:
+                            progress_callback(0, 2)
+
+                        # İndir
+                        req = urllib.request.Request(url, headers={"User-Agent": "nihongo-tts"})
+                        with urllib.request.urlopen(req, timeout=120, context=ctx) as resp:
+                            zip_data = resp.read()
+
+                        if progress_callback:
+                            progress_callback(1, 2)
+
+                        # Aç
+                        os.makedirs(_CACHE_DIR, exist_ok=True)
+                        import io
+                        with zipfile.ZipFile(io.BytesIO(zip_data)) as zf:
+                            zf.extractall(_CACHE_DIR)
+
+                        if progress_callback:
+                            progress_callback(2, 2)
+
+                        return True
+    except Exception:
+        pass
+    return False
+
+
 def download_all_audio(progress_callback=None):
-    """Tüm vocab ve kanji okumalarını önceden indir (cache'le).
+    """Ses paketini GitHub release'den indir. Yoksa edge-tts ile üret.
     progress_callback(current, total) ile ilerleme bildirimi yapılır.
     Returns (cached, skipped, failed) counts."""
+
+    # Önce release'den zip dene (çok daha hızlı)
+    if _download_audio_pack(progress_callback):
+        count = len([f for f in os.listdir(_CACHE_DIR) if f.endswith(".mp3")])
+        return count, 0, 0
+
+    # Zip yoksa edge-tts ile tek tek üret
     import db
 
     if not shutil.which("edge-tts"):
@@ -231,7 +293,6 @@ def download_all_audio(progress_callback=None):
     for k in db.get_kanji():
         for field in ("on_yomi", "kun_yomi"):
             val = k[field] or ""
-            # Birden fazla okuma virgülle ayrılmış olabilir
             for part in val.split("、"):
                 part = part.strip()
                 if part:
