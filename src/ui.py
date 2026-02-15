@@ -8,7 +8,7 @@ from rich.columns import Columns
 from rich.prompt import Prompt, IntPrompt
 from rich import box
 import db
-from i18n import t, meaning_field, get_lang
+from i18n import t, meaning_field, get_lang, translate_pos
 
 console = Console()
 
@@ -128,7 +128,7 @@ def show_vocab_card(vocab, show_answer=False):
             except (ValueError, TypeError):
                 pass
         if vocab["part_of_speech"]:
-            card.add_row(t("part_of_speech"), vocab["part_of_speech"])
+            card.add_row(t("part_of_speech"), translate_pos(vocab["part_of_speech"]))
     else:
         card.add_row(t("meaning_label"), f"[dim italic]{t('press_enter')}[/dim italic]")
 
@@ -242,10 +242,11 @@ def show_vocab_list(level, items=None):
 
     for i, v in enumerate(vocabs, 1):
         native = (v[mf] or v["meaning_en"]) if get_lang() != "en" else None
+        pos = translate_pos(v["part_of_speech"])
         if get_lang() != "en":
-            table.add_row(str(i), v["word"], v["reading"], native, v["meaning_en"], v["part_of_speech"])
+            table.add_row(str(i), v["word"], v["reading"], native, v["meaning_en"], pos)
         else:
-            table.add_row(str(i), v["word"], v["reading"], v["meaning_en"], v["part_of_speech"])
+            table.add_row(str(i), v["word"], v["reading"], v["meaning_en"], pos)
 
     console.print(table)
     return vocabs
