@@ -169,6 +169,10 @@
   "settings.backup_done": "Sauvegarde créée : {path}",
   "settings.restore_prompt": "Chemin du fichier de sauvegarde",
   "settings.restore_done": "Base de données restaurée ! Veuillez redémarrer l'application.",
+  "settings.download_audio": "Télécharger tous les audios (TTS hors ligne)",
+  "settings.download_audio_progress": "{current}/{total} en téléchargement...",
+  "settings.download_audio_done": "Terminé ! {cached} téléchargés, {skipped} déjà en cache, {failed} échoués.",
+  "settings.download_audio_fail": "edge-tts n'a pas pu être installé. Connexion Internet requise.",
 
   "db.not_found": "Base de données introuvable, création en cours...",
   "db.ready": "Base de données prête !",

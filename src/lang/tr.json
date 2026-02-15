@@ -169,6 +169,10 @@
   "settings.backup_done": "Yedek olusturuldu: {path}",
   "settings.restore_prompt": "Yedek dosya yolu",
   "settings.restore_done": "Veritabani geri yuklendi! Uygulamayi yeniden baslatin.",
+  "settings.download_audio": "Tum sesleri indir (cevrimdisi TTS)",
+  "settings.download_audio_progress": "{current}/{total} indiriliyor...",
+  "settings.download_audio_done": "Tamamlandi! {cached} indirildi, {skipped} zaten vardi, {failed} basarisiz.",
+  "settings.download_audio_fail": "edge-tts kurulamadi. Internet baglantisi gerekli.",
 
   "db.not_found": "Veritabani bulunamadi, olusturuluyor...",
   "db.ready": "Veritabani hazir!",

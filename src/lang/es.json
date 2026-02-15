@@ -169,6 +169,10 @@
   "settings.backup_done": "Respaldo creado: {path}",
   "settings.restore_prompt": "Ruta del archivo de respaldo",
   "settings.restore_done": "¡Base de datos restaurada! Por favor reinicia la aplicación.",
+  "settings.download_audio": "Descargar todo el audio (TTS sin conexión)",
+  "settings.download_audio_progress": "{current}/{total} descargando...",
+  "settings.download_audio_done": "¡Listo! {cached} descargados, {skipped} ya en caché, {failed} fallidos.",
+  "settings.download_audio_fail": "No se pudo instalar edge-tts. Se requiere conexión a Internet.",
 
   "db.not_found": "Base de datos no encontrada, creando...",
   "db.ready": "¡Base de datos lista!",

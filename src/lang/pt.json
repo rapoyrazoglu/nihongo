@@ -169,6 +169,10 @@
   "settings.backup_done": "Backup criado: {path}",
   "settings.restore_prompt": "Caminho do arquivo de backup",
   "settings.restore_done": "Banco de dados restaurado! Por favor, reinicie o aplicativo.",
+  "settings.download_audio": "Baixar todos os áudios (TTS offline)",
+  "settings.download_audio_progress": "{current}/{total} baixando...",
+  "settings.download_audio_done": "Concluído! {cached} baixados, {skipped} já em cache, {failed} falharam.",
+  "settings.download_audio_fail": "Não foi possível instalar o edge-tts. Conexão com a Internet necessária.",
 
   "db.not_found": "Banco de dados não encontrado, criando...",
   "db.ready": "Banco de dados pronto!",

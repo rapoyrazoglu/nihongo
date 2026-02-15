@@ -169,6 +169,10 @@
   "settings.backup_done": "备份已创建：{path}",
   "settings.restore_prompt": "备份文件路径",
   "settings.restore_done": "数据库已恢复！请重新启动应用程序。",
+  "settings.download_audio": "下载所有音频（离线 TTS）",
+  "settings.download_audio_progress": "{current}/{total} 正在下载...",
+  "settings.download_audio_done": "完成！{cached} 已下载，{skipped} 已缓存，{failed} 失败。",
+  "settings.download_audio_fail": "无法安装 edge-tts。需要互联网连接。",
 
   "db.not_found": "未找到数据库，正在创建……",
   "db.ready": "数据库已就绪！",

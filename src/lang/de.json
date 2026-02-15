@@ -169,6 +169,10 @@
   "settings.backup_done": "Sicherung erstellt: {path}",
   "settings.restore_prompt": "Pfad zur Sicherungsdatei",
   "settings.restore_done": "Datenbank wiederhergestellt! Bitte starten Sie die Anwendung neu.",
+  "settings.download_audio": "Alle Audiodateien herunterladen (Offline-TTS)",
+  "settings.download_audio_progress": "{current}/{total} wird heruntergeladen...",
+  "settings.download_audio_done": "Fertig! {cached} heruntergeladen, {skipped} bereits vorhanden, {failed} fehlgeschlagen.",
+  "settings.download_audio_fail": "edge-tts konnte nicht installiert werden. Internetverbindung erforderlich.",
 
   "db.not_found": "Datenbank nicht gefunden, wird erstellt...",
   "db.ready": "Datenbank bereit!",

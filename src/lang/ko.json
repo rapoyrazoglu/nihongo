@@ -169,6 +169,10 @@
   "settings.backup_done": "백업 생성 완료: {path}",
   "settings.restore_prompt": "백업 파일 경로",
   "settings.restore_done": "데이터베이스 복원 완료! 애플리케이션을 다시 시작해 주세요.",
+  "settings.download_audio": "모든 오디오 다운로드 (오프라인 TTS)",
+  "settings.download_audio_progress": "{current}/{total} 다운로드 중...",
+  "settings.download_audio_done": "완료! {cached}개 다운로드, {skipped}개 이미 캐시됨, {failed}개 실패.",
+  "settings.download_audio_fail": "edge-tts를 설치할 수 없습니다. 인터넷 연결이 필요합니다.",
 
   "db.not_found": "데이터베이스를 찾을 수 없습니다. 생성 중...",
   "db.ready": "데이터베이스 준비 완료!",

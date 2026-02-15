@@ -1,25 +1,34 @@
 """TTS modülü - Japonca sesli okuma.
 
 Öncelik sırası:
-1. edge-tts (Microsoft Neural TTS - en iyi kalite, internet gerekir)
+1. edge-tts (Microsoft Neural TTS) + cache (ilk seferde üret, sonra offline)
 2. macOS: say -v Kyoko
 3. Linux: espeak-ng -v ja
 4. Windows: PowerShell SAPI
 
 edge-tts yoksa ilk kullanımda otomatik kurulur (pipx veya pip ile).
-Hiçbiri yoksa sessizce atlar.
+Üretilen ses dosyaları cache'lenir, sonraki kullanımlarda offline çalışır.
 """
 
+import hashlib
 import os
 import subprocess
 import sys
 import shutil
-import tempfile
 import threading
+
+from paths import _DB_DIR
 
 _engine = None  # "edge-tts" | "say" | "espeak" | "espeak-ng" | "sapi" | None
 _player = None  # "mpv" | "ffplay" | None
 _setup_attempted = False
+_CACHE_DIR = os.path.join(_DB_DIR, "tts_cache")
+
+
+def _cache_path(text):
+    """Metin için cache dosya yolunu döndür."""
+    h = hashlib.md5(text.encode("utf-8")).hexdigest()
+    return os.path.join(_CACHE_DIR, f"{h}.mp3")
 
 
 def _auto_install_edge_tts():
@@ -75,7 +84,8 @@ def _detect_engine():
 
     # edge-tts: neural TTS, en iyi kalite
     if player:
-        if shutil.which("edge-tts"):
+        # Cache varsa edge-tts kurulu olmasa bile çalışabilir
+        if shutil.which("edge-tts") or os.path.isdir(_CACHE_DIR):
             _player = player
             _engine = "edge-tts"
             return _engine
@@ -107,46 +117,57 @@ def _detect_engine():
     return _engine
 
 
-def _play_edge_tts(text):
-    """edge-tts ile ses üret ve çal (ayrı thread'de)."""
+def _play_file(path):
+    """MP3/WAV dosyasını player ile çal."""
     try:
-        fd, tmp_path = tempfile.mkstemp(suffix=".mp3", prefix="nihongo_tts_")
-        os.close(fd)
-
-        # edge-tts ile MP3 oluştur
-        result = subprocess.run(
-            ["edge-tts", "--text", text, "--voice", "ja-JP-NanamiNeural",
-             "--write-media", tmp_path],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            timeout=10,
-        )
-
-        if result.returncode != 0:
-            return
-
-        # Player ile çal
         if _player == "mpv":
             subprocess.run(
-                ["mpv", "--no-video", "--really-quiet", tmp_path],
+                ["mpv", "--no-video", "--really-quiet", path],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
                 timeout=15,
             )
         elif _player == "ffplay":
             subprocess.run(
-                ["ffplay", "-nodisp", "-autoexit", "-loglevel", "quiet", tmp_path],
+                ["ffplay", "-nodisp", "-autoexit", "-loglevel", "quiet", path],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
                 timeout=15,
             )
     except (OSError, FileNotFoundError, subprocess.TimeoutExpired):
         pass
-    finally:
-        try:
-            os.unlink(tmp_path)
-        except OSError:
-            pass
+
+
+def _generate_and_cache(text, cache_file):
+    """edge-tts ile ses üret ve cache'e kaydet. Başarılıysa True."""
+    if not shutil.which("edge-tts"):
+        return False
+    try:
+        os.makedirs(_CACHE_DIR, exist_ok=True)
+        result = subprocess.run(
+            ["edge-tts", "--text", text, "--voice", "ja-JP-NanamiNeural",
+             "--write-media", cache_file],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            timeout=10,
+        )
+        return result.returncode == 0 and os.path.exists(cache_file)
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+
+
+def _play_edge_tts(text):
+    """Cache'den çal veya üretip cache'le, sonra çal."""
+    cache_file = _cache_path(text)
+
+    # Cache'de varsa direkt çal (offline)
+    if os.path.exists(cache_file):
+        _play_file(cache_file)
+        return
+
+    # Yoksa üret, cache'le, çal
+    if _generate_and_cache(text, cache_file):
+        _play_file(cache_file)
 
 
 def speak(text):
@@ -187,3 +208,50 @@ def speak(text):
             )
     except (OSError, FileNotFoundError):
         pass
+
+
+def download_all_audio(progress_callback=None):
+    """Tüm vocab ve kanji okumalarını önceden indir (cache'le).
+    progress_callback(current, total) ile ilerleme bildirimi yapılır.
+    Returns (cached, skipped, failed) counts."""
+    import db
+
+    if not shutil.which("edge-tts"):
+        if not _auto_install_edge_tts():
+            return 0, 0, -1  # -1 = edge-tts kurulamadı
+
+    os.makedirs(_CACHE_DIR, exist_ok=True)
+
+    # Tüm benzersiz okumaları topla
+    texts = set()
+    for v in db.get_vocabulary():
+        reading = v["reading"] or v["word"] or ""
+        if reading.strip():
+            texts.add(reading.strip())
+    for k in db.get_kanji():
+        for field in ("on_yomi", "kun_yomi"):
+            val = k[field] or ""
+            # Birden fazla okuma virgülle ayrılmış olabilir
+            for part in val.split("、"):
+                part = part.strip()
+                if part:
+                    texts.add(part)
+
+    total = len(texts)
+    cached = 0
+    skipped = 0
+    failed = 0
+
+    for i, text in enumerate(sorted(texts)):
+        cache_file = _cache_path(text)
+        if os.path.exists(cache_file):
+            skipped += 1
+        elif _generate_and_cache(text, cache_file):
+            cached += 1
+        else:
+            failed += 1
+
+        if progress_callback:
+            progress_callback(i + 1, total)
+
+    return cached, skipped, failed

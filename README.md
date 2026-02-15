@@ -30,8 +30,8 @@
 |---------|-------------|
 | **SRS Flashcards** | SM-2 spaced repetition for vocabulary, kanji, and grammar |
 | **Quiz Modes** | JP→Meaning, Meaning→JP, kanji reading, kanji meaning (multiple choice & typing) |
-| **JLPT N5–N3** | 1579 vocabulary, 585 kanji, 120 grammar patterns |
-| **Text-to-Speech** | Native Japanese pronunciation via system TTS (espeak-ng / say / SAPI) |
+| **JLPT N5–N3** | 1484 vocabulary, 345 kanji, 258 grammar patterns |
+| **Text-to-Speech** | Neural Japanese pronunciation via edge-tts with offline caching |
 | **8 Languages** | Auto-detects system locale, changeable from settings |
 | **Search** | Full-text search across vocabulary, kanji, and grammar |
 | **Statistics** | Daily progress tracking, accuracy rates, study streaks |
@@ -88,6 +88,7 @@ nihongo --init         # Reset and rebuild database
 nihongo --stats        # Show statistics
 nihongo --version      # Print version
 nihongo --update       # Update to the latest version
+nihongo --update-beta  # Update to the latest beta version
 ```
 
 On first launch the app detects your system language. You can change it anytime from **Settings > Change Language**.
@@ -155,7 +156,7 @@ nihongo/
 | macOS | `~/Library/Application Support/nihongo/` |
 | Windows | `%APPDATA%/nihongo/` |
 
-Files: `nihongo.db` (SQLite), `config.json` (language preference)
+Files: `nihongo.db` (SQLite), `config.json` (language preference), `tts_cache/` (offline audio)
 
 ---
 
@@ -163,7 +164,8 @@ Files: `nihongo.db` (SQLite), `config.json` (language preference)
 
 - **Python 3.10+**
 - **[rich](https://github.com/Textualize/rich)** — Terminal UI rendering
-- **espeak-ng** (Linux, optional) — Text-to-speech
+- **[edge-tts](https://github.com/rany2/edge-tts)** (auto-installed) — Neural Japanese TTS
+- **mpv** or **ffplay** (optional) — Audio playback for TTS
 
 ---
 

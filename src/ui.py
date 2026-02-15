@@ -441,10 +441,11 @@ def show_settings_menu():
     menu.add_row("2", t("settings.backup"))
     menu.add_row("3", t("settings.restore"))
     menu.add_row("4", t("settings.change_language"))
+    menu.add_row("5", t("settings.download_audio"))
     menu.add_row("0", t("back"))
 
     console.print(menu)
-    return Prompt.ask(t("your_choice"), choices=["0", "1", "2", "3", "4"], default="0")
+    return Prompt.ask(t("your_choice"), choices=["0", "1", "2", "3", "4", "5"], default="0")
 
 
 def show_quiz_result(correct, total):

@@ -315,6 +315,22 @@ def handle_settings():
         elif choice == "4":
             # Language change
             handle_language_change()
+        elif choice == "5":
+            # Download all TTS audio
+            import tts
+            from rich.progress import Progress
+            console.print(f"\n[bold]{t('settings.download_audio')}[/bold]\n")
+            with Progress(console=console) as progress:
+                task = progress.add_task(t("settings.download_audio_progress", current=0, total="?"), total=None)
+                def on_progress(current, total):
+                    progress.update(task, total=total, completed=current,
+                                    description=t("settings.download_audio_progress", current=current, total=total))
+                cached, skipped, failed = tts.download_all_audio(progress_callback=on_progress)
+            if failed == -1:
+                console.print(f"\n[red]{t('settings.download_audio_fail')}[/red]")
+            else:
+                console.print(f"\n[green]{t('settings.download_audio_done', cached=cached, skipped=skipped, failed=failed)}[/green]")
+            Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
 def main():

@@ -169,6 +169,10 @@
   "settings.backup_done": "Backup created: {path}",
   "settings.restore_prompt": "Backup file path",
   "settings.restore_done": "Database restored! Please restart the application.",
+  "settings.download_audio": "Download all audio (offline TTS)",
+  "settings.download_audio_progress": "{current}/{total} downloading...",
+  "settings.download_audio_done": "Done! {cached} downloaded, {skipped} already cached, {failed} failed.",
+  "settings.download_audio_fail": "edge-tts could not be installed. Internet connection required.",
 
   "db.not_found": "Database not found, creating...",
   "db.ready": "Database ready!",

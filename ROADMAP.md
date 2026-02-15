@@ -4,6 +4,24 @@
 
 ## Released
 
+### v1.6.0-beta - Content Expansion & Neural TTS
+- [x] N5 vocabulary: 640 → 801 words (JLPT target: 800)
+- [x] N4 vocabulary: 502 → 683 words (JLPT target: 700)
+- [x] N5 grammar: 30 → 80 patterns (JLPT target: 80)
+- [x] N4 grammar: 40 → 50 patterns (JLPT target: 50)
+- [x] N4 kanji: 132 → 200 kanji (JLPT target: 200)
+- [x] Interactive search: select result by number to view card detail
+- [x] Consecutive search: press 's' for new search without leaving
+- [x] Neural TTS via edge-tts (Microsoft Neural, ja-JP-NanamiNeural voice)
+- [x] TTS audio caching for offline playback
+- [x] Bulk audio download (Settings > Download all audio)
+- [x] Auto-install edge-tts via pipx/pip on first TTS use
+- [x] TTS reads hiragana reading (not kanji) for correct pronunciation
+- [x] `--update-beta` flag for updating to pre-release versions
+- [x] Updater compares build timestamps (detects same-version rebuilds)
+- [x] Fix: DB migration order (meanings before seed)
+- [x] Fix: sqlite3.Row → dict conversion in search results
+
 ### v1.5.7 - Interactive Lists
 - [x] Vocab/kanji list: enter number to see detailed card
 - [x] Shows full info (example, compounds, part of speech, etc.)
@@ -46,20 +64,22 @@
 
 ---
 
+## In Progress
+
+### v1.6.0 - Stable Release
+- [ ] N4 vocabulary: 683 → 700 (17 words remaining)
+- [ ] Final testing and bug fixes
+- [ ] Update README with new features
+
+---
+
 ## Planned
 
-### v1.6.0 - Content Expansion
-- [ ] N1/N2 vocabulary expansion (target: 3000+ words)
-- [ ] N1/N2 kanji expansion (target: 1000+ kanji)
-- [ ] Advanced grammar patterns (N2/N1)
-- [ ] Example sentences for all vocabulary
-- [ ] Kanji stroke order data
-
 ### v1.7.0 - Study Enhancements
+- [ ] N3 content expansion (vocabulary, kanji, grammar)
 - [ ] Custom study decks (user-created word lists)
 - [ ] Cloze deletion quiz mode (fill in the blank)
 - [ ] Listening quiz mode (audio -> meaning)
-- [ ] Sentence construction quiz
 - [ ] Wrong answer review session
 - [ ] Daily streak tracking + goals
 
@@ -87,9 +107,11 @@
 ---
 
 ## Backlog
+- [ ] N2/N1 content (vocabulary, kanji, grammar)
 - [ ] Handwriting recognition for kanji input
 - [ ] Pitch accent data and quiz
 - [ ] Conjugation drill mode
 - [ ] Reading comprehension passages
+- [ ] Kanji stroke order data
 - [ ] Integration with external dictionaries (Jisho API)
 - [ ] Plugin system for custom quiz types
