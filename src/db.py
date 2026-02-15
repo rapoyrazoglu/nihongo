@@ -347,7 +347,11 @@ def search_all(query):
     """, (q, q, q)).fetchall()
 
     conn.close()
-    return {"vocabulary": vocab, "kanji": kanji, "grammar": grammar}
+    return {
+        "vocabulary": [dict(r) for r in vocab],
+        "kanji": [dict(r) for r in kanji],
+        "grammar": [dict(r) for r in grammar],
+    }
 
 
 # --- Export / Import ---
