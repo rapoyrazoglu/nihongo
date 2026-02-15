@@ -139,12 +139,9 @@ def _detail_loop(card, show_fn):
         show_fn(card, show_answer=True)
         choice = Prompt.ask(f"\n[cyan]{t('list.detail_action')}[/cyan]", default="0")
         if choice.lower() == "p":
-            word = card.get("word") or card.get("kanji") or card.get("pattern") or ""
-            example = card.get("example_jp", "")
-            tts.speak(word)
-            if example:
-                import time; time.sleep(1)
-                tts.speak(example)
+            # reading (hiragana) varsa onu oku, yoksa word'u oku
+            text = card.get("reading") or card.get("word") or card.get("kanji") or card.get("pattern") or ""
+            tts.speak(text)
         elif choice == "0" or choice == "":
             break
 

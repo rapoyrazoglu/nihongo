@@ -58,7 +58,7 @@ def speak(text):
             )
         elif engine in ("espeak", "espeak-ng"):
             subprocess.Popen(
-                [engine, "-v", "ja", "-s", "130", "-a", "200", text],
+                [engine, "-v", "ja", "-s", "110", "-a", "200", text],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
             )
