@@ -82,8 +82,8 @@ jobs:
           name: nihongo-setup
           path: Output/nihongo-setup-*.exe
 
-  # --- macOS DMG ---
-  macos-dmg:
+  # --- macOS PKG Installer ---
+  macos-pkg:
     needs: [build]
     runs-on: macos-latest
     steps:
@@ -95,55 +95,92 @@ jobs:
           name: nihongo-macos
           path: .
 
-      - name: Create DMG
+      - name: Create PKG installer
         run: |
           VER="${GITHUB_REF_NAME#v}"
           chmod +x nihongo-macos
 
-          # .app bundle oluştur
-          APP="Nihongo Master.app"
-          mkdir -p "${APP}/Contents/MacOS" "${APP}/Contents/Resources"
-          cp nihongo-macos "${APP}/Contents/MacOS/nihongo"
+          # Gatekeeper quarantine kaldır
+          xattr -cr nihongo-macos
 
-          cat > "${APP}/Contents/Info.plist" <<PLIST
-          <?xml version="1.0" encoding="UTF-8"?>
-          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-          <plist version="1.0">
-          <dict>
-            <key>CFBundleName</key><string>Nihongo Master</string>
-            <key>CFBundleExecutable</key><string>nihongo</string>
-            <key>CFBundleIdentifier</key><string>com.rapoyrazoglu.nihongo</string>
-            <key>CFBundleVersion</key><string>${VER}</string>
-            <key>CFBundleShortVersionString</key><string>${VER}</string>
-            <key>CFBundlePackageType</key><string>APPL</string>
-          </dict>
-          </plist>
-          PLIST
-          sed -i '' 's/^          //' "${APP}/Contents/Info.plist"
+          # Paket içeriğini hazırla
+          mkdir -p pkg-root/usr/local/bin
+          cp nihongo-macos pkg-root/usr/local/bin/nihongo
 
-          # DMG oluştur
-          npm install -g create-dmg || true
-          create-dmg "${APP}" --overwrite || true
-
-          # create-dmg başarısız olursa hdiutil ile yap
-          if [ ! -f *.dmg ]; then
-            hdiutil create -volname "Nihongo Master" -srcfolder "${APP}" -ov -format UDZO "nihongo-${VER}.dmg"
+          # Post-install script: edge-tts + mpv kur (Homebrew varsa)
+          mkdir -p scripts
+          cat > scripts/postinstall <<'POSTINST'
+          #!/bin/bash
+          # edge-tts ve mpv kur (Homebrew varsa)
+          if command -v brew &>/dev/null; then
+            brew install mpv 2>/dev/null || true
           fi
+          if command -v pipx &>/dev/null; then
+            pipx install edge-tts 2>/dev/null || true
+          elif command -v pip3 &>/dev/null; then
+            pip3 install --user edge-tts 2>/dev/null || true
+          fi
+          # Quarantine flag kaldır
+          xattr -cr /usr/local/bin/nihongo 2>/dev/null || true
+          chmod +x /usr/local/bin/nihongo
+          exit 0
+          POSTINST
+          chmod +x scripts/postinstall
 
-          # Adını standartlaştır
-          for f in *.dmg; do
-            mv "$f" "nihongo-${VER}.dmg" 2>/dev/null || true
-            break
-          done
+          # Component pkg
+          pkgbuild \
+            --root pkg-root \
+            --identifier com.rapoyrazoglu.nihongo \
+            --version "${VER}" \
+            --scripts scripts \
+            --install-location / \
+            nihongo-component.pkg
 
-      - name: Upload DMG
+          # Distribution XML (installer UI)
+          cat > distribution.xml <<DIST
+          <?xml version="1.0" encoding="utf-8"?>
+          <installer-gui-script minSpecVersion="2">
+            <title>Nihongo Master ${VER}</title>
+            <welcome language="en" mime-type="text/html"><![CDATA[
+              <html><body>
+              <h2>Welcome to Nihongo Master</h2>
+              <p>日本語マスターへようこそ！</p>
+              <p>This will install Nihongo Master ${VER} on your Mac.</p>
+              <p>A JLPT Japanese learning app with SRS flashcards, quizzes, and neural text-to-speech.</p>
+              </body></html>
+            ]]></welcome>
+            <conclusion language="en" mime-type="text/html"><![CDATA[
+              <html><body>
+              <h2>Installation Complete!</h2>
+              <p>Open Terminal and type <code>nihongo</code> to start.</p>
+              <p>お疲れ様でした！</p>
+              </body></html>
+            ]]></conclusion>
+            <options customize="never" require-scripts="false" hostArchitectures="x86_64,arm64"/>
+            <choices-outline>
+              <line choice="default"/>
+            </choices-outline>
+            <choice id="default" title="Nihongo Master">
+              <pkg-ref id="com.rapoyrazoglu.nihongo"/>
+            </choice>
+            <pkg-ref id="com.rapoyrazoglu.nihongo" version="${VER}">nihongo-component.pkg</pkg-ref>
+          </installer-gui-script>
+          DIST
+
+          # Final product pkg
+          productbuild \
+            --distribution distribution.xml \
+            --package-path . \
+            "nihongo-${VER}.pkg"
+
+      - name: Upload PKG
         uses: actions/upload-artifact@v4
         with:
-          name: nihongo-dmg
-          path: "*.dmg"
+          name: nihongo-pkg
+          path: nihongo-*.pkg
 
   release:
-    needs: [build, windows-installer, macos-dmg]
+    needs: [build, windows-installer, macos-pkg]
     if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     steps:
@@ -221,13 +258,13 @@ jobs:
             artifacts/nihongo-windows.exe
             artifacts/*.deb
             artifacts/nihongo-setup-*.exe
-            artifacts/*.dmg
+            artifacts/nihongo-*.pkg
           generate_release_notes: true
           body: |
             ## Installation
 
             **Windows:** Download `nihongo-setup-*.exe` and run the installer
-            **macOS:** Download `.dmg`, open and drag to Applications
+            **macOS:** Download `.pkg` and run the installer
             **Ubuntu/Debian:** `sudo dpkg -i nihongo_*.deb`
             **Arch Linux:** `yay -S nihongo`
             **macOS (Homebrew):** `brew install rapoyrazoglu/nihongo/nihongo`
