@@ -181,6 +181,9 @@ jobs:
             --package-path . \
             "nihongo-${VER}.pkg"
 
+      - name: Remove component pkg
+        run: rm -f nihongo-component.pkg
+
       - name: Upload PKG
         uses: actions/upload-artifact@v4
         with:
