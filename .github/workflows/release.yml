@@ -57,8 +57,93 @@ jobs:
           name: ${{ matrix.artifact }}
           path: ${{ matrix.artifact }}
 
-  release:
+  # --- Windows Installer (Inno Setup) ---
+  windows-installer:
     needs: [build]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Windows binary
+        uses: actions/download-artifact@v4
+        with:
+          name: nihongo-windows.exe
+          path: .
+
+      - name: Build installer
+        shell: pwsh
+        run: |
+          $ver = "${{ github.ref_name }}".TrimStart("v")
+          iscc "/DMyAppVersion=$ver" installer.iss
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: nihongo-setup
+          path: Output/nihongo-setup-*.exe
+
+  # --- macOS DMG ---
+  macos-dmg:
+    needs: [build]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download macOS binary
+        uses: actions/download-artifact@v4
+        with:
+          name: nihongo-macos
+          path: .
+
+      - name: Create DMG
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          chmod +x nihongo-macos
+
+          # .app bundle oluştur
+          APP="Nihongo Master.app"
+          mkdir -p "${APP}/Contents/MacOS" "${APP}/Contents/Resources"
+          cp nihongo-macos "${APP}/Contents/MacOS/nihongo"
+
+          cat > "${APP}/Contents/Info.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>CFBundleName</key><string>Nihongo Master</string>
+            <key>CFBundleExecutable</key><string>nihongo</string>
+            <key>CFBundleIdentifier</key><string>com.rapoyrazoglu.nihongo</string>
+            <key>CFBundleVersion</key><string>${VER}</string>
+            <key>CFBundleShortVersionString</key><string>${VER}</string>
+            <key>CFBundlePackageType</key><string>APPL</string>
+          </dict>
+          </plist>
+          PLIST
+          sed -i '' 's/^          //' "${APP}/Contents/Info.plist"
+
+          # DMG oluştur
+          npm install -g create-dmg || true
+          create-dmg "${APP}" --overwrite || true
+
+          # create-dmg başarısız olursa hdiutil ile yap
+          if [ ! -f *.dmg ]; then
+            hdiutil create -volname "Nihongo Master" -srcfolder "${APP}" -ov -format UDZO "nihongo-${VER}.dmg"
+          fi
+
+          # Adını standartlaştır
+          for f in *.dmg; do
+            mv "$f" "nihongo-${VER}.dmg" 2>/dev/null || true
+            break
+          done
+
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: nihongo-dmg
+          path: "*.dmg"
+
+  release:
+    needs: [build, windows-installer, macos-dmg]
     if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     steps:
@@ -135,14 +220,17 @@ jobs:
             artifacts/nihongo-macos
             artifacts/nihongo-windows.exe
             artifacts/*.deb
+            artifacts/nihongo-setup-*.exe
+            artifacts/*.dmg
           generate_release_notes: true
           body: |
-            ## Kurulum
+            ## Installation
 
+            **Windows:** Download `nihongo-setup-*.exe` and run the installer
+            **macOS:** Download `.dmg`, open and drag to Applications
             **Ubuntu/Debian:** `sudo dpkg -i nihongo_*.deb`
-            **macOS:** `brew install rapoyrazoglu/nihongo/nihongo`
-            **Arch:** `yay -S nihongo`
-            **Windows:** [nihongo-windows.exe](https://github.com/rapoyrazoglu/nihongo/releases/latest) indir ve calistir
+            **Arch Linux:** `yay -S nihongo`
+            **macOS (Homebrew):** `brew install rapoyrazoglu/nihongo/nihongo`
 
       # --- Commit formula + PKGBUILD ---
       - name: Push updated package files
@@ -168,7 +256,6 @@ jobs:
           cp PKGBUILD aur-repo/PKGBUILD
 
           cd aur-repo
-          # .SRCINFO üret
           cat > .SRCINFO <<SRCEOF
           pkgbase = nihongo
           	pkgdesc = JLPT Japanese learning app - SRS, quiz, kanji, grammar
