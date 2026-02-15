@@ -198,6 +198,13 @@
   "update.success": "Update successful! v{version}",
   "update.restart": "Restart the app: nihongo",
   "update.failed": "Update failed: {error}",
+  "update.need_sudo": "Admin privileges required. You may be asked for your password.",
+
+  "delete.confirm": "The following will be deleted:",
+  "delete.ask": "Are you sure?",
+  "delete.cancelled": "Uninstall cancelled.",
+  "delete.removed": "Removed",
+  "delete.done": "Nihongo has been uninstalled. Goodbye! さようなら！",
 
   "setup.welcome": "Welcome to Nihongo Master!",
   "setup.step_language": "Step 1: Select Language",

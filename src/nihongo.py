@@ -8,6 +8,7 @@ Kullanim:
     python nihongo.py --version  # Surum bilgisi
     python nihongo.py --update        # En son surume guncelle
     python nihongo.py --update-beta   # Beta dahil en son surume guncelle
+    python nihongo.py --delete        # Uygulamayi kaldir
 """
 
 import sys
@@ -53,6 +54,11 @@ if "--update" in sys.argv:
     i18n.init()
     from updater import do_update
     do_update()
+    sys.exit(0)
+if "--delete" in sys.argv:
+    i18n.init()
+    from updater import do_uninstall
+    do_uninstall()
     sys.exit(0)
 
 import db

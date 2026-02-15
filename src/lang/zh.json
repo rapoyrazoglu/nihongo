@@ -198,6 +198,13 @@
   "update.success": "更新成功！v{version}",
   "update.restart": "请重新启动应用程序：nihongo",
   "update.failed": "更新失败：{error}",
+  "update.need_sudo": "需要管理员权限。可能会要求您输入密码。",
+
+  "delete.confirm": "以下内容将被删除：",
+  "delete.ask": "确定吗？",
+  "delete.cancelled": "卸载已取消。",
+  "delete.removed": "已删除",
+  "delete.done": "Nihongo 已卸载。再见！さようなら！",
 
   "setup.welcome": "欢迎使用 Nihongo Master！",
   "setup.step_language": "第1步：选择语言",

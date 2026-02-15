@@ -198,6 +198,13 @@
   "update.success": "업데이트 성공! v{version}",
   "update.restart": "앱을 다시 시작하세요: nihongo",
   "update.failed": "업데이트 실패: {error}",
+  "update.need_sudo": "관리자 권한이 필요합니다. 비밀번호를 입력해야 할 수 있습니다.",
+
+  "delete.confirm": "다음 항목이 삭제됩니다:",
+  "delete.ask": "확실합니까?",
+  "delete.cancelled": "제거가 취소되었습니다.",
+  "delete.removed": "삭제됨",
+  "delete.done": "Nihongo가 제거되었습니다. 안녕히 가세요! さようなら！",
 
   "setup.welcome": "Nihongo Master에 오신 것을 환영합니다!",
   "setup.step_language": "1단계: 언어 선택",

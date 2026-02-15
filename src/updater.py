@@ -205,8 +205,13 @@ def do_update(include_beta=False):
         print(t("update.download_failed", error=e))
         return False
 
-    # Write to temp file in same directory as binary (avoids cross-device link error)
-    fd, tmp_path = tempfile.mkstemp(suffix=".tmp", prefix="nihongo_update_", dir=os.path.dirname(exe_path))
+    # Dizine yazma izni var mı kontrol et
+    exe_dir = os.path.dirname(exe_path)
+    needs_sudo = not os.access(exe_dir, os.W_OK)
+
+    # Temp dosyayı yazılabilir bir dizine oluştur
+    tmp_dir = exe_dir if not needs_sudo else tempfile.gettempdir()
+    fd, tmp_path = tempfile.mkstemp(suffix=".tmp", prefix="nihongo_update_", dir=tmp_dir)
     try:
         os.write(fd, data)
         os.close(fd)
@@ -214,23 +219,35 @@ def do_update(include_beta=False):
         # Make executable
         os.chmod(tmp_path, os.stat(tmp_path).st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
 
-        # Replace old binary with new
-        backup_path = exe_path + ".bak"
-        try:
-            os.replace(exe_path, backup_path)
-        except PermissionError:
-            print(t("update.permission_error"))
+        if needs_sudo:
+            # sudo ile kopyala (macOS /usr/local/bin gibi dizinler için)
+            import subprocess
+            print(t("update.need_sudo"))
+            ret = subprocess.call(["sudo", "cp", tmp_path, exe_path])
+            if ret != 0:
+                print(t("update.permission_error"))
+                os.unlink(tmp_path)
+                return False
+            subprocess.call(["sudo", "chmod", "+x", exe_path])
             os.unlink(tmp_path)
-            return False
+        else:
+            # Normal güncelleme
+            backup_path = exe_path + ".bak"
+            try:
+                os.replace(exe_path, backup_path)
+            except PermissionError:
+                print(t("update.permission_error"))
+                os.unlink(tmp_path)
+                return False
 
-        os.replace(tmp_path, exe_path)
-        os.chmod(exe_path, os.stat(exe_path).st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
+            os.replace(tmp_path, exe_path)
+            os.chmod(exe_path, os.stat(exe_path).st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
 
-        # Remove backup
-        try:
-            os.unlink(backup_path)
-        except OSError:
-            pass
+            # Remove backup
+            try:
+                os.unlink(backup_path)
+            except OSError:
+                pass
 
         # Güncelleme zamanını kaydet
         if asset_time:
@@ -242,11 +259,60 @@ def do_update(include_beta=False):
 
     except Exception as e:
         print(t("update.failed", error=e))
-        # Restore backup if exists
-        if os.path.exists(backup_path) and not os.path.exists(exe_path):
-            os.replace(backup_path, exe_path)
         try:
             os.unlink(tmp_path)
         except OSError:
             pass
         return False
+
+
+def do_uninstall():
+    """Nihongo'yu sistemden kaldır."""
+    exe_path = sys.executable if getattr(sys, "frozen", False) else None
+
+    s = platform.system().lower()
+    data_dir = os.path.join(
+        os.path.expanduser("~"),
+        "Library/Application Support/nihongo" if s == "darwin"
+        else ".local/share/nihongo"
+    )
+    if s == "windows":
+        data_dir = os.path.join(os.environ.get("APPDATA", os.path.expanduser("~")), "nihongo")
+
+    print(f"\n{t('delete.confirm')}")
+    if exe_path:
+        print(f"  - {exe_path}")
+    print(f"  - {data_dir}")
+    print()
+
+    try:
+        answer = input(f"{t('delete.ask')} [y/N]: ").strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        print()
+        return False
+
+    if answer not in ("y", "yes", "e", "evet"):
+        print(t("delete.cancelled"))
+        return False
+
+    import shutil
+
+    # Veri dizinini sil
+    if os.path.exists(data_dir):
+        shutil.rmtree(data_dir, ignore_errors=True)
+        print(f"  {t('delete.removed')}: {data_dir}")
+
+    # Binary'yi sil
+    if exe_path and os.path.exists(exe_path):
+        exe_dir = os.path.dirname(exe_path)
+        needs_sudo = not os.access(exe_dir, os.W_OK)
+        if needs_sudo:
+            import subprocess
+            print(t("update.need_sudo"))
+            subprocess.call(["sudo", "rm", "-f", exe_path])
+        else:
+            os.unlink(exe_path)
+        print(f"  {t('delete.removed')}: {exe_path}")
+
+    print(f"\n{t('delete.done')}")
+    return True

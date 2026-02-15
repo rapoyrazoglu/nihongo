@@ -198,6 +198,13 @@
   "update.success": "Guncelleme basarili! v{version}",
   "update.restart": "Uygulamayi yeniden baslatin: nihongo",
   "update.failed": "Guncelleme basarisiz: {error}",
+  "update.need_sudo": "Yönetici izni gerekiyor. Şifreniz sorulabilir.",
+
+  "delete.confirm": "Aşağıdakiler silinecek:",
+  "delete.ask": "Emin misiniz?",
+  "delete.cancelled": "Kaldırma iptal edildi.",
+  "delete.removed": "Silindi",
+  "delete.done": "Nihongo kaldırıldı. Hoşça kalın! さようなら！",
 
   "setup.welcome": "Nihongo Master'a hosgeldiniz!",
   "setup.step_language": "Adim 1: Dil Secimi",
