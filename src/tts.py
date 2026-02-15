@@ -5,6 +5,8 @@
 2. macOS: say -v Kyoko
 3. Linux: espeak-ng -v ja
 4. Windows: PowerShell SAPI
+
+edge-tts yoksa ilk kullanımda otomatik kurulur (pipx veya pip ile).
 Hiçbiri yoksa sessizce atlar.
 """
 
@@ -16,7 +18,46 @@ import tempfile
 import threading
 
 _engine = None  # "edge-tts" | "say" | "espeak" | "espeak-ng" | "sapi" | None
-_player = None  # "mpv" | "ffplay" | "paplay" | "aplay" | None
+_player = None  # "mpv" | "ffplay" | None
+_setup_attempted = False
+
+
+def _auto_install_edge_tts():
+    """edge-tts yoksa otomatik kur. True dönerse kurulum başarılı."""
+    global _setup_attempted
+    if _setup_attempted:
+        return False
+    _setup_attempted = True
+
+    # pipx ile dene
+    if shutil.which("pipx"):
+        try:
+            result = subprocess.run(
+                ["pipx", "install", "edge-tts"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=60,
+            )
+            if result.returncode == 0 and shutil.which("edge-tts"):
+                return True
+        except (OSError, subprocess.TimeoutExpired):
+            pass
+
+    # pip --user ile dene
+    try:
+        result = subprocess.run(
+            [sys.executable, "-m", "pip", "install", "--user", "--break-system-packages",
+             "edge-tts"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            timeout=60,
+        )
+        if result.returncode == 0:
+            return True
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+
+    return False
 
 
 def _detect_engine():
@@ -25,14 +66,25 @@ def _detect_engine():
     if _engine is not None:
         return _engine
 
-    # edge-tts: neural TTS, en iyi kalite (tüm platformlarda çalışır)
-    if shutil.which("edge-tts"):
-        # MP3 çalabilecek bir player lazım (mpv veya ffplay)
-        for p in ("mpv", "ffplay"):
-            if shutil.which(p):
-                _player = p
-                _engine = "edge-tts"
-                return _engine
+    # MP3 çalabilecek player var mı?
+    player = None
+    for p in ("mpv", "ffplay"):
+        if shutil.which(p):
+            player = p
+            break
+
+    # edge-tts: neural TTS, en iyi kalite
+    if player:
+        if shutil.which("edge-tts"):
+            _player = player
+            _engine = "edge-tts"
+            return _engine
+
+        # edge-tts yok, otomatik kurmayı dene
+        if _auto_install_edge_tts() and shutil.which("edge-tts"):
+            _player = player
+            _engine = "edge-tts"
+            return _engine
 
     if sys.platform == "darwin":
         if shutil.which("say"):
@@ -108,7 +160,6 @@ def speak(text):
 
     try:
         if engine == "edge-tts":
-            # Ayrı thread'de çalıştır (blocking ama UI'yi kilitlemez)
             t = threading.Thread(target=_play_edge_tts, args=(text,), daemon=True)
             t.start()
         elif engine == "say":
