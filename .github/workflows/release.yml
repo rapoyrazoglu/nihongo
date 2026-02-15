@@ -153,6 +153,45 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update packages for ${GITHUB_REF_NAME}"
           git push origin HEAD:main || true
 
+      # --- AUR'a push ---
+      - name: Publish to AUR
+        if: ${{ !contains(github.ref_name, 'beta') && !contains(github.ref_name, 'alpha') }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AUR_SSH_KEY }}" > ~/.ssh/aur_key
+          chmod 600 ~/.ssh/aur_key
+          echo -e "Host aur.archlinux.org\n  IdentityFile ~/.ssh/aur_key\n  User aur\n  StrictHostKeyChecking no" > ~/.ssh/config
+
+          VER="${GITHUB_REF_NAME#v}"
+
+          git clone ssh://aur@aur.archlinux.org/nihongo.git aur-repo
+          cp PKGBUILD aur-repo/PKGBUILD
+
+          cd aur-repo
+          # .SRCINFO üret
+          cat > .SRCINFO <<SRCEOF
+          pkgbase = nihongo
+          	pkgdesc = JLPT Japanese learning app - SRS, quiz, kanji, grammar
+          	pkgver = ${VER}
+          	pkgrel = 1
+          	url = https://github.com/rapoyrazoglu/nihongo
+          	arch = x86_64
+          	license = MIT
+          	depends = espeak-ng
+          	optdepends = fcitx5-mozc: Japanese input
+          	source = nihongo-${VER}::https://github.com/rapoyrazoglu/nihongo/releases/download/v${VER}/nihongo-linux
+          	sha256sums = ${{ steps.sha.outputs.linux }}
+
+          pkgname = nihongo
+          SRCEOF
+          sed -i 's/^          //' .SRCINFO
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add PKGBUILD .SRCINFO
+          git diff --cached --quiet || git commit -m "Update to ${VER}"
+          git push
+
       # --- APT repo -> gh-pages ---
       - name: Deploy APT repo to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
