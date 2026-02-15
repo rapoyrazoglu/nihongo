@@ -91,6 +91,11 @@ def check_update(quiet=False, include_beta=False):
     if not latest:
         return None
 
+    if latest == __version__:
+        if not quiet:
+            print(t("update.already_latest", version=__version__))
+        return None
+
     current_clean = __version__.replace("-beta", "").replace("-alpha", "")
     latest_clean = latest.replace("-beta", "").replace("-alpha", "")
 
