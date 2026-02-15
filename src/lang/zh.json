@@ -197,5 +197,16 @@
   "update.permission_error": "权限错误。请尝试：sudo nihongo --update",
   "update.success": "更新成功！v{version}",
   "update.restart": "请重新启动应用程序：nihongo",
-  "update.failed": "更新失败：{error}"
+  "update.failed": "更新失败：{error}",
+
+  "setup.welcome": "欢迎使用 Nihongo Master！",
+  "setup.step_language": "第1步：选择语言",
+  "setup.step_db": "第2步：正在设置数据库...",
+  "setup.step_audio": "第3步：音频包",
+  "setup.audio_ask": "下载音频包以供离线发音使用？（约14 MB）",
+  "setup.audio_hint": "（您也可以稍后在设置中下载）",
+  "setup.audio_yes": "是，立即下载",
+  "setup.audio_no": "否，暂时跳过",
+  "setup.done": "设置完成！祝您日语学习愉快。",
+  "setup.db_ready": "数据库已就绪。"
 }

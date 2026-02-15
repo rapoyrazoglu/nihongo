@@ -274,6 +274,55 @@ def handle_language_change():
     set_lang(lang_code)
 
 
+def first_run_setup():
+    """İlk açılışta setup wizard: dil, veritabanı, ses paketi."""
+    from rich.progress import Progress
+
+    # --- Hoşgeldin ---
+    clear()
+    banner()
+    console.print(f"\n[bold green]{'Welcome to Nihongo Master!'}[/bold green]")
+    console.print(f"[dim]{'日本語マスターへようこそ！'}[/dim]\n")
+
+    # --- Adım 1: Dil ---
+    console.print(f"[bold cyan]{'Step 1: Select Language / Dil Secimi'}[/bold cyan]\n")
+    lang_code = show_language_select()
+    set_lang(lang_code)
+
+    # --- Adım 2: Veritabanı ---
+    clear()
+    banner()
+    console.print(f"\n[bold cyan]{t('setup.step_db')}[/bold cyan]\n")
+    ensure_db()
+    console.print(f"[green]{t('setup.db_ready')}[/green]\n")
+
+    # --- Adım 3: Ses Paketi ---
+    console.print(f"[bold cyan]{t('setup.step_audio')}[/bold cyan]\n")
+    console.print(f"  {t('setup.audio_ask')}")
+    console.print(f"  [dim]{t('setup.audio_hint')}[/dim]\n")
+    console.print(f"  [cyan]1[/cyan] {t('setup.audio_yes')}")
+    console.print(f"  [cyan]2[/cyan] {t('setup.audio_no')}")
+    audio_choice = Prompt.ask(t("your_choice"), choices=["1", "2"], default="1")
+
+    if audio_choice == "1":
+        import tts
+        console.print()
+        with Progress(console=console) as progress:
+            task = progress.add_task(t("settings.download_audio_progress", current=0, total="?"), total=None)
+            def on_progress(current, total):
+                progress.update(task, total=total, completed=current,
+                                description=t("settings.download_audio_progress", current=current, total=total))
+            cached, skipped, failed = tts.download_all_audio(progress_callback=on_progress)
+        if failed == -1:
+            console.print(f"\n[yellow]{t('settings.download_audio_fail')}[/yellow]")
+        else:
+            console.print(f"\n[green]{t('settings.download_audio_done', cached=cached, skipped=skipped, failed=failed)}[/green]")
+
+    # --- Bitti ---
+    console.print(f"\n[bold green]{t('setup.done')}[/bold green]\n")
+    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+
 def handle_settings():
     export_dir = os.path.join(os.path.expanduser("~"), "nihongo_export")
     while True:
@@ -349,13 +398,12 @@ def main():
         show_stats()
         return
 
-    # Dil ayarini yukle; ilk acilissa dil sec
+    # Dil ayarini yukle; ilk acilissa setup wizard
     has_lang = i18n.init()
     if not has_lang:
-        lang_code = show_language_select()
-        set_lang(lang_code)
-
-    ensure_db()
+        first_run_setup()
+    else:
+        ensure_db()
 
     try:
         while True:

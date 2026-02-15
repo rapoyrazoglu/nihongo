@@ -197,5 +197,16 @@
   "update.permission_error": "Berechtigungsfehler. Versuchen Sie: sudo nihongo --update",
   "update.success": "Update erfolgreich! v{version}",
   "update.restart": "Starten Sie die App neu: nihongo",
-  "update.failed": "Update fehlgeschlagen: {error}"
+  "update.failed": "Update fehlgeschlagen: {error}",
+
+  "setup.welcome": "Willkommen bei Nihongo Master!",
+  "setup.step_language": "Schritt 1: Sprache auswählen",
+  "setup.step_db": "Schritt 2: Datenbank wird eingerichtet...",
+  "setup.step_audio": "Schritt 3: Audiopaket",
+  "setup.audio_ask": "Audiopaket für Offline-Aussprache herunterladen? (~14 MB)",
+  "setup.audio_hint": "(Sie können es auch später in den Einstellungen herunterladen)",
+  "setup.audio_yes": "Ja, jetzt herunterladen",
+  "setup.audio_no": "Nein, vorerst überspringen",
+  "setup.done": "Einrichtung abgeschlossen! Viel Spaß beim Japanischlernen.",
+  "setup.db_ready": "Datenbank bereit."
 }

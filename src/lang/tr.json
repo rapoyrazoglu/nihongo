@@ -197,5 +197,16 @@
   "update.permission_error": "Izin hatasi. Deneyin: sudo nihongo --update",
   "update.success": "Guncelleme basarili! v{version}",
   "update.restart": "Uygulamayi yeniden baslatin: nihongo",
-  "update.failed": "Guncelleme basarisiz: {error}"
+  "update.failed": "Guncelleme basarisiz: {error}",
+
+  "setup.welcome": "Nihongo Master'a hosgeldiniz!",
+  "setup.step_language": "Adim 1: Dil Secimi",
+  "setup.step_db": "Adim 2: Veritabani hazirlaniyor...",
+  "setup.step_audio": "Adim 3: Ses Paketi",
+  "setup.audio_ask": "Cevrimdisi telaffuz icin ses paketini indirmek ister misiniz? (~14 MB)",
+  "setup.audio_hint": "(Daha sonra Ayarlar'dan da indirebilirsiniz)",
+  "setup.audio_yes": "Evet, simdi indir",
+  "setup.audio_no": "Hayir, simdilik atla",
+  "setup.done": "Kurulum tamamlandi! Iyi calismalar.",
+  "setup.db_ready": "Veritabani hazir."
 }

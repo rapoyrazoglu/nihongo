@@ -197,5 +197,16 @@
   "update.permission_error": "Erreur de permission. Essayez : sudo nihongo --update",
   "update.success": "Mise à jour réussie ! v{version}",
   "update.restart": "Redémarrez l'application : nihongo",
-  "update.failed": "Mise à jour échouée : {error}"
+  "update.failed": "Mise à jour échouée : {error}",
+
+  "setup.welcome": "Bienvenue dans Nihongo Master !",
+  "setup.step_language": "Étape 1 : Sélectionner la langue",
+  "setup.step_db": "Étape 2 : Configuration de la base de données...",
+  "setup.step_audio": "Étape 3 : Pack audio",
+  "setup.audio_ask": "Télécharger le pack audio pour la prononciation hors ligne ? (~14 Mo)",
+  "setup.audio_hint": "(Vous pouvez aussi le télécharger plus tard depuis les Paramètres)",
+  "setup.audio_yes": "Oui, télécharger maintenant",
+  "setup.audio_no": "Non, passer pour l'instant",
+  "setup.done": "Configuration terminée ! Bon apprentissage du japonais.",
+  "setup.db_ready": "Base de données prête."
 }

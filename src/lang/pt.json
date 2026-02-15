@@ -197,5 +197,16 @@
   "update.permission_error": "Erro de permissão. Tente: sudo nihongo --update",
   "update.success": "Atualização bem-sucedida! v{version}",
   "update.restart": "Reinicie o aplicativo: nihongo",
-  "update.failed": "Falha na atualização: {error}"
+  "update.failed": "Falha na atualização: {error}",
+
+  "setup.welcome": "Bem-vindo ao Nihongo Master!",
+  "setup.step_language": "Passo 1: Selecionar idioma",
+  "setup.step_db": "Passo 2: Configurando banco de dados...",
+  "setup.step_audio": "Passo 3: Pacote de áudio",
+  "setup.audio_ask": "Baixar pacote de áudio para pronúncia offline? (~14 MB)",
+  "setup.audio_hint": "(Você também pode baixar depois em Configurações)",
+  "setup.audio_yes": "Sim, baixar agora",
+  "setup.audio_no": "Não, pular por enquanto",
+  "setup.done": "Configuração concluída! Bons estudos de japonês.",
+  "setup.db_ready": "Banco de dados pronto."
 }

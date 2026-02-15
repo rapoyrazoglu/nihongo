@@ -197,5 +197,16 @@
   "update.permission_error": "권한 오류. 시도: sudo nihongo --update",
   "update.success": "업데이트 성공! v{version}",
   "update.restart": "앱을 다시 시작하세요: nihongo",
-  "update.failed": "업데이트 실패: {error}"
+  "update.failed": "업데이트 실패: {error}",
+
+  "setup.welcome": "Nihongo Master에 오신 것을 환영합니다!",
+  "setup.step_language": "1단계: 언어 선택",
+  "setup.step_db": "2단계: 데이터베이스 설정 중...",
+  "setup.step_audio": "3단계: 오디오 팩",
+  "setup.audio_ask": "오프라인 발음을 위한 오디오 팩을 다운로드하시겠습니까? (~14 MB)",
+  "setup.audio_hint": "(나중에 설정에서도 다운로드할 수 있습니다)",
+  "setup.audio_yes": "예, 지금 다운로드",
+  "setup.audio_no": "아니요, 나중에",
+  "setup.done": "설정 완료! 일본어 학습을 즐기세요.",
+  "setup.db_ready": "데이터베이스 준비 완료."
 }
