@@ -107,7 +107,7 @@ jobs:
           mkdir -p pkg-root/usr/local/bin
           cp nihongo-macos pkg-root/usr/local/bin/nihongo
 
-          # Post-install script: edge-tts + mpv kur (Homebrew varsa)
+          # Post-install script: edge-tts + mpv kur, audio pack indir
           mkdir -p scripts
           cat > scripts/postinstall <<'POSTINST'
           #!/bin/bash
@@ -123,6 +123,14 @@ jobs:
           # Quarantine flag kaldır
           xattr -cr /usr/local/bin/nihongo 2>/dev/null || true
           chmod +x /usr/local/bin/nihongo
+          # Audio pack indir (kullanıcının home dizinine)
+          REAL_HOME=$(eval echo ~"$USER")
+          CACHE_DIR="${REAL_HOME}/Library/Application Support/nihongo/tts_cache"
+          mkdir -p "${CACHE_DIR}"
+          ZIP="/tmp/nihongo_tts_cache.zip"
+          curl -fsSL -o "${ZIP}" "https://github.com/rapoyrazoglu/nihongo/releases/latest/download/tts_cache.zip" 2>/dev/null && \
+            unzip -o -q "${ZIP}" -d "${CACHE_DIR}" 2>/dev/null && \
+            rm -f "${ZIP}" || true
           exit 0
           POSTINST
           chmod +x scripts/postinstall

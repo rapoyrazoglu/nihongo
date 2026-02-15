@@ -111,7 +111,10 @@ def show_vocab_card(vocab, show_answer=False):
             if get_lang() == "tr" and vocab["example_tr"]:
                 card.add_row("", f"[dim]{vocab['example_tr']}[/dim]")
         # Extra examples
-        extras = vocab.get("extra_examples") or ""
+        try:
+            extras = vocab["extra_examples"] or ""
+        except (KeyError, IndexError):
+            extras = ""
         if extras:
             import json as _json
             try:

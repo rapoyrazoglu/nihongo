@@ -131,6 +131,15 @@ def handle_quiz():
         quiz.quiz_kanji_meaning(level, count)
 
 
+def _row_get(row, key, default=""):
+    """Safely get a value from sqlite3.Row or dict."""
+    try:
+        val = row[key]
+        return val if val is not None else default
+    except (KeyError, IndexError):
+        return default
+
+
 def _detail_loop(card, show_fn):
     """Show card detail with TTS support. 'p' to play, Enter to go back."""
     import tts
@@ -140,7 +149,7 @@ def _detail_loop(card, show_fn):
         choice = Prompt.ask(f"\n[cyan]{t('list.detail_action')}[/cyan]", default="0")
         if choice.lower() == "p":
             # reading (hiragana) varsa onu oku, yoksa word'u oku
-            text = card.get("reading") or card.get("word") or card.get("kanji") or card.get("pattern") or ""
+            text = _row_get(card, "reading") or _row_get(card, "word") or _row_get(card, "kanji") or _row_get(card, "pattern") or ""
             tts.speak(text)
         elif choice == "0" or choice == "":
             break
@@ -154,10 +163,10 @@ def _list_search(items, query):
     results = []
     for item in items:
         fields = [
-            item.get("word", ""), item.get("reading", ""),
-            item.get("kanji", ""), item.get("on_yomi", ""), item.get("kun_yomi", ""),
-            item.get("meaning_tr", ""), item.get("meaning_en", ""),
-            item.get("pattern", ""),
+            _row_get(item, "word"), _row_get(item, "reading"),
+            _row_get(item, "kanji"), _row_get(item, "on_yomi"), _row_get(item, "kun_yomi"),
+            _row_get(item, "meaning_tr"), _row_get(item, "meaning_en"),
+            _row_get(item, "pattern"),
         ]
         if any(q in (f or "").lower() for f in fields):
             results.append(item)

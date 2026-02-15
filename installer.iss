@@ -35,11 +35,13 @@ Name: "{autodesktop}\Nihongo Master"; Filename: "{app}\nihongo.exe"; Tasks: desk
 [Tasks]
 Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional options:"
 Name: "addtopath"; Description: "Add to PATH (use nihongo from terminal)"; GroupDescription: "Additional options:"; Flags: checkedonce
+Name: "audiopack"; Description: "Download offline audio pack (~14 MB)"; GroupDescription: "Audio:"; Flags: checkedonce
 
 [Registry]
 Root: HKCU; Subkey: "Environment"; ValueType: expandsz; ValueName: "Path"; ValueData: "{olddata};{app}"; Tasks: addtopath; Check: NeedsAddPath('{app}')
 
 [Run]
+Filename: "powershell.exe"; Parameters: "-NoProfile -ExecutionPolicy Bypass -Command ""$d = Join-Path $env:APPDATA 'nihongo\tts_cache'; New-Item -ItemType Directory -Force -Path $d | Out-Null; $zip = Join-Path $env:TEMP 'tts_cache.zip'; try {{ Invoke-WebRequest -Uri 'https://github.com/rapoyrazoglu/nihongo/releases/latest/download/tts_cache.zip' -OutFile $zip -UseBasicParsing; Expand-Archive -Path $zip -DestinationPath $d -Force; Remove-Item $zip -Force }} catch {{ }}"""; Description: "Downloading audio pack..."; StatusMsg: "Downloading offline audio pack..."; Tasks: audiopack; Flags: runhidden
 Filename: "{app}\nihongo.exe"; Description: "Launch Nihongo Master"; Flags: nowait postinstall skipifsilent shellexec
 
 [Code]
