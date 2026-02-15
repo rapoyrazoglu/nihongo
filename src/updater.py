@@ -45,9 +45,53 @@ def _ssl_context():
     ctx = ssl._create_unverified_context()
     return ctx
 
+from paths import _DB_DIR
+
 REPO = "rapoyrazoglu/nihongo"
 API_URL = f"https://api.github.com/repos/{REPO}/releases/latest"
 API_URL_ALL = f"https://api.github.com/repos/{REPO}/releases"
+_UPDATE_INFO = os.path.join(_DB_DIR, ".update_info.json")
+
+
+def _get_last_update_time():
+    """Kaydedilmiş son güncelleme zamanını oku."""
+    try:
+        with open(_UPDATE_INFO, "r") as f:
+            info = json.load(f)
+        return info.get("asset_updated", "")
+    except (OSError, json.JSONDecodeError):
+        return ""
+
+
+def _save_update_time(asset_updated):
+    """Güncelleme zamanını kaydet."""
+    try:
+        with open(_UPDATE_INFO, "w") as f:
+            json.dump({"asset_updated": asset_updated}, f)
+    except OSError:
+        pass
+
+
+def _is_remote_newer(asset_updated):
+    """Remote asset bizim kayıtlı zamandan yeni mi?"""
+    if not asset_updated:
+        return False
+    last = _get_last_update_time()
+    if not last:
+        # İlk kez: binary dosya zamanını kullan
+        exe = sys.executable if getattr(sys, "frozen", False) else None
+        if exe and os.path.exists(exe):
+            from datetime import datetime, timezone
+            mtime = os.path.getmtime(exe)
+            local_dt = datetime.fromtimestamp(mtime, tz=timezone.utc)
+            # GitHub API zamanı: "2026-02-15T08:52:00Z"
+            try:
+                remote_dt = datetime.fromisoformat(asset_updated.replace("Z", "+00:00"))
+            except (ValueError, AttributeError):
+                return False
+            return remote_dt > local_dt
+        return False
+    return asset_updated > last
 
 
 def _get_asset_name():
@@ -91,20 +135,10 @@ def check_update(quiet=False, include_beta=False):
     if not latest:
         return None
 
-    if latest == __version__:
-        if not quiet:
-            print(t("update.already_latest", version=__version__))
-        return None
-
     current_clean = __version__.replace("-beta", "").replace("-alpha", "")
     latest_clean = latest.replace("-beta", "").replace("-alpha", "")
 
     if _parse_version(latest_clean) < _parse_version(current_clean):
-        if not quiet:
-            print(t("update.already_latest", version=__version__))
-        return None
-
-    if _parse_version(latest_clean) == _parse_version(current_clean) and latest == current_clean:
         if not quiet:
             print(t("update.already_latest", version=__version__))
         return None
@@ -115,13 +149,34 @@ def check_update(quiet=False, include_beta=False):
             print(t("update.no_binary", platform=platform.system()))
         return None
 
+    # Asset'i bul
+    download_url = None
+    asset_updated = None
     for asset in data.get("assets", []):
         if asset["name"] == asset_name:
-            return latest, asset["browser_download_url"]
+            download_url = asset["browser_download_url"]
+            asset_updated = asset.get("updated_at", "")
+            break
 
-    if not quiet:
-        print(t("update.asset_not_found", asset=asset_name))
-    return None
+    if not download_url:
+        if not quiet:
+            print(t("update.asset_not_found", asset=asset_name))
+        return None
+
+    # Aynı versiyon ise build zamanını karşılaştır
+    if latest == __version__:
+        if not _is_remote_newer(asset_updated):
+            if not quiet:
+                print(t("update.already_latest", version=__version__))
+            return None
+
+    if _parse_version(latest_clean) == _parse_version(current_clean) and latest == current_clean:
+        if not _is_remote_newer(asset_updated):
+            if not quiet:
+                print(t("update.already_latest", version=__version__))
+            return None
+
+    return latest, download_url, asset_updated
 
 
 def do_update(include_beta=False):
@@ -130,7 +185,7 @@ def do_update(include_beta=False):
     if result is None:
         return False
 
-    latest, url = result
+    latest, url, asset_time = result
     print(f"\n{t('update.found', current=__version__, latest=latest)}")
 
     # Find binary location
@@ -176,6 +231,10 @@ def do_update(include_beta=False):
             os.unlink(backup_path)
         except OSError:
             pass
+
+        # Güncelleme zamanını kaydet
+        if asset_time:
+            _save_update_time(asset_time)
 
         print(f"\n{t('update.success', version=latest)}")
         print(t("update.restart"))
