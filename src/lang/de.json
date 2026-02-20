@@ -145,6 +145,11 @@
   "quiz.japanese_label": "Japanisch",
   "quiz.review_wrong": "{count} falsche Antwort(en). Wiederholen? (e/h)",
   "quiz.wrong_review_title": "── Wiederholung falscher Antworten ──",
+  "quiz.sentence_order": "Satzanordnung",
+  "quiz.sentence_order_title": "Satzanordnung Quiz - {level}",
+  "quiz.sentence_order_hint": "Ordnen Sie die Satzteile in der richtigen Reihenfolge",
+  "quiz.sentence_order_input": "Geben Sie die Nummern der Reihe nach ein (z.B. 3 1 2)",
+  "quiz.correct_sentence": "Richtig",
 
   "study.vocab_title": "Wortschatz lernen - {level}",
   "study.kanji_title": "Kanji lernen - {level}",

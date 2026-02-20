@@ -145,6 +145,11 @@
   "quiz.japanese_label": "Japanese",
   "quiz.review_wrong": "{count} wrong answer(s). Review them? (e/h)",
   "quiz.wrong_review_title": "── Wrong Answer Review ──",
+  "quiz.sentence_order": "Sentence ordering",
+  "quiz.sentence_order_title": "Sentence Ordering Quiz - {level}",
+  "quiz.sentence_order_hint": "Put the sentence parts in the correct order",
+  "quiz.sentence_order_input": "Enter numbers in order (e.g. 3 1 2)",
+  "quiz.correct_sentence": "Correct",
 
   "study.vocab_title": "Vocabulary Study - {level}",
   "study.kanji_title": "Kanji Study - {level}",

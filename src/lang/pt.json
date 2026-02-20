@@ -145,6 +145,11 @@
   "quiz.japanese_label": "Japonês",
   "quiz.review_wrong": "{count} resposta(s) errada(s). Revisar? (e/h)",
   "quiz.wrong_review_title": "── Revisão de erros ──",
+  "quiz.sentence_order": "Ordenar frases",
+  "quiz.sentence_order_title": "Quiz de ordenar frases - {level}",
+  "quiz.sentence_order_hint": "Coloque as partes da frase na ordem correta",
+  "quiz.sentence_order_input": "Digite os números em ordem (ex: 3 1 2)",
+  "quiz.correct_sentence": "Correto",
 
   "study.vocab_title": "Estudo de Vocabulário - {level}",
   "study.kanji_title": "Estudo de Kanji - {level}",

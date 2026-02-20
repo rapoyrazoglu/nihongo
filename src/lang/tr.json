@@ -145,6 +145,11 @@
   "quiz.japanese_label": "Japonca",
   "quiz.review_wrong": "{count} yanlış cevap. Tekrar gözden geçir? (e/h)",
   "quiz.wrong_review_title": "── Yanlış Cevap Tekrarı ──",
+  "quiz.sentence_order": "Cümle sıralama",
+  "quiz.sentence_order_title": "Cümle Sıralama Quiz - {level}",
+  "quiz.sentence_order_hint": "Cümle parçalarını doğru sıraya dizin",
+  "quiz.sentence_order_input": "Numaraları sırayla girin (örn: 3 1 2)",
+  "quiz.correct_sentence": "Doğrusu",
 
   "study.vocab_title": "Kelime Calisma - {level}",
   "study.kanji_title": "Kanji Calisma - {level}",

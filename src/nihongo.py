@@ -135,6 +135,8 @@ def handle_quiz():
         quiz.quiz_kanji_reading(level, count)
     elif mode == "4":
         quiz.quiz_kanji_meaning(level, count)
+    elif mode == "5":
+        quiz.quiz_sentence_order(level, count)
 
 
 def _row_get(row, key, default=""):

@@ -95,13 +95,46 @@ def _meaning_rows(card, card_table, card_type="vocab"):
         card_table.add_row(t("meaning_label"), f"[bold yellow]{card['meaning_en']}[/bold yellow]")
 
 
+def _should_show_hiragana(word, level):
+    """N5 kelimelerinde kanji bilinmiyorsa True don."""
+    if level != "N5":
+        return False
+    import unicodedata
+    # Kelimede kanji var mi?
+    has_kanji = any(unicodedata.category(ch) == "Lo" and ord(ch) >= 0x4E00 for ch in word)
+    if not has_kanji:
+        return False
+    # Kullanicinin ogrendigi kanjileri kontrol et
+    learned = set()
+    conn = db.get_connection()
+    rows = conn.execute("""
+        SELECT k.kanji FROM kanji k
+        JOIN reviews r ON r.card_type = 'kanji' AND r.card_id = k.id
+        WHERE r.repetitions >= 1
+    """).fetchall()
+    conn.close()
+    learned = {r["kanji"] for r in rows}
+    # Kelimedeki her kanji ogrenilmis mi?
+    for ch in word:
+        if ord(ch) >= 0x4E00 and unicodedata.category(ch) == "Lo":
+            if ch not in learned:
+                return True  # Bilinmeyen kanji var
+    return False
+
+
 def show_vocab_card(vocab, show_answer=False):
     """Kelime kartini goster."""
     card = Table(show_header=False, box=box.ROUNDED, border_style="magenta", width=60)
     card.add_column("key", style="bold cyan", width=15)
     card.add_column("value", style="white")
 
-    card.add_row(t("word"), f"[bold bright_white]{vocab['word']}[/bold bright_white]")
+    word_display = vocab["word"]
+    level = vocab["level"] if "level" in vocab.keys() else ""
+    if _should_show_hiragana(vocab["word"], level):
+        word_display = f"{vocab['reading']} [dim]({vocab['word']})[/dim]"
+        card.add_row(t("word"), f"[bold bright_white]{word_display}[/bold bright_white]")
+    else:
+        card.add_row(t("word"), f"[bold bright_white]{vocab['word']}[/bold bright_white]")
     card.add_row(t("reading"), f"[bold green]{vocab['reading']}[/bold green]")
 
     if show_answer:
@@ -416,10 +449,11 @@ def show_quiz_menu():
     menu.add_row("2", t("quiz.native_to_jp"))
     menu.add_row("3", t("quiz.kanji_reading"))
     menu.add_row("4", t("quiz.kanji_meaning"))
+    menu.add_row("5", t("quiz.sentence_order"))
     menu.add_row("0", t("back"))
 
     console.print(menu)
-    return Prompt.ask(t("your_choice"), choices=["0","1","2","3","4"], default="1")
+    return Prompt.ask(t("your_choice"), choices=["0","1","2","3","4","5"], default="1")
 
 
 def show_search_results(results):

@@ -145,6 +145,11 @@
   "quiz.japanese_label": "日语",
   "quiz.review_wrong": "{count}个错误答案。复习吗？(e/h)",
   "quiz.wrong_review_title": "── 错题复习 ──",
+  "quiz.sentence_order": "句子排序",
+  "quiz.sentence_order_title": "句子排序测验 - {level}",
+  "quiz.sentence_order_hint": "将句子片段按正确顺序排列",
+  "quiz.sentence_order_input": "按顺序输入编号（例：3 1 2）",
+  "quiz.correct_sentence": "正确答案",
 
   "study.vocab_title": "词汇学习 - {level}",
   "study.kanji_title": "Kanji 学习 - {level}",

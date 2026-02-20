@@ -145,6 +145,11 @@
   "quiz.japanese_label": "일본어",
   "quiz.review_wrong": "틀린 답 {count}개. 복습할까요? (e/h)",
   "quiz.wrong_review_title": "── 오답 복습 ──",
+  "quiz.sentence_order": "문장 정렬",
+  "quiz.sentence_order_title": "문장 정렬 퀴즈 - {level}",
+  "quiz.sentence_order_hint": "문장 조각을 올바른 순서로 배열하세요",
+  "quiz.sentence_order_input": "번호를 순서대로 입력하세요 (예: 3 1 2)",
+  "quiz.correct_sentence": "정답",
 
   "study.vocab_title": "어휘 학습 - {level}",
   "study.kanji_title": "Kanji 학습 - {level}",

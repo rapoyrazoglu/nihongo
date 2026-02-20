@@ -480,3 +480,123 @@ def quiz_kanji_meaning(level, count=10):
     ui.show_quiz_result(correct_count, total)
     _review_wrong_cards(wrong_cards, "kanji", ui.show_kanji_card)
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+
+def _split_japanese(sentence):
+    """Japonca cumleyi parcalara ayir. Particle-aware bolme."""
+    # Noktalama temizle
+    clean = sentence.replace("。", "").replace("、", "").replace("！", "").replace("？", "").strip()
+    if not clean:
+        return []
+
+    # Particle'lardan sonra bol
+    import re
+    # Particle: は が を に で へ の と も か ね よ
+    # Ayrica: です ます した ない から まで より けど
+    parts = re.split(r'(は|が|を|に|で|へ|の|と|も|か|ね|よ|から|まで|より|けど)', clean)
+
+    # Particle'lari onceki chunk'a yap (は → 私は)
+    chunks = []
+    i = 0
+    while i < len(parts):
+        if not parts[i]:
+            i += 1
+            continue
+        chunk = parts[i]
+        # Sonraki parca particle mi?
+        if i + 1 < len(parts) and len(parts[i+1]) <= 3:
+            chunk += parts[i+1]
+            i += 2
+        else:
+            i += 1
+        if chunk.strip():
+            chunks.append(chunk)
+
+    # 2'den az parca varsa kullanilamaz
+    return chunks if len(chunks) >= 2 else []
+
+
+def quiz_sentence_order(level, count=10):
+    """Cumle siralama quiz'i. Karisik parcalari dogru siraya diz."""
+    mf = meaning_field()
+    ui.clear()
+    ui.console.print(f"\n[bold]{t('quiz.sentence_order_title', level=level)}[/bold]")
+    ui.console.print(f"[dim]{t('quiz.sentence_order_hint')}[/dim]\n")
+
+    all_vocab = db.get_vocabulary(level=level)
+    # Ornek cumlesi olan ve parcalanabilen kelimeleri filtrele
+    with_examples = []
+    for v in all_vocab:
+        if v["example_jp"] and len(v["example_jp"]) >= 6:
+            chunks = _split_japanese(v["example_jp"])
+            if len(chunks) >= 3:
+                with_examples.append(v)
+
+    if len(with_examples) < 3:
+        ui.console.print(f"[yellow]{t('quiz.not_enough_vocab')}[/yellow]")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        return
+
+    questions = random.sample(with_examples, min(count, len(with_examples)))
+    correct_count = 0
+    total = len(questions)
+    wrong_cards = []
+
+    for i, q in enumerate(questions):
+        sentence = q["example_jp"]
+        chunks = _split_japanese(sentence)
+
+        # Karistir (dogru sirayla ayni olmayana kadar)
+        shuffled = chunks[:]
+        attempts = 0
+        while shuffled == chunks and attempts < 10:
+            random.shuffle(shuffled)
+            attempts += 1
+
+        ui.clear()
+        ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} ──[/dim]")
+
+        # Anlami goster
+        meaning = q[mf] or q["meaning_en"]
+        ui.console.print(f"\n  {t('meaning_label')}: [bold yellow]{meaning}[/bold yellow]")
+        ui.console.print(f"  {t('word')}: [bold white]{q['word']}[/bold white] ({q['reading']})\n")
+
+        # Karisik parcalari numarayla goster
+        for j, chunk in enumerate(shuffled):
+            ui.console.print(f"  [cyan]{j+1}[/cyan]) {chunk}")
+
+        ui.console.print(f"\n  [dim]{t('quiz.sentence_order_input')}[/dim]")
+        answer = Prompt.ask(t("quiz.your_answer")).strip()
+        if answer == "q":
+            ui.show_quiz_result(correct_count, i)
+            _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
+            return
+
+        # Kullanicinin sirasini kontrol et
+        try:
+            user_order = [int(x) - 1 for x in answer.replace(",", " ").replace("-", " ").split()]
+            user_sentence = "".join(shuffled[idx] for idx in user_order)
+        except (ValueError, IndexError):
+            user_sentence = ""
+
+        # Dogru cumle (noktalama haric)
+        correct_sentence = "".join(chunks)
+
+        if user_sentence == correct_sentence:
+            ui.console.print(f"\n[bold green]  ✓ {t('quiz.correct')}[/bold green]")
+            ui.console.print(f"  {sentence}")
+            correct_count += 1
+            srs.review_card("vocabulary", q["id"], 4)
+        else:
+            ui.console.print(f"\n[bold red]  ✗ {t('quiz.wrong')}[/bold red]")
+            ui.console.print(f"  {t('quiz.correct_sentence')}: {sentence}")
+            srs.review_card("vocabulary", q["id"], 1)
+            wrong_cards.append(q)
+
+        tts.speak(sentence)
+        db.update_stats(reviewed=1, correct=1 if user_sentence == correct_sentence else 0)
+        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+
+    ui.show_quiz_result(correct_count, total)
+    _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
+    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
