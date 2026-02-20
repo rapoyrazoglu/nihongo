@@ -150,6 +150,11 @@
   "quiz.sentence_order_hint": "将句子片段按正确顺序排列",
   "quiz.sentence_order_input": "按顺序输入编号（例：3 1 2）",
   "quiz.correct_sentence": "正确答案",
+  "quiz.conjugation": "动词变形",
+  "quiz.conjugation_title": "动词变形练习 - {level}",
+  "quiz.conjugation_hint": "将动词变为指定形式。输入 'q' 退出。",
+  "quiz.target_form": "目标形式",
+  "quiz.conjugation_label": "变形",
 
   "study.vocab_title": "词汇学习 - {level}",
   "study.kanji_title": "Kanji 学习 - {level}",
@@ -227,5 +232,12 @@
   "setup.audio_yes": "是，立即下载",
   "setup.audio_no": "否，暂时跳过",
   "setup.done": "设置完成！祝您日语学习愉快。",
-  "setup.db_ready": "数据库已就绪。"
+  "setup.db_ready": "数据库已就绪。",
+
+  "streak": "连续：",
+  "streak.days": "天",
+
+  "settings.card_limit": "每日新卡片限制",
+  "settings.card_limit_prompt": "每次学习新卡片数（当前：{current}）",
+  "settings.card_limit_set": "卡片限制已设为 {limit}。"
 }

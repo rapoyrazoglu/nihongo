@@ -150,6 +150,11 @@
   "quiz.sentence_order_hint": "Coloque as partes da frase na ordem correta",
   "quiz.sentence_order_input": "Digite os números em ordem (ex: 3 1 2)",
   "quiz.correct_sentence": "Correto",
+  "quiz.conjugation": "Conjugação de verbos",
+  "quiz.conjugation_title": "Exercício de conjugação - {level}",
+  "quiz.conjugation_hint": "Conjugue o verbo na forma indicada. 'q' para sair.",
+  "quiz.target_form": "Forma alvo",
+  "quiz.conjugation_label": "Conjugação",
 
   "study.vocab_title": "Estudo de Vocabulário - {level}",
   "study.kanji_title": "Estudo de Kanji - {level}",
@@ -227,5 +232,12 @@
   "setup.audio_yes": "Sim, baixar agora",
   "setup.audio_no": "Não, pular por enquanto",
   "setup.done": "Configuração concluída! Bons estudos de japonês.",
-  "setup.db_ready": "Banco de dados pronto."
+  "setup.db_ready": "Banco de dados pronto.",
+
+  "streak": "Sequência:",
+  "streak.days": "dias",
+
+  "settings.card_limit": "Limite diário de novos cartões",
+  "settings.card_limit_prompt": "Novos cartões por sessão (atual: {current})",
+  "settings.card_limit_set": "Limite de cartões definido para {limit}."
 }

@@ -9,7 +9,8 @@ import db
 import srs
 import ui
 import tts
-from i18n import t, meaning_field
+import conjugation
+from i18n import t, meaning_field, get_card_limit
 
 
 def _quality_from_choice(choice, vocab_mode=False):
@@ -65,7 +66,7 @@ def study_vocabulary(level):
         if vocab and vocab["level"] == level:
             due_cards.append(vocab)
 
-    new_cards = db.get_new_cards("vocabulary", level, limit=10)
+    new_cards = db.get_new_cards("vocabulary", level, limit=get_card_limit())
 
     cards = due_cards + list(new_cards)
     if not cards:
@@ -144,7 +145,7 @@ def study_kanji(level):
         if kanji and kanji["level"] == level:
             due_cards.append(kanji)
 
-    new_cards = db.get_new_cards("kanji", level, limit=10)
+    new_cards = db.get_new_cards("kanji", level, limit=get_card_limit())
 
     cards = due_cards + list(new_cards)
     if not cards:
@@ -212,7 +213,7 @@ def study_grammar(level):
         if gram and gram["level"] == level:
             due_cards.append(gram)
 
-    new_cards = db.get_new_cards("grammar", level, limit=5)
+    new_cards = db.get_new_cards("grammar", level, limit=get_card_limit())
 
     cards = due_cards + list(new_cards)
     if not cards:
@@ -599,4 +600,53 @@ def quiz_sentence_order(level, count=10):
 
     ui.show_quiz_result(correct_count, total)
     _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
+    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+
+def quiz_conjugation(level, count=10):
+    """Fiil çekim drilli. Fiil + hedef form verilir, kullanıcı çekimler."""
+    ui.clear()
+    ui.console.print(f"\n[bold]{t('quiz.conjugation_title', level=level)}[/bold]")
+    ui.console.print(f"[dim]{t('quiz.conjugation_hint')}[/dim]\n")
+
+    all_vocab = db.get_vocabulary(level=level)
+    # Sadece fiilleri filtrele
+    verbs = [v for v in all_vocab if v["part_of_speech"] in ("fiil", "動詞")]
+    if len(verbs) < 3:
+        ui.console.print(f"[yellow]{t('quiz.not_enough_vocab')}[/yellow]")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        return
+
+    questions = random.sample(verbs, min(count, len(verbs)))
+    correct_count = 0
+    total = len(questions)
+
+    for i, q in enumerate(questions):
+        form = random.choice(conjugation.FORMS)
+        form_jp, form_en = conjugation.FORM_NAMES[form]
+        correct_answer = conjugation.conjugate(q["word"], q["reading"], form)
+
+        ui.clear()
+        ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} ──[/dim]")
+        ui.console.print(f"\n  {t('word')}: [bold white on red] {q['word']} [/bold white on red]  [green]({q['reading']})[/green]")
+        ui.console.print(f"  {t('quiz.target_form')}: [bold yellow]{form_jp}[/bold yellow] ({form_en})\n")
+
+        answer = Prompt.ask(t("quiz.conjugation_label")).strip()
+        if answer == "q":
+            ui.show_quiz_result(correct_count, i)
+            return
+
+        if answer == correct_answer:
+            ui.console.print(f"[bold green]  ✓ {t('quiz.correct')}[/bold green]")
+            correct_count += 1
+            srs.review_card("vocabulary", q["id"], 4)
+        else:
+            ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red]  {correct_answer}")
+            srs.review_card("vocabulary", q["id"], 1)
+
+        tts.speak(correct_answer)
+        db.update_stats(reviewed=1, correct=1 if answer == correct_answer else 0)
+        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+
+    ui.show_quiz_result(correct_count, total)
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")

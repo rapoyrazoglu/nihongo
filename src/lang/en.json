@@ -150,6 +150,11 @@
   "quiz.sentence_order_hint": "Put the sentence parts in the correct order",
   "quiz.sentence_order_input": "Enter numbers in order (e.g. 3 1 2)",
   "quiz.correct_sentence": "Correct",
+  "quiz.conjugation": "Verb conjugation",
+  "quiz.conjugation_title": "Verb Conjugation Drill - {level}",
+  "quiz.conjugation_hint": "Conjugate the verb into the given form. 'q' to quit.",
+  "quiz.target_form": "Target form",
+  "quiz.conjugation_label": "Conjugation",
 
   "study.vocab_title": "Vocabulary Study - {level}",
   "study.kanji_title": "Kanji Study - {level}",
@@ -227,5 +232,12 @@
   "setup.audio_yes": "Yes, download now",
   "setup.audio_no": "No, skip for now",
   "setup.done": "Setup complete! Enjoy studying Japanese.",
-  "setup.db_ready": "Database ready."
+  "setup.db_ready": "Database ready.",
+
+  "streak": "Streak:",
+  "streak.days": "days",
+
+  "settings.card_limit": "Daily new card limit",
+  "settings.card_limit_prompt": "New cards per session (current: {current})",
+  "settings.card_limit_set": "Card limit set to {limit}."
 }

@@ -150,6 +150,11 @@
   "quiz.sentence_order_hint": "문장 조각을 올바른 순서로 배열하세요",
   "quiz.sentence_order_input": "번호를 순서대로 입력하세요 (예: 3 1 2)",
   "quiz.correct_sentence": "정답",
+  "quiz.conjugation": "동사 활용",
+  "quiz.conjugation_title": "동사 활용 연습 - {level}",
+  "quiz.conjugation_hint": "주어진 형태로 동사를 활용하세요. 'q'로 종료.",
+  "quiz.target_form": "목표 형태",
+  "quiz.conjugation_label": "활용형",
 
   "study.vocab_title": "어휘 학습 - {level}",
   "study.kanji_title": "Kanji 학습 - {level}",
@@ -227,5 +232,12 @@
   "setup.audio_yes": "예, 지금 다운로드",
   "setup.audio_no": "아니요, 나중에",
   "setup.done": "설정 완료! 일본어 학습을 즐기세요.",
-  "setup.db_ready": "데이터베이스 준비 완료."
+  "setup.db_ready": "데이터베이스 준비 완료.",
+
+  "streak": "연속:",
+  "streak.days": "일",
+
+  "settings.card_limit": "일일 새 카드 제한",
+  "settings.card_limit_prompt": "세션당 새 카드 수 (현재: {current})",
+  "settings.card_limit_set": "카드 제한이 {limit}(으)로 설정되었습니다."
 }

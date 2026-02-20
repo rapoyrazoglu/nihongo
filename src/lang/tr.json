@@ -150,6 +150,11 @@
   "quiz.sentence_order_hint": "Cümle parçalarını doğru sıraya dizin",
   "quiz.sentence_order_input": "Numaraları sırayla girin (örn: 3 1 2)",
   "quiz.correct_sentence": "Doğrusu",
+  "quiz.conjugation": "Fiil çekim drili",
+  "quiz.conjugation_title": "Fiil Çekim Drili - {level}",
+  "quiz.conjugation_hint": "Fiili verilen forma çekin. 'q' ile çıkış.",
+  "quiz.target_form": "Hedef form",
+  "quiz.conjugation_label": "Çekim",
 
   "study.vocab_title": "Kelime Calisma - {level}",
   "study.kanji_title": "Kanji Calisma - {level}",
@@ -227,5 +232,12 @@
   "setup.audio_yes": "Evet, simdi indir",
   "setup.audio_no": "Hayir, simdilik atla",
   "setup.done": "Kurulum tamamlandi! Iyi calismalar.",
-  "setup.db_ready": "Veritabani hazir."
+  "setup.db_ready": "Veritabani hazir.",
+
+  "streak": "Seri:",
+  "streak.days": "gün",
+
+  "settings.card_limit": "Günlük yeni kart limiti",
+  "settings.card_limit_prompt": "Seans başına yeni kart (şu an: {current})",
+  "settings.card_limit_set": "Kart limiti {limit} olarak ayarlandı."
 }

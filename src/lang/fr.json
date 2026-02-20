@@ -150,6 +150,11 @@
   "quiz.sentence_order_hint": "Mettez les parties de la phrase dans le bon ordre",
   "quiz.sentence_order_input": "Entrez les numéros dans l'ordre (ex: 3 1 2)",
   "quiz.correct_sentence": "Correct",
+  "quiz.conjugation": "Conjugaison de verbes",
+  "quiz.conjugation_title": "Exercice de conjugaison - {level}",
+  "quiz.conjugation_hint": "Conjuguez le verbe à la forme indiquée. 'q' pour quitter.",
+  "quiz.target_form": "Forme cible",
+  "quiz.conjugation_label": "Conjugaison",
 
   "study.vocab_title": "Étude du vocabulaire - {level}",
   "study.kanji_title": "Étude des Kanji - {level}",
@@ -227,5 +232,12 @@
   "setup.audio_yes": "Oui, télécharger maintenant",
   "setup.audio_no": "Non, passer pour l'instant",
   "setup.done": "Configuration terminée ! Bon apprentissage du japonais.",
-  "setup.db_ready": "Base de données prête."
+  "setup.db_ready": "Base de données prête.",
+
+  "streak": "Série :",
+  "streak.days": "jours",
+
+  "settings.card_limit": "Limite quotidienne de nouvelles cartes",
+  "settings.card_limit_prompt": "Nouvelles cartes par session (actuel : {current})",
+  "settings.card_limit_set": "Limite de cartes fixée à {limit}."
 }

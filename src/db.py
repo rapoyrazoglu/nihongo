@@ -381,6 +381,32 @@ def get_today_stats():
     return row
 
 
+def get_streak():
+    """Ard arda calisilan gun sayisini hesapla."""
+    conn = get_connection()
+    rows = conn.execute(
+        "SELECT date FROM stats WHERE cards_reviewed > 0 ORDER BY date DESC"
+    ).fetchall()
+    conn.close()
+
+    if not rows:
+        return 0
+
+    from datetime import timedelta
+    streak = 0
+    expected = date.today()
+
+    for row in rows:
+        d = date.fromisoformat(row["date"])
+        if d == expected:
+            streak += 1
+            expected -= timedelta(days=1)
+        elif d < expected:
+            break
+
+    return streak
+
+
 # --- Arama ---
 
 def search_all(query):

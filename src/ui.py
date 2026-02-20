@@ -34,6 +34,8 @@ def show_main_menu():
     today = db.get_today_stats()
     due = db.count_due_reviews()
 
+    streak = db.get_streak()
+
     info_table = Table(show_header=False, box=None, padding=(0, 2))
     info_table.add_column(style="cyan")
     info_table.add_column(style="white")
@@ -43,6 +45,14 @@ def show_main_menu():
         info_table.add_row(t("accuracy"), f"{today['cards_correct']}/{today['cards_reviewed']}" if today['cards_reviewed'] > 0 else "—")
     else:
         info_table.add_row(t("today_studied"), f"0 {t('cards')}")
+    if streak > 0:
+        if streak >= 30:
+            streak_style = "bold magenta"
+        elif streak >= 7:
+            streak_style = "bold green"
+        else:
+            streak_style = "yellow"
+        info_table.add_row(t("streak"), f"[{streak_style}]{streak} {t('streak.days')}[/{streak_style}]")
 
     console.print(Panel(info_table, title=f"[bold]{t('daily_summary')}[/bold]", border_style="blue"))
     console.print()
@@ -450,10 +460,11 @@ def show_quiz_menu():
     menu.add_row("3", t("quiz.kanji_reading"))
     menu.add_row("4", t("quiz.kanji_meaning"))
     menu.add_row("5", t("quiz.sentence_order"))
+    menu.add_row("6", t("quiz.conjugation"))
     menu.add_row("0", t("back"))
 
     console.print(menu)
-    return Prompt.ask(t("your_choice"), choices=["0","1","2","3","4","5"], default="1")
+    return Prompt.ask(t("your_choice"), choices=["0","1","2","3","4","5","6"], default="1")
 
 
 def show_search_results(results):
@@ -537,10 +548,11 @@ def show_settings_menu():
     menu.add_row("3", t("settings.restore"))
     menu.add_row("4", t("settings.change_language"))
     menu.add_row("5", t("settings.download_audio"))
+    menu.add_row("6", t("settings.card_limit"))
     menu.add_row("0", t("back"))
 
     console.print(menu)
-    return Prompt.ask(t("your_choice"), choices=["0", "1", "2", "3", "4", "5"], default="0")
+    return Prompt.ask(t("your_choice"), choices=["0", "1", "2", "3", "4", "5", "6"], default="0")
 
 
 def show_quiz_result(correct, total):

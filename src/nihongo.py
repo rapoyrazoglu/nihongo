@@ -137,6 +137,8 @@ def handle_quiz():
         quiz.quiz_kanji_meaning(level, count)
     elif mode == "5":
         quiz.quiz_sentence_order(level, count)
+    elif mode == "6":
+        quiz.quiz_conjugation(level, count)
 
 
 def _row_get(row, key, default=""):
@@ -396,6 +398,16 @@ def handle_settings():
                 console.print(f"\n[red]{t('settings.download_audio_fail')}[/red]")
             else:
                 console.print(f"\n[green]{t('settings.download_audio_done', cached=cached, skipped=skipped, failed=failed)}[/green]")
+            Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        elif choice == "6":
+            # Card limit
+            from i18n import get_card_limit, set_card_limit
+            current = get_card_limit()
+            new_limit = IntPrompt.ask(t("settings.card_limit_prompt", current=current), default=current)
+            if new_limit < 1:
+                new_limit = 1
+            set_card_limit(new_limit)
+            console.print(f"\n[green]{t('settings.card_limit_set', limit=new_limit)}[/green]")
             Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 

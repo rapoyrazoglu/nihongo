@@ -129,12 +129,23 @@ def get_lang():
 
 def set_lang(lang):
     load(lang)
-    _save_config(lang)
+    _save_config_key("language", lang)
 
 
-def _save_config(lang):
+def get_card_limit():
+    """Seanstaki yeni kart limitini döndür."""
     config = _load_config()
-    config["language"] = lang
+    return config.get("card_limit", 10)
+
+
+def set_card_limit(limit):
+    """Seanstaki yeni kart limitini kaydet."""
+    _save_config_key("card_limit", limit)
+
+
+def _save_config_key(key, value):
+    config = _load_config()
+    config[key] = value
     os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
     with open(CONFIG_PATH, "w", encoding="utf-8") as f:
         json.dump(config, f, ensure_ascii=False, indent=2)
