@@ -66,16 +66,19 @@
   "review.skip": "건너뛰기",
   "review.quit": "학습 종료",
   "review.rating": "평가",
+  "review.know_reading": "읽기는 알지만 한자는 모릅니다",
 
   "srs.repeat_tomorrow": "내일 반복",
   "srs.next_tomorrow": "다음 복습: 내일",
   "srs.next_days": "다음 복습: {days}일 후",
+  "srs.weak_kanji_note": "한자가 곧 다시 복습됩니다.",
 
   "status.new": "새로운",
   "status.repeat": "반복",
   "status.learning": "학습 중",
   "status.known": "습득",
   "status.master": "마스터",
+  "status.weak_kanji": "한자?",
 
   "no_vocab_level": "이 레벨에 어휘가 없습니다.",
   "no_kanji_level": "이 레벨에 Kanji가 없습니다.",

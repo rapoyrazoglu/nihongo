@@ -51,13 +51,14 @@ def sm2(quality, repetitions, ease_factor, interval):
     return new_repetitions, round(new_ease_factor, 2), new_interval
 
 
-def review_card(card_type, card_id, quality):
+def review_card(card_type, card_id, quality, weak_kanji=None):
     """Bir kartı tekrarla ve SRS bilgilerini güncelle.
 
     Args:
         card_type: 'vocabulary', 'kanji', veya 'grammar'
         card_id: kartın veritabanı ID'si
         quality: 0-5 arası kalite puanı
+        weak_kanji: None=değiştirme, 0=kanji biliniyor, 1=kanji bilinmiyor
 
     Returns:
         (new_interval, next_review_date)
@@ -74,9 +75,14 @@ def review_card(card_type, card_id, quality):
         interval = 0
 
     new_reps, new_ef, new_interval = sm2(quality, repetitions, ease_factor, interval)
+
+    # weak_kanji: okumayı biliyor ama kanjiyi bilmiyor → max 3 gün aralık
+    if weak_kanji == 1 and new_interval > 3:
+        new_interval = 3
+
     next_review = (date.today() + timedelta(days=new_interval)).isoformat()
 
-    upsert_review(card_type, card_id, new_ef, new_interval, new_reps, next_review)
+    upsert_review(card_type, card_id, new_ef, new_interval, new_reps, next_review, weak_kanji=weak_kanji)
 
     return new_interval, next_review
 

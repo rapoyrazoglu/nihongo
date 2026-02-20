@@ -12,8 +12,11 @@ import tts
 from i18n import t, meaning_field
 
 
-def _quality_from_choice(choice):
-    """Kullanici secimini SM-2 kalite puanina cevir."""
+def _quality_from_choice(choice, vocab_mode=False):
+    """Kullanici secimini SM-2 kalite puanina cevir.
+    vocab_mode: 2=okuma biliyor kanji bilmiyor (quality=3, weak_kanji=1)"""
+    if vocab_mode:
+        return {"1": 1, "2": 3, "3": 4, "4": 5}.get(choice, 4)
     return {"1": 1, "2": 3, "3": 4, "4": 5}.get(choice, 4)
 
 
@@ -61,15 +64,24 @@ def study_vocabulary(level):
         if card["example_jp"]:
             tts.speak(card["example_jp"])
 
-        choice = ui.show_review_prompt()
+        choice = ui.show_review_prompt(vocab_mode=True)
         if choice == "q":
             break
         if choice == "s":
             continue
 
-        quality = _quality_from_choice(choice)
+        quality = _quality_from_choice(choice, vocab_mode=True)
         is_new = review is None
-        interval, next_date = srs.review_card("vocabulary", card["id"], quality)
+
+        # Secim 2: okuma biliyorum, kanji bilmiyorum
+        if choice == "2":
+            weak_kanji = 1
+        elif choice in ("3", "4"):
+            weak_kanji = 0  # kanji de biliniyor, flag temizle
+        else:
+            weak_kanji = None  # 1=bilmiyorum, flag degistirme
+
+        interval, next_date = srs.review_card("vocabulary", card["id"], quality, weak_kanji=weak_kanji)
 
         reviewed += 1
         if quality >= 3:
@@ -77,7 +89,7 @@ def study_vocabulary(level):
         if is_new:
             new_count += 1
 
-        ui.show_srs_feedback(quality, interval)
+        ui.show_srs_feedback(quality, interval, weak_kanji=(choice == "2"))
         time.sleep(0.8)
         ui.clear()
 

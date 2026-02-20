@@ -181,16 +181,25 @@ def show_grammar_card(grammar, show_answer=False):
     console.print(card)
 
 
-def show_review_prompt():
-    """Karti degerlendirme seceneklerini goster."""
+def show_review_prompt(vocab_mode=False):
+    """Karti degerlendirme seceneklerini goster.
+    vocab_mode=True ise okuma/kanji ayrimi olan secenekleri goster."""
     console.print()
     options = Table(show_header=False, box=None, padding=(0, 1))
     options.add_column(style="bold")
     options.add_column()
-    options.add_row("[red]1[/red]", t("review.forgot"))
-    options.add_row("[yellow]2[/yellow]", t("review.hard"))
-    options.add_row("[green]3[/green]", t("review.good"))
-    options.add_row("[bold green]4[/bold green]", t("review.easy"))
+
+    if vocab_mode:
+        options.add_row("[red]1[/red]", t("review.forgot"))
+        options.add_row("[yellow]2[/yellow]", t("review.know_reading"))
+        options.add_row("[green]3[/green]", t("review.good"))
+        options.add_row("[bold green]4[/bold green]", t("review.easy"))
+    else:
+        options.add_row("[red]1[/red]", t("review.forgot"))
+        options.add_row("[yellow]2[/yellow]", t("review.hard"))
+        options.add_row("[green]3[/green]", t("review.good"))
+        options.add_row("[bold green]4[/bold green]", t("review.easy"))
+
     options.add_row("[cyan]s[/cyan]", t("review.skip"))
     options.add_row("[red]q[/red]", t("review.quit"))
     console.print(options)
@@ -198,29 +207,37 @@ def show_review_prompt():
     return Prompt.ask(t("review.rating"), choices=["1","2","3","4","s","q"], default="3")
 
 
-def show_srs_feedback(quality, interval):
+def show_srs_feedback(quality, interval, weak_kanji=False):
     """Rating sonrasi SRS geri bildirimini goster."""
+    if weak_kanji:
+        console.print(f"\n  [yellow]{t('srs.weak_kanji_note')}[/yellow]")
     if quality < 3:
-        console.print(f"\n  [red]{t('srs.repeat_tomorrow')}[/red]")
+        console.print(f"  [red]{t('srs.repeat_tomorrow')}[/red]")
     elif interval == 1:
-        console.print(f"\n  [yellow]{t('srs.next_tomorrow')}[/yellow]")
+        console.print(f"  [yellow]{t('srs.next_tomorrow')}[/yellow]")
     elif interval <= 7:
-        console.print(f"\n  [green]{t('srs.next_days', days=interval)}[/green]")
+        console.print(f"  [green]{t('srs.next_days', days=interval)}[/green]")
     else:
-        console.print(f"\n  [bold green]{t('srs.next_days', days=interval)}[/bold green]")
+        console.print(f"  [bold green]{t('srs.next_days', days=interval)}[/bold green]")
 
 
 def card_status_label(review):
     """Kart durum etiketi dondur."""
     if review is None:
         return f"[bright_cyan][{t('status.new')}][/bright_cyan]"
+    weak = review["weak_kanji"] if "weak_kanji" in review.keys() else 0
+    label = ""
     if review["repetitions"] == 0:
-        return f"[red][{t('status.repeat')}][/red]"
-    if review["interval"] < 7:
-        return f"[yellow][{t('status.learning')}][/yellow]"
-    if review["interval"] < 30:
-        return f"[green][{t('status.known')}][/green]"
-    return f"[bold green][{t('status.master')}][/bold green]"
+        label = f"[red][{t('status.repeat')}][/red]"
+    elif review["interval"] < 7:
+        label = f"[yellow][{t('status.learning')}][/yellow]"
+    elif review["interval"] < 30:
+        label = f"[green][{t('status.known')}][/green]"
+    else:
+        label = f"[bold green][{t('status.master')}][/bold green]"
+    if weak:
+        label += f" [yellow][{t('status.weak_kanji')}][/yellow]"
+    return label
 
 
 def show_vocab_list(level, items=None):

@@ -66,16 +66,19 @@
   "review.skip": "跳过",
   "review.quit": "结束学习",
   "review.rating": "评分",
+  "review.know_reading": "我知道读音，不知道汉字",
 
   "srs.repeat_tomorrow": "明天重复",
   "srs.next_tomorrow": "下次复习：明天",
   "srs.next_days": "下次复习：{days} 天后",
+  "srs.weak_kanji_note": "汉字将很快再次复习。",
 
   "status.new": "新学",
   "status.repeat": "重复",
   "status.learning": "学习中",
   "status.known": "已掌握",
   "status.master": "精通",
+  "status.weak_kanji": "汉字？",
 
   "no_vocab_level": "该级别暂无词汇。",
   "no_kanji_level": "该级别暂无 Kanji。",

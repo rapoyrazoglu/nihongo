@@ -66,16 +66,19 @@
   "review.skip": "Skip",
   "review.quit": "End study",
   "review.rating": "Rating",
+  "review.know_reading": "I know the reading, not the kanji",
 
   "srs.repeat_tomorrow": "Repeat tomorrow",
   "srs.next_tomorrow": "Next review: tomorrow",
   "srs.next_days": "Next review: in {days} days",
+  "srs.weak_kanji_note": "Kanji will be reviewed again soon.",
 
   "status.new": "New",
   "status.repeat": "Repeat",
   "status.learning": "Learning",
   "status.known": "Known",
   "status.master": "Master",
+  "status.weak_kanji": "Kanji?",
 
   "no_vocab_level": "No vocabulary at this level.",
   "no_kanji_level": "No kanji at this level.",

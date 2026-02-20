@@ -66,16 +66,19 @@
   "review.skip": "Atla",
   "review.quit": "Calismaya bitir",
   "review.rating": "Degerlendirme",
+  "review.know_reading": "Okumayı biliyorum, kanjiyi bilmiyorum",
 
   "srs.repeat_tomorrow": "Tekrar yarin",
   "srs.next_tomorrow": "Sonraki tekrar: yarin",
   "srs.next_days": "Sonraki tekrar: {days} gun sonra",
+  "srs.weak_kanji_note": "Kanji yakında tekrar sorulacak.",
 
   "status.new": "Yeni",
   "status.repeat": "Tekrar",
   "status.learning": "Ogreniyor",
   "status.known": "Biliyor",
   "status.master": "Usta",
+  "status.weak_kanji": "Kanji?",
 
   "no_vocab_level": "Bu seviyede kelime yok.",
   "no_kanji_level": "Bu seviyede kanji yok.",

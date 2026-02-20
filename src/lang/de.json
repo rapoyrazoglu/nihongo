@@ -66,16 +66,19 @@
   "review.skip": "Überspringen",
   "review.quit": "Lernen beenden",
   "review.rating": "Bewertung",
+  "review.know_reading": "Ich kenne die Lesung, nicht das Kanji",
 
   "srs.repeat_tomorrow": "Morgen wiederholen",
   "srs.next_tomorrow": "Nächste Wiederholung: morgen",
   "srs.next_days": "Nächste Wiederholung: in {days} Tagen",
+  "srs.weak_kanji_note": "Kanji wird bald erneut abgefragt.",
 
   "status.new": "Neu",
   "status.repeat": "Wiederholen",
   "status.learning": "Lernend",
   "status.known": "Bekannt",
   "status.master": "Gemeistert",
+  "status.weak_kanji": "Kanji?",
 
   "no_vocab_level": "Kein Wortschatz auf dieser Stufe.",
   "no_kanji_level": "Keine Kanji auf dieser Stufe.",

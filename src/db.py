@@ -104,6 +104,12 @@ def init_db():
         CREATE INDEX IF NOT EXISTS idx_grammar_level ON grammar(level);
     """)
 
+    # Migration: weak_kanji kolonu (okuma biliyor ama kanji bilmiyor)
+    try:
+        conn.execute("ALTER TABLE reviews ADD COLUMN weak_kanji INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass  # zaten var
+
     conn.commit()
     conn.close()
 
@@ -203,7 +209,8 @@ def get_grammar_by_id(grammar_id):
 # --- Reviews (SRS) ---
 
 def get_due_reviews(card_type=None, limit=50):
-    """Bugün veya öncesinde tekrarlanması gereken kartları getir."""
+    """Bugün veya öncesinde tekrarlanması gereken kartları getir.
+    weak_kanji=1 olanlar önce gelir."""
     conn = get_connection()
     today = date.today().isoformat()
     query = "SELECT * FROM reviews WHERE next_review <= ?"
@@ -211,7 +218,7 @@ def get_due_reviews(card_type=None, limit=50):
     if card_type:
         query += " AND card_type = ?"
         params.append(card_type)
-    query += " ORDER BY next_review ASC LIMIT ?"
+    query += " ORDER BY weak_kanji DESC, next_review ASC LIMIT ?"
     params.append(limit)
     rows = conn.execute(query, params).fetchall()
     conn.close()
@@ -228,18 +235,31 @@ def get_review(card_type, card_id):
     return row
 
 
-def upsert_review(card_type, card_id, ease_factor, interval, repetitions, next_review):
+def upsert_review(card_type, card_id, ease_factor, interval, repetitions, next_review, weak_kanji=None):
     conn = get_connection()
-    conn.execute("""
-        INSERT INTO reviews (card_type, card_id, ease_factor, interval, repetitions, next_review, last_review)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        ON CONFLICT(card_type, card_id) DO UPDATE SET
-            ease_factor = excluded.ease_factor,
-            interval = excluded.interval,
-            repetitions = excluded.repetitions,
-            next_review = excluded.next_review,
-            last_review = excluded.last_review
-    """, (card_type, card_id, ease_factor, interval, repetitions, next_review, date.today().isoformat()))
+    if weak_kanji is not None:
+        conn.execute("""
+            INSERT INTO reviews (card_type, card_id, ease_factor, interval, repetitions, next_review, last_review, weak_kanji)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(card_type, card_id) DO UPDATE SET
+                ease_factor = excluded.ease_factor,
+                interval = excluded.interval,
+                repetitions = excluded.repetitions,
+                next_review = excluded.next_review,
+                last_review = excluded.last_review,
+                weak_kanji = excluded.weak_kanji
+        """, (card_type, card_id, ease_factor, interval, repetitions, next_review, date.today().isoformat(), weak_kanji))
+    else:
+        conn.execute("""
+            INSERT INTO reviews (card_type, card_id, ease_factor, interval, repetitions, next_review, last_review)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(card_type, card_id) DO UPDATE SET
+                ease_factor = excluded.ease_factor,
+                interval = excluded.interval,
+                repetitions = excluded.repetitions,
+                next_review = excluded.next_review,
+                last_review = excluded.last_review
+        """, (card_type, card_id, ease_factor, interval, repetitions, next_review, date.today().isoformat()))
     conn.commit()
     conn.close()
 

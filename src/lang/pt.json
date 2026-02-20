@@ -66,16 +66,19 @@
   "review.skip": "Pular",
   "review.quit": "Encerrar estudo",
   "review.rating": "Avaliação",
+  "review.know_reading": "Conheço a leitura, não o kanji",
 
   "srs.repeat_tomorrow": "Repetir amanhã",
   "srs.next_tomorrow": "Próxima revisão: amanhã",
   "srs.next_days": "Próxima revisão: em {days} dias",
+  "srs.weak_kanji_note": "O kanji será revisado em breve.",
 
   "status.new": "Novo",
   "status.repeat": "Repetir",
   "status.learning": "Aprendendo",
   "status.known": "Conhecido",
   "status.master": "Dominado",
+  "status.weak_kanji": "Kanji?",
 
   "no_vocab_level": "Nenhum vocabulário neste nível.",
   "no_kanji_level": "Nenhum kanji neste nível.",
