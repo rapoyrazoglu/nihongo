@@ -108,6 +108,8 @@
   "stats.duration": "시간",
   "stats.minutes": "{mins}분",
   "stats.no_data": "아직 학습 데이터가 없습니다.",
+  "stats.jlpt_readiness": "JLPT 준비도 점수",
+  "stats.readiness": "준비도",
 
   "quiz.select_mode": "퀴즈 모드 선택",
   "quiz.jp_to_native": "일본어 -> 뜻 (단어 의미)",
@@ -141,6 +143,8 @@
   "quiz.readings": "읽기: {readings}",
   "quiz.meaning_line": "뜻: {meaning}",
   "quiz.japanese_label": "일본어",
+  "quiz.review_wrong": "틀린 답 {count}개. 복습할까요? (e/h)",
+  "quiz.wrong_review_title": "── 오답 복습 ──",
 
   "study.vocab_title": "어휘 학습 - {level}",
   "study.kanji_title": "Kanji 학습 - {level}",

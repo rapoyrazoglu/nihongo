@@ -108,6 +108,8 @@
   "stats.duration": "时长",
   "stats.minutes": "{mins} 分钟",
   "stats.no_data": "暂无学习数据。",
+  "stats.jlpt_readiness": "JLPT准备度评分",
+  "stats.readiness": "准备度",
 
   "quiz.select_mode": "选择测验模式",
   "quiz.jp_to_native": "日语 -> 释义（单词含义）",
@@ -141,6 +143,8 @@
   "quiz.readings": "读音：{readings}",
   "quiz.meaning_line": "释义：{meaning}",
   "quiz.japanese_label": "日语",
+  "quiz.review_wrong": "{count}个错误答案。复习吗？(e/h)",
+  "quiz.wrong_review_title": "── 错题复习 ──",
 
   "study.vocab_title": "词汇学习 - {level}",
   "study.kanji_title": "Kanji 学习 - {level}",

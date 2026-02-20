@@ -108,6 +108,8 @@
   "stats.duration": "Dauer",
   "stats.minutes": "{mins} Min.",
   "stats.no_data": "Noch keine Lerndaten vorhanden.",
+  "stats.jlpt_readiness": "JLPT-Bereitschaftsbewertung",
+  "stats.readiness": "Bereitschaft",
 
   "quiz.select_mode": "Quizmodus wählen",
   "quiz.jp_to_native": "Japanisch -> Bedeutung (Wortbedeutung)",
@@ -141,6 +143,8 @@
   "quiz.readings": "Lesungen: {readings}",
   "quiz.meaning_line": "Bedeutung: {meaning}",
   "quiz.japanese_label": "Japanisch",
+  "quiz.review_wrong": "{count} falsche Antwort(en). Wiederholen? (e/h)",
+  "quiz.wrong_review_title": "── Wiederholung falscher Antworten ──",
 
   "study.vocab_title": "Wortschatz lernen - {level}",
   "study.kanji_title": "Kanji lernen - {level}",

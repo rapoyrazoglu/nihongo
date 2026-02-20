@@ -108,6 +108,8 @@
   "stats.duration": "Durée",
   "stats.minutes": "{mins} min",
   "stats.no_data": "Aucune donnée d'étude pour le moment.",
+  "stats.jlpt_readiness": "Score de préparation JLPT",
+  "stats.readiness": "Préparation",
 
   "quiz.select_mode": "Sélectionner le mode de quiz",
   "quiz.jp_to_native": "Japonais -> Sens (Sens du mot)",
@@ -141,6 +143,8 @@
   "quiz.readings": "Lectures : {readings}",
   "quiz.meaning_line": "Sens : {meaning}",
   "quiz.japanese_label": "Japonais",
+  "quiz.review_wrong": "{count} mauvaise(s) réponse(s). Les revoir ? (e/h)",
+  "quiz.wrong_review_title": "── Révision des erreurs ──",
 
   "study.vocab_title": "Étude du vocabulaire - {level}",
   "study.kanji_title": "Étude des Kanji - {level}",

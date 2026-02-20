@@ -206,6 +206,16 @@ def get_grammar_by_id(grammar_id):
     return row
 
 
+def count_grammar(level=None):
+    conn = get_connection()
+    if level:
+        row = conn.execute("SELECT COUNT(*) as cnt FROM grammar WHERE level = ?", (level,)).fetchone()
+    else:
+        row = conn.execute("SELECT COUNT(*) as cnt FROM grammar").fetchone()
+    conn.close()
+    return row["cnt"]
+
+
 # --- Reviews (SRS) ---
 
 def get_due_reviews(card_type=None, limit=50):
@@ -295,15 +305,43 @@ def count_due_reviews(card_type=None):
     return row["cnt"]
 
 
-def count_learned(card_type=None):
+def count_learned(card_type=None, level=None):
     conn = get_connection()
-    if card_type:
+    if card_type and level:
+        table = card_type  # vocabulary, kanji, grammar
+        row = conn.execute(f"""
+            SELECT COUNT(*) as cnt FROM reviews r
+            JOIN {table} t ON t.id = r.card_id
+            WHERE r.card_type = ? AND t.level = ?
+        """, (card_type, level)).fetchone()
+    elif card_type:
         row = conn.execute(
             "SELECT COUNT(*) as cnt FROM reviews WHERE card_type = ?",
             (card_type,)
         ).fetchone()
     else:
         row = conn.execute("SELECT COUNT(*) as cnt FROM reviews").fetchone()
+    conn.close()
+    return row["cnt"]
+
+
+def count_mastered(card_type=None, level=None):
+    """interval >= 21 gun olan (iyi bilinen) kartlari say."""
+    conn = get_connection()
+    if card_type and level:
+        table = card_type
+        row = conn.execute(f"""
+            SELECT COUNT(*) as cnt FROM reviews r
+            JOIN {table} t ON t.id = r.card_id
+            WHERE r.card_type = ? AND t.level = ? AND r.interval >= 21
+        """, (card_type, level)).fetchone()
+    elif card_type:
+        row = conn.execute(
+            "SELECT COUNT(*) as cnt FROM reviews WHERE card_type = ? AND interval >= 21",
+            (card_type,)
+        ).fetchone()
+    else:
+        row = conn.execute("SELECT COUNT(*) as cnt FROM reviews WHERE interval >= 21").fetchone()
     conn.close()
     return row["cnt"]
 

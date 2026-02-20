@@ -108,6 +108,8 @@
   "stats.duration": "Sure",
   "stats.minutes": "{mins} dk",
   "stats.no_data": "Henuz calisma verisi yok.",
+  "stats.jlpt_readiness": "JLPT Hazırlık Skoru",
+  "stats.readiness": "Hazırlık",
 
   "quiz.select_mode": "Quiz Modu Secin",
   "quiz.jp_to_native": "Japonca -> Turkce (Kelime anlami)",
@@ -141,6 +143,8 @@
   "quiz.readings": "Okumalar: {readings}",
   "quiz.meaning_line": "Anlam: {meaning}",
   "quiz.japanese_label": "Japonca",
+  "quiz.review_wrong": "{count} yanlış cevap. Tekrar gözden geçir? (e/h)",
+  "quiz.wrong_review_title": "── Yanlış Cevap Tekrarı ──",
 
   "study.vocab_title": "Kelime Calisma - {level}",
   "study.kanji_title": "Kanji Calisma - {level}",

@@ -20,6 +20,38 @@ def _quality_from_choice(choice, vocab_mode=False):
     return {"1": 1, "2": 3, "3": 4, "4": 5}.get(choice, 4)
 
 
+def _review_wrong_cards(wrong_cards, card_type, show_fn):
+    """Yanlis yapilanları tekrar goster. Kart listesi + gosterim fonksiyonu alir."""
+    if not wrong_cards:
+        return
+    answer = Prompt.ask(f"\n[yellow]{t('quiz.review_wrong', count=len(wrong_cards))}[/yellow]",
+                        choices=["e", "h"], default="e")
+    if answer != "e":
+        return
+
+    ui.clear()
+    ui.console.print(f"\n[bold red]{t('quiz.wrong_review_title')}[/bold red]\n")
+
+    for i, card in enumerate(wrong_cards):
+        ui.console.print(f"[dim]── {i+1}/{len(wrong_cards)} ──[/dim]\n")
+        show_fn(card, show_answer=True)
+        text = card.get("reading") if hasattr(card, "get") else None
+        if not text:
+            try:
+                text = card["reading"]
+            except (KeyError, IndexError):
+                try:
+                    text = card["kanji"]
+                except (KeyError, IndexError):
+                    text = None
+        if text:
+            tts.speak(text)
+        choice = Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        if choice == "q":
+            break
+        ui.clear()
+
+
 def study_vocabulary(level):
     """Kelime kartlari ile SRS calismasi."""
     ui.clear()
@@ -253,6 +285,7 @@ def quiz_jp_to_tr(level, count=10):
     questions = random.sample(list(all_vocab), min(count, len(all_vocab)))
     correct_count = 0
     total = len(questions)
+    wrong_cards = []
 
     for i, q in enumerate(questions):
         ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} ──[/dim]")
@@ -272,6 +305,7 @@ def quiz_jp_to_tr(level, count=10):
         answer = Prompt.ask(f"\n{t('quiz.your_answer')}", choices=["1","2","3","4","q"], default="1")
         if answer == "q":
             ui.show_quiz_result(correct_count, i)
+            _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
             return
 
         if int(answer) - 1 == correct_idx:
@@ -281,11 +315,13 @@ def quiz_jp_to_tr(level, count=10):
         else:
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_answer', answer=q[mf])}")
             srs.review_card("vocabulary", q["id"], 1)
+            wrong_cards.append(q)
 
         db.update_stats(reviewed=1, correct=1 if int(answer) - 1 == correct_idx else 0)
         ui.console.print()
 
     ui.show_quiz_result(correct_count, total)
+    _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
@@ -305,6 +341,7 @@ def quiz_tr_to_jp(level, count=10):
     questions = random.sample(list(all_vocab), min(count, len(all_vocab)))
     correct_count = 0
     total = len(questions)
+    wrong_cards = []
 
     for i, q in enumerate(questions):
         ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} ──[/dim]")
@@ -317,6 +354,7 @@ def quiz_tr_to_jp(level, count=10):
         answer = Prompt.ask(t("quiz.japanese_label")).strip()
         if answer == "q":
             ui.show_quiz_result(correct_count, i)
+            _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
             return
 
         if answer == q["word"] or answer == q["reading"]:
@@ -326,11 +364,13 @@ def quiz_tr_to_jp(level, count=10):
         else:
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_was', word=q['word'], reading=q['reading'])}")
             srs.review_card("vocabulary", q["id"], 1)
+            wrong_cards.append(q)
 
         db.update_stats(reviewed=1, correct=1 if answer in (q["word"], q["reading"]) else 0)
         ui.console.print()
 
     ui.show_quiz_result(correct_count, total)
+    _review_wrong_cards(wrong_cards, "vocabulary", ui.show_vocab_card)
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
@@ -350,6 +390,7 @@ def quiz_kanji_reading(level, count=10):
     questions = random.sample(list(all_kanji), min(count, len(all_kanji)))
     correct_count = 0
     total = len(questions)
+    wrong_cards = []
 
     for i, q in enumerate(questions):
         ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} ──[/dim]")
@@ -358,6 +399,7 @@ def quiz_kanji_reading(level, count=10):
         answer = Prompt.ask(t("quiz.reading_label")).strip()
         if answer == "q":
             ui.show_quiz_result(correct_count, i)
+            _review_wrong_cards(wrong_cards, "kanji", ui.show_kanji_card)
             return
 
         valid_readings = []
@@ -375,12 +417,14 @@ def quiz_kanji_reading(level, count=10):
             readings_str = f"On: {q['on_yomi']} / Kun: {q['kun_yomi']}"
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.readings', readings=readings_str)}")
             srs.review_card("kanji", q["id"], 1)
+            wrong_cards.append(q)
 
         ui.console.print(f"  {t('quiz.meaning_line', meaning=q[mf])}")
         db.update_stats(reviewed=1, correct=1 if answer in valid_readings else 0)
         ui.console.print()
 
     ui.show_quiz_result(correct_count, total)
+    _review_wrong_cards(wrong_cards, "kanji", ui.show_kanji_card)
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
@@ -399,6 +443,7 @@ def quiz_kanji_meaning(level, count=10):
     questions = random.sample(list(all_kanji), min(count, len(all_kanji)))
     correct_count = 0
     total = len(questions)
+    wrong_cards = []
 
     for i, q in enumerate(questions):
         ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} ──[/dim]")
@@ -416,6 +461,7 @@ def quiz_kanji_meaning(level, count=10):
         answer = Prompt.ask(f"\n{t('quiz.your_answer')}", choices=["1","2","3","4","q"], default="1")
         if answer == "q":
             ui.show_quiz_result(correct_count, i)
+            _review_wrong_cards(wrong_cards, "kanji", ui.show_kanji_card)
             return
 
         if int(answer) - 1 == correct_idx:
@@ -425,10 +471,12 @@ def quiz_kanji_meaning(level, count=10):
         else:
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_answer', answer=q[mf])}")
             srs.review_card("kanji", q["id"], 1)
+            wrong_cards.append(q)
 
         ui.console.print(f"  {t('reading')}: On: {q['on_yomi']} / Kun: {q['kun_yomi']}")
         db.update_stats(reviewed=1, correct=1 if int(answer) - 1 == correct_idx else 0)
         ui.console.print()
 
     ui.show_quiz_result(correct_count, total)
+    _review_wrong_cards(wrong_cards, "kanji", ui.show_kanji_card)
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")

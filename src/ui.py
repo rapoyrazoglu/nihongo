@@ -327,17 +327,57 @@ def show_stats():
     console.print(general)
     console.print()
 
-    level_table = Table(title=t("stats.by_level"), box=box.ROUNDED, border_style="blue")
-    level_table.add_column(t("level"), style="cyan")
-    level_table.add_column(t("stats.vocabulary"), justify="right")
-    level_table.add_column(t("stats.kanji"), justify="right")
+    # JLPT Hazirlik Skoru
+    jlpt = Table(title=t("stats.jlpt_readiness"), box=box.ROUNDED, border_style="magenta")
+    jlpt.add_column(t("level"), style="cyan")
+    jlpt.add_column(t("stats.vocabulary"), justify="right")
+    jlpt.add_column(t("stats.kanji"), justify="right")
+    jlpt.add_column(t("stats.grammar"), justify="right")
+    jlpt.add_column(t("stats.readiness"), justify="right", style="bold")
 
     for level in LEVELS:
         vc = db.count_vocabulary(level)
         kc = db.count_kanji(level)
-        level_table.add_row(level, str(vc), str(kc))
+        gc = db.count_grammar(level)
+        lv = db.count_learned("vocabulary", level)
+        lk = db.count_learned("kanji", level)
+        lg = db.count_learned("grammar", level)
 
-    console.print(level_table)
+        v_pct = lv / vc * 100 if vc > 0 else 0
+        k_pct = lk / kc * 100 if kc > 0 else 0
+        g_pct = lg / gc * 100 if gc > 0 else 0
+
+        # Agirlikli ortalama: vocab %50, kanji %30, grammar %20
+        weights = []
+        if vc > 0:
+            weights.append((v_pct, 0.5))
+        if kc > 0:
+            weights.append((k_pct, 0.3))
+        if gc > 0:
+            weights.append((g_pct, 0.2))
+
+        if weights:
+            total_w = sum(w for _, w in weights)
+            readiness = sum(p * w for p, w in weights) / total_w
+        else:
+            readiness = 0
+
+        if readiness >= 80:
+            r_style = "bold green"
+        elif readiness >= 50:
+            r_style = "yellow"
+        else:
+            r_style = "red"
+
+        jlpt.add_row(
+            level,
+            f"{lv}/{vc}" if vc > 0 else "—",
+            f"{lk}/{kc}" if kc > 0 else "—",
+            f"{lg}/{gc}" if gc > 0 else "—",
+            f"[{r_style}]{readiness:.0f}%[/{r_style}]"
+        )
+
+    console.print(jlpt)
     console.print()
 
     stats = db.get_stats(7)
