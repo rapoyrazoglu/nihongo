@@ -100,6 +100,13 @@ def seed_grammar():
     before = conn.execute("SELECT COUNT(*) as cnt FROM grammar").fetchone()["cnt"]
 
     data = load_json("grammar.json")
+    # Ek grammar dosyalarini da yukle
+    for extra in ["grammar_n4_extra.json", "grammar_n3_extra.json"]:
+        extra_path = os.path.join(DATA_DIR, extra)
+        if os.path.exists(extra_path):
+            with open(extra_path, "r", encoding="utf-8") as f:
+                data.extend(json.load(f))
+
     for item in data:
         conn.execute("""
             INSERT OR IGNORE INTO grammar (pattern, meaning_tr, meaning_en,
