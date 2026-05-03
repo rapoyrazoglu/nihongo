@@ -97,11 +97,32 @@ def init_db():
             UNIQUE(date)
         );
 
+        CREATE TABLE IF NOT EXISTS lessons (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            textbook TEXT NOT NULL,
+            lesson_no INTEGER NOT NULL,
+            title TEXT NOT NULL,
+            title_ja TEXT DEFAULT '',
+            level TEXT NOT NULL,
+            UNIQUE(textbook, lesson_no)
+        );
+
+        CREATE TABLE IF NOT EXISTS lesson_items (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lesson_id INTEGER NOT NULL,
+            item_type TEXT NOT NULL CHECK(item_type IN ('vocabulary','kanji','grammar')),
+            item_id INTEGER NOT NULL,
+            sort_order INTEGER DEFAULT 0,
+            FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE,
+            UNIQUE(lesson_id, item_type, item_id)
+        );
+
         CREATE INDEX IF NOT EXISTS idx_reviews_next ON reviews(next_review);
         CREATE INDEX IF NOT EXISTS idx_reviews_type ON reviews(card_type);
         CREATE INDEX IF NOT EXISTS idx_vocab_level ON vocabulary(level);
         CREATE INDEX IF NOT EXISTS idx_kanji_level ON kanji(level);
         CREATE INDEX IF NOT EXISTS idx_grammar_level ON grammar(level);
+        CREATE INDEX IF NOT EXISTS idx_lesson_items_lesson ON lesson_items(lesson_id);
     """)
 
     # Migration: weak_kanji kolonu (okuma biliyor ama kanji bilmiyor)
@@ -436,6 +457,77 @@ def search_all(query):
         "kanji": [dict(r) for r in kanji],
         "grammar": [dict(r) for r in grammar],
     }
+
+
+# --- Lessons / Textbooks ---
+
+def get_lessons(textbook=None, level=None):
+    """Ders listesini sıralı döner. textbook ve/veya level ile filtrele."""
+    conn = get_connection()
+    where, args = [], []
+    if textbook:
+        where.append("textbook = ?"); args.append(textbook)
+    if level:
+        where.append("level = ?"); args.append(level)
+    sql = "SELECT * FROM lessons"
+    if where:
+        sql += " WHERE " + " AND ".join(where)
+    sql += " ORDER BY textbook, lesson_no"
+    rows = conn.execute(sql, args).fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
+def get_textbook_levels():
+    """Hangi level'larda en az bir ders var, sayısıyla."""
+    conn = get_connection()
+    rows = conn.execute(
+        "SELECT level, COUNT(*) as cnt FROM lessons GROUP BY level"
+    ).fetchall()
+    conn.close()
+    return {r["level"]: r["cnt"] for r in rows}
+
+
+def get_lesson(lesson_id):
+    conn = get_connection()
+    row = conn.execute("SELECT * FROM lessons WHERE id = ?", (lesson_id,)).fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+
+def get_lesson_items(lesson_id, item_type=None):
+    """Bir derse bağlı item'ları (vocab/kanji/grammar) döner.
+    Dönen kayıtlar item tablosundan çekilir, item_type alanı eklenir.
+    """
+    conn = get_connection()
+    types = [item_type] if item_type else ["vocabulary", "kanji", "grammar"]
+    result = {"vocabulary": [], "kanji": [], "grammar": []}
+    for t in types:
+        table = t  # vocabulary/kanji/grammar
+        rows = conn.execute(f"""
+            SELECT i.*, li.sort_order FROM {table} i
+            JOIN lesson_items li ON li.item_id = i.id AND li.item_type = ?
+            WHERE li.lesson_id = ?
+            ORDER BY li.sort_order, i.id
+        """, (t, lesson_id)).fetchall()
+        result[t] = [dict(r) for r in rows]
+    conn.close()
+    return result
+
+
+def get_lesson_progress(lesson_id):
+    """Bir ders için öğrenilen / toplam kart sayısı (vocab+kanji+grammar)."""
+    conn = get_connection()
+    total = conn.execute(
+        "SELECT COUNT(*) as c FROM lesson_items WHERE lesson_id = ?", (lesson_id,)
+    ).fetchone()["c"]
+    learned = conn.execute("""
+        SELECT COUNT(*) as c FROM lesson_items li
+        JOIN reviews r ON r.card_type = li.item_type AND r.card_id = li.item_id
+        WHERE li.lesson_id = ? AND r.repetitions > 0
+    """, (lesson_id,)).fetchone()["c"]
+    conn.close()
+    return {"total": total, "learned": learned}
 
 
 # --- Export / Import ---

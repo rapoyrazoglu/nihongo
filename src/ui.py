@@ -71,11 +71,13 @@ def show_main_menu():
     menu.add_row("7", t("menu.stats"), t("menu.stats_desc"))
     menu.add_row("8", t("menu.settings"), t("menu.settings_desc"))
     menu.add_row("9", t("menu.search"), t("menu.search_desc"))
+    menu.add_row("T", t("menu.textbook"), t("menu.textbook_desc"))
     menu.add_row("0", t("menu.exit"), t("menu.exit_desc"))
 
     console.print(Panel(menu, title=f"[bold]{t('main_menu')}[/bold]", border_style="green"))
 
-    return Prompt.ask(f"\n[bold cyan]{t('your_choice')}[/bold cyan]", choices=["0","1","2","3","4","5","6","7","8","9"], default="1")
+    raw = Prompt.ask(f"\n[bold cyan]{t('your_choice')}[/bold cyan]", default="1")
+    return raw.strip().upper() if raw else "1"
 
 
 def show_level_select(title=None):
@@ -574,6 +576,131 @@ def show_quiz_result(correct, total):
         border_style="cyan"
     )
     console.print(result)
+
+
+TEXTBOOK_TITLES = {
+    "genki1": "Genki I",
+}
+
+
+def show_textbook_level_select():
+    """Ders kitabı bulunan level'ları listele (N5/N4/...). Tek varsa otomatik seç."""
+    clear()
+    banner()
+    console.print(f"\n[bold]{t('textbook.select_level_title')}[/bold]\n")
+
+    by_level = db.get_textbook_levels()
+    if not by_level:
+        console.print(f"[yellow]{t('textbook.none')}[/yellow]")
+        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        return None
+
+    available = [lv for lv in LEVELS if lv in by_level]
+    if len(available) == 1:
+        return available[0]
+
+    for i, lv in enumerate(available, 1):
+        console.print(f"  [cyan]{i}[/cyan] - {lv}  [dim]({by_level[lv]} {t('textbook.lessons').lower()})[/dim]")
+    console.print(f"  [cyan]0[/cyan] - {t('back')}")
+
+    choices = ["0"] + [str(i) for i in range(1, len(available) + 1)]
+    choice = Prompt.ask(t("your_choice"), choices=choices, default="1")
+    if choice == "0":
+        return None
+    return available[int(choice) - 1]
+
+
+def show_lesson_select(level):
+    """Bir level'daki tüm dersleri (kitaplara göre) listele."""
+    clear()
+    banner()
+    console.print(f"\n[bold]{level} — {t('textbook.lessons')}[/bold]\n")
+
+    lessons = db.get_lessons(level=level)
+    if not lessons:
+        console.print(f"[yellow]{t('textbook.no_lessons')}[/yellow]")
+        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        return None
+
+    textbooks = sorted({l["textbook"] for l in lessons})
+    show_textbook_col = len(textbooks) > 1
+
+    table = Table(box=box.SIMPLE, padding=(0, 1))
+    table.add_column("#", style="bold cyan", width=4)
+    if show_textbook_col:
+        table.add_column(t("textbook.book"), style="magenta")
+    table.add_column(t("textbook.lesson_no"), style="cyan", width=4)
+    table.add_column(t("textbook.title"), style="white")
+    table.add_column(t("textbook.title_ja"), style="yellow")
+    table.add_column(t("textbook.progress"), style="green", justify="right")
+
+    for i, lesson in enumerate(lessons, 1):
+        prog = db.get_lesson_progress(lesson["id"])
+        if prog["total"] > 0:
+            pct = int(100 * prog["learned"] / prog["total"])
+            prog_str = f"{prog['learned']}/{prog['total']} ({pct}%)"
+        else:
+            prog_str = "—"
+        row = [str(i)]
+        if show_textbook_col:
+            row.append(TEXTBOOK_TITLES.get(lesson["textbook"], lesson["textbook"]))
+        row += [f"L{lesson['lesson_no']}", lesson["title"], lesson.get("title_ja", ""), prog_str]
+        table.add_row(*row)
+
+    console.print(table)
+    if not show_textbook_col and textbooks:
+        console.print(f"\n[dim]{t('textbook.book')}: {TEXTBOOK_TITLES.get(textbooks[0], textbooks[0])}[/dim]")
+    console.print(f"\n  [cyan]0[/cyan] - {t('back')}")
+
+    choice = Prompt.ask(f"\n[bold cyan]{t('textbook.pick_lesson')}[/bold cyan]", default="0")
+    if not choice.isdigit():
+        return None
+    idx = int(choice)
+    if idx == 0 or idx > len(lessons):
+        return None
+    return lessons[idx - 1]["id"]
+
+
+def show_lesson_detail_menu(lesson_id):
+    """Seçilen ders için: vocab/grammar/kanji çalış veya sınav."""
+    clear()
+    banner()
+    lesson = db.get_lesson(lesson_id)
+    items = db.get_lesson_items(lesson_id)
+    v_count = len(items["vocabulary"])
+    g_count = len(items["grammar"])
+    k_count = len(items["kanji"])
+
+    header = Text()
+    header.append(f"L{lesson['lesson_no']}: ", style="bold cyan")
+    header.append(lesson["title"], style="bold white")
+    if lesson.get("title_ja"):
+        header.append(f"  〜 {lesson['title_ja']}", style="yellow")
+    console.print(Panel(header, border_style="cyan"))
+    console.print()
+
+    info = Table(show_header=False, box=None, padding=(0, 2))
+    info.add_column(style="cyan")
+    info.add_column(style="white", justify="right")
+    info.add_row(t("textbook.vocab_count"), str(v_count))
+    info.add_row(t("textbook.grammar_count"), str(g_count))
+    info.add_row(t("textbook.kanji_count"), str(k_count))
+    console.print(info)
+    console.print()
+
+    menu = Table(show_header=False, box=box.SIMPLE, padding=(0, 2))
+    menu.add_column("No", style="bold cyan", width=4)
+    menu.add_column(t("your_choice"), style="white")
+
+    menu.add_row("1", t("textbook.study_vocab"))
+    menu.add_row("2", t("textbook.study_grammar"))
+    menu.add_row("3", t("textbook.study_kanji"))
+    menu.add_row("4", t("textbook.lesson_exam"))
+    menu.add_row("0", t("back"))
+
+    console.print(Panel(menu, title=f"[bold]{t('textbook.lesson_actions')}[/bold]", border_style="green"))
+    return Prompt.ask(f"\n[bold cyan]{t('your_choice')}[/bold cyan]",
+                      choices=["0", "1", "2", "3", "4"], default="1")
 
 
 def show_language_select():

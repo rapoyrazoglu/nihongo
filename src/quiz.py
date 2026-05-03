@@ -271,6 +271,160 @@ def study_grammar(level):
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
+def _study_cards_loop(cards, card_type, show_fn, vocab_mode=False):
+    """Bir liste karta SRS çalışma döngüsü uygula. Hem level-bazlı hem ders-bazlı çalışmada kullanılır."""
+    if not cards:
+        ui.console.print(f"[yellow]{t('study.no_cards')}[/yellow]")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        return
+    cards = list(cards)
+    random.shuffle(cards)
+    ui.console.print(f"[cyan]{t('study.cards_total', total=len(cards))}[/cyan]\n")
+
+    reviewed = correct = 0
+    wrong = []
+    for i, card in enumerate(cards):
+        review = db.get_review(card_type, card["id"])
+        status = ui.card_status_label(review)
+        ui.console.print(f"[dim]── {t('quiz.card_n', n=i+1, total=len(cards))} {status} ──[/dim]\n")
+        show_fn(card, show_answer=False)
+        text_for_tts = None
+        if card_type == "vocabulary":
+            text_for_tts = card.get("reading") or card.get("word")
+        elif card_type == "kanji":
+            text_for_tts = card.get("kanji")
+        if text_for_tts:
+            tts.speak(text_for_tts)
+        try:
+            input()
+        except EOFError:
+            break
+
+        ui.clear()
+        ui.console.print(f"[dim]── {t('quiz.card_n', n=i+1, total=len(cards))} {status} ──[/dim]\n")
+        show_fn(card, show_answer=True)
+        if card_type == "vocabulary" and card.get("example_jp"):
+            tts.speak(card["example_jp"])
+
+        choice = ui.show_review_prompt(vocab_mode=vocab_mode)
+        if choice == "q":
+            break
+        if choice == "s":
+            continue
+
+        quality = _quality_from_choice(choice, vocab_mode=vocab_mode)
+        if vocab_mode:
+            weak_kanji = 1 if choice == "2" else (0 if choice in ("3", "4") else None)
+            srs.review_card(card_type, card["id"], quality, weak_kanji=weak_kanji)
+        else:
+            srs.review_card(card_type, card["id"], quality)
+        reviewed += 1
+        if quality >= 3:
+            correct += 1
+        else:
+            wrong.append(card)
+
+    if reviewed > 0:
+        db.update_stats(reviewed=reviewed, correct=correct)
+    _review_wrong_cards(wrong, card_type, show_fn)
+    Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+
+
+def study_lesson_vocab(lesson_id):
+    cards = db.get_lesson_items(lesson_id, "vocabulary")["vocabulary"]
+    ui.clear()
+    ui.console.print(f"\n[bold magenta]{t('study.lesson_vocab_title')}[/bold magenta]\n")
+    _study_cards_loop(cards, "vocabulary", ui.show_vocab_card, vocab_mode=True)
+
+
+def study_lesson_grammar(lesson_id):
+    cards = db.get_lesson_items(lesson_id, "grammar")["grammar"]
+    ui.clear()
+    ui.console.print(f"\n[bold magenta]{t('study.lesson_grammar_title')}[/bold magenta]\n")
+    _study_cards_loop(cards, "grammar", ui.show_grammar_card)
+
+
+def study_lesson_kanji(lesson_id):
+    cards = db.get_lesson_items(lesson_id, "kanji")["kanji"]
+    ui.clear()
+    ui.console.print(f"\n[bold magenta]{t('study.lesson_kanji_title')}[/bold magenta]\n")
+    _study_cards_loop(cards, "kanji", ui.show_kanji_card)
+
+
+def quiz_lesson_exam(lesson_id, count=10):
+    """Bir dersten karışık (vocab + grammar + kanji) çoktan seçmeli sınav."""
+    mf = meaning_field()
+    ui.clear()
+    lesson = db.get_lesson(lesson_id)
+    title_str = f"L{lesson['lesson_no']}: {lesson['title']}"
+    ui.console.print(f"\n[bold]{t('quiz.lesson_exam_title', lesson=title_str)}[/bold]\n")
+
+    items = db.get_lesson_items(lesson_id)
+    pool = (
+        [("vocabulary", v) for v in items["vocabulary"]]
+        + [("grammar", g) for g in items["grammar"]]
+        + [("kanji", k) for k in items["kanji"]]
+    )
+
+    if len(pool) < 4:
+        ui.console.print(f"[yellow]{t('quiz.lesson_not_enough')}[/yellow]")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        return
+
+    questions = random.sample(pool, min(count, len(pool)))
+    correct_count = 0
+    total = len(questions)
+
+    all_v = db.get_vocabulary()
+    all_g = db.get_grammar()
+    all_k = db.get_kanji()
+
+    for i, (typ, q) in enumerate(questions):
+        ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} [{typ}] ──[/dim]")
+
+        if typ == "vocabulary":
+            ui.console.print(f"\n  [bold white on red] {q['word']} [/bold white on red]  [green]({q['reading']})[/green]\n")
+            distractor_pool = [v for v in all_v if v["id"] != q["id"] and v[mf]]
+        elif typ == "grammar":
+            ui.console.print(f"\n  [bold yellow]{q['pattern']}[/bold yellow]")
+            if q.get("example_jp"):
+                ui.console.print(f"  [dim]{q['example_jp']}[/dim]")
+            ui.console.print()
+            distractor_pool = [g for g in all_g if g["id"] != q["id"] and g[mf]]
+        else:  # kanji
+            ui.console.print(f"\n  [bold white on red] {q['kanji']} [/bold white on red]  [green]On: {q['on_yomi']} | Kun: {q['kun_yomi']}[/green]\n")
+            distractor_pool = [k for k in all_k if k["id"] != q["id"] and k[mf]]
+
+        if len(distractor_pool) < 3:
+            continue
+        distractors = random.sample(distractor_pool, 3)
+        options = [q[mf]] + [d[mf] for d in distractors]
+        random.shuffle(options)
+        correct_idx = options.index(q[mf])
+
+        for j, opt in enumerate(options):
+            ui.console.print(f"  [cyan]{j+1}[/cyan]) {opt}")
+
+        answer = Prompt.ask(f"\n{t('quiz.your_answer')}", choices=["1", "2", "3", "4", "q"], default="1")
+        if answer == "q":
+            break
+
+        is_correct = (int(answer) - 1 == correct_idx)
+        if is_correct:
+            ui.console.print(f"[bold green]  ✓ {t('quiz.correct')}[/bold green]")
+            correct_count += 1
+            srs.review_card(typ, q["id"], 4)
+        else:
+            ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_answer', answer=q[mf])}")
+            srs.review_card(typ, q["id"], 1)
+
+        db.update_stats(reviewed=1, correct=1 if is_correct else 0)
+        ui.console.print()
+
+    ui.show_quiz_result(correct_count, total)
+    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+
 def quiz_jp_to_tr(level, count=10):
     """Japonca -> native quiz. 4 sikli coktan secmeli."""
     mf = meaning_field()

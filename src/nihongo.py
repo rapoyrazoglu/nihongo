@@ -15,6 +15,14 @@ import sys
 import os
 import shutil
 
+# --- Windows: force UTF-8 stdout/stderr so Turkish chars don't crash on cp1252 ---
+if sys.platform == "win32":
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8")
+        except (AttributeError, OSError):
+            pass
+
 # --- Frozen guard (PyInstaller) ---
 if getattr(sys, "frozen", False):
     import multiprocessing
@@ -62,7 +70,7 @@ if "--delete" in sys.argv:
     sys.exit(0)
 
 import db
-from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_grammar_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, clear, banner
+from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_grammar_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, show_textbook_level_select, show_lesson_select, show_lesson_detail_menu, clear, banner
 from rich.prompt import Prompt, IntPrompt
 import quiz
 
@@ -87,13 +95,14 @@ def ensure_db():
         db.init_db()
         from data.init_db import (migrate_grammar_unique, seed_vocabulary, seed_kanji,
                                   seed_grammar, migrate_extra_examples, update_extra_examples,
-                                  migrate_meanings, update_meanings)
+                                  migrate_meanings, update_meanings, seed_genki1)
         migrate_meanings()
         migrate_extra_examples()
         migrate_grammar_unique()
         seed_vocabulary()
         seed_kanji()
         seed_grammar()
+        seed_genki1()
         update_extra_examples()
         update_meanings()
 
@@ -342,6 +351,31 @@ def first_run_setup():
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
+def handle_textbook_study():
+    """Ders kitabı modu: level → ders → vocab/grammar/kanji/sınav."""
+    while True:
+        level = show_textbook_level_select()
+        if level is None:
+            return
+        while True:
+            lesson_id = show_lesson_select(level)
+            if lesson_id is None:
+                break
+            while True:
+                action = show_lesson_detail_menu(lesson_id)
+                if action == "0":
+                    break
+                elif action == "1":
+                    quiz.study_lesson_vocab(lesson_id)
+                elif action == "2":
+                    quiz.study_lesson_grammar(lesson_id)
+                elif action == "3":
+                    quiz.study_lesson_kanji(lesson_id)
+                elif action == "4":
+                    count = IntPrompt.ask(t("quiz.question_count"), default=10)
+                    quiz.quiz_lesson_exam(lesson_id, count)
+
+
 def handle_settings():
     export_dir = os.path.join(os.path.expanduser("~"), "nihongo_export")
     while True:
@@ -461,6 +495,8 @@ def main():
                 handle_settings()
             elif choice == "9":
                 handle_search()
+            elif choice == "T":
+                handle_textbook_study()
 
     except KeyboardInterrupt:
         console.print(f"\n\n[bold red]さようなら！[/bold red] ({t('exit.interrupt')})\n")

@@ -258,6 +258,152 @@ def migrate_grammar_unique():
     conn.close()
 
 
+# --- Textbook (Genki) seeding ---
+
+def _find_vocab_id(conn, key):
+    """key word veya reading olabilir; eşleşen vocab id'sini döner."""
+    row = conn.execute(
+        "SELECT id FROM vocabulary WHERE word = ? OR reading = ? LIMIT 1",
+        (key, key)
+    ).fetchone()
+    return row["id"] if row else None
+
+
+def _find_grammar_id(conn, pattern):
+    row = conn.execute(
+        "SELECT id FROM grammar WHERE pattern = ? LIMIT 1", (pattern,)
+    ).fetchone()
+    return row["id"] if row else None
+
+
+def _find_kanji_id(conn, ch):
+    row = conn.execute(
+        "SELECT id FROM kanji WHERE kanji = ? LIMIT 1", (ch,)
+    ).fetchone()
+    return row["id"] if row else None
+
+
+def _insert_inline_vocab(conn, item, level):
+    conn.execute("""
+        INSERT INTO vocabulary (word, reading, meaning_tr, meaning_en,
+            meaning_de, meaning_fr, meaning_es, meaning_pt, meaning_ko, meaning_zh,
+            level, example_jp, example_tr, part_of_speech)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        item["word"], item["reading"], item["meaning_tr"], item["meaning_en"],
+        item.get("meaning_de", ""), item.get("meaning_fr", ""),
+        item.get("meaning_es", ""), item.get("meaning_pt", ""),
+        item.get("meaning_ko", ""), item.get("meaning_zh", ""),
+        level, item.get("example_jp", ""), item.get("example_tr", ""),
+        item.get("part_of_speech", "")
+    ))
+    return conn.execute("SELECT last_insert_rowid() as id").fetchone()["id"]
+
+
+def _insert_inline_grammar(conn, item, level):
+    conn.execute("""
+        INSERT OR IGNORE INTO grammar (pattern, meaning_tr, meaning_en,
+            meaning_de, meaning_fr, meaning_es, meaning_pt, meaning_ko, meaning_zh,
+            level, example_jp, example_tr, notes)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        item["pattern"], item["meaning_tr"], item["meaning_en"],
+        item.get("meaning_de", ""), item.get("meaning_fr", ""),
+        item.get("meaning_es", ""), item.get("meaning_pt", ""),
+        item.get("meaning_ko", ""), item.get("meaning_zh", ""),
+        item.get("level", level), item.get("example_jp", ""),
+        item.get("example_tr", ""), item.get("notes", "")
+    ))
+    return _find_grammar_id(conn, item["pattern"])
+
+
+def _link_lesson_item(conn, lesson_id, item_type, item_id, sort_order):
+    if item_id is None:
+        return
+    conn.execute("""
+        INSERT OR IGNORE INTO lesson_items (lesson_id, item_type, item_id, sort_order)
+        VALUES (?, ?, ?, ?)
+    """, (lesson_id, item_type, item_id, sort_order))
+
+
+def seed_textbook(filename):
+    """Genki gibi ders kitabı JSON'unu yükle.
+    Tekrar çalıştırılabilir: zaten var olan dersler atlanır, item linkleri INSERT OR IGNORE.
+    """
+    filepath = os.path.join(DATA_DIR, filename)
+    if not os.path.exists(filepath):
+        return
+
+    book = load_json(filename)
+    textbook = book["textbook"]
+    level = book.get("level", "N5")
+
+    conn = get_connection()
+    linked_v = linked_g = linked_k = 0
+    inserted_v = inserted_g = 0
+    missing_v = missing_g = missing_k = 0
+
+    for lesson in book.get("lessons", []):
+        lesson_no = lesson["lesson_no"]
+        title = lesson.get("title_en", f"Lesson {lesson_no}")
+        title_ja = lesson.get("title_ja", "")
+
+        conn.execute("""
+            INSERT OR IGNORE INTO lessons (textbook, lesson_no, title, title_ja, level)
+            VALUES (?, ?, ?, ?, ?)
+        """, (textbook, lesson_no, title, title_ja, level))
+        lesson_row = conn.execute(
+            "SELECT id FROM lessons WHERE textbook = ? AND lesson_no = ?",
+            (textbook, lesson_no)
+        ).fetchone()
+        lesson_id = lesson_row["id"]
+
+        for i, entry in enumerate(lesson.get("vocab", [])):
+            if isinstance(entry, str):
+                vid = _find_vocab_id(conn, entry)
+                if vid is None:
+                    missing_v += 1
+                    continue
+            else:
+                vid = _find_vocab_id(conn, entry["word"])
+                if vid is None:
+                    vid = _insert_inline_vocab(conn, entry, level)
+                    inserted_v += 1
+            _link_lesson_item(conn, lesson_id, "vocabulary", vid, i)
+            linked_v += 1
+
+        for i, entry in enumerate(lesson.get("grammar", [])):
+            if isinstance(entry, str):
+                gid = _find_grammar_id(conn, entry)
+                if gid is None:
+                    missing_g += 1
+                    continue
+            else:
+                gid = _find_grammar_id(conn, entry["pattern"])
+                if gid is None:
+                    gid = _insert_inline_grammar(conn, entry, level)
+                    inserted_g += 1
+            _link_lesson_item(conn, lesson_id, "grammar", gid, i)
+            linked_g += 1
+
+        for i, ch in enumerate(lesson.get("kanji", [])):
+            kid = _find_kanji_id(conn, ch) if isinstance(ch, str) else None
+            if kid is None:
+                missing_k += 1
+                continue
+            _link_lesson_item(conn, lesson_id, "kanji", kid, i)
+            linked_k += 1
+
+    conn.commit()
+    conn.close()
+    print(f"  {textbook}: {linked_v} vocab + {linked_g} grammar + {linked_k} kanji bağlandı "
+          f"(yeni: {inserted_v}v/{inserted_g}g, eksik: {missing_v}v/{missing_g}g/{missing_k}k).")
+
+
+def seed_genki1():
+    seed_textbook("genki1.json")
+
+
 def main():
     print("Veritabanı oluşturuluyor...")
     init_db()
@@ -268,6 +414,7 @@ def main():
     seed_vocabulary()
     seed_kanji()
     seed_grammar()
+    seed_genki1()
     print("\nVeritabanı hazır!")
 
 
