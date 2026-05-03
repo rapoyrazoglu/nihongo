@@ -259,9 +259,22 @@ jobs:
           gzip -k Packages
 
       # --- GitHub Release ---
+      # Auto-detect prerelease from tag (-alpha/-beta/-rc → prerelease)
+      - name: Detect prerelease
+        id: prerelease
+        shell: bash
+        run: |
+          if [[ "${{ github.ref_name }}" =~ -(alpha|beta|rc) ]]; then
+            echo "value=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
+          prerelease: ${{ steps.prerelease.outputs.value }}
+          make_latest: ${{ steps.prerelease.outputs.value == 'false' }}
           files: |
             artifacts/nihongo-linux
             artifacts/nihongo-macos
