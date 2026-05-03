@@ -97,12 +97,78 @@
 - [ ] Furigana display toggle
 - [ ] Compact card view mode
 
-### v2.0.0 - Online Features
-- [ ] Cloud sync (progress backup/restore)
-- [ ] Community-contributed translations
-- [ ] Shared study decks
-- [ ] Leaderboard / challenges
-- [ ] Mobile companion app (web-based)
+### v2.0.0 - Full Backend Platform (Offline-First Sync)
+**Architecture: production-ready, multi-service, API-gateway fronted.**
+
+Infrastructure
+- [ ] API Gateway (AWS API Gateway / Cloudflare API / Kong)
+      — rate limiting, auth, routing, observability
+- [ ] Auth service: OAuth2 (Google, Apple), email/password, JWT
+- [ ] User service: profile, preferences, account lifecycle
+- [ ] Sync service: delta sync API (push/pull diffs of user data)
+- [ ] Content service: optional remote content updates (new lessons,
+      patches) without app rebuild
+- [ ] Notification service: scheduled push for streak/due reviews
+- [ ] Analytics pipeline (event ingestion → warehouse) — opt-in only
+- [ ] CDN for static assets (TTS audio packs, images, mascot frames)
+- [ ] Postgres primary DB; Redis cache; S3 for blobs
+- [ ] CI/CD: per-service deploy, blue-green, automated rollback
+- [ ] Observability: structured logs, metrics (Prometheus), traces (OTel)
+- [ ] Status page + on-call rotation
+
+Client integration
+- [ ] Local SQLite remains source of truth offline (CLI + future apps)
+- [ ] Sync engine: only user data (reviews, stats, lesson_progress)
+      — content stays embedded for offline-first
+- [ ] Conflict resolution: per-row last-write-wins with timestamps;
+      conflict log for audit
+- [ ] Background sync on app start + every N minutes when online
+- [ ] Manual "sync now" + "force pull" / "force push" controls
+
+Compliance & user trust
+- [ ] Encrypted at rest (KMS-managed keys)
+- [ ] TLS 1.3 everywhere, HSTS, CSP for any web surface
+- [ ] GDPR-compliant: export-all-data (JSON dump), full delete-account flow
+- [ ] Privacy policy + terms of service published before launch
+- [ ] Open-source the API spec (OpenAPI 3) for transparency
+
+### v2.1.0 - iOS Native App (Swift / SwiftUI)
+- [ ] Native iOS app, Swift + SwiftUI (not cross-platform)
+- [ ] Reuse JSON content as embedded asset
+- [ ] Port SRS algorithm to Swift (~100 lines, straightforward)
+- [ ] Local SQLite via GRDB.swift
+- [ ] Mobile-first UI: swipe gestures for review, big-tap targets
+- [ ] Push notifications for due reviews (UNUserNotificationCenter)
+- [ ] Offline-first (same sync engine as v2.0, ported to Swift)
+- [ ] CloudKit fallback for iCloud-only users (no Supabase account)
+- [ ] App Store submission, TestFlight beta
+- [ ] Feature parity with desktop CLI before moving to v2.2
+
+### v2.2.0 - Mascot & Branding
+- [ ] 2D mascot draft in Claude Design / Figma
+      (kawaii style, candidates: shiba inu / sensei chibi / tanuki)
+- [ ] 3D model in Blender (rigged for animation)
+- [ ] Mascot states: idle, celebrating (correct answer),
+      sad (wrong), studying, sleeping (streak broken)
+- [ ] App icon redesign with mascot (iOS + desktop)
+- [ ] Animated splash screen / first-run wizard
+- [ ] Optional mascot toggle (some users prefer minimal UI)
+
+### v2.3.0 - Android Native App (Java)
+- [ ] Native Android app, Java (not Kotlin, not cross-platform)
+- [ ] Started ONLY after iOS reaches full feature parity in v2.1
+- [ ] Same architecture as iOS: embedded JSON content, local Room/SQLite,
+      ported SRS, sync engine
+- [ ] Material Design UI matching iOS feel where reasonable
+- [ ] Push notifications via FCM
+- [ ] Offline-first sync (shared backend with v2.0/v2.1)
+- [ ] Play Store submission, internal testing track first
+
+### v2.4.0 - Community Features
+- [ ] Community-contributed translations (PR-based)
+- [ ] Shared study decks (user-uploaded)
+- [ ] Leaderboard / weekly challenges
+- [ ] Friend list, side-by-side progress comparison
 
 ---
 
