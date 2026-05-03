@@ -2173,5 +2173,20 @@
     "meaning_zh": "书, 本",
     "stroke_count": 5,
     "compounds": "日本(にほん)、本(ほん)、本当(ほんとう)"
+  },
+  {
+    "kanji": "私",
+    "on_yomi": "シ",
+    "kun_yomi": "わたし、わたくし",
+    "meaning_tr": "ben, özel",
+    "meaning_en": "I, private",
+    "meaning_de": "ich, privat",
+    "meaning_fr": "je, privé",
+    "meaning_es": "yo, privado",
+    "meaning_pt": "eu, privado",
+    "meaning_ko": "나, 사사로울",
+    "meaning_zh": "我, 私",
+    "stroke_count": 7,
+    "compounds": "私(わたし)、私立(しりつ)、私生活(しせいかつ)"
   }
 ]
