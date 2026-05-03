@@ -2188,5 +2188,50 @@
     "meaning_zh": "我, 私",
     "stroke_count": 7,
     "compounds": "私(わたし)、私立(しりつ)、私生活(しせいかつ)"
+  },
+  {
+    "kanji": "京",
+    "on_yomi": "キョウ、ケイ",
+    "kun_yomi": "みやこ",
+    "meaning_tr": "başkent",
+    "meaning_en": "capital, metropolis",
+    "meaning_de": "Hauptstadt",
+    "meaning_fr": "capitale",
+    "meaning_es": "capital",
+    "meaning_pt": "capital",
+    "meaning_ko": "서울 경",
+    "meaning_zh": "京",
+    "stroke_count": 8,
+    "compounds": "東京(とうきょう)、京都(きょうと)、上京(じょうきょう)"
+  },
+  {
+    "kanji": "員",
+    "on_yomi": "イン",
+    "kun_yomi": "",
+    "meaning_tr": "üye, görevli",
+    "meaning_en": "member, employee",
+    "meaning_de": "Mitglied, Angestellter",
+    "meaning_fr": "membre, employé",
+    "meaning_es": "miembro, empleado",
+    "meaning_pt": "membro, funcionário",
+    "meaning_ko": "인원 원",
+    "meaning_zh": "员",
+    "stroke_count": 10,
+    "compounds": "会社員(かいしゃいん)、店員(てんいん)、社員(しゃいん)"
+  },
+  {
+    "kanji": "次",
+    "on_yomi": "ジ、シ",
+    "kun_yomi": "つぎ、つ.ぐ",
+    "meaning_tr": "sıradaki, sonraki",
+    "meaning_en": "next, following",
+    "meaning_de": "nächster, folgender",
+    "meaning_fr": "suivant, prochain",
+    "meaning_es": "próximo, siguiente",
+    "meaning_pt": "próximo, seguinte",
+    "meaning_ko": "버금 차",
+    "meaning_zh": "次",
+    "stroke_count": 6,
+    "compounds": "次(つぎ)、目次(もくじ)、次回(じかい)"
   }
 ]
