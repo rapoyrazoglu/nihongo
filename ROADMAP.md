@@ -4,6 +4,32 @@
 
 ## Released
 
+### v1.6.0 - Genki I Textbook + Content Expansion (Stable)
+- [x] **Genki I textbook mode**: 12 lessons (L1-L12) covering all of Genki I
+- [x] Lesson Mode: Level → Lesson → Vocab/Grammar/Kanji/Exam flow
+- [x] End-of-lesson exam: mixed multiple-choice quiz from lesson's pool
+- [x] New schema: `lessons` and `lesson_items` tables (many-to-many)
+- [x] Re-runnable seeder: links existing N5 vocab by word/reading,
+      inserts new entries inline (no duplicates)
+- [x] 872 Genki I lesson items: 660 vocab + 70 grammar + 142 kanji
+- [x] N5 vocabulary expanded with Genki additions
+- [x] N5 grammar expanded with Genki patterns (に+する, ～たら,
+      comparisons, ～んです, ～すぎる, ～方がいい, ～でしょう, etc.)
+- [x] N5 kanji expanded: 145 → 152 (added 私, 京, 員, 次, 雪, 昔, 早)
+- [x] Verb conjugation drill (quiz mode 6)
+- [x] Daily streak tracking + goals
+- [x] Sentence ordering quiz + N5 hiragana mode
+- [x] Wrong answer review session
+- [x] JLPT readiness score per level (in --stats)
+- [x] Smart SRS: separate kanji/reading knowledge tracking
+- [x] Card limit setting
+- [x] Windows installer (Inno Setup) + macOS .pkg installer
+- [x] First-run setup wizard (language → DB → audio pack)
+- [x] **Fix**: Windows UTF-8 stdout (was crashing with cp1252 + Turkish chars)
+- [x] **Fix**: PyInstaller UPX/strip on Windows broke python DLL load
+- [x] **CI**: Tag-suffix auto-detect for prerelease (-alpha/-beta/-rc)
+- [x] **CI**: Drop continue-on-error for Windows smoke test
+
 ### v1.6.0-beta - Content Expansion & Neural TTS
 - [x] N5 vocabulary: 640 → 801 words (JLPT target: 800)
 - [x] N4 vocabulary: 502 → 683 words (JLPT target: 700)
@@ -66,17 +92,17 @@
 
 ## In Progress
 
-### v1.6.0 - Stable Release
-- [ ] N4 vocabulary: 683 → 700 (17 words remaining)
-- [ ] Final testing and bug fixes
-- [ ] Update README with new features
+### v1.7.0-beta - Polish & N3 Content
+- [ ] Address v1.6.0 bug reports as they come in
+- [ ] N4 vocabulary: 683 → 700 (17 remaining)
+- [ ] N3 content expansion (vocabulary, kanji, grammar)
+- [ ] Genki II textbook mode (mirrors Genki I infrastructure)
 
 ---
 
 ## Planned
 
 ### v1.7.0 - Study Enhancements
-- [ ] N3 content expansion (vocabulary, kanji, grammar)
 - [ ] Custom study decks (user-created word lists)
 - [ ] Cloze deletion quiz mode (fill in the blank)
 - [ ] Listening quiz mode (audio -> meaning)
