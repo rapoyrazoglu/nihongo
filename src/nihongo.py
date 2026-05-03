@@ -278,7 +278,14 @@ def handle_search():
             query = Prompt.ask(f"[cyan]{t('search.prompt')}[/cyan]")
             if not query.strip():
                 return
-        results = db.search_all(query.strip())
+        from i18n import get_lang
+        results, expansion = db.search_smart(query.strip(), get_lang())
+        if expansion:
+            terms = ", ".join(expansion["to"])
+            key = "search.expanded_synonym" if expansion["kind"] == "synonym" else "search.expanded_fuzzy"
+            console.print(
+                f"\n[yellow]{t(key, query=expansion['from'], terms=terms)}[/yellow]"
+            )
         console.print()
         all_items = show_search_results(results)
         if not all_items:

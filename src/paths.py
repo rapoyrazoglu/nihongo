@@ -16,6 +16,9 @@ else:
 # JSON veri dosyaları dizini (data/*.json)
 DATA_DIR = os.path.join(_BASE_DIR, "data")
 
+# Dil dosyaları dizini (lang/*.json: çeviriler + synonyms_<lang>.json)
+LANG_DIR = os.path.join(_BASE_DIR, "lang")
+
 # SQL migrations dizini. Frozen modda PyInstaller --add-data ile _MEIPASS/migrations'a koyulur.
 # Dev modda repo kökünde (src/'in bir üstü).
 if FROZEN:

@@ -233,6 +233,8 @@
   "search.kanji_results": "Kanji Results",
   "search.grammar_results": "Grammar Results",
   "search.no_results": "No results found.",
+  "search.expanded_synonym": "No direct match for '{query}'; searched related terms: {terms}",
+  "search.expanded_fuzzy": "No direct match for '{query}'; closest match: {terms}",
   "search.action_prompt": "Number / 's' new search / 0 back",
 
   "settings.title": "Settings",

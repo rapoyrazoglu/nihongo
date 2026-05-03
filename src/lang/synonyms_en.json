@@ -1,0 +1,46 @@
+{
+  "_comment": "Colloquial/synonym map: query → expansion terms. Used as a fallback when direct LIKE search returns empty. Add new entries as users report missed searches.",
+
+  "hi": ["hello"],
+  "hey": ["hello"],
+  "hiya": ["hello"],
+  "yo": ["hello"],
+  "sup": ["hello", "how are you"],
+  "what's up": ["how are you", "hello"],
+  "whats up": ["how are you", "hello"],
+  "hru": ["how are you"],
+
+  "thx": ["thank"],
+  "thanks": ["thank"],
+  "ty": ["thank"],
+
+  "ok": ["okay", "alright"],
+  "okey": ["okay"],
+  "yep": ["yes"],
+  "nope": ["no"],
+
+  "bro": ["brother"],
+  "sis": ["sister"],
+  "bff": ["friend"],
+  "buddy": ["friend"],
+
+  "food": ["meal", "eat"],
+  "drink": ["drink"],
+  "breakfast": ["breakfast", "meal"],
+  "lunch": ["lunch", "noon"],
+  "dinner": ["dinner", "evening"],
+
+  "phone": ["telephone"],
+  "tv": ["television"],
+  "pc": ["computer"],
+
+  "cash": ["money", "yen"],
+  "fee": ["fee", "money"],
+
+  "train station": ["station", "train"],
+  "subway": ["subway", "train"],
+
+  "uni": ["university"],
+  "college": ["university", "college"],
+  "school": ["school", "university", "high school"]
+}

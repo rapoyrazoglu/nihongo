@@ -4,10 +4,12 @@ import sqlite3
 import os
 import shutil
 import glob
+import json
+import difflib
 import uuid as uuid_lib
 from datetime import datetime, date
 
-from paths import DB_PATH, MIGRATIONS_DIR
+from paths import DB_PATH, MIGRATIONS_DIR, LANG_DIR
 
 
 def get_connection():
@@ -522,6 +524,89 @@ def search_all(query):
         "kanji": [dict(r) for r in kanji],
         "grammar": [dict(r) for r in grammar],
     }
+
+
+def _search_is_empty(results):
+    return not (results["vocabulary"] or results["kanji"] or results["grammar"])
+
+
+def _load_synonyms(lang):
+    path = os.path.join(LANG_DIR, f"synonyms_{lang}.json")
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    return {k.strip().lower(): v for k, v in data.items() if not k.startswith("_")}
+
+
+_VALID_LANGS = {"tr", "en", "de", "fr", "es", "pt", "ko", "zh"}
+
+
+def _all_meanings(lang):
+    """Tüm vocab/grammar/kanji anlamlarını fuzzy match için döner."""
+    if lang not in _VALID_LANGS:
+        lang = "en"
+    field = f"meaning_{lang}"
+    conn = get_connection()
+    rows = conn.execute(f"""
+        SELECT {field} as m FROM vocabulary WHERE {field} != ''
+        UNION SELECT {field} FROM grammar WHERE {field} != ''
+        UNION SELECT {field} FROM kanji WHERE {field} != ''
+    """).fetchall()
+    conn.close()
+    return [r["m"] for r in rows if r["m"]]
+
+
+def _merge_results(results_list):
+    """Birden fazla arama sonucunu id'ye göre dedup'lı birleştir."""
+    merged = {"vocabulary": [], "kanji": [], "grammar": []}
+    seen = {"vocabulary": set(), "kanji": set(), "grammar": set()}
+    for r in results_list:
+        for k in merged:
+            for item in r[k]:
+                if item["id"] not in seen[k]:
+                    seen[k].add(item["id"])
+                    merged[k].append(item)
+    return merged
+
+
+def search_smart(query, lang="en"):
+    """Aşamalı arama: önce LIKE, boşsa synonym map (anlamsal),
+    sonra difflib (typo). Genişletme bilgisini de döner.
+
+    Returns: (results, expansion)
+    expansion = None                                                 # direkt eşleşme
+              | {"kind": "synonym", "from": q, "to": [terms]}        # anlamsal
+              | {"kind": "fuzzy",   "from": q, "to": [matches]}      # yazım hatası
+    """
+    direct = search_all(query)
+    if not _search_is_empty(direct):
+        return direct, None
+
+    qlow = (query or "").strip().lower()
+    if not qlow:
+        return direct, None
+
+    # 1) Anlamsal genişletme (deterministik)
+    synonyms = _load_synonyms(lang).get(qlow, [])
+    if synonyms:
+        merged = _merge_results([search_all(s) for s in synonyms])
+        if not _search_is_empty(merged):
+            return merged, {"kind": "synonym", "from": query, "to": synonyms}
+
+    # 2) Yazım hatası düzeltme (heuristik)
+    meanings_lower = {m.lower(): m for m in _all_meanings(lang)}
+    close = difflib.get_close_matches(qlow, list(meanings_lower.keys()), n=3, cutoff=0.75)
+    if close:
+        merged = _merge_results([search_all(meanings_lower[c]) for c in close])
+        if not _search_is_empty(merged):
+            return merged, {"kind": "fuzzy", "from": query,
+                            "to": [meanings_lower[c] for c in close]}
+
+    return direct, None
 
 
 # --- Lessons / Textbooks ---

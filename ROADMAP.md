@@ -104,6 +104,9 @@
 - [x] `exam_sessions` + `exam_questions` tables (uuid/device_id/synced_at — sync-ready)
 - [x] Strict question-dedup: signature `(item_type, item_id, subtype)`,
       14-day window, scoped by exam_kind+scope
+- [x] Smart search: synonym (semantic, e.g. "naber" → "merhaba/selam") and
+      difflib (typo, e.g. "merheba" → "merhaba") fallbacks via per-language
+      `synonyms_<lang>.json`; UI surfaces what was expanded
 - [ ] Address v1.6.0 bug reports as they come in
 
 ---

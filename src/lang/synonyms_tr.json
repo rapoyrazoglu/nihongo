@@ -1,0 +1,50 @@
+{
+  "_comment": "Colloquial/synonym map: query → expansion terms. Used as a fallback when direct LIKE search returns empty. Add new entries as users report missed searches.",
+
+  "naber": ["merhaba", "selam", "nasılsın"],
+  "nbr": ["merhaba", "selam"],
+  "selamün aleyküm": ["merhaba"],
+  "slm": ["selam", "merhaba"],
+  "mrb": ["merhaba"],
+  "iyi günler": ["günaydın", "merhaba"],
+  "iyi geceler": ["gece", "uyku"],
+  "kolay gelsin": ["çalışmak", "iş"],
+
+  "tşk": ["teşekkür"],
+  "tsk": ["teşekkür"],
+  "teşekkürler": ["teşekkür"],
+  "sağol": ["teşekkür"],
+  "saol": ["teşekkür"],
+
+  "okey": ["tamam"],
+  "ok": ["tamam"],
+  "evett": ["evet"],
+  "yok": ["değil", "hayır"],
+
+  "abi": ["ağabey"],
+  "kardeş": ["kardeş", "erkek kardeş", "kız kardeş"],
+  "kanka": ["arkadaş"],
+  "dost": ["arkadaş"],
+
+  "yiyecek": ["yemek"],
+  "içecek": ["içmek"],
+  "kahvaltı": ["kahvaltı", "yemek"],
+  "öğle yemeği": ["öğle"],
+  "akşam yemeği": ["akşam", "yemek"],
+
+  "telefon etmek": ["aramak", "telefon"],
+  "ararım": ["aramak"],
+
+  "bilgisayar": ["bilgisayar"],
+  "tv": ["televizyon"],
+  "telefon": ["telefon"],
+
+  "para": ["para", "yen"],
+  "ücret": ["ücret", "para"],
+
+  "tren istasyonu": ["istasyon", "tren"],
+  "metro": ["metro", "tren"],
+
+  "fakülte": ["üniversite"],
+  "okul": ["okul", "üniversite", "lise"]
+}
