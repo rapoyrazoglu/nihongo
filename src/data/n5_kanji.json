@@ -2233,5 +2233,50 @@
     "meaning_zh": "次",
     "stroke_count": 6,
     "compounds": "次(つぎ)、目次(もくじ)、次回(じかい)"
+  },
+  {
+    "kanji": "雪",
+    "on_yomi": "セツ",
+    "kun_yomi": "ゆき",
+    "meaning_tr": "kar",
+    "meaning_en": "snow",
+    "meaning_de": "Schnee",
+    "meaning_fr": "neige",
+    "meaning_es": "nieve",
+    "meaning_pt": "neve",
+    "meaning_ko": "눈 설",
+    "meaning_zh": "雪",
+    "stroke_count": 11,
+    "compounds": "雪(ゆき)、大雪(おおゆき)、雪国(ゆきぐに)"
+  },
+  {
+    "kanji": "昔",
+    "on_yomi": "セキ、シャク",
+    "kun_yomi": "むかし",
+    "meaning_tr": "eskiden, geçmiş",
+    "meaning_en": "long ago, past",
+    "meaning_de": "früher, lange her",
+    "meaning_fr": "autrefois, jadis",
+    "meaning_es": "antiguamente",
+    "meaning_pt": "antigamente",
+    "meaning_ko": "옛 석",
+    "meaning_zh": "昔",
+    "stroke_count": 8,
+    "compounds": "昔(むかし)、昔々(むかしむかし)、大昔(おおむかし)"
+  },
+  {
+    "kanji": "早",
+    "on_yomi": "ソウ、サッ",
+    "kun_yomi": "はや.い、はや.める",
+    "meaning_tr": "erken, hızlı",
+    "meaning_en": "early, fast",
+    "meaning_de": "früh, schnell",
+    "meaning_fr": "tôt, rapide",
+    "meaning_es": "temprano, rápido",
+    "meaning_pt": "cedo, rápido",
+    "meaning_ko": "이를 조",
+    "meaning_zh": "早",
+    "stroke_count": 6,
+    "compounds": "早い(はやい)、早朝(そうちょう)、早速(さっそく)"
   }
 ]
