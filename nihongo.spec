@@ -2,10 +2,16 @@
 """PyInstaller spec for nihongo - JLPT öğrenme uygulaması."""
 
 import os
+import sys
 import glob
 
 block_cipher = None
 ROOT = os.path.dirname(os.path.abspath(SPEC))
+
+# UPX/strip Windows'ta Python DLL'ini bozuyor (LoadLibrary failure).
+# Sadece Linux/macOS'te kullan; Windows'ta binary biraz büyür ama çalışır.
+USE_UPX = sys.platform != 'win32'
+USE_STRIP = sys.platform != 'win32'
 
 # rich unicode data modülleri dinamik yükleniyor, PyInstaller yakalayamıyor
 _rich_unicode = []
@@ -49,8 +55,8 @@ exe = EXE(
     name='nihongo',
     debug=False,
     bootloader_ignore_signals=False,
-    strip=True,
-    upx=True,
+    strip=USE_STRIP,
+    upx=USE_UPX,
     upx_exclude=[],
     runtime_tmpdir=None,
     console=True,

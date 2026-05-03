@@ -42,7 +42,6 @@ jobs:
 
       - name: Test binary
         shell: bash
-        continue-on-error: ${{ matrix.os == 'windows-latest' }}
         run: ./${{ matrix.binary }} --version
 
       - name: Rename artifact
