@@ -132,8 +132,9 @@ Compliance & user trust
 - [ ] Privacy policy + terms of service published before launch
 - [ ] Open-source the API spec (OpenAPI 3) for transparency
 
-### v2.1.0 - iOS Native App (Swift / SwiftUI)
-- [ ] Native iOS app, Swift + SwiftUI (not cross-platform)
+### v2.1.0 - iOS Native App + Desktop GUI
+
+**iOS (primary)** — Native, Swift + SwiftUI (not cross-platform)
 - [ ] Reuse JSON content as embedded asset
 - [ ] Port SRS algorithm to Swift (~100 lines, straightforward)
 - [ ] Local SQLite via GRDB.swift
@@ -143,6 +144,12 @@ Compliance & user trust
 - [ ] CloudKit fallback for iCloud-only users (no Supabase account)
 - [ ] App Store submission, TestFlight beta
 - [ ] Feature parity with desktop CLI before moving to v2.2
+
+**Desktop GUI (parallel track)** — built alongside iOS
+- [ ] CLI stays as-is for power users; GUI is additive, not a replacement
+- [ ] Framework decision deferred (Textual / Flet / Tauri) — pick when starting
+- [ ] Shares db.py + srs.py + content JSON with CLI (zero duplication)
+- [ ] Same offline-first + sync engine as CLI
 
 ### v2.2.0 - Mascot & Branding
 - [ ] 2D mascot draft in Claude Design / Figma
