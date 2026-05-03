@@ -16,6 +16,13 @@ else:
 # JSON veri dosyaları dizini (data/*.json)
 DATA_DIR = os.path.join(_BASE_DIR, "data")
 
+# SQL migrations dizini. Frozen modda PyInstaller --add-data ile _MEIPASS/migrations'a koyulur.
+# Dev modda repo kökünde (src/'in bir üstü).
+if FROZEN:
+    MIGRATIONS_DIR = os.path.join(_BASE_DIR, "migrations")
+else:
+    MIGRATIONS_DIR = os.path.join(os.path.dirname(_BASE_DIR), "migrations")
+
 # Veritabanı: kullanıcı dizininde (OS'e göre)
 if sys.platform == "win32":
     _DB_DIR = os.path.join(os.environ.get("APPDATA", os.path.expanduser("~")), "nihongo")

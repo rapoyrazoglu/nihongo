@@ -70,7 +70,7 @@ if "--delete" in sys.argv:
     sys.exit(0)
 
 import db
-from ui import console, show_main_menu, show_level_select, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_grammar_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, show_textbook_level_select, show_lesson_select, show_lesson_detail_menu, clear, banner
+from ui import console, show_main_menu, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_grammar_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, show_startup_level_select, show_lesson_select, show_lesson_detail_menu, clear, banner
 from rich.prompt import Prompt, IntPrompt
 import quiz
 
@@ -107,22 +107,23 @@ def ensure_db():
         update_meanings()
 
 
+def _current_level():
+    """Yapılandırılmış aktif seviye (config.json'dan); zaten ensure_level_selected() ile garanti."""
+    from i18n import get_level, ACTIVE_LEVELS
+    lv = get_level()
+    return lv if lv in ACTIVE_LEVELS else ACTIVE_LEVELS[0]
+
+
 def handle_study_vocab():
-    level = show_level_select(t("vocab_study_level"))
-    if level:
-        quiz.study_vocabulary(level)
+    quiz.study_vocabulary(_current_level())
 
 
 def handle_study_kanji():
-    level = show_level_select(t("kanji_study_level"))
-    if level:
-        quiz.study_kanji(level)
+    quiz.study_kanji(_current_level())
 
 
 def handle_study_grammar():
-    level = show_level_select(t("grammar_study_level"))
-    if level:
-        quiz.study_grammar(level)
+    quiz.study_grammar(_current_level())
 
 
 def handle_quiz():
@@ -130,23 +131,36 @@ def handle_quiz():
     if mode == "0":
         return
 
-    level = show_level_select(t("quiz_level"))
-    if not level:
+    level = _current_level()
+
+    if mode == "1":
+        # JLPT mock exam
+        import exam_jlpt
+        exam_jlpt.run_jlpt_exam(level)
+        return
+
+    if mode == "2":
+        # Genki lesson cumulative exam
+        from ui import show_lesson_select
+        import exam_genki
+        lesson_id = show_lesson_select(level)
+        if lesson_id is None:
+            return
+        exam_genki.run_genki_lesson_exam(level, lesson_id)
         return
 
     count = IntPrompt.ask(t("quiz.question_count"), default=10)
-
-    if mode == "1":
+    if mode == "3":
         quiz.quiz_jp_to_tr(level, count)
-    elif mode == "2":
-        quiz.quiz_tr_to_jp(level, count)
-    elif mode == "3":
-        quiz.quiz_kanji_reading(level, count)
     elif mode == "4":
-        quiz.quiz_kanji_meaning(level, count)
+        quiz.quiz_tr_to_jp(level, count)
     elif mode == "5":
-        quiz.quiz_sentence_order(level, count)
+        quiz.quiz_kanji_reading(level, count)
     elif mode == "6":
+        quiz.quiz_kanji_meaning(level, count)
+    elif mode == "7":
+        quiz.quiz_sentence_order(level, count)
+    elif mode == "8":
         quiz.quiz_conjugation(level, count)
 
 
@@ -193,9 +207,7 @@ def _list_search(items, query):
 
 
 def handle_vocab_list():
-    level = show_level_select(t("vocab_list_level"))
-    if not level:
-        return
+    level = _current_level()
     all_vocabs = db.get_vocabulary(level=level)
     filtered = None
     while True:
@@ -226,9 +238,7 @@ def handle_vocab_list():
 
 
 def handle_kanji_list():
-    level = show_level_select(t("kanji_list_level"))
-    if not level:
-        return
+    level = _current_level()
     all_kanjis = db.get_kanji(level=level)
     filtered = None
     while True:
@@ -302,9 +312,39 @@ def handle_language_change():
     set_lang(lang_code)
 
 
+def ensure_level_selected():
+    """Seviye config'de yoksa zorla seçtir; varsa değiştirmek isteyip istemediğini sor."""
+    from i18n import get_level, set_level, ACTIVE_LEVELS
+    current = get_level()
+
+    if current not in ACTIVE_LEVELS:
+        # İlk seçim ya da artık desteklenmeyen seviye → zorunlu seçim
+        new_level = show_startup_level_select()
+        set_level(new_level)
+        console.print(f"\n[green]{t('startup.level_set', level=new_level)}[/green]\n")
+        return
+
+    # Mevcut seviyeyi göster, değiştirmek ister mi?
+    console.print(
+        f"\n[bold cyan]{t('startup.current_level')}:[/bold cyan] "
+        f"[bold]{current}[/bold]"
+    )
+    yes = t("startup.confirm_yes")
+    no = t("startup.confirm_no")
+    answer = Prompt.ask(
+        f"[dim]{t('startup.change_level_q')}[/dim]",
+        default=no,
+    ).strip().lower()
+    if answer == yes:
+        new_level = show_startup_level_select()
+        set_level(new_level)
+        console.print(f"\n[green]{t('startup.level_set', level=new_level)}[/green]\n")
+
+
 def first_run_setup():
-    """İlk açılışta setup wizard: dil, veritabanı, ses paketi."""
+    """İlk açılışta setup wizard: dil, seviye, veritabanı, ses paketi."""
     from rich.progress import Progress
+    from i18n import set_level
 
     # --- Hoşgeldin ---
     clear()
@@ -317,7 +357,11 @@ def first_run_setup():
     lang_code = show_language_select()
     set_lang(lang_code)
 
-    # --- Adım 2: Veritabanı ---
+    # --- Adım 2: Seviye ---
+    level = show_startup_level_select()
+    set_level(level)
+
+    # --- Adım 3: Veritabanı ---
     clear()
     banner()
     console.print(f"\n[bold cyan]{t('setup.step_db')}[/bold cyan]\n")
@@ -352,28 +396,25 @@ def first_run_setup():
 
 
 def handle_textbook_study():
-    """Ders kitabı modu: level → ders → vocab/grammar/kanji/sınav."""
+    """Ders kitabı modu: level config'den, ders → vocab/grammar/kanji/sınav."""
+    level = _current_level()
     while True:
-        level = show_textbook_level_select()
-        if level is None:
+        lesson_id = show_lesson_select(level)
+        if lesson_id is None:
             return
         while True:
-            lesson_id = show_lesson_select(level)
-            if lesson_id is None:
+            action = show_lesson_detail_menu(lesson_id)
+            if action == "0":
                 break
-            while True:
-                action = show_lesson_detail_menu(lesson_id)
-                if action == "0":
-                    break
-                elif action == "1":
-                    quiz.study_lesson_vocab(lesson_id)
-                elif action == "2":
-                    quiz.study_lesson_grammar(lesson_id)
-                elif action == "3":
-                    quiz.study_lesson_kanji(lesson_id)
-                elif action == "4":
-                    count = IntPrompt.ask(t("quiz.question_count"), default=10)
-                    quiz.quiz_lesson_exam(lesson_id, count)
+            elif action == "1":
+                quiz.study_lesson_vocab(lesson_id)
+            elif action == "2":
+                quiz.study_lesson_grammar(lesson_id)
+            elif action == "3":
+                quiz.study_lesson_kanji(lesson_id)
+            elif action == "4":
+                count = IntPrompt.ask(t("quiz.question_count"), default=10)
+                quiz.quiz_lesson_exam(lesson_id, count)
 
 
 def handle_settings():
@@ -467,6 +508,9 @@ def main():
         first_run_setup()
     else:
         ensure_db()
+
+    # Seviye kontrolü: ilk girişte zorla seçtir, sonraki açılışlarda değiştir? sor
+    ensure_level_selected()
 
     try:
         while True:

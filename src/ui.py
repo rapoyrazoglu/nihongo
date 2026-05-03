@@ -457,16 +457,19 @@ def show_quiz_menu():
     menu.add_column("No", style="bold cyan", width=4)
     menu.add_column("", style="white")
 
-    menu.add_row("1", t("quiz.jp_to_native"))
-    menu.add_row("2", t("quiz.native_to_jp"))
-    menu.add_row("3", t("quiz.kanji_reading"))
-    menu.add_row("4", t("quiz.kanji_meaning"))
-    menu.add_row("5", t("quiz.sentence_order"))
-    menu.add_row("6", t("quiz.conjugation"))
+    menu.add_row("1", f"[bold yellow]{t('quiz.jlpt_mock')}[/bold yellow]")
+    menu.add_row("2", f"[bold yellow]{t('quiz.genki_lesson')}[/bold yellow]")
+    menu.add_row("3", t("quiz.jp_to_native"))
+    menu.add_row("4", t("quiz.native_to_jp"))
+    menu.add_row("5", t("quiz.kanji_reading"))
+    menu.add_row("6", t("quiz.kanji_meaning"))
+    menu.add_row("7", t("quiz.sentence_order"))
+    menu.add_row("8", t("quiz.conjugation"))
     menu.add_row("0", t("back"))
 
     console.print(menu)
-    return Prompt.ask(t("your_choice"), choices=["0","1","2","3","4","5","6"], default="1")
+    return Prompt.ask(t("your_choice"),
+                      choices=["0","1","2","3","4","5","6","7","8"], default="1")
 
 
 def show_search_results(results):
@@ -701,6 +704,29 @@ def show_lesson_detail_menu(lesson_id):
     console.print(Panel(menu, title=f"[bold]{t('textbook.lesson_actions')}[/bold]", border_style="green"))
     return Prompt.ask(f"\n[bold cyan]{t('your_choice')}[/bold cyan]",
                       choices=["0", "1", "2", "3", "4"], default="1")
+
+
+def show_startup_level_select():
+    """İlk açılışta veya kullanıcı değiştirmek isterse seviye seçimi.
+    Aktif olmayan seviyeler 'yakında' rozetiyle gösterilir, seçilemez."""
+    from i18n import ALL_LEVELS, ACTIVE_LEVELS
+    clear()
+    banner()
+    console.print(f"\n[bold]{t('startup.choose_level_title')}[/bold]")
+    console.print(f"[dim]{t('startup.choose_level_prompt')}[/dim]\n")
+
+    selectable_indices = []
+    for i, lv in enumerate(ALL_LEVELS, 1):
+        if lv in ACTIVE_LEVELS:
+            console.print(f"  [cyan]{i}[/cyan] - [bold]{lv}[/bold]")
+            selectable_indices.append(str(i))
+        else:
+            console.print(f"  [dim]{i} - {lv}  ({t('startup.coming_soon')})[/dim]")
+
+    default = selectable_indices[0]
+    choice = Prompt.ask(f"\n[bold cyan]{t('your_choice')}[/bold cyan]",
+                        choices=selectable_indices, default=default)
+    return ALL_LEVELS[int(choice) - 1]
 
 
 def show_language_select():

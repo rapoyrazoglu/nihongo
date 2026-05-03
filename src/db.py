@@ -3,9 +3,11 @@
 import sqlite3
 import os
 import shutil
+import glob
+import uuid as uuid_lib
 from datetime import datetime, date
 
-from paths import DB_PATH
+from paths import DB_PATH, MIGRATIONS_DIR
 
 
 def get_connection():
@@ -15,11 +17,74 @@ def get_connection():
     return conn
 
 
+def _device_id():
+    """Stable per-install device id. Used in exam rows for future Supabase sync."""
+    from paths import CONFIG_PATH
+    import json
+    cfg = {}
+    if os.path.exists(CONFIG_PATH):
+        try:
+            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+        except Exception:
+            cfg = {}
+    did = cfg.get("device_id")
+    if not did:
+        did = str(uuid_lib.uuid4())
+        cfg["device_id"] = did
+        os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
+        with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+            json.dump(cfg, f, ensure_ascii=False, indent=2)
+    return did
+
+
+def run_migrations():
+    """Apply pending SQL migrations from MIGRATIONS_DIR in lexical order.
+    Each file runs once; applied filenames stored in schema_migrations."""
+    conn = get_connection()
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS schema_migrations (
+            filename TEXT PRIMARY KEY,
+            applied_at TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+
+    if not os.path.isdir(MIGRATIONS_DIR):
+        conn.close()
+        return
+
+    applied = {r["filename"] for r in conn.execute("SELECT filename FROM schema_migrations").fetchall()}
+    files = sorted(glob.glob(os.path.join(MIGRATIONS_DIR, "*.sql")))
+    for path in files:
+        name = os.path.basename(path)
+        if name in applied:
+            continue
+        with open(path, "r", encoding="utf-8") as f:
+            sql = f.read()
+        try:
+            conn.executescript(sql)
+            conn.execute(
+                "INSERT INTO schema_migrations (filename, applied_at) VALUES (?, ?)",
+                (name, datetime.utcnow().isoformat() + "Z"),
+            )
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            conn.close()
+            raise
+    conn.close()
+
+
 def init_db():
-    """Veritabanı tablolarını oluştur."""
+    """Veritabanı tablolarını oluştur. Önce migration dosyalarını uygula."""
+    run_migrations()
+
     conn = get_connection()
     c = conn.cursor()
 
+    # Migration sistemi öncesi kalan eski DB'ler için fallback CREATE'ler
+    # (yeni kurulumlarda zaten 0001_init.sql çalıştığı için no-op olur).
     c.executescript("""
         CREATE TABLE IF NOT EXISTS vocabulary (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -556,6 +621,97 @@ def export_anki_tsv(card_type, filepath):
         f.write("\n".join(lines))
 
     return len(lines)
+
+
+# --- Exam history (sync-ready) ---
+
+def question_signature(item_type, item_id, question_subtype):
+    """Tek bir soruyu temsil eden imza. Aynı imza = aynı soru,
+    distractor seti farklı olsa bile."""
+    return f"{item_type}:{item_id}:{question_subtype}"
+
+
+def start_exam_session(exam_kind, exam_scope, level):
+    """Yeni sınav oturumu aç. UUID döner (sonradan referans için)."""
+    sid = str(uuid_lib.uuid4())
+    conn = get_connection()
+    conn.execute("""
+        INSERT INTO exam_sessions (uuid, device_id, exam_kind, exam_scope, level, started_at)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (sid, _device_id(), exam_kind, exam_scope, level,
+          datetime.utcnow().isoformat() + "Z"))
+    conn.commit()
+    conn.close()
+    return sid
+
+
+def finish_exam_session(session_uuid, score_correct, score_total, duration_seconds):
+    conn = get_connection()
+    conn.execute("""
+        UPDATE exam_sessions
+        SET finished_at = ?, score_correct = ?, score_total = ?, duration_seconds = ?
+        WHERE uuid = ?
+    """, (datetime.utcnow().isoformat() + "Z",
+          score_correct, score_total, duration_seconds, session_uuid))
+    conn.commit()
+    conn.close()
+
+
+def record_exam_question(session_uuid, section, question_subtype, item_type, item_id, correct):
+    """Sınavda sorulan tek bir soruyu kaydet. correct: 0/1/None (skip)."""
+    conn = get_connection()
+    conn.execute("""
+        INSERT INTO exam_questions
+            (uuid, session_uuid, device_id, section, question_subtype,
+             item_type, item_id, question_signature, correct, asked_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        str(uuid_lib.uuid4()), session_uuid, _device_id(), section, question_subtype,
+        item_type, item_id, question_signature(item_type, item_id, question_subtype),
+        correct, datetime.utcnow().isoformat() + "Z",
+    ))
+    conn.commit()
+    conn.close()
+
+
+def get_recent_question_signatures(exam_kind, exam_scope=None, days=14):
+    """Son `days` gün içinde aynı kind/scope sınavda sorulmuş soru imzaları.
+    Bunları yeni sınavdan elemek için kullan."""
+    from datetime import timedelta
+    cutoff = (datetime.utcnow() - timedelta(days=days)).isoformat() + "Z"
+    conn = get_connection()
+    if exam_scope:
+        rows = conn.execute("""
+            SELECT DISTINCT q.question_signature
+            FROM exam_questions q
+            JOIN exam_sessions s ON s.uuid = q.session_uuid
+            WHERE s.exam_kind = ? AND s.exam_scope = ? AND q.asked_at >= ?
+        """, (exam_kind, exam_scope, cutoff)).fetchall()
+    else:
+        rows = conn.execute("""
+            SELECT DISTINCT q.question_signature
+            FROM exam_questions q
+            JOIN exam_sessions s ON s.uuid = q.session_uuid
+            WHERE s.exam_kind = ? AND q.asked_at >= ?
+        """, (exam_kind, cutoff)).fetchall()
+    conn.close()
+    return {r["question_signature"] for r in rows}
+
+
+def get_exam_history(exam_kind=None, limit=20):
+    conn = get_connection()
+    if exam_kind:
+        rows = conn.execute("""
+            SELECT * FROM exam_sessions WHERE exam_kind = ? AND finished_at IS NOT NULL
+            ORDER BY started_at DESC LIMIT ?
+        """, (exam_kind, limit)).fetchall()
+    else:
+        rows = conn.execute("""
+            SELECT * FROM exam_sessions WHERE finished_at IS NOT NULL
+            ORDER BY started_at DESC LIMIT ?
+        """, (limit,)).fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
 
 
 def backup_db(dest_path):

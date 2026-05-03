@@ -92,11 +92,19 @@
 
 ## In Progress
 
-### v1.7.0-beta - Polish & N3 Content
+### v1.7.0-beta - Level-Driven Flow + JLPT/Genki Mock Exams
+- [x] `migrations/` directory with versioned SQL files (Supabase-portable schema)
+- [x] DB migration runner; `schema_migrations` tracking table
+- [x] Startup level selection persisted to `config.json`
+- [x] Per-launch "change level?" prompt
+- [x] All menus filter by configured level (no more per-action level prompts)
+- [x] Quiz menu top-level: **JLPT Mock Exam** | **Genki Lesson Exam** | other modes
+- [x] JLPT N5 mock exam: vocab (kanji↔reading, meaning↔word) + grammar sections
+- [x] Genki cumulative lesson exam (L1–L<n>, weighted toward latest)
+- [x] `exam_sessions` + `exam_questions` tables (uuid/device_id/synced_at — sync-ready)
+- [x] Strict question-dedup: signature `(item_type, item_id, subtype)`,
+      14-day window, scoped by exam_kind+scope
 - [ ] Address v1.6.0 bug reports as they come in
-- [ ] N4 vocabulary: 683 → 700 (17 remaining)
-- [ ] N3 content expansion (vocabulary, kanji, grammar)
-- [ ] Genki II textbook mode (mirrors Genki I infrastructure)
 
 ---
 
@@ -106,14 +114,11 @@
 - [ ] Custom study decks (user-created word lists)
 - [ ] Cloze deletion quiz mode (fill in the blank)
 - [ ] Listening quiz mode (audio -> meaning)
-- [ ] Wrong answer review session
-- [ ] Daily streak tracking + goals
 
 ### v1.8.0 - Data & Analytics
 - [ ] Detailed progress charts (weekly/monthly)
 - [ ] Per-word difficulty analysis
 - [ ] Study time heatmap
-- [ ] JLPT readiness score per level
 - [ ] Export statistics as PDF/CSV
 
 ### v1.9.0 - UX Improvements
@@ -123,7 +128,15 @@
 - [ ] Furigana display toggle
 - [ ] Compact card view mode
 
-### v2.0.0 - Full Backend Platform (Offline-First Sync)
+### v2.0.0 - N4 Content + Backend Platform (Offline-First Sync)
+
+Content expansion
+- [ ] N4 vocabulary: 683 → 700 (17 remaining for JLPT N4 target)
+- [ ] N3 content expansion (vocabulary, kanji, grammar)
+- [ ] Genki II textbook mode (mirrors Genki I infrastructure)
+- [ ] JLPT N4 mock exam (mirrors N5 blueprint)
+- [ ] JLPT Reading section (passage + comprehension MCQ)
+
 **Architecture: production-ready, multi-service, API-gateway fronted.**
 
 Infrastructure
@@ -209,7 +222,6 @@ Compliance & user trust
 - [ ] N2/N1 content (vocabulary, kanji, grammar)
 - [ ] Handwriting recognition for kanji input
 - [ ] Pitch accent data and quiz
-- [ ] Conjugation drill mode
 - [ ] Reading comprehension passages
 - [ ] Kanji stroke order data
 - [ ] Integration with external dictionaries (Jisho API)

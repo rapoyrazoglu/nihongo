@@ -143,6 +143,20 @@ def set_card_limit(limit):
     _save_config_key("card_limit", limit)
 
 
+# Available study levels. ACTIVE_LEVELS = içeriği seedlenmiş ve UI'de kullanılabilir.
+ALL_LEVELS = ["N5", "N4", "N3", "N2", "N1"]
+ACTIVE_LEVELS = ["N5"]  # N4: v2.0.0
+
+
+def get_level():
+    """Kullanıcının seçtiği aktif seviyeyi döndür (None ise henüz seçmemiş)."""
+    return _load_config().get("level")
+
+
+def set_level(level):
+    _save_config_key("level", level)
+
+
 def _save_config_key(key, value):
     config = _load_config()
     config[key] = value

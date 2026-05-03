@@ -31,6 +31,7 @@ a = Analysis(
     datas=[
         ('src/data/*.json', 'data'),
         ('src/lang/*.json', 'lang'),
+        ('migrations/*.sql', 'migrations'),
     ],
     hiddenimports=_rich_unicode,
     hookspath=[],
