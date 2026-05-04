@@ -72,6 +72,10 @@ if "--delete" in sys.argv:
 import db
 from ui import console, show_main_menu, show_vocab_list, show_kanji_list, show_vocab_card, show_kanji_card, show_grammar_card, show_stats, show_quiz_menu, show_search_results, show_settings_menu, show_language_select, show_startup_level_select, show_lesson_select, show_lesson_detail_menu, clear, banner
 from rich.prompt import Prompt, IntPrompt
+from rich.panel import Panel
+from rich.table import Table
+from rich.text import Text
+from rich import box
 import quiz
 
 
@@ -411,6 +415,92 @@ def first_run_setup():
     Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
 
 
+def handle_resume_study():
+    """Curriculum 'devam et' akisi: kullanicinin kaldigi yerdeki lesson + asama."""
+    import curriculum
+    level = _current_level()
+    state = curriculum.get_resume_state(level)
+
+    if state["overall_progress"]["total_lessons"] == 0:
+        clear(); banner()
+        console.print(f"\n[yellow]{t('resume.no_curriculum', level=level)}[/yellow]\n")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        return
+
+    while True:
+        clear(); banner()
+        state = curriculum.get_resume_state(level)
+
+        # Mufredat tamam — tebrikler ekrani
+        if state["complete"]:
+            console.print(f"\n[bold green]{t('resume.curriculum_complete', level=level)}[/bold green]\n")
+            console.print(f"[dim]{t('resume.try_free_srs')}[/dim]\n")
+            Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+            return
+
+        # Resume header
+        op = state["overall_progress"]
+        lp = state["lesson_progress"]
+        pp = state["phase_progress"]
+
+        header = Text()
+        header.append(f"{state['textbook']} ", style="dim")
+        header.append(f"L{state['lesson_no']}: ", style="bold cyan")
+        header.append(state["lesson_title"], style="bold white")
+        if state.get("lesson_title_ja"):
+            header.append(f"  〜 {state['lesson_title_ja']}", style="yellow")
+        console.print(Panel(header, border_style="cyan"))
+
+        info = Table(show_header=False, box=None, padding=(0, 2))
+        info.add_column(style="cyan")
+        info.add_column(style="white")
+        info.add_row(t("resume.overall"),
+                     f"{op['completed_lessons']}/{op['total_lessons']} {t('resume.lessons_done')}")
+        info.add_row(t("resume.lesson_phases"),
+                     f"{lp['phases_done']}/{lp['phases_total']}")
+        phase_label = t(f"resume.phase.{state['phase']}")
+        if state["phase"] == "exam":
+            info.add_row(t("resume.next_phase"),
+                         f"[bold yellow]{phase_label}[/bold yellow]")
+        else:
+            info.add_row(t("resume.next_phase"),
+                         f"[bold yellow]{phase_label}[/bold yellow]  "
+                         f"({pp['learned']}/{pp['total']})")
+        console.print(info)
+        console.print()
+
+        menu = Table(show_header=False, box=box.SIMPLE, padding=(0, 2))
+        menu.add_column("No", style="bold cyan", width=4)
+        menu.add_column("", style="white")
+        menu.add_row("1", f"[bold green]{t('resume.continue')}[/bold green]")
+        menu.add_row("2", t("resume.skip_phase"))
+        menu.add_row("0", t("back"))
+        console.print(Panel(menu, title=f"[bold]{t('resume.title')}[/bold]", border_style="green"))
+
+        choice = Prompt.ask(t("your_choice"), choices=["0", "1", "2"], default="1")
+        if choice == "0":
+            return
+        if choice == "2":
+            # "Atla" — bu asamayi geciyoruz, bir sonrakine yapay olarak gecemeyiz cunku
+            # asamalar gercek ilerlemeye baglı. Atlamak icin lesson_id ile manuel ders
+            # kitabi menusune yonlendir.
+            handle_textbook_study()
+            return
+
+        # Devam — asamaya gore uygun fonksiyon
+        lesson_id = state["lesson_id"]
+        phase = state["phase"]
+        if phase == "vocab":
+            quiz.study_lesson_vocab(lesson_id)
+        elif phase == "grammar":
+            quiz.study_lesson_grammar(lesson_id)
+        elif phase == "kanji":
+            quiz.study_lesson_kanji(lesson_id)
+        elif phase == "exam":
+            import exam_genki
+            exam_genki.run_genki_lesson_exam(level, lesson_id)
+
+
 def handle_textbook_study():
     """Ders kitabı modu: level config'den, ders → vocab/grammar/kanji/sınav."""
     level = _current_level()
@@ -538,22 +628,24 @@ def main():
                 console.print(f"[dim]{t('exit.see_you')}、また明日！[/dim]\n")
                 break
             elif choice == "1":
-                handle_study_vocab()
+                handle_resume_study()
             elif choice == "2":
-                handle_study_kanji()
+                handle_study_vocab()
             elif choice == "3":
-                handle_study_grammar()
+                handle_study_kanji()
             elif choice == "4":
-                handle_quiz()
+                handle_study_grammar()
             elif choice == "5":
-                handle_vocab_list()
+                handle_quiz()
             elif choice == "6":
-                handle_kanji_list()
+                handle_vocab_list()
             elif choice == "7":
-                show_stats()
+                handle_kanji_list()
             elif choice == "8":
-                handle_settings()
+                show_stats()
             elif choice == "9":
+                handle_settings()
+            elif choice == "A":
                 handle_search()
             elif choice == "T":
                 handle_textbook_study()

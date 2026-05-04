@@ -66,6 +66,26 @@ def show_main_menu():
         info_table.add_row(t("streak"), f"[{streak_style}]{streak} {t('streak.days')}[/{streak_style}]")
 
     try:
+        import curriculum
+        from i18n import get_level
+        resume = curriculum.get_resume_state(get_level() or "N5")
+    except Exception:
+        resume = None
+    if resume and not resume.get("complete") and resume.get("lesson_id"):
+        op = resume["overall_progress"]
+        phase = t(f"resume.phase.{resume['phase']}")
+        info_table.add_row(
+            f"[bold green]{t('menu.resume_label')}[/bold green]",
+            f"L{resume['lesson_no']} {resume['lesson_title']} — [yellow]{phase}[/yellow]  "
+            f"[dim]({op['completed_lessons']}/{op['total_lessons']})[/dim]"
+        )
+    elif resume and resume.get("complete"):
+        info_table.add_row(
+            f"[bold green]{t('menu.resume_label')}[/bold green]",
+            f"[bold green]{t('resume.curriculum_complete_short')}[/bold green]"
+        )
+
+    try:
         from updater import check_update_async
         update_info = check_update_async()
     except Exception:
@@ -84,15 +104,16 @@ def show_main_menu():
     menu.add_column(t("your_choice"), style="white")
     menu.add_column("", style="dim")
 
-    menu.add_row("1", t("menu.study_vocab"), t("menu.study_vocab_desc"))
-    menu.add_row("2", t("menu.study_kanji"), t("menu.study_kanji_desc"))
-    menu.add_row("3", t("menu.study_grammar"), t("menu.study_grammar_desc"))
-    menu.add_row("4", t("menu.quiz"), t("menu.quiz_desc"))
-    menu.add_row("5", t("menu.vocab_list"), t("menu.vocab_list_desc"))
-    menu.add_row("6", t("menu.kanji_list"), t("menu.kanji_list_desc"))
-    menu.add_row("7", t("menu.stats"), t("menu.stats_desc"))
-    menu.add_row("8", t("menu.settings"), t("menu.settings_desc"))
-    menu.add_row("9", t("menu.search"), t("menu.search_desc"))
+    menu.add_row("1", f"[bold green]{t('menu.resume')}[/bold green]", t("menu.resume_desc"))
+    menu.add_row("2", t("menu.study_vocab"), t("menu.study_vocab_desc"))
+    menu.add_row("3", t("menu.study_kanji"), t("menu.study_kanji_desc"))
+    menu.add_row("4", t("menu.study_grammar"), t("menu.study_grammar_desc"))
+    menu.add_row("5", t("menu.quiz"), t("menu.quiz_desc"))
+    menu.add_row("6", t("menu.vocab_list"), t("menu.vocab_list_desc"))
+    menu.add_row("7", t("menu.kanji_list"), t("menu.kanji_list_desc"))
+    menu.add_row("8", t("menu.stats"), t("menu.stats_desc"))
+    menu.add_row("9", t("menu.settings"), t("menu.settings_desc"))
+    menu.add_row("A", t("menu.search"), t("menu.search_desc"))
     menu.add_row("T", t("menu.textbook"), t("menu.textbook_desc"))
     menu.add_row("0", t("menu.exit"), t("menu.exit_desc"))
 
