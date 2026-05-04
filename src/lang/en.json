@@ -36,6 +36,12 @@
   "profile.velocity.declining": "Slipped — fatigue or harder content",
   "profile.velocity.unknown": "Not enough data yet",
   "profile.best_hour_format": "around {hour}:00",
+  "stats.patterns_title": "Recurring Mistakes (Recent)",
+  "stats.patterns_diag": "Mistake type",
+  "stats.patterns_area": "Area",
+  "stats.patterns_count": "Times",
+  "stats.patterns_recent": "also in last week",
+  "stats.patterns_hint": "These patterns are extracted from diagnostic quizzes. Pick one and drill it.",
 
   "textbook.guided": "Teach + Practice (guided)",
   "textbook.diagnostic_quiz": "Diagnostic Quiz (smart analysis)",

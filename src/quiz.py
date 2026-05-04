@@ -707,6 +707,21 @@ def lesson_diagnostic_quiz(lesson_id, count=10):
             correct=is_ok,
             confidence=None,
         )
+        # Pattern detection log: yanlis ise distractor diag etiketini kaydet
+        # Birincil entity tipi 'tests' listesinin ilk elemanı (vocab/grammar/kanji)
+        primary = q.get("tests", ["vocab"])[0]
+        type_map = {"vocab": "vocabulary", "grammar": "grammar", "kanji": "kanji"}
+        primary_entity_type = type_map.get(primary, "vocabulary")
+        diag_label = chosen.get("diag") if not is_ok else None
+        # entity_id yok cünkü quiz_pool sorulari direkt vocab tablosuyla baglı degil;
+        # log'da entity_id=0 placeholder ile yazıyoruz
+        db.log_answer(
+            entity_type=primary_entity_type, entity_id=0,
+            correct=is_ok, confidence=None,
+            rating_before=None, rating_after=None,
+            question_subtype=q.get("type"),
+            chosen_distractor_diag=diag_label,
+        )
         # Track summary
         for dim in q.get("tests", []):
             skill_changes[dim] = skill_changes.get(dim, 0) + (1 if is_ok else -1)

@@ -519,6 +519,24 @@ def show_stats():
     elif profile.get("total_answers", 0) > 0:
         console.print(f"[dim italic]{t('stats.profile_warming_up', total=profile['total_answers'], needed=profile['needed'])}[/dim italic]\n")
 
+    # --- Smart pattern detection: sik yapilan hatalar ---
+    insights = db.get_pattern_insights(min_occurrences=3, top_n=5)
+    if insights:
+        pat_table = Table(title=t("stats.patterns_title"), box=box.ROUNDED, border_style="red")
+        pat_table.add_column(t("stats.patterns_diag"), style="cyan")
+        pat_table.add_column(t("stats.patterns_area"), style="white")
+        pat_table.add_column(t("stats.patterns_count"), justify="right", style="bold yellow")
+        pat_table.add_column("", style="dim")
+        for ins in insights:
+            # Diag etiketini insan-okur hale getirmeye calis
+            diag_human = ins["diag"].replace("_", " ").capitalize()
+            entity_labels = ", ".join(t(f"diagnostic.skill.{e.replace('vocabulary','vocab')}")
+                                       for e in ins["entity_types"])
+            recent_marker = "⚠ " + t("stats.patterns_recent") if ins["recent"] else ""
+            pat_table.add_row(diag_human, entity_labels, str(ins["count"]), recent_marker)
+        console.print(pat_table)
+        console.print(f"[dim italic]{t('stats.patterns_hint')}[/dim italic]\n")
+
     # --- Forgetting curve: tekrar zamani gelmis item ozet ---
     decay_summary = db.get_decay_summary()
     if decay_summary.get("total", 0) > 0:

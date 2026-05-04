@@ -767,18 +767,87 @@ def upsert_skill_rating(skill_name, rating):
 
 
 def log_answer(entity_type, entity_id, correct, confidence, rating_before, rating_after,
-               question_subtype=None):
+               question_subtype=None, chosen_distractor_diag=None):
+    """answer_log kayit. chosen_distractor_diag yanlis cevapta secilen distractor'in
+    diag etiketi (orn: 'particle_eksik', 'vocab_confusion'); pattern analizi icin."""
     conn = get_connection()
-    conn.execute("""
-        INSERT INTO answer_log (uuid, device_id, entity_type, entity_id, question_subtype,
-                                correct, confidence, rating_before, rating_after, asked_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (
-        str(uuid_lib.uuid4()), _device_id(), entity_type, entity_id, question_subtype,
-        1 if correct else 0, confidence, rating_before, rating_after, _now_iso(),
-    ))
+    # diag kolonu var mi kontrol et — eski DB'ler icin guvenlik
+    try:
+        conn.execute("""
+            INSERT INTO answer_log (uuid, device_id, entity_type, entity_id, question_subtype,
+                                    correct, confidence, rating_before, rating_after, asked_at,
+                                    chosen_distractor_diag)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            str(uuid_lib.uuid4()), _device_id(), entity_type, entity_id, question_subtype,
+            1 if correct else 0, confidence, rating_before, rating_after, _now_iso(),
+            chosen_distractor_diag,
+        ))
+    except sqlite3.OperationalError:
+        # Migration henuz uygulanmadıysa diag-suz kayit
+        conn.execute("""
+            INSERT INTO answer_log (uuid, device_id, entity_type, entity_id, question_subtype,
+                                    correct, confidence, rating_before, rating_after, asked_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            str(uuid_lib.uuid4()), _device_id(), entity_type, entity_id, question_subtype,
+            1 if correct else 0, confidence, rating_before, rating_after, _now_iso(),
+        ))
     conn.commit()
     conn.close()
+
+
+def get_pattern_insights(min_occurrences=3, top_n=5):
+    """Diagnostic quiz yanlislarinin diag etiketlerini analiz et.
+
+    En sik tekrarlayan hata tiplerini ve hangi entity_type'larda gorulduklerini doner.
+    Returns: list of {'diag': str, 'count': int, 'entity_types': [str], 'recent': bool}
+    """
+    conn = get_connection()
+    try:
+        rows = conn.execute("""
+            SELECT chosen_distractor_diag as diag, entity_type, asked_at, correct
+            FROM answer_log
+            WHERE device_id = ? AND chosen_distractor_diag IS NOT NULL
+                  AND correct = 0
+            ORDER BY asked_at DESC
+        """, (_device_id(),)).fetchall()
+    except sqlite3.OperationalError:
+        # Migration henuz uygulanmadi
+        conn.close()
+        return []
+    conn.close()
+
+    # Diag etiketi histogram
+    diag_counts = {}
+    diag_types = {}
+    diag_recent = {}
+    for r in rows:
+        d = r["diag"]
+        if not d:
+            continue
+        diag_counts[d] = diag_counts.get(d, 0) + 1
+        if d not in diag_types:
+            diag_types[d] = set()
+        diag_types[d].add(r["entity_type"])
+        # Recent = son 7 gunde de gorulduyse
+        days = _days_since(r["asked_at"])
+        if days <= 7 and d not in diag_recent:
+            diag_recent[d] = True
+
+    # min_occurrences ve sirala
+    insights = []
+    for diag, count in diag_counts.items():
+        if count < min_occurrences:
+            continue
+        insights.append({
+            "diag": diag,
+            "count": count,
+            "entity_types": sorted(diag_types[diag]),
+            "recent": diag_recent.get(diag, False),
+        })
+    insights.sort(key=lambda x: (not x["recent"], -x["count"]))
+    return insights[:top_n]
 
 
 def record_answer(entity_type, entity_id, correct, confidence=None,

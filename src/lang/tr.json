@@ -36,6 +36,12 @@
   "profile.velocity.declining": "Dustu — yorgunluk veya zor konu olabilir",
   "profile.velocity.unknown": "Henuz yeterli veri yok",
   "profile.best_hour_format": "{hour}:00 civari",
+  "stats.patterns_title": "Sik Yapilan Hatalar (Son donem)",
+  "stats.patterns_diag": "Hata tipi",
+  "stats.patterns_area": "Alan",
+  "stats.patterns_count": "Tekrar",
+  "stats.patterns_recent": "son haftada da",
+  "stats.patterns_hint": "Bu pattern'lar diagnostic quiz'lerden cikarildi. Hedef alip uzerine yogunlas.",
 
   "textbook.guided": "Konu Anlat + Pratik (rehberli)",
   "textbook.diagnostic_quiz": "Diagnostic Quiz (akilli analiz)",
