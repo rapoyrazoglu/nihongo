@@ -837,6 +837,51 @@ def record_answer(entity_type, entity_id, correct, confidence=None,
     }
 
 
+def get_weak_review_candidates(entity_type, current_lesson_id, limit=20):
+    """Onceki derslerin (current_lesson_id'den onceki lesson_no) zayif item'lari.
+
+    'Zayif' = kullanici daha once dokunmus + decayed rating dusuk.
+    Onceki lessonlardaki items kullaniciya tekrar gosterilmek icin.
+    Mevcut decay'i uygulayarak siralar.
+    """
+    import elo
+    current = get_lesson(current_lesson_id)
+    if not current:
+        return []
+    conn = get_connection()
+    rows = conn.execute("""
+        SELECT i.*, m.rating, m.last_review_at, m.reviews_count, l.lesson_no, l.title as lesson_title
+        FROM lesson_items li
+        JOIN lessons l ON l.id = li.lesson_id
+        JOIN {entity_table} i ON i.id = li.item_id
+        JOIN mastery m ON m.entity_type = ? AND m.entity_id = li.item_id AND m.device_id = ?
+        WHERE li.item_type = ?
+              AND l.textbook = ?
+              AND l.lesson_no < ?
+        ORDER BY m.rating ASC
+        LIMIT ?
+    """.format(entity_table={"vocabulary": "vocabulary",
+                              "kanji": "kanji",
+                              "grammar": "grammar"}[entity_type]),
+        (entity_type, _device_id(), entity_type, current["textbook"], current["lesson_no"], limit * 3)
+    ).fetchall()
+    conn.close()
+
+    # Apply decay, re-sort
+    enriched = []
+    for r in rows:
+        d = dict(r)
+        days = _days_since(d.get("last_review_at"))
+        d["effective_rating"] = elo.decay(d["rating"], days)
+        d["days_since"] = days
+        d["from_lesson_no"] = d.pop("lesson_no")
+        d["from_lesson_title"] = d.pop("lesson_title")
+        enriched.append(d)
+    # En decayed/zayif onde
+    enriched.sort(key=lambda x: x["effective_rating"])
+    return enriched[:limit]
+
+
 def get_decay_summary(decay_threshold=50):
     """Forgetting curve: kac item rating'i ciddi olcude geride (review zamani gelmis).
 

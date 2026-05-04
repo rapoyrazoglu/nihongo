@@ -365,6 +365,40 @@ def _show_status_milestone(result, previous_status=None):
     ui.console.print(f"  [{color}]{prev_label} {arrow} {new_label}[/{color}]")
 
 
+def _build_practice_pool(lesson_id, count, weak_ratio=0.3):
+    """Mini quiz icin item havuzu olustur.
+    ~%(1-weak_ratio) current ders item'lari, ~%weak_ratio onceki derslerin zayif item'lari.
+
+    Returns: list of cards. Her item dict; eski derslerden gelenler 'is_review=True'
+    ve 'from_lesson_no' alanlari ile etiketli.
+    """
+    n_weak = max(0, int(round(count * weak_ratio)))
+    n_current = count - n_weak
+
+    current_items = db.get_lesson_items(lesson_id, "vocabulary")["vocabulary"]
+    current_pool = []
+    for c in current_items:
+        cd = dict(c)
+        cd["is_review"] = False
+        cd["from_lesson_no"] = None
+        current_pool.append(cd)
+
+    weak_pool = []
+    if n_weak > 0:
+        weak_items = db.get_weak_review_candidates("vocabulary", lesson_id, limit=n_weak * 2)
+        for w in weak_items:
+            wd = dict(w)
+            wd["is_review"] = True
+            weak_pool.append(wd)
+
+    # Mevcut zayif yoksa current'dan tamamla
+    if len(weak_pool) < n_weak:
+        n_current += (n_weak - len(weak_pool))
+        n_weak = len(weak_pool)
+
+    return current_pool, weak_pool, n_current, n_weak
+
+
 def _enrich_with_ratings(cards, entity_type="vocabulary"):
     """Cards listesine her birinin mevcut mastery rating'ini ekle.
     Forgetting curve: uzun sure dokunulmamis item'lar INITIAL'a dogru cekilir.
@@ -399,18 +433,19 @@ def _adaptive_pick(cards, count, session):
 
 def _mini_mc_quiz(cards, count, lesson_id=None):
     """Lesson-scoped mini coktan secmeli quiz (vocab cards). ELO + adaptive zorluk.
-    lesson_id verilirse lesson-bazli skill rating de guncellenir."""
+    lesson_id verilirse: lesson skill update + cross-lesson weak mixing aktif olur.
+    Pool: ~%70 current ders + ~%30 onceki derslerin decayed zayif item'lari."""
     if not cards:
         return
     import elo
     mf = meaning_field()
 
-    # Adaptive session: eger lesson_id varsa lesson skill'inden, yoksa vocab skill'inden
+    # Adaptive session
     if lesson_id:
         lesson = db.get_lesson(lesson_id)
         if lesson:
             skill = db.get_skill_rating(f"lesson:{lesson['textbook']}:L{lesson['lesson_no']}")
-            if skill == 1400.0:  # default = lesson henüz ogrenilmedi, vocab skill'e dus
+            if skill == 1400.0:
                 skill = db.get_skill_rating("vocabulary")
         else:
             skill = db.get_skill_rating("vocabulary")
@@ -418,7 +453,18 @@ def _mini_mc_quiz(cards, count, lesson_id=None):
         skill = db.get_skill_rating("vocabulary")
     session = elo.AdaptiveSession(skill)
 
-    enriched = _enrich_with_ratings(cards, "vocabulary")
+    # Pool: lesson_id varsa weak mixing, yoksa sadece passed cards
+    if lesson_id:
+        current_pool, weak_pool, n_current, n_weak = _build_practice_pool(lesson_id, count)
+        enriched_current = _enrich_with_ratings(current_pool, "vocabulary")
+        enriched_weak = _enrich_with_ratings(weak_pool, "vocabulary")
+        # AdaptiveSession her iki havuzu da hedefe yakinlik ile siralar
+        chosen_current = session.order_candidates(enriched_current)[:n_current]
+        chosen_weak = session.order_candidates(enriched_weak)[:n_weak]
+        enriched = chosen_current + chosen_weak
+        random.shuffle(enriched)  # current ve review karisik gorunsun
+    else:
+        enriched = _enrich_with_ratings(cards, "vocabulary")
     # Hedef-bazli secim: her soruda tekrar siralanir (streak target'a etkiledigi icin)
     asked_ids = set()
     correct = 0
@@ -433,8 +479,11 @@ def _mini_mc_quiz(cards, count, lesson_id=None):
         asked_ids.add(q["id"])
 
         stars = elo.stars_render(q["rating"])
+        review_tag = ""
+        if q.get("is_review") and q.get("from_lesson_no"):
+            review_tag = f"  [magenta]↻ {t('quiz.review_from', lesson_no=q['from_lesson_no'])}[/magenta]"
         ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=total)} "
-                         f"[yellow]{stars}[/yellow] ──[/dim]")
+                         f"[yellow]{stars}[/yellow]{review_tag} ──[/dim]")
         ui.console.print(f"\n  [bold white on red] {q['word']} [/bold white on red]  [green]({q['reading']})[/green]\n")
         wrong = [c for c in cards if c["id"] != q["id"] and c.get(mf)]
         if len(wrong) < 3:
@@ -485,7 +534,17 @@ def _mini_typing_quiz(cards, count, lesson_id=None):
     else:
         skill = db.get_skill_rating("vocabulary")
     session = elo.AdaptiveSession(skill)
-    enriched = _enrich_with_ratings(cards, "vocabulary")
+
+    if lesson_id:
+        current_pool, weak_pool, n_current, n_weak = _build_practice_pool(lesson_id, count)
+        enriched_current = _enrich_with_ratings(current_pool, "vocabulary")
+        enriched_weak = _enrich_with_ratings(weak_pool, "vocabulary")
+        chosen_current = session.order_candidates(enriched_current)[:n_current]
+        chosen_weak = session.order_candidates(enriched_weak)[:n_weak]
+        enriched = chosen_current + chosen_weak
+        random.shuffle(enriched)
+    else:
+        enriched = _enrich_with_ratings(cards, "vocabulary")
 
     asked_ids = set()
     correct = 0
@@ -499,8 +558,11 @@ def _mini_typing_quiz(cards, count, lesson_id=None):
         asked_ids.add(q["id"])
 
         stars = elo.stars_render(q["rating"])
+        review_tag = ""
+        if q.get("is_review") and q.get("from_lesson_no"):
+            review_tag = f"  [magenta]↻ {t('quiz.review_from', lesson_no=q['from_lesson_no'])}[/magenta]"
         ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=total)} "
-                         f"[yellow]{stars}[/yellow] ──[/dim]")
+                         f"[yellow]{stars}[/yellow]{review_tag} ──[/dim]")
         ui.console.print(f"\n  [bold yellow]{q[mf]}[/bold yellow]\n")
         ans = Prompt.ask(t("quiz.your_answer"))
         if ans.lower() in ("q", "quit"):
