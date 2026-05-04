@@ -30,7 +30,7 @@ Source: "nihongo-windows.exe"; DestDir: "{app}"; DestName: "nihongo.exe"; Flags:
 [Icons]
 Name: "{group}\Nihongo Master"; Filename: "{app}\nihongo.exe"; IconFilename: "{app}\nihongo.exe"
 Name: "{group}\Uninstall Nihongo Master"; Filename: "{uninstallexe}"
-Name: "{autodesktop}\Nihongo Master"; Filename: "{app}\nihongo.exe"; Tasks: desktopicon
+Name: "{autodesktop}\Nihongo Master"; Filename: "{app}\nihongo.exe"; IconFilename: "{app}\nihongo.exe"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional options:"
