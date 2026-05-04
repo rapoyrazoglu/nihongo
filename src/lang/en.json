@@ -1,5 +1,7 @@
 {
   "mastery.confidence_prompt": "How sure were you? 1=guessed 2=unsure 3=knew 4=very easy (Enter skips)",
+  "mastery.target_shift": "Difficulty target: {before} -> {after}",
+  "mastery.difficulty": "Difficulty",
   "mastery.rating": "Rating",
   "mastery.status.new": "New",
   "mastery.status.learning": "Learning",

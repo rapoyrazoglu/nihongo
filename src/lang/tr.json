@@ -1,5 +1,7 @@
 {
   "mastery.confidence_prompt": "Ne kadar emindin? 1=tahmin 2=az 3=biliyordum 4=cok kolay (Enter atlar)",
+  "mastery.target_shift": "Zorluk hedefi: {before} -> {after}",
+  "mastery.difficulty": "Zorluk",
   "mastery.rating": "Rating",
   "mastery.status.new": "Yeni",
   "mastery.status.learning": "Ogreniyor",

@@ -356,15 +356,51 @@ def _show_rating_change(result):
                      f"[dim]{arrow} {abs(int(round(delta)))}  ({t(f'mastery.status.{status}')})[/dim]")
 
 
+def _enrich_with_ratings(cards, entity_type="vocabulary"):
+    """Cards listesine her birinin mevcut mastery rating'ini ekle."""
+    import elo
+    enriched = []
+    for c in cards:
+        m = db.get_mastery(entity_type, c["id"])
+        rating = m["rating"] if m else elo.INITIAL_RATING
+        enriched.append({**dict(c), "rating": rating})
+    return enriched
+
+
+def _adaptive_pick(cards, count, session):
+    """AdaptiveSession hedefine yakin N kart sec. Random yerine sirali."""
+    ordered = session.order_candidates(cards)
+    return ordered[:count] if count <= len(ordered) else ordered
+
+
 def _mini_mc_quiz(cards, count):
-    """Lesson-scoped mini coktan secmeli quiz (vocab cards). ELO entegre."""
+    """Lesson-scoped mini coktan secmeli quiz (vocab cards). ELO + adaptive zorluk."""
     if not cards:
         return
+    import elo
     mf = meaning_field()
-    questions = random.sample(cards, min(count, len(cards)))
+
+    # Adaptive session kullanicinin vocab skill'inden baslar
+    skill = db.get_skill_rating("vocabulary")
+    session = elo.AdaptiveSession(skill)
+
+    enriched = _enrich_with_ratings(cards, "vocabulary")
+    # Hedef-bazli secim: her soruda tekrar siralanir (streak target'a etkiledigi icin)
+    asked_ids = set()
     correct = 0
-    for i, q in enumerate(questions):
-        ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=len(questions))} ──[/dim]")
+    total = min(count, len(enriched))
+    for i in range(total):
+        # Adaylar: henuz sorulmamis olanlar; session.target'a gore en yakin
+        remaining = [c for c in enriched if c["id"] not in asked_ids]
+        if not remaining:
+            break
+        ordered = session.order_candidates(remaining)
+        q = ordered[0]
+        asked_ids.add(q["id"])
+
+        stars = elo.stars_render(q["rating"])
+        ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=total)} "
+                         f"[yellow]{stars}[/yellow] ──[/dim]")
         ui.console.print(f"\n  [bold white on red] {q['word']} [/bold white on red]  [green]({q['reading']})[/green]\n")
         wrong = [c for c in cards if c["id"] != q["id"] and c.get(mf)]
         if len(wrong) < 3:
@@ -389,19 +425,41 @@ def _mini_mc_quiz(cards, count):
         confidence = _ask_confidence()
         result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "mc")
         _show_rating_change(result)
+        # Adaptive session report
+        prev_target = session.target
+        session.report(is_ok)
+        if abs(session.target - prev_target) > 0.1:
+            shift_msg = t("mastery.target_shift", before=int(prev_target), after=int(session.target))
+            ui.console.print(f"  [dim italic]{shift_msg}[/dim italic]")
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
-    ui.show_quiz_result(correct, len(questions))
+    ui.show_quiz_result(correct, total)
 
 
 def _mini_typing_quiz(cards, count):
-    """Lesson-scoped mini yazarak quiz (anlam -> kelime). ELO entegre."""
+    """Lesson-scoped mini yazarak quiz (anlam -> kelime). ELO + adaptive zorluk."""
     if not cards:
         return
+    import elo
     mf = meaning_field()
-    questions = random.sample(cards, min(count, len(cards)))
+
+    skill = db.get_skill_rating("vocabulary")
+    session = elo.AdaptiveSession(skill)
+    enriched = _enrich_with_ratings(cards, "vocabulary")
+
+    asked_ids = set()
     correct = 0
-    for i, q in enumerate(questions):
-        ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=len(questions))} ──[/dim]")
+    total = min(count, len(enriched))
+    for i in range(total):
+        remaining = [c for c in enriched if c["id"] not in asked_ids]
+        if not remaining:
+            break
+        ordered = session.order_candidates(remaining)
+        q = ordered[0]
+        asked_ids.add(q["id"])
+
+        stars = elo.stars_render(q["rating"])
+        ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=total)} "
+                         f"[yellow]{stars}[/yellow] ──[/dim]")
         ui.console.print(f"\n  [bold yellow]{q[mf]}[/bold yellow]\n")
         ans = Prompt.ask(t("quiz.your_answer"))
         if ans.lower() in ("q", "quit"):
@@ -419,8 +477,13 @@ def _mini_typing_quiz(cards, count):
         confidence = _ask_confidence()
         result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "typing")
         _show_rating_change(result)
+        prev_target = session.target
+        session.report(is_ok)
+        if abs(session.target - prev_target) > 0.1:
+            shift_msg = t("mastery.target_shift", before=int(prev_target), after=int(session.target))
+            ui.console.print(f"  [dim italic]{shift_msg}[/dim italic]")
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
-    ui.show_quiz_result(correct, len(questions))
+    ui.show_quiz_result(correct, total)
 
 
 def _load_lesson_enrichment(lesson_id):

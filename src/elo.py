@@ -101,6 +101,72 @@ def status_label(rating):
     return "new"
 
 
+# --- Difficulty stars (1-5, kullaniciya gorunur) ---
+# Item rating ile dogrudan eslesir; UI'da yildiz olarak gosterir.
+DIFFICULTY_THRESHOLDS = (1300, 1500, 1700, 1900)  # <1300:1, 1300-1500:2, ...
+
+
+def difficulty_stars(rating):
+    """1-5 yildiz. Rating araliklari DIFFICULTY_THRESHOLDS'tan."""
+    stars = 1
+    for t in DIFFICULTY_THRESHOLDS:
+        if rating >= t:
+            stars += 1
+    return stars
+
+
+def stars_render(rating, max_stars=5):
+    """UI string '★★★☆☆' gibi."""
+    n = difficulty_stars(rating)
+    return "★" * n + "☆" * (max_stars - n)
+
+
+# --- Adaptive session (in-memory, oturum boyunca) ---
+
+class AdaptiveSession:
+    """Bir mini quiz oturumu boyunca zorluk hedefini izler.
+    Kullanici 2 dogru ust uste -> hedef +25 (biraz zorlasir).
+    2 yanlis ust uste -> hedef -30 (biraz kolaylasir).
+    Tek dogru/yanlis streak'i sifirlar."""
+
+    UP_THRESHOLD = 2     # ardı ardına bu kadar dogru -> +UP_AMOUNT
+    DOWN_THRESHOLD = 2   # ardı ardına bu kadar yanlis -> -DOWN_AMOUNT
+    UP_AMOUNT = 25
+    DOWN_AMOUNT = 30
+    MIN_TARGET = 1000.0
+    MAX_TARGET = 2400.0
+
+    def __init__(self, initial_skill):
+        self.target = float(initial_skill)
+        self.streak = 0   # >0: dogru ust uste, <0: yanlis ust uste
+        self.history = []  # son cevaplar (debug/ileride goruntu icin)
+
+    def report(self, correct):
+        self.history.append(bool(correct))
+        if correct:
+            if self.streak >= 0:
+                self.streak += 1
+            else:
+                self.streak = 1  # streak yon degistirdi
+            if self.streak >= self.UP_THRESHOLD:
+                self.target = min(self.MAX_TARGET, self.target + self.UP_AMOUNT)
+                self.streak = 0
+        else:
+            if self.streak <= 0:
+                self.streak -= 1
+            else:
+                self.streak = -1
+            if self.streak <= -self.DOWN_THRESHOLD:
+                self.target = max(self.MIN_TARGET, self.target - self.DOWN_AMOUNT)
+                self.streak = 0
+
+    def order_candidates(self, candidates_with_ratings):
+        """Aday listesini hedefe yakinlik sirasiyla don.
+        candidates_with_ratings: [{'id', 'rating', ...}, ...]
+        En yakindan en uzaga sirali yeni liste."""
+        return sorted(candidates_with_ratings, key=lambda c: abs(c.get("rating", INITIAL_RATING) - self.target))
+
+
 def select_priority(items_with_ratings, target_rating, days_since_map):
     """Item secimi. items_with_ratings: list of dict
         { 'id': int, 'rating': float, 'last_review_at': str|None }
