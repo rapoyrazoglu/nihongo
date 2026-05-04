@@ -6,9 +6,11 @@
   "mastery.status.new": "Yeni",
   "mastery.status.learning": "Ogreniyor",
   "mastery.status.mastered": "Usta",
-  "stats.mastery_title": "Adaptive Mastery (Elo)",
+  "stats.mastery_title": "Beceri Seviyen",
   "stats.skill_rating": "Skill Rating",
+  "stats.skill_level": "Seviye",
   "stats.avg_rating": "Ort. Rating",
+  "stats.lesson_mastery": "Ders Bazli Beceri (Genki I)",
 
   "textbook.guided": "Konu Anlat + Pratik (rehberli)",
   "guided.session_title": "Rehberli Calisma — {title}",

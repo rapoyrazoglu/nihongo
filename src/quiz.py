@@ -344,16 +344,24 @@ def _ask_confidence():
         return None
 
 
-def _show_rating_change(result):
-    """Rating delta'yi UI'da goster (kucuk satir)."""
-    delta = result["delta"]
-    rating = int(round(result["rating_after"]))
-    status = result["status"]
-    color = {"new": "yellow", "learning": "cyan", "mastered": "bold green"}.get(status, "white")
-    arrow = "▲" if delta > 0 else "▼" if delta < 0 else "•"
-    ui.console.print(f"  [dim]{t('mastery.rating')}: [/dim]"
-                     f"[{color}]{rating}[/{color}] "
-                     f"[dim]{arrow} {abs(int(round(delta)))}  ({t(f'mastery.status.{status}')})[/dim]")
+def _show_status_milestone(result, previous_status=None):
+    """Sadece status DEGISTIGINDE bildirim (Yeni->Ogreniyor->Usta).
+    Sayisal rating asla gosterilmez. previous_status: oncekinin status string'i."""
+    import elo
+    current = result["status"]
+    if previous_status is None:
+        prev_rating = result["rating_before"]
+        previous_status = elo.status_label(prev_rating)
+    if current == previous_status:
+        return
+    # Yukselen vs dusen transition
+    order = {"new": 0, "learning": 1, "mastered": 2}
+    going_up = order.get(current, 0) > order.get(previous_status, 0)
+    color = "bold green" if going_up else "yellow"
+    arrow = "→" if going_up else "↓"
+    prev_label = t(f"mastery.status.{previous_status}")
+    new_label = t(f"mastery.status.{current}")
+    ui.console.print(f"  [{color}]{prev_label} {arrow} {new_label}[/{color}]")
 
 
 def _enrich_with_ratings(cards, entity_type="vocabulary"):
@@ -373,15 +381,25 @@ def _adaptive_pick(cards, count, session):
     return ordered[:count] if count <= len(ordered) else ordered
 
 
-def _mini_mc_quiz(cards, count):
-    """Lesson-scoped mini coktan secmeli quiz (vocab cards). ELO + adaptive zorluk."""
+def _mini_mc_quiz(cards, count, lesson_id=None):
+    """Lesson-scoped mini coktan secmeli quiz (vocab cards). ELO + adaptive zorluk.
+    lesson_id verilirse lesson-bazli skill rating de guncellenir."""
     if not cards:
         return
     import elo
     mf = meaning_field()
 
-    # Adaptive session kullanicinin vocab skill'inden baslar
-    skill = db.get_skill_rating("vocabulary")
+    # Adaptive session: eger lesson_id varsa lesson skill'inden, yoksa vocab skill'inden
+    if lesson_id:
+        lesson = db.get_lesson(lesson_id)
+        if lesson:
+            skill = db.get_skill_rating(f"lesson:{lesson['textbook']}:L{lesson['lesson_no']}")
+            if skill == 1400.0:  # default = lesson henüz ogrenilmedi, vocab skill'e dus
+                skill = db.get_skill_rating("vocabulary")
+        else:
+            skill = db.get_skill_rating("vocabulary")
+    else:
+        skill = db.get_skill_rating("vocabulary")
     session = elo.AdaptiveSession(skill)
 
     enriched = _enrich_with_ratings(cards, "vocabulary")
@@ -423,26 +441,33 @@ def _mini_mc_quiz(cards, count):
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_answer', answer=q[mf])}")
             srs.review_card("vocabulary", q["id"], 1)
         confidence = _ask_confidence()
-        result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "mc")
-        _show_rating_change(result)
-        # Adaptive session report
-        prev_target = session.target
+        prev_status = elo.status_label(q["rating"])
+        result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "mc",
+                                  lesson_id=lesson_id)
+        _show_status_milestone(result, prev_status)
+        # Adaptive session report (target shift kalir, hedefin kendisi gizli)
         session.report(is_ok)
-        if abs(session.target - prev_target) > 0.1:
-            shift_msg = t("mastery.target_shift", before=int(prev_target), after=int(session.target))
-            ui.console.print(f"  [dim italic]{shift_msg}[/dim italic]")
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
     ui.show_quiz_result(correct, total)
 
 
-def _mini_typing_quiz(cards, count):
+def _mini_typing_quiz(cards, count, lesson_id=None):
     """Lesson-scoped mini yazarak quiz (anlam -> kelime). ELO + adaptive zorluk."""
     if not cards:
         return
     import elo
     mf = meaning_field()
 
-    skill = db.get_skill_rating("vocabulary")
+    if lesson_id:
+        lesson = db.get_lesson(lesson_id)
+        if lesson:
+            skill = db.get_skill_rating(f"lesson:{lesson['textbook']}:L{lesson['lesson_no']}")
+            if skill == 1400.0:
+                skill = db.get_skill_rating("vocabulary")
+        else:
+            skill = db.get_skill_rating("vocabulary")
+    else:
+        skill = db.get_skill_rating("vocabulary")
     session = elo.AdaptiveSession(skill)
     enriched = _enrich_with_ratings(cards, "vocabulary")
 
@@ -475,13 +500,11 @@ def _mini_typing_quiz(cards, count):
                              f"{t('quiz.correct_was', word=q['word'], reading=q['reading'])}")
             srs.review_card("vocabulary", q["id"], 1)
         confidence = _ask_confidence()
-        result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "typing")
-        _show_rating_change(result)
-        prev_target = session.target
+        prev_status = elo.status_label(q["rating"])
+        result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "typing",
+                                  lesson_id=lesson_id)
+        _show_status_milestone(result, prev_status)
         session.report(is_ok)
-        if abs(session.target - prev_target) > 0.1:
-            shift_msg = t("mastery.target_shift", before=int(prev_target), after=int(session.target))
-            ui.console.print(f"  [dim italic]{shift_msg}[/dim italic]")
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
     ui.show_quiz_result(correct, total)
 
@@ -631,9 +654,9 @@ def guided_lesson_study(lesson_id):
         ui.clear()
         ui.console.print(f"[bold cyan]{t('guided.practice_starting', n=practice_n)}[/bold cyan]\n")
         if choice == "1":
-            _mini_typing_quiz(vocab_pool, practice_n)
+            _mini_typing_quiz(vocab_pool, practice_n, lesson_id=lesson_id)
         else:
-            _mini_mc_quiz(vocab_pool, practice_n)
+            _mini_mc_quiz(vocab_pool, practice_n, lesson_id=lesson_id)
 
         Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
 

@@ -781,49 +781,86 @@ def log_answer(entity_type, entity_id, correct, confidence, rating_before, ratin
     conn.close()
 
 
-def record_answer(entity_type, entity_id, correct, confidence=None, question_subtype=None):
+def record_answer(entity_type, entity_id, correct, confidence=None,
+                  question_subtype=None, lesson_id=None):
     """One-shot helper: cevap sonrasi mastery + skill_rating + answer_log update.
 
-    Returns dict with new ratings for UI feedback.
+    Multi-dim takip: hem entity-type skill (vocab/kanji/grammar) hem de
+    lesson:textbook:Lx skill ratingleri guncellenir. Boylece kullanici hem
+    'kelime bilgim' hem de 'L4 derside ne kadar iyiyim' gorebilir.
+
+    Returns dict with new ratings — UI sayisal degil, sembolik (status, stars)
+    icin kullanir.
     """
     import elo
     m = get_mastery(entity_type, entity_id)
-    if m:
-        item_rating = m["rating"]
-        # Item rating: bu kullanicinin skoruna göre değil, herkes için ortak.
-        # Şimdilik device-bazlı tutuyoruz; v2.0 backend'de global olur.
-        # Burada item_rating "yerel sürüm" olarak başlar 1400'den.
-    else:
-        item_rating = elo.INITIAL_RATING
     user_item_rating = m["rating"] if m else elo.INITIAL_RATING
+    item_rating = m["rating"] if m else elo.INITIAL_RATING
     reviews_count = (m["reviews_count"] if m else 0) + 1
 
-    # Tek bir 'rating' alanımız var (mastery.rating) — bunu user-for-this-item olarak
-    # kullanıyoruz. Item difficulty'yi şimdilik aynı sayıdan başlatıp ayrı tutmuyoruz;
-    # v2.0 sync'te ayrı kolon eklenir. Pratikte bu device-local sistem.
-    new_user_rating, new_item_rating = elo.update(
+    new_user_rating, _ = elo.update(
         user_item_rating, item_rating, correct, reviews_count, confidence
     )
     upsert_mastery(entity_type, entity_id, new_user_rating, reviews_count=reviews_count)
 
-    # Skill rating güncelle
-    skill_name = entity_type  # 'vocabulary'|'kanji'|'grammar'
-    skill_rating = get_skill_rating(skill_name)
-    skill_delta = elo.skill_delta(new_user_rating - user_item_rating)
-    new_skill = max(800.0, min(2800.0, skill_rating + skill_delta))
-    upsert_skill_rating(skill_name, new_skill)
+    delta = new_user_rating - user_item_rating
 
-    # Audit
+    # Skill rating: tip-bazli (vocabulary/kanji/grammar)
+    type_skill = get_skill_rating(entity_type)
+    new_type_skill = max(800.0, min(2800.0, type_skill + elo.skill_delta(delta)))
+    upsert_skill_rating(entity_type, new_type_skill)
+
+    # Skill rating: lesson-bazli (eger lesson_id verildiyse)
+    if lesson_id:
+        lesson = None
+        try:
+            lesson = get_lesson(lesson_id)
+        except Exception:
+            lesson = None
+        if lesson:
+            skill_name = f"lesson:{lesson['textbook']}:L{lesson['lesson_no']}"
+            lesson_skill = get_skill_rating(skill_name)
+            new_lesson_skill = max(800.0, min(2800.0, lesson_skill + elo.skill_delta(delta)))
+            upsert_skill_rating(skill_name, new_lesson_skill)
+
+    # Audit log
     log_answer(entity_type, entity_id, correct, confidence,
                user_item_rating, new_user_rating, question_subtype)
 
     return {
         "rating_before": user_item_rating,
         "rating_after": new_user_rating,
-        "delta": new_user_rating - user_item_rating,
+        "delta": delta,
         "status": elo.status_label(new_user_rating),
-        "skill_rating": new_skill,
+        "stars": elo.difficulty_stars(new_user_rating),
+        "type_skill": new_type_skill,
     }
+
+
+def get_lesson_skills():
+    """Tum dersler icin lesson-bazli skill ratingleri (sirasiyla).
+    Henuz dokunulmamis dersler de icerilir (rating=1400 default).
+    """
+    conn = get_connection()
+    lessons = conn.execute("""
+        SELECT id, textbook, lesson_no, title FROM lessons ORDER BY textbook, lesson_no
+    """).fetchall()
+    result = []
+    for lesson in lessons:
+        skill_name = f"lesson:{lesson['textbook']}:L{lesson['lesson_no']}"
+        row = conn.execute(
+            "SELECT rating FROM skill_ratings WHERE skill_name = ? AND device_id = ?",
+            (skill_name, _device_id())
+        ).fetchone()
+        rating = row["rating"] if row else 1400.0
+        result.append({
+            "textbook": lesson["textbook"],
+            "lesson_no": lesson["lesson_no"],
+            "title": lesson["title"],
+            "rating": rating,
+        })
+    conn.close()
+    return result
 
 
 def get_mastery_summary():

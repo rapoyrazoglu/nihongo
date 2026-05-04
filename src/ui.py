@@ -468,36 +468,49 @@ def show_stats():
     console.print(jlpt)
     console.print()
 
-    # --- Mastery / Adaptive Engine ratings ---
+    # --- Mastery / Adaptive Engine — sembolik (sayisal rating asla gosterilmez) ---
     summary = db.get_mastery_summary()
     has_any = any(summary["items"].get(t_) for t_ in ("vocabulary", "kanji", "grammar"))
     if has_any:
+        from elo import stars_render
         elo_table = Table(title=t("stats.mastery_title"), box=box.ROUNDED, border_style="cyan")
         elo_table.add_column(t("stats.category"), style="cyan")
-        elo_table.add_column(t("stats.skill_rating"), justify="right", style="bold yellow")
+        elo_table.add_column(t("stats.skill_level"), style="bold yellow")
         elo_table.add_column(t("mastery.status.new"), justify="right", style="dim yellow")
         elo_table.add_column(t("mastery.status.learning"), justify="right", style="dim cyan")
         elo_table.add_column(t("mastery.status.mastered"), justify="right", style="bold green")
-        elo_table.add_column(t("stats.avg_rating"), justify="right")
         rows = (("vocabulary", t("stats.vocabulary")),
                 ("kanji", t("stats.kanji")),
                 ("grammar", t("stats.grammar")))
         for et, label in rows:
             data = summary["items"].get(et)
             skill = summary["skills"].get(et, 1400)
+            stars = stars_render(skill)
             if not data:
-                elo_table.add_row(label, f"{int(skill)}", "—", "—", "—", "—")
+                elo_table.add_row(label, stars, "—", "—", "—")
                 continue
             elo_table.add_row(
-                label,
-                f"{int(skill)}",
-                str(data["new"]),
-                str(data["learning"]),
-                str(data["mastered"]),
-                f"{data['avg']:.0f}",
+                label, stars,
+                str(data["new"]), str(data["learning"]), str(data["mastered"]),
             )
         console.print(elo_table)
         console.print()
+
+        # Per-lesson skill bar — kullanici hangi derste guclu/zayif goruyor
+        lesson_skills = db.get_lesson_skills()
+        if lesson_skills:
+            lesson_tbl = Table(title=t("stats.lesson_mastery"), box=box.ROUNDED, border_style="magenta")
+            lesson_tbl.add_column(t("textbook.lesson_no"), style="cyan")
+            lesson_tbl.add_column(t("textbook.title"), style="white")
+            lesson_tbl.add_column(t("stats.skill_level"), style="bold yellow")
+            for entry in lesson_skills:
+                lesson_tbl.add_row(
+                    f"L{entry['lesson_no']}",
+                    entry["title"],
+                    stars_render(entry["rating"]),
+                )
+            console.print(lesson_tbl)
+            console.print()
 
     stats = db.get_stats(7)
     if stats:
