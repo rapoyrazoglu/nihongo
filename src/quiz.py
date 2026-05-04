@@ -330,8 +330,34 @@ def _study_cards_loop(cards, card_type, show_fn, vocab_mode=False):
     Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
 
 
+def _ask_confidence():
+    """Cevap sonrasi 1-4 confidence sorusu. None = sorulmadi (ENTER ile atla)."""
+    raw = Prompt.ask(
+        f"\n[dim]{t('mastery.confidence_prompt')}[/dim]",
+        choices=["1", "2", "3", "4", ""], default="3", show_choices=False
+    )
+    if not raw or not raw.strip():
+        return None
+    try:
+        return int(raw)
+    except ValueError:
+        return None
+
+
+def _show_rating_change(result):
+    """Rating delta'yi UI'da goster (kucuk satir)."""
+    delta = result["delta"]
+    rating = int(round(result["rating_after"]))
+    status = result["status"]
+    color = {"new": "yellow", "learning": "cyan", "mastered": "bold green"}.get(status, "white")
+    arrow = "▲" if delta > 0 else "▼" if delta < 0 else "•"
+    ui.console.print(f"  [dim]{t('mastery.rating')}: [/dim]"
+                     f"[{color}]{rating}[/{color}] "
+                     f"[dim]{arrow} {abs(int(round(delta)))}  ({t(f'mastery.status.{status}')})[/dim]")
+
+
 def _mini_mc_quiz(cards, count):
-    """Lesson-scoped mini coktan secmeli quiz (vocab cards)."""
+    """Lesson-scoped mini coktan secmeli quiz (vocab cards). ELO entegre."""
     if not cards:
         return
     mf = meaning_field()
@@ -360,12 +386,15 @@ def _mini_mc_quiz(cards, count):
         else:
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_answer', answer=q[mf])}")
             srs.review_card("vocabulary", q["id"], 1)
+        confidence = _ask_confidence()
+        result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "mc")
+        _show_rating_change(result)
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
     ui.show_quiz_result(correct, len(questions))
 
 
 def _mini_typing_quiz(cards, count):
-    """Lesson-scoped mini yazarak quiz (anlam -> kelime)."""
+    """Lesson-scoped mini yazarak quiz (anlam -> kelime). ELO entegre."""
     if not cards:
         return
     mf = meaning_field()
@@ -387,6 +416,9 @@ def _mini_typing_quiz(cards, count):
             ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] "
                              f"{t('quiz.correct_was', word=q['word'], reading=q['reading'])}")
             srs.review_card("vocabulary", q["id"], 1)
+        confidence = _ask_confidence()
+        result = db.record_answer("vocabulary", q["id"], is_ok, confidence, "typing")
+        _show_rating_change(result)
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
     ui.show_quiz_result(correct, len(questions))
 

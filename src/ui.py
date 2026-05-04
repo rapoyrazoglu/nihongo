@@ -468,6 +468,37 @@ def show_stats():
     console.print(jlpt)
     console.print()
 
+    # --- Mastery / Adaptive Engine ratings ---
+    summary = db.get_mastery_summary()
+    has_any = any(summary["items"].get(t_) for t_ in ("vocabulary", "kanji", "grammar"))
+    if has_any:
+        elo_table = Table(title=t("stats.mastery_title"), box=box.ROUNDED, border_style="cyan")
+        elo_table.add_column(t("stats.category"), style="cyan")
+        elo_table.add_column(t("stats.skill_rating"), justify="right", style="bold yellow")
+        elo_table.add_column(t("mastery.status.new"), justify="right", style="dim yellow")
+        elo_table.add_column(t("mastery.status.learning"), justify="right", style="dim cyan")
+        elo_table.add_column(t("mastery.status.mastered"), justify="right", style="bold green")
+        elo_table.add_column(t("stats.avg_rating"), justify="right")
+        rows = (("vocabulary", t("stats.vocabulary")),
+                ("kanji", t("stats.kanji")),
+                ("grammar", t("stats.grammar")))
+        for et, label in rows:
+            data = summary["items"].get(et)
+            skill = summary["skills"].get(et, 1400)
+            if not data:
+                elo_table.add_row(label, f"{int(skill)}", "—", "—", "—", "—")
+                continue
+            elo_table.add_row(
+                label,
+                f"{int(skill)}",
+                str(data["new"]),
+                str(data["learning"]),
+                str(data["mastered"]),
+                f"{data['avg']:.0f}",
+            )
+        console.print(elo_table)
+        console.print()
+
     stats = db.get_stats(7)
     if stats:
         daily = Table(title=t("stats.last_7_days"), box=box.ROUNDED, border_style="yellow")

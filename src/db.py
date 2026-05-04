@@ -680,6 +680,181 @@ def get_lesson_progress(lesson_id):
     return {"total": total, "learned": learned}
 
 
+# --- Mastery / Adaptive Engine ---
+
+def _now_iso():
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _days_since(iso_ts):
+    if not iso_ts:
+        return 999
+    from datetime import datetime, timezone
+    try:
+        ts = datetime.fromisoformat(iso_ts.replace("Z", "+00:00"))
+    except ValueError:
+        return 999
+    return (datetime.now(timezone.utc) - ts).days
+
+
+def get_mastery(entity_type, entity_id):
+    """Bir item'in mastery row'unu doner. Yoksa None — caller create_or_get kullanır."""
+    conn = get_connection()
+    row = conn.execute("""
+        SELECT * FROM mastery
+        WHERE entity_type = ? AND entity_id = ? AND device_id = ?
+    """, (entity_type, entity_id, _device_id())).fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+
+def upsert_mastery(entity_type, entity_id, rating, rating_deviation=None, reviews_count=None):
+    """Mastery row insert et veya update et."""
+    conn = get_connection()
+    existing = conn.execute("""
+        SELECT id, reviews_count, rating_deviation FROM mastery
+        WHERE entity_type = ? AND entity_id = ? AND device_id = ?
+    """, (entity_type, entity_id, _device_id())).fetchone()
+    now = _now_iso()
+    if existing:
+        rd = rating_deviation if rating_deviation is not None else existing["rating_deviation"]
+        rc = reviews_count if reviews_count is not None else existing["reviews_count"]
+        conn.execute("""
+            UPDATE mastery SET rating = ?, rating_deviation = ?, reviews_count = ?, last_review_at = ?
+            WHERE id = ?
+        """, (rating, rd, rc, now, existing["id"]))
+    else:
+        conn.execute("""
+            INSERT INTO mastery (uuid, device_id, entity_type, entity_id, rating, rating_deviation, reviews_count, last_review_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            str(uuid_lib.uuid4()), _device_id(), entity_type, entity_id, rating,
+            rating_deviation if rating_deviation is not None else 350.0,
+            reviews_count if reviews_count is not None else 0,
+            now,
+        ))
+    conn.commit()
+    conn.close()
+
+
+def get_skill_rating(skill_name):
+    """Skill rating row. Yoksa varsayılan 1400 olarak doner ama yazmaz."""
+    conn = get_connection()
+    row = conn.execute("""
+        SELECT rating FROM skill_ratings WHERE skill_name = ? AND device_id = ?
+    """, (skill_name, _device_id())).fetchone()
+    conn.close()
+    return row["rating"] if row else 1400.0
+
+
+def upsert_skill_rating(skill_name, rating):
+    conn = get_connection()
+    existing = conn.execute("""
+        SELECT id FROM skill_ratings WHERE skill_name = ? AND device_id = ?
+    """, (skill_name, _device_id())).fetchone()
+    now = _now_iso()
+    if existing:
+        conn.execute("UPDATE skill_ratings SET rating = ?, updated_at = ? WHERE id = ?",
+                     (rating, now, existing["id"]))
+    else:
+        conn.execute("""
+            INSERT INTO skill_ratings (uuid, device_id, skill_name, rating, updated_at)
+            VALUES (?, ?, ?, ?, ?)
+        """, (str(uuid_lib.uuid4()), _device_id(), skill_name, rating, now))
+    conn.commit()
+    conn.close()
+
+
+def log_answer(entity_type, entity_id, correct, confidence, rating_before, rating_after,
+               question_subtype=None):
+    conn = get_connection()
+    conn.execute("""
+        INSERT INTO answer_log (uuid, device_id, entity_type, entity_id, question_subtype,
+                                correct, confidence, rating_before, rating_after, asked_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        str(uuid_lib.uuid4()), _device_id(), entity_type, entity_id, question_subtype,
+        1 if correct else 0, confidence, rating_before, rating_after, _now_iso(),
+    ))
+    conn.commit()
+    conn.close()
+
+
+def record_answer(entity_type, entity_id, correct, confidence=None, question_subtype=None):
+    """One-shot helper: cevap sonrasi mastery + skill_rating + answer_log update.
+
+    Returns dict with new ratings for UI feedback.
+    """
+    import elo
+    m = get_mastery(entity_type, entity_id)
+    if m:
+        item_rating = m["rating"]
+        # Item rating: bu kullanicinin skoruna göre değil, herkes için ortak.
+        # Şimdilik device-bazlı tutuyoruz; v2.0 backend'de global olur.
+        # Burada item_rating "yerel sürüm" olarak başlar 1400'den.
+    else:
+        item_rating = elo.INITIAL_RATING
+    user_item_rating = m["rating"] if m else elo.INITIAL_RATING
+    reviews_count = (m["reviews_count"] if m else 0) + 1
+
+    # Tek bir 'rating' alanımız var (mastery.rating) — bunu user-for-this-item olarak
+    # kullanıyoruz. Item difficulty'yi şimdilik aynı sayıdan başlatıp ayrı tutmuyoruz;
+    # v2.0 sync'te ayrı kolon eklenir. Pratikte bu device-local sistem.
+    new_user_rating, new_item_rating = elo.update(
+        user_item_rating, item_rating, correct, reviews_count, confidence
+    )
+    upsert_mastery(entity_type, entity_id, new_user_rating, reviews_count=reviews_count)
+
+    # Skill rating güncelle
+    skill_name = entity_type  # 'vocabulary'|'kanji'|'grammar'
+    skill_rating = get_skill_rating(skill_name)
+    skill_delta = elo.skill_delta(new_user_rating - user_item_rating)
+    new_skill = max(800.0, min(2800.0, skill_rating + skill_delta))
+    upsert_skill_rating(skill_name, new_skill)
+
+    # Audit
+    log_answer(entity_type, entity_id, correct, confidence,
+               user_item_rating, new_user_rating, question_subtype)
+
+    return {
+        "rating_before": user_item_rating,
+        "rating_after": new_user_rating,
+        "delta": new_user_rating - user_item_rating,
+        "status": elo.status_label(new_user_rating),
+        "skill_rating": new_skill,
+    }
+
+
+def get_mastery_summary():
+    """Stats ekrani icin: rating dagilimi."""
+    conn = get_connection()
+    by_type = {}
+    for et in ("vocabulary", "kanji", "grammar"):
+        rows = conn.execute("""
+            SELECT rating FROM mastery WHERE entity_type = ? AND device_id = ?
+        """, (et, _device_id())).fetchall()
+        ratings = [r["rating"] for r in rows]
+        if not ratings:
+            by_type[et] = None
+            continue
+        new_count = sum(1 for r in ratings if r < 1500)
+        learning = sum(1 for r in ratings if 1500 <= r < 1800)
+        mastered = sum(1 for r in ratings if r >= 1800)
+        by_type[et] = {
+            "total": len(ratings),
+            "avg": sum(ratings) / len(ratings),
+            "new": new_count,
+            "learning": learning,
+            "mastered": mastered,
+        }
+    skills = {}
+    for sk in ("vocabulary", "kanji", "grammar"):
+        skills[sk] = get_skill_rating(sk)
+    conn.close()
+    return {"items": by_type, "skills": skills}
+
+
 # --- Export / Import ---
 
 def export_anki_tsv(card_type, filepath):

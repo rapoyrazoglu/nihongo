@@ -1,4 +1,13 @@
 {
+  "mastery.confidence_prompt": "How sure were you? 1=guessed 2=unsure 3=knew 4=very easy (Enter skips)",
+  "mastery.rating": "Rating",
+  "mastery.status.new": "New",
+  "mastery.status.learning": "Learning",
+  "mastery.status.mastered": "Mastered",
+  "stats.mastery_title": "Adaptive Mastery (Elo)",
+  "stats.skill_rating": "Skill Rating",
+  "stats.avg_rating": "Avg Rating",
+
   "textbook.guided": "Teach + Practice (guided)",
   "guided.session_title": "Guided Study — {title}",
   "guided.no_grammar": "This lesson has no grammar topics; switching to vocab review.",
