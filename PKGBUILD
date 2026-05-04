@@ -9,7 +9,7 @@ license=('MIT')
 depends=('espeak-ng')
 optdepends=('fcitx5-mozc: Japanese input')
 source=("${pkgname}-${pkgver}::${url}/releases/download/v${pkgver}/nihongo-linux")
-sha256sums=('ef60d1710693297748ec8be555f83e0704d5c6ab9bd099bd9d6eb83577d6ee80')
+sha256sums=('38975a367c154d2f6705c3949fb4b91c73d8f44c129767d401edd2061e5dae0a')
 
 package() {
     install -Dm755 "${srcdir}/${pkgname}-${pkgver}" "${pkgdir}/usr/bin/nihongo"
