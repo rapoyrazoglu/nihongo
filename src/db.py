@@ -882,6 +882,128 @@ def get_weak_review_candidates(entity_type, current_lesson_id, limit=20):
     return enriched[:limit]
 
 
+def get_personal_profile(min_answers=20):
+    """Kullanicinin ogrenme profilini answer_log'tan hesapla.
+
+    min_answers: en az bu kadar cevap olmadan profile 'belirsiz'.
+
+    Returns dict:
+      {
+        'ready': bool,                   # min_answers'a ulastik mi
+        'total_answers': int,
+        'session_days': int,             # kac farkli gunde calisilmis
+        'overall_accuracy': float (0-1),
+        'by_type': {
+          'vocabulary': {'total': N, 'correct': N, 'accuracy': 0-1},
+          'kanji': {...},
+          'grammar': {...}
+        },
+        'strengths': ['vocabulary', ...],     # accuracy > avg + 10%
+        'weaknesses': ['grammar', ...],       # accuracy < avg - 10%
+        'best_hour': int|None,                # 0-23, en cok dogru cevap saati
+        'recent_streak': int,                 # son N cevapta dogru sayisi (max=10)
+        'learning_velocity': 'climbing'|'steady'|'declining'|'unknown',
+                                               # ilk 20 vs son 20 dogruluk farki
+      }
+    """
+    conn = get_connection()
+    rows = conn.execute("""
+        SELECT entity_type, correct, asked_at FROM answer_log
+        WHERE device_id = ?
+        ORDER BY asked_at ASC
+    """, (_device_id(),)).fetchall()
+    conn.close()
+
+    total = len(rows)
+    if total < min_answers:
+        return {
+            "ready": False,
+            "total_answers": total,
+            "needed": min_answers - total,
+        }
+
+    # Genel istatistik
+    by_type = {}
+    correct_total = 0
+    for r in rows:
+        et = r["entity_type"]
+        if et not in by_type:
+            by_type[et] = {"total": 0, "correct": 0}
+        by_type[et]["total"] += 1
+        if r["correct"]:
+            by_type[et]["correct"] += 1
+            correct_total += 1
+    for et in by_type:
+        by_type[et]["accuracy"] = by_type[et]["correct"] / by_type[et]["total"]
+    overall = correct_total / total
+
+    # Strengths / weaknesses (accuracy diff ortalamadan)
+    accuracies = [v["accuracy"] for v in by_type.values()]
+    avg_acc = sum(accuracies) / len(accuracies) if accuracies else 0
+    strengths = [k for k, v in by_type.items() if v["accuracy"] > avg_acc + 0.10]
+    weaknesses = [k for k, v in by_type.items() if v["accuracy"] < avg_acc - 0.10]
+
+    # Saat bazli dogru cevap dagilimi (basit histogram)
+    from datetime import datetime
+    hour_correct = {}
+    hour_total = {}
+    for r in rows:
+        try:
+            ts = datetime.fromisoformat(r["asked_at"].replace("Z", "+00:00"))
+            h = ts.hour
+        except Exception:
+            continue
+        hour_total[h] = hour_total.get(h, 0) + 1
+        if r["correct"]:
+            hour_correct[h] = hour_correct.get(h, 0) + 1
+    best_hour = None
+    best_acc = 0
+    for h, n in hour_total.items():
+        if n < 5:
+            continue
+        acc = hour_correct.get(h, 0) / n
+        if acc > best_acc:
+            best_acc = acc
+            best_hour = h
+
+    # Session days (distinct date)
+    days = set()
+    for r in rows:
+        days.add(r["asked_at"][:10])
+    session_days = len(days)
+
+    # Recent streak (son 10 cevap)
+    recent = rows[-10:]
+    recent_streak = sum(1 for r in recent if r["correct"])
+
+    # Learning velocity: ilk 20 vs son 20
+    if total >= 40:
+        first_acc = sum(1 for r in rows[:20] if r["correct"]) / 20
+        last_acc = sum(1 for r in rows[-20:] if r["correct"]) / 20
+        delta = last_acc - first_acc
+        if delta > 0.10:
+            velocity = "climbing"
+        elif delta < -0.10:
+            velocity = "declining"
+        else:
+            velocity = "steady"
+    else:
+        velocity = "unknown"
+
+    return {
+        "ready": True,
+        "total_answers": total,
+        "session_days": session_days,
+        "overall_accuracy": overall,
+        "by_type": by_type,
+        "strengths": strengths,
+        "weaknesses": weaknesses,
+        "best_hour": best_hour,
+        "recent_streak": recent_streak,
+        "learning_velocity": velocity,
+    }
+
+
 def get_decay_summary(decay_threshold=50):
     """Forgetting curve: kac item rating'i ciddi olcude geride (review zamani gelmis).
 

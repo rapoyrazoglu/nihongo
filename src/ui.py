@@ -468,6 +468,57 @@ def show_stats():
     console.print(jlpt)
     console.print()
 
+    # --- Personal profile: kisinin ogrenme stilini cikar ---
+    profile = db.get_personal_profile(min_answers=20)
+    if profile.get("ready"):
+        profile_table = Table(title=t("stats.profile_title"), box=box.ROUNDED, border_style="green")
+        profile_table.add_column(t("stats.profile_attr"), style="cyan")
+        profile_table.add_column(t("stats.profile_value"), style="white")
+
+        profile_table.add_row(t("stats.profile_total"),
+                              str(profile["total_answers"]))
+        profile_table.add_row(t("stats.profile_days"),
+                              str(profile["session_days"]))
+        # Genel başarı - sözel
+        acc = profile["overall_accuracy"]
+        if acc >= 0.85: acc_label = t("profile.acc_excellent")
+        elif acc >= 0.70: acc_label = t("profile.acc_good")
+        elif acc >= 0.55: acc_label = t("profile.acc_fair")
+        else: acc_label = t("profile.acc_struggle")
+        profile_table.add_row(t("stats.profile_accuracy"), acc_label)
+
+        # Velocity
+        v = profile["learning_velocity"]
+        v_label = t(f"profile.velocity.{v}")
+        profile_table.add_row(t("stats.profile_velocity"), v_label)
+
+        # Strengths
+        if profile["strengths"]:
+            strengths = ", ".join(t(f"diagnostic.skill.{s.replace('vocabulary','vocab')}")
+                                  for s in profile["strengths"])
+            profile_table.add_row(t("stats.profile_strengths"),
+                                  f"[bold green]{strengths}[/bold green]")
+        if profile["weaknesses"]:
+            weaknesses = ", ".join(t(f"diagnostic.skill.{w.replace('vocabulary','vocab')}")
+                                   for w in profile["weaknesses"])
+            profile_table.add_row(t("stats.profile_weaknesses"),
+                                  f"[bold yellow]{weaknesses}[/bold yellow]")
+
+        # Best hour
+        if profile["best_hour"] is not None:
+            profile_table.add_row(t("stats.profile_best_hour"),
+                                  t("profile.best_hour_format", hour=profile["best_hour"]))
+
+        # Streak vurgu
+        if profile["recent_streak"] >= 8:
+            profile_table.add_row(t("stats.profile_streak"),
+                                  f"[bold green]{profile['recent_streak']}/10 ✓[/bold green]")
+
+        console.print(profile_table)
+        console.print()
+    elif profile.get("total_answers", 0) > 0:
+        console.print(f"[dim italic]{t('stats.profile_warming_up', total=profile['total_answers'], needed=profile['needed'])}[/dim italic]\n")
+
     # --- Forgetting curve: tekrar zamani gelmis item ozet ---
     decay_summary = db.get_decay_summary()
     if decay_summary.get("total", 0) > 0:
