@@ -6,12 +6,12 @@ class Nihongo < Formula
 
   on_macos do
     url "https://github.com/rapoyrazoglu/nihongo/releases/download/v#{version}/nihongo-macos"
-    sha256 "df2fc91d1cc84a93e961b4106b30a4659b2198a1fd1d00b76e5b2f5d1ce82a2f"
+    sha256 "a7d4c852c9ea3f09e22a748ee381099b971eb8d393ca141064d818fd17014ea2"
   end
 
   on_linux do
     url "https://github.com/rapoyrazoglu/nihongo/releases/download/v#{version}/nihongo-linux"
-    sha256 "12a17717239ec04f49ef0fe1ce28f1668f7f3896481f04b9dd360f9ab9b1cf2e"
+    sha256 "14a9589905b6309c704079b409483b4db13db0756ec991aa714e0c71e8bc6368"
   end
 
   def install
