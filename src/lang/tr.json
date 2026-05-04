@@ -11,6 +11,9 @@
   "stats.skill_level": "Seviye",
   "stats.avg_rating": "Ort. Rating",
   "stats.lesson_mastery": "Ders Bazli Beceri (Genki I)",
+  "stats.review_needed_title": "Tekrar Zamani Geldi (Forgetting Curve)",
+  "stats.review_count": "Sayi",
+  "stats.review_needed_hint": "Bu item'lar uzun zamandir gorulmedi; pratikte one cikarilir.",
 
   "textbook.guided": "Konu Anlat + Pratik (rehberli)",
   "textbook.diagnostic_quiz": "Diagnostic Quiz (akilli analiz)",

@@ -366,13 +366,28 @@ def _show_status_milestone(result, previous_status=None):
 
 
 def _enrich_with_ratings(cards, entity_type="vocabulary"):
-    """Cards listesine her birinin mevcut mastery rating'ini ekle."""
+    """Cards listesine her birinin mevcut mastery rating'ini ekle.
+    Forgetting curve: uzun sure dokunulmamis item'lar INITIAL'a dogru cekilir.
+    Decay sadece read-time uygulanir, DB'deki gercek rating degismez —
+    boylece kullanici tekrar dogru cevaplayinca 'unutmustum, simdi hatirladim' efektı dogal."""
     import elo
     enriched = []
     for c in cards:
         m = db.get_mastery(entity_type, c["id"])
-        rating = m["rating"] if m else elo.INITIAL_RATING
-        enriched.append({**dict(c), "rating": rating})
+        if m:
+            true_rating = m["rating"]
+            days = db._days_since(m.get("last_review_at"))
+            effective = elo.decay(true_rating, days)
+        else:
+            true_rating = elo.INITIAL_RATING
+            effective = true_rating
+            days = 999
+        enriched.append({
+            **dict(c),
+            "rating": effective,        # AdaptiveSession ve item secimi bunu kullanir
+            "true_rating": true_rating, # debug/UI icin
+            "days_since": days,
+        })
     return enriched
 
 

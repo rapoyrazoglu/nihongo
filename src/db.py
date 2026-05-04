@@ -837,6 +837,32 @@ def record_answer(entity_type, entity_id, correct, confidence=None,
     }
 
 
+def get_decay_summary(decay_threshold=50):
+    """Forgetting curve: kac item rating'i ciddi olcude geride (review zamani gelmis).
+
+    decay_threshold: rating dususu bu kadar veya fazlaysa 'review needed' say.
+    Returns: {'vocabulary': N, 'kanji': N, 'grammar': N, 'total': N}
+    """
+    import elo
+    conn = get_connection()
+    rows = conn.execute("""
+        SELECT entity_type, rating, last_review_at FROM mastery
+        WHERE device_id = ? AND last_review_at IS NOT NULL
+    """, (_device_id(),)).fetchall()
+    conn.close()
+
+    counts = {"vocabulary": 0, "kanji": 0, "grammar": 0}
+    for r in rows:
+        days = _days_since(r["last_review_at"])
+        if days <= 7:
+            continue  # grace period
+        decayed = elo.decay(r["rating"], days)
+        if (r["rating"] - decayed) >= decay_threshold:
+            counts[r["entity_type"]] = counts.get(r["entity_type"], 0) + 1
+    counts["total"] = sum(counts.values())
+    return counts
+
+
 def get_lesson_skills():
     """Tum dersler icin lesson-bazli skill ratingleri (sirasiyla).
     Henuz dokunulmamis dersler de icerilir (rating=1400 default).

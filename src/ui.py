@@ -468,6 +468,21 @@ def show_stats():
     console.print(jlpt)
     console.print()
 
+    # --- Forgetting curve: tekrar zamani gelmis item ozet ---
+    decay_summary = db.get_decay_summary()
+    if decay_summary.get("total", 0) > 0:
+        decay_table = Table(title=t("stats.review_needed_title"), box=box.ROUNDED, border_style="yellow")
+        decay_table.add_column(t("stats.category"), style="cyan")
+        decay_table.add_column(t("stats.review_count"), justify="right", style="bold yellow")
+        for et, label_key in (("vocabulary", "stats.vocabulary"),
+                              ("kanji", "stats.kanji"),
+                              ("grammar", "stats.grammar")):
+            n = decay_summary.get(et, 0)
+            if n > 0:
+                decay_table.add_row(t(label_key), str(n))
+        console.print(decay_table)
+        console.print(f"[dim italic]{t('stats.review_needed_hint')}[/dim italic]\n")
+
     # --- Mastery / Adaptive Engine — sembolik (sayisal rating asla gosterilmez) ---
     summary = db.get_mastery_summary()
     has_any = any(summary["items"].get(t_) for t_ in ("vocabulary", "kanji", "grammar"))

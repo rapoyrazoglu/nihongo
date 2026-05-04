@@ -11,6 +11,9 @@
   "stats.skill_level": "Level",
   "stats.avg_rating": "Avg Rating",
   "stats.lesson_mastery": "Per-Lesson Mastery (Genki I)",
+  "stats.review_needed_title": "Review Needed (Forgetting Curve)",
+  "stats.review_count": "Count",
+  "stats.review_needed_hint": "These items haven't been seen in a while; they'll be prioritized in practice.",
 
   "textbook.guided": "Teach + Practice (guided)",
   "textbook.diagnostic_quiz": "Diagnostic Quiz (smart analysis)",
