@@ -22,3 +22,14 @@ nihongo.db
 
 # OS
 .DS_Store
+
+# Secrets / local config — anahtarlar repo'ya girmemeli
+.env
+.env.local
+*.api_key
+gemini_*.txt
+config.local.json
+
+# Authoring tool generated drafts (review-before-commit workflow)
+tools/_drafts/
+test-release/

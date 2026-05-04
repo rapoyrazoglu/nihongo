@@ -423,18 +423,105 @@ def _mini_typing_quiz(cards, count):
     ui.show_quiz_result(correct, len(questions))
 
 
+def _load_lesson_enrichment(lesson_id):
+    """genki1.json'daki enrichment alanlarini lesson kayitiyla birlikte don."""
+    import os, json as _json
+    from paths import DATA_DIR
+    lesson = db.get_lesson(lesson_id)
+    if not lesson:
+        return None
+    path = os.path.join(DATA_DIR, "genki1.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            book = _json.load(f)
+    except Exception:
+        return None
+    for entry in book.get("lessons", []):
+        if entry.get("lesson_no") == lesson["lesson_no"] and book.get("textbook") == lesson.get("textbook"):
+            return entry
+    return None
+
+
+def _show_lesson_intro(enrichment):
+    """Ders basinda description'i goster."""
+    if not enrichment or not enrichment.get("description"):
+        return
+    ui.console.print(f"\n[bold cyan]{t('guided.intro_title')}[/bold cyan]\n")
+    ui.console.print(f"  [white]{enrichment['description']}[/white]\n")
+    Prompt.ask(f"[dim]{t('guided.intro_continue')}[/dim]", default="")
+
+
+def _show_lesson_real_life(enrichment):
+    """Ders sonunda cultural notes + diyaloglar + gercek hayat gorevleri."""
+    if not enrichment:
+        return
+    notes = enrichment.get("cultural_notes") or []
+    dialogues = enrichment.get("dialogues") or []
+    prompts = enrichment.get("real_world_prompts") or []
+    if not (notes or dialogues or prompts):
+        return
+
+    ui.clear()
+    ui.console.print(f"\n[bold magenta]{t('guided.real_life_title')}[/bold magenta]\n")
+
+    # Cultural notes
+    if notes:
+        ui.console.print(f"[bold yellow]{t('guided.cultural_notes')}[/bold yellow]\n")
+        for n in notes:
+            ui.console.print(f"  • [bold cyan]{n.get('topic','')}[/bold cyan]")
+            ui.console.print(f"    {n.get('text','')}\n")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+    # Diyaloglar
+    if dialogues:
+        ui.clear()
+        ui.console.print(f"\n[bold yellow]{t('guided.dialogues')}[/bold yellow]\n")
+        for i, d in enumerate(dialogues, 1):
+            ui.console.print(f"[bold]── {t('guided.dialogue_n', n=i, total=len(dialogues))} ──[/bold]")
+            if d.get("context"):
+                ui.console.print(f"[dim italic]{d['context']}[/dim italic]\n")
+            for line in d.get("lines", []):
+                speaker = line.get("speaker", "")
+                ui.console.print(f"  [cyan]{speaker}:[/cyan]  [bold white]{line.get('jp','')}[/bold white]")
+                ui.console.print(f"        [dim]{line.get('tr','')}[/dim]")
+            highlights = d.get("highlights", [])
+            if highlights:
+                ui.console.print(f"  [yellow]{t('guided.dialogue_uses')}:[/yellow] "
+                                 f"[dim]{', '.join(highlights)}[/dim]")
+            ui.console.print()
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+    # Real world prompts
+    if prompts:
+        ui.clear()
+        ui.console.print(f"\n[bold yellow]{t('guided.real_world')}[/bold yellow]\n")
+        ui.console.print(f"[dim italic]{t('guided.real_world_intro')}[/dim italic]\n")
+        for i, p in enumerate(prompts, 1):
+            ui.console.print(f"  [bold cyan]{i}.[/bold cyan] {p}")
+        ui.console.print()
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+
 def guided_lesson_study(lesson_id):
     """Konu anlat -> pratik yap akisi.
     Her grammar concept icin: detayli aciklama -> kullanici pratik modu secer
-    (yazarak / coktan secmeli) -> mini quiz lesson'un vocab pool'undan."""
+    (yazarak / coktan secmeli) -> mini quiz lesson'un vocab pool'undan.
+    Ders basinda intro paragrafi, sonunda cultural notes + diyaloglar +
+    real-world gorevleri (genki1.json enrichment alanlarindan)."""
     items = db.get_lesson_items(lesson_id)
     grammar_concepts = items["grammar"]
     vocab_pool = items["vocabulary"]
     lesson = db.get_lesson(lesson_id)
+    enrichment = _load_lesson_enrichment(lesson_id)
 
     ui.clear()
     title = f"L{lesson['lesson_no']}: {lesson['title']}"
     ui.console.print(f"\n[bold cyan]{t('guided.session_title', title=title)}[/bold cyan]\n")
+
+    # Lesson intro
+    _show_lesson_intro(enrichment)
 
     if not grammar_concepts:
         ui.console.print(f"[yellow]{t('guided.no_grammar')}[/yellow]")
@@ -486,6 +573,9 @@ def guided_lesson_study(lesson_id):
             _mini_mc_quiz(vocab_pool, practice_n)
 
         Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+
+    # Gercek hayat senaryolarini goster (enrichment varsa)
+    _show_lesson_real_life(enrichment)
 
     # Bitiş ekrani
     ui.clear()
