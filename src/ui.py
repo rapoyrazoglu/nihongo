@@ -20,11 +20,22 @@ def clear():
 
 
 def banner():
-    title = Text()
-    title.append("日本語", style="bold red")
-    title.append(" マスター ", style="bold white")
-    title.append("〜 Nihongo Master 〜", style="bold yellow")
-    console.print(Panel(title, border_style="red", box=box.DOUBLE))
+    """Kirmizi blokta beyaz 日本 (README'deki SVG ikonun terminal uyarlamasi)."""
+    flag = Text()
+    flag.append("       \n", style="white on red")
+    flag.append("   ", style="white on red")
+    flag.append("日本", style="bold white on red")
+    flag.append("   \n", style="white on red")
+    flag.append("       ", style="white on red")
+
+    name = Text()
+    name.append("\n  日本語マスター\n", style="bold red")
+    name.append("  Nihongo Master\n", style="bold yellow")
+    name.append("  ", style="dim")
+    name.append("〜 SRS / Quiz / Genki / JLPT 〜", style="dim white")
+
+    columns = Columns([flag, name], padding=(0, 3), expand=False)
+    console.print(Panel(columns, border_style="red", box=box.DOUBLE, padding=(0, 2)))
 
 
 def show_main_menu():
@@ -53,6 +64,17 @@ def show_main_menu():
         else:
             streak_style = "yellow"
         info_table.add_row(t("streak"), f"[{streak_style}]{streak} {t('streak.days')}[/{streak_style}]")
+
+    try:
+        from updater import check_update_async
+        update_info = check_update_async()
+    except Exception:
+        update_info = None
+    if update_info:
+        info_table.add_row(
+            f"[bold yellow]{t('update.available_label')}[/bold yellow]",
+            f"[bold green]v{update_info['latest']}[/bold green]  [dim]{t('update.run_hint')}[/dim]"
+        )
 
     console.print(Panel(info_table, title=f"[bold]{t('daily_summary')}[/bold]", border_style="blue"))
     console.print()
@@ -452,6 +474,8 @@ def show_stats():
 
 
 def show_quiz_menu():
+    clear()
+    banner()
     console.print(f"\n[bold]{t('quiz.select_mode')}[/bold]")
     menu = Table(show_header=False, box=box.SIMPLE, padding=(0, 2))
     menu.add_column("No", style="bold cyan", width=4)
@@ -543,6 +567,8 @@ def show_search_results(results):
 
 def show_settings_menu():
     """Ayarlar alt menusunu goster."""
+    clear()
+    banner()
     console.print(f"\n[bold]{t('settings.title')}[/bold]\n")
     menu = Table(show_header=False, box=box.SIMPLE, padding=(0, 2))
     menu.add_column("No", style="bold cyan", width=4)

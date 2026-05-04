@@ -28,6 +28,9 @@
   "quiz.lesson_exam_title": "{lesson} - Ders Sonu Sinavi",
   "quiz.lesson_not_enough": "Sinav icin yeterli icerik yok (en az 4 ogeli ders gerekli).",
 
+  "update.available_label": "Yeni surum:",
+  "update.run_hint": "(nihongo --update ile yukle)",
+
   "daily_summary": "Gunluk Ozet",
   "due_reviews": "Bekleyen tekrar:",
   "cards": "kart",

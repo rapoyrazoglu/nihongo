@@ -28,6 +28,9 @@
   "quiz.lesson_exam_title": "{lesson} — End-of-Lesson Exam",
   "quiz.lesson_not_enough": "Not enough content for an exam (need at least 4 items).",
 
+  "update.available_label": "New version:",
+  "update.run_hint": "(run nihongo --update)",
+
   "daily_summary": "Daily Summary",
   "due_reviews": "Due reviews:",
   "cards": "cards",

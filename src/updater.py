@@ -111,6 +111,81 @@ def _parse_version(v):
     return tuple(int(x) for x in v.lstrip("v").split("."))
 
 
+_BG_RESULT_PATH = os.path.join(_DB_DIR, ".update_check.json")
+_BG_TTL_SECONDS = 6 * 3600  # 6 saat
+
+
+def _bg_load_cached():
+    """Önceden kaydedilmiş arka plan sonucu (TTL içinde ise) döner."""
+    try:
+        with open(_BG_RESULT_PATH, "r", encoding="utf-8") as f:
+            cached = json.load(f)
+        from datetime import datetime, timezone
+        ts = datetime.fromisoformat(cached["checked_at"])
+        age = (datetime.now(timezone.utc) - ts).total_seconds()
+        if age < _BG_TTL_SECONDS:
+            return cached
+    except (OSError, KeyError, ValueError, json.JSONDecodeError):
+        pass
+    return None
+
+
+def _bg_save(latest, download_url):
+    """Arka plan kontrol sonucunu kaydet."""
+    try:
+        from datetime import datetime, timezone
+        os.makedirs(os.path.dirname(_BG_RESULT_PATH), exist_ok=True)
+        with open(_BG_RESULT_PATH, "w", encoding="utf-8") as f:
+            json.dump({
+                "latest": latest,
+                "download_url": download_url,
+                "current": __version__,
+                "checked_at": datetime.now(timezone.utc).isoformat(),
+            }, f)
+    except OSError:
+        pass
+
+
+def check_update_async(include_beta=None):
+    """GitHub'dan en son sürümü arka planda kontrol et (non-blocking).
+    Cache'lenmiş sonuç varsa hemen onu döner, yoksa bir thread başlatır.
+    Returns: dict with 'latest', 'download_url', 'current' if newer available, else None.
+    Thread kendi cache'ini diske yazar; bir sonraki açılışta hemen görünür.
+    """
+    if include_beta is None:
+        # Eğer kullanıcı zaten beta kullanıyorsa beta'da kalsın
+        include_beta = "-beta" in __version__ or "-alpha" in __version__ or "-rc" in __version__
+
+    cached = _bg_load_cached()
+    if cached:
+        # Cache hâlâ taze ve gerçekten yeni sürüm varsa onu döndür
+        try:
+            latest_clean = cached["latest"].replace("-beta", "").replace("-alpha", "").replace("-rc", "")
+            current_clean = __version__.replace("-beta", "").replace("-alpha", "").replace("-rc", "")
+            if _parse_version(latest_clean) > _parse_version(current_clean):
+                return cached
+        except (KeyError, ValueError):
+            pass
+        # Cache var ama yeni sürüm yok — yine de erken çık
+        return None
+
+    # Cache yok / süresi dolmuş — arka planda kontrol başlat
+    import threading
+
+    def _worker():
+        try:
+            res = check_update(quiet=True, include_beta=include_beta)
+            if res:
+                latest, download_url, _ = res
+                _bg_save(latest, download_url)
+        except Exception:
+            pass
+
+    thread = threading.Thread(target=_worker, daemon=True)
+    thread.start()
+    return None  # Bu launch'ta henüz sonuç yok; bir sonraki açılışta görünür
+
+
 def check_update(quiet=False, include_beta=False):
     """Check latest version from GitHub. Returns (latest_version, download_url) or None."""
     try:
