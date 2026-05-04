@@ -1961,6 +1961,110 @@
         "下",
         "中",
         "半"
+      ],
+      "description": "Bu derste, geçmişte olan olayları ve eylemleri kibar bir şekilde nasıl ifade edeceğini öğreneceksin. Ayrıca, nesnelerin ve canlıların nerede bulunduğunu, konum kelimeleriyle birlikte anlatmayı ve yaklaşık süre/saat belirtmeyi de kavrayacaksın. Bu yapılar, günlük hayatta geçmiş deneyimlerini paylaşmak, bir yer tarif etmek veya randevularını ayarlamak için çok işine yarayacak.",
+      "cultural_notes": [
+        {
+          "topic": "Konum Belirtme Nezâketi",
+          "text": "Japonca'da bir nesnenin veya kişinin yerini belirtirken 「あります」 (cansızlar için) ve 「います」 (canlılar için) fiillerini kullanmak çok yaygındır. Genellikle konum kelimeleriyle (üst, alt, iç vb.) birlikte kullanılarak çok net ve kibar ifadeler oluşturulur."
+        },
+        {
+          "topic": "Geçmiş Zaman ve Kibarlık",
+          "text": "Japonca'da geçmiş zaman ifadeleri (ました, でした) aynı zamanda konuşmacının kibarlık seviyesini de yansıtır. Günlük konuşmada arkadaşlar arasında farklı formlar kullanılsa da, bu derste öğrendiğin kibar formlar her ortamda rahatlıkla kullanılabilir ve saygılı bir izlenim bırakır."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş, Ayşe ve Can, hafta sonu ne yaptıklarını konuşuyorlar.",
+          "lines": [
+            {
+              "speaker": "Ayşe",
+              "jp": "キャンさん、週末、何をしましたか？",
+              "tr": "Can, hafta sonu ne yaptın?"
+            },
+            {
+              "speaker": "Can",
+              "jp": "先週の土曜日に、友達と映画を見ました。とても面白かったです。",
+              "tr": "Geçen cumartesi arkadaşlarla film izledim. Çok ilginçti."
+            },
+            {
+              "speaker": "Ayşe",
+              "jp": "へえ、どこで見ましたか？",
+              "tr": "Vay, nerede izlediniz?"
+            },
+            {
+              "speaker": "Can",
+              "jp": "駅の近くの映画館で見ました。",
+              "tr": "Tren istasyonunun yakınındaki sinemada izledik."
+            }
+          ],
+          "highlights": [
+            "Verb ました (見ました)",
+            "Noun でした (面白かったです - i-sıfat geçmişi, Noun でした yapısına yakın)",
+            "Place の近くに (駅の近くの映画館)"
+          ]
+        },
+        {
+          "context": "Taro, arkadaşı Hana'ya yeni aldığı kedisini anlatıyor.",
+          "lines": [
+            {
+              "speaker": "Taro",
+              "jp": "ハナさん、新しい猫がいます。",
+              "tr": "Hana, yeni bir kedim var."
+            },
+            {
+              "speaker": "Hana",
+              "jp": "本当ですか！どこにいますか？",
+              "tr": "Gerçekten mi! Nerede?"
+            },
+            {
+              "speaker": "Taro",
+              "jp": "今、私の部屋のベッドの下にいますよ。",
+              "tr": "Şu an odamdaki yatağın altında."
+            }
+          ],
+          "highlights": [
+            "Place に Noun が います",
+            "Position words (下)"
+          ]
+        },
+        {
+          "context": "İki öğrenci, ders çalışma süreleri hakkında konuşuyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "昨日、何時間ぐらい日本語を勉強しましたか？",
+              "tr": "Dün, yaklaşık kaç saat Japonca çalıştın?"
+            },
+            {
+              "speaker": "B",
+              "jp": "二時間ぐらい勉強しました。でも、まだ宿題がたくさんあります。",
+              "tr": "Yaklaşık iki saat çalıştım. Ama hala çok ödevim var."
+            },
+            {
+              "speaker": "A",
+              "jp": "ああ、そうですか。図書館に本がありますか？",
+              "tr": "Ah, öyle mi. Kütüphanede kitap var mı?"
+            },
+            {
+              "speaker": "B",
+              "jp": "はい、図書館に辞書があります。",
+              "tr": "Evet, kütüphanede sözlük var."
+            }
+          ],
+          "highlights": [
+            "Time + ~ぐらい (二時間ぐらい)",
+            "Verb ました (勉強しました)",
+            "Place に Noun が あります"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Dün neler yaptığını, dersin 'Verb ました' ve 'Noun でした' yapılarını kullanarak 3-4 cümleyle arkadaşına anlat.",
+        "Kendi odandaki veya evindeki 3 farklı eşyanın nerede olduğunu, 'Place に Noun が あります' ve konum kelimelerini (上, 下, 中, 前, 後ろ gibi) kullanarak tarif et.",
+        "Bir arkadaşına geçen hafta sonu ne yaptığını sor ve o da sana yaklaşık kaç saat (～時間ぐらい) kitap okuduğunu veya film izlediğini söylesin.",
+        "Bir Japon arkadaşına, kendi şehrinde gezilecek güzel bir yerin nerede olduğunu (örneğin, müze, park) 'Place に Noun が あります' ve konum kelimeleriyle tarif et.",
+        "Akşam yemeği için bir arkadaşınla buluşacaksın. Ona '何時ごろ会いましょうか？' (Saat kaç gibi buluşalım?) diye sor ve alacağın cevabı anlamaya çalış."
       ]
     },
     {
@@ -2881,6 +2985,115 @@
         "学",
         "外",
         "国"
+      ],
+      "description": "Bu derste Japoncada fiillerin en önemli hallerinden biri olan \"te-formu\"nu öğreneceksin. Te-formu sayesinde fiilleri birbirine bağlayabilir, rica edebilir, izin isteyebilir veya yasaklayabilir, hatta bir eylemin devam ettiğini ya da bir durumu ifade edebilirsin. Günlük hayatta Japonca konuşurken sürekli kullanacağın, adeta sihirli bir anahtar gibi işlev gören bu yapıyla cümlelerin çok daha akıcı hale gelecek ve kendini daha rahat ifade edebileceksin.",
+      "cultural_notes": [
+        {
+          "topic": "Ricalarda Nezaket",
+          "text": "Japoncada birinden bir şey rica ederken 「～てください」 yapısı kullanılır. Ancak Japonlar genellikle ricayı doğrudan ifade etmek yerine, biraz daha dolaylı ve nazik bir şekilde söylemeyi tercih ederler. Örneğin, birinden kapıyı kapatmasını isterken 「ドアを閉めてください」 demek yerine, bazen durumu açıklayan bir cümleyle birlikte 「すみません、ドアを閉めてもいいですか？」 (Affedersin, kapıyı kapatabilir miyim?) gibi ifadeler de kullanılabilir."
+        },
+        {
+          "topic": "İzin İstemek ve Vermek",
+          "text": "Japoncada bir şey yapmak için izin isterken 「～てもいいですか」 kalıbı yaygın olarak kullanılır. İzin verirken 「～てもいいです」, yasaklarken ise 「～てはいけません」 denir. Bu yapılar, özellikle misafir olduğun yerlerde veya yeni tanıştığın insanlarla etkileşim kurarken çok işine yarayacak. \"Yapabilir miyim?\" diye sormak, Japon kültüründeki saygı ve nezaket anlayışının önemli bir parçasıdır."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş, Takashi ve Ayşe, Takashi'nin evinde ders çalışıyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "綾瀬さん、どうぞ、入ってください。",
+              "tr": "Ayşe, lütfen, içeri gel."
+            },
+            {
+              "speaker": "B",
+              "jp": "失礼します。たかしさん、ここで本を読んでもいいですか。",
+              "tr": "Affedersin. Takashi, burada kitap okuyabilir miyim?"
+            },
+            {
+              "speaker": "A",
+              "jp": "ええ、いいですよ。コーヒーを飲みますか。",
+              "tr": "Evet, tabii ki. Kahve içer misin?"
+            },
+            {
+              "speaker": "B",
+              "jp": "はい、お願いします。ありがとう。",
+              "tr": "Evet, lütfen. Teşekkürler."
+            }
+          ],
+          "highlights": [
+            "Verb て + ください",
+            "Verb て + もいいです",
+            "Verb て-form (bağlama)"
+          ]
+        },
+        {
+          "context": "İki arkadaş, Kenji ve Elif, Japonya'da bir kütüphanede ders çalışırken konuşuyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "エリフさん、今何をしていますか。",
+              "tr": "Elif, şimdi ne yapıyorsun?"
+            },
+            {
+              "speaker": "B",
+              "jp": "日本語を勉強しています。ケンジさんは？",
+              "tr": "Japonca çalışıyorum. Kenji sen?"
+            },
+            {
+              "speaker": "A",
+              "jp": "私も勉強しています。でも、ここでご飯を食べてはいけませんよ。",
+              "tr": "Ben de çalışıyorum. Ama burada yemek yememelisin."
+            },
+            {
+              "speaker": "B",
+              "jp": "あっ、ごめんなさい。忘れました。",
+              "tr": "Ah, üzgünüm. Unuttum."
+            }
+          ],
+          "highlights": [
+            "Verb て + います (devam/durum)",
+            "Verb て + はいけません"
+          ]
+        },
+        {
+          "context": "İki arkadaş, Yuta ve Can, hafta sonu için plan yapıyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "週末は何をしますか。",
+              "tr": "Hafta sonu ne yapacaksın?"
+            },
+            {
+              "speaker": "B",
+              "jp": "土曜日は朝から晩までバイトをします。日曜日は映画を見ます。",
+              "tr": "Cumartesi sabahdan akşama kadar yarı zamanlı işte çalışacağım. Pazar günü film izleyeceğim."
+            },
+            {
+              "speaker": "A",
+              "jp": "そうですか。じゃあ、一緒に晩ご飯を食べましょうか。",
+              "tr": "Öyle mi? O zaman birlikte akşam yemeği yiyelim mi?"
+            },
+            {
+              "speaker": "B",
+              "jp": "いいですね！ぜひ！",
+              "tr": "Harika olur! Kesinlikle!"
+            }
+          ],
+          "highlights": [
+            "Time から / Time まで",
+            "Verb stem + ましょうか",
+            "Verb て-form (sıralama)"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Japon bir arkadaşından, Japonca bir cümleyi yavaşça tekrar etmesini rica et: 「もう一度ゆっくり言ってください。」",
+        "Bir mağazada fotoğraf çekmek isteyip istemediğini sor: 「写真を撮ってもいいですか。」",
+        "Japonya'da bir müzede, 'Şu an ne yapmam yasak?' diye sor ve cevabı anlamaya çalış: 「ここで何をしてはいけませんか。」",
+        "Kendi günlük rutininin 3-4 adımını anlat (örneğin, sabah kalkıyorum, kahvaltı yapıyorum, okula gidiyorum gibi): 「朝起きて、朝ご飯を食べて、学校に行きます。」",
+        "Japon bir arkadaşına, akşam yemeği yemeyi veya bir şeyler içmeyi teklif et: 「一緒にご飯を食べましょうか。」 veya 「何か飲みましょうか。」"
       ]
     },
     {
@@ -3303,6 +3516,84 @@
         "文",
         "帰",
         "入"
+      ],
+      "description": "Bu derste, Japon aile üyelerini ve onların durumlarını anlatmayı öğreneceksin. Özellikle 'Verb ています' yapısıyla bir kişinin evli olup olmadığını, ne iş yaptığını veya nerede yaşadığını söyleyebileceksin. Günlük hayatta yeni tanıştığın insanlarla aileleri hakkında konuşmak veya bir fotoğrafı anlatmak için çok işine yarayacak.",
+      "cultural_notes": [
+        {
+          "topic": "Japonya'da Aile Üyelerine Hitap",
+          "text": "Japoncada kendi aile üyelerinden bahsederken ve başkalarının aile üyelerinden bahsederken farklı kelimeler kullanılır. Örneğin, kendi annene 母 (haha) derken, başkasının annesine お母さん (okaasan) dersin. Bu, Japonca öğrenirken dikkat etmen gereken önemli bir görgü kuralıdır."
+        },
+        {
+          "topic": "Aile Fotoğrafları ve Anlatımı",
+          "text": "Japonya'da aile fotoğrafları da tıpkı bizdeki gibi özel anıları yansıtır. Birine aile fotoğrafını gösterirken veya birinin fotoğrafına bakarken, 'Bu kişi kim?' (この人は誰ですか。) gibi sorularla sohbet başlatmak oldukça yaygındır. Bu derste öğrendiğin yapılarla bu sohbetleri kolayca yapabilirsin."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş, bir aile fotoğrafına bakarken sohbet ediyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "この人は誰ですか。お父さんですか。",
+              "tr": "Bu kişi kim? Baban mı?"
+            },
+            {
+              "speaker": "B",
+              "jp": "いいえ、私の兄です。彼は銀行で働いています。",
+              "tr": "Hayır, benim abim. O bankada çalışıyor."
+            },
+            {
+              "speaker": "A",
+              "jp": "そうなんですね。結婚していますか。",
+              "tr": "Öyle mi? Evli mi?"
+            },
+            {
+              "speaker": "B",
+              "jp": "はい、結婚しています。子供も二人います。",
+              "tr": "Evet, evli. İki çocuğu da var."
+            }
+          ],
+          "highlights": [
+            "Verb て + います (durum/sonuç)",
+            "Qualifying noun with verb"
+          ]
+        },
+        {
+          "context": "İki öğrenci, ders çalışırken gelecek planları hakkında konuşuyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "もう宿題をしましたか。",
+              "tr": "Ödevi zaten yaptın mı?"
+            },
+            {
+              "speaker": "B",
+              "jp": "いいえ、まだしていません。難しかったから、まだ終わっていません。",
+              "tr": "Hayır, henüz yapmadım. Zordu, bu yüzden henüz bitirmedim."
+            },
+            {
+              "speaker": "A",
+              "jp": "私はもうしましたよ。分からないことがあったら、聞いてください。",
+              "tr": "Ben zaten yaptım. Anlamadığın bir şey olursa, sor lütfen."
+            },
+            {
+              "speaker": "B",
+              "jp": "ありがとう！",
+              "tr": "Teşekkürler!"
+            }
+          ],
+          "highlights": [
+            "もう Verb ました",
+            "まだ Verb ていません",
+            "Sentence + から (sebep)"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Bir arkadaşının aile fotoğrafına bakarak her bir kişiyi Japonca olarak kim olduğunu ve ne iş yaptığını (bildiğin kelimelerle) anlatmaya çalış.",
+        "Kendi ailendeki kişileri Japonca tanıt. 'Benim annem hemşirelik yapıyor' veya 'Benim babam hala çalışıyor' gibi cümleler kur.",
+        "Japonca olarak 'Daha önce hiç suşi yaptın mı?' diye sor ve 'Henüz yapmadım' veya 'Zaten yaptım' cevabını nasıl vereceğini pratik yap.",
+        "Tanıdığın bir kişinin mesleğini ve medeni halini (evli/bekar) Japonca olarak 'Verb ています' yapısını kullanarak tanımla."
       ]
     },
     {
@@ -3685,6 +3976,100 @@
         "思",
         "次",
         "何"
+      ],
+      "description": "Bu derste Japoncada samimi konuşmanın anahtarı olan kısa formları öğreneceksin. Böylece hem kendi düşüncelerini doğal bir şekilde ifade edebilecek hem de başkalarının söylediklerini aktarabileceksin. Günlük sohbetlerde ve arkadaşlar arası iletişimde çok işine yarayacak!",
+      "cultural_notes": [
+        {
+          "topic": "Japoncada Samimi Konuşma",
+          "text": "Japoncada kısa formlar (plain forms), genellikle yakın arkadaşlar ve aile üyeleri arasında kullanılır. İş ortamında veya ilk tanıştığın kişilerle kullanmaktan kaçınmalısın, aksi takdirde kaba bulunabilirsin."
+        },
+        {
+          "topic": "Yemek Paylaşma ve Misafirperverlik",
+          "text": "Japonya'da barbekü (バーベキュー) gibi etkinliklerde yemekleri paylaşmak çok yaygındır. Misafirlerin rahat etmesi ve herkesin keyif alması önemlidir, bu yüzden başkalarına ikram etmek adettendir."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş hafta sonu ne yapacaklarını konuşuyor, barbekü fikri ortaya çıkıyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "週末、何かする？",
+              "tr": "Hafta sonu bir şey yapacak mısın?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うーん、何も考えてないな。バーベキューはどう？美味しいと思うよ。",
+              "tr": "Hmm, hiçbir şey düşünmedim. Barbeküye ne dersin? Lezzetli olacağını düşünüyorum."
+            },
+            {
+              "speaker": "A",
+              "jp": "いいね！でも、肉が高いと言っていたよ、田中さんが。",
+              "tr": "Harika! Ama Tanaka-san etin pahalı olduğunu söylemişti."
+            }
+          ],
+          "highlights": [
+            "Short forms (する, 考えてない)",
+            "~と思う (~ olduğunu düşünüyorum)",
+            "~と言っていた (~ dedi/söylemişti)"
+          ]
+        },
+        {
+          "context": "Bir grup arkadaş barbeküde yemekleri tartışıyor ve birine bir şey yapmamasını rica ediyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "この野菜、美味しくないと思う。",
+              "tr": "Bu sebze lezzetli değil bence."
+            },
+            {
+              "speaker": "B",
+              "jp": "えー、私は美味しいと思うけど。お茶、飲む？",
+              "tr": "Aa, ben lezzetli olduğunu düşünüyorum ama. Çay içer misin?"
+            },
+            {
+              "speaker": "A",
+              "jp": "うん。あ、それ、食べないでください！私の魚だから。",
+              "tr": "Evet. Aa, onu yeme lütfen! Benim balığım çünkü."
+            }
+          ],
+          "highlights": [
+            "い-Adjective short forms (美味しくない)",
+            "~と思う (~ olduğunu düşünüyorum)",
+            "~ないでください (lütfen ~ yapma)"
+          ]
+        },
+        {
+          "context": "İki arkadaş, ortak bir tanıdık hakkında konuşuyor ve onun bir yeteneğini değerlendiriyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "山田さん、料理が上手だよね。",
+              "tr": "Yamada-san yemek yapmada iyi, değil mi?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うん、本当に上手だと思う。いつも美味しいものを作ってくれる。",
+              "tr": "Evet, gerçekten iyi olduğunu düşünüyorum. Her zaman lezzetli şeyler yapıyor."
+            },
+            {
+              "speaker": "A",
+              "jp": "彼が「魚を焼くのが好きじゃない」と言っていたよ。",
+              "tr": "O, 'balık pişirmeyi sevmiyorum' demişti."
+            }
+          ],
+          "highlights": [
+            "Noun が 上手 (bir şeyde iyi olmak)",
+            "~と思う (~ olduğunu düşünüyorum)",
+            "~と言っていた (~ dedi/söylemişti)"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Bir arkadaşına hafta sonu ne yapmayı düşündüğünü kısa formları kullanarak sor ve cevabını al.",
+        "Bir restorana git, menüdeki bir yemek hakkında 'おいしいと思う' veya '美味しくないと思う' gibi bir cümle kur.",
+        "Ailenden birinin bir şeyi yapmamasını rica et (örneğin, '私のパンを食べないでください' gibi).",
+        "Japonya'da yaşayan bir arkadaşın varmış gibi düşün ve ona en sevdiği Japon yemeğinin ne olduğunu ve nedenini sor (kısa formları kullanarak)."
       ]
     },
     {
@@ -4053,6 +4438,119 @@
         "古",
         "知",
         "来"
+      ],
+      "description": "Bu derste, geçmiş zaman fiil ve sıfatlarının kısa formlarını öğreneceğiz. Japonca'da günlük konuşmalarda ve hikaye anlatırken bu yapılar çok işine yarayacak. Ayrıca, bir ismi niteleyen cümleler kurmayı ve bir şeyin nedenini kısa formla açıklamayı da göreceğiz, böylece Japonlarla daha akıcı ve doğal sohbetler edebileceksin.",
+      "cultural_notes": [
+        {
+          "topic": "Japonya'da Sebep Belirtme",
+          "text": "Japonlar doğrudan sebep belirtmek yerine bazen dolaylı ifadeler kullanabilir. Ama arkadaşlar arasında \"から\" ile kısa formda sebep belirtmek oldukça yaygındır ve samimi bir iletişim kurmanı sağlar."
+        },
+        {
+          "topic": "Kabuki ve Geleneksel Sanatlar",
+          "text": "Japonya'da Kabuki gibi geleneksel tiyatrolar yüzyıllardır varlığını sürdürüyor. Geçmişte yaşanan olayları veya duygusal dramaları anlatan bu sanatlar, Japon kültürünü daha iyi anlaman için harika bir yol."
+        },
+        {
+          "topic": "「もう」 ve 「まだ」 Kullanımı",
+          "text": "「もう」 (artık/zaten) ve 「まだ」 (henüz/hala) Japoncada eylemlerin tamamlanma durumunu belirtirken sıkça kullanılır. Özellikle geçmiş zaman kısa formuyla birleştiğinde, bir işin bitip bitmediğini kolayca ifade edebilirsin."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş hafta sonu ne yaptıklarını konuşuyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "ねぇ、週末何をした？",
+              "tr": "Hafta sonu ne yaptın?"
+            },
+            {
+              "speaker": "B",
+              "jp": "友達と映画を見に行ったよ。とても面白かった！",
+              "tr": "Arkadaşlarımla film izlemeye gittim. Çok ilginçti!"
+            },
+            {
+              "speaker": "A",
+              "jp": "へえ、どんな映画だった？",
+              "tr": "Vay, nasıl bir filmdi?"
+            },
+            {
+              "speaker": "B",
+              "jp": "日本のアニメ映画だった。前にも見たかったから、本当に嬉しかった。",
+              "tr": "Japon animasyon filmiydi. Daha önce de izlemek istediğimden gerçekten sevindim."
+            }
+          ],
+          "highlights": [
+            "Verb past short form (見に行った, 面白かった, だった, 見たかった)",
+            "Sentence + から、Sentence (見たかったから)"
+          ]
+        },
+        {
+          "context": "İki öğrenci bir gezi planını konuşuyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "来月京都に行くんだ。",
+              "tr": "Gelecek ay Kyoto'ya gidiyorum."
+            },
+            {
+              "speaker": "B",
+              "jp": "いいね！もうホテルを予約した？",
+              "tr": "İyiymiş! Oteli çoktan rezerve ettin mi?"
+            },
+            {
+              "speaker": "A",
+              "jp": "ううん、まだ予約してない。でも、来週予約するつもりだよ。",
+              "tr": "Hayır, henüz rezerve etmedim. Ama gelecek hafta rezerve etmeyi düşünüyorum."
+            },
+            {
+              "speaker": "B",
+              "jp": "そうなんだ。去年の夏、私も京都に行ったけど、とても暑かったよ。",
+              "tr": "Öyle mi? Geçen yaz ben de Kyoto'ya gittim ama çok sıcaktı."
+            }
+          ],
+          "highlights": [
+            "もう／まだ Verb (もう予約した？, まだ予約してない)",
+            "Noun/Adjective past short form (暑かった)",
+            "Verb past short form (行った)"
+          ]
+        },
+        {
+          "context": "İki arkadaş bir konsere gidip gitmediklerini soruyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "先週のコンサート、行った？",
+              "tr": "Geçen haftaki konsere gittin mi?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うん、行ったよ！すごく楽しかった。",
+              "tr": "Evet, gittim! Çok eğlenceliydi."
+            },
+            {
+              "speaker": "A",
+              "jp": "誰と行ったの？",
+              "tr": "Kimle gittin?"
+            },
+            {
+              "speaker": "B",
+              "jp": "昔、日本語を勉強した友達と行った。その友達は音楽が大好きだからね。",
+              "tr": "Eskiden Japonca çalışan bir arkadaşımla gittim. O arkadaşım müziği çok sever de."
+            }
+          ],
+          "highlights": [
+            "Verb past short form (行った, 楽しかった, 勉強した)",
+            "Qualifying noun (日本語を勉強した友達)",
+            "Sentence + から、Sentence (音楽が大好きだから)"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Geçen hafta sonu ne yaptığını Japonca kısa geçmiş zaman kullanarak bir arkadaşına anlat. (En az 3 cümle)",
+        "Japonya'da gördüğün veya duyduğun ilginç bir kültürel olay hakkında, \"Çok ilginçti çünkü...\" (面白かったから) kalıbını kullanarak kısa bir cümle kur.",
+        "Bir arkadaşına \"Dün eve erken döndüm çünkü biraz hastaydım.\" (昨日早く家に帰った。少し病気だったから。) gibi bir sebep cümlesi kur.",
+        "Japonya'da \"Kaç kez Kabuki izledin?\" veya \"Kaç yıl Japonya'da yaşadın?\" gibi sorulara (何回、何年) kısa geçmiş zaman kullanarak cevap ver.",
+        "En sevdiğin Japon filmini veya müziğini anlatan, \"Çok sevdiğim bir film/müzik var, o da...\" (私が大好きな映画/音楽がある、それは...) gibi bir cümle kurarak ismini nitele."
       ]
     },
     {
@@ -4404,6 +4902,120 @@
         "夜",
         "朝",
         "持"
+      ],
+      "description": "Bu derste, Japonca'da kıyaslama yapmayı, bir grup içinden en iyiyi seçmeyi ve gelecek planlarını ifade etmeyi öğreneceksin. Bu yapılar, günlük hayatta seçimlerini, niyetlerini ve tercihlerini anlatırken sana çok yardımcı olacak. Böylece, kış tatili planlarından en sevdiğin mevsime kadar birçok konuda rahatça konuşabileceksin.",
+      "cultural_notes": [
+        {
+          "topic": "Japonya'da Mevsimler ve Tatil Planları",
+          "text": "Japonya'da dört mevsim çok belirgin yaşanır ve her mevsimin kendine özgü güzellikleri ve gelenekleri vardır. Tatil planları genellikle mevsimsel etkinliklere göre yapılır; örneğin, kışın kayak, ilkbaharda sakura izleme gibi."
+        },
+        {
+          "topic": "Karar Verme ve Tercih Bildirme",
+          "text": "Japonlar, bir konuda karar verirken veya tercih belirtirken genellikle karşılaştırma yapılarını sıkça kullanır. 'どちらの方がいいですか' (Hangisi daha iyi?) gibi sorularla fikir alışverişi yapmak ve '～にする' (karar vermek) yapısıyla seçimlerini belirtmek yaygındır."
+        },
+        {
+          "topic": "Planları İfade Etme",
+          "text": "Japon kültüründe planlarını ve niyetlerini açıkça ifade etmek önemlidir. '～つもりです' yapısı, geleceğe yönelik niyetlerini ve kesinleşmiş planlarını karşı tarafa net bir şekilde aktarmanı sağlar."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş, kış tatili planları hakkında sohbet ediyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "冬休み、何かするつもり？",
+              "tr": "Kış tatilinde bir şeyler yapmayı düşünüyor musun?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うん、家族と旅行に行くつもりだよ。北海道にするか、沖縄にするか、まだ決めてないけど。",
+              "tr": "Evet, ailemle seyahate gitmeyi düşünüyorum. Hokkaido'ya mı, Okinawa'ya mı karar vereceğimi henüz belirlemedim."
+            },
+            {
+              "speaker": "A",
+              "jp": "いいね！北海道は沖縄より寒いけど、スキーが楽しめるね。",
+              "tr": "Ne güzel! Hokkaido Okinawa'dan daha soğuk ama kayak yapmanın tadını çıkarabilirsin."
+            },
+            {
+              "speaker": "B",
+              "jp": "そうだね。暖かい方が好きだけど、雪も好きだから迷ってるんだ。",
+              "tr": "Öyle. Sıcak olanı daha çok severim ama karı da sevdiğim için kararsızım."
+            }
+          ],
+          "highlights": [
+            "Verb (short form) + つもりです",
+            "Noun + に+ する",
+            "AはBより~"
+          ]
+        },
+        {
+          "context": "İki arkadaş, Japonya'daki favori mevsimleri hakkında konuşuyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "日本の季節の中で、どれが一番好き？",
+              "tr": "Japonya'nın mevsimleri arasında en çok hangisini seviyorsun?"
+            },
+            {
+              "speaker": "B",
+              "jp": "私は秋が一番好きだよ。夏より涼しいし、紅葉もきれいだから。",
+              "tr": "Ben sonbaharı en çok seviyorum. Yazdan daha serin ve sonbahar yaprakları da güzel."
+            },
+            {
+              "speaker": "A",
+              "jp": "僕は春の方が好きだな。秋と春と、どちらの方が花がきれいだと思う？",
+              "tr": "Ben ilkbaharı daha çok severim. Sonbahar ile ilkbahardan hangisinin çiçekleri daha güzel sence?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うーん、やっぱり春の方がきれいだと思う。桜の花は本当に美しいね。",
+              "tr": "Hmm, yine de ilkbaharın çiçekleri daha güzel bence. Sakura çiçekleri gerçekten çok güzel, değil mi?"
+            }
+          ],
+          "highlights": [
+            "~の中で、~が一番~です",
+            "AはBより~",
+            "AとBと、どちらの方が~ですか"
+          ]
+        },
+        {
+          "context": "Bir hediye dükkanında iki arkadaş, bir arkadaşları için hediye seçmeye çalışıyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "この中で、どれが一番面白いかな？",
+              "tr": "Bunlar arasında hangisi en ilginç sence?"
+            },
+            {
+              "speaker": "B",
+              "jp": "あの小さいのがかわいいね。でも、大きい方がもっと実用的じゃない？",
+              "tr": "Şu küçük olanı şirin. Ama büyük olanı daha pratik değil mi?"
+            },
+            {
+              "speaker": "A",
+              "jp": "そうだね。じゃあ、小さいのより大きい方にする？",
+              "tr": "Öyle. O zaman küçük olan yerine büyük olana mı karar verelim?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うん、そうしよう。彼も喜ぶと思う。",
+              "tr": "Evet, öyle yapalım. O da sevinir bence."
+            }
+          ],
+          "highlights": [
+            "Adjective + ~の",
+            "AよりBの方が~",
+            "Noun + に+ する"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Kendi kış tatili planlarını Japonca olarak anlat. (Örnek: 私は家族と山にスキーに行くつもりです。) ",
+        "İki farklı şehri (örneğin Tokyo ve Kyoto) karşılaştırarak hangisinin daha ilginç olduğunu Japonca söyle. (Örnek: 京都は東京より古い町です。) ",
+        "En sevdiğin mevsimi Japonca söyle ve nedenini açıklarken diğer mevsimlerle karşılaştırma yap. (Örnek: 私は春が一番好きです。夏より涼しいです。) ",
+        "Bir mağazada iki benzer ürün arasında seçim yapıyormuş gibi davran ve hangisini 'almaya karar verdiğini' Japonca ifade et. (Örnek: この小さい方にするつもりです。) ",
+        "Boş zamanlarında yapmayı düşündüğün bir aktiviteyi (örneğin kitap okumak, film izlemek) Japonca olarak ifade et. (Örnek: 週末は家で映画を見るつもりです。)"
       ]
     },
     {
@@ -4723,6 +5335,121 @@
         "強",
         "有",
         "旅"
+      ],
+      "description": "Bu derste, ne yapmak istediğini, geçmişte hangi deneyimlere sahip olduğunu ve birden fazla eylemi nasıl sıralayacağını öğreneceksin. Bu yapılar, günlük hayatta planlarını, hobilerini veya geçmiş maceralarını arkadaşlarınla paylaşırken sana çok yardımcı olacak.",
+      "cultural_notes": [
+        {
+          "topic": "Japonya'da Tatil Planları",
+          "text": "Japonlar genellikle tatillerini önceden detaylı planlamayı severler. Gitmek istedikleri yerleri veya yapmak istedikleri aktiviteleri konuşurken '～たい' (istemek) kalıbını sıkça kullanırlar."
+        },
+        {
+          "topic": "Deneyim Paylaşımı ve 'ことがある'",
+          "text": "Japon kültüründe deneyimleri paylaşmak önemlidir. Bir konu hakkında konuşurken, daha önce o şeyi yapıp yapmadığını belirtmek için '～たことがある' kalıbı yaygın olarak kullanılır ve sohbeti zenginleştirir."
+        },
+        {
+          "topic": "Çoklu Eylemleri Sıralama",
+          "text": "Japoncada '～たり～たりする' yapısı, birden fazla eylemi örnekler vererek sıralamak için kullanılır. Bu, bir gün içinde yaptığın farklı aktiviteleri veya hobilerini anlatırken çok işe yarar."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş tatil sonrası buluşup tatilleri hakkında konuşuyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "夏休み、どうだった？",
+              "tr": "Yaz tatili nasıldı?"
+            },
+            {
+              "speaker": "B",
+              "jp": "とても楽しかったよ！海に行ったり、山に登ったりしたんだ。",
+              "tr": "Çok eğlenceliydi! Denize gittim, dağa tırmandım gibi şeyler yaptım."
+            },
+            {
+              "speaker": "A",
+              "jp": "いいね！私も来年、旅行に行きたいな。",
+              "tr": "Ne güzel! Ben de seneye tatile gitmek istiyorum."
+            },
+            {
+              "speaker": "B",
+              "jp": "ぜひ！私も以前、京都に行ったことがあるよ。",
+              "tr": "Kesinlikle! Ben de daha önce Kyoto'ya gitmişliğim var."
+            }
+          ],
+          "highlights": [
+            "Verb たり Verb たり する",
+            "Verb stem + たい",
+            "Verb ことがある"
+          ]
+        },
+        {
+          "context": "İki arkadaş hafta sonu planları hakkında konuşuyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "今週末、何かしたいことがある？",
+              "tr": "Bu hafta sonu yapmak istediğin bir şey var mı?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うん、映画を見たり、本を読んだりしたいな。",
+              "tr": "Evet, film izlemek ya da kitap okumak gibi şeyler yapmak istiyorum."
+            },
+            {
+              "speaker": "A",
+              "jp": "いいね！私は新しいカフェを探したいと思ってるんだ。",
+              "tr": "Ne güzel! Ben yeni bir kafe aramak istiyorum."
+            },
+            {
+              "speaker": "B",
+              "jp": "楽しそう！私も前に、新しいカフェを見つけたことがあるよ。",
+              "tr": "Eğlenceli görünüyor! Ben de daha önce yeni bir kafe bulmuşluğum var."
+            }
+          ],
+          "highlights": [
+            "Verb stem + たい",
+            "Verb たり Verb たり する",
+            "Verb ことがある"
+          ]
+        },
+        {
+          "context": "İki arkadaş hobileri ve deneyimleri hakkında sohbet ediyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "最近、何か面白いことあった？",
+              "tr": "Son zamanlarda ilginç bir şey oldu mu?"
+            },
+            {
+              "speaker": "B",
+              "jp": "うん、友達とカラオケに行ったり、新しい歌を歌ったりしたよ。",
+              "tr": "Evet, arkadaşlarımla karaoke'ye gittim, yeni şarkılar söyledim gibi şeyler yaptım."
+            },
+            {
+              "speaker": "A",
+              "jp": "いいね！私も歌を歌うのが好きだよ。前に、一度だけバンドで歌ったことがあるんだ。",
+              "tr": "Ne güzel! Ben de şarkı söylemeyi severim. Daha önce bir kere bantla şarkı söylemişliğim var."
+            },
+            {
+              "speaker": "B",
+              "jp": "すごい！私もいつかバンドで歌ってみたい！",
+              "tr": "Vay canına! Ben de bir gün bantla şarkı söylemek isterim!"
+            }
+          ],
+          "highlights": [
+            "Verb たり Verb たり する",
+            "Verb ことがある",
+            "Verb stem + たい",
+            "Quantity + Counter"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Bir arkadaşına hafta sonu ne yapmak istediğini sor.",
+        "En son tatilinde yaptığın 2-3 şeyi Japonca olarak sırala.",
+        "Hayatında daha önce hiç Japon yemeği yiyip yemediğini Japonca olarak söyle.",
+        "Japonya'da gezmek istediğin yerleri veya yapmak istediğin şeyleri Japonca olarak anlat.",
+        "Geçmişte kaç kere Japonya'ya gittiğini veya Japonca çalıştığını Japonca olarak ifade et."
       ]
     },
     {
@@ -5037,6 +5764,99 @@
         "青",
         "色",
         "薬"
+      ],
+      "description": "Bu derste, kendini iyi hissetmediğinde veya hasta olduğunda Japonca nasıl konuşacağını öğreneceksin. Günlük hayatta, özellikle sağlık durumlarında kendini ifade edebilmek çok önemli, böylece yardım isteyebilir veya birine geçmiş olsun dileklerini iletebilirsin. Doktora gitme, ilaç alma gibi durumlarda bu ifadeler çok işine yarayacak.",
+      "cultural_notes": [
+        {
+          "topic": "Maske Takma Alışkanlığı",
+          "text": "Japonya'da insanlar hasta olduklarında (özellikle nezle veya grip gibi bulaşıcı hastalıklarda) başkalarına bulaştırmamak için maske takmaya özen gösterirler. Bu hem bir nezaket hem de bir sorumluluk göstergesidir."
+        },
+        {
+          "topic": "Geçmiş Olsun Demek",
+          "text": "Birisi hasta olduğunda ona \"お大事に (O-daiji ni)\" demek, \"geçmiş olsun\" veya \"kendine iyi bak\" anlamına gelir. Bu, hastaya karşı gösterilen bir şefkat ve iyi dilek ifadesidir."
+        },
+        {
+          "topic": "Hastanede Bekleme Süreleri",
+          "text": "Japonya'da hastanelerde randevu sistemleri yaygın olsa da, acil olmayan durumlarda özellikle büyük şehirlerdeki popüler hastanelerde bekleme süreleri bazen uzun olabilir. Hazırlıklı olmakta fayda var."
+        }
+      ],
+      "dialogues": [
+        {
+          "context": "İki arkadaş, birinin kendini iyi hissetmemesi üzerine konuşuyorlar.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "山田さん、顔色が悪いですよ。どうしたんですか。",
+              "tr": "Yamada, yüzün solgun görünüyor. Ne oldu sana?"
+            },
+            {
+              "speaker": "B",
+              "jp": "昨日、友達と飲みすぎたんです。今、頭が痛いし、気分も悪いんです。",
+              "tr": "Dün arkadaşlarımla çok içtim. Şimdi başım ağrıyor ve kendimi kötü hissediyorum."
+            },
+            {
+              "speaker": "A",
+              "jp": "あらら、二日酔いですね。今日はゆっくり休んだ方がいいですよ。",
+              "tr": "Eyvah, akşamdan kalmasın demek. Bugün iyice dinlensen daha iyi olur."
+            },
+            {
+              "speaker": "B",
+              "jp": "そうですね。薬を飲んだ方がいいですか。",
+              "tr": "Evet, öyle. İlaç içsem daha iyi olur mu?"
+            },
+            {
+              "speaker": "A",
+              "jp": "ええ、きっとそうでしょう。早く治してくださいね。",
+              "tr": "Evet, kesin öyledir. Çabucak iyileşmeni dilerim."
+            }
+          ],
+          "highlights": [
+            "~んです / ~のです",
+            "Verb stem + すぎる",
+            "Verb (short form) + 方がいいです",
+            "~でしょう"
+          ]
+        },
+        {
+          "context": "Bir öğrenci, dersi kaçırdığı için öğretmenine açıklama yapıyor.",
+          "lines": [
+            {
+              "speaker": "A",
+              "jp": "先生、すみません。昨日は授業を休んでしまいました。",
+              "tr": "Öğretmenim, affedersiniz. Dün dersi kaçırdım."
+            },
+            {
+              "speaker": "B",
+              "jp": "どうしたんですか。何かあったんですか。",
+              "tr": "Ne oldu? Bir şey mi oldu?"
+            },
+            {
+              "speaker": "A",
+              "jp": "はい、熱があったんです。それで、病院に行かなければいけませんでした。",
+              "tr": "Evet, ateşim vardı. Bu yüzden hastaneye gitmek zorunda kaldım."
+            },
+            {
+              "speaker": "B",
+              "jp": "そうでしたか。もう大丈夫ですか。薬は飲んだんですか。",
+              "tr": "Öyle miydi? Şimdi iyi misin? İlaç içtin mi?"
+            },
+            {
+              "speaker": "A",
+              "jp": "はい、もう大丈夫です。家でゆっくり休みました。",
+              "tr": "Evet, şimdi iyiyim. Evde iyice dinlendim."
+            }
+          ],
+          "highlights": [
+            "~んです / ~のです",
+            "Verb なければいけません / なきゃいけない"
+          ]
+        }
+      ],
+      "real_world_prompts": [
+        "Kendini iyi hissetmediğinde, Japon bir arkadaşına durumunu ve semptomlarını (örneğin baş ağrısı, öksürük, ateş) ~んです yapısını kullanarak anlat.",
+        "Bir arkadaşın çok fazla ders çalıştığı için yorgun düştüğünü gör. Ona ~すぎる ve ~方がいいです yapılarını kullanarak dinlenmesini tavsiye et.",
+        "Japonya'da bir hastaneye gittiğini hayal et. Doktorun sana ne yapman gerektiğini sorduğunda, ~なければいけません kullanarak ne yapman gerektiğini söyle (örneğin ilaç içmek, dinlenmek).",
+        "Bir arkadaşının ne zaman iyileşeceğini merak ediyorsun. ~でしょう yapısını kullanarak bir tahminde bulun."
       ]
     }
   ]
