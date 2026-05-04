@@ -1,4 +1,18 @@
 {
+  "textbook.guided": "Teach + Practice (guided)",
+  "guided.session_title": "Guided Study — {title}",
+  "guided.no_grammar": "This lesson has no grammar topics; switching to vocab review.",
+  "guided.concept_n": "Concept {n}/{total}",
+  "guided.continue_to_practice": "Got it, continue (Enter)",
+  "guided.pick_practice": "Pick practice mode:",
+  "guided.practice_typing": "Typing (meaning -> type the word)",
+  "guided.practice_mc": "Multiple choice (word -> meaning)",
+  "guided.practice_skip": "Skip this concept",
+  "guided.no_practice_pool": "Not enough vocab in this lesson for practice.",
+  "guided.practice_starting": "Practice starting — {n} questions",
+  "guided.session_complete": "All concepts done! You're ready for the lesson.",
+  "guided.exam_hint": "Next: reinforce with the end-of-lesson exam (option 5).",
+
   "menu.resume": "Study",
   "menu.resume_desc": "Resume your curriculum where you left off",
   "menu.resume_label": "Study:",

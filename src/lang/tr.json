@@ -1,4 +1,18 @@
 {
+  "textbook.guided": "Konu Anlat + Pratik (rehberli)",
+  "guided.session_title": "Rehberli Calisma — {title}",
+  "guided.no_grammar": "Bu derste konu (grammar) yok, sadece kelime calismasi yapilacak.",
+  "guided.concept_n": "Konu {n}/{total}",
+  "guided.continue_to_practice": "Anladim, devam et (Enter)",
+  "guided.pick_practice": "Pratik modunu sec:",
+  "guided.practice_typing": "Yazarak (anlam -> kelime yaz)",
+  "guided.practice_mc": "Coktan secmeli (kelime -> anlam)",
+  "guided.practice_skip": "Bu konuyu atla / sirayi gec",
+  "guided.no_practice_pool": "Bu derste pratik icin yeterli kelime havuzu yok.",
+  "guided.practice_starting": "Pratik basliyor — {n} soru",
+  "guided.session_complete": "Tum konular tamamlandi! Ders icin hazirsin.",
+  "guided.exam_hint": "Devam: ders sonu sinavi (5 numara) ile pekistir.",
+
   "menu.resume": "Calis",
   "menu.resume_desc": "Mufredattan kaldigin yerden devam et",
   "menu.resume_label": "Calis:",

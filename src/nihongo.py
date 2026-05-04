@@ -487,13 +487,14 @@ def handle_resume_study():
             handle_textbook_study()
             return
 
-        # Devam — asamaya gore uygun fonksiyon
+        # Devam — asamaya gore uygun fonksiyon.
+        # vocab + grammar phase'leri tek "guided" akista birlestiriyoruz:
+        # konu anlat -> pratik. Boylece kullanici "ders calisiyor" hisseder,
+        # ham SRS'e dusmez. Kanji ve exam ayri kalir.
         lesson_id = state["lesson_id"]
         phase = state["phase"]
-        if phase == "vocab":
-            quiz.study_lesson_vocab(lesson_id)
-        elif phase == "grammar":
-            quiz.study_lesson_grammar(lesson_id)
+        if phase in ("vocab", "grammar"):
+            quiz.guided_lesson_study(lesson_id)
         elif phase == "kanji":
             quiz.study_lesson_kanji(lesson_id)
         elif phase == "exam":
@@ -513,12 +514,14 @@ def handle_textbook_study():
             if action == "0":
                 break
             elif action == "1":
-                quiz.study_lesson_vocab(lesson_id)
+                quiz.guided_lesson_study(lesson_id)
             elif action == "2":
-                quiz.study_lesson_grammar(lesson_id)
+                quiz.study_lesson_vocab(lesson_id)
             elif action == "3":
-                quiz.study_lesson_kanji(lesson_id)
+                quiz.study_lesson_grammar(lesson_id)
             elif action == "4":
+                quiz.study_lesson_kanji(lesson_id)
+            elif action == "5":
                 count = IntPrompt.ask(t("quiz.question_count"), default=10)
                 quiz.quiz_lesson_exam(lesson_id, count)
 

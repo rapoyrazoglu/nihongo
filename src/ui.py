@@ -742,15 +742,16 @@ def show_lesson_detail_menu(lesson_id):
     menu.add_column("No", style="bold cyan", width=4)
     menu.add_column(t("your_choice"), style="white")
 
-    menu.add_row("1", t("textbook.study_vocab"))
-    menu.add_row("2", t("textbook.study_grammar"))
-    menu.add_row("3", t("textbook.study_kanji"))
-    menu.add_row("4", t("textbook.lesson_exam"))
+    menu.add_row("1", f"[bold green]{t('textbook.guided')}[/bold green]")
+    menu.add_row("2", t("textbook.study_vocab"))
+    menu.add_row("3", t("textbook.study_grammar"))
+    menu.add_row("4", t("textbook.study_kanji"))
+    menu.add_row("5", t("textbook.lesson_exam"))
     menu.add_row("0", t("back"))
 
     console.print(Panel(menu, title=f"[bold]{t('textbook.lesson_actions')}[/bold]", border_style="green"))
     return Prompt.ask(f"\n[bold cyan]{t('your_choice')}[/bold cyan]",
-                      choices=["0", "1", "2", "3", "4"], default="1")
+                      choices=["0", "1", "2", "3", "4", "5"], default="1")
 
 
 def show_startup_level_select():

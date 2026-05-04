@@ -330,6 +330,138 @@ def _study_cards_loop(cards, card_type, show_fn, vocab_mode=False):
     Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
 
 
+def _mini_mc_quiz(cards, count):
+    """Lesson-scoped mini coktan secmeli quiz (vocab cards)."""
+    if not cards:
+        return
+    mf = meaning_field()
+    questions = random.sample(cards, min(count, len(cards)))
+    correct = 0
+    for i, q in enumerate(questions):
+        ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=len(questions))} ──[/dim]")
+        ui.console.print(f"\n  [bold white on red] {q['word']} [/bold white on red]  [green]({q['reading']})[/green]\n")
+        wrong = [c for c in cards if c["id"] != q["id"] and c.get(mf)]
+        if len(wrong) < 3:
+            continue
+        distractors = random.sample(wrong, 3)
+        options = [q[mf]] + [d[mf] for d in distractors]
+        random.shuffle(options)
+        correct_idx = options.index(q[mf])
+        for j, opt in enumerate(options):
+            ui.console.print(f"  [cyan]{j+1}[/cyan]) {opt}")
+        ans = Prompt.ask(f"\n{t('quiz.your_answer')}", choices=["1","2","3","4","q"], default="1")
+        if ans == "q":
+            break
+        is_ok = (int(ans) - 1 == correct_idx)
+        if is_ok:
+            ui.console.print(f"[bold green]  ✓ {t('quiz.correct')}[/bold green]")
+            correct += 1
+            srs.review_card("vocabulary", q["id"], 4)
+        else:
+            ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] {t('quiz.correct_answer', answer=q[mf])}")
+            srs.review_card("vocabulary", q["id"], 1)
+        db.update_stats(reviewed=1, correct=1 if is_ok else 0)
+    ui.show_quiz_result(correct, len(questions))
+
+
+def _mini_typing_quiz(cards, count):
+    """Lesson-scoped mini yazarak quiz (anlam -> kelime)."""
+    if not cards:
+        return
+    mf = meaning_field()
+    questions = random.sample(cards, min(count, len(cards)))
+    correct = 0
+    for i, q in enumerate(questions):
+        ui.console.print(f"\n[dim]── {t('quiz.question_n', n=i+1, total=len(questions))} ──[/dim]")
+        ui.console.print(f"\n  [bold yellow]{q[mf]}[/bold yellow]\n")
+        ans = Prompt.ask(t("quiz.your_answer"))
+        if ans.lower() in ("q", "quit"):
+            break
+        normalized = ans.strip()
+        is_ok = normalized in (q["word"], q["reading"])
+        if is_ok:
+            ui.console.print(f"[bold green]  ✓ {t('quiz.correct')}[/bold green]")
+            correct += 1
+            srs.review_card("vocabulary", q["id"], 4)
+        else:
+            ui.console.print(f"[bold red]  ✗ {t('quiz.wrong')}[/bold red] "
+                             f"{t('quiz.correct_was', word=q['word'], reading=q['reading'])}")
+            srs.review_card("vocabulary", q["id"], 1)
+        db.update_stats(reviewed=1, correct=1 if is_ok else 0)
+    ui.show_quiz_result(correct, len(questions))
+
+
+def guided_lesson_study(lesson_id):
+    """Konu anlat -> pratik yap akisi.
+    Her grammar concept icin: detayli aciklama -> kullanici pratik modu secer
+    (yazarak / coktan secmeli) -> mini quiz lesson'un vocab pool'undan."""
+    items = db.get_lesson_items(lesson_id)
+    grammar_concepts = items["grammar"]
+    vocab_pool = items["vocabulary"]
+    lesson = db.get_lesson(lesson_id)
+
+    ui.clear()
+    title = f"L{lesson['lesson_no']}: {lesson['title']}"
+    ui.console.print(f"\n[bold cyan]{t('guided.session_title', title=title)}[/bold cyan]\n")
+
+    if not grammar_concepts:
+        ui.console.print(f"[yellow]{t('guided.no_grammar')}[/yellow]")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        # Vocab varsa sadece vocab calistir
+        if vocab_pool:
+            _study_cards_loop(vocab_pool, "vocabulary", ui.show_vocab_card, vocab_mode=True)
+        return
+
+    n_concepts = len(grammar_concepts)
+    for idx, concept in enumerate(grammar_concepts):
+        ui.clear()
+        ui.console.print(f"[dim]── {t('guided.concept_n', n=idx+1, total=n_concepts)} ──[/dim]\n")
+
+        # 1) Konu anlatimi
+        ui.show_grammar_card(concept, show_answer=True)
+        Prompt.ask(f"\n[dim]{t('guided.continue_to_practice')}[/dim]", default="")
+
+        # 2) Pratik modu sec
+        ui.clear()
+        ui.console.print(f"[dim]── {t('guided.concept_n', n=idx+1, total=n_concepts)} ──[/dim]\n")
+        ui.console.print(f"[bold]{concept['pattern']}[/bold]\n")
+        ui.console.print(f"[bold]{t('guided.pick_practice')}[/bold]")
+        ui.console.print(f"  [cyan]1[/cyan] {t('guided.practice_typing')}")
+        ui.console.print(f"  [cyan]2[/cyan] {t('guided.practice_mc')}")
+        ui.console.print(f"  [cyan]0[/cyan] {t('guided.practice_skip')}")
+        choice = Prompt.ask(t("your_choice"), choices=["0", "1", "2"], default="2")
+
+        if choice == "0":
+            # SRS kaydı yine de; "biliyorum" sayalım, hızlı geç
+            srs.review_card("grammar", concept["id"], 4)
+            continue
+
+        # Concept'i de SRS'e bildir (gördü)
+        srs.review_card("grammar", concept["id"], 4)
+
+        # 3) Mini quiz vocab pool uzerinde
+        practice_n = min(5, len(vocab_pool))
+        if practice_n < 1:
+            ui.console.print(f"[yellow]{t('guided.no_practice_pool')}[/yellow]")
+            Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+            continue
+
+        ui.clear()
+        ui.console.print(f"[bold cyan]{t('guided.practice_starting', n=practice_n)}[/bold cyan]\n")
+        if choice == "1":
+            _mini_typing_quiz(vocab_pool, practice_n)
+        else:
+            _mini_mc_quiz(vocab_pool, practice_n)
+
+        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+
+    # Bitiş ekrani
+    ui.clear()
+    ui.console.print(f"\n[bold green]{t('guided.session_complete')}[/bold green]\n")
+    ui.console.print(f"[dim]{t('guided.exam_hint')}[/dim]\n")
+    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+
 def study_lesson_vocab(lesson_id):
     cards = db.get_lesson_items(lesson_id, "vocabulary")["vocabulary"]
     ui.clear()
