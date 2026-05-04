@@ -7802,6 +7802,398 @@
         "Bir arkadaşına \"Dün eve erken döndüm çünkü biraz hastaydım.\" (昨日早く家に帰った。少し病気だったから。) gibi bir sebep cümlesi kur.",
         "Japonya'da \"Kaç kez Kabuki izledin?\" veya \"Kaç yıl Japonya'da yaşadın?\" gibi sorulara (何回、何年) kısa geçmiş zaman kullanarak cevap ver.",
         "En sevdiğin Japon filmini veya müziğini anlatan, \"Çok sevdiğim bir film/müzik var, o da...\" (私が大好きな映画/音楽がある、それは...) gibi bir cümle kurarak ismini nitele."
+      ],
+      "quiz_pool": [
+        {
+          "id": "L9_q01",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "昨日、___ を見ました。",
+          "prompt_tr": "Dün bir ___ izledim. (Boşluğa 'film' anlamına gelen kelimeyi yazın)",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "映画",
+          "distractors": [
+            {
+              "text": "音楽",
+              "diag": "vocab_confusion_music"
+            },
+            {
+              "text": "写真",
+              "diag": "vocab_confusion_photo"
+            },
+            {
+              "text": "歌舞伎",
+              "diag": "vocab_confusion_kabuki"
+            }
+          ],
+          "explanation_tr": "映画 (eiga) 'film' demektir. Diğerleri farklı anlamlara gelen kelimelerdir."
+        },
+        {
+          "id": "L9_q02",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "あの映画は全然___なかったです。",
+          "prompt_tr": "O film hiç ___ değildi. (Boşluğa 'ilginç' anlamına gelen kelimenin olumsuz geçmiş halini tamamlayan kısmı yazın)",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "面白く",
+          "distractors": [
+            {
+              "text": "つまらなく",
+              "diag": "vocab_confusion_boring_opposite"
+            },
+            {
+              "text": "楽しく",
+              "diag": "vocab_confusion_fun_opposite"
+            },
+            {
+              "text": "暖かく",
+              "diag": "vocab_confusion_weather_adj"
+            }
+          ],
+          "explanation_tr": "面白い (omoshiroi) 'ilginç' demektir. Olumsuz geçmiş formu '面白くなかった' olur."
+        },
+        {
+          "id": "L9_q03",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "電車は駅に___。",
+          "prompt_tr": "Tren istasyona ___ . (Boşluğa 'varmak' fiilinin geçmiş zamanını yazın)",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "着きました",
+          "distractors": [
+            {
+              "text": "出発しました",
+              "diag": "vocab_confusion_depart"
+            },
+            {
+              "text": "戻りました",
+              "diag": "vocab_confusion_return"
+            },
+            {
+              "text": "払いました",
+              "diag": "vocab_confusion_pay"
+            }
+          ],
+          "explanation_tr": "着く (tsuku) 'varmak' demektir. Geçmiş zamanı '着きました' olur."
+        },
+        {
+          "id": "L9_q04",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "私は友達をパーティーに___。",
+          "prompt_tr": "Ben arkadaşımı partiye ___ . (Boşluğa 'birini getirmek' fiilinin geçmiş zamanını yazın)",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "連れて来ました",
+          "distractors": [
+            {
+              "text": "持って来ました",
+              "diag": "vocab_confusion_bring_thing"
+            },
+            {
+              "text": "連れて行きました",
+              "diag": "vocab_confusion_take_person"
+            },
+            {
+              "text": "着きました",
+              "diag": "vocab_confusion_arrive"
+            }
+          ],
+          "explanation_tr": "連れて来る (tsuretekuru) 'birini getirmek' demektir. Geçmiş zamanı '連れて来ました' olur."
+        },
+        {
+          "id": "L9_q05",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "私の___は一番前です。",
+          "prompt_tr": "Benim ___ en önde. (Boşluğa 'koltuk/oturma yeri' anlamına gelen kelimeyi yazın)",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "席",
+          "distractors": [
+            {
+              "text": "切符",
+              "diag": "vocab_confusion_ticket"
+            },
+            {
+              "text": "写真",
+              "diag": "vocab_confusion_photo"
+            },
+            {
+              "text": "映画",
+              "diag": "vocab_confusion_movie"
+            }
+          ],
+          "explanation_tr": "席 (seki) 'koltuk, oturma yeri' demektir. Diğerleri farklı anlamlara gelen kelimelerdir."
+        },
+        {
+          "id": "L9_q06",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "旅行でたくさんの___を撮りました。",
+          "prompt_tr": "Seyahatte birçok ___ çektim. (Boşluğa 'fotoğraf' anlamına gelen kelimeyi yazın)",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "写真",
+          "distractors": [
+            {
+              "text": "映画",
+              "diag": "vocab_confusion_movie"
+            },
+            {
+              "text": "音楽",
+              "diag": "vocab_confusion_music"
+            },
+            {
+              "text": "切符",
+              "diag": "vocab_confusion_ticket"
+            }
+          ],
+          "explanation_tr": "写真 (shashin) 'fotoğraf' demektir. '写真を撮る' 'fotoğraf çekmek' anlamına gelir."
+        },
+        {
+          "id": "L9_q07",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Dün okula gitmedim.' Japoncası nedir? (Verilen kelimeler: 私、学校、行く)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "私は学校に行かなかったです。",
+          "distractors": [
+            {
+              "text": "私は学校に行きませんでした。",
+              "diag": "polite_long_form_not_short"
+            },
+            {
+              "text": "私は学校行かなかった。",
+              "diag": "particle_ni_missing"
+            },
+            {
+              "text": "私は学校に行くなかったです。",
+              "diag": "verb_conjugation_error"
+            }
+          ],
+          "explanation_tr": "行く fiilinin kısa geçmiş olumsuz formu '行かなかった'dır. Cümleyi kibarca bitirmek için 'です' eklenir."
+        },
+        {
+          "id": "L9_q08",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Film ilginçti.' Japoncası nedir? (Verilen kelimeler: 映画、面白い)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "映画は面白かったです。",
+          "distractors": [
+            {
+              "text": "映画は面白くなかったです。",
+              "diag": "grammar_negative_past"
+            },
+            {
+              "text": "映画面白いでした。",
+              "diag": "grammar_i_adj_past_error"
+            },
+            {
+              "text": "映画は面白いだったです。",
+              "diag": "grammar_i_adj_past_error_na_adj_pattern"
+            }
+          ],
+          "explanation_tr": "面白い (i-sıfat) kelimesinin geçmiş zaman formu '面白かった'dır. Kibarca bitirmek için 'です' eklenir."
+        },
+        {
+          "id": "L9_q09",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Dün hava sıcaktı, bu yüzden dışarı çıkmadım.' Japoncası nedir? (Verilen kelimeler: 昨日、暑い、出かける)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "昨日は暑かったから、出かけませんでした。",
+          "distractors": [
+            {
+              "text": "昨日は暑かった、出かけませんでした。",
+              "diag": "grammar_particle_kara_missing"
+            },
+            {
+              "text": "昨日は暑いですから、出かけませんでした。",
+              "diag": "grammar_short_form_kara_error"
+            },
+            {
+              "text": "昨日は暑いだから、出かけませんでした。",
+              "diag": "grammar_i_adj_kara_error"
+            }
+          ],
+          "explanation_tr": "Sıfatın kısa geçmiş formu '暑かった'dır. Sebep belirtmek için 'から' kullanılır ve cümle '出かけませんでした' ile tamamlanır."
+        },
+        {
+          "id": "L9_q10",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Dün izlediğim film ilginçti.' Japoncası nedir? (Verilen kelimeler: 昨日、見る、映画、面白い)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "私が昨日見た映画は面白かったです。",
+          "distractors": [
+            {
+              "text": "昨日映画を見たは面白かったです。",
+              "diag": "grammar_particle_error_clause_は"
+            },
+            {
+              "text": "私が昨日見る映画は面白かったです。",
+              "diag": "grammar_verb_tense_error_clause"
+            },
+            {
+              "text": "私が昨日見た映画面白かったです。",
+              "diag": "grammar_particle_は_missing"
+            }
+          ],
+          "explanation_tr": "İsim niteleme için fiil, isimden önce kısa formda gelir. '見る' fiilinin geçmiş kısa formu '見た'dır."
+        },
+        {
+          "id": "L9_q11",
+          "type": "translate_mixed",
+          "prompt_tr": "'Henüz Kabuki biletini almadım.' Japoncaya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "私はまだ歌舞伎の切符を買っていません。",
+          "distractors": [
+            {
+              "text": "私はもう歌舞伎の切符を買いました。",
+              "diag": "vocab_mo_mada_confusion"
+            },
+            {
+              "text": "私はまだ歌舞伎の切符を買いません。",
+              "diag": "grammar_tense_error"
+            },
+            {
+              "text": "私はまだ歌舞伎切符を買っていません。",
+              "diag": "grammar_particle_no_missing"
+            }
+          ],
+          "explanation_tr": "'Henüz yapmadım' ifadesi için 'まだ V-ていません' yapısı kullanılır. 切符 'bilet' demektir."
+        },
+        {
+          "id": "L9_q12",
+          "type": "translate_mixed",
+          "prompt_tr": "'Geçen sene Japonya'ya gittim.' Japoncaya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "私は去年日本に行きました。",
+          "distractors": [
+            {
+              "text": "私は来年日本に行きました。",
+              "diag": "vocab_time_confusion"
+            },
+            {
+              "text": "私は去年日本に行きましたか。",
+              "diag": "grammar_question_mark_error"
+            },
+            {
+              "text": "私は去年日本行くました。",
+              "diag": "grammar_verb_form_error"
+            }
+          ],
+          "explanation_tr": "'Geçen sene' 去年 (kyonen) demektir. 'Gitmek' fiilinin geçmiş hali '行きました'dır."
+        },
+        {
+          "id": "L9_q13",
+          "type": "kanji_reading",
+          "prompt_jp": "歌舞伎 kelimesinin okunuşu nedir?",
+          "prompt_tr": "歌舞伎 kelimesinin okunuşu nedir?",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "かぶき",
+          "distractors": [
+            {
+              "text": "かぶきき",
+              "diag": "kanji_reading_extra_syllable"
+            },
+            {
+              "text": "かぶきい",
+              "diag": "kanji_reading_wrong_vowel"
+            },
+            {
+              "text": "かぶきん",
+              "diag": "kanji_reading_wrong_ending"
+            }
+          ],
+          "explanation_tr": "歌舞伎 (Kabuki), Japonya'nın geleneksel tiyatro sanatıdır ve 'かぶき' olarak okunur."
+        },
+        {
+          "id": "L9_q14",
+          "type": "kanji_reading",
+          "prompt_jp": "写真 kelimesinin okunuşu nedir?",
+          "prompt_tr": "写真 kelimesinin okunuşu nedir?",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "しゃしん",
+          "distractors": [
+            {
+              "text": "しゃじん",
+              "diag": "kanji_reading_dakuon_error"
+            },
+            {
+              "text": "さしん",
+              "diag": "kanji_reading_initial_sound_error"
+            },
+            {
+              "text": "しゃしんん",
+              "diag": "kanji_reading_extra_sound"
+            }
+          ],
+          "explanation_tr": "写真 (Shashin) 'fotoğraf' demektir ve 'しゃしん' olarak okunur."
+        }
       ]
     },
     {
@@ -8267,6 +8659,427 @@
         "En sevdiğin mevsimi Japonca söyle ve nedenini açıklarken diğer mevsimlerle karşılaştırma yap. (Örnek: 私は春が一番好きです。夏より涼しいです。) ",
         "Bir mağazada iki benzer ürün arasında seçim yapıyormuş gibi davran ve hangisini 'almaya karar verdiğini' Japonca ifade et. (Örnek: この小さい方にするつもりです。) ",
         "Boş zamanlarında yapmayı düşündüğün bir aktiviteyi (örneğin kitap okumak, film izlemek) Japonca olarak ifade et. (Örnek: 週末は家で映画を見るつもりです。)"
+      ],
+      "quiz_pool": [
+        {
+          "id": "L10_q01",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "今日の___はどうですか。",
+          "prompt_tr": "'Bugünün havası nasıl?' cümlesindeki boşluğa gelecek kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "天気",
+          "distractors": [
+            {
+              "text": "季節",
+              "diag": "vocab_confusion_season"
+            },
+            {
+              "text": "気分",
+              "diag": "vocab_confusion_mood"
+            },
+            {
+              "text": "時間",
+              "diag": "vocab_confusion_time"
+            }
+          ],
+          "explanation_tr": "天気 (tenki) 'hava' anlamına gelir."
+        },
+        {
+          "id": "L10_q02",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "冬休みの___を立てています。",
+          "prompt_tr": "'Kış tatili planı yapıyorum.' cümlesindeki boşluğa gelecek kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "計画",
+          "distractors": [
+            {
+              "text": "予定",
+              "diag": "vocab_confusion_schedule"
+            },
+            {
+              "text": "準備",
+              "diag": "vocab_confusion_preparation"
+            },
+            {
+              "text": "目的",
+              "diag": "vocab_confusion_purpose"
+            }
+          ],
+          "explanation_tr": "計画 (keikaku) 'plan' anlamına gelir."
+        },
+        {
+          "id": "L10_q03",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "私は来年、日本へ___つもりです。",
+          "prompt_tr": "'Gelecek yıl Japonya'ya seyahat etmeyi planlıyorum.' cümlesindeki boşluğa gelecek kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "旅行する",
+          "distractors": [
+            {
+              "text": "勉強する",
+              "diag": "vocab_confusion_study"
+            },
+            {
+              "text": "働く",
+              "diag": "vocab_confusion_work"
+            },
+            {
+              "text": "住む",
+              "diag": "vocab_confusion_live"
+            }
+          ],
+          "explanation_tr": "旅行する (ryokō suru) 'seyahat etmek' anlamına gelir."
+        },
+        {
+          "id": "L10_q04",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "夏は___に行くのが好きです。",
+          "prompt_tr": "'Yazın denize gitmeyi severim.' cümlesindeki boşluğa gelecek kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "海",
+          "distractors": [
+            {
+              "text": "山",
+              "diag": "vocab_confusion_mountain"
+            },
+            {
+              "text": "川",
+              "diag": "vocab_confusion_river"
+            },
+            {
+              "text": "湖",
+              "diag": "vocab_confusion_lake"
+            }
+          ],
+          "explanation_tr": "海 (umi) 'deniz' anlamına gelir."
+        },
+        {
+          "id": "L10_q05",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "ホテルを___必要があります。",
+          "prompt_tr": "'Otel rezervasyonu yapmamız gerekiyor.' cümlesindeki boşluğa gelecek kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "予約する",
+          "distractors": [
+            {
+              "text": "買う",
+              "diag": "vocab_confusion_buy"
+            },
+            {
+              "text": "食べる",
+              "diag": "vocab_confusion_eat"
+            },
+            {
+              "text": "泊まる",
+              "diag": "vocab_confusion_stay"
+            }
+          ],
+          "explanation_tr": "予約する (yoyaku suru) 'rezervasyon yapmak' anlamına gelir."
+        },
+        {
+          "id": "L10_q06",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "この町には___建物がたくさんあります。",
+          "prompt_tr": "'Bu kasabada birçok yeni bina var.' cümlesindeki boşluğa gelecek kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "新しい",
+          "distractors": [
+            {
+              "text": "古い",
+              "diag": "vocab_confusion_old"
+            },
+            {
+              "text": "大きい",
+              "diag": "vocab_confusion_big"
+            },
+            {
+              "text": "小さい",
+              "diag": "vocab_confusion_small"
+            }
+          ],
+          "explanation_tr": "新しい (atarashii) 'yeni' anlamına gelir."
+        },
+        {
+          "id": "L10_q07",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Japonya Türkiye'den daha soğuktur.' cümlesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 日本, トルコ, 寒い)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "日本はトルコより寒いです。",
+          "distractors": [
+            {
+              "text": "日本はトルコより寒い。",
+              "diag": "register_casual"
+            },
+            {
+              "text": "日本よりトルコは寒いです。",
+              "diag": "wrong_comparison_order"
+            },
+            {
+              "text": "日本とトルコどちらが寒いですか。",
+              "diag": "wrong_grammar_question"
+            }
+          ],
+          "explanation_tr": "'AはBより~です' yapısı 'A, B'den daha ~dır' anlamını verir."
+        },
+        {
+          "id": "L10_q08",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Hafta sonu film izlemeyi planlıyorum.' cümlesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 週末, 映画, 見る)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "週末、映画を見るつもりです。",
+          "distractors": [
+            {
+              "text": "週末、映画を見ますつもりです。",
+              "diag": "wrong_verb_form_masu"
+            },
+            {
+              "text": "週末、映画を見るつもりだ。",
+              "diag": "register_casual"
+            },
+            {
+              "text": "週末、映画を見ます。",
+              "diag": "missing_tsumori"
+            }
+          ],
+          "explanation_tr": "'Verb (short form) + つもりです' yapısı 'yapmayı planlıyorum/niyetliyim' anlamını verir."
+        },
+        {
+          "id": "L10_q09",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Meyveler arasında elma en sevdiğimdir.' cümlesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 果物, りんご, 好き, 一番)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "果物の中で、りんごが一番好きです。",
+          "distractors": [
+            {
+              "text": "果物りんごが一番好きです。",
+              "diag": "particle_no_eksik"
+            },
+            {
+              "text": "果物の中で一番好きはりんごです。",
+              "diag": "wrong_word_order"
+            },
+            {
+              "text": "果物とリンゴはどちらが好きですか。",
+              "diag": "wrong_grammar_question"
+            }
+          ],
+          "explanation_tr": "'~の中で、~が一番~です' yapısı '...arasında, ...en ...dır' anlamını verir."
+        },
+        {
+          "id": "L10_q10",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Kahveye karar verdim.' cümlesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: コーヒー, 決める)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "コーヒーにします。",
+          "distractors": [
+            {
+              "text": "コーヒーを決めます。",
+              "diag": "wrong_particle_verb_choice"
+            },
+            {
+              "text": "コーヒーする。",
+              "diag": "missing_particle_ni"
+            },
+            {
+              "text": "コーヒーはします。",
+              "diag": "wrong_particle_wa"
+            }
+          ],
+          "explanation_tr": "'Noun + に+ する' yapısı bir seçime karar vermek için kullanılır."
+        },
+        {
+          "id": "L10_q11",
+          "type": "translate_mixed",
+          "prompt_tr": "'Tokyo'dan ziyade Kyoto daha sakindir.' Japonca'ya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "東京より京都の方が静かです。",
+          "distractors": [
+            {
+              "text": "東京は京都より静かです。",
+              "diag": "missing_hō_ga"
+            },
+            {
+              "text": "京都は東京より静かです。",
+              "diag": "wrong_emphasis_direction"
+            },
+            {
+              "text": "東京の方が京都より静かです。",
+              "diag": "wrong_comparison_order"
+            }
+          ],
+          "explanation_tr": "'AよりBの方が~です' yapısı, A'dan ziyade B'nin daha çok o özelliğe sahip olduğunu vurgular."
+        },
+        {
+          "id": "L10_q12",
+          "type": "translate_mixed",
+          "prompt_tr": "'Kırmızı olanı seçtim.' Japonca'ya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "赤いのを選びました。",
+          "distractors": [
+            {
+              "text": "赤いを選びました。",
+              "diag": "missing_no"
+            },
+            {
+              "text": "赤いものが選びました。",
+              "diag": "redundant_mono"
+            },
+            {
+              "text": "赤いのを決めました。",
+              "diag": "vocab_wrong_verb_kimeru"
+            }
+          ],
+          "explanation_tr": "'Adjective + の' yapısı, sıfatla nitelenen bir şeyi isimleştirir (o şey)."
+        },
+        {
+          "id": "L10_q13",
+          "type": "translate_mixed",
+          "prompt_tr": "'Japonca ile İngilizce'den hangisi daha zor?' Japonca'ya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "日本語と英語と、どちらの方が難しいですか。",
+          "distractors": [
+            {
+              "text": "日本語と英語どちらが難しいですか。",
+              "diag": "missing_hō_ga"
+            },
+            {
+              "text": "日本語より英語の方が難しいですか。",
+              "diag": "wrong_comparison_question_form"
+            },
+            {
+              "text": "日本語と英語、どちらが易しいですか。",
+              "diag": "vocab_opposite_easy"
+            }
+          ],
+          "explanation_tr": "'AとBと、どちらの方が~ですか' yapısı, iki şeyden hangisinin daha çok o özelliğe sahip olduğunu sorar."
+        },
+        {
+          "id": "L10_q14",
+          "type": "kanji_reading",
+          "prompt_jp": "私は将来の**計画**を立てています。",
+          "prompt_tr": "Kalın yazılı kanjinin okunuşu nedir?",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "けいかく",
+          "distractors": [
+            {
+              "text": "けいか",
+              "diag": "kanji_reading_incomplete"
+            },
+            {
+              "text": "けかく",
+              "diag": "kanji_reading_missing_kana"
+            },
+            {
+              "text": "けいこく",
+              "diag": "kanji_reading_wrong_word"
+            }
+          ],
+          "explanation_tr": "計画 kanjisinin okunuşu 'けいかく' (keikaku) şeklindedir."
+        },
+        {
+          "id": "L10_q15",
+          "type": "kanji_reading",
+          "prompt_jp": "冬休みに**旅行**します。",
+          "prompt_tr": "Kalın yazılı kanjinin okunuşu nedir?",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "りょこう",
+          "distractors": [
+            {
+              "text": "りょこ",
+              "diag": "kanji_reading_incomplete"
+            },
+            {
+              "text": "りょきょう",
+              "diag": "kanji_reading_wrong_kana"
+            },
+            {
+              "text": "りょか",
+              "diag": "kanji_reading_wrong_kana"
+            }
+          ],
+          "explanation_tr": "旅行 kanjisinin okunuşu 'りょこう' (ryokō) şeklindedir."
+        }
       ]
     },
     {
@@ -8701,6 +9514,397 @@
         "Hayatında daha önce hiç Japon yemeği yiyip yemediğini Japonca olarak söyle.",
         "Japonya'da gezmek istediğin yerleri veya yapmak istediğin şeyleri Japonca olarak anlat.",
         "Geçmişte kaç kere Japonya'ya gittiğini veya Japonca çalıştığını Japonca olarak ifade et."
+      ],
+      "quiz_pool": [
+        {
+          "id": "L11_q01",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "私は週末に海で___たいです。",
+          "prompt_tr": "Boşluğa 'yüzmek' fiilinin 'masu' kökü nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "泳ぎ",
+          "distractors": [
+            {
+              "text": "走り",
+              "diag": "vocab_confusion_run"
+            },
+            {
+              "text": "歌い",
+              "diag": "vocab_confusion_sing"
+            },
+            {
+              "text": "撮り",
+              "diag": "vocab_confusion_take_picture"
+            }
+          ],
+          "explanation_tr": "泳ぐ (oyogu) fiilinin 'masu' kökü 泳ぎ (oyogi) olup 'yüzmek' anlamına gelir."
+        },
+        {
+          "id": "L11_q02",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "熱があるから、___を飲みました。",
+          "prompt_tr": "Boşluğa 'ilaç' anlamına gelen kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "薬",
+          "distractors": [
+            {
+              "text": "歌",
+              "diag": "vocab_confusion_song"
+            },
+            {
+              "text": "映画",
+              "diag": "vocab_confusion_movie"
+            },
+            {
+              "text": "写真",
+              "diag": "vocab_confusion_photo"
+            }
+          ],
+          "explanation_tr": "薬 (kusuri) 'ilaç' anlamına gelir. Diğerleri farklı nesnelerdir."
+        },
+        {
+          "id": "L11_q03",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "友達と山に___たいです。",
+          "prompt_tr": "Boşluğa 'tırmanmak' fiilinin 'masu' kökü nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "登り",
+          "distractors": [
+            {
+              "text": "走り",
+              "diag": "vocab_confusion_run"
+            },
+            {
+              "text": "飛び",
+              "diag": "vocab_confusion_fly"
+            },
+            {
+              "text": "泳ぎ",
+              "diag": "vocab_confusion_swim"
+            }
+          ],
+          "explanation_tr": "登る (noboru) fiilinin 'masu' kökü 登り (nobori) olup 'tırmanmak' anlamına gelir."
+        },
+        {
+          "id": "L11_q04",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "私は先週、___に行きました。",
+          "prompt_tr": "Boşluğa 'hastane' anlamına gelen kelime nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "病院",
+          "distractors": [
+            {
+              "text": "海",
+              "diag": "vocab_confusion_sea"
+            },
+            {
+              "text": "山",
+              "diag": "vocab_confusion_mountain"
+            },
+            {
+              "text": "映画",
+              "diag": "vocab_confusion_movie"
+            }
+          ],
+          "explanation_tr": "病院 (byouin) 'hastane' anlamına gelir. Diğerleri farklı yerler veya nesnelerdir."
+        },
+        {
+          "id": "L11_q05",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "散歩に___たいです。",
+          "prompt_tr": "Boşluğa 'yürümek' fiilinin 'masu' kökü nedir?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "歩き",
+          "distractors": [
+            {
+              "text": "走り",
+              "diag": "vocab_confusion_run"
+            },
+            {
+              "text": "歌い",
+              "diag": "vocab_confusion_sing"
+            },
+            {
+              "text": "踊り",
+              "diag": "vocab_confusion_dance"
+            }
+          ],
+          "explanation_tr": "歩く (aruku) fiilinin 'masu' kökü 歩き (aruki) olup 'yürümek' anlamına gelir."
+        },
+        {
+          "id": "L11_q06",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Yeni bir film izlemek istiyorum.' Japoncası nedir? (verilen kelimeler: 新しい, 映画, 見る)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "新しい映画を見たいです。",
+          "distractors": [
+            {
+              "text": "新しい映画を見ます。",
+              "diag": "grammar_tai_eksik"
+            },
+            {
+              "text": "新しい映画を見たいだ。",
+              "diag": "register_casual_da"
+            },
+            {
+              "text": "新しい映画たいです見る。",
+              "diag": "wrong_word_order"
+            }
+          ],
+          "explanation_tr": "İstemek anlamındaki 'たい' ifadesi fiilin 'masu' köküne eklenir: 見る (miru) -> 見 (mi) + たい (tai)."
+        },
+        {
+          "id": "L11_q07",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Hafta sonu film izlemek ve kitap okumak gibi şeyler yaparım.' Japoncası nedir? (verilen kelimeler: 週末, 映画, 見る, 本, 読む)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "週末に映画を見たり本を読んだりします。",
+          "distractors": [
+            {
+              "text": "週末に映画を見たり本を読みます。",
+              "diag": "grammar_tari_suru_eksik"
+            },
+            {
+              "text": "週末に映画を見て本を読んでします。",
+              "diag": "grammar_te_form_yanlis"
+            },
+            {
+              "text": "週末に映画を見る本を読むたりします。",
+              "diag": "wrong_word_order"
+            }
+          ],
+          "explanation_tr": "Bir dizi eylemi listelemek için fiillerin 'ta' formunun ardından 'り' eklenir ve cümlenin sonunda 'する' kullanılır."
+        },
+        {
+          "id": "L11_q08",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Japonya'ya gitme deneyimim var.' Japoncası nedir? (verilen kelimeler: 日本, 行く)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "日本に行ったことがあります。",
+          "distractors": [
+            {
+              "text": "日本に行くことがあります。",
+              "diag": "grammar_ta_form_eksik"
+            },
+            {
+              "text": "日本に行きたいです。",
+              "diag": "grammar_tai_karisik"
+            },
+            {
+              "text": "日本に行ったことします。",
+              "diag": "grammar_suru_yanlis"
+            }
+          ],
+          "explanation_tr": "Bir deneyimi ifade etmek için fiilin 'ta' formuna 'こと' ve 'がある' eklenir."
+        },
+        {
+          "id": "L11_q09",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Bu filmi iki kez izledim.' Japoncası nedir? (verilen kelimeler: この映画, 見る, 二回)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "この映画を二回見ました。",
+          "distractors": [
+            {
+              "text": "この映画二回見ました。",
+              "diag": "particle_wo_eksik"
+            },
+            {
+              "text": "この映画を見ました二回。",
+              "diag": "wrong_word_order"
+            },
+            {
+              "text": "この映画を二回見たいです。",
+              "diag": "grammar_tai_karisik"
+            }
+          ],
+          "explanation_tr": "Miktar belirten ifadeler genellikle fiilden önce gelir ve 'を' partikülü nesneyi işaret eder."
+        },
+        {
+          "id": "L11_q10",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Çantamda kalem, defter gibi şeyler var.' Japoncası nedir? (verilen kelimeler: カバン, 中, ペン, ノート, あります)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "カバンの中にペンやノートがあります。",
+          "distractors": [
+            {
+              "text": "カバンの中にペンとノートがあります。",
+              "diag": "grammar_to_yanlis"
+            },
+            {
+              "text": "カバンの中にペンやノートがある。",
+              "diag": "register_casual_aru"
+            },
+            {
+              "text": "カバンや中にペンノートがあります。",
+              "diag": "wrong_word_order"
+            }
+          ],
+          "explanation_tr": "'や' partikülü, birkaç örnek listeleyerek 'gibi şeyler' anlamı katar."
+        },
+        {
+          "id": "L11_q11",
+          "type": "translate_mixed",
+          "prompt_tr": "'Hafta sonu dağa tırmanmak istiyorum.'",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "週末に山に登りたいです。",
+          "distractors": [
+            {
+              "text": "週末に山に登るです。",
+              "diag": "grammar_tai_eksik"
+            },
+            {
+              "text": "週末に海に登りたいです。",
+              "diag": "vocab_confusion_umi"
+            },
+            {
+              "text": "週末に山に登りません。",
+              "diag": "grammar_negative_yanlis"
+            }
+          ],
+          "explanation_tr": "'İstemek' için fiilin 'masu' köküne 'たい' eklenir. 'Dağa tırmanmak' için '山に登る' kullanılır."
+        },
+        {
+          "id": "L11_q12",
+          "type": "translate_mixed",
+          "prompt_tr": "'Bir kez Japonya'da fotoğraf çekme deneyimim oldu.'",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "一回日本で写真を撮ったことがあります。",
+          "distractors": [
+            {
+              "text": "一回日本で写真を取ったことがあります。",
+              "diag": "vocab_kanji_yanlis"
+            },
+            {
+              "text": "一回日本で写真を撮ることがあります。",
+              "diag": "grammar_ta_form_eksik"
+            },
+            {
+              "text": "一回日本で写真を撮りたいです。",
+              "diag": "grammar_tai_karisik"
+            }
+          ],
+          "explanation_tr": "'Deneyim' için fiilin 'ta' formuna 'こと' ve 'がある' eklenir. 'Fotoğraf çekmek' için '写真を撮る' kullanılır."
+        },
+        {
+          "id": "L11_q13",
+          "type": "kanji_reading",
+          "prompt_jp": "私は週末に海に行きました。",
+          "prompt_tr": "Yukarıdaki cümlenin hiragana ile doğru okunuşu nedir? (海)",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "うみ",
+          "distractors": [
+            {
+              "text": "かわ",
+              "diag": "kanji_confusion_river"
+            },
+            {
+              "text": "そら",
+              "diag": "kanji_confusion_sky"
+            },
+            {
+              "text": "やま",
+              "diag": "kanji_confusion_mountain"
+            }
+          ],
+          "explanation_tr": "海 (umi) 'deniz' anlamına gelir."
+        },
+        {
+          "id": "L11_q14",
+          "type": "kanji_reading",
+          "prompt_jp": "彼女は写真を撮るのが好きです。",
+          "prompt_tr": "Yukarıdaki cümlenin hiragana ile doğru okunuşu nedir? (撮る)",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "とる",
+          "distractors": [
+            {
+              "text": "とぶ",
+              "diag": "kanji_confusion_fly"
+            },
+            {
+              "text": "あるく",
+              "diag": "kanji_confusion_walk"
+            },
+            {
+              "text": "おどる",
+              "diag": "kanji_confusion_dance"
+            }
+          ],
+          "explanation_tr": "撮る (toru) 'fotoğraf çekmek' anlamına gelir."
+        }
       ]
     },
     {
@@ -9108,6 +10312,399 @@
         "Bir arkadaşın çok fazla ders çalıştığı için yorgun düştüğünü gör. Ona ~すぎる ve ~方がいいです yapılarını kullanarak dinlenmesini tavsiye et.",
         "Japonya'da bir hastaneye gittiğini hayal et. Doktorun sana ne yapman gerektiğini sorduğunda, ~なければいけません kullanarak ne yapman gerektiğini söyle (örneğin ilaç içmek, dinlenmek).",
         "Bir arkadaşının ne zaman iyileşeceğini merak ediyorsun. ~でしょう yapısını kullanarak bir tahminde bulun."
+      ],
+      "quiz_pool": [
+        {
+          "id": "L12_q01",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "私は今、___ があります。",
+          "prompt_tr": "'Ateşim var' demek için boşluğa ne gelmeli?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "熱",
+          "distractors": [
+            {
+              "text": "風邪",
+              "diag": "vocab_confusion_cold"
+            },
+            {
+              "text": "病気",
+              "diag": "vocab_confusion_illness"
+            },
+            {
+              "text": "咳",
+              "diag": "vocab_confusion_cough"
+            }
+          ],
+          "explanation_tr": "熱 (netsu) 'ateş' demektir ve 熱がある 'ateşi olmak' yaygın bir ifadedir."
+        },
+        {
+          "id": "L12_q02",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "頭が痛いので、___ を飲みました。",
+          "prompt_tr": "'Başım ağrıdığı için ilaç içtim' cümlesinde boşluğa ne gelmeli?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "薬",
+          "distractors": [
+            {
+              "text": "水",
+              "diag": "vocab_confusion_water"
+            },
+            {
+              "text": "お茶",
+              "diag": "vocab_confusion_tea"
+            },
+            {
+              "text": "ご飯",
+              "diag": "vocab_confusion_meal"
+            }
+          ],
+          "explanation_tr": "薬 (kusuri) 'ilaç' demektir ve 薬を飲む 'ilaç içmek' yaygın bir kullanımdır."
+        },
+        {
+          "id": "L12_q03",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "病気なので、___ へ行きました。",
+          "prompt_tr": "'Hasta olduğum için hastaneye gittim' cümlesinde boşluğa ne gelmeli?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "病院",
+          "distractors": [
+            {
+              "text": "学校",
+              "diag": "vocab_confusion_school"
+            },
+            {
+              "text": "会社",
+              "diag": "vocab_confusion_company"
+            },
+            {
+              "text": "レストラン",
+              "diag": "vocab_confusion_restaurant"
+            }
+          ],
+          "explanation_tr": "病院 (byouin) 'hastane' demektir ve hasta olunca gidilen yerdir."
+        },
+        {
+          "id": "L12_q04",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "喉が痛くて、___ が出ます。",
+          "prompt_tr": "'Boğazım ağrıyor ve öksürüğüm var' cümlesinde boşluğa ne gelmeli?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "咳",
+          "distractors": [
+            {
+              "text": "熱",
+              "diag": "vocab_confusion_fever"
+            },
+            {
+              "text": "汗",
+              "diag": "vocab_confusion_sweat"
+            },
+            {
+              "text": "涙",
+              "diag": "vocab_confusion_tears"
+            }
+          ],
+          "explanation_tr": "咳 (seki) 'öksürük' demektir ve 咳が出る 'öksürmek' anlamındadır."
+        },
+        {
+          "id": "L12_q05",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "昨日は二日酔いで、___ でした。",
+          "prompt_tr": "'Dün akşamdan kalmaydım ve kendimi iyi hissetmiyordum' cümlesinde boşluğa ne gelmeli?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "気分が悪かった",
+          "distractors": [
+            {
+              "text": "気分が良かった",
+              "diag": "vocab_confusion_opposite"
+            },
+            {
+              "text": "元気だった",
+              "diag": "vocab_confusion_fine"
+            },
+            {
+              "text": "楽しかった",
+              "diag": "vocab_confusion_fun"
+            }
+          ],
+          "explanation_tr": "気分が悪い (kibun ga warui) 'kendini iyi hissetmemek' demektir ve geçmiş zaman hali 気分が悪かった'dır."
+        },
+        {
+          "id": "L12_q06",
+          "type": "fill_in_blank_vocab",
+          "prompt_jp": "疲れているのに、___ といけませんよ。",
+          "prompt_tr": "'Yorgun olmana rağmen kendini zorlamamalısın' cümlesinde boşluğa ne gelmeli?",
+          "tests": [
+            "vocab"
+          ],
+          "weights": {
+            "vocab": 1.0
+          },
+          "correct": "無理しては",
+          "distractors": [
+            {
+              "text": "休んでは",
+              "diag": "vocab_confusion_rest"
+            },
+            {
+              "text": "勉強しては",
+              "diag": "vocab_confusion_study"
+            },
+            {
+              "text": "食べては",
+              "diag": "vocab_confusion_eat"
+            }
+          ],
+          "explanation_tr": "無理する (muri suru) 'kendini zorlamak' demektir ve ~てはいけません 'yapmamalısın' ile kullanılır."
+        },
+        {
+          "id": "L12_q07",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Hasta olduğum için okula gelmedim' cümlesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 病気, 学校, 来ませんでした)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "病気なので、学校に来なかったんです。",
+          "distractors": [
+            {
+              "text": "病気だから、学校に来なかった。",
+              "diag": "register_casual_だ"
+            },
+            {
+              "text": "病気なので、学校に来ませんでした。",
+              "diag": "grammar_んです_eksik"
+            },
+            {
+              "text": "病気なので、学校を来なかったんです。",
+              "diag": "particle_を_yanlis_ni"
+            }
+          ],
+          "explanation_tr": "Açıklama veya sebep belirtmek için のです/んです yapısı kullanılır ve 病気なので 'hasta olduğum için' anlamını verir."
+        },
+        {
+          "id": "L12_q08",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Çok fazla yemek yedin' ifadesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 食べます, すぎる)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "食べすぎました。",
+          "distractors": [
+            {
+              "text": "食べすぎるでした。",
+              "diag": "grammar_yanlis_kullanim"
+            },
+            {
+              "text": "食べすぎます。",
+              "diag": "tense_yanlis_gecmis_zaman"
+            },
+            {
+              "text": "食べるすぎる。",
+              "diag": "grammar_stem_form_yanlis"
+            }
+          ],
+          "explanation_tr": "Fiil köküne (tabe-) すぎる eklenerek 'aşırı yapmak' anlamı verilir ve geçmiş zaman için -ました kullanılır."
+        },
+        {
+          "id": "L12_q09",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'İlaç alsan daha iyi olur' ifadesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 薬, 飲みます, 方がいいです)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "薬を飲んだ方がいいです。",
+          "distractors": [
+            {
+              "text": "薬を飲む方がいいです。",
+              "diag": "grammar_short_form_yanlis"
+            },
+            {
+              "text": "薬を飲んで方がいいです。",
+              "diag": "grammar_te_form_yanlis"
+            },
+            {
+              "text": "薬を飲みます方がいいです。",
+              "diag": "grammar_masu_form_yanlis"
+            }
+          ],
+          "explanation_tr": "Tavsiye verirken fiilin kısa geçmiş olumlu hali (飲んだ) + 方がいいです yapısı kullanılır."
+        },
+        {
+          "id": "L12_q10",
+          "type": "sentence_assembly_grammar",
+          "prompt_tr": "'Yarın hastaneye gitmek zorundayım' cümlesinin doğru Japonca karşılığı nedir? (Verilen kelimeler: 明日, 病院, 行きます)",
+          "tests": [
+            "grammar"
+          ],
+          "weights": {
+            "grammar": 1.0
+          },
+          "correct": "明日、病院に行かなければいけません。",
+          "distractors": [
+            {
+              "text": "明日、病院に行きますいけません。",
+              "diag": "grammar_yanlis_baglac"
+            },
+            {
+              "text": "明日、病院に行くべきです。",
+              "diag": "grammar_farkli_yapi"
+            },
+            {
+              "text": "明日、病院に行きます。",
+              "diag": "grammar_zorunluluk_eksik"
+            }
+          ],
+          "explanation_tr": "Zorunluluk belirtmek için fiilin olumsuz kısa formundan türeyen ~なければいけません yapısı kullanılır."
+        },
+        {
+          "id": "L12_q11",
+          "type": "translate_mixed",
+          "prompt_tr": "'Yarın hava soğuk olacak herhalde.' Japonca'ya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "明日、寒いでしょう。",
+          "distractors": [
+            {
+              "text": "明日、寒いです。",
+              "diag": "grammar_tahmin_eksik"
+            },
+            {
+              "text": "明日、寒くないでしょう。",
+              "diag": "vocab_olumsuzluk_yanlis"
+            },
+            {
+              "text": "明日、寒かったです。",
+              "diag": "tense_yanlis_gecmis_zaman"
+            }
+          ],
+          "explanation_tr": "Olasılık veya tahmin belirtmek için でしょう kullanılır; 明日 'yarın', 寒い 'soğuk' demektir."
+        },
+        {
+          "id": "L12_q12",
+          "type": "translate_mixed",
+          "prompt_tr": "'Hiçbir şey yemek istemiyorum.' Japonca'ya çevir. (İpucu: 'anything' için 何でも kullanılır, olumsuz cümlede 'nothing' olur.)",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "何も食べたくないです。",
+          "distractors": [
+            {
+              "text": "何でも食べたいです。",
+              "diag": "grammar_olumsuzluk_eksik"
+            },
+            {
+              "text": "何を食べるたくないです。",
+              "diag": "particle_yanlis"
+            },
+            {
+              "text": "何を食べたくないです。",
+              "diag": "grammar_mo_eksik"
+            }
+          ],
+          "explanation_tr": "何も (nanimo) + olumsuz fiil 'hiçbir şey ~ değil' anlamı verir; 食べたくない 'yemek istemiyorum' demektir."
+        },
+        {
+          "id": "L12_q13",
+          "type": "translate_mixed",
+          "prompt_tr": "'Başın ağrıyorsa, ilaç alsan iyi olur.' Japonca'ya çevir.",
+          "tests": [
+            "vocab",
+            "grammar"
+          ],
+          "weights": {
+            "vocab": 0.5,
+            "grammar": 0.5
+          },
+          "correct": "頭が痛いなら、薬を飲んだ方がいいです。",
+          "distractors": [
+            {
+              "text": "頭が痛いなら、薬を飲みます方がいいです。",
+              "diag": "grammar_short_form_yanlis"
+            },
+            {
+              "text": "頭が痛いなら、薬を飲むべきです。",
+              "diag": "grammar_farkli_yapi"
+            },
+            {
+              "text": "頭が痛い、薬を飲んだ方がいいです。",
+              "diag": "grammar_baglac_eksik"
+            }
+          ],
+          "explanation_tr": "'Eğer ~ ise' anlamı için なら kullanılır, tavsiye için 飲んだ方がいいです yapısı gereklidir."
+        },
+        {
+          "id": "L12_q14",
+          "type": "kanji_reading",
+          "prompt_jp": "「病院」の読み方は何ですか？",
+          "prompt_tr": "'病院' kelimesinin okunuşu nedir?",
+          "tests": [
+            "kanji"
+          ],
+          "weights": {
+            "kanji": 1.0
+          },
+          "correct": "びょういん",
+          "distractors": [
+            {
+              "text": "びょうき",
+              "diag": "kanji_confusion_byouki"
+            },
+            {
+              "text": "びょうえん",
+              "diag": "kanji_misreading"
+            },
+            {
+              "text": "びょうかん",
+              "diag": "kanji_misreading"
+            }
+          ],
+          "explanation_tr": "病院 (byouin) 'hastane' anlamına gelir ve bu şekilde okunur."
+        }
       ]
     }
   ]
