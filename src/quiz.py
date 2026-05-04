@@ -4,6 +4,7 @@ import random
 import time
 from rich.prompt import Prompt
 from rich.panel import Panel
+from rich.table import Table
 
 import db
 import srs
@@ -507,6 +508,153 @@ def _mini_typing_quiz(cards, count, lesson_id=None):
         session.report(is_ok)
         db.update_stats(reviewed=1, correct=1 if is_ok else 0)
     ui.show_quiz_result(correct, total)
+
+
+def _load_lesson_quiz_pool(lesson_id):
+    """genki1.json'daki bu lesson'un quiz_pool'unu doner. Yoksa None."""
+    enrichment = _load_lesson_enrichment(lesson_id)
+    if not enrichment:
+        return None
+    return enrichment.get("quiz_pool") or None
+
+
+def _credit_dimensions(tests, weights, lesson_id, correct, confidence):
+    """Diagnostic question cevabini ilgili boyutlara aktar.
+
+    tests: ['vocab'] | ['grammar'] | ['vocab','grammar'] | ['kanji']
+    weights: {'vocab': 1.0} | {'vocab': 0.5, 'grammar': 0.5} | None
+
+    Her boyuta ozel skill_rating ve (lesson_id varsa) lesson skill update.
+    """
+    import elo
+    if not weights:
+        # Eger weights yoksa, esit dagilim
+        weights = {dim: 1.0 / len(tests) for dim in tests}
+
+    # Skill mapping: 'vocab' -> 'vocabulary' (DB'deki skill_name)
+    type_map = {"vocab": "vocabulary", "grammar": "grammar", "kanji": "kanji"}
+
+    for dim in tests:
+        skill_name = type_map.get(dim, dim)
+        weight = weights.get(dim, 1.0 / len(tests))
+        # Daha kucuk skill update: cunku diagnostic question pool'dan;
+        # gercek SRS item'i degil, aday-bazli direct skill update
+        cur = db.get_skill_rating(skill_name)
+        # Mini delta: K=20 base, weight ile carp
+        expected = elo.expected_score(cur, 1400.0)  # quiz target ~lesson level
+        score = 1.0 if correct else 0.0
+        K = 20.0
+        delta = K * (score - expected) * weight
+        new_rating = max(800.0, min(2800.0, cur + delta))
+        db.upsert_skill_rating(skill_name, new_rating)
+
+        # Lesson skill update de paralel
+        if lesson_id:
+            lesson = db.get_lesson(lesson_id)
+            if lesson:
+                lname = f"lesson:{lesson['textbook']}:L{lesson['lesson_no']}"
+                lcur = db.get_skill_rating(lname)
+                lnew = max(800.0, min(2800.0, lcur + delta))
+                db.upsert_skill_rating(lname, lnew)
+
+
+def lesson_diagnostic_quiz(lesson_id, count=10):
+    """Bu dersin diagnostic quiz pool'undan adaptive secim ile mini sinav.
+
+    Her sorunun 'tests' alani hangi skilllerin test edildigini soyler.
+    Yanlis cevap -> sadece o skill(lere) ceza yansir, diger skillere dokunulmaz.
+    """
+    import elo, random
+    pool = _load_lesson_quiz_pool(lesson_id)
+    if not pool:
+        ui.console.print(f"[yellow]{t('diagnostic.no_pool')}[/yellow]")
+        Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+        return
+
+    lesson = db.get_lesson(lesson_id)
+    ui.clear()
+    title = f"L{lesson['lesson_no']}: {lesson['title']}"
+    ui.console.print(f"\n[bold cyan]{t('diagnostic.title', title=title)}[/bold cyan]\n")
+    ui.console.print(f"[dim]{t('diagnostic.intro')}[/dim]\n")
+    Prompt.ask(f"[dim]{t('continue_enter')}[/dim]", default="")
+
+    questions = random.sample(pool, min(count, len(pool)))
+    correct = 0
+    total = len(questions)
+    skill_changes = {"vocab": 0, "grammar": 0, "kanji": 0}  # ozet icin
+
+    for i, q in enumerate(questions):
+        ui.clear()
+        ui.console.print(f"[dim]── {t('quiz.question_n', n=i+1, total=total)} "
+                         f"[yellow]({', '.join(q.get('tests', []))})[/yellow] ──[/dim]\n")
+        if q.get("prompt_jp"):
+            ui.console.print(f"  [bold white on red] {q['prompt_jp']} [/bold white on red]\n")
+        ui.console.print(f"  [bold]{q.get('prompt_tr','')}[/bold]\n")
+
+        # Distractor + correct shuffle
+        all_options = [{"text": q["correct"], "is_correct": True, "diag": "correct"}]
+        for d in q.get("distractors", []):
+            all_options.append({"text": d["text"], "is_correct": False, "diag": d.get("diag", "")})
+        random.shuffle(all_options)
+
+        for j, opt in enumerate(all_options, 1):
+            ui.console.print(f"  [cyan]{j}[/cyan]) {opt['text']}")
+
+        n_options = len(all_options)
+        ans = Prompt.ask(f"\n{t('quiz.your_answer')}",
+                         choices=[str(i) for i in range(1, n_options + 1)] + ["q"],
+                         default="1")
+        if ans == "q":
+            break
+        chosen = all_options[int(ans) - 1]
+        is_ok = chosen["is_correct"]
+
+        if is_ok:
+            ui.console.print(f"\n[bold green]  ✓ {t('quiz.correct')}[/bold green]")
+            correct += 1
+        else:
+            ui.console.print(f"\n[bold red]  ✗ {t('quiz.wrong')}[/bold red]")
+            # Diagnostic feedback: hangi tip hata
+            ui.console.print(f"  [dim]→ {t('diagnostic.diag_label')}: [/dim]"
+                             f"[yellow]{chosen.get('diag','')}[/yellow]")
+            ui.console.print(f"  [dim]{t('diagnostic.correct_was')}: {q['correct']}[/dim]")
+
+        if q.get("explanation_tr"):
+            ui.console.print(f"\n  [italic dim]{q['explanation_tr']}[/italic dim]")
+
+        # Multi-dim credit
+        _credit_dimensions(
+            tests=q.get("tests", ["vocab"]),
+            weights=q.get("weights"),
+            lesson_id=lesson_id,
+            correct=is_ok,
+            confidence=None,
+        )
+        # Track summary
+        for dim in q.get("tests", []):
+            skill_changes[dim] = skill_changes.get(dim, 0) + (1 if is_ok else -1)
+
+        Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
+        db.update_stats(reviewed=1, correct=1 if is_ok else 0)
+
+    # Sonuc + per-dim breakdown
+    ui.clear()
+    ui.show_quiz_result(correct, total)
+
+    ui.console.print(f"\n[bold]{t('diagnostic.breakdown')}[/bold]")
+    breakdown_table = Table(show_header=False, box=None, padding=(0, 2))
+    breakdown_table.add_column(style="cyan")
+    breakdown_table.add_column(style="white")
+    for dim, delta in skill_changes.items():
+        if delta == 0:
+            continue
+        label = t(f"diagnostic.skill.{dim}")
+        if delta > 0:
+            breakdown_table.add_row(label, f"[bold green]▲ +{delta}[/bold green]")
+        else:
+            breakdown_table.add_row(label, f"[bold red]▼ {delta}[/bold red]")
+    ui.console.print(breakdown_table)
+    Prompt.ask(f"\n[dim]{t('continue_enter')}[/dim]", default="")
 
 
 def _load_lesson_enrichment(lesson_id):

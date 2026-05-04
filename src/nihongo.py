@@ -516,12 +516,15 @@ def handle_textbook_study():
             elif action == "1":
                 quiz.guided_lesson_study(lesson_id)
             elif action == "2":
-                quiz.study_lesson_vocab(lesson_id)
+                count = IntPrompt.ask(t("quiz.question_count"), default=10)
+                quiz.lesson_diagnostic_quiz(lesson_id, count)
             elif action == "3":
-                quiz.study_lesson_grammar(lesson_id)
+                quiz.study_lesson_vocab(lesson_id)
             elif action == "4":
-                quiz.study_lesson_kanji(lesson_id)
+                quiz.study_lesson_grammar(lesson_id)
             elif action == "5":
+                quiz.study_lesson_kanji(lesson_id)
+            elif action == "6":
                 count = IntPrompt.ask(t("quiz.question_count"), default=10)
                 quiz.quiz_lesson_exam(lesson_id, count)
 
