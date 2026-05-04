@@ -32,10 +32,47 @@ Name: "{group}\Nihongo Master"; Filename: "{app}\nihongo.exe"; IconFilename: "{a
 Name: "{group}\Uninstall Nihongo Master"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\Nihongo Master"; Filename: "{app}\nihongo.exe"; IconFilename: "{app}\nihongo.exe"; Tasks: desktopicon
 
+[CustomMessages]
+english.AdditionalOpts=Additional options:
+english.AudioGroup=Audio:
+english.DesktopShortcutDesc=Create a desktop shortcut
+english.AddToPathDesc=Add to PATH (use nihongo from terminal)
+english.AudioPackDesc=Download offline audio pack (~14 MB)
+
+turkish.AdditionalOpts=Ek secenekler:
+turkish.AudioGroup=Ses:
+turkish.DesktopShortcutDesc=Masaustunde kisayol olustur
+turkish.AddToPathDesc=PATH'e ekle (nihongo komutunu terminalden kullan)
+turkish.AudioPackDesc=Cevrimdisi ses paketini indir (~14 MB)
+
+german.AdditionalOpts=Zusaetzliche Optionen:
+german.AudioGroup=Audio:
+german.DesktopShortcutDesc=Desktop-Verknuepfung erstellen
+german.AddToPathDesc=Zum PATH hinzufuegen (nihongo im Terminal nutzen)
+german.AudioPackDesc=Offline-Audiopaket herunterladen (~14 MB)
+
+french.AdditionalOpts=Options supplementaires :
+french.AudioGroup=Audio :
+french.DesktopShortcutDesc=Creer un raccourci sur le bureau
+french.AddToPathDesc=Ajouter au PATH (utiliser nihongo dans le terminal)
+french.AudioPackDesc=Telecharger le pack audio hors-ligne (~14 Mo)
+
+spanish.AdditionalOpts=Opciones adicionales:
+spanish.AudioGroup=Audio:
+spanish.DesktopShortcutDesc=Crear acceso directo en el escritorio
+spanish.AddToPathDesc=Anadir al PATH (usar nihongo desde la terminal)
+spanish.AudioPackDesc=Descargar paquete de audio offline (~14 MB)
+
+portuguese.AdditionalOpts=Opcoes adicionais:
+portuguese.AudioGroup=Audio:
+portuguese.DesktopShortcutDesc=Criar atalho na area de trabalho
+portuguese.AddToPathDesc=Adicionar ao PATH (usar nihongo no terminal)
+portuguese.AudioPackDesc=Baixar pacote de audio offline (~14 MB)
+
 [Tasks]
-Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional options:"
-Name: "addtopath"; Description: "Add to PATH (use nihongo from terminal)"; GroupDescription: "Additional options:"; Flags: checkedonce
-Name: "audiopack"; Description: "Download offline audio pack (~14 MB)"; GroupDescription: "Audio:"; Flags: checkedonce
+Name: "desktopicon"; Description: "{cm:DesktopShortcutDesc}"; GroupDescription: "{cm:AdditionalOpts}"
+Name: "addtopath"; Description: "{cm:AddToPathDesc}"; GroupDescription: "{cm:AdditionalOpts}"; Flags: checkedonce
+Name: "audiopack"; Description: "{cm:AudioPackDesc}"; GroupDescription: "{cm:AudioGroup}"; Flags: checkedonce
 
 [Registry]
 Root: HKCU; Subkey: "Environment"; ValueType: expandsz; ValueName: "Path"; ValueData: "{olddata};{app}"; Tasks: addtopath; Check: NeedsAddPath('{app}')

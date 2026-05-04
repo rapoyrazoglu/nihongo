@@ -298,6 +298,7 @@
   "setup.audio_hint": "(Daha sonra Ayarlar'dan da indirebilirsiniz)",
   "setup.audio_yes": "Evet, simdi indir",
   "setup.audio_no": "Hayir, simdilik atla",
+  "setup.audio_already_installed": "Ses paketi zaten kurulu ({count} dosya). Atlaniyor.",
   "setup.done": "Kurulum tamamlandi! Iyi calismalar.",
   "setup.db_ready": "Veritabani hazir.",
 

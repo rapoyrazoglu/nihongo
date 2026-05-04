@@ -376,26 +376,35 @@ def first_run_setup():
     console.print(f"[green]{t('setup.db_ready')}[/green]\n")
 
     # --- Adım 3: Ses Paketi ---
-    console.print(f"[bold cyan]{t('setup.step_audio')}[/bold cyan]\n")
-    console.print(f"  {t('setup.audio_ask')}")
-    console.print(f"  [dim]{t('setup.audio_hint')}[/dim]\n")
-    console.print(f"  [cyan]1[/cyan] {t('setup.audio_yes')}")
-    console.print(f"  [cyan]2[/cyan] {t('setup.audio_no')}")
-    audio_choice = Prompt.ask(t("your_choice"), choices=["1", "2"], default="1")
+    # Installer önceden indirmişse (Windows .exe / macOS .pkg) sorma, atla.
+    import glob
+    from paths import _DB_DIR
+    cache_dir = os.path.join(_DB_DIR, "tts_cache")
+    existing_audio = glob.glob(os.path.join(cache_dir, "*.mp3"))
 
-    if audio_choice == "1":
-        import tts
-        console.print()
-        with Progress(console=console) as progress:
-            task = progress.add_task(t("settings.download_audio_progress", current=0, total="?"), total=None)
-            def on_progress(current, total):
-                progress.update(task, total=total, completed=current,
-                                description=t("settings.download_audio_progress", current=current, total=total))
-            cached, skipped, failed = tts.download_all_audio(progress_callback=on_progress)
-        if failed == -1:
-            console.print(f"\n[yellow]{t('settings.download_audio_fail')}[/yellow]")
-        else:
-            console.print(f"\n[green]{t('settings.download_audio_done', cached=cached, skipped=skipped, failed=failed)}[/green]")
+    if existing_audio:
+        console.print(f"[green]{t('setup.audio_already_installed', count=len(existing_audio))}[/green]\n")
+    else:
+        console.print(f"[bold cyan]{t('setup.step_audio')}[/bold cyan]\n")
+        console.print(f"  {t('setup.audio_ask')}")
+        console.print(f"  [dim]{t('setup.audio_hint')}[/dim]\n")
+        console.print(f"  [cyan]1[/cyan] {t('setup.audio_yes')}")
+        console.print(f"  [cyan]2[/cyan] {t('setup.audio_no')}")
+        audio_choice = Prompt.ask(t("your_choice"), choices=["1", "2"], default="1")
+
+        if audio_choice == "1":
+            import tts
+            console.print()
+            with Progress(console=console) as progress:
+                task = progress.add_task(t("settings.download_audio_progress", current=0, total="?"), total=None)
+                def on_progress(current, total):
+                    progress.update(task, total=total, completed=current,
+                                    description=t("settings.download_audio_progress", current=current, total=total))
+                cached, skipped, failed = tts.download_all_audio(progress_callback=on_progress)
+            if failed == -1:
+                console.print(f"\n[yellow]{t('settings.download_audio_fail')}[/yellow]")
+            else:
+                console.print(f"\n[green]{t('settings.download_audio_done', cached=cached, skipped=skipped, failed=failed)}[/green]")
 
     # --- Bitti ---
     console.print(f"\n[bold green]{t('setup.done')}[/bold green]\n")
